@@ -1,0 +1,455 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title       = "Catálogo Cajas Corrugado Estándar | Ficha Técnica Completa | CADECA CDMX";
+const description = "Ficha técnica completa de cajas de cartón corrugado estándar. Simple, doble y triple pared. Medidas, ECT, gramajes, pesos y tiempos de entrega en CDMX. CADECA fabricante directo.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Cajas de Cartón Corrugado Estándar — Catálogo Técnico",
+  "description": "Ficha técnica completa de cajas corrugado estándar. Simple, doble y triple pared. Fabricante CADECA, CDMX y Estado de México.",
+  "brand": { "@type": "Brand", "name": "CADECA" },
+  "url": "https://cadeca.com.mx/catalogo/cajas-corrugado-estandar",
+  "image": "https://cadeca.com.mx/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
+};
+
+// ─── VARIANTES ─────────────────────────────────────────
+const variantes = [
+  {
+    id:       "simple",
+    code:     "CAD-CS",
+    badge:    "Más popular",
+    badgeType:"orange",
+    title:    "Corrugado Simple — Pared Simple",
+    desc:     "La solución más económica y versátil. Una sola capa de flauta entre dos liners de papel kraft o test. Ideal para productos ligeros, e-commerce y envíos con paqueterías estándar. Inventario permanente en CDMX.",
+    imgSrc:   "/img/productos/cajas-carton-corrugado-simple-pared-cdmx.avif",
+    imgAlt:   "Cajas de cartón corrugado simple pared simple en CDMX — CADECA",
+    specs: [
+      ["Tipo de pared",    "Simple (pared simple)"],
+      ["Flautas disponibles", "B (3mm) · C (4mm) · E (1.5mm)"],
+      ["Resistencia ECT", "ECT-23 · ECT-32"],
+      ["Gramaje liner",   "115 – 150 g/m²"],
+      ["Material",        "Kraft virgen · Test · PCR reciclado"],
+      ["Peso máx. producto","Hasta 15 kg (ECT-32, flauta C)"],
+      ["Carga apilado",   "Hasta 80 kg (condiciones ideales)"],
+      ["Impresión",       "Flexografía 1-4 colores"],
+      ["Certificación",   "FSC disponible bajo pedido"],
+      ["Pedido mínimo",   "Sin mínimo (inventario) / 50 pzas (producción)"],
+      ["Producción",      "Inmediata en stock · 24-48 hrs pedido especial"],
+    ],
+    strip: [
+      { value:"ECT-23/32",   label:"Resistencia" },
+      { value:"Hasta 15 kg", label:"Peso máx." },
+      { value:"Sin mínimo",  label:"Pedido mín." },
+      { value:"24-48 hrs",   label:"Entrega CDMX" },
+    ],
+    sizes: [
+      { nombre:"Micro Chica",  lah:"20×15×15 cm", flauta:"E",   ect:"ECT-23", pesoVacio:"0.18 kg", pesoMax:"5 kg",  stock:"green",  stockLabel:"Stock" },
+      { nombre:"Chica",        lah:"30×20×20 cm", flauta:"B/C", ect:"ECT-32", pesoVacio:"0.32 kg", pesoMax:"10 kg", stock:"green",  stockLabel:"Stock",   highlight:true },
+      { nombre:"Mediana",      lah:"40×30×25 cm", flauta:"C",   ect:"ECT-32", pesoVacio:"0.51 kg", pesoMax:"12 kg", stock:"green",  stockLabel:"Stock",   highlight:true },
+      { nombre:"Grande",       lah:"50×40×30 cm", flauta:"C",   ect:"ECT-32", pesoVacio:"0.74 kg", pesoMax:"15 kg", stock:"green",  stockLabel:"Stock" },
+      { nombre:"Extra Grande", lah:"60×50×40 cm", flauta:"C",   ect:"ECT-32", pesoVacio:"1.12 kg", pesoMax:"15 kg", stock:"yellow", stockLabel:"48 hrs" },
+      { nombre:"A la Medida",  lah:"Cualquier dimensión", flauta:"A elegir", ect:"A elegir", pesoVacio:"Variable", pesoMax:"Variable", stock:"gray", stockLabel:"3-5 días" },
+    ],
+    alt: false,
+  },
+  {
+    id:       "doble",
+    code:     "CAD-CD",
+    badge:    "Más resistente",
+    badgeType:"info",
+    title:    "Doble Corrugado — Pared Doble",
+    desc:     "Dos capas de flauta entre tres liners. Mayor resistencia al impacto y al aplastamiento. Recomendado para electrónica, menaje del hogar, productos industriales de peso medio y envíos de larga distancia.",
+    imgSrc:   "/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif",
+    imgAlt:   "Cajas de cartón doble corrugado resistente pared doble en CDMX — CADECA",
+    specs: [
+      ["Tipo de pared",    "Doble (pared doble)"],
+      ["Flautas disponibles", "BC (7mm) · BB (6mm)"],
+      ["Resistencia ECT", "ECT-44 (estándar) · ECT-51 (reforzado)"],
+      ["Gramaje liner",   "150 – 175 g/m²"],
+      ["Material",        "Kraft virgen · Test · PCR reciclado"],
+      ["Peso máx. producto","Hasta 25 kg (ECT-44, flauta BC)"],
+      ["Carga apilado",   "Hasta 200 kg (condiciones ideales)"],
+      ["Impresión",       "Flexografía 1-4 colores"],
+      ["Certificación",   "FSC disponible bajo pedido"],
+      ["Pedido mínimo",   "Sin mínimo (inventario) / 50 pzas (producción)"],
+      ["Producción",      "Inmediata en stock · 48-72 hrs pedido especial"],
+    ],
+    strip: [
+      { value:"ECT-44",     label:"Resistencia" },
+      { value:"Hasta 25 kg",label:"Peso máx." },
+      { value:"Sin mínimo", label:"Pedido mín." },
+      { value:"24-48 hrs",  label:"Entrega CDMX" },
+    ],
+    sizes: [
+      { nombre:"Chica",        lah:"30×20×20 cm", flauta:"BC",  ect:"ECT-44", pesoVacio:"0.52 kg", pesoMax:"15 kg", stock:"green",  stockLabel:"Stock" },
+      { nombre:"Mediana",      lah:"40×30×25 cm", flauta:"BC",  ect:"ECT-44", pesoVacio:"0.78 kg", pesoMax:"20 kg", stock:"green",  stockLabel:"Stock", highlight:true },
+      { nombre:"Grande",       lah:"50×40×30 cm", flauta:"BC",  ect:"ECT-44", pesoVacio:"1.10 kg", pesoMax:"25 kg", stock:"green",  stockLabel:"Stock", highlight:true },
+      { nombre:"Extra Grande", lah:"60×50×40 cm", flauta:"BC",  ect:"ECT-44", pesoVacio:"1.60 kg", pesoMax:"25 kg", stock:"yellow", stockLabel:"48 hrs" },
+      { nombre:"Industrial 1", lah:"70×50×50 cm", flauta:"BC",  ect:"ECT-51", pesoVacio:"2.10 kg", pesoMax:"25 kg", stock:"yellow", stockLabel:"48 hrs" },
+      { nombre:"A la Medida",  lah:"Cualquier dimensión", flauta:"A elegir", ect:"A elegir", pesoVacio:"Variable", pesoMax:"Variable", stock:"gray", stockLabel:"3-5 días" },
+    ],
+    alt: true,
+  },
+  {
+    id:       "triple",
+    code:     "CAD-CT",
+    badge:    "Máxima resistencia",
+    badgeType:"primary",
+    title:    "Triple Corrugado — Pared Triple",
+    desc:     "Tres capas de flauta entre cuatro liners. La máxima resistencia estructural disponible en cartón corrugado. Para industria pesada, exportación, nearshoring y transporte de maquinaria o productos de alto valor.",
+    imgSrc:   "/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif",
+    imgAlt:   "Cajas de cartón triple corrugado industrial pared triple en CDMX — CADECA",
+    specs: [
+      ["Tipo de pared",    "Triple (pared triple)"],
+      ["Flautas disponibles", "BCB · BCF"],
+      ["Resistencia ECT", "ECT-51 · ECT-71"],
+      ["Gramaje liner",   "175 – 200 g/m²"],
+      ["Material",        "Kraft virgen (alta resistencia)"],
+      ["Peso máx. producto","+25 kg (sin límite definido según diseño)"],
+      ["Carga apilado",   "Hasta 500+ kg (condiciones controladas)"],
+      ["Impresión",       "Flexografía 1-2 colores"],
+      ["Certificación",   "FSC · ISTA · ASTM disponibles"],
+      ["Pedido mínimo",   "Sin mínimo (stock limitado) / 50 pzas producción"],
+      ["Producción",      "48-72 hrs stock · 3-5 días producción especial"],
+    ],
+    strip: [
+      { value:"ECT-71",    label:"Resistencia máx." },
+      { value:"+25 kg",    label:"Peso máx." },
+      { value:"50 pzas",   label:"Producción" },
+      { value:"48-72 hrs", label:"Entrega CDMX" },
+    ],
+    sizes: [
+      { nombre:"Industrial M", lah:"60×40×40 cm", flauta:"BCB", ect:"ECT-51", pesoVacio:"2.20 kg", pesoMax:"+30 kg", stock:"yellow", stockLabel:"48 hrs" },
+      { nombre:"Industrial L", lah:"80×60×50 cm", flauta:"BCB", ect:"ECT-51", pesoVacio:"3.50 kg", pesoMax:"+40 kg", stock:"yellow", stockLabel:"48 hrs", highlight:true },
+      { nombre:"Industrial XL",lah:"100×70×60 cm",flauta:"BCF", ect:"ECT-71", pesoVacio:"5.20 kg", pesoMax:"+50 kg", stock:"gray",   stockLabel:"3-5 días", highlight:true },
+      { nombre:"Maquinaria",   lah:"120×80×80 cm",flauta:"BCF", ect:"ECT-71", pesoVacio:"7.80 kg", pesoMax:"+60 kg", stock:"gray",   stockLabel:"3-5 días" },
+      { nombre:"Exportación",  lah:"150×100×90 cm",flauta:"BCF",ect:"ECT-71", pesoVacio:"11.0 kg","pesoMax":"+80 kg",stock:"gray",   stockLabel:"5-7 días" },
+      { nombre:"A la Medida",  lah:"Hasta 200×120×100 cm", flauta:"A calcular", ect:"A calcular", pesoVacio:"Variable", pesoMax:"Variable", stock:"gray", stockLabel:"Consultar" },
+    ],
+    alt: false,
+  },
+  {
+    id:       "mudanza",
+    code:     "CAD-CM",
+    badge:    "Con asas",
+    badgeType:"success",
+    title:    "Cajas para Mudanza",
+    desc:     "Diseñadas específicamente para el manejo manual frecuente. Asas troqueladas reforzadas, pared doble corrugado y cierre seguro. Sin mínimo, en inventario permanente para entrega inmediata en CDMX.",
+    imgSrc:   "/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif",
+    imgAlt:   "Cajas de cartón para mudanza con asas resistentes en CDMX — CADECA",
+    specs: [
+      ["Tipo de pared",    "Doble corrugado (BC)"],
+      ["Flautas disponibles", "BC (7mm)"],
+      ["Resistencia ECT", "ECT-44"],
+      ["Gramaje liner",   "150 – 175 g/m²"],
+      ["Característica especial","Asas troqueladas reforzadas"],
+      ["Peso máx. producto","Hasta 20 kg con asas"],
+      ["Material",        "Kraft virgen"],
+      ["Impresión",       "Natural + instrucciones de uso"],
+      ["Certificación",   "N/A (uso reutilizable)"],
+      ["Pedido mínimo",   "Sin mínimo (inventario permanente)"],
+      ["Producción",      "Inmediata en stock"],
+    ],
+    strip: [
+      { value:"ECT-44",    label:"Resistencia" },
+      { value:"20 kg",     label:"Peso máx." },
+      { value:"Sin mínimo",label:"Pedido mín." },
+      { value:"24 hrs",    label:"Entrega CDMX" },
+    ],
+    sizes: [
+      { nombre:"Chica",        lah:"30×25×25 cm", flauta:"BC", ect:"ECT-44", pesoVacio:"0.55 kg", pesoMax:"12 kg", stock:"green",  stockLabel:"Stock" },
+      { nombre:"Mediana",      lah:"40×30×30 cm", flauta:"BC", ect:"ECT-44", pesoVacio:"0.75 kg", pesoMax:"15 kg", stock:"green",  stockLabel:"Stock", highlight:true },
+      { nombre:"Grande",       lah:"50×40×40 cm", flauta:"BC", ect:"ECT-44", pesoVacio:"1.10 kg", pesoMax:"18 kg", stock:"green",  stockLabel:"Stock", highlight:true },
+      { nombre:"Extra Grande", lah:"60×45×45 cm", flauta:"BC", ect:"ECT-44", pesoVacio:"1.50 kg", pesoMax:"20 kg", stock:"yellow", stockLabel:"48 hrs" },
+      { nombre:"Ropa/Wardrobe",lah:"50×50×90 cm", flauta:"BC", ect:"ECT-44", pesoVacio:"2.20 kg", pesoMax:"15 kg", stock:"yellow", stockLabel:"48 hrs" },
+    ],
+    alt: true,
+  },
+];
+
+const faqs = [
+  {
+    id:"cat-cs1",
+    question:"¿Cómo sé cuál tipo de corrugado (simple, doble o triple) necesito?",
+    answer:"Usa esta guía rápida: <strong>Simple (ECT-32):</strong> productos hasta 10-15 kg, e-commerce ligero, ropa, accesorios, envíos nacionales estándar. <strong>Doble (ECT-44):</strong> productos 10-25 kg, electrónica, menaje, industria media, Amazon FBA. <strong>Triple (ECT-51/71):</strong> +25 kg, maquinaria, nearshoring, exportación, condiciones extremas de transporte. Si tienes dudas, nuestro equipo técnico hace el cálculo correcto sin costo.",
+  },
+  {
+    id:"cat-cs2",
+    question:"¿Cuál es la diferencia entre flauta B, C, E y BC?",
+    answer:"<strong>Flauta E (1.5mm):</strong> muy delgada, alta calidad de impresión, cajas pequeñas de presentación. <strong>Flauta B (3mm):</strong> buen equilibrio resistencia/grosor, excelente para impresión. <strong>Flauta C (4mm):</strong> mayor resistencia al impacto y compresión, estándar para envíos. <strong>Flauta BC (7mm, doble):</strong> combina la rigidez de la B con la amortiguación de la C — la más resistente en pared doble.",
+  },
+  {
+    id:"cat-cs3",
+    question:"¿Los pesos máximos de la tabla son garantizados?",
+    answer:"Los pesos indicados son valores recomendados bajo condiciones estándar (temperatura 20°C, humedad relativa 50%, apilado no mayor a 6 cajas). En condiciones de humedad elevada, temperatura extrema o apilado excesivo, la resistencia real puede ser menor. Para aplicaciones críticas (exportación, maquinaria), recomendamos especificar el ECT real requerido y realizamos el cálculo de ingeniería sin costo.",
+  },
+];
+---
+
+<PageLayout title={title} description={description} schema={schema} whatsapp={WHATSAPP}>
+
+  <!-- HERO CATÁLOGO -->
+  <section class="catalog-hero" aria-labelledby="cat-cs-title">
+    <div class="container">
+      <div class="catalog-hero__inner">
+        <span class="catalog-hero__eyebrow">📋 Capítulo 01 · Catálogo Técnico 2025–2026</span>
+        <h1 id="cat-cs-title" class="catalog-hero__title">
+          Cajas Corrugado <span>Estándar</span><br>— Ficha Técnica Completa
+        </h1>
+        <p class="catalog-hero__subtitle">
+          Especificaciones técnicas, tabla de medidas, peso máximo por variante, resistencia ECT y tiempos de entrega para las 4 variantes de la línea corrugado estándar CADECA.
+        </p>
+        <div class="catalog-hero__meta">
+          <div class="catalog-hero__meta-item"><span>Código de familia:</span><strong>CAD-C</strong></div>
+          <div class="catalog-hero__meta-item"><span>Variantes:</span><strong>4 (Simple · Doble · Triple · Mudanza)</strong></div>
+          <div class="catalog-hero__meta-item"><span>Pedido mínimo:</span><strong>Sin mínimo en stock</strong></div>
+          <div class="catalog-hero__meta-item"><span>Entrega base CDMX:</span><strong>24 – 48 hrs</strong></div>
+        </div>
+        <div class="catalog-hero__ctas">
+          <a href="#cotizar"                         class="btn btn--primary">Solicitar Cotización</a>
+          <a href="/catalogo"                        class="btn btn--outline">← Volver al Catálogo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAV CATÁLOGO -->
+  <nav class="catalog-nav" aria-label="Navegación catálogo corrugado">
+    <div class="container">
+      <div class="catalog-nav__inner">
+        <div class="catalog-nav__breadcrumb">
+          <a href="/">Inicio</a>
+          <span class="sep">/</span>
+          <a href="/catalogo">Catálogo</a>
+          <span class="sep">/</span>
+          <span>Corrugado Estándar</span>
+        </div>
+        <div class="catalog-nav__actions">
+          {variantes.map(v => (
+            <a href={`#${v.id}`} class="catalog-nav__chapter-link">{v.code}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenido-principal" role="main">
+
+    {variantes.map((v, i) => (
+      <section
+        id={v.id}
+        class={`catalog-product${v.alt ? " catalog-product--alt" : ""}`}
+        aria-labelledby={`variant-${v.id}-title`}
+      >
+        <div class="container">
+          <div class={`catalog-product__inner${i % 2 !== 0 ? " catalog-product__inner--reverse" : ""}`}>
+
+            <!-- Galería -->
+            <div class="catalog-product__gallery">
+              <div class="catalog-product__img-main">
+                <img
+                  src={v.imgSrc}
+                  alt={v.imgAlt}
+                  width="900" height="560"
+                  loading={i === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchpriority={i === 0 ? "high" : "low"}
+                />
+              </div>
+
+              <!-- Tabla de medidas -->
+              <div>
+                <p class="catalog-specs-title" style="margin-bottom:0.75rem">
+                  Medidas Disponibles — {v.title.split(" —")[0]}
+                </p>
+                <div class="catalog-sizes-table-wrap">
+                  <table class="catalog-sizes-table">
+                    <thead>
+                      <tr>
+                        <th>Tamaño</th>
+                        <th>L × A × H</th>
+                        <th>Flauta</th>
+                        <th>ECT</th>
+                        <th>Peso caja vacía</th>
+                        <th>Peso máx.</th>
+                        <th>Disponibilidad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {v.sizes.map(s => (
+                        <tr class={s.highlight ? "highlight" : ""}>
+                          <td>{s.nombre}</td>
+                          <td><strong>{s.lah}</strong></td>
+                          <td>{s.flauta}</td>
+                          <td>{s.ect}</td>
+                          <td>{s.pesoVacio}</td>
+                          <td><strong>{s.pesoMax}</strong></td>
+                          <td>
+                            <span class={`stock-chip stock-chip--${s.stock}`}>
+                              {s.stock === "green" ? "✓" : s.stock === "yellow" ? "⏱" : "○"} {s.stockLabel}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.5rem">
+                  ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial. Pesos bajo condiciones estándar (20°C, 50% HR).
+                </p>
+              </div>
+            </div>
+
+            <!-- Contenido técnico -->
+            <div class="catalog-product__content">
+              <div class="catalog-product__header">
+                <div>
+                  <p class="catalog-product__code">{v.code} · Familia CAD-C</p>
+                  <h2 id={`variant-${v.id}-title`} class="catalog-product__title">{v.title}</h2>
+                </div>
+                <span class={`catalog-product__badge catalog-product__badge--${v.badgeType}`}>
+                  {v.badge}
+                </span>
+              </div>
+
+              <p class="catalog-product__desc">{v.desc}</p>
+
+              <!-- Strip de datos clave -->
+              <div class="catalog-product__specs-strip">
+                {v.strip.map(s => (
+                  <div class="catalog-product__strip-item">
+                    <span class="catalog-product__strip-value">{s.value}</span>
+                    <span class="catalog-product__strip-label">{s.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Tabla de specs técnicas -->
+              <div class="catalog-specs-section">
+                <p class="catalog-specs-title">Especificaciones Técnicas Completas</p>
+                <table class="catalog-specs-table">
+                  <tbody>
+                    {v.specs.map(([label, value]) => (
+                      <tr>
+                        <td>{label}</td>
+                        <td>{value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- CTAs -->
+              <div class="catalog-product__cta-row">
+                <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar ${v.title} (${v.code})`}
+                   target="_blank" rel="noopener" class="btn btn--primary">
+                  Cotizar {v.code}
+                </a>
+                <a href={`/productos/cajas-corrugado-estandar#${v.id}`} class="btn btn--outline">
+                  Ver página del producto
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- COMPARATIVA ENTRE VARIANTES -->
+    <section class="catalog-summary" aria-labelledby="summary-cs-title">
+      <div class="container">
+        <h2 id="summary-cs-title" class="catalog-summary__title">Comparativa — Elige la Variante Correcta</h2>
+        <p class="catalog-summary__subtitle">Guía rápida para seleccionar el corrugado adecuado según tu aplicación</p>
+        <div class="catalog-summary__table-wrap">
+          <table class="catalog-summary__table">
+            <thead>
+              <tr>
+                <th>Variante</th>
+                <th>Código</th>
+                <th>Capas de flauta</th>
+                <th>ECT</th>
+                <th>Peso máx.</th>
+                <th>Pedido mín.</th>
+                <th>Entrega</th>
+                <th>Ideal para</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Corrugado Simple</td>
+                <td>CAD-CS</td>
+                <td>1 capa</td>
+                <td>ECT-23 / ECT-32</td>
+                <td>Hasta 15 kg</td>
+                <td>Sin mínimo</td>
+                <td>24-48 hrs</td>
+                <td>E-commerce, ropa, accesorios</td>
+              </tr>
+              <tr class="recommended">
+                <td>Doble Corrugado</td>
+                <td>CAD-CD</td>
+                <td>2 capas (BC)</td>
+                <td>ECT-44 / ECT-51</td>
+                <td>Hasta 25 kg</td>
+                <td>Sin mínimo</td>
+                <td>24-48 hrs</td>
+                <td>Electrónica, menaje, Amazon FBA</td>
+              </tr>
+              <tr>
+                <td>Triple Corrugado</td>
+                <td>CAD-CT</td>
+                <td>3 capas (BCB/BCF)</td>
+                <td>ECT-51 / ECT-71</td>
+                <td>+25 kg</td>
+                <td>50 pzas</td>
+                <td>48-72 hrs</td>
+                <td>Industria, nearshoring, exportación</td>
+              </tr>
+              <tr>
+                <td>Mudanza</td>
+                <td>CAD-CM</td>
+                <td>2 capas (BC) + asas</td>
+                <td>ECT-44</td>
+                <td>Hasta 20 kg</td>
+                <td>Sin mínimo</td>
+                <td>24 hrs</td>
+                <td>Mudanzas, almacenamiento manual</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ técnico -->
+    <section class="faq" aria-labelledby="faq-cs-title">
+      <div class="container">
+        <SectionHeader
+          id="faq-cs-title"
+          twoCol
+          title="Preguntas Técnicas — Corrugado Estándar"
+          subtitle="Guía para seleccionar el tipo de pared, flauta y ECT correcto para tu aplicación"
+        >
+          <p>Preguntas técnicas frecuentes de los equipos de compras y logística antes de confirmar un pedido de cajas corrugado estándar. Si necesitas especificaciones adicionales, nuestro ingeniero de empaque las resuelve sin costo por WhatsApp.</p>
+        </SectionHeader>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture
+    whatsapp={WHATSAPP}
+    title="¿Listo para cotizar? Indica el código de variante (CAD-CS, CAD-CD, CAD-CT o CAD-CM) y la cantidad"
+  />
+
+</PageLayout>
