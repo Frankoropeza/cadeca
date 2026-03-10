@@ -1,0 +1,182 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const title       = "Cajas para Industria Farmacéutica y Cosmética CDMX | 5 Productos | CADECA";
+const description = "Cajas de cartón para farmacéutica y cosmética en CDMX. Blíster, cosmética premium, distribuidora, suplementos y línea de producción. Fichas técnicas con medidas y especificaciones.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const productos = [
+  {
+    code:    "CAD-FC-01",
+    badge:   "Pharma",
+    badgeColor: "blue",
+    featured: true,
+    title:   "Blíster Farmacéutica — Pared Simple Flauta E",
+    desc:    "Caja corrugado micro flauta E para blíster de medicamentos. Alta calidad de impresión para información regulatoria. Cumple NOM-072-SSA1. Pedido mínimo 200 piezas.",
+    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
+    imgAlt:  "Caja de cartón para blíster farmacéutica CDMX — CADECA CAD-FC-01",
+    href:    "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica",
+    specs: [
+      { label: "Pared",      value: "Simple (Flauta E)" },
+      { label: "ECT",        value: "ECT-23" },
+      { label: "Flauta",     value: "E (1.5mm)" },
+      { label: "Peso máx.",  value: "Hasta 3 kg" },
+    ],
+    moq: "200 pzas",
+  },
+  {
+    code:    "CAD-FC-02",
+    badge:   "Premium",
+    badgeColor: "orange",
+    featured: false,
+    title:   "Cosmética Premium — Acabados Especiales",
+    desc:    "Caja con acabado mate, barniz UV selectivo y soft touch para líneas de cosméticos premium. Impresión full color CMYK. Ideal para skincare, maquillaje y perfumería.",
+    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif",
+    imgAlt:  "Caja de cartón cosmética premium acabados especiales CDMX — CADECA CAD-FC-02",
+    href:    "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium",
+    specs: [
+      { label: "Pared",      value: "Simple (Flauta E)" },
+      { label: "Acabado",    value: "Mate · UV · Soft Touch" },
+      { label: "Impresión",  value: "Full Color CMYK" },
+      { label: "Peso máx.",  value: "Hasta 2 kg" },
+    ],
+    moq: "300 pzas",
+  },
+  {
+    code:    "CAD-FC-03",
+    badge:   "Industrial",
+    badgeColor: "red",
+    featured: false,
+    title:   "Distribuidora Farmacia — Doble Pared BC",
+    desc:    "Caja doble corrugado BC para distribución de medicamentos a farmacias y hospitales. Apilable, resistente a humedad. Trazabilidad con código de barras impreso.",
+    imgSrc:  "/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif",
+    imgAlt:  "Caja de cartón distribuidora farmacia industrial CDMX — CADECA CAD-FC-03",
+    href:    "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia",
+    specs: [
+      { label: "Pared",      value: "Doble (BC)" },
+      { label: "ECT",        value: "ECT-44" },
+      { label: "Flauta",     value: "BC" },
+      { label: "Peso máx.",  value: "Hasta 20 kg" },
+    ],
+    moq: "100 pzas",
+  },
+  {
+    code:    "CAD-FC-04",
+    badge:   "Nutrición",
+    badgeColor: "green",
+    featured: false,
+    title:   "Suplementos y Nutrición — Pared Simple",
+    desc:    "Caja corrugado simple para suplementos alimenticios, vitaminas y proteínas. Impresión flexográfica con datos nutricionales. Compatible con NOM-051-SCFI.",
+    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif",
+    imgAlt:  "Caja de cartón para suplementos y nutrición CDMX — CADECA CAD-FC-04",
+    href:    "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion",
+    specs: [
+      { label: "Pared",      value: "Simple (Flauta B)" },
+      { label: "ECT",        value: "ECT-32" },
+      { label: "Impresión",  value: "Flexo 1-4 colores" },
+      { label: "Peso máx.",  value: "Hasta 10 kg" },
+    ],
+    moq: "200 pzas",
+  },
+  {
+    code:    "CAD-FC-05",
+    badge:   "Automatizable",
+    badgeColor: "blue",
+    featured: false,
+    title:   "Línea de Producción Pharma — Alta Velocidad",
+    desc:    "Caja diseñada para líneas de empaque automatizadas. Tolerancias ±1mm, troquelado de precisión, compatible con equipos Bosch, IMA y Marchesini.",
+    imgSrc:  "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif",
+    imgAlt:  "Caja de cartón línea producción pharma alta velocidad CDMX — CADECA CAD-FC-05",
+    href:    "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma",
+    specs: [
+      { label: "Pared",      value: "Simple (Flauta E/B)" },
+      { label: "Tolerancia", value: "±1mm" },
+      { label: "Velocidad",  value: "Hasta 300 pzas/min" },
+      { label: "Peso máx.",  value: "Hasta 5 kg" },
+    ],
+    moq: "500 pzas",
+  },
+];
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><span class="current">Farmacéutica y Cosmética</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="cat-fc-hub-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">💊 Categoría 07 · 5 productos</span>
+      <h1 id="cat-fc-hub-title" class="cat-page-hero__title">
+        Cajas para Industria <span>Farmacéutica y Cosmética</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Empaques corrugado para la industria farmacéutica, cosmética y de suplementos. Cumplimiento NOM-072, NOM-051, acabados premium y compatibilidad con líneas de empaque automatizadas.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">Productos: <strong>5</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ desde: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega CDMX: <strong>3-5 días</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 a ECT-44</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-fc-title">
+      <div class="container">
+        <SectionHeader
+          id="prods-fc-title"
+          twoCol
+          title="5 Productos — Farmacéutica y Cosmética"
+          subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones y condiciones de pedido."
+          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+        >
+          <p>Cada producto tiene su propia ficha técnica con tabla de medidas disponibles, especificaciones de material, resistencia ECT, flauta, gramaje, peso máximo y condiciones de pedido. Haz clic en cualquier producto para ver todos los detalles.</p>
+        </SectionHeader>
+
+        <div class="sku-grid">
+          {productos.map(p => (
+            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+              <div class="sku-card__img-wrap">
+                <img src={p.imgSrc} alt={p.imgAlt}
+                  class="sku-card__img" width="640" height="480"
+                  loading="lazy" decoding="async" />
+                <span class="sku-card__code">{p.code}</span>
+                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
+              </div>
+              <div class="sku-card__body">
+                <h2 class="sku-card__name">{p.title}</h2>
+                <p class="sku-card__desc">{p.desc}</p>
+                <div class="sku-card__specs">
+                  {p.specs.map(s => (
+                    <div>
+                      <span class="sku-card__spec-label">{s.label}</span>
+                      <span class="sku-card__spec-value">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div class="sku-card__footer">
+                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+                  <span class="sku-card__moq">MOQ: {p.moq}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas empaques para farmacéutica o cosmética? Asesoría técnica sin costo" />
+
+</PageLayout>

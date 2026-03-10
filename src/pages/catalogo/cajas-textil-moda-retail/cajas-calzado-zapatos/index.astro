@@ -1,0 +1,231 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title   = "Caja para Calzado y Zapatos Corrugado CDMX | CAD-TX-01 | CADECA";
+const description = "Ficha técnica caja corrugado para calzado y zapatos en CDMX. Flauta B/C, ECT-32, medidas zapatilla a master 12 pares. Impresión personalizada, MOQ 200 pzas. CADECA fabricante directo.";
+const WHATSAPP = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Zapatilla / Tenis",    lah:"30×18×12",  flauta:"B",  ect:"ECT-32",vacío:"0.14 kg",máx:"3 kg",  disp:"green",  label:"Stock", hl:true },
+  { nombre:"Bota",                 lah:"35×22×15",  flauta:"C",  ect:"ECT-32",vacío:"0.22 kg",máx:"4 kg",  disp:"green",  label:"Stock", hl:true },
+  { nombre:"Deportivo",            lah:"35×25×15",  flauta:"B",  ect:"ECT-32",vacío:"0.24 kg",máx:"4 kg",  disp:"green",  label:"Stock" },
+  { nombre:"Infantil",             lah:"25×15×10",  flauta:"B",  ect:"ECT-32",vacío:"0.10 kg",máx:"2 kg",  disp:"green",  label:"Stock" },
+  { nombre:"Master 6 pares",      lah:"55×40×35",  flauta:"C",  ect:"ECT-32",vacío:"0.82 kg",máx:"20 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"Master 12 pares",     lah:"65×45×40",  flauta:"C",  ect:"ECT-32",vacío:"1.15 kg",máx:"25 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",          lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",              "CAD-TX-01"],
+  ["Tipo de pared",           "Simple (pared simple)"],
+  ["Flautas disponibles",     "B (3 mm) · C (4 mm)"],
+  ["Resistencia ECT",         "ECT-32"],
+  ["Gramaje liner",           "127 – 175 g/m²"],
+  ["Gramaje médium",          "112 – 127 g/m²"],
+  ["Material",                "Kraft virgen · Test liner blanqueado"],
+  ["Color exterior",          "Kraft marrón natural · Blanco opcional"],
+  ["Peso máx. producto",      "Hasta 4 kg (individual) · 25 kg (master)"],
+  ["Carga de apilado",        "Hasta 120 kg (condiciones ideales)"],
+  ["Impresión",               "Flexografía 1-4 colores (opcional)"],
+  ["Acabado exterior",        "Kraft natural · Recubierto blanco · Laminado mate"],
+  ["Ventana opcional",        "PET transparente 200 micras para exhibición en anaquel"],
+  ["Certificación",           "FSC disponible bajo pedido"],
+  ["Pedido mínimo",           "200 pzas"],
+  ["Tiempo de entrega",       "24-48 hrs stock · 3-5 días personalizada"],
+];
+
+const faqs = [
+  {
+    id:"tx01-f1",
+    question:"¿Cuál es la diferencia entre flauta B y flauta C para cajas de calzado?",
+    answer:"<strong>Flauta B (3 mm)</strong> ofrece una superficie más lisa que facilita la impresión directa de logotipos y texto con mejor definición. Es ideal para cajas zapateras que van directo al anaquel en punto de venta. <strong>Flauta C (4 mm)</strong> proporciona mayor amortiguación y protección contra impactos durante el transporte. Es la recomendada para envíos de e-commerce y cuando el calzado viaja en cajas master con paquetería.",
+  },
+  {
+    id:"tx01-f2",
+    question:"¿Qué medida de caja necesito según el tipo de calzado?",
+    answer:"Las medidas estándar son: <strong>Zapatilla/Tenis (30×18×12 cm)</strong> para calzado casual y deportivo tallas 22-28, <strong>Bota (35×22×15 cm)</strong> para bota corta y media caña, <strong>Deportivo (35×25×15 cm)</strong> para tenis de alto volumen como running o basketball, e <strong>Infantil (25×15×10 cm)</strong> para tallas 15-22. Si tu línea tiene hormas especiales, fabricamos a la medida exacta en 3-5 días hábiles.",
+  },
+  {
+    id:"tx01-f3",
+    question:"¿Cuántas cajas de calzado puedo apilar sin deformación?",
+    answer:"Con <strong>ECT-32 y flauta C</strong>, cada caja individual soporta hasta 120 kg de carga estática distribuida en condiciones ideales (20 °C, 50 % HR). Esto equivale a apilar <strong>30-40 cajas zapateras</strong> en almacén. Para exhibición en anaquel de tienda, recomendamos no superar 15 cajas apiladas. En ambientes húmedos (más de 70 % HR), la resistencia baja hasta 40 %, por lo que sugerimos ECT-44 o tratamiento hidrófobo.",
+  },
+  {
+    id:"tx01-f4",
+    question:"¿Pueden imprimir mi marca y logo en la caja zapatera?",
+    answer:"Sí, ofrecemos <strong>impresión flexográfica de 1 a 4 colores</strong> directamente sobre el cartón. Se puede imprimir logotipo, nombre de marca, talla, código de barras EAN-13/UPC y cualquier información comercial. Para diseños fotográficos o más de 4 colores, ofrecemos <strong>impresión offset CMYK</strong>. El diseño de arte final y ajuste de preprensa están incluidos sin costo adicional — solo necesitas enviar tu logotipo en vectores o alta resolución (300 dpi).",
+  },
+  {
+    id:"tx01-f5",
+    question:"¿Ofrecen cajas zapateras con ventana para exhibición?",
+    answer:"Sí, disponemos de una <strong>variante con ventana PET transparente de 200 micras</strong> troquelada en la tapa o el frente lateral. Permite que el consumidor vea el calzado sin abrir la caja, lo cual es estándar en cadenas de autoservicio y tiendas departamentales. La ventana PET es removible para facilitar el reciclaje. No tiene costo adicional en pedidos de 500+ piezas.",
+  },
+  {
+    id:"tx01-f6",
+    question:"¿Las cajas de calzado son reciclables y cumplen normas ambientales?",
+    answer:"Sí, todas nuestras cajas de calzado son <strong>100 % reciclables y biodegradables</strong>. Están fabricadas con cartón corrugado de fibra reciclada y/o virgen con tintas base agua. Ofrecemos <strong>certificación FSC</strong> bajo pedido para marcas que requieren cadena de custodia verificada. El cartón kraft sin blanquear es la opción más ecológica y la preferida por marcas con compromiso sustentable.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Calzado y Zapatos"}]}
+  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+  product={{name:"Caja para Calzado y Zapatos Corrugado Simple",sku:"CAD-TX-01",description:"Caja de cartón corrugado para calzado y zapatos en CDMX — fabricante directo CADECA",image:"/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif",material:"Cartón corrugado simple flauta B/C ECT-32",category:"Cajas para Textil, Moda y Retail",moq:"200"}}
+>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+      <li><span class="current">Calzado y Zapatos</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-tx01-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-TX-01 · Cajas para Textil, Moda y Retail</span>
+      <h1 id="sku-tx01-title" class="cat-page-hero__title">
+        Caja para Calzado y Zapatos<br><span>Corrugado Simple — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Caja de cartón corrugado simple diseñada para la industria del calzado. Flauta B/C con ECT-32 para protección óptima de zapatillas, tenis, botas y zapato de vestir. Medidas individuales y master disponibles con impresión personalizada.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-01</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="sku-detail" aria-labelledby="detalle-tx01-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif"
+                alt="Caja de cartón corrugado para calzado y zapatos CDMX — CADECA CAD-TX-01"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-TX-01 · Familia: Textil, Moda y Retail</p>
+            <h2 id="detalle-tx01-title" class="sku-detail__title">Calzado y Zapatos — Corrugado Simple</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-TX-01 es la solución estándar para marcas de calzado que necesitan un empaque funcional, apilable y con presentación profesional. Fabricada en cartón corrugado flauta B o C según el tipo de zapato, con resistencia ECT-32 que soporta el apilamiento en almacén y anaquel. Disponible con ventana PET opcional para exhibición directa en punto de venta. Medidas desde zapatilla infantil hasta caja master de 12 pares.
+            </p>
+
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">ECT-32</span>
+                <span class="sku-detail__strip-label">Resistencia estándar</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">4 kg</span>
+                <span class="sku-detail__strip-label">Peso máx. individual</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">200 pzas</span>
+                <span class="sku-detail__strip-label">Pedido mín.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">24-48 hrs</span>
+                <span class="sku-detail__strip-label">Entrega CDMX</span>
+              </div>
+            </div>
+
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {specs.map(([label, val]) => (
+                  <tr><td>{label}</td><td>{val}</td></tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-01 Caja Calzado y Zapatos`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-01</a>
+              <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLA DE MEDIDAS -->
+    <section class="sku-sizes" aria-labelledby="sizes-tx01-title">
+      <div class="container">
+        <h2 id="sizes-tx01-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+          Medidas Disponibles — CAD-TX-01
+        </h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead>
+              <tr>
+                <th>Tamaño</th>
+                <th>L × A × H (cm)</th>
+                <th>Flauta</th>
+                <th>ECT</th>
+                <th>Peso vacío</th>
+                <th>Peso máx.</th>
+                <th>Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td>
+                  <td><strong>{m.lah}</strong></td>
+                  <td>{m.flauta}</td>
+                  <td>{m.ect}</td>
+                  <td>{m.vacío}</td>
+                  <td><strong>{m.máx}</strong></td>
+                  <td>
+                    <span class={`stock-chip stock-chip--${m.disp}`}>
+                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-tx01-title">
+      <div class="container">
+        <h2 id="faq-tx01-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+          Preguntas Técnicas — CAD-TX-01
+        </h2>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-01 — Cajas para calzado y zapatos, entrega 24-48 hrs CDMX" />
+
+</PageLayout>

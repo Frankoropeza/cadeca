@@ -1,0 +1,228 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title   = "Caja Línea Producción Pharma Alta Velocidad CDMX | CAD-FC-05 | CADECA";
+const description = "Caja corrugado para líneas de producción farmacéutica automatizadas en CDMX. Tolerancia ±1mm, troquelado precisión, compatible Bosch, IMA, Marchesini. CADECA.";
+const WHATSAPP = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Blíster Individual",lah:"8×5×3",  flauta:"E",ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"Estuche Estándar", lah:"12×6×4",  flauta:"E",ect:"ECT-23",vacío:"0.03 kg",máx:"0.5 kg", disp:"green",  label:"Stock", hl:true },
+  { nombre:"Estuche Mediano",  lah:"15×8×5",  flauta:"E",ect:"ECT-23",vacío:"0.04 kg",máx:"0.8 kg", disp:"green",  label:"Stock", hl:true },
+  { nombre:"Frasco Grande",    lah:"12×12×18", flauta:"B",ect:"ECT-32",vacío:"0.08 kg",máx:"2 kg",  disp:"yellow", label:"48 hrs" },
+  { nombre:"Multi-Pack 6",     lah:"25×20×12", flauta:"B",ect:"ECT-32",vacío:"0.15 kg",máx:"5 kg",  disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",      lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",          "CAD-FC-05"],
+  ["Tipo de pared",       "Simple (flauta E/B)"],
+  ["Flautas disponibles", "E (1.5mm) · B (3mm)"],
+  ["Resistencia ECT",     "ECT-23 · ECT-32"],
+  ["Gramaje liner",       "127 – 170 g/m²"],
+  ["Gramaje médium",      "112 – 140 g/m²"],
+  ["Material",            "SBS blanqueado · GC1 · Cartón compacto"],
+  ["Tolerancia dimensional", "±1mm en todas las dimensiones"],
+  ["Resistencia al estallido", "300 kPa (Mullen)"],
+  ["Resistencia a la humedad", "Cobb60: 28 g/m² (estándar)"],
+  ["Peso máx. producto",  "Hasta 5 kg (flauta B)"],
+  ["Carga de apilado",    "Hasta 60 kg (condiciones ideales)"],
+  ["Impresión",           "Offset de alta resolución · Datos regulatorios"],
+  ["Compatibilidad",      "Bosch · IMA · Marchesini · Uhlmann"],
+  ["Pedido mínimo",       "500 pzas (producción)"],
+  ["Tiempo de entrega",   "5-7 días hábiles"],
+];
+
+const faqs = [
+  {
+    id:"fc05-f1",
+    question:"¿Qué significa tolerancia ±1mm y por qué es importante para líneas automatizadas?",
+    answer:"La <strong>tolerancia ±1mm</strong> significa que cada dimensión de la caja varía como máximo 1 milímetro respecto a la medida nominal. En líneas de empaque automatizadas, las máquinas alimentan, abren y cierran las cajas a alta velocidad. Si la caja varía más de 1mm, puede atascarse, no sellar correctamente o causar paros de línea. Nuestro proceso de troquelado de precisión garantiza esta tolerancia en cada lote.",
+  },
+  {
+    id:"fc05-f2",
+    question:"¿Las cajas son compatibles con encartonadoras Bosch e IMA?",
+    answer:"Sí, diseñamos las cajas CAD-FC-05 para ser <strong>compatibles con las principales encartonadoras</strong> del mercado farmacéutico: Bosch CUT (ahora Syntegon), IMA C90/C100, Marchesini MA Series y Uhlmann. Cada modelo de encartonadora tiene especificaciones diferentes de espesor, rigidez y dimensiones de pestaña. Proporcionamos muestras para validación en tu línea antes del pedido completo.",
+  },
+  {
+    id:"fc05-f3",
+    question:"¿Pueden enviar muestras para validación en nuestra línea de producción?",
+    answer:"Sí, enviamos <strong>muestras de validación sin costo</strong> (hasta 50 piezas) para que pruebes en tu línea de producción. Recomendamos una corrida de prueba de al menos 30 minutos continuos para verificar alimentación, formado, llenado y sellado. Si se requieren ajustes dimensionales, los realizamos sin cargo adicional antes del pedido de producción.",
+  },
+  {
+    id:"fc05-f4",
+    question:"¿Cuántas cajas por minuto puede procesar una encartonadora con estas cajas?",
+    answer:"La velocidad depende de la encartonadora, pero nuestras cajas están diseñadas para <strong>hasta 300 piezas por minuto</strong> en equipos de alta velocidad como la IMA C100. Para velocidades superiores a 200 pzas/min, recomendamos flauta E por su mayor rigidez lateral y menor tendencia al pandeo durante la alimentación automática.",
+  },
+  {
+    id:"fc05-f5",
+    question:"¿Qué controles de calidad aplican para cajas de línea automatizada?",
+    answer:"Aplicamos <strong>control estadístico de proceso (SPC)</strong> con muestreo AQL 1.0 para dimensiones críticas. Verificamos: dimensiones L×A×H con calibrador digital, escuadra de corte, paralelismo de pestañas, gramaje de material y resistencia ECT por lote. Cada embarque incluye certificado de calidad con los resultados de inspección.",
+  },
+  {
+    id:"fc05-f6",
+    question:"¿Ofrecen servicio de diseño de troquel para nuevos productos farmacéuticos?",
+    answer:"Sí, nuestro departamento de ingeniería diseña el <strong>troquel (suaje) a la medida</strong> de tu producto y equipo de encartonado. El diseño CAD incluye: dimensiones de caja, pestañas de cierre, ventana de inspección (si aplica), zonas de pegado y líneas de doblez. El diseño del troquel no tiene costo; solo se cobra el suaje físico una vez aprobado.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Línea Producción Pharma"}]}
+  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+  product={{name:"Caja Línea Producción Pharma Alta Velocidad",sku:"CAD-FC-05",description:"Caja corrugado para líneas de producción farmacéutica automatizadas en CDMX — fabricante directo CADECA",image:"/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif",material:"Cartón SBS/GC1 flauta E tolerancia ±1mm",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"500"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+      <li><span class="current">Línea Producción Pharma</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-fc05-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-FC-05 · Farmacéutica y Cosmética</span>
+      <h1 id="sku-fc05-title" class="cat-page-hero__title">
+        Línea Producción Pharma<br><span>Alta Velocidad — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Caja diseñada para líneas de empaque automatizadas en industria farmacéutica. Tolerancia dimensional ±1mm, troquelado de precisión y compatibilidad verificada con encartonadoras Bosch, IMA, Marchesini y Uhlmann. Muestras de validación sin costo.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-05</strong></div>
+        <div class="cat-page-hero__strip-item">Tolerancia: <strong>±1mm</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="sku-detail" aria-labelledby="detalle-fc05-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif"
+                alt="Caja de cartón línea producción pharma alta velocidad CDMX — CADECA CAD-FC-05"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-FC-05 · Familia: Farmacéutica y Cosmética</p>
+            <h2 id="detalle-fc05-title" class="sku-detail__title">Línea Producción Pharma — Alta Velocidad</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-FC-05 está engineered para líneas de empaque farmacéutico automatizadas. Con tolerancia dimensional de ±1mm y troquelado de precisión CNC, garantiza alimentación fluida en encartonadoras de alta velocidad. Compatible con los principales fabricantes de equipos: Bosch/Syntegon, IMA, Marchesini y Uhlmann.
+            </p>
+
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">±1mm</span>
+                <span class="sku-detail__strip-label">Tolerancia</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">5 kg</span>
+                <span class="sku-detail__strip-label">Peso máx.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">500 pzas</span>
+                <span class="sku-detail__strip-label">Pedido mín.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">5-7 días</span>
+                <span class="sku-detail__strip-label">Entrega CDMX</span>
+              </div>
+            </div>
+
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {specs.map(([label, val]) => (
+                  <tr><td>{label}</td><td>{val}</td></tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-05 Línea Producción Pharma`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-05</a>
+              <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-fc05-title">
+      <div class="container">
+        <h2 id="sizes-fc05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+          Medidas Disponibles — CAD-FC-05
+        </h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead>
+              <tr>
+                <th>Tamaño</th>
+                <th>L × A × H (cm)</th>
+                <th>Flauta</th>
+                <th>ECT</th>
+                <th>Peso vacío</th>
+                <th>Peso máx.</th>
+                <th>Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td>
+                  <td><strong>{m.lah}</strong></td>
+                  <td>{m.flauta}</td>
+                  <td>{m.ect}</td>
+                  <td>{m.vacío}</td>
+                  <td><strong>{m.máx}</strong></td>
+                  <td>
+                    <span class={`stock-chip stock-chip--${m.disp}`}>
+                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-fc05-title">
+      <div class="container">
+        <h2 id="faq-fc05-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+          Preguntas Técnicas — CAD-FC-05
+        </h2>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-05 — Cajas para línea de producción pharma automatizada" />
+
+</PageLayout>

@@ -1,0 +1,183 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const title       = "Cajas para Textil, Moda y Retail CDMX | 5 Productos | CADECA";
+const description = "Catálogo de cajas de cartón para textil, moda y retail en CDMX. Calzado, ropa, accesorios, display punto de venta y envío tienda online. Fichas técnicas con medidas, ECT y MOQ.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const productos = [
+  {
+    code:    "CAD-TX-01",
+    badge:   "Más popular",
+    badgeColor: "orange",
+    featured: true,
+    title:   "Calzado y Zapatos — Corrugado Simple",
+    desc:    "Caja corrugado simple diseñada para calzado. Flauta B/C con ECT-32 para proteger zapatillas, tenis, botas y zapato de vestir. Impresión flexográfica opcional. Entrega en CDMX.",
+    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif",
+    imgAlt:  "Caja de cartón para calzado y zapatos corrugado simple CDMX — CADECA",
+    href:    "/catalogo/cajas-textil-moda-retail/cajas-calzado-zapatos",
+    specs: [
+      { label: "Pared",      value: "Simple (B/C)" },
+      { label: "ECT",        value: "ECT-32" },
+      { label: "Flauta",     value: "B · C" },
+      { label: "Peso máx.",  value: "Hasta 8 kg" },
+    ],
+    moq: "200 pzas",
+  },
+  {
+    code:    "CAD-TX-02",
+    badge:   "Moda",
+    badgeColor: "blue",
+    featured: false,
+    title:   "Ropa y Prendas — Corrugado Kraft",
+    desc:    "Caja kraft corrugado para prendas de vestir. Flauta E/B para camisetas, vestidos, jeans y sets regalo. Acabado kraft natural ideal para marcas eco-friendly y boutiques.",
+    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif",
+    imgAlt:  "Caja de cartón kraft para ropa y prendas CDMX — CADECA",
+    href:    "/catalogo/cajas-textil-moda-retail/cajas-ropa-prendas",
+    specs: [
+      { label: "Pared",      value: "Simple (E/B)" },
+      { label: "ECT",        value: "ECT-23 / ECT-32" },
+      { label: "Flauta",     value: "E · B" },
+      { label: "Peso máx.",  value: "Hasta 10 kg" },
+    ],
+    moq: "200 pzas",
+  },
+  {
+    code:    "CAD-TX-03",
+    badge:   "Boutique",
+    badgeColor: "green",
+    featured: false,
+    title:   "Accesorios y Bolsas — Pared Simple",
+    desc:    "Caja corrugado flauta E para accesorios de moda: joyería, gafas, cinturones, carteras y bolsas. Alta calidad de impresión para experiencia premium de unboxing.",
+    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
+    imgAlt:  "Caja de cartón para accesorios y bolsas boutique CDMX — CADECA",
+    href:    "/catalogo/cajas-textil-moda-retail/cajas-accesorios-bolsas",
+    specs: [
+      { label: "Pared",      value: "Simple (E)" },
+      { label: "ECT",        value: "ECT-23" },
+      { label: "Flauta",     value: "E (1.5mm)" },
+      { label: "Ideal para", value: "Joyería y accesorios" },
+    ],
+    moq: "300 pzas",
+  },
+  {
+    code:    "CAD-TX-04",
+    badge:   "Retail",
+    badgeColor: "red",
+    featured: false,
+    title:   "Retail Punto de Venta — Display",
+    desc:    "Exhibidores y cajas display de cartón corrugado para punto de venta. Mostrador, floor stand y pallet display. Impresión full color para máximo impacto en tienda.",
+    imgSrc:  "/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif",
+    imgAlt:  "Caja display retail punto de venta cartón corrugado CDMX — CADECA",
+    href:    "/catalogo/cajas-textil-moda-retail/cajas-retail-punto-venta",
+    specs: [
+      { label: "Pared",      value: "Simple / Doble (B/C)" },
+      { label: "ECT",        value: "ECT-32" },
+      { label: "Flauta",     value: "B · C" },
+      { label: "Ideal para", value: "POP y exhibición" },
+    ],
+    moq: "100 pzas",
+  },
+  {
+    code:    "CAD-TX-05",
+    badge:   "E-commerce",
+    badgeColor: "blue",
+    featured: false,
+    title:   "Envío Tienda Online — E-commerce Moda",
+    desc:    "Caja de envío para tiendas online de moda. Compatible con Shopify, TiendaNube y Mercado Libre. Flauta B/C con ECT-32/44 para proteger prendas durante el transporte.",
+    imgSrc:  "/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif",
+    imgAlt:  "Caja envío tienda online e-commerce moda CDMX — CADECA",
+    href:    "/catalogo/cajas-textil-moda-retail/cajas-envio-tienda-online",
+    specs: [
+      { label: "Pared",      value: "Simple / Doble (B/C)" },
+      { label: "ECT",        value: "ECT-32 / ECT-44" },
+      { label: "Flauta",     value: "B · C" },
+      { label: "Peso máx.",  value: "Hasta 15 kg" },
+    ],
+    moq: "50 pzas",
+  },
+];
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><span class="current">Textil, Moda y Retail</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="cat-tx-hub-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">👗 Categoría 08 · 5 productos</span>
+      <h1 id="cat-tx-hub-title" class="cat-page-hero__title">
+        Cajas para Textil, <span>Moda y Retail</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Cajas de cartón especializadas para la industria textil, moda y retail. Calzado, ropa, accesorios, exhibidores POP y envío e-commerce. Impresión personalizada y acabado premium en CDMX.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">Productos: <strong>5</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ desde: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega CDMX: <strong>3-5 días</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 a ECT-44</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-tx-title">
+      <div class="container">
+        <SectionHeader
+          id="prods-tx-title"
+          twoCol
+          title="5 Productos — Textil, Moda y Retail"
+          subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones ECT y condiciones de pedido."
+          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+        >
+          <p>Cajas diseñadas para calzado, prendas de vestir, accesorios de moda, exhibidores punto de venta y envío e-commerce. Cada ficha técnica incluye tabla de medidas, especificaciones de material, resistencia ECT, opciones de impresión y condiciones de pedido.</p>
+        </SectionHeader>
+
+        <div class="sku-grid">
+          {productos.map(p => (
+            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+              <div class="sku-card__img-wrap">
+                <img src={p.imgSrc} alt={p.imgAlt}
+                  class="sku-card__img" width="640" height="480"
+                  loading="lazy" decoding="async" />
+                <span class="sku-card__code">{p.code}</span>
+                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
+              </div>
+              <div class="sku-card__body">
+                <h2 class="sku-card__name">{p.title}</h2>
+                <p class="sku-card__desc">{p.desc}</p>
+                <div class="sku-card__specs">
+                  {p.specs.map(s => (
+                    <div>
+                      <span class="sku-card__spec-label">{s.label}</span>
+                      <span class="sku-card__spec-value">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div class="sku-card__footer">
+                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+                  <span class="sku-card__moq">MOQ: {p.moq}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas cajas para tu marca de moda? Nuestro asesor responde en menos de 2 horas" />
+
+</PageLayout>

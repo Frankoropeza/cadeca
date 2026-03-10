@@ -1,0 +1,231 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title   = "Caja Distribuidora Farmacia Doble/Triple Pared CDMX | CAD-FC-03 | CADECA";
+const description = "Caja corrugado doble y triple pared ECT-44 a ECT-71 para distribución farmacéutica. Heavy-duty, apilable, cadena de frío. Fabricante directo CDMX — CADECA.";
+const WHATSAPP = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Mediana Doble",      lah:"40×30×30",  flauta:"BC",  ect:"ECT-44",vacío:"0.65 kg",máx:"25 kg", disp:"green",  label:"Stock" },
+  { nombre:"Estándar Doble",     lah:"50×40×35",  flauta:"BC",  ect:"ECT-48",vacío:"0.95 kg",máx:"35 kg", disp:"green",  label:"Stock", hl:true },
+  { nombre:"Grande Doble",       lah:"60×40×40",  flauta:"BC",  ect:"ECT-48",vacío:"1.20 kg",máx:"40 kg", disp:"green",  label:"Stock", hl:true },
+  { nombre:"Estándar Triple",    lah:"60×40×40",  flauta:"BCE", ect:"ECT-61",vacío:"1.80 kg",máx:"60 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"Grande Triple",      lah:"70×50×45",  flauta:"BCE", ect:"ECT-71",vacío:"2.40 kg",máx:"80 kg", disp:"yellow", label:"72 hrs" },
+  { nombre:"Pallet Box",         lah:"120×100×80",flauta:"BCE", ect:"ECT-71",vacío:"5.50 kg",máx:"150 kg",disp:"yellow", label:"5 días" },
+  { nombre:"A la Medida",        lah:"Cualquier", flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",            "CAD-FC-03"],
+  ["Tipo de pared",         "Doble pared (BC) · Triple pared (BCE)"],
+  ["Flautas disponibles",   "BC (6.5 mm doble) · BCE (10 mm triple)"],
+  ["Resistencia ECT",       "ECT-44 · ECT-48 · ECT-61 · ECT-71"],
+  ["Gramaje liner exterior","200 – 300 g/m² kraft natural"],
+  ["Gramaje liner interior","175 – 250 g/m² kraft natural"],
+  ["Gramaje médium",        "127 – 175 g/m² semiquímico (por capa)"],
+  ["Material",              "Kraft natural corrugado doble/triple pared"],
+  ["Resistencia al estallido","600 – 1 200 kPa (Mullen)"],
+  ["Resistencia al apilado","BCT 800 – 2 500 kgf (TAPPI T804)"],
+  ["Peso máx. producto",    "Hasta 80 kg (triple pared ECT-71)"],
+  ["Carga de apilado",      "Hasta 5 niveles (condiciones controladas 23°C, 50% HR)"],
+  ["Impresión",             "Flexo 1-3 colores · Marcaje regulatorio · Simbología de manejo"],
+  ["Certificaciones",       "Compatible NOM-072-SSA1 · NOM-059-SSA1 (BPF) · FSC disponible"],
+  ["Resistencia a la humedad","Cobb60: 25 g/m² · Tratamiento WR (water resistant) opcional"],
+  ["Pedido mínimo",         "50 pzas (doble pared) · 30 pzas (triple pared)"],
+  ["Tiempo de entrega",     "48-72 hrs stock · 5-7 días especial"],
+  ["Tolerancia dimensional","± 3 mm en corte · ± 2 mm en scoring"],
+];
+
+const faqs = [
+  {
+    id:"fc03-f1",
+    question:"¿Cuál es la diferencia entre doble pared y triple pared para distribución farmacéutica?",
+    answer:"La <strong>doble pared (flauta BC, 6.5 mm)</strong> tiene dos capas onduladas y tres liners; soporta hasta 40 kg y es ideal para distribución regional de medicamentos. La <strong>triple pared (flauta BCE, 10 mm)</strong> agrega una tercera onda y un cuarto liner, soportando hasta 80 kg; se usa para distribución nacional, exportación o productos pesados como soluciones inyectables en volumen.",
+  },
+  {
+    id:"fc03-f2",
+    question:"¿Las cajas CAD-FC-03 sirven para cadena de frío farmacéutica?",
+    answer:"Sí. Las cajas doble y triple pared funcionan como empaque secundario en cadena de frío (2-8°C). La estructura multicapa actúa como aislante térmico parcial. Para cadena de frío activa, se combinan con insertos de EPS (unicel) o paneles de poliuretano y geles refrigerantes. El tratamiento <strong>WR (water resistant)</strong> opcional evita el deterioro por condensación.",
+  },
+  {
+    id:"fc03-f3",
+    question:"¿Cuántos niveles se pueden apilar en almacén de farmacia?",
+    answer:"Con la <strong>ECT-71 triple pared</strong> y producto de 60 kg por caja, se pueden apilar hasta <strong>5 niveles</strong> bajo condiciones controladas (23°C, 50% HR). En almacenes con humedad superior al 70%, la capacidad se reduce aproximadamente un 30%. Recomendamos siempre usar tarimas y no exceder 3 niveles si no hay control ambiental.",
+  },
+  {
+    id:"fc03-f4",
+    question:"¿Qué simbología de manejo incluyen para distribución de medicamentos?",
+    answer:"Imprimimos todos los <strong>símbolos ISO 780</strong> requeridos: frágil, este lado arriba, proteger de humedad, rango de temperatura, límite de apilamiento y peso bruto/neto. Además, incluimos datos de trazabilidad como lote, fecha de fabricación y código QR para seguimiento. Todo conforme a los lineamientos de COFEPRIS para distribución de medicamentos.",
+  },
+  {
+    id:"fc03-f5",
+    question:"¿Cumplen con las Buenas Prácticas de Fabricación (NOM-059-SSA1)?",
+    answer:"Nuestras cajas están fabricadas en instalaciones que siguen protocolos de higiene compatibles con <strong>NOM-059-SSA1-2015</strong> (Buenas Prácticas de Fabricación). Usamos materiales vírgenes libres de contaminantes, almacenamiento limpio y trazabilidad de lote. Esto es requisito para distribuidoras farmacéuticas que manejan medicamentos controlados.",
+  },
+  {
+    id:"fc03-f6",
+    question:"¿Ofrecen cajas con divisiones internas para frascos y ampollas?",
+    answer:"Sí, fabricamos <strong>divisiones (celdas) de cartón corrugado</strong> insertables que protegen frascos, ampollas y viales individualmente durante el transporte. Las divisiones se diseñan a la medida del producto, evitando contacto entre unidades. Para ampollas de vidrio, ofrecemos divisiones con mayor número de celdas y refuerzo en las esquinas.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Distribuidora Farmacia"}]}
+  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+  product={{name:"Caja Distribuidora Farmacia Doble/Triple Pared",sku:"CAD-FC-03",description:"Caja corrugado doble y triple pared ECT-44 a ECT-71 para distribución farmacéutica en CDMX — fabricante directo CADECA",image:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif",material:"Kraft natural corrugado doble pared BC / triple pared BCE",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"50"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+      <li><span class="current">Distribuidora Farmacia</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-fc03-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-FC-03 · Farmacéutica y Cosmética</span>
+      <h1 id="sku-fc03-title" class="cat-page-hero__title">
+        Caja Distribuidora Farmacia<br><span>Doble / Triple Pared — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Caja corrugado heavy-duty de doble y triple pared para distribución farmacéutica. Resistencia ECT-44 a ECT-71, apilable hasta 5 niveles, compatible con cadena de frío y normativa COFEPRIS. Diseñada para proteger medicamentos en tránsito regional y nacional.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-03</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 a ECT-71</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="sku-detail" aria-labelledby="detalle-fc03-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif"
+                alt="Caja de cartón doble y triple pared para distribución farmacéutica CDMX — CADECA CAD-FC-03"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-FC-03 · Familia: Farmacéutica y Cosmética</p>
+            <h2 id="detalle-fc03-title" class="sku-detail__title">Distribuidora Farmacia — Doble / Triple Pared</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-FC-03 es la solución heavy-duty para distribuidoras farmacéuticas, hospitales y cadenas de farmacias en México. Fabricada en corrugado doble pared (flauta BC, 6.5 mm) y triple pared (flauta BCE, 10 mm), soporta cargas de 25 a 80 kg con capacidad de apilamiento de hasta 5 niveles en almacén controlado. Compatible con cadena de frío, simbología ISO 780 y requisitos de trazabilidad COFEPRIS.
+            </p>
+
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">ECT-44 a ECT-71</span>
+                <span class="sku-detail__strip-label">Resistencia</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">80 kg</span>
+                <span class="sku-detail__strip-label">Peso máx.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">50 pzas</span>
+                <span class="sku-detail__strip-label">Pedido mín.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">48 hrs</span>
+                <span class="sku-detail__strip-label">Entrega CDMX</span>
+              </div>
+            </div>
+
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {specs.map(([label, val]) => (
+                  <tr><td>{label}</td><td>{val}</td></tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-03 Distribuidora Farmacia`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-03</a>
+              <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-fc03-title">
+      <div class="container">
+        <h2 id="sizes-fc03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+          Medidas Disponibles — CAD-FC-03
+        </h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead>
+              <tr>
+                <th>Tamaño</th>
+                <th>L × A × H (cm)</th>
+                <th>Flauta</th>
+                <th>ECT</th>
+                <th>Peso vacío</th>
+                <th>Peso máx.</th>
+                <th>Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td>
+                  <td><strong>{m.lah}</strong></td>
+                  <td>{m.flauta}</td>
+                  <td>{m.ect}</td>
+                  <td>{m.vacío}</td>
+                  <td><strong>{m.máx}</strong></td>
+                  <td>
+                    <span class={`stock-chip stock-chip--${m.disp}`}>
+                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Capacidad de apilado bajo condiciones controladas: 23°C y 50% HR.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-fc03-title">
+      <div class="container">
+        <h2 id="faq-fc03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+          Preguntas Técnicas — CAD-FC-03
+        </h2>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-03 — Cajas distribución farmacéutica con entrega en CDMX" />
+
+</PageLayout>

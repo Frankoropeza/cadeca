@@ -1,0 +1,231 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title   = "Cajas Display Punto de Venta PDV Retail CDMX | CAD-TX-04 | CADECA";
+const description = "Cajas display y punto de venta (PDV) en cartón corrugado para retail, tiendas departamentales y autoservicio en CDMX. Floor display, counter display y exhibidores de anaquel. Fabricante directo CADECA.";
+const WHATSAPP = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Counter Display Chico",  lah:"25×20×30",  flauta:"B",ect:"ECT-32",vacío:"0.18 kg",máx:"3 kg",  disp:"green",  label:"Stock" },
+  { nombre:"Counter Display Grande", lah:"40×25×35",  flauta:"B",ect:"ECT-32",vacío:"0.28 kg",máx:"5 kg",  disp:"green",  label:"Stock", hl:true },
+  { nombre:"Shelf Display",          lah:"35×22×15",  flauta:"E",ect:"ECT-23",vacío:"0.12 kg",máx:"2 kg",  disp:"green",  label:"Stock" },
+  { nombre:"Floor Display Medio",    lah:"40×35×120", flauta:"BC",ect:"ECT-44",vacío:"1.2 kg",máx:"15 kg", disp:"yellow", label:"48 hrs", hl:true },
+  { nombre:"Floor Display Grande",   lah:"50×40×150", flauta:"BC",ect:"ECT-48",vacío:"1.8 kg",máx:"25 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"Sidekick / Lateral",     lah:"30×15×90",  flauta:"B",ect:"ECT-32",vacío:"0.5 kg",máx:"8 kg",   disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",            lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",              "CAD-TX-04"],
+  ["Tipo de producto",        "Display y exhibidor punto de venta (PDV)"],
+  ["Tipo de pared",           "Simple (flauta B/E) · Doble (flauta BC)"],
+  ["Flautas disponibles",     "E (1.5 mm) · B (3 mm) · BC (6 mm)"],
+  ["Resistencia ECT",         "ECT-23 · ECT-32 · ECT-44 · ECT-48"],
+  ["Gramaje liner",           "150 – 250 g/m²"],
+  ["Gramaje médium",          "112 – 150 g/m²"],
+  ["Material",                "Kraft liner blanco · SBS recubierto · Corrugado reciclado"],
+  ["Impresión",               "Full color CMYK offset · Flexografía hasta 6 tintas"],
+  ["Acabado",                 "Barniz UV total · UV selectivo · Laminado mate/brillante"],
+  ["Montaje",                 "Sin herramientas — armado en menos de 60 segundos"],
+  ["Resistencia al estallido","350 kPa (Mullen) — floor display BC"],
+  ["Resistencia a la humedad","Cobb60: 30 g/m² (con laminado)"],
+  ["Peso máx. producto",      "Hasta 25 kg (floor display BC)"],
+  ["Carga de apilado",        "Hasta 60 kg (floor display condiciones ideales)"],
+  ["Certificación",           "FSC disponible · Tintas base agua · 100 % reciclable"],
+  ["Pedido mínimo",           "50 pzas"],
+  ["Tiempo de entrega",       "48-72 hrs (CDMX y área metropolitana)"],
+];
+
+const faqs = [
+  {
+    id:"tx04-f1",
+    question:"¿Qué tipo de display es mejor para mostrador de tienda?",
+    answer:"Para mostrador recomendamos el <strong>counter display de 40×25×35 cm</strong> con flauta B y ECT-32. Su diseño compacto permite colocarse junto a la caja registradora sin obstruir la operación. Soporta hasta 5 kg de producto y su impresión full color CMYK atrae la compra por impulso. Incluye troquel de exhibición frontal.",
+  },
+  {
+    id:"tx04-f2",
+    question:"¿Los floor displays se arman sin herramientas?",
+    answer:"Sí, todos nuestros <strong>floor displays se arman sin herramientas en menos de 60 segundos</strong>. Utilizan sistema de lengüetas y ranuras presuajadas que encajan a presión. Incluimos instrucciones impresas en la base del display. Son ideales para campañas temporales en tiendas de autoservicio y departamentales donde el personal de piso necesita montaje rápido.",
+  },
+  {
+    id:"tx04-f3",
+    question:"¿Pueden imprimir mi marca en full color con acabados premium?",
+    answer:"Sí, ofrecemos <strong>impresión offset CMYK full color</strong> con resolución de hasta 300 dpi. Además puedes agregar acabados premium como barniz UV selectivo para resaltar tu logotipo, laminado mate para textura sofisticada, o barniz UV total para máxima protección y brillo. El arte final y prueba digital 3D se incluyen sin costo adicional.",
+  },
+  {
+    id:"tx04-f4",
+    question:"¿Cuánto dura un display de cartón en tienda?",
+    answer:"Un display de cartón corrugado CADECA tiene una <strong>vida útil de 3 a 6 meses</strong> en condiciones normales de tienda (ambiente seco, sin contacto con agua). Con laminado protector, la vida útil puede extenderse hasta 12 meses. Para campañas de temporada (Buen Fin, Navidad, regreso a clases), un display sin laminado es suficiente y más económico.",
+  },
+  {
+    id:"tx04-f5",
+    question:"¿Ofrecen diseño estructural del display o solo impresión?",
+    answer:"Ofrecemos el <strong>servicio integral: diseño estructural + diseño gráfico + producción</strong>. Nuestro equipo de ingeniería desarrolla la estructura del display considerando el peso del producto, número de charolas, ángulo de visibilidad y estabilidad. Entregamos prototipo físico para aprobación antes de la producción en volumen.",
+  },
+  {
+    id:"tx04-f6",
+    question:"¿Cuál es el pedido mínimo para displays personalizados?",
+    answer:"El <strong>pedido mínimo es de 50 piezas</strong> para displays personalizados con impresión full color. Para tirajes mayores a 500 pzas, ofrecemos descuento por volumen escalonado. Incluimos troquel, suaje, diseño gráfico y prototipo sin costo adicional. Contacta a tu asesor CADECA para cotización según tu proyecto específico.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Display y Punto de Venta"}]}
+  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+  product={{name:"Cajas Display y Punto de Venta PDV",sku:"CAD-TX-04",description:"Cajas display y exhibidores punto de venta en cartón corrugado CDMX — fabricante directo CADECA",image:"/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif",material:"Cartón corrugado flauta B/E/BC con impresión full color",category:"Cajas Textil, Moda y Retail",moq:"50"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+      <li><span class="current">Display y Punto de Venta</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-tx04-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-TX-04 · Textil, Moda y Retail</span>
+      <h1 id="sku-tx04-title" class="cat-page-hero__title">
+        Cajas Display y Punto de Venta<br><span>Exhibidores PDV — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Exhibidores y displays de cartón corrugado para punto de venta: floor display, counter display, shelf display y sidekick. Impresión full color CMYK, armado sin herramientas y entrega en CDMX en 48-72 hrs.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-04</strong></div>
+        <div class="cat-page-hero__strip-item">Impresión: <strong>Full Color CMYK</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="sku-detail" aria-labelledby="detalle-tx04-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif"
+                alt="Cajas display punto de venta PDV cartón corrugado CDMX — CADECA CAD-TX-04"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-TX-04 · Familia: Textil, Moda y Retail</p>
+            <h2 id="detalle-tx04-title" class="sku-detail__title">Display y Punto de Venta — Exhibidores PDV</h2>
+            <p class="sku-detail__desc">
+              Los displays CAD-TX-04 están diseñados para maximizar la visibilidad de tu producto en punto de venta. Fabricados en cartón corrugado de alta resistencia con flauta B, E o doble pared BC, soportan desde 2 hasta 25 kg según el modelo. Su sistema de armado sin herramientas permite instalación inmediata por el personal de tienda. Impresión offset full color CMYK con acabados premium disponibles.
+            </p>
+
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">Full Color</span>
+                <span class="sku-detail__strip-label">Impresión CMYK</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">25 kg</span>
+                <span class="sku-detail__strip-label">Peso máx.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">50 pzas</span>
+                <span class="sku-detail__strip-label">Pedido mín.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">48-72 hrs</span>
+                <span class="sku-detail__strip-label">Entrega CDMX</span>
+              </div>
+            </div>
+
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {specs.map(([label, val]) => (
+                  <tr><td>{label}</td><td>{val}</td></tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-04 Display Punto de Venta`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-04</a>
+              <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-tx04-title">
+      <div class="container">
+        <h2 id="sizes-tx04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+          Medidas Disponibles — CAD-TX-04
+        </h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead>
+              <tr>
+                <th>Tamaño</th>
+                <th>L × A × H (cm)</th>
+                <th>Flauta</th>
+                <th>ECT</th>
+                <th>Peso vacío</th>
+                <th>Peso máx.</th>
+                <th>Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td>
+                  <td><strong>{m.lah}</strong></td>
+                  <td>{m.flauta}</td>
+                  <td>{m.ect}</td>
+                  <td>{m.vacío}</td>
+                  <td><strong>{m.máx}</strong></td>
+                  <td>
+                    <span class={`stock-chip stock-chip--${m.disp}`}>
+                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-tx04-title">
+      <div class="container">
+        <h2 id="faq-tx04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+          Preguntas Técnicas — CAD-TX-04
+        </h2>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-04 — Displays y exhibidores punto de venta" />
+
+</PageLayout>

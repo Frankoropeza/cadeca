@@ -1,0 +1,138 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title       = "Caja Mudanza Corporativa con Asas | CAD-AH-05 | CADECA";
+const description = "Caja de mudanza corporativa con asas troqueladas reforzadas. Doble pared flauta BC, ECT-44. Soporta 25-30 kg. Fácil armado y apilamiento. Entrega CDMX 24-48 hrs.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Chica (Libros)",      lah:"35 × 28 × 30",  flauta:"BC",  ect:"ECT-44", vacío:"0.72 kg", máx:"25 kg", disp:"green",  label:"Stock" },
+  { nombre:"Mediana (Oficina)",   lah:"45 × 35 × 35",  flauta:"BC",  ect:"ECT-44", vacío:"0.98 kg", máx:"25 kg", disp:"green",  label:"Stock", hl:true },
+  { nombre:"Grande (Archivos)",   lah:"55 × 40 × 40",  flauta:"BC",  ect:"ECT-44", vacío:"1.35 kg", máx:"30 kg", disp:"green",  label:"Stock" },
+  { nombre:"XL (Equipo)",        lah:"65 × 45 × 45",  flauta:"BC",  ect:"ECT-44", vacío:"1.70 kg", máx:"30 kg", disp:"yellow", label:"3-5 días" },
+  { nombre:"Wardrobe (Closet)",   lah:"50 × 45 × 100", flauta:"BC",  ect:"ECT-44", vacío:"2.80 kg", máx:"20 kg", disp:"yellow", label:"3-5 días" },
+  { nombre:"Monitores/Pantallas", lah:"70 × 20 × 55",  flauta:"BC",  ect:"ECT-44", vacío:"1.40 kg", máx:"20 kg", disp:"yellow", label:"3-5 días" },
+  { nombre:"A la Medida",        lah:"Cualquier",      flauta:"A elegir", ect:"A elegir", vacío:"—", máx:"—", disp:"gray", label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",             "CAD-AH-05"],
+  ["Tipo de caja",           "Mudanza corporativa con asas"],
+  ["Construcción",           "Doble pared (2 flautas + 3 liners)"],
+  ["Tipo de flauta",         "BC (B 2.5 mm + C 4.0 mm = 6.5 mm)"],
+  ["Resistencia ECT",        "ECT-44 lb/pulg"],
+  ["Gramaje liner exterior", "170 g/m² kraft"],
+  ["Gramaje liner interior", "170 g/m² kraft"],
+  ["Gramaje médium",         "150 g/m² (doble capa)"],
+  ["Material",               "Kraft corrugado doble pared"],
+  ["Color exterior",         "Kraft natural"],
+  ["Asas",                   "Troqueladas reforzadas con doble pestaña (4 pzas)"],
+  ["Cierre",                 "Solapas RSC con interlock"],
+  ["Armado",                 "Fácil armado sin pegamento ni cinta (auto-lock)"],
+  ["Peso máximo soportado",  "25 – 30 kg según medida"],
+  ["Apilamiento máximo",     "5 niveles cargadas"],
+  ["Resistencia a compresión (BCT)", "≥ 450 kgf"],
+  ["Área de etiquetado",     "Zona impresa para identificación por área"],
+  ["Pedido mínimo",          "Sin mínimo"],
+  ["Entrega CDMX",           "24 – 48 horas hábiles"],
+  ["Reutilización estimada", "3 – 5 usos con manejo adecuado"],
+];
+
+const faqs = [
+  { id:"ah05-f1", question:"¿Cuánto peso soportan las asas de la caja de mudanza CAD-AH-05?", answer:"Las asas troqueladas reforzadas con doble pestaña soportan hasta 30 kg de carga sin desgarre. Están diseñadas con un corte ergonómico que distribuye el peso en una superficie mayor de la mano, reduciendo la fatiga durante la carga y descarga. Para cargas superiores a 25 kg, recomendamos que dos personas manipulen la caja." },
+  { id:"ah05-f2", question:"¿Las cajas de mudanza corporativa son reutilizables?", answer:"Sí. La construcción doble pared BC con ECT-44 permite entre 3 y 5 usos con manejo adecuado. Para maximizar la vida útil, recomendamos armar y desarmar las cajas siguiendo las líneas de doblez, evitar exposición a lluvia directa y almacenar desarmadas en posición vertical cuando no estén en uso." },
+  { id:"ah05-f3", question:"¿Cómo organizo las cajas por zona o departamento durante la mudanza?", answer:"Cada caja CAD-AH-05 incluye una zona impresa lateral para identificación. Recomendamos un sistema de etiquetas por colores: rojo para dirección, azul para administración, verde para operaciones, amarillo para TI y naranja para áreas comunes. También puede numerar cada caja y llevar un inventario en hoja de cálculo con el contenido." },
+  { id:"ah05-f4", question:"¿Las cajas se apilan de forma segura durante el transporte?", answer:"Sí. Las cajas CAD-AH-05 permiten apilamiento de hasta 5 niveles con carga completa. Las solapas RSC con interlock proporcionan una superficie plana superior que facilita el apilamiento estable. En el camión de mudanza, recomendamos colocar las cajas más pesadas en la base y asegurar con cinchos o flejes." },
+  { id:"ah05-f5", question:"¿Ofrecen cajas especiales para monitores y equipo de cómputo?", answer:"Sí. La medida Monitores/Pantallas (70 × 20 × 55 cm) está diseñada para monitores de 24 a 32 pulgadas. Para servidores, CPU y equipo de cómputo, recomendamos la medida Mediana o Grande con divisiones internas de cartón corrugado adicionales para amortiguación. También fabricamos insertos a la medida para equipo delicado." },
+  { id:"ah05-f6", question:"¿Cuál es el tiempo de entrega para una mudanza corporativa urgente?", answer:"Para presentaciones en stock (Chica, Mediana y Grande), la entrega es de 24 a 48 horas hábiles en toda la zona metropolitana de la CDMX. Para pedidos urgentes el mismo día, consulte disponibilidad por WhatsApp. Las medidas especiales (XL, Wardrobe, Monitores) requieren 3 a 5 días hábiles de producción." },
+];
+---
+
+<PageLayout
+  title={title} description={description} whatsapp={WHATSAPP} pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Mudanza Corporativa"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja Mudanza Corporativa con Asas", sku:"CAD-AH-05", description:"Caja de mudanza corporativa con asas troqueladas reforzadas, doble pared flauta BC, ECT-44.", image:"/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", material:"Cartón kraft corrugado doble pared BC", category:"Archivo y Almacenaje", moq:"1"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+        <li><span class="current">Mudanza Corporativa</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-ah05-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AH-05 · Archivo y Almacenaje</span>
+      <h1 id="sku-ah05-title" class="cat-page-hero__title">Caja Mudanza Corporativa con Asas<br><span>Doble Pared BC ECT-44 — CDMX</span></h1>
+      <p class="cat-page-hero__desc">Cajas de mudanza corporativa con asas troqueladas reforzadas de doble pestaña. Cartón corrugado doble pared flauta BC con resistencia ECT-44. Diseñadas para mudanzas de oficinas, reubicaciones corporativas y traslado de archivos con sistema de fácil armado sin pegamento.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-05</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-ah05-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif" alt="Caja de mudanza corporativa CAD-AH-05 con asas troqueladas reforzadas en cartón doble pared" class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AH-05 · Familia: Archivo y Almacenaje</p>
+            <h2 id="detalle-ah05-title" class="sku-detail__title">Mudanza Corporativa con Asas — Doble Pared BC</h2>
+            <p class="sku-detail__desc">Caja de mudanza corporativa fabricada en cartón kraft corrugado doble pared con flauta BC (6.5 mm de espesor). Resistencia ECT-44 lb/pulg y BCT superior a 450 kgf. Cuenta con 4 asas troqueladas reforzadas con doble pestaña ergonómica que soportan hasta 30 kg sin desgarre. Sistema de armado auto-lock que no requiere pegamento ni cinta adhesiva. Disponible en 6 tamaños: desde Chica para libros (35 × 28 × 30 cm) hasta Wardrobe para ropa en gancho (50 × 45 × 100 cm). Incluye zona impresa lateral para identificación por área o departamento. Reutilizable de 3 a 5 veces con manejo adecuado.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 – 30 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5 niveles</span><span class="sku-detail__strip-label">Apilamiento</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">BC 6.5 mm</span><span class="sku-detail__strip-label">Corrugado</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>{specs.map(([label, val]) => (<tr><td>{label}</td><td>{val}</td></tr>))}</tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-05 Mudanza Corporativa con Asas`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-05</a>
+              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">&larr; Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-ah05-title">
+      <div class="container">
+        <h2 id="sizes-ah05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-AH-05</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Tamaño</th><th>L × A × H (cm)</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>{medidas.map(m => (<tr class={m.hl ? "highlight" : ""}><td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td><td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}</span></td></tr>))}</tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-ah05-sku-title">
+      <div class="container">
+        <h2 id="faq-ah05-sku-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AH-05</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-05 — Mudanza Corporativa con Asas" />
+
+</PageLayout>

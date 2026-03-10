@@ -1,0 +1,137 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title       = "Caja Archivo Muerto Tamaño Oficio | CAD-AH-01 | CADECA";
+const description = "Caja de archivo muerto tamaño oficio 35×24×28 cm en cartón kraft flauta C. Tapa integrada, asas troqueladas, apilable 5 niveles. Entrega en CDMX 24-48 hrs. Cotiza sin mínimo.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Oficio Estándar",    lah:"35 × 24 × 28",  flauta:"C",   ect:"ECT-32", vacío:"0.48 kg", máx:"15 kg", disp:"green",  label:"Stock" },
+  { nombre:"Oficio Reforzado",   lah:"35 × 24 × 28",  flauta:"BC",  ect:"ECT-44", vacío:"0.62 kg", máx:"20 kg", disp:"green",  label:"Stock" },
+  { nombre:"Oficio con Tapa",    lah:"36 × 25 × 30",  flauta:"C",   ect:"ECT-32", vacío:"0.55 kg", máx:"15 kg", disp:"green",  label:"Stock" },
+  { nombre:"Doble Oficio",       lah:"42 × 32 × 30",  flauta:"C",   ect:"ECT-32", vacío:"0.68 kg", máx:"18 kg", disp:"yellow", label:"3-5 días" },
+  { nombre:"Oficio Largo",       lah:"50 × 24 × 28",  flauta:"C",   ect:"ECT-32", vacío:"0.58 kg", máx:"15 kg", disp:"yellow", label:"3-5 días" },
+  { nombre:"Oficio Compacto",    lah:"30 × 22 × 25",  flauta:"B",   ect:"ECT-23", vacío:"0.35 kg", máx:"10 kg", disp:"green",  label:"Stock" },
+  { nombre:"A la Medida",        lah:"Cualquier",      flauta:"A elegir", ect:"A elegir", vacío:"—", máx:"—", disp:"gray", label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",             "CAD-AH-01"],
+  ["Tipo de caja",           "Archivo muerto"],
+  ["Tamaño",                 "Oficio (35 × 24 × 28 cm)"],
+  ["Tipo de flauta",         "C (4.0 mm)"],
+  ["Resistencia ECT",        "ECT-32 lb/pulg"],
+  ["Gramaje liner exterior", "170 g/m²"],
+  ["Gramaje liner interior", "127 g/m²"],
+  ["Gramaje médium",         "127 g/m²"],
+  ["Material",               "Kraft corrugado pared sencilla"],
+  ["Color exterior",         "Kraft natural"],
+  ["Tapa",                   "Integrada con solapa de cierre"],
+  ["Asas",                   "Troqueladas laterales (2 pzas)"],
+  ["Peso vacío",             "0.48 kg"],
+  ["Peso máximo soportado",  "15 kg"],
+  ["Apilamiento máximo",     "5 niveles cargadas"],
+  ["Resistencia a compresión (BCT)", "≥ 180 kgf"],
+  ["Pedido mínimo",          "Sin mínimo"],
+  ["Entrega CDMX",           "24 – 48 horas hábiles"],
+  ["Certificación",          "Cumple NOM-EE-148 (embalaje)"],
+];
+
+const faqs = [
+  { id:"ah01-f1", question:"¿Cuánto peso soporta la caja de archivo muerto oficio CAD-AH-01?", answer:"La caja CAD-AH-01 soporta hasta 15 kg de contenido en su versión estándar (flauta C, ECT-32). Si almacena expedientes legales pesados, la versión reforzada con flauta BC y ECT-44 soporta hasta 20 kg." },
+  { id:"ah01-f2", question:"¿Puedo almacenar documentos legales y fiscales en estas cajas?", answer:"Sí. La caja de archivo muerto oficio está diseñada para almacenar documentos tamaño oficio, expedientes legales, facturas y comprobantes fiscales. El cartón kraft libre de ácido protege el papel de la degradación durante los 5 años que exige el SAT para conservación de documentos contables." },
+  { id:"ah01-f3", question:"¿Cuántas cajas se pueden apilar sin que se aplasten?", answer:"Se pueden apilar hasta 5 niveles con carga completa (15 kg cada una). Para mayor seguridad, recomendamos apilar sobre tarimas o racks en bodegas con humedad controlada menor al 65 % de humedad relativa." },
+  { id:"ah01-f4", question:"¿Cómo protejo los documentos de la humedad dentro de la caja?", answer:"Recomendamos almacenar en espacios con humedad relativa menor al 65 %. Para protección adicional, puede utilizar bolsas de gel de sílice dentro de la caja. El cartón kraft tiene buena absorción pero en ambientes muy húmedos considere la versión con tratamiento hidrorrepelente." },
+  { id:"ah01-f5", question:"¿Las cajas incluyen espacio para etiqueta de identificación?", answer:"Sí. Las cajas cuentan con un área lisa frontal de 15 × 8 cm diseñada para colocar etiquetas de identificación. También puede escribir directamente sobre el cartón kraft con marcador permanente para facilitar la localización de expedientes." },
+  { id:"ah01-f6", question:"¿Cuál es el tiempo de entrega en la Ciudad de México?", answer:"Manejamos entrega de 24 a 48 horas hábiles en toda la zona metropolitana de la Ciudad de México para presentaciones en stock. Pedidos a la medida o volúmenes mayores a 500 piezas se entregan en 3 a 5 días hábiles." },
+];
+---
+
+<PageLayout
+  title={title} description={description} whatsapp={WHATSAPP} pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Archivo Muerto Oficio"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja Archivo Muerto Tamaño Oficio", sku:"CAD-AH-01", description:"Caja de archivo muerto tamaño oficio 35×24×28 cm, cartón kraft flauta C, tapa integrada y asas troqueladas.", image:"/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif", material:"Cartón kraft corrugado flauta C", category:"Archivo y Almacenaje", moq:"1"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+        <li><span class="current">Archivo Muerto Oficio</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-ah01-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AH-01 · Archivo y Almacenaje</span>
+      <h1 id="sku-ah01-title" class="cat-page-hero__title">Caja Archivo Muerto Tamaño Oficio<br><span>Kraft Flauta C — CDMX</span></h1>
+      <p class="cat-page-hero__desc">Caja de archivo muerto diseñada para documentos tamaño oficio. Cartón kraft corrugado con tapa integrada y asas troqueladas. Ideal para resguardo fiscal, legal y administrativo con apilamiento seguro hasta 5 niveles.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-01</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-ah01-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif" alt="Caja de archivo muerto tamaño oficio CAD-AH-01 en cartón kraft corrugado con tapa integrada y asas troqueladas" class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AH-01 · Familia: Archivo y Almacenaje</p>
+            <h2 id="detalle-ah01-title" class="sku-detail__title">Archivo Muerto Oficio — Kraft Flauta C</h2>
+            <p class="sku-detail__desc">Caja de archivo muerto fabricada en cartón kraft corrugado de pared sencilla con flauta C (4.0 mm). Medida estándar 35 × 24 × 28 cm, diseñada para expedientes y folders tamaño oficio. Cuenta con tapa integrada tipo solapa y dos asas troqueladas laterales que facilitan el manejo. Resistencia ECT-32 lb/pulg, soporta hasta 15 kg de contenido y permite apilamiento de 5 niveles. Ideal para archivos contables, fiscales y legales en oficinas, despachos y bodegas de la CDMX.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">15 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5 niveles</span><span class="sku-detail__strip-label">Apilamiento</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flauta C</span><span class="sku-detail__strip-label">Corrugado</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>{specs.map(([label, val]) => (<tr><td>{label}</td><td>{val}</td></tr>))}</tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-01 Archivo Muerto Oficio`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-01</a>
+              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">&larr; Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-ah01-title">
+      <div class="container">
+        <h2 id="sizes-ah01-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-AH-01</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Tamaño</th><th>L × A × H (cm)</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>{medidas.map(m => (<tr class={m.hl ? "highlight" : ""}><td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td><td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}</span></td></tr>))}</tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-ah01-sku-title">
+      <div class="container">
+        <h2 id="faq-ah01-sku-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AH-01</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-01 — Archivo Muerto Oficio en Cartón Kraft" />
+
+</PageLayout>

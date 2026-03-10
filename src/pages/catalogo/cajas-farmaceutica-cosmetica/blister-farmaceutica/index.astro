@@ -1,0 +1,227 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title   = "Caja Blíster Farmacéutica Flauta E CDMX | CAD-FC-01 | CADECA";
+const description = "Caja corrugado flauta E para blíster farmacéutico en CDMX. ECT-23, impresión regulatoria NOM-072, medidas estándar y a la medida. Fabricante directo CADECA.";
+const WHATSAPP = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Unitario Chico",  lah:"12×8×4",  flauta:"E",ect:"ECT-23",vacío:"0.04 kg",máx:"0.5 kg", disp:"green",  label:"Stock" },
+  { nombre:"Unitario Mediano",lah:"15×10×5", flauta:"E",ect:"ECT-23",vacío:"0.06 kg",máx:"1 kg",  disp:"green",  label:"Stock", hl:true },
+  { nombre:"Display 6 pzas", lah:"25×15×10", flauta:"E",ect:"ECT-23",vacío:"0.10 kg",máx:"2 kg",  disp:"green",  label:"Stock", hl:true },
+  { nombre:"Display 12 pzas",lah:"30×20×12", flauta:"B",ect:"ECT-32",vacío:"0.18 kg",máx:"3 kg",  disp:"yellow", label:"48 hrs" },
+  { nombre:"Master 24 pzas", lah:"40×30×20", flauta:"B",ect:"ECT-32",vacío:"0.35 kg",máx:"5 kg",  disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",    lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",          "CAD-FC-01"],
+  ["Tipo de pared",       "Simple (flauta E micro)"],
+  ["Flautas disponibles", "E (1.5mm) · B (3mm)"],
+  ["Resistencia ECT",     "ECT-23 · ECT-32"],
+  ["Gramaje liner",       "127 – 150 g/m²"],
+  ["Gramaje médium",      "112 – 127 g/m²"],
+  ["Material",            "Kraft blanqueado SBS · Cartón compacto"],
+  ["Resistencia al estallido", "250 kPa (Mullen)"],
+  ["Resistencia a la humedad", "Cobb60: 30 g/m² (estándar)"],
+  ["Peso máx. producto",  "Hasta 3 kg (ECT-32, flauta B)"],
+  ["Carga de apilado",    "Hasta 50 kg (condiciones ideales)"],
+  ["Impresión",           "Flexo 1-4 colores · Offset · Datos regulatorios NOM-072"],
+  ["Certificación",       "NOM-072-SSA1 compatible · FSC disponible"],
+  ["Pedido mínimo",       "200 pzas (producción)"],
+  ["Tiempo de entrega",   "48-72 hrs stock · 5-7 días especial"],
+];
+
+const faqs = [
+  {
+    id:"fc01-f1",
+    question:"¿Qué norma mexicana aplica para empaques de medicamentos?",
+    answer:"La <strong>NOM-072-SSA1-2012</strong> establece los requisitos de etiquetado de medicamentos en México. Las cajas deben incluir nombre genérico, denominación distintiva, forma farmacéutica, cantidad, lote, caducidad y datos del fabricante. Nuestras cajas CAD-FC-01 están diseñadas con áreas de impresión específicas para cumplir con todos estos requisitos regulatorios.",
+  },
+  {
+    id:"fc01-f2",
+    question:"¿Por qué la flauta E es ideal para empaques farmacéuticos?",
+    answer:"La <strong>flauta E (1.5mm)</strong> ofrece la mejor superficie de impresión de todas las flautas, permitiendo textos legales de 6pt legibles y códigos de barras de alta resolución. Su bajo perfil permite cajas compactas que optimizan el espacio en anaquel de farmacia. Además, su rigidez es suficiente para proteger blísteres y frascos ligeros.",
+  },
+  {
+    id:"fc01-f3",
+    question:"¿Pueden imprimir código de barras y código QR para trazabilidad?",
+    answer:"Sí, imprimimos <strong>códigos de barras EAN-13, UPC-A, DataMatrix y QR</strong> con calidad verificable ISO/IEC 15416. La flauta E permite resolución suficiente para escaneo confiable en punto de venta y centros de distribución. Incluimos prueba de lectura en cada lote de producción.",
+  },
+  {
+    id:"fc01-f4",
+    question:"¿Ofrecen cajas con sello de seguridad para farmacéutica?",
+    answer:"Sí, disponemos de <strong>sellos de seguridad troquelados</strong> tipo pestaña rompible que evidencian apertura. También ofrecemos etiquetas holográficas y cintas de seguridad como complemento. El diseño del sello se integra al troquel de la caja sin costo adicional.",
+  },
+  {
+    id:"fc01-f5",
+    question:"¿Cuál es la diferencia entre caja unitaria y caja display?",
+    answer:"La <strong>caja unitaria</strong> contiene un solo producto (blíster o frasco) y va al anaquel de farmacia. La <strong>caja display</strong> contiene 6 o 12 unidades y se coloca completa en mostrador o exhibidor. Fabricamos ambas con el mismo diseño gráfico para coherencia de marca.",
+  },
+  {
+    id:"fc01-f6",
+    question:"¿Qué materiales usan para contacto indirecto con medicamentos?",
+    answer:"Usamos <strong>cartón SBS (Solid Bleached Sulfate)</strong> blanqueado sin cloro elemental, con tintas base agua libres de metales pesados. Para contacto indirecto (el medicamento va en blíster dentro de la caja), estos materiales cumplen con las regulaciones de COFEPRIS y FDA para empaque secundario farmacéutico.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Blíster Farmacéutica"}]}
+  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+  product={{name:"Caja Blíster Farmacéutica Flauta E",sku:"CAD-FC-01",description:"Caja corrugado flauta E para blíster farmacéutico en CDMX — fabricante directo CADECA",image:"/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",material:"Cartón SBS blanqueado flauta E ECT-23",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"200"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+      <li><span class="current">Blíster Farmacéutica</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-fc01-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-FC-01 · Farmacéutica y Cosmética</span>
+      <h1 id="sku-fc01-title" class="cat-page-hero__title">
+        Caja Blíster Farmacéutica<br><span>Flauta E — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Caja corrugado micro flauta E diseñada para blísteres de medicamentos. Superficie de impresión de alta calidad para cumplir con requisitos regulatorios NOM-072. Troquelado de precisión con sello de seguridad opcional.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-01</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="sku-detail" aria-labelledby="detalle-fc01-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif"
+                alt="Caja de cartón para blíster farmacéutica flauta E CDMX — CADECA CAD-FC-01"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-FC-01 · Familia: Farmacéutica y Cosmética</p>
+            <h2 id="detalle-fc01-title" class="sku-detail__title">Blíster Farmacéutica — Flauta E</h2>
+            <p class="sku-detail__desc">
+              La caja para blíster farmacéutico CAD-FC-01 está diseñada específicamente para la industria farmacéutica mexicana. Fabricada en cartón SBS blanqueado con flauta E de 1.5mm, ofrece la mejor superficie de impresión para textos regulatorios, códigos de barras y diseño de marca. Compatible con líneas de empaque semiautomáticas y manuales.
+            </p>
+
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">ECT-23</span>
+                <span class="sku-detail__strip-label">Resistencia estándar</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">3 kg</span>
+                <span class="sku-detail__strip-label">Peso máx.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">200 pzas</span>
+                <span class="sku-detail__strip-label">Pedido mín.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">48 hrs</span>
+                <span class="sku-detail__strip-label">Entrega CDMX</span>
+              </div>
+            </div>
+
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {specs.map(([label, val]) => (
+                  <tr><td>{label}</td><td>{val}</td></tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-01 Blíster Farmacéutica`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-01</a>
+              <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-fc01-title">
+      <div class="container">
+        <h2 id="sizes-fc01-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+          Medidas Disponibles — CAD-FC-01
+        </h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead>
+              <tr>
+                <th>Tamaño</th>
+                <th>L × A × H (cm)</th>
+                <th>Flauta</th>
+                <th>ECT</th>
+                <th>Peso vacío</th>
+                <th>Peso máx.</th>
+                <th>Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td>
+                  <td><strong>{m.lah}</strong></td>
+                  <td>{m.flauta}</td>
+                  <td>{m.ect}</td>
+                  <td>{m.vacío}</td>
+                  <td><strong>{m.máx}</strong></td>
+                  <td>
+                    <span class={`stock-chip stock-chip--${m.disp}`}>
+                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-fc01-title">
+      <div class="container">
+        <h2 id="faq-fc01-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+          Preguntas Técnicas — CAD-FC-01
+        </h2>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-01 — Empaques farmacéuticos con entrega en CDMX" />
+
+</PageLayout>

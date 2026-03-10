@@ -1,0 +1,65 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const title       = "Cajas de Cartón para Archivo y Almacenaje CDMX | CADECA";
+const description = "Cajas de cartón para archivo muerto oficio y carta, almacenaje industrial y mudanza corporativa en CDMX. Doble y triple pared, apilables hasta 120 kg. Entrega 24-48 hrs.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const skus = [
+  { sku:"CAD-AH-01", nombre:"Caja Archivo Muerto Tamaño Oficio",    href:"/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",   img:"/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",          moq:"50 pzas",  entrega:"24 hrs", desc:"Tamaño oficio 35×24×28cm. Con y sin tapa. Stock CDMX." },
+  { sku:"CAD-AH-02", nombre:"Caja Almacén Industrial Reforzada",     href:"/catalogo/cajas-archivo-almacenaje/almacen-industrial",      img:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif",       moq:"100 pzas", entrega:"48 hrs", desc:"ECT-51 y ECT-71, apilable hasta 300 kg en tarima." },
+  { sku:"CAD-AH-03", nombre:"Caja Documentos Tamaño Carta",          href:"/catalogo/cajas-archivo-almacenaje/documentos-carta",        img:"/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif",         moq:"50 pzas",  entrega:"24 hrs", desc:"Tamaño carta 28×22×18cm. Ideal para despachos y notarías." },
+  { sku:"CAD-AH-04", nombre:"Caja Apilable Alta Resistencia",        href:"/catalogo/cajas-archivo-almacenaje/apilable-resistente",     img:"/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif",moq:"100 pzas", entrega:"48 hrs", desc:"Triple pared EB ECT-71. Stack de 5 tarimas sin deformación." },
+  { sku:"CAD-AH-05", nombre:"Caja Mudanza y Archivo Ejecutivo",       href:"/catalogo/cajas-archivo-almacenaje/mudanza-archivo",         img:"/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif",        moq:"Sin mín.", entrega:"24 hrs", desc:"Con asas, doble pared BC, para mudanza de oficinas." },
+];
+---
+<PageLayout title={title} description={description} whatsapp={WHATSAPP} pageType="page"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Archivo y Almacenaje"}]}>
+
+  <div class="breadcrumb-bar">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><span class="current">Archivo y Almacenaje</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="cat09-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">Categoría 09 · Corporativo e Institucional</span>
+      <h1 id="cat09-title" class="cat-page-hero__title">Cajas para <span>Archivo y Almacenaje</span></h1>
+      <p class="cat-page-hero__desc">Cajas de cartón para archivo muerto tamaño oficio y carta, almacenaje industrial y mudanza corporativa en CDMX. Corrugado doble y triple pared apilables hasta 300 kg. Para gobierno, despachos, notarías, corporativos e industria.</p>
+    </div>
+  </section>
+
+  <main id="contenido-principal">
+    <section style="padding:var(--spacing-3xl) 0;">
+      <div class="container">
+        <SectionHeader title="5 SKUs para Archivo y Almacenaje Profesional" subtitle="Desde la caja de archivo carta para notarías hasta la caja industrial triple pared para almacenes con 5 tarimas de altura." />
+        <div class="products-grid" style="margin-top:var(--spacing-xl);">
+          {skus.map(s => (
+            <a href={s.href} class="product-card">
+              <div class="product-card__img-wrap">
+                <img src={s.img} alt={s.nombre + " CDMX — CADECA"} class="product-card__img" loading="lazy" width="900" height="560" />
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__sku">{s.sku}</span>
+                <h3 class="product-card__title">{s.nombre}</h3>
+                <p class="product-card__desc">{s.desc}</p>
+                <div class="product-card__meta">
+                  <span>MOQ: {s.moq}</span>
+                  <span>Entrega: {s.entrega}</span>
+                </div>
+                <span class="product-card__cta">Ver ficha técnica →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza cajas para archivo o almacenaje corporativo — respondemos en 1 hora" />
+</PageLayout>
