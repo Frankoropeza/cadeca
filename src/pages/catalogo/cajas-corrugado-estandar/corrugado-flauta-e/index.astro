@@ -1,0 +1,129 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Caja Corrugado Micro Flauta E CDMX | Cosméticos y Joyería | CAD-CE-01 | CADECA";
+const description = "Ficha técnica caja corrugado micro flauta E en CDMX. 1.5mm, ECT-23. Para cosméticos, joyería, suplementos y productos de presentación premium. Desde 100 pzas. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"XS Cosméticos",  lah:"10×8×5",  flauta:"E",ect:"ECT-23",vacío:"0.06 kg",máx:"1 kg",  disp:"yellow",label:"3-5 días" },
+  { nombre:"S Joyería",      lah:"15×10×8", flauta:"E",ect:"ECT-23",vacío:"0.09 kg",máx:"2 kg",  disp:"yellow",label:"3-5 días", hl:true },
+  { nombre:"M Suplementos",  lah:"20×15×10",flauta:"E",ect:"ECT-23",vacío:"0.14 kg",máx:"3 kg",  disp:"yellow",label:"3-5 días", hl:true },
+  { nombre:"L Presentación", lah:"25×20×12",flauta:"E",ect:"ECT-23",vacío:"0.20 kg",máx:"5 kg",  disp:"yellow",label:"3-5 días" },
+  { nombre:"XL Premium",     lah:"30×25×15",flauta:"E",ect:"ECT-23",vacío:"0.28 kg",máx:"5 kg",  disp:"gray",  label:"5-7 días" },
+  { nombre:"A la Medida",    lah:"Cualquier pequeña",flauta:"E",ect:"ECT-23",vacío:"—",máx:"—",disp:"gray",label:"Consultar" },
+];
+
+const specs = [
+  ["Código SKU",           "CAD-CE-01"],
+  ["Tipo de pared",        "Simple (micro)"],
+  ["Flauta",               "E (1.5mm) — microflauta"],
+  ["Resistencia ECT",      "ECT-23"],
+  ["Gramaje liner",        "115 – 135 g/m²"],
+  ["Gramaje médium",       "112 g/m²"],
+  ["Grosor total",         "~2mm (más delgado que flauta B o C)"],
+  ["Material",             "Kraft virgen o kraft blanco coated"],
+  ["Superficie impresión", "Excelente — la mejor en corrugado"],
+  ["Ideal para",           "Cosméticos · Joyería · Suplementos · Lujo"],
+  ["Peso máx. producto",   "Hasta 5 kg"],
+  ["Impresión",            "Offset o digital de alta resolución"],
+  ["Certificación",        "FSC disponible"],
+  ["Pedido mínimo",        "100 piezas"],
+  ["Tiempo de entrega",    "3 a 5 días hábiles"],
+];
+
+const faqs = [
+  {
+    id:"ce-f1",
+    question:"¿Por qué la flauta E tiene mejor calidad de impresión que la B o C?",
+    answer:"La flauta E (1.5mm) produce una superficie más plana y uniforme que las flautas B (3mm) y C (4mm). El corrugado más fino hace que las ondulaciones del médium no se reflejen en la superficie exterior, resultado en una base de impresión casi tan lisa como el cartón sólido. Esto permite impresión offset, digital de alta resolución y detalles finos de logotipo sin el efecto de 'tablero de ajedrez' que aparece en flautas grandes.",
+  },
+  {
+    id:"ce-f2",
+    question:"¿La flauta E tiene menos resistencia que la B o C?",
+    answer:"Sí, la flauta E tiene menor resistencia estructural que las flautas más gruesas. Por eso se recomienda solo para productos ligeros (hasta 5 kg) y es ideal para packaging de presentación donde la imagen es prioritaria sobre la resistencia bruta. Para productos que requieren ambos (buena impresión Y alta resistencia), la flauta B es un buen punto medio. Si el producto pesa más de 5 kg, cambia a corrugado simple flauta C o doble corrugado BC.",
+  },
+];
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+  <section class="cat-page-hero" aria-labelledby="sku-ce-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom:var(--spacing-md)">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
+          <li class="breadcrumb__item"><a href="/catalogo" class="breadcrumb__link">Catálogo</a></li>
+          <li class="breadcrumb__item"><a href="/catalogo/cajas-corrugado-estandar" class="breadcrumb__link">Corrugado Estándar</a></li>
+          <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Corrugado Micro Flauta E</li>
+        </ol>
+      </nav>
+      <span class="cat-page-hero__eyebrow">SKU CAD-CE-01 · Corrugado Estándar</span>
+      <h1 id="sku-ce-title" class="cat-page-hero__title">Corrugado Micro<br><span>Flauta E — Presentación Premium</span></h1>
+      <p class="cat-page-hero__desc">Microflauta E de 1.5mm. La mejor superficie de impresión en cartón corrugado. Para cosméticos, joyería, suplementos y packaging de presentación premium. Desde 100 piezas, entrega 3-5 días.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CE-01</strong></div>
+        <div class="cat-page-hero__strip-item">Flauta: <strong>E (1.5mm)</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-ce-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
+                alt="Caja corrugado micro flauta E para cosméticos y joyería en CDMX — CADECA CAD-CE-01"
+                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-CE-01 · Familia: Corrugado Estándar</p>
+            <h2 id="detalle-ce-title" class="sku-detail__title">Corrugado Micro — Flauta E (1.5mm)</h2>
+            <p class="sku-detail__desc">La microflauta E produce la superficie de impresión más lisa del cartón corrugado — comparable al cartón sólido. Ideal para marcas que necesitan alta calidad visual con la resistencia y sustentabilidad del corrugado. Perfecta para cosméticos, joyería, suplementos y cualquier producto de presentación premium donde el packaging forma parte de la experiencia de marca.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flauta E</span><span class="sku-detail__strip-label">Microflauta 1.5mm</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Producción</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([label, val]) => <tr><td>{label}</td><td>{val}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CE-01 Corrugado Flauta E`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CE-01</a>
+              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-ce-title">
+      <div class="container">
+        <h2 id="sizes-ce-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-CE-01</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Talla</th><th>L × A × H (cm)</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>{medidas.map(m => <tr class={m.hl?"highlight":""}><td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td><td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}</span></td></tr>)}</tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">⏱ Producción 3-5 días · ○ Pedido especial. Medidas personalizadas disponibles bajo pedido.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-ce-title">
+      <div class="container">
+        <h2 id="faq-ce-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-CE-01</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-CE-01 — Microflauta E, alta calidad de impresión, desde 100 pzas" />
+</PageLayout>

@@ -1,0 +1,198 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import FaqItem      from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+
+const title   = "Caja Corrugado Simple Pared Simple CDMX | CAD-CS-01 | CADECA";
+const description = "Ficha técnica caja corrugado simple pared simple en CDMX. ECT-23 y ECT-32, flauta B, C y E. Medidas chica a extra grande. Sin mínimo, entrega 24-48 hrs. CADECA fabricante.";
+const WHATSAPP = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Micro Chica",  lah:"20×15×15",flauta:"E",  ect:"ECT-23",vacío:"0.18 kg",máx:"5 kg",  disp:"green",  label:"Stock" },
+  { nombre:"Chica",        lah:"30×20×20",flauta:"B/C",ect:"ECT-32",vacío:"0.32 kg",máx:"10 kg", disp:"green",  label:"Stock",  hl:true },
+  { nombre:"Mediana",      lah:"40×30×25",flauta:"C",  ect:"ECT-32",vacío:"0.51 kg",máx:"12 kg", disp:"green",  label:"Stock",  hl:true },
+  { nombre:"Grande",       lah:"50×40×30",flauta:"C",  ect:"ECT-32",vacío:"0.74 kg",máx:"15 kg", disp:"green",  label:"Stock" },
+  { nombre:"Extra Grande", lah:"60×50×40",flauta:"C",  ect:"ECT-32",vacío:"1.12 kg",máx:"15 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",  lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",          "CAD-CS-01"],
+  ["Tipo de pared",       "Simple (pared simple)"],
+  ["Flautas disponibles", "B (3mm) · C (4mm) · E (1.5mm)"],
+  ["Resistencia ECT",     "ECT-23 · ECT-32"],
+  ["Gramaje liner",       "115 – 150 g/m²"],
+  ["Gramaje médium",      "112 – 127 g/m²"],
+  ["Material",            "Kraft virgen · Test · PCR reciclado"],
+  ["Color exterior",      "Kraft marrón natural"],
+  ["Peso máx. producto",  "Hasta 15 kg (ECT-32, flauta C)"],
+  ["Carga de apilado",    "Hasta 80 kg (condiciones ideales)"],
+  ["Impresión",           "Flexografía 1-4 colores (opcional)"],
+  ["Certificación",       "FSC disponible bajo pedido"],
+  ["Pedido mínimo",       "Sin mínimo (stock) · 50 pzas (producción)"],
+  ["Tiempo de entrega",   "24-48 hrs stock · 48-72 hrs especial"],
+];
+
+const faqs = [
+  {
+    id:"cs-f1",
+    question:"¿En qué se diferencian la flauta B y la flauta C en pared simple?",
+    answer:"<strong>Flauta B (3mm):</strong> Más rígida y mejor superficie de impresión. Ideal para cajas con logo donde la impresión es importante. Mejor resistencia al aplastamiento lateral. <strong>Flauta C (4mm):</strong> Mayor acolchado y resistencia al impacto. Es la estándar para cajas de envío porque protege mejor el contenido durante el transporte. Para e-commerce con fines de envío, recomendamos flauta C.",
+  },
+  {
+    id:"cs-f2",
+    question:"¿Cuándo debería elegir pared doble en vez de simple?",
+    answer:"Cambia a <strong>doble corrugado</strong> cuando: el producto pesa más de 10 kg, es frágil o electrónico, se almacenará por más de 1 semana apilado, o si el destino final es el centro de distribución de Amazon (que exige ECT-44). Para envíos estándar de Mercado Libre con productos hasta 8-10 kg, el corrugado simple ECT-32 es suficiente.",
+  },
+];
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+
+  <section class="cat-page-hero" aria-labelledby="sku-cs-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom:var(--spacing-md)">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
+          <li class="breadcrumb__item"><a href="/catalogo" class="breadcrumb__link">Catálogo</a></li>
+          <li class="breadcrumb__item"><a href="/catalogo/cajas-corrugado-estandar" class="breadcrumb__link">Corrugado Estándar</a></li>
+          <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Corrugado Simple</li>
+        </ol>
+      </nav>
+      <span class="cat-page-hero__eyebrow">SKU CAD-CS-01 · Corrugado Estándar</span>
+      <h1 id="sku-cs-title" class="cat-page-hero__title">
+        Caja Corrugado Simple<br><span>Pared Simple — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Una sola capa de flauta entre dos liners. Solución más económica del catálogo. Inventario permanente en CDMX, sin pedido mínimo y entrega en 24-48 hrs.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-01</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="sku-detail" aria-labelledby="detalle-cs-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/productos/cajas-carton-corrugado-simple-pared-cdmx.avif"
+                alt="Caja de cartón corrugado simple pared simple en CDMX — CADECA CAD-CS-01"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-CS-01 · Familia: Corrugado Estándar</p>
+            <h2 id="detalle-cs-title" class="sku-detail__title">Corrugado Simple — Pared Simple</h2>
+            <p class="sku-detail__desc">
+              La caja de cartón corrugado simple es la solución más versátil y económica del catálogo CADECA. Con una sola capa de flauta entre dos liners de papel kraft o test, ofrece la combinación correcta de protección y costo para e-commerce, ropa, accesorios y productos ligeros. Inventario permanente en CDMX para entrega inmediata.
+            </p>
+
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">ECT-32</span>
+                <span class="sku-detail__strip-label">Resistencia estándar</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">15 kg</span>
+                <span class="sku-detail__strip-label">Peso máx.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">Sin mín.</span>
+                <span class="sku-detail__strip-label">Pedido</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">24 hrs</span>
+                <span class="sku-detail__strip-label">Entrega CDMX</span>
+              </div>
+            </div>
+
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {specs.map(([label, val]) => (
+                  <tr><td>{label}</td><td>{val}</td></tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-01 Corrugado Simple`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-01</a>
+              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLA DE MEDIDAS -->
+    <section class="sku-sizes" aria-labelledby="sizes-cs-title">
+      <div class="container">
+        <h2 id="sizes-cs-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+          Medidas Disponibles — CAD-CS-01
+        </h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead>
+              <tr>
+                <th>Tamaño</th>
+                <th>L × A × H (cm)</th>
+                <th>Flauta</th>
+                <th>ECT</th>
+                <th>Peso vacío</th>
+                <th>Peso máx.</th>
+                <th>Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td>
+                  <td><strong>{m.lah}</strong></td>
+                  <td>{m.flauta}</td>
+                  <td>{m.ect}</td>
+                  <td>{m.vacío}</td>
+                  <td><strong>{m.máx}</strong></td>
+                  <td>
+                    <span class={`stock-chip stock-chip--${m.disp}`}>
+                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-cs-sku-title">
+      <div class="container">
+        <h2 id="faq-cs-sku-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+          Preguntas Técnicas — CAD-CS-01
+        </h2>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-CS-01 — Sin mínimo, entrega 24-48 hrs en CDMX" />
+
+</PageLayout>

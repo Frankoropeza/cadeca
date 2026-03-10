@@ -1,0 +1,144 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Caja Doble Corrugado Pared Doble BC CDMX | CAD-CD-01 | CADECA";
+const description = "Ficha técnica caja doble corrugado pared doble BC en CDMX. ECT-44 y ECT-51. Para electrónica, Amazon FBA, industria media. Sin mínimo, entrega 24-48 hrs. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { nombre:"Chica",        lah:"30×20×20",flauta:"BC",ect:"ECT-44",vacío:"0.52 kg",máx:"15 kg", disp:"green",  label:"Stock" },
+  { nombre:"Mediana",      lah:"40×30×25",flauta:"BC",ect:"ECT-44",vacío:"0.78 kg",máx:"20 kg", disp:"green",  label:"Stock",  hl:true },
+  { nombre:"Grande",       lah:"50×40×30",flauta:"BC",ect:"ECT-44",vacío:"1.10 kg",máx:"25 kg", disp:"green",  label:"Stock",  hl:true },
+  { nombre:"Extra Grande", lah:"60×50×40",flauta:"BC",ect:"ECT-44",vacío:"1.60 kg",máx:"25 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"Industrial 1", lah:"70×50×50",flauta:"BC",ect:"ECT-51",vacío:"2.10 kg",máx:"25 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",  lah:"Cualquier",flauta:"BC/BB",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+];
+
+const specs = [
+  ["Código SKU",          "CAD-CD-01"],
+  ["Tipo de pared",       "Doble (pared doble)"],
+  ["Flautas disponibles", "BC (7mm) · BB (6mm)"],
+  ["Resistencia ECT",     "ECT-44 (estándar) · ECT-51 (reforzado)"],
+  ["Gramaje liner",       "150 – 175 g/m²"],
+  ["Gramaje médium",      "127 g/m² por capa"],
+  ["Material",            "Kraft virgen · Test · PCR reciclado"],
+  ["Color exterior",      "Kraft marrón natural"],
+  ["Peso máx. producto",  "Hasta 25 kg (ECT-44, flauta BC)"],
+  ["Carga de apilado",    "Hasta 200 kg (condiciones ideales)"],
+  ["Impresión",           "Flexografía 1-4 colores (opcional)"],
+  ["Certificación",       "FSC disponible · Cumple Amazon FBA"],
+  ["Pedido mínimo",       "Sin mínimo (stock) · 50 pzas (producción)"],
+  ["Tiempo de entrega",   "24-48 hrs stock · 48-72 hrs especial"],
+];
+
+const faqs = [
+  {
+    id:"cd-f1",
+    question:"¿Por qué Amazon FBA exige doble corrugado como mínimo?",
+    answer:"Los centros de distribución de Amazon manejan miles de paquetes diariamente con maquinaria automatizada. El corrugado simple no resiste las fuerzas de compresión y aplastamiento a las que se someten las cajas en las bandas transportadoras y el almacenaje en altura. Amazon especifica ECT-44 como mínimo para garantizar que el empaque llegue íntegro al cliente final. Nuestro CAD-CD-01 cumple este requerimiento de fábrica.",
+  },
+  {
+    id:"cd-f2",
+    question:"¿Cuánto más cuesta el doble corrugado vs el simple?",
+    answer:"El doble corrugado tiene un costo superior al simple, generalmente entre un 30% y un 50% más por pieza dependiendo de la medida y el volumen. Sin embargo, este costo extra se justifica cuando el producto cuesta más que la caja (electrónica, maquinaria, artículos de lujo) o cuando los rechazos por daños en tránsito generan más pérdidas que el diferencial de precio del empaque.",
+  },
+];
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+
+  <section class="cat-page-hero" aria-labelledby="sku-cd-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom:var(--spacing-md)">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
+          <li class="breadcrumb__item"><a href="/catalogo" class="breadcrumb__link">Catálogo</a></li>
+          <li class="breadcrumb__item"><a href="/catalogo/cajas-corrugado-estandar" class="breadcrumb__link">Corrugado Estándar</a></li>
+          <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Doble Corrugado</li>
+        </ol>
+      </nav>
+      <span class="cat-page-hero__eyebrow">SKU CAD-CD-01 · Corrugado Estándar</span>
+      <h1 id="sku-cd-title" class="cat-page-hero__title">
+        Doble Corrugado<br><span>Pared Doble (BC) — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Dos capas de flauta BC. Mayor resistencia al impacto y aplastamiento. Para electrónica, menaje, Amazon FBA y distribución industrial. ECT-44 certificado, hasta 25 kg.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CD-01</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-51</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-cd-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif"
+                alt="Caja de cartón doble corrugado pared doble BC en CDMX — CADECA CAD-CD-01"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-CD-01 · Familia: Corrugado Estándar</p>
+            <h2 id="detalle-cd-title" class="sku-detail__title">Doble Corrugado — Pared Doble (BC)</h2>
+            <p class="sku-detail__desc">
+              Dos capas de flauta BC entre tres liners de papel kraft o test. Mayor resistencia al impacto lateral y al aplastamiento vertical. El estándar de la industria para electrónica, menaje, distribución industrial y Amazon FBA. ECT-44 garantizado de fábrica, disponible en ECT-51 bajo pedido.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia estándar</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Sin mín.</span><span class="sku-detail__strip-label">Pedido</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([label, val]) => <tr><td>{label}</td><td>{val}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CD-01 Doble Corrugado`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CD-01</a>
+              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-cd-title">
+      <div class="container">
+        <h2 id="sizes-cd-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-CD-01</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Tamaño</th><th>L × A × H (cm)</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial. Pesos bajo condiciones estándar.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-cd-title">
+      <div class="container">
+        <h2 id="faq-cd-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-CD-01</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-CD-01 — ECT-44 certificado, entrega 24-48 hrs en CDMX" />
+</PageLayout>
