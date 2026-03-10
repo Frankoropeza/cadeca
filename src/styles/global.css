@@ -1905,12 +1905,14 @@ img, video, iframe { max-width: 100%; height: auto; }
   gap: var(--spacing-2xl);
 }
 @media (min-width: 960px) {
-  .sku-detail__grid { grid-template-columns: 440px 1fr; align-items: start; gap: var(--spacing-3xl); }
+  .sku-detail__grid { grid-template-columns: minmax(0, 440px) minmax(0, 1fr); align-items: start; gap: var(--spacing-3xl); }
 }
-.sku-detail__img-wrap {
+.sku-detail__img-wrap,
+.sku-detail__img-col {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  min-width: 0;
 }
 .sku-detail__img { width: 100%; display: block; }
 

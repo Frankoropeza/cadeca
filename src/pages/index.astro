@@ -417,7 +417,7 @@ const faqs = [
   ══════════════════════════════════════ -->
   <section style="background:var(--color-secondary);padding:var(--spacing-3xl) 0;" aria-labelledby="catalogo-b2b-title">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-3xl);align-items:center;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--spacing-3xl);align-items:center;">
         <div>
           <span style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);display:block;margin-bottom:0.75rem;">Catálogo Técnico B2B</span>
           <h2 id="catalogo-b2b-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:white;margin-bottom:1rem;line-height:1.2;">Fichas Técnicas con ECT, Medidas y Especificaciones</h2>
@@ -427,7 +427,7 @@ const faqs = [
             <a href="/cotizar" style="border:2px solid rgba(255,255,255,0.4);color:white;padding:0.75rem 1.5rem;border-radius:0.5rem;font-weight:700;text-decoration:none;font-size:0.9rem;">Cotizar ahora →</a>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;">
           {[
             {icon:"📦", label:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar", tag:"5 SKUs"},
             {icon:"🛒", label:"Para E-commerce", href:"/catalogo/cajas-para-ecommerce", tag:"5 SKUs"},
