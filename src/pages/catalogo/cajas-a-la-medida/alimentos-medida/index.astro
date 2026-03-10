@@ -1,0 +1,144 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Cajas Alimentos FDA COFEPRIS CDMX | CAD-AM-03 | Food Grade | CADECA";
+const description = "Cajas a la medida para alimentos en CDMX. Liner food-grade, apto contacto indirecto, certificación COFEPRIS disponible, ECT-32/44. Desde 100 pzas. CADECA fabricante.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { talla:"XS hasta 5kg", ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"varía",máx:"5 kg",  disp:"yellow", label:"5-7 días",  hl:false },
+  { talla:"S 5-10kg",     ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"varía",máx:"10 kg", disp:"yellow", label:"5-7 días",  hl:true  },
+  { talla:"M 10-20kg",    ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"20 kg", disp:"yellow", label:"5-7 días",  hl:true  },
+  { talla:"L 20-30kg",    ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"30 kg", disp:"gray",   label:"7-10 días", hl:false },
+  { talla:"A la medida",  ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+];
+
+const specs = [
+  ["Código SKU",          "CAD-AM-03"],
+  ["Tipo",                "A la medida para alimentos"],
+  ["Liner",               "Food-grade — sin tintas tóxicas"],
+  ["Norma",               "COFEPRIS MX / FDA EE.UU."],
+  ["Contacto",            "Indirecto con alimentos — con envase primario"],
+  ["Impresión",           "Tintas base agua food-safe"],
+  ["Tipo de pared",       "Simple ECT-32 o Doble ECT-44"],
+  ["Humedad",             "Tratamiento WR opcional"],
+  ["Certificación",       "Carta de cumplimiento COFEPRIS disponible"],
+  ["Pedido mínimo",       "100 piezas"],
+  ["Entrega CDMX",        "5-7 días hábiles"],
+  ["Temperatura",         "Ambiente · Refrigerado · No congelados sin WR"],
+];
+
+const faqs = [
+  {
+    id:"am03-f1",
+    question:"¿Qué certifica COFEPRIS en el empaque de alimentos?",
+    answer:"COFEPRIS (Comisión Federal para la Protección contra Riesgos Sanitarios) certifica que los materiales en contacto con alimentos (incluyendo empaques) no transfieren sustancias peligrosas al alimento. Para cajas de cartón corrugado, los puntos críticos son: el liner interior debe ser fibra virgen o reciclada certificada sin contaminantes; las tintas de impresión deben ser base agua sin metales pesados ni solventes tóxicos; los adhesivos deben ser food-safe. CADECA emite carta técnica con todas las especificaciones del material para tu proceso de registro de producto ante COFEPRIS.",
+  },
+  {
+    id:"am03-f2",
+    question:"¿Qué diferencia hay entre contacto directo e indirecto con alimentos?",
+    answer:"Contacto directo significa que el alimento toca directamente el material del empaque, como una bolsa de plástico que contiene arroz a granel. Contacto indirecto significa que el alimento tiene un envase primario y la caja de cartón es el empaque secundario o terciario. La caja de cartón en 99% de las aplicaciones es contacto indirecto — el alimento ya viene en bolsa, envase plástico, lata o vidrio. Las exigencias para contacto indirecto son menos estrictas y más económicas que para contacto directo. Si tu producto necesita contacto directo con cartón (algunas pastas, granos), consúltanos para el liner correcto.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Alimentos FDA/COFEPRIS"}]}
+  faqItems={[{question:"¿Qué certifica COFEPRIS en el empaque de alimentos?", answer:"COFEPRIS (Comisión Federal para la Protección contra Riesgos Sanitarios) certifica que los materiales en contacto con alimentos (incluyendo empaques) no transfieren sustancias peligrosas al alimento. Para cajas de cartón corrugado, los puntos críticos son: el liner interior debe ser fibra virgen o reciclada certificada sin contaminantes; las tintas de impresión deben ser base agua sin metales pesados ni solventes tóxicos; los adhesivos deben ser food-safe. CADECA emite carta técnica con todas las especificaciones del material para tu proceso de registro de producto ante COFEPRIS."}, {question:"¿Qué diferencia hay entre contacto directo e indirecto con alimentos?", answer:"Contacto directo significa que el alimento toca directamente el material del empaque, como una bolsa de plástico que contiene arroz a granel. Contacto indirecto significa que el alimento tiene un envase primario y la caja de cartón es el empaque secundario o terciario. La caja de cartón en 99% de las aplicaciones es contacto indirecto — el alimento ya viene en bolsa, envase plástico, lata o vidrio. Las exigencias para contacto indirecto son menos estrictas y más económicas que para contacto directo. Si tu producto necesita contacto directo con cartón (algunas pastas, granos), consúltanos para el liner correcto."}]}
+  product={{name:"Caja a la Medida Alimentos Food Grade COFEPRIS", sku:"CAD-AM-03", description:"Caja a la Medida Alimentos Food Grade COFEPRIS en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif", material:"Cartón corrugado liner food-grade apto para contacto indirecto con alimentos", category:"Cajas a la Medida", moq:"100"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+        <li><span class="current">Alimentos FDA/COFEPRIS</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-am03-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AM-03 · Cajas a la Medida</span>
+      <h1 id="sku-am03-title" class="cat-page-hero__title">Caja para <span>Alimentos FDA / COFEPRIS</span><br>— Food Grade CDMX</h1>
+      <p class="cat-page-hero__desc">Cajas a la medida con liner food-grade para alimentos. Apto contacto indirecto con envase primario. Certificación COFEPRIS y FDA disponible. Tintas base agua food-safe.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-03</strong></div>
+        <div class="cat-page-hero__strip-item">Liner: <strong>Food-grade</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-am03-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif"
+                alt="Caja alimentos food grade COFEPRIS en CDMX — CADECA CAD-AM-03"
+                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AM-03 · Familia: Cajas a la Medida</p>
+            <h2 id="detalle-am03-title" class="sku-detail__title">Caja para Alimentos — Food Grade COFEPRIS</h2>
+            <p class="sku-detail__desc">Cajas de cartón corrugado con liner food-grade sin tintas tóxicas para empaque de alimentos con envase primario (contacto indirecto). Certificación COFEPRIS MX y FDA EE.UU. disponible. Tratamiento WR opcional para refrigeración. Carta técnica de cumplimiento COFEPRIS para tu registro de producto.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Food-grade</span><span class="sku-detail__strip-label">Liner</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">COFEPRIS/FDA</span><span class="sku-detail__strip-label">Norma</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-03 Caja Alimentos Food Grade`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-03</a>
+              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-am03-title">
+      <div class="container">
+        <h2 id="sizes-am03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas — CAD-AM-03</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs. ⏱ Producción bajo pedido.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-am03-title">
+      <div class="container">
+        <h2 id="faq-am03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AM-03</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-03 — Food grade COFEPRIS, entrega 5-7 días" />
+</PageLayout>

@@ -1,0 +1,144 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Cajas Triple Corrugado BCB Industrial CDMX | ECT-61 | CAD-AM-04 | CADECA";
+const description = "Cajas triple corrugado BCB a la medida en CDMX. ECT-61+, hasta 100+ kg, para maquinaria industrial y equipos pesados. Desde 25 piezas, entrega 5-7 días. CADECA fabricante.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { talla:"M hasta 50kg",  ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"50 kg",   disp:"yellow", label:"5-7 días",  hl:true  },
+  { talla:"L 50-80kg",     ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"80 kg",   disp:"yellow", label:"5-7 días",  hl:true  },
+  { talla:"XL 80-100kg",   ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"100 kg",  disp:"gray",   label:"7-10 días", hl:false },
+  { talla:"XXL >100kg",    ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61+",vacío:"varía",máx:"+100 kg", disp:"gray",   label:"Consultar", hl:false },
+  { talla:"A la medida",   ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+];
+
+const specs = [
+  ["Código SKU",              "CAD-AM-04"],
+  ["Tipo de pared",           "Triple corrugado BCB"],
+  ["Grosor total",            "~12mm"],
+  ["ECT",                     "ECT-61 — máxima resistencia"],
+  ["Peso máx. recomendado",   "Hasta 100+ kg"],
+  ["BCT estimado",            ">800 kg de carga estática"],
+  ["Aplicaciones",            "Maquinaria · Electrodomésticos · Motores · Equipo médico"],
+  ["Esquineros",              "Incluidos en diseño estándar"],
+  ["Exportación",             "Cumple ISTA 2A y normas IATA"],
+  ["Diseño CAD",              "Gratis en 24 horas"],
+  ["Pedido mínimo",           "25 piezas"],
+  ["Entrega CDMX",            "5-7 días hábiles"],
+];
+
+const faqs = [
+  {
+    id:"am04-f1",
+    question:"¿Cuándo necesito triple corrugado y no basta con doble corrugado?",
+    answer:"Triple corrugado (BCB, ECT-61+) es necesario cuando el producto pesa más de 30 kg y requiere máxima protección en múltiples ciclos de manejo, el producto tiene bordes metálicos o esquinas duras que podrían perforar el doble corrugado, la caja será exportada por vía marítima 30+ días en contenedor con alta humedad, el producto requiere certificación ISTA 2A o 3A para seguro de transporte, o el cliente (retail, gobierno, industria aeroespacial) especifica triple corrugado en su política de empaque. Para la mayoría de productos industriales hasta 25 kg, el doble corrugado ECT-44 con esquineros es suficiente y más económico.",
+  },
+  {
+    id:"am04-f2",
+    question:"¿Cuál es la diferencia entre ECT-61 y ECT-44 en términos prácticos de resistencia?",
+    answer:"El ECT (Edge Crush Test) mide la fuerza necesaria para aplastar el corrugado por el borde. ECT-44 resiste 44 lbs por pulgada lineal de borde; ECT-61 resiste 61 lbs. En términos de BCT (Box Compression Test, la resistencia real de la caja completa), un ECT-44 típico da ~500-600 kg de carga estática; un ECT-61 da ~900-1100 kg. Esto significa que el triple corrugado puede soportar el equivalente a 2 cajas de ECT-44 apiladas sin deformarse. Para maquinaria, equipos industriales o exportación marítima, el BCT de ECT-61 es el mínimo recomendado.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Triple Corrugado Reforzado"}]}
+  faqItems={[{question:"¿Cuándo necesito triple corrugado y no basta con doble corrugado?", answer:"Triple corrugado (BCB, ECT-61+) es necesario cuando el producto pesa más de 30 kg y requiere máxima protección en múltiples ciclos de manejo, el producto tiene bordes metálicos o esquinas duras que podrían perforar el doble corrugado, la caja será exportada por vía marítima 30+ días en contenedor con alta humedad, el producto requiere certificación ISTA 2A o 3A para seguro de transporte, o el cliente (retail, gobierno, industria aeroespacial) especifica triple corrugado en su política de empaque. Para la mayoría de productos industriales hasta 25 kg, el doble corrugado ECT-44 con esquineros es suficiente y más económico."}, {question:"¿Cuál es la diferencia entre ECT-61 y ECT-44 en términos prácticos de resistencia?", answer:"El ECT (Edge Crush Test) mide la fuerza necesaria para aplastar el corrugado por el borde. ECT-44 resiste 44 lbs por pulgada lineal de borde; ECT-61 resiste 61 lbs. En términos de BCT (Box Compression Test, la resistencia real de la caja completa), un ECT-44 típico da ~500-600 kg de carga estática; un ECT-61 da ~900-1100 kg. Esto significa que el triple corrugado puede soportar el equivalente a 2 cajas de ECT-44 apiladas sin deformarse. Para maquinaria, equipos industriales o exportación marítima, el BCT de ECT-61 es el mínimo recomendado."}]}
+  product={{name:"Caja Triple Corrugado BCB Industrial Reforzada", sku:"CAD-AM-04", description:"Caja Triple Corrugado BCB Industrial Reforzada en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif", material:"Cartón triple corrugado BCB ECT-61 para maquinaria y equipos pesados", category:"Cajas a la Medida", moq:"25"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+        <li><span class="current">Triple Corrugado Reforzado</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-am04-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AM-04 · Cajas a la Medida</span>
+      <h1 id="sku-am04-title" class="cat-page-hero__title">Caja <span>Triple Corrugado BCB</span><br>— ECT-61 Industrial CDMX</h1>
+      <p class="cat-page-hero__desc">Cajas triple corrugado BCB con ECT-61 para maquinaria y equipos pesados. Grosor 12mm, hasta 100+ kg, esquineros incluidos. Para maquinaria, electrodomésticos, motores y equipo médico.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-04</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-61</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-am04-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif"
+                alt="Caja triple corrugado BCB industrial en CDMX — CADECA CAD-AM-04"
+                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AM-04 · Familia: Cajas a la Medida</p>
+            <h2 id="detalle-am04-title" class="sku-detail__title">Triple Corrugado BCB — Industrial Reforzada</h2>
+            <p class="sku-detail__desc">Cajas de triple corrugado BCB (12mm de grosor) con ECT-61 — la máxima resistencia disponible en cartón corrugado. BCT estimado mayor a 800 kg de carga estática. Para maquinaria, electrodomésticos, motores y equipo médico. Esquineros incluidos en diseño estándar. Cumple ISTA 2A y normas IATA para exportación.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-61</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100+ kg</span><span class="sku-detail__strip-label">Carga máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-04 Caja Triple Corrugado BCB`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-04</a>
+              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-am04-title">
+      <div class="container">
+        <h2 id="sizes-am04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas — CAD-AM-04</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs. ⏱ Producción bajo pedido.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-am04-title">
+      <div class="container">
+        <h2 id="faq-am04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AM-04</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-04 — Triple corrugado ECT-61, entrega 5-7 días" />
+</PageLayout>

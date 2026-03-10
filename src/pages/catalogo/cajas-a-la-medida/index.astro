@@ -1,0 +1,182 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const title       = "Catálogo Cajas a la Medida CDMX | Industrial, Exportación, Alimentos | CADECA";
+const description = "Catálogo cajas de cartón a la medida en CDMX. Industrial, exportación ISTA/IATA, alimentos COFEPRIS, triple corrugado y automáticas. Diseño CAD gratis. CADECA fabricante.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const productos = [
+  {
+    code:       "CAD-AM-01",
+    badge:      "Más vendida",
+    badgeColor: "orange",
+    featured:   true,
+    title:      "Industrial Reforzada",
+    desc:       "Cajas a la medida para uso industrial. Doble corrugado BC, ECT-44 o ECT-51. Para manufactura, distribución, automotive y electrónica. CAD gratis en 24 hrs.",
+    imgSrc:     "/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif",
+    imgAlt:     "Cajas a la medida industrial reforzada en CDMX — CADECA CAD-AM-01",
+    href:       "/catalogo/cajas-a-la-medida/industrial",
+    specs: [
+      { label: "ECT",       value: "ECT-44 / ECT-51" },
+      { label: "Peso máx.", value: "Hasta 50 kg" },
+      { label: "CAD",       value: "Gratis 24 hrs" },
+      { label: "Entrega",   value: "3-5 días" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code:       "CAD-AM-02",
+    badge:      "Certificable",
+    badgeColor: "blue",
+    featured:   false,
+    title:      "Exportación IATA / ISTA",
+    desc:       "Cajas para exportación con certificación ISTA 2A/3A y normas IATA. ECT-51 mínimo para aéreo, ECT-61 triple corrugado para marítimo. Esquineros incluidos.",
+    imgSrc:     "/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif",
+    imgAlt:     "Cajas a la medida exportación IATA ISTA en CDMX — CADECA CAD-AM-02",
+    href:       "/catalogo/cajas-a-la-medida/exportacion",
+    specs: [
+      { label: "Certificación", value: "ISTA 2A/3A" },
+      { label: "Norma aérea",   value: "IATA ECT-51" },
+      { label: "MOQ",           value: "25 piezas" },
+      { label: "Entrega",       value: "5-7 días" },
+    ],
+    moq: "25 pzas",
+  },
+  {
+    code:       "CAD-AM-03",
+    badge:      "Food grade",
+    badgeColor: "green",
+    featured:   false,
+    title:      "Alimentos FDA / COFEPRIS",
+    desc:       "Cajas a la medida para alimentos con liner food-grade. Apto contacto indirecto, certificación COFEPRIS disponible. Tintas base agua food-safe.",
+    imgSrc:     "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif",
+    imgAlt:     "Cajas a la medida alimentos FDA COFEPRIS en CDMX — CADECA CAD-AM-03",
+    href:       "/catalogo/cajas-a-la-medida/alimentos-medida",
+    specs: [
+      { label: "Liner",   value: "Food-grade" },
+      { label: "Norma",   value: "COFEPRIS / FDA" },
+      { label: "MOQ",     value: "100 piezas" },
+      { label: "Entrega", value: "5-7 días" },
+    ],
+    moq: "100 pzas",
+  },
+  {
+    code:       "CAD-AM-04",
+    badge:      "Máx. resistencia",
+    badgeColor: "blue",
+    featured:   false,
+    title:      "Triple Corrugado BCB Industrial",
+    desc:       "Cajas triple corrugado BCB ECT-61 para maquinaria y equipos pesados. Hasta 100+ kg, esquineros incluidos. Para maquinaria, electrodomésticos y equipo médico.",
+    imgSrc:     "/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif",
+    imgAlt:     "Cajas triple corrugado BCB industrial en CDMX — CADECA CAD-AM-04",
+    href:       "/catalogo/cajas-a-la-medida/triple-reforzada",
+    specs: [
+      { label: "Pared",     value: "Triple BCB" },
+      { label: "ECT",       value: "ECT-61+" },
+      { label: "Peso máx.", value: "100+ kg" },
+      { label: "Entrega",   value: "5-7 días" },
+    ],
+    moq: "25 pzas",
+  },
+  {
+    code:       "CAD-AM-05",
+    badge:      "±0.5mm",
+    badgeColor: "blue",
+    featured:   false,
+    title:      "Automática Alta Velocidad",
+    desc:       "Cajas para líneas de empaque automáticas con tolerancias ±0.5mm. RSC y auto-erect crash-lock. Compatibles con Bosch, IWK, Marchesini.",
+    imgSrc:     "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif",
+    imgAlt:     "Cajas automáticas alta velocidad línea de empaque en CDMX — CADECA CAD-AM-05",
+    href:       "/catalogo/cajas-a-la-medida/automatica",
+    specs: [
+      { label: "Tolerancia", value: "±0.5mm" },
+      { label: "Estilo",     value: "RSC / Auto-erect" },
+      { label: "MOQ",        value: "500 piezas" },
+      { label: "Entrega",    value: "7-10 días" },
+    ],
+    moq: "500 pzas",
+  },
+];
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}
+  pageType="category"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida"}]}>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><span class="current">Cajas a la Medida</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="cat-am-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">📐 Categoría 04 · 5 productos</span>
+      <h1 id="cat-am-title" class="cat-page-hero__title">
+        Cajas <span>a la Medida</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Cualquier dimensión exacta sin cargo adicional. Diseño CAD gratis en 24 hrs, asesoría técnica incluida. Industrial, exportación, alimentos, triple corrugado y líneas automáticas.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">Productos: <strong>5</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>25-500 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">CAD: <strong>Gratis 24 hrs</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32 a ECT-61</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-am-title">
+      <div class="container">
+        <SectionHeader
+          id="prods-am-title"
+          twoCol
+          title="5 Productos — Cajas a la Medida"
+          subtitle="Selecciona la aplicación para ver la ficha técnica completa con especificaciones, medidas de referencia y condiciones de pedido."
+          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+        >
+          <p>Cada aplicación industrial tiene requerimientos distintos de resistencia, certificación y tolerancias. Aquí encontrarás la ficha técnica específica para cada uso.</p>
+        </SectionHeader>
+        <div class="sku-grid">
+          {productos.map(p => (
+            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+              <div class="sku-card__img-wrap">
+                <img src={p.imgSrc} alt={p.imgAlt}
+                  class="sku-card__img" width="640" height="480"
+                  loading="lazy" decoding="async" />
+                <span class="sku-card__code">{p.code}</span>
+                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
+              </div>
+              <div class="sku-card__body">
+                <h2 class="sku-card__name">{p.title}</h2>
+                <p class="sku-card__desc">{p.desc}</p>
+                <div class="sku-card__specs">
+                  {p.specs.map(s => (
+                    <div>
+                      <span class="sku-card__spec-label">{s.label}</span>
+                      <span class="sku-card__spec-value">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div class="sku-card__footer">
+                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+                  <span class="sku-card__moq">MOQ: {p.moq}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas una medida especial? Diseño CAD gratis en 24 hrs" />
+</PageLayout>

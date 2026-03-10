@@ -1,0 +1,145 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Cajas a la Medida Industrial Reforzada CDMX | ECT-44/51 | CAD-AM-01 | CADECA";
+const description = "Ficha técnica cajas a la medida industrial en CDMX. ECT-44 o ECT-51 según carga, hasta 50 kg, CAD gratis 24 hrs, entrega 3-5 días. Para manufactura y distribución. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { talla:"S hasta 10kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"10 kg",  disp:"yellow", label:"3-5 días",  hl:false },
+  { talla:"M hasta 20kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"20 kg",  disp:"yellow", label:"3-5 días",  hl:true  },
+  { talla:"L hasta 30kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44/51",vacío:"varía",máx:"30 kg",  disp:"yellow", label:"3-5 días",  hl:true  },
+  { talla:"XL hasta 50kg", ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-51",vacío:"varía",máx:"50 kg",  disp:"gray",   label:"5-7 días",  hl:false },
+  { talla:"XXL >50kg",     ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"+50 kg", disp:"gray",   label:"Consultar", hl:false },
+  { talla:"A la medida",   ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+];
+
+const specs = [
+  ["Código SKU",          "CAD-AM-01"],
+  ["Tipo",                "A la medida — cualquier L×A×H"],
+  ["Tipo de pared",       "Doble corrugado BC"],
+  ["ECT disponible",      "ECT-44 / ECT-51 a elegir"],
+  ["Peso máx. producto",  "Hasta 50 kg con ECT-51"],
+  ["Diseño CAD",          "Gratis en 24 horas"],
+  ["Gramaje liner",       "150-175 g/m² · 175-200 g/m²"],
+  ["Aplicaciones",        "Manufactura · Distribución · Automotive · Electrónica"],
+  ["Esquineros",          "Opcionales — sin costo extra"],
+  ["Certificación",       "ECT verificado en laboratorio"],
+  ["Pedido mínimo",       "50 piezas"],
+  ["Entrega CDMX",        "3-5 días hábiles desde aprobación CAD"],
+];
+
+const faqs = [
+  {
+    id:"am01-f1",
+    question:"¿Cómo sé qué ECT necesito para mi producto industrial?",
+    answer:"El ECT (Edge Crush Test) define la resistencia del corrugado. Regla práctica: productos hasta 15 kg → ECT-32; 15-30 kg → ECT-44; 30-50 kg → ECT-51; más de 50 kg → ECT-61 (triple corrugado). Sin embargo, también importa el método de apilamiento: cajas apiladas en tarima 4 niveles necesitan mayor ECT que una caja que va sola. Nuestros asesores realizan el cálculo de BCT (Box Compression Test) estimado gratis para confirmar el ECT correcto para tu aplicación específica.",
+  },
+  {
+    id:"am01-f2",
+    question:"¿Qué son los esquineros de cartón y cuándo se usan con cajas industriales?",
+    answer:"Los esquineros son perfiles de cartón corrugado en forma de ángulo recto de 90° que se colocan en las esquinas verticales de la caja o de la tarima. Aumentan la resistencia al aplastamiento vertical en un 40-60% adicional al ECT de la caja base. Se usan cuando: el producto es pesado y se apila en múltiples niveles, la caja viajará en camión por largas distancias con vibración, o el cliente exige protección de esquinas visible. CADECA los fabrica a la medida sin costo extra en pedidos de 50+ piezas que los incluyan.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Industrial Reforzada"}]}
+  faqItems={[{question:"¿Cómo sé qué ECT necesito para mi producto industrial?", answer:"El ECT (Edge Crush Test) define la resistencia del corrugado. Regla práctica: productos hasta 15 kg → ECT-32; 15-30 kg → ECT-44; 30-50 kg → ECT-51; más de 50 kg → ECT-61 (triple corrugado). Sin embargo, también importa el método de apilamiento: cajas apiladas en tarima 4 niveles necesitan mayor ECT que una caja que va sola. Nuestros asesores realizan el cálculo de BCT (Box Compression Test) estimado gratis para confirmar el ECT correcto para tu aplicación específica."}, {question:"¿Qué son los esquineros de cartón y cuándo se usan con cajas industriales?", answer:"Los esquineros son perfiles de cartón corrugado en forma de ángulo recto de 90° que se colocan en las esquinas verticales de la caja o de la tarima. Aumentan la resistencia al aplastamiento vertical en un 40-60% adicional al ECT de la caja base. Se usan cuando: el producto es pesado y se apila en múltiples niveles, la caja viajará en camión por largas distancias con vibración, o el cliente exige protección de esquinas visible. CADECA los fabrica a la medida sin costo extra en pedidos de 50+ piezas que los incluyan."}]}
+  product={{name:"Caja a la Medida Industrial Reforzada", sku:"CAD-AM-01", description:"Caja a la Medida Industrial Reforzada en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif", material:"Cartón doble corrugado BC ECT-44/51 a la medida para uso industrial", category:"Cajas a la Medida", moq:"50"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+        <li><span class="current">Industrial Reforzada</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-am01-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AM-01 · Cajas a la Medida</span>
+      <h1 id="sku-am01-title" class="cat-page-hero__title">Caja a la Medida <span>Industrial Reforzada</span><br>— ECT-44/51 CDMX</h1>
+      <p class="cat-page-hero__desc">Cajas a la medida para uso industrial. Doble corrugado BC, ECT-44 o ECT-51 según carga. Diseño CAD gratuito en 24 horas. Para manufactura, distribución, automotive y electrónica.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-01</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44/51</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-am01-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif"
+                alt="Caja a la medida industrial reforzada en CDMX — CADECA CAD-AM-01"
+                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AM-01 · Familia: Cajas a la Medida</p>
+            <h2 id="detalle-am01-title" class="sku-detail__title">Caja a la Medida — Industrial Reforzada</h2>
+            <p class="sku-detail__desc">Cajas de doble corrugado BC fabricadas en cualquier dimensión exacta para uso industrial. ECT-44 estándar para cargas hasta 30 kg; ECT-51 para cargas hasta 50 kg. Diseño CAD gratuito en 24 horas con asesoría técnica de ingeniería de empaque. Esquineros opcionales sin costo extra.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44/51</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Hasta 50 kg</span><span class="sku-detail__strip-label">Carga máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-01 Caja Industrial a la Medida`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-01</a>
+              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-am01-title">
+      <div class="container">
+        <h2 id="sizes-am01-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas — CAD-AM-01</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs. ⏱ Producción bajo pedido.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-am01-title">
+      <div class="container">
+        <h2 id="faq-am01-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AM-01</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-01 — Diseño CAD gratis en 24 hrs, entrega 3-5 días" />
+</PageLayout>

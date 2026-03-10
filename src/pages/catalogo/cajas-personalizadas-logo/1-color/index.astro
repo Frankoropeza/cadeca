@@ -1,0 +1,146 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Cajas Cartón Personalizadas Logo 1 Color CDMX | Flexo ECT-32 | CAD-PL-01 | CADECA";
+const description = "Cajas de cartón personalizadas con logo 1 color en CDMX. Impresión flexo 1 tinta, ECT-32, desde 100 piezas, entrega 5-7 días. Precio más bajo en personalización. CADECA fabricante.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { talla:"XS", ml:"20×15×10 cm", real:"20×15×10", flauta:"C",ect:"ECT-32",vacío:"0.18 kg",máx:"5 kg", disp:"yellow", label:"5-7 días", hl:false },
+  { talla:"S", ml:"28×22×12 cm", real:"28×22×12", flauta:"C",ect:"ECT-32",vacío:"0.28 kg",máx:"8 kg", disp:"yellow", label:"5-7 días", hl:true },
+  { talla:"M", ml:"38×30×18 cm", real:"38×30×18", flauta:"C",ect:"ECT-32",vacío:"0.45 kg",máx:"12 kg", disp:"yellow", label:"5-7 días", hl:true },
+  { talla:"L", ml:"50×38×25 cm", real:"50×38×25", flauta:"C",ect:"ECT-32",vacío:"0.70 kg",máx:"18 kg", disp:"yellow", label:"5-7 días", hl:false },
+  { talla:"XL", ml:"60×45×30 cm", real:"60×45×30", flauta:"C",ect:"ECT-32",vacío:"1.00 kg",máx:"20 kg", disp:"gray", label:"7-10 días", hl:false },
+  { talla:"A la Medida", ml:"Personalizada", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+];
+
+const specs = [
+  ["Código SKU", "CAD-PL-01"],
+  ["Tipo impresión", "Flexograbado 1 tinta"],
+  ["Colores máx.", "1 tinta pantone"],
+  ["Soporte impresión", "Kraft marrón o kraft blanco"],
+  ["Resistencia ECT", "ECT-32"],
+  ["Tipo de pared", "Simple corrugado"],
+  ["Resolución impresión", "Hasta 85 lpi"],
+  ["Secado", "Tinta UV base agua"],
+  ["Registro", "Simple — exactitud ±1mm"],
+  ["Diseño incluido", "Sí — 1 vectorización sin costo"],
+  ["Archivo aceptado", "AI / EPS / PDF vectorizado"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega CDMX", "5-7 días hábiles"],
+];
+
+const faqs = [
+  {
+    id:"pl01-f1",
+    question:"¿Qué diferencia hay entre impresión flexo y offset en cajas de cartón?",
+    answer:"La flexo (flexograbado) usa placas de fotopolímero flexibles con tinta a base de agua aplicada directamente sobre el corrugado. Es la técnica más económica para 1-2 colores, ideal para logos corporativos con colores planos. La impresión offset es más cara pero da mayor resolución (hasta 200 lpi vs 85 lpi de la flexo) y reproduce degradados, fotografías y diseños complejos. Para un logo simple en 1 o 2 colores, la flexo da resultados excelentes al 30-40% del costo del offset.",
+  },
+  {
+    id:"pl01-f2",
+    question:"¿Cuándo debería elegir 1 color en lugar de 2 colores para mi logo?",
+    answer:"Elige 1 color cuando: tu marca tiene un color primario dominante y el secundario es opcional; quieres el precio más bajo posible por pieza; el volumen es de 100-300 piezas al mes; la caja es para uso interno o almacén y no es la primera impresión del cliente. Elige 2 colores cuando: tu logo pierde identidad sin al menos 2 colores; el empaque es el primer contacto visual con el cliente; o estás diferenciando tu marca de la competencia en punto de venta.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo"}, {name:"1 Color Flexo"}]}
+  faqItems={[{question:"¿Qué diferencia hay entre impresión flexo y offset en cajas de cartón?", answer:"La flexo (flexograbado) usa placas de fotopolímero flexibles con tinta a base de agua aplicada directamente sobre el corrugado. Es la técnica más económica para 1-2 colores, ideal para logos corporativos con colores planos. La impresión offset es más cara pero da mayor resolución (hasta 200 lpi vs 85 lpi de la flexo) y reproduce degradados, fotografías y diseños complejos. Para un logo simple en 1 o 2 colores, la flexo da resultados excelentes al 30-40% del costo del offset."}, {question:"¿Cuándo debería elegir 1 color en lugar de 2 colores para mi logo?", answer:"Elige 1 color cuando: tu marca tiene un color primario dominante y el secundario es opcional; quieres el precio más bajo posible por pieza; el volumen es de 100-300 piezas al mes; la caja es para uso interno o almacén y no es la primera impresión del cliente. Elige 2 colores cuando: tu logo pierde identidad sin al menos 2 colores; el empaque es el primer contacto visual con el cliente; o estás diferenciando tu marca de la competencia en punto de venta."}]}
+  product={{name:"Caja Cartón Personalizada Logo 1 Color Flexo", sku:"CAD-PL-01", description:"Caja Cartón Personalizada Logo 1 Color Flexo en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif", material:"Cartón corrugado simple flauta C ECT-32 impresión flexo 1 tinta", category:"Cajas de Cartón Personalizadas con Logo", moq:"100"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-personalizadas-logo">Personalizadas con Logo</a></li>
+        <li><span class="current">1 Color Flexo</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-pl01-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-PL-01 · Personalizadas con Logo</span>
+      <h1 id="sku-pl01-title" class="cat-page-hero__title">Cajas Personalizadas <span>Logo 1 Color Flexo</span><br>— ECT-32 CDMX</h1>
+      <p class="cat-page-hero__desc">Impresión flexo 1 tinta pantone sobre kraft marrón o blanco. La personalización más económica: ideal para logos corporativos con colores planos. Desde 100 piezas con diseño incluido.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-01</strong></div>
+        <div class="cat-page-hero__strip-item">Impresión: <strong>Flexo 1 tinta</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-pl01-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif"
+                alt="Cajas cartón personalizadas logo 1 color flexo en CDMX — CADECA CAD-PL-01"
+                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-PL-01 · Familia: Personalizadas con Logo</p>
+            <h2 id="detalle-pl01-title" class="sku-detail__title">Caja Personalizada Logo 1 Color — Flexo</h2>
+            <p class="sku-detail__desc">Impresión flexograbada en 1 tinta pantone sobre kraft marrón o blanco. Resolución hasta 85 lpi con tinta UV base agua de secado rápido. Registro simple con exactitud de ±1mm. Diseño vectorizado incluido sin costo. La opción más económica para marcar tu empaque desde 100 piezas.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flexo 1 tinta</span><span class="sku-detail__strip-label">Impresión</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-01 Caja Logo 1 Color Flexo`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-01</a>
+              <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-pl01-title">
+      <div class="container">
+        <h2 id="sizes-pl01-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-PL-01</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Fabricamos cualquier medida personalizada desde 100 piezas. ⏱ Producción bajo pedido.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-pl01-title">
+      <div class="container">
+        <h2 id="faq-pl01-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-PL-01</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-PL-01 — Personalización desde 100 piezas, entrega 5-7 días" />
+</PageLayout>
