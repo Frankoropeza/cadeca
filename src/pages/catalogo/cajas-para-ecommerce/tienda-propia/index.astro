@@ -45,7 +45,15 @@ const faqs = [
 ];
 ---
 
-<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce"}, {name:"Tienda Propia"}]}
+  faqItems={[{question:"¿Es mejor caja neutra con cinta con logo o caja impresa con logo?", answer:"Depende del volumen: Cinta con logo tiene inversión inicial menor desde 50 pzas, más flexible para cambiar diseños, ideal para comenzar. Caja impresa con logo es más profesional, mejor unboxing experience, costo por pieza menor en pedidos de 500 o más pzas. Si vendes menos de 200 piezas al mes, empieza con cinta. Si ya vendes más de 200 al mes, la caja impresa da mejor ROI."}, {question:"¿Qué tipo de corrugado es mejor para productos de moda como ropa y accesorios?", answer:"Para ropa y accesorios ligeros hasta 5 kg recomendamos corrugado simple ECT-32 flauta C: suficiente resistencia para proteger en tránsito y más económico. Para artículos de moda de mayor valor como bolsos de piel o calzado de lujo, el corrugado simple en kraft blanco coated con impresión full color da un resultado de presentación premium que justifica el costo adicional."}]}
+  product={{name:"Cajas Shopify TiendaNube Tienda Propia", sku:"CAD-EC-04", description:"Cajas Shopify TiendaNube Tienda Propia en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif", material:"Cartón corrugado simple o doble para tienda en línea", category:"Cajas para E-commerce", moq:"50"}}
+>
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
     <div class="container">
       <ol>

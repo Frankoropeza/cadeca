@@ -47,7 +47,15 @@ const faqs = [
 ];
 ---
 
-<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce"}, {name:"Amazon FBA / FBM"}]}
+  faqItems={[{question:"¿Por qué Amazon rechaza cajas con grapas o ventanas de acetato?", answer:"Las bandas transportadoras automatizadas de los centros de distribución de Amazon pueden engancharse con grapas expuestas, causando daños en la maquinaria o en el producto. Las ventanas de acetato reducen la resistencia estructural del corrugado y dificultan el escaneo de códigos de barras. Nuestro CAD-EC-02 elimina ambos problemas de fábrica."}, {question:"¿Qué pasa si envío a Amazon FBA una caja con ECT inferior a 44?", answer:"Amazon puede rechazar el inventory shipment en el centro de distribución si las cajas no cumplen con la resistencia estructural mínima. Esto implica que el producto regresa al vendedor con costo de flete a cargo del seller, genera una penalización en la cuenta y retrasa la disponibilidad del producto en el catálogo. Nuestro CAD-EC-02 lleva ECT-44 garantizado de fábrica."}]}
+  product={{name:"Cajas Amazon FBA FBM México", sku:"CAD-EC-02", description:"Cajas Amazon FBA FBM México en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-amazon-fba-fbm-seller-central-mexico.avif", material:"Cartón doble corrugado BC ECT-44 sin grapas Amazon FBA", category:"Cajas para E-commerce", moq:"50"}}
+>
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
     <div class="container">
       <ol>

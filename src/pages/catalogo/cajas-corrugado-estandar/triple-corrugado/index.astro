@@ -47,7 +47,15 @@ const faqs = [
 ];
 ---
 
-<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar"}, {name:"Triple Corrugado"}]}
+  faqItems={[{question:"¿Cuándo es necesario usar triple corrugado en lugar de doble corrugado?", answer:"Triple corrugado (BCB, ECT-61+) es necesario cuando: el producto pesa más de 30 kg, el producto es maquinaria o equipo con bordes metálicos que podrían perforar doble corrugado, la caja será exportada por vía marítima (mínimo 30 días en contenedor con humedad), el producto requiere certificación ISTA 2A o 3A para transporte aéreo de carga, o el producto es electrodoméstico de línea blanca grande. Para productos menores a 20-25 kg y envíos nacionales, el doble corrugado ECT-44 es suficiente."}, {question:"¿El triple corrugado puede sustituir la madera como material de embalaje industrial?", answer:"En muchos casos sí. El triple corrugado BCB ECT-61+ ofrece una relación resistencia/peso superior a la madera contrachapada de 12mm, es 100% reciclable (la madera a veces requiere tratamiento NIMF 15 para exportación), se puede imprimir y marcar con mayor facilidad, y cumple regulaciones de embalaje internacional sin restricciones fitosanitarias. Sus limitaciones frente a madera son: menor resistencia a humedad extrema en exposición prolongada y menor rigidez lateral en estructuras muy altas. Para pallets y contenedores, la combinación cartón BCB + esquineros de cartón reemplaza madera en muchas aplicaciones industriales."}]}
+  product={{name:"Caja Triple Corrugado BCB Industrial", sku:"CAD-CT-01", description:"Caja Triple Corrugado BCB Industrial en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-triple-corrugado-industrial-cdmx.avif", material:"Cartón triple corrugado flauta BCB ECT-61", category:"Cajas de Cartón Corrugado Estándar", moq:"25"}}
+>
     <!-- Breadcrumb -->
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
     <div class="container">

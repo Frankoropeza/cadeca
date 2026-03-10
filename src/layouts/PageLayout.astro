@@ -8,16 +8,20 @@ import WaBubble     from "@/components/WaBubble.astro";
 
 export interface Props {
   // SEO (heredados a BaseLayout)
-  title:       string;
-  description: string;
-  canonical?:  string;
-  ogImage?:    string;
-  schema?:     object | object[];
-  // Contacto global (se pasa a Topbar, Header, Footer, WaBubble)
-  phone?:      string;
-  whatsapp?:   string;
-  email?:      string;
-  address?:    string;
+  title:        string;
+  description:  string;
+  canonical?:   string;
+  ogImage?:     string;
+  schema?:      object | object[];
+  pageType?:    "home" | "product" | "category" | "catalog" | "page";
+  breadcrumbs?: Array<{ name: string; href?: string }>;
+  faqItems?:    Array<{ question: string; answer: string }>;
+  product?:     { name: string; sku: string; description: string; image: string; brand?: string; material?: string; category?: string; moq?: string; };
+  // Contacto global
+  phone?:       string;
+  whatsapp?:    string;
+  email?:       string;
+  address?:     string;
   schedule?:   string;
 }
 
@@ -27,6 +31,10 @@ const {
   canonical,
   ogImage,
   schema,
+  pageType,
+  breadcrumbs,
+  faqItems,
+  product,
   phone    = "55 XXXX-XXXX",
   whatsapp = "5255XXXXXXXX",
   email    = "ventas@cadeca.com.mx",
@@ -41,6 +49,10 @@ const {
   canonical={canonical}
   ogImage={ogImage}
   schema={schema}
+  pageType={pageType}
+  breadcrumbs={breadcrumbs}
+  faqItems={faqItems}
+  product={product}
 >
   <Topbar   phone={phone} whatsapp={whatsapp} />
   <Header   whatsapp={whatsapp} currentPath={Astro.url.pathname} />

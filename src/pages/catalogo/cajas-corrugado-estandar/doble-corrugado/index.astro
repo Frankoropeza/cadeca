@@ -47,7 +47,15 @@ const faqs = [
 ];
 ---
 
-<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar"}, {name:"Doble Corrugado"}]}
+  faqItems={[{question:"¿Por qué el doble corrugado ECT-44 es el estándar de la industria para e-commerce?", answer:"El ECT-44 doble corrugado BC se convirtió en el estándar porque equilibra tres factores clave: resistencia suficiente para soportar el manejo en centros de distribución automatizados (caídas, apilamiento, vibración), peso controlado que no genera costo excesivo de flete, y costo por pieza competitivo. Mercado Libre, Amazon y las principales paqueterías exigen ECT-44 mínimo porque reduce dramáticamente la tasa de daño en tránsito, que es el costo oculto más alto del e-commerce."}, {question:"¿En qué casos debo subir de ECT-44 a ECT-51 o ECT-61?", answer:"Debes considerar ECT-51 cuando: el producto pesa más de 20 kg, la caja será almacenada en condiciones de alta humedad (>65% HR), el producto es frágil y necesita protección extra, o será exportado por vía marítima. ECT-61 se reserva para triple corrugado, maquinaria industrial, equipo electrónico de alto valor o envíos aéreos con certificación ISTA. Para la mayoría de e-commerce y retail, ECT-44 es suficiente y más económico."}]}
+  product={{name:"Caja Doble Corrugado BC", sku:"CAD-CD-01", description:"Caja Doble Corrugado BC en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif", material:"Cartón doble corrugado flauta BC ECT-44", category:"Cajas de Cartón Corrugado Estándar", moq:"50"}}
+>
 
     <!-- Breadcrumb -->
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">

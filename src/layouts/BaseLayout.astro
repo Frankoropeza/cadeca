@@ -1,108 +1,194 @@
 ---
 import "@/styles/global.css";
 
+// ─── Tipos ────────────────────────────────────────────────────────────────────
+export interface BreadcrumbItem { name: string; href?: string; }
+export interface FaqSeoItem     { question: string; answer: string; }
+export interface ProductSeo {
+  name:        string;
+  sku:         string;
+  description: string;
+  image:       string;
+  brand?:      string;
+  material?:   string;
+  category?:   string;
+  moq?:        string;
+}
+
 export interface Props {
   title:        string;
   description:  string;
   canonical?:   string;
   ogImage?:     string;
-  schema?:      object | object[];
+  pageType?:    "home" | "product" | "category" | "catalog" | "page";
+  breadcrumbs?: BreadcrumbItem[];
+  faqItems?:    FaqSeoItem[];
+  product?:     ProductSeo;
+  schema?:      object | object[];           // inyección manual si se necesita
 }
 
 const {
   title,
   description,
-  canonical  = Astro.url.href,
-  ogImage    = "/img/og-cadeca.jpg",
+  canonical   = Astro.url.href,
+  ogImage     = "/img/og-cadeca.jpg",
+  pageType    = "page",
+  breadcrumbs,
+  faqItems,
+  product,
   schema,
 } = Astro.props;
 
-const siteName = "CADECA";
-const siteUrl  = "https://cadeca.com.mx"; // ← cambiar al dominio real
+const SITE    = "https://cadeca.com.mx";   // ← cambiar al dominio real
+const SITE_NAME = "CADECA";
+const TEL     = "+52-55-XXXX-XXXX";       // ← cambiar
+const EMAIL   = "ventas@cadeca.com.mx";   // ← cambiar
 
-// Schema por defecto: Organization + LocalBusiness + WebSite
-const defaultSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CADECA",
-    "url": siteUrl,
-    "logo": `${siteUrl}/img/cadeca-logo.png`,
-    "description": "La mejor empresa de cajas de cartón en CDMX y Estado de México. Venta de cajas corrugadas estándar, a medida y personalizadas al mayoreo.",
-    "telephone": "+52-55-XXXX-XXXX", // ← cambiar
-    "email": "ventas@cadeca.com.mx",  // ← cambiar
-    "address": [
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "", // ← completar
-        "addressLocality": "Ciudad de México",
-        "addressRegion": "CDMX",
-        "postalCode": "",
-        "addressCountry": "MX"
-      }
-    ],
-    "areaServed": [
-      { "@type": "State", "name": "Ciudad de México" },
-      { "@type": "State", "name": "Estado de México" }
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+52-55-XXXX-XXXX",
-      "contactType": "sales",
-      "areaServed": "MX",
-      "availableLanguage": "Spanish"
-    }
+// ─── Schemas base (siempre presentes) ─────────────────────────────────────────
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE}/#org`,
+  "name": SITE_NAME,
+  "url": SITE,
+  "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
+  "description": "La mejor empresa de cajas de cartón en CDMX y Estado de México. Fabricante directo de cajas corrugadas estándar, a medida y personalizadas al mayoreo.",
+  "telephone": TEL,
+  "email": EMAIL,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "addressCountry": "MX"
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${siteUrl}/#negocio`,
-    "name": "CADECA — Cajas de Cartón",
-    "url": siteUrl,
-    "logo": `${siteUrl}/img/cadeca-logo.png`,
-    "image": `${siteUrl}/img/og-cadeca.jpg`,
-    "description": "Venta de cajas de cartón corrugado al mayoreo y menudeo en CDMX y Estado de México. Cajas estándar, a medida y personalizadas con logo.",
-    "telephone": "+52-55-XXXX-XXXX",
-    "email": "ventas@cadeca.com.mx",
-    "priceRange": "$$",
-    "paymentAccepted": "Transferencia bancaria, Tarjeta de crédito, Efectivo",
-    "currenciesAccepted": "MXN",
-    "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 19.4326,  // ← cambiar a coordenadas reales
-      "longitude": -99.1332
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",  // ← completar
-      "addressLocality": "Ciudad de México",
-      "addressRegion": "CDMX",
-      "postalCode": "",
-      "addressCountry": "MX"
-    },
-    "areaServed": [
-      "Ciudad de México",
-      "Estado de México",
-      "Zona Metropolitana del Valle de México"
-    ]
+  "areaServed": [
+    { "@type": "State", "name": "Ciudad de México" },
+    { "@type": "State", "name": "Estado de México" }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": TEL,
+    "contactType": "sales",
+    "areaServed": "MX",
+    "availableLanguage": "Spanish"
+  }
+};
+
+const schemaLocal = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE}/#negocio`,
+  "name": "CADECA — Cajas de Cartón",
+  "url": SITE,
+  "logo": `${SITE}/img/cadeca-logo.png`,
+  "image": `${SITE}/img/og-cadeca.jpg`,
+  "description": "Fabricante directo de cajas de cartón corrugado al mayoreo en CDMX y Estado de México. Cajas estándar, a la medida y personalizadas con logo. Entrega mismo día CDMX.",
+  "telephone": TEL,
+  "email": EMAIL,
+  "priceRange": "$$",
+  "currenciesAccepted": "MXN",
+  "paymentAccepted": "Transferencia, Tarjeta, Efectivo",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "14:00" }
+  ],
+  "geo": { "@type": "GeoCoordinates", "latitude": 19.4326, "longitude": -99.1332 },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "addressCountry": "MX"
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "CADECA",
-    "url": siteUrl,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${siteUrl}/productos?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
+  "areaServed": ["Ciudad de México","Estado de México","Zona Metropolitana del Valle de México"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catálogo de Cajas de Cartón Corrugado",
+    "url": `${SITE}/catalogo`
+  }
+};
+
+const schemaWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE}/#website`,
+  "name": SITE_NAME,
+  "url": SITE,
+  "publisher": { "@id": `${SITE}/#org` },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": { "@type": "EntryPoint", "urlTemplate": `${SITE}/productos?q={search_term_string}` },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// ─── BreadcrumbList JSON-LD (si se pasan breadcrumbs) ─────────────────────────
+const schemaBreadcrumb = breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((b, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": b.name,
+    ...(b.href ? { "item": `${SITE}${b.href}` } : {})
+  }))
+} : null;
+
+// ─── FAQPage JSON-LD (si se pasan faqItems) ───────────────────────────────────
+const schemaFaq = faqItems?.length ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+} : null;
+
+// ─── Product JSON-LD (si se pasa product) ────────────────────────────────────
+const schemaProduct = product ? {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": product.name,
+  "sku": product.sku,
+  "description": product.description,
+  "image": `${SITE}${product.image}`,
+  "brand": { "@type": "Brand", "name": product.brand ?? SITE_NAME },
+  ...(product.material ? { "material": product.material } : {}),
+  ...(product.category ? { "category": product.category } : {}),
+  "manufacturer": { "@id": `${SITE}/#org` },
+  "offers": {
+    "@type": "Offer",
+    "url": canonical,
+    "priceCurrency": "MXN",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "priceCurrency": "MXN",
+      "unitCode": "C62",
+      "name": "Precio por pieza (volumen)"
+    },
+    "availability": "https://schema.org/InStock",
+    "seller": { "@id": `${SITE}/#org` },
+    "areaServed": "MX",
+    "eligibleQuantity": {
+      "@type": "QuantitativeValue",
+      "minValue": product.moq ? parseInt(product.moq) : 50,
+      "unitText": "piezas"
     }
   }
-];
+} : null;
 
-const schemas = schema
-  ? (Array.isArray(schema) ? schema : [schema])
-  : defaultSchema;
+// ─── Ensamblar todos los schemas ──────────────────────────────────────────────
+const allSchemas: object[] = [schemaOrg, schemaLocal, schemaWebSite];
+if (schemaBreadcrumb) allSchemas.push(schemaBreadcrumb);
+if (schemaFaq)        allSchemas.push(schemaFaq);
+if (schemaProduct)    allSchemas.push(schemaProduct);
+if (schema) {
+  const extra = Array.isArray(schema) ? schema : [schema];
+  allSchemas.push(...extra);
+}
+
+// ─── og:type dinámico ─────────────────────────────────────────────────────────
+const ogType = (pageType === "product") ? "og:product" : "website";
 ---
 
 <!doctype html>
@@ -117,19 +203,19 @@ const schemas = schema
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-    <!-- Geo SEO Local (CDMX) -->
-    <meta name="geo.region" content="MX-CMX" />
+    <!-- Geo Local SEO (CDMX) -->
+    <meta name="geo.region"    content="MX-CMX" />
     <meta name="geo.placename" content="Ciudad de México" />
-    <meta name="geo.position" content="19.4326;-99.1332" />
-    <meta name="ICBM" content="19.4326, -99.1332" />
+    <meta name="geo.position"  content="19.4326;-99.1332" />
+    <meta name="ICBM"          content="19.4326, -99.1332" />
 
     <!-- Open Graph -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:title"       content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url"         content={canonical} />
-    <meta property="og:site_name"   content={siteName} />
-    <meta property="og:image"       content={ogImage} />
+    <meta property="og:type"         content={ogType} />
+    <meta property="og:title"        content={title} />
+    <meta property="og:description"  content={description} />
+    <meta property="og:url"          content={canonical} />
+    <meta property="og:site_name"    content={SITE_NAME} />
+    <meta property="og:image"        content={`${SITE}${ogImage}`} />
     <meta property="og:image:width"  content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type"   content="image/jpeg" />
@@ -140,7 +226,7 @@ const schemas = schema
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image"       content={ogImage} />
+    <meta name="twitter:image"       content={`${SITE}${ogImage}`} />
     <meta name="twitter:image:alt"   content="CADECA — Cajas de Cartón CDMX" />
 
     <!-- Favicon -->
@@ -152,9 +238,9 @@ const schemas = schema
     <!-- Theme -->
     <meta name="theme-color" content="#E05800" />
 
-    <!-- Schema.org JSON-LD -->
-    {schemas.map(s => (
-      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    <!-- Schema.org JSON-LD (múltiples bloques = mejor parsing por Google) -->
+    {allSchemas.map(s => (
+      <script type="application/ld+json" set:html={JSON.stringify(s, null, 0)} />
     ))}
   </head>
   <body>
@@ -164,9 +250,9 @@ const schemas = schema
 
 <script>
   // Mobile nav toggle
-  const hamburger   = document.getElementById('hamburger');
-  const mobileNav   = document.getElementById('mobile-nav');
-  const overlay     = document.getElementById('mobile-overlay');
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const overlay   = document.getElementById('mobile-overlay');
 
   function openNav() {
     mobileNav?.classList.add('mobile-nav--open');
@@ -182,15 +268,14 @@ const schemas = schema
   }
 
   hamburger?.addEventListener('click', () => {
-    const isOpen = mobileNav?.classList.contains('mobile-nav--open');
-    isOpen ? closeNav() : openNav();
+    mobileNav?.classList.contains('mobile-nav--open') ? closeNav() : openNav();
   });
   overlay?.addEventListener('click', closeNav);
 
   // Mobile submenus
   document.querySelectorAll('[data-toggle]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const target = document.getElementById(btn.getAttribute('aria-controls') || '');
+      const target = document.getElementById(btn.getAttribute('aria-controls') ?? '');
       const isOpen = target?.classList.contains('mobile-nav__submenu--open');
       target?.classList.toggle('mobile-nav__submenu--open', !isOpen);
       btn.setAttribute('aria-expanded', String(!isOpen));
@@ -204,15 +289,13 @@ const schemas = schema
       const answer = item?.querySelector('.faq__answer');
       const icon   = btn.querySelector('.faq__icon');
       const isOpen = answer?.classList.contains('faq__answer--open');
-      // Close all
-      document.querySelectorAll('.faq__answer--open').forEach(a => a.classList.remove('faq__answer--open'));
-      document.querySelectorAll('.faq__question').forEach(b => b.setAttribute('aria-expanded', 'false'));
-      document.querySelectorAll('.faq__icon').forEach(i => { (i as HTMLElement).textContent = '+'; });
-      // Open clicked
+      document.querySelectorAll('.faq__answer--open').forEach(a  => a.classList.remove('faq__answer--open'));
+      document.querySelectorAll('.faq__question').forEach(b       => b.setAttribute('aria-expanded', 'false'));
+      document.querySelectorAll('.faq__icon').forEach(i           => { (i as HTMLElement).textContent = '+'; });
       if (!isOpen) {
         answer?.classList.add('faq__answer--open');
         btn.setAttribute('aria-expanded', 'true');
-        if (icon) icon.textContent = '−';
+        if (icon) (icon as HTMLElement).textContent = '−';
       }
     });
   });
@@ -220,15 +303,14 @@ const schemas = schema
   // Lead form → WhatsApp
   document.getElementById('cotizar-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const form    = e.target as HTMLFormElement;
-    const nombre  = (form.querySelector('[name="nombre"]')  as HTMLInputElement)?.value.trim();
-    const contacto= (form.querySelector('[name="contacto"]') as HTMLInputElement)?.value.trim();
-    const tipo    = (form.querySelector('[name="tipo"]')     as HTMLSelectElement)?.value;
-    const cantidad= (form.querySelector('[name="cantidad"]') as HTMLSelectElement)?.value;
-
+    const form     = e.target as HTMLFormElement;
+    const nombre   = (form.querySelector('[name="nombre"]')   as HTMLInputElement)?.value.trim();
+    const contacto = (form.querySelector('[name="contacto"]') as HTMLInputElement)?.value.trim();
+    const tipo     = (form.querySelector('[name="tipo"]')     as HTMLSelectElement)?.value;
+    const cantidad = (form.querySelector('[name="cantidad"]') as HTMLSelectElement)?.value;
     const msg = encodeURIComponent(
-      `Hola CADECA, soy ${nombre}.\nNecesito cotizar: ${tipo} — Cantidad aproximada: ${cantidad}.\nContacto: ${contacto}`
+      `Hola CADECA, soy ${nombre}.\nNecesito cotizar: ${tipo} — Cantidad aprox.: ${cantidad}.\nContacto: ${contacto}`
     );
-    window.open(`https://wa.me/5255XXXXXXXX?text=${msg}`, '_blank'); // ← cambiar número
+    window.open(`https://wa.me/5255XXXXXXXX?text=${msg}`, '_blank');
   });
 </script>

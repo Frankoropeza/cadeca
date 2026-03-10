@@ -37,7 +37,15 @@ const faqs = [
 ];
 ---
 
-<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce"}, {name:"E-commerce a la Medida"}]}
+  faqItems={[{question:"¿Cómo me ayudan a encontrar la medida exacta que minimiza mi costo de envío?", answer:"Compártenos las dimensiones de tu producto empacado y la paquetería que usas. Calculamos el peso volumétrico de varias opciones de caja y te recomendamos la medida que reduce más ese cálculo sin sacrificar protección. Para la mayoría de los productos el ahorro es de 15 a 35 por ciento en el costo de envío por pieza. El servicio de cálculo es completamente gratuito."}, {question:"¿Cuándo tiene sentido hacer una caja a la medida en lugar de usar medidas estándar?", answer:"Tiene sentido cuando: tu producto tiene dimensiones irregulares y las cajas estándar generan exceso de peso volumétrico; vendes más de 200 piezas al mes y el diferencial de costo por envío justifica la inversión; tu producto requiere ajuste exacto para que no se mueva sin relleno adicional; o tu empaque forma parte de la experiencia de marca y necesitas dimensiones precisas."}]}
+  product={{name:"Cajas E-commerce a la Medida CDMX", sku:"CAD-EC-05", description:"Cajas E-commerce a la Medida CDMX en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif", material:"Cartón corrugado a la medida para e-commerce optimización volumétrica", category:"Cajas para E-commerce", moq:"50"}}
+>
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
     <div class="container">
       <ol>

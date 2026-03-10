@@ -46,7 +46,15 @@ const faqs = [
 ];
 ---
 
-<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce"}, {name:"Mercado Envíos"}]}
+  faqItems={[{question:"¿Las medidas de Mercado Envíos cambian con frecuencia?", answer:"Mercado Libre actualiza ocasionalmente las especificaciones de Mercado Envíos. En CADECA monitoreamos estos cambios y actualizamos nuestro stock conforme las nuevas medidas oficiales. Si tienes dudas sobre si las medidas que compraste siguen siendo válidas, escríbenos por WhatsApp con la talla y verificamos la especificación vigente sin costo."}, {question:"¿Puedo usar estas cajas con otras paqueterías además de Mercado Envíos?", answer:"Sí. Las medidas de Mercado Envíos también son compatibles con Estafeta, J&T, DHL y Sendex. El doble corrugado ECT-44 cumple los requerimientos de resistencia de todas estas paqueterías. La única restricción es Amazon FBA, que tiene medidas específicas — para Amazon recomendamos el producto CAD-EC-02."}]}
+  product={{name:"Cajas Mercado Envíos Todas las Tallas", sku:"CAD-EC-01", description:"Cajas Mercado Envíos Todas las Tallas en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif", material:"Cartón doble corrugado BC ECT-44 Mercado Envíos", category:"Cajas para E-commerce", moq:"50"}}
+>
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
     <div class="container">
       <ol>
