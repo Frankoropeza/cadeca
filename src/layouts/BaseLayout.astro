@@ -1,56 +1,234 @@
 ---
+import "@/styles/global.css";
+
 export interface Props {
-  title: string;
-  description: string;
-  canonical?: string;
-  ogImage?: string;
+  title:        string;
+  description:  string;
+  canonical?:   string;
+  ogImage?:     string;
+  schema?:      object | object[];
 }
 
 const {
   title,
   description,
-  canonical = Astro.url.href,
-  ogImage = "/og-default.jpg",
+  canonical  = Astro.url.href,
+  ogImage    = "/img/og-cadeca.jpg",
+  schema,
 } = Astro.props;
 
-const siteName = "Cadeca"; // ← cambiar al nombre real
+const siteName = "CADECA";
+const siteUrl  = "https://cadeca.com.mx"; // ← cambiar al dominio real
+
+// Schema por defecto: Organization + LocalBusiness + WebSite
+const defaultSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CADECA",
+    "url": siteUrl,
+    "logo": `${siteUrl}/img/cadeca-logo.png`,
+    "description": "La mejor empresa de cajas de cartón en CDMX y Estado de México. Venta de cajas corrugadas estándar, a medida y personalizadas al mayoreo.",
+    "telephone": "+52-55-XXXX-XXXX", // ← cambiar
+    "email": "ventas@cadeca.com.mx",  // ← cambiar
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "", // ← completar
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "postalCode": "",
+        "addressCountry": "MX"
+      }
+    ],
+    "areaServed": [
+      { "@type": "State", "name": "Ciudad de México" },
+      { "@type": "State", "name": "Estado de México" }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+52-55-XXXX-XXXX",
+      "contactType": "sales",
+      "areaServed": "MX",
+      "availableLanguage": "Spanish"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteUrl}/#negocio`,
+    "name": "CADECA — Cajas de Cartón",
+    "url": siteUrl,
+    "logo": `${siteUrl}/img/cadeca-logo.png`,
+    "image": `${siteUrl}/img/og-cadeca.jpg`,
+    "description": "Venta de cajas de cartón corrugado al mayoreo y menudeo en CDMX y Estado de México. Cajas estándar, a medida y personalizadas con logo.",
+    "telephone": "+52-55-XXXX-XXXX",
+    "email": "ventas@cadeca.com.mx",
+    "priceRange": "$$",
+    "paymentAccepted": "Transferencia bancaria, Tarjeta de crédito, Efectivo",
+    "currenciesAccepted": "MXN",
+    "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 19.4326,  // ← cambiar a coordenadas reales
+      "longitude": -99.1332
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "",  // ← completar
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "",
+      "addressCountry": "MX"
+    },
+    "areaServed": [
+      "Ciudad de México",
+      "Estado de México",
+      "Zona Metropolitana del Valle de México"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CADECA",
+    "url": siteUrl,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${siteUrl}/productos?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  }
+];
+
+const schemas = schema
+  ? (Array.isArray(schema) ? schema : [schema])
+  : defaultSchema;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO básico -->
+    <!-- SEO Primario -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Geo SEO Local (CDMX) -->
+    <meta name="geo.region" content="MX-CMX" />
+    <meta name="geo.placename" content="Ciudad de México" />
+    <meta name="geo.position" content="19.4326;-99.1332" />
+    <meta name="ICBM" content="19.4326, -99.1332" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content={siteName} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
+    <meta property="og:url"         content={canonical} />
+    <meta property="og:site_name"   content={siteName} />
+    <meta property="og:image"       content={ogImage} />
+    <meta property="og:image:width"  content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type"   content="image/jpeg" />
+    <meta property="og:image:alt"    content="CADECA — Cajas de Cartón en CDMX y Estado de México" />
+    <meta property="og:locale"       content="es_MX" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image"       content={ogImage} />
+    <meta name="twitter:image:alt"   content="CADECA — Cajas de Cartón CDMX" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon"             href="/favicon.ico" sizes="any" />
+    <link rel="icon"             href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="manifest"         href="/site.webmanifest" />
 
-    <!-- Performance -->
-    <meta name="theme-color" content="#ffffff" />
+    <!-- Theme -->
+    <meta name="theme-color" content="#E05800" />
+
+    <!-- Schema.org JSON-LD -->
+    {schemas.map(s => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
   </head>
   <body>
     <slot />
   </body>
 </html>
+
+<script>
+  // Mobile nav toggle
+  const hamburger   = document.getElementById('hamburger');
+  const mobileNav   = document.getElementById('mobile-nav');
+  const overlay     = document.getElementById('mobile-overlay');
+
+  function openNav() {
+    mobileNav?.classList.add('mobile-nav--open');
+    overlay?.classList.add('mobile-overlay--open');
+    hamburger?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    mobileNav?.classList.remove('mobile-nav--open');
+    overlay?.classList.remove('mobile-overlay--open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileNav?.classList.contains('mobile-nav--open');
+    isOpen ? closeNav() : openNav();
+  });
+  overlay?.addEventListener('click', closeNav);
+
+  // Mobile submenus
+  document.querySelectorAll('[data-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.getAttribute('aria-controls') || '');
+      const isOpen = target?.classList.contains('mobile-nav__submenu--open');
+      target?.classList.toggle('mobile-nav__submenu--open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq__item');
+      const answer = item?.querySelector('.faq__answer');
+      const icon   = btn.querySelector('.faq__icon');
+      const isOpen = answer?.classList.contains('faq__answer--open');
+      // Close all
+      document.querySelectorAll('.faq__answer--open').forEach(a => a.classList.remove('faq__answer--open'));
+      document.querySelectorAll('.faq__question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      document.querySelectorAll('.faq__icon').forEach(i => { (i as HTMLElement).textContent = '+'; });
+      // Open clicked
+      if (!isOpen) {
+        answer?.classList.add('faq__answer--open');
+        btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.textContent = '−';
+      }
+    });
+  });
+
+  // Lead form → WhatsApp
+  document.getElementById('cotizar-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form    = e.target as HTMLFormElement;
+    const nombre  = (form.querySelector('[name="nombre"]')  as HTMLInputElement)?.value.trim();
+    const contacto= (form.querySelector('[name="contacto"]') as HTMLInputElement)?.value.trim();
+    const tipo    = (form.querySelector('[name="tipo"]')     as HTMLSelectElement)?.value;
+    const cantidad= (form.querySelector('[name="cantidad"]') as HTMLSelectElement)?.value;
+
+    const msg = encodeURIComponent(
+      `Hola CADECA, soy ${nombre}.\nNecesito cotizar: ${tipo} — Cantidad aproximada: ${cantidad}.\nContacto: ${contacto}`
+    );
+    window.open(`https://wa.me/5255XXXXXXXX?text=${msg}`, '_blank'); // ← cambiar número
+  });
+</script>
