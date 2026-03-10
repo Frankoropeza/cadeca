@@ -186,17 +186,21 @@ const faqs = [
 
 <PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP}>
 
+    <!-- Breadcrumb -->
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/productos">Productos</a></li>
+      <li><span class="current">Cajas a la Medida</span></li>
+      </ol>
+    </div>
+  </div>
+
   <section class="page-hero" aria-labelledby="prod-am-title">
     <div class="container">
       <div class="page-hero__inner">
         <div class="page-hero__content">
-          <nav class="breadcrumb" aria-label="Ruta de navegación">
-            <ol class="breadcrumb__list">
-              <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
-              <li class="breadcrumb__item"><a href="/productos" class="breadcrumb__link">Productos</a></li>
-              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Cajas a la Medida</li>
-            </ol>
-          </nav>
           <p class="page-hero__badge">Diseño CAD gratis · Asesoría técnica · Sin cargo por medida especial</p>
           <h1 id="prod-am-title" class="page-hero__title">
             Cajas de Cartón<br><span>a la Medida en CDMX</span>

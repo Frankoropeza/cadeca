@@ -186,17 +186,21 @@ const faqs = [
 
 <PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP}>
 
+    <!-- Breadcrumb -->
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/productos">Productos</a></li>
+      <li><span class="current">Láminas y Ecológicas</span></li>
+      </ol>
+    </div>
+  </div>
+
   <section class="page-hero" aria-labelledby="prod-lc-title">
     <div class="container">
       <div class="page-hero__inner">
         <div class="page-hero__content">
-          <nav class="breadcrumb" aria-label="Ruta de navegación">
-            <ol class="breadcrumb__list">
-              <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
-              <li class="breadcrumb__item"><a href="/productos" class="breadcrumb__link">Productos</a></li>
-              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Láminas y Ecológicas</li>
-            </ol>
-          </nav>
           <p class="page-hero__badge">FSC Certificado · Reciclado PCR · Documentación ESG incluida</p>
           <h1 id="prod-lc-title" class="page-hero__title">
             Láminas de Cartón<br><span>Corrugado Ecológico CDMX</span>

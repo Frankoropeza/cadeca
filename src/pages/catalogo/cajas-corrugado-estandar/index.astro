@@ -104,15 +104,19 @@ const productos = [
 <PageLayout title={title} description={description} whatsapp={WHATSAPP}>
 
   <!-- HERO CATEGORÍA -->
+    <!-- Breadcrumb -->
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><span class="current">Corrugado Estándar</span></li>
+      </ol>
+    </div>
+  </div>
+
   <section class="cat-page-hero" aria-labelledby="cat-cs-hub-title">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom:var(--spacing-md)">
-        <ol class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
-          <li class="breadcrumb__item"><a href="/catalogo" class="breadcrumb__link">Catálogo</a></li>
-          <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Corrugado Estándar</li>
-        </ol>
-      </nav>
       <span class="cat-page-hero__eyebrow">📦 Categoría 01 · 5 productos</span>
       <h1 id="cat-cs-hub-title" class="cat-page-hero__title">
         Cajas Corrugado <span>Estándar</span>

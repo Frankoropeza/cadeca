@@ -49,16 +49,20 @@ const faqs = [
 ---
 
 <PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+    <!-- Breadcrumb -->
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+      <li><span class="current">Corrugado Micro Flauta E</span></li>
+      </ol>
+    </div>
+  </div>
+
   <section class="cat-page-hero" aria-labelledby="sku-ce-title">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Ruta de navegación" style="margin-bottom:var(--spacing-md)">
-        <ol class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
-          <li class="breadcrumb__item"><a href="/catalogo" class="breadcrumb__link">Catálogo</a></li>
-          <li class="breadcrumb__item"><a href="/catalogo/cajas-corrugado-estandar" class="breadcrumb__link">Corrugado Estándar</a></li>
-          <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Corrugado Micro Flauta E</li>
-        </ol>
-      </nav>
       <span class="cat-page-hero__eyebrow">SKU CAD-CE-01 · Corrugado Estándar</span>
       <h1 id="sku-ce-title" class="cat-page-hero__title">Corrugado Micro<br><span>Flauta E — Presentación Premium</span></h1>
       <p class="cat-page-hero__desc">Microflauta E de 1.5mm. La mejor superficie de impresión en cartón corrugado. Para cosméticos, joyería, suplementos y packaging de presentación premium. Desde 100 piezas, entrega 3-5 días.</p>

@@ -1935,3 +1935,39 @@ img, video, iframe { max-width: 100%; height: auto; }
 
 /* Sizes table in SKU detail */
 .sku-sizes { padding: var(--spacing-3xl) 0; background: var(--color-accent); }
+
+/* ── Breadcrumb Bar (barra independiente bajo el header) ── */
+.breadcrumb-bar {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.65rem 0;
+}
+.breadcrumb-bar ol {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+.breadcrumb-bar li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+.breadcrumb-bar li::after {
+  content: "/";
+  color: var(--color-border);
+  font-weight: 400;
+}
+.breadcrumb-bar li:last-child::after { display: none; }
+.breadcrumb-bar a {
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+.breadcrumb-bar a:hover { color: var(--color-secondary); text-decoration: underline; }
+.breadcrumb-bar .current { color: var(--color-text); font-weight: 600; }
