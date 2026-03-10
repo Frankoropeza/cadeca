@@ -1,0 +1,289 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const WHATSAPP = "5255XXXXXXXX";
+
+const title       = "Zonas de Servicio Cajas de Cartón CDMX y Estado de México | CADECA";
+const description = "CADECA entrega cajas de cartón corrugado en toda la ZMVM. CDMX, Naucalpan, Tlalnepantla, Ecatepec, Toluca, Cuautitlán y más. Entrega express 24 hrs. Fabricante directo.";
+
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Zonas de Servicio" },
+];
+
+const faqs = [
+  {
+    question: "¿Cuánto tiempo tarda la entrega en CDMX?",
+    answer: "Para productos en stock (cajas estándar, Mercado Envíos, Amazon FBA) la entrega en CDMX es en 24 horas hábiles desde la confirmación del pedido. Para pedidos de producción bajo pedido, el tiempo es de 3 a 5 días hábiles más el tiempo de entrega según zona.",
+  },
+  {
+    question: "¿Tienen costo de envío o entrega a domicilio?",
+    answer: "Para pedidos mayores a cierto volumen (consultar con asesor) la entrega en CDMX y zona metropolitana es sin costo adicional. Para pedidos pequeños o zonas alejadas se aplica costo de flete según cotización. En todos los casos informamos el costo antes de confirmar el pedido.",
+  },
+  {
+    question: "¿Pueden entregar en el interior de la República?",
+    answer: "Sí. Para clientes fuera de la ZMVM enviamos vía paquetería (DHL, FedEx, Estafeta, J&T) con el costo a cargo del cliente. El tiempo de entrega varía de 2 a 5 días hábiles según el destino. Consulta disponibilidad para tu ciudad.",
+  },
+  {
+    question: "¿Puedo recoger directamente en planta?",
+    answer: "Sí. Nuestras instalaciones están en CDMX y puedes coordinar la recolección directa para ahorrar el costo de flete. Comunícate con tu asesor para agendar la fecha y hora de recolección.",
+  },
+];
+
+const zonasCDMX = [
+  { nombre: "Vallejo / Azcapotzalco",     alcaldias: ["Azcapotzalco","Gustavo A. Madero"],          entrega: "24 hrs",  clase: "zona--destacada" },
+  { nombre: "Iztapalapa",                  alcaldias: ["Iztapalapa","Iztacalco"],                      entrega: "24 hrs",  clase: "" },
+  { nombre: "Venustiano Carranza / Centro",alcaldias: ["Venustiano Carranza","Cuauhtémoc"],            entrega: "24 hrs",  clase: "" },
+  { nombre: "Coyoacán / Benito Juárez",    alcaldias: ["Coyoacán","Benito Juárez","Álvaro Obregón"],   entrega: "24 hrs",  clase: "" },
+  { nombre: "Tlalpan / Xochimilco",        alcaldias: ["Tlalpan","Xochimilco","Milpa Alta"],           entrega: "24-48 hrs",clase:"" },
+  { nombre: "Miguel Hidalgo / Cuajimalpa", alcaldias: ["Miguel Hidalgo","Cuajimalpa"],                entrega: "24 hrs",  clase: "" },
+  { nombre: "Tláhuac / Milpa Alta",        alcaldias: ["Tláhuac","Milpa Alta"],                       entrega: "48 hrs",  clase: "" },
+];
+
+const zonasEdomex = [
+  { nombre: "Naucalpan / Tlalnepantla",    municipios: ["Naucalpan de Juárez","Tlalnepantla de Baz"], entrega: "24 hrs",  clase: "zona--destacada" },
+  { nombre: "Ecatepec",                    municipios: ["Ecatepec de Morelos"],                        entrega: "24-48 hrs",clase:"zona--destacada" },
+  { nombre: "Toluca / Lerma / Zinacantepec",municipios:["Toluca","Lerma","Zinacantepec","Metepec"],    entrega: "48 hrs",  clase: "" },
+  { nombre: "Cuautitlán Izcalli / Tultitlán",municipios:["Cuautitlán Izcalli","Tultitlán"],           entrega: "24-48 hrs",clase:"" },
+  { nombre: "Texcoco / Chimalhuacán",      municipios: ["Texcoco","Chimalhuacán","Los Reyes La Paz"],  entrega: "48 hrs",  clase: "" },
+  { nombre: "Chalco / Ixtapaluca",         municipios: ["Chalco","Ixtapaluca","Valle de Chalco"],     entrega: "48 hrs",  clase: "" },
+  { nombre: "Atizapán / Nicolás Romero",   municipios: ["Atizapán de Zaragoza","Nicolás Romero"],     entrega: "48 hrs",  clase: "" },
+];
+
+const schemaServiceArea = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Entrega de Cajas de Cartón Corrugado en ZMVM",
+  "provider": { "@type": "LocalBusiness", "@id": "https://cadeca.com.mx/#negocio" },
+  "areaServed": [
+    { "@type": "City", "name": "Ciudad de México", "containedInPlace": { "@type": "Country", "name": "México" } },
+    { "@type": "State", "name": "Estado de México", "containedInPlace": { "@type": "Country", "name": "México" } },
+  ],
+  "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Cajas de Cartón Corrugado", "url": "https://cadeca.com.mx/catalogo" },
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="page"
+  breadcrumbs={breadcrumbs}
+  faqItems={faqs}
+  schema={schemaServiceArea}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><span class="current">Zonas de Servicio</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="zonas-hero" aria-labelledby="zonas-title">
+    <div class="container">
+      <div class="zonas-hero__inner">
+        <div class="zonas-hero__content">
+          <span class="zonas-hero__eyebrow">CDMX · Estado de México · ZMVM</span>
+          <h1 id="zonas-title" class="zonas-hero__title">
+            Entregamos en Toda la <span>Zona Metropolitana</span>
+          </h1>
+          <p class="zonas-hero__desc">
+            Stock permanente en CDMX con entrega express en 24 horas. Cubrimos las 16 alcaldías de CDMX y los principales municipios del Estado de México. Fabricante directo — sin intermediarios.
+          </p>
+          <div class="zonas-hero__chips">
+            <span class="zona-chip zona-chip--green">✓ CDMX 24 hrs</span>
+            <span class="zona-chip zona-chip--green">✓ Naucalpan 24 hrs</span>
+            <span class="zona-chip zona-chip--blue">✓ Ecatepec 24-48 hrs</span>
+            <span class="zona-chip zona-chip--blue">✓ Toluca 48 hrs</span>
+            <span class="zona-chip zona-chip--blue">✓ Interior República</span>
+          </div>
+          <div class="zonas-hero__actions">
+            <a href={`https://wa.me/${WHATSAPP}?text=Hola CADECA, quiero verificar si hacen entregas en mi zona`} target="_blank" rel="noopener" class="btn btn--primary btn--lg">Verificar mi zona por WhatsApp</a>
+            <a href="/cotizar" class="btn btn--outline-white btn--lg">Cotizar ahora</a>
+          </div>
+        </div>
+        <div class="zonas-hero__stats">
+          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">16</span><span class="zonas-hero__stat-label">Alcaldías CDMX</span></div>
+          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">50+</span><span class="zonas-hero__stat-label">Municipios Edomex</span></div>
+          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">24 hrs</span><span class="zonas-hero__stat-label">Entrega express</span></div>
+          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">0</span><span class="zonas-hero__stat-label">Intermediarios</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <!-- CDMX -->
+    <section class="zonas-section" aria-labelledby="cdmx-title">
+      <div class="container">
+        <SectionHeader
+          id="cdmx-title"
+          title="Ciudad de México — 16 Alcaldías"
+          subtitle="Cobertura completa en toda la CDMX. Entrega en 24 hrs para pedidos en stock. Para pedidos de producción: 3-5 días hábiles de fabricación + entrega."
+        />
+        <div class="zonas-grid">
+          {zonasCDMX.map(z => (
+            <div class={`zona-card ${z.clase}`}>
+              <div class="zona-card__header">
+                <h3 class="zona-card__nombre">{z.nombre}</h3>
+                <span class={`zona-chip zona-chip--${z.entrega === "24 hrs" ? "green" : "blue"}`}>
+                  ⚡ {z.entrega}
+                </span>
+              </div>
+              <p class="zona-card__alcaldias">{z.alcaldias.join(" · ")}</p>
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
+                Cotizar para {z.nombre.split("/")[0].trim()} →
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Estado de México -->
+    <section class="zonas-section zonas-section--alt" aria-labelledby="edomex-title">
+      <div class="container">
+        <SectionHeader
+          id="edomex-title"
+          title="Estado de México — Zona Metropolitana"
+          subtitle="Los principales municipios industriales y comerciales del Estado de México. Entrega en 24 a 48 horas según distancia desde nuestra planta en CDMX."
+        />
+        <div class="zonas-grid">
+          {zonasEdomex.map(z => (
+            <div class={`zona-card ${z.clase}`}>
+              <div class="zona-card__header">
+                <h3 class="zona-card__nombre">{z.nombre}</h3>
+                <span class={`zona-chip zona-chip--${z.entrega === "24 hrs" ? "green" : "blue"}`}>
+                  ⚡ {z.entrega}
+                </span>
+              </div>
+              <p class="zona-card__alcaldias">{z.municipios.join(" · ")}</p>
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
+                Cotizar para {z.nombre.split("/")[0].trim()} →
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="zonas-proceso" aria-labelledby="proceso-title">
+      <div class="container">
+        <SectionHeader
+          id="proceso-title"
+          centered
+          title="¿Cómo Funciona la Entrega?"
+          subtitle="Del pedido a tu almacén sin complicaciones."
+        />
+        <div class="proceso-steps">
+          <div class="proceso-step">
+            <span class="proceso-step__num">01</span>
+            <h3 class="proceso-step__titulo">Cotiza en menos de 1 hora</h3>
+            <p class="proceso-step__desc">Envíanos la medida, tipo de caja y cantidad por WhatsApp o formulario. Respondemos con precio y disponibilidad en menos de 60 minutos en horario hábil.</p>
+          </div>
+          <div class="proceso-step">
+            <span class="proceso-step__num">02</span>
+            <h3 class="proceso-step__titulo">Confirma y paga</h3>
+            <p class="proceso-step__desc">50% de anticipo para arrancar producción. 50% contra entrega o previo. Aceptamos transferencia, tarjeta y efectivo.</p>
+          </div>
+          <div class="proceso-step">
+            <span class="proceso-step__num">03</span>
+            <h3 class="proceso-step__titulo">Producimos en 3-5 días</h3>
+            <p class="proceso-step__desc">Para cajas en stock: listas en 24 hrs. Para producción bajo pedido: 3-5 días hábiles con calidad ECT verificado en planta.</p>
+          </div>
+          <div class="proceso-step">
+            <span class="proceso-step__num">04</span>
+            <h3 class="proceso-step__titulo">Entregamos en tu almacén</h3>
+            <p class="proceso-step__desc">Coordinamos la entrega a domicilio en tu zona o puedes recoger directamente en nuestra planta en CDMX. Sin sorpresas en el costo de flete.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" aria-labelledby="faq-zonas-title">
+      <div class="container">
+        <h2 id="faq-zonas-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Frecuentes sobre Entregas</h2>
+        <div class="faq__list">
+          {faqs.map((f, i) => <FaqItem id={`z-faq-${i}`} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿En qué zona estás? Verificamos disponibilidad y tiempo de entrega en menos de 15 minutos" />
+
+</PageLayout>
+
+<style>
+/* ── Hero ── */
+.zonas-hero {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #1a3560 100%);
+  padding: var(--spacing-3xl) 0;
+  overflow: hidden;
+}
+.zonas-hero__inner { display: grid; grid-template-columns: 1fr auto; gap: var(--spacing-3xl); align-items: center; }
+.zonas-hero__eyebrow { font-size: var(--font-size-xs); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm); }
+.zonas-hero__title { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--color-white); line-height: 1.15; margin-bottom: var(--spacing-md); }
+.zonas-hero__title span { color: var(--color-primary); }
+.zonas-hero__desc { font-size: var(--font-size-lg); color: rgba(255,255,255,0.8); max-width: 600px; line-height: 1.7; margin-bottom: var(--spacing-lg); }
+.zonas-hero__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--spacing-xl); }
+.zonas-hero__actions { display: flex; gap: var(--spacing-md); flex-wrap: wrap; }
+.btn--outline-white { border: 2px solid rgba(255,255,255,0.4); color: var(--color-white); background: transparent; }
+.btn--outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--color-white); }
+
+.zonas-hero__stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); }
+.zonas-hero__stat { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-lg); padding: var(--spacing-lg); text-align: center; }
+.zonas-hero__stat-num { display: block; font-size: 2rem; font-weight: 800; color: var(--color-primary); line-height: 1; }
+.zonas-hero__stat-label { display: block; font-size: var(--font-size-xs); color: rgba(255,255,255,0.7); margin-top: 0.3rem; }
+
+/* ── Chips ── */
+.zona-chip { display: inline-flex; align-items: center; gap: 0.3rem; font-size: var(--font-size-xs); font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 100px; }
+.zona-chip--green { background: rgba(34,197,94,0.15); color: #16a34a; border: 1px solid rgba(34,197,94,0.3); }
+.zona-chip--blue  { background: rgba(59,130,246,0.15); color: #2563eb; border: 1px solid rgba(59,130,246,0.3); }
+
+/* ── Zonas grid ── */
+.zonas-section { padding: var(--spacing-3xl) 0; }
+.zonas-section--alt { background: var(--color-accent); }
+.zonas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-xl); }
+
+.zona-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-lg); transition: box-shadow var(--transition-fast), transform var(--transition-fast); }
+.zona-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.zona-card--destacada { border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(224,88,0,0.12); }
+.zona-card__header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
+.zona-card__nombre { font-size: var(--font-size-md); font-weight: 700; color: var(--color-secondary); line-height: 1.3; }
+.zona-card__alcaldias { font-size: var(--font-size-xs); color: var(--color-text-light); margin-bottom: var(--spacing-md); line-height: 1.5; }
+.zona-card__cta { font-size: var(--font-size-xs); font-weight: 700; color: var(--color-primary); text-decoration: none; transition: color var(--transition-fast); }
+.zona-card__cta:hover { color: var(--color-secondary); text-decoration: underline; }
+
+/* ── Proceso ── */
+.zonas-proceso { padding: var(--spacing-3xl) 0; }
+.proceso-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-lg); margin-top: var(--spacing-xl); position: relative; }
+.proceso-steps::before { content: ""; position: absolute; top: 1.5rem; left: calc(12.5% + 1.5rem); right: calc(12.5% + 1.5rem); height: 2px; background: var(--color-border); z-index: 0; }
+.proceso-step { text-align: center; position: relative; }
+.proceso-step__num { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; background: var(--color-primary); color: var(--color-white); border-radius: 50%; font-size: var(--font-size-sm); font-weight: 800; margin-bottom: var(--spacing-md); position: relative; z-index: 1; }
+.proceso-step__titulo { font-size: var(--font-size-md); font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-sm); }
+.proceso-step__desc { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: 1.7; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .zonas-hero__inner { grid-template-columns: 1fr; }
+  .zonas-hero__stats { grid-template-columns: repeat(4, 1fr); }
+  .proceso-steps { grid-template-columns: 1fr 1fr; }
+  .proceso-steps::before { display: none; }
+}
+@media (max-width: 600px) {
+  .zonas-hero__stats { grid-template-columns: 1fr 1fr; }
+  .proceso-steps { grid-template-columns: 1fr; }
+  .zonas-hero__actions { flex-direction: column; }
+}
+</style>

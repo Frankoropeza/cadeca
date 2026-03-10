@@ -47,9 +47,9 @@ const productos = [
     href:    "/productos/cajas-corrugado-estandar",
     tags: [
       { label: "Caja corrugado simple",  href: "/productos/cajas-corrugado-estandar" },
-      { label: "Caja doble corrugado",   href: "/productos/cajas-doble-corrugado" },
-      { label: "Caja triple corrugado",  href: "/productos/cajas-triple-corrugado" },
-      { label: "Cajas para mudanza",     href: "/productos/cajas-mudanza" },
+      { label: "Caja doble corrugado",   href: "/catalogo/cajas-corrugado-estandar/doble-corrugado" },
+      { label: "Caja triple corrugado",  href: "/catalogo/cajas-corrugado-estandar/triple-corrugado" },
+      { label: "Cajas para mudanza",     href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza" },
     ],
   },
   {
@@ -72,7 +72,7 @@ const productos = [
     href:    "/productos/cajas-personalizadas-logo",
     tags: [
       { label: "Impresión 1 a 4 colores", href: "/productos/cajas-personalizadas-logo" },
-      { label: "Full color digital",       href: "/productos/cajas-impresion-full-color" },
+      { label: "Full color digital",       href: "/catalogo/cajas-personalizadas-logo/full-color" },
       { label: "Tintas base agua",         href: "/productos/cajas-personalizadas-logo#ecologicas" },
     ],
   },
@@ -108,7 +108,7 @@ const productos = [
     href:    "/productos/laminas-carton-corrugado",
     tags: [
       { label: "Láminas corrugado por m²", href: "/productos/laminas-carton-corrugado" },
-      { label: "Cartón reciclado",          href: "/productos/cajas-ecologicas" },
+      { label: "Cartón reciclado",          href: "/catalogo/laminas-carton-corrugado/laminas-ecologicas" },
       { label: "Certificación FSC",         href: "/productos/cajas-ecologicas#fsc" },
     ],
   },
@@ -215,8 +215,9 @@ const faqs = [
 <PageLayout
   title={title}
   description={description}
-  schema={faqSchema}
   whatsapp={WHATSAPP}
+  pageType="home"
+  faqItems={faqs.map(f => ({question: f.question, answer: f.answer}))}
 >
 
   <!-- ══════════════════════════════════════
@@ -235,7 +236,7 @@ const faqs = [
             Corrugado estándar, a la medida y personalizadas con logo. Venta al mayoreo y menudeo con entrega a domicilio en 24–48 horas. Asesoría gratuita y cotización inmediata.
           </p>
           <div class="hero__ctas">
-            <a href="#cotizar" class="btn btn--primary">Solicitar Cotización</a>
+            <a href="/cotizar" class="btn btn--primary">Solicitar Cotización</a>
             <a href="#productos" class="btn btn--outline">Ver Catálogo</a>
           </div>
           <div class="hero__metrics">
@@ -383,7 +384,7 @@ const faqs = [
           Como <strong>fabricante de cajas de cartón en CDMX</strong>, ofrecemos ventajas que los distribuidores no pueden igualar: producción directa sin intermediarios, control total de calidad, tiempos de entrega garantizados y precios de mayoreo accesibles desde pedidos pequeños. Nuestras <strong>cajas corrugadas</strong> están fabricadas con cartón certificado FSC en simple, doble y triple pared —flautas B, C, E y BC—, con resistencia ECT adaptada al peso de cada producto. Para vendedores de Mercado Libre y Amazon MX, mantenemos stock permanente con <strong>entrega en 24 horas en CDMX</strong>.
         </p>
         <p class="seo-content__text">
-          Cubrimos toda la zona metropolitana: CDMX en todas sus alcaldías, y Estado de México en los municipios clave: Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli, Toluca y Lerma. Atendemos desde el emprendedor que vende desde casa hasta plantas manufactureras con nearshoring. Cada pedido incluye asesoría técnica, factura electrónica y respaldo de un proveedor local que conoce el mercado metropolitano. <a href="#cotizar">Solicita tu cotización sin compromiso</a> o escríbenos por <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener">WhatsApp</a>.
+          Cubrimos toda la zona metropolitana: CDMX en todas sus alcaldías, y Estado de México en los municipios clave: Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli, Toluca y Lerma. Atendemos desde el emprendedor que vende desde casa hasta plantas manufactureras con nearshoring. Cada pedido incluye asesoría técnica, factura electrónica y respaldo de un proveedor local que conoce el mercado metropolitano. <a href="/cotizar">Solicita tu cotización sin compromiso</a> o escríbenos por <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener">WhatsApp</a>.
         </p>
       </div>
     </section>
@@ -410,6 +411,44 @@ const faqs = [
   </main>
 
   <!-- Lead Capture -->
+
+  <!-- ══════════════════════════════════════
+       CATÁLOGO B2B — Cross-link
+  ══════════════════════════════════════ -->
+  <section style="background:var(--color-secondary);padding:var(--spacing-3xl) 0;" aria-labelledby="catalogo-b2b-title">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-3xl);align-items:center;">
+        <div>
+          <span style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);display:block;margin-bottom:0.75rem;">Catálogo Técnico B2B</span>
+          <h2 id="catalogo-b2b-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:white;margin-bottom:1rem;line-height:1.2;">Fichas Técnicas con ECT, Medidas y Especificaciones</h2>
+          <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Accede a las especificaciones exactas de cada producto: flauta, ECT, gramaje, peso máximo, medidas disponibles y tiempo de producción. 30 fichas técnicas completas para tu área de compras.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="/catalogo" class="btn btn--primary btn--lg">Ver Catálogo Completo</a>
+            <a href="/cotizar" style="border:2px solid rgba(255,255,255,0.4);color:white;padding:0.75rem 1.5rem;border-radius:0.5rem;font-weight:700;text-decoration:none;font-size:0.9rem;">Cotizar ahora →</a>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+          {[
+            {icon:"📦", label:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar", tag:"5 SKUs"},
+            {icon:"🛒", label:"Para E-commerce", href:"/catalogo/cajas-para-ecommerce", tag:"5 SKUs"},
+            {icon:"🎨", label:"Personalizadas", href:"/catalogo/cajas-personalizadas-logo", tag:"5 SKUs"},
+            {icon:"📐", label:"A la Medida", href:"/catalogo/cajas-a-la-medida", tag:"5 SKUs"},
+            {icon:"🍕", label:"Para Alimentos", href:"/catalogo/cajas-para-alimentos", tag:"5 SKUs"},
+            {icon:"🌱", label:"Láminas FSC", href:"/catalogo/laminas-carton-corrugado", tag:"5 SKUs"},
+          ].map(item => (
+            <a href={item.href} style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.75rem;padding:1rem;text-decoration:none;transition:background 0.2s;display:flex;align-items:center;gap:0.75rem;">
+              <span style="font-size:1.5rem;">{item.icon}</span>
+              <div>
+                <span style="font-size:0.85rem;font-weight:700;color:white;display:block;">{item.label}</span>
+                <span style="font-size:0.7rem;color:var(--color-primary);font-weight:600;">{item.tag}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <LeadCapture whatsapp={WHATSAPP} />
 
 </PageLayout>

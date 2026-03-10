@@ -1,0 +1,93 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+
+const title       = "Aviso de Privacidad | CADECA — Cajas de Cartón CDMX";
+const description = "Aviso de privacidad de CADECA. Información sobre el tratamiento de datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).";
+const WHATSAPP    = "5255XXXXXXXX";
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP} pageType="page"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Aviso de Privacidad"}]}>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><span class="current">Aviso de Privacidad</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <main id="contenido-principal" role="main" class="legal-page">
+    <div class="container">
+      <div class="legal-page__inner">
+
+        <h1>Aviso de Privacidad</h1>
+        <p class="legal-page__fecha">Última actualización: marzo de 2026</p>
+
+        <h2>I. Identidad y Domicilio del Responsable</h2>
+        <p><strong>CADECA</strong> (en adelante "el Responsable"), con domicilio en Ciudad de México, México, es responsable del tratamiento de los datos personales que usted proporciona a través de nuestro sitio web <strong>cadeca.com.mx</strong> y medios de contacto.</p>
+
+        <h2>II. Datos Personales que Recabamos</h2>
+        <p>Para las finalidades descritas en este Aviso, recabamos los siguientes datos personales:</p>
+        <ul>
+          <li>Nombre completo</li>
+          <li>Nombre de empresa u organización</li>
+          <li>Número de teléfono o WhatsApp</li>
+          <li>Correo electrónico</li>
+          <li>Información sobre el producto o servicio de interés</li>
+        </ul>
+        <p>No recabamos datos personales sensibles.</p>
+
+        <h2>III. Finalidades del Tratamiento</h2>
+        <p>Los datos personales que recabamos serán utilizados para las siguientes finalidades:</p>
+        <p><strong>Finalidades primarias (necesarias para la relación comercial):</strong></p>
+        <ul>
+          <li>Atender solicitudes de cotización de productos</li>
+          <li>Dar seguimiento a pedidos y órdenes de compra</li>
+          <li>Emitir facturas y comprobantes fiscales</li>
+          <li>Coordinar entregas y logística</li>
+          <li>Atender quejas, aclaraciones y solicitudes de garantía</li>
+        </ul>
+        <p><strong>Finalidades secundarias (mercadotecnia — puede oponerse):</strong></p>
+        <ul>
+          <li>Envío de información sobre nuevos productos, promociones y descuentos</li>
+          <li>Invitaciones a eventos y webinars</li>
+        </ul>
+        <p>Si no desea que sus datos sean tratados para las finalidades secundarias, puede manifestarlo en cualquier momento a través de nuestros canales de contacto.</p>
+
+        <h2>IV. Transferencia de Datos</h2>
+        <p>CADECA no realizará transferencias de datos personales a terceros sin su consentimiento, salvo en los casos previstos en el artículo 37 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), incluyendo requerimientos de autoridades competentes.</p>
+
+        <h2>V. Derechos ARCO</h2>
+        <p>Usted tiene derecho a: <strong>Acceder</strong> a sus datos personales; <strong>Rectificar</strong> datos inexactos; <strong>Cancelar</strong> sus datos de nuestras bases; <strong>Oponerse</strong> al tratamiento de sus datos para finalidades secundarias.</p>
+        <p>Para ejercer sus derechos ARCO, comuníquese a: <a href="mailto:ventas@cadeca.com.mx">ventas@cadeca.com.mx</a></p>
+
+        <h2>VI. Uso de Cookies y Tecnologías de Rastreo</h2>
+        <p>Nuestro sitio web puede utilizar cookies y tecnologías similares para mejorar la experiencia del usuario y analizar el tráfico. Puede configurar su navegador para rechazar cookies; sin embargo, esto puede afectar la funcionalidad del sitio.</p>
+
+        <h2>VII. Cambios al Aviso de Privacidad</h2>
+        <p>Este Aviso puede ser modificado. Cualquier cambio será notificado a través de nuestro sitio web <strong>cadeca.com.mx</strong> con al menos 10 días de anticipación.</p>
+
+        <h2>VIII. Contacto</h2>
+        <p>Para cualquier duda sobre este Aviso de Privacidad:</p>
+        <ul>
+          <li>Correo: <a href="mailto:ventas@cadeca.com.mx">ventas@cadeca.com.mx</a></li>
+          <li>WhatsApp: <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener">Escribir por WhatsApp</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+.legal-page { padding: var(--spacing-3xl) 0; }
+.legal-page__inner { max-width: 780px; margin: 0 auto; }
+.legal-page__inner h1 { font-size: clamp(1.8rem,3vw,2.4rem); font-weight:800; color:var(--color-secondary); margin-bottom:0.5rem; }
+.legal-page__fecha { font-size:var(--font-size-sm); color:var(--color-text-light); margin-bottom:var(--spacing-xl); border-bottom:1px solid var(--color-border); padding-bottom:var(--spacing-md); }
+.legal-page__inner h2 { font-size:var(--font-size-lg); font-weight:700; color:var(--color-secondary); margin:var(--spacing-xl) 0 var(--spacing-sm); }
+.legal-page__inner p, .legal-page__inner ul { font-size:var(--font-size-sm); color:var(--color-text-light); line-height:1.8; margin-bottom:var(--spacing-md); }
+.legal-page__inner ul { padding-left:1.5rem; }
+.legal-page__inner a { color:var(--color-primary); font-weight:600; }
+</style>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cadeca.com/sitemap-index.xml
+Sitemap: https://cadeca.com.mx/sitemap-index.xml
