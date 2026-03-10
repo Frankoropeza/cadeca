@@ -22,8 +22,8 @@ const isSection = (prefix: string) =>
   <div class="container">
 
     <!-- Logo -->
-    <a href="/" aria-label="CADECA — Cajas de Cartón CDMX — Inicio">
-      <span class="header__logo-text">CA<span>DECA</span></span>
+    <a href="/" class="header__logo" aria-label="CADECA — Cajas de Cartón CDMX — Inicio">
+      <img src="/img/cadeca.png" alt="CADECA — Cajas de Cartón" class="header__logo-img" width="160" height="40" loading="eager" />
     </a>
 
     <!-- Nav Desktop -->
@@ -137,6 +137,9 @@ const isSection = (prefix: string) =>
         </li>
 
         <li class="nav-desktop__item">
+          <a href="/blog" class={`nav-desktop__link ${isSection("/blog")}`}>Blog</a>
+        </li>
+        <li class="nav-desktop__item">
           <a href="/nosotros" class={`nav-desktop__link ${isActive("/nosotros")}`}>Nosotros</a>
         </li>
         <li class="nav-desktop__item">
@@ -214,6 +217,7 @@ const isSection = (prefix: string) =>
     </li>
 
     <li class="mobile-nav__item"><a href="/zonas-de-servicio" class="mobile-nav__link">Zonas de Servicio</a></li>
+    <li class="mobile-nav__item"><a href="/blog" class="mobile-nav__link">Blog</a></li>
     <li class="mobile-nav__item"><a href="/nosotros"  class="mobile-nav__link">Nosotros</a></li>
     <li class="mobile-nav__item"><a href="/contacto"  class="mobile-nav__link">Contacto</a></li>
     <li class="mobile-nav__item"><a href="/cotizar"   class="mobile-nav__link">Cotizar</a></li>

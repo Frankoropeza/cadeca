@@ -1,7 +1,7 @@
 ---
 // IndustryCard.astro — Tarjeta de nicho / industria
 export interface Props {
-  icon:      string;
+  img:       string;
   title:     string;
   desc:      string;
   href:      string;
@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const {
-  icon,
+  img,
   title,
   desc,
   href,
@@ -18,7 +18,9 @@ const {
 ---
 
 <article class="industry-card">
-  <div class="industry-card__icon">{icon}</div>
+  <div class="industry-card__img-wrapper">
+    <img src={img} alt={title} class="industry-card__img" width="400" height="260" loading="lazy" />
+  </div>
   <h3 class="industry-card__title">{title}</h3>
   <p class="industry-card__desc">{desc}</p>
   <a href={href} class="industry-card__link">{linkText} &rarr;</a>

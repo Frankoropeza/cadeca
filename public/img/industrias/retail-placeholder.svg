@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260">
+  <rect width="400" height="260" rx="12" fill="#f0f4f8"/>
+  <rect x="135" y="50" width="130" height="110" rx="10" fill="#c1d5e0" stroke="#8ba8b9" stroke-width="2"/>
+  <rect x="155" y="70" width="90" height="50" rx="6" fill="#b0c4d0"/>
+  <circle cx="200" cy="140" r="10" fill="#8ba8b9"/>
+  <text x="200" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#6b7b8d">Retail y Marcas</text>
+</svg>

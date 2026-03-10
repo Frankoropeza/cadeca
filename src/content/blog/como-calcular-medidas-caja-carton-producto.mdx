@@ -1,0 +1,135 @@
+---
+title: "Cómo Calcular las Medidas Exactas de tu Caja de Cartón: Guía Paso a Paso"
+description: "Fórmulas para calcular largo, ancho y alto de tu caja de cartón. Holgura recomendada por tipo de producto, ejemplos prácticos y errores comunes que debes evitar."
+pubDate: 2026-03-08
+author: "Equipo CADECA"
+category: "Consejos"
+tags: ["medidas", "a la medida", "guía", "calculadora"]
+featured: false
+readingTime: 5
+---
+
+Una caja del tamaño correcto protege tu producto, reduce costos de envío y evita desperdicios de material. Una caja demasiado grande obliga a usar más relleno y encarece el flete; una demasiado justa arriesga daños al producto. En esta guía te enseñamos a calcular las medidas exactas paso a paso, con fórmulas claras y ejemplos reales.
+
+## La fórmula básica: Largo × Ancho × Alto
+
+Las medidas de una caja de cartón siempre se expresan en este orden:
+
+**Largo (L) × Ancho (A) × Alto (H)**
+
+Donde:
+- **Largo**: La dimensión más grande de la base (la cara con las solapas de cierre)
+- **Ancho**: La dimensión más corta de la base
+- **Alto**: La distancia de la base a la tapa (profundidad de la caja)
+
+> **Importante**: Las medidas se toman por el interior de la caja, no por el exterior. La diferencia entre medida interior y exterior depende del grosor del corrugado (3–15 mm por pared).
+
+## Paso 1: Medir tu producto
+
+Toma las tres dimensiones de tu producto en su punto más amplio:
+- Usa un flexómetro o regla rígida
+- Mide en centímetros
+- Si el producto es irregular, mide el rectángulo mínimo que lo contiene (bounding box)
+
+**Ejemplo**: Una cafetera mide 25 cm de largo, 18 cm de ancho y 30 cm de alto.
+
+## Paso 2: Agregar holgura
+
+La holgura es el espacio libre entre el producto y las paredes internas de la caja. Este espacio cumple dos funciones: permite introducir/extraer el producto fácilmente y deja espacio para material de protección.
+
+### Holgura recomendada por tipo de producto
+
+| Tipo de producto | Holgura por lado | Ejemplo |
+|---|---|---|
+| **Productos resistentes** (ropa, textiles, plásticos) | 1–2 cm | Camiseta empacada: producto 30×22×5 → caja 32×24×7 |
+| **Productos semifrágiles** (cerámica, electrónica, vidrio) | 2–3 cm | Taza de cerámica: producto 10×10×12 → caja 14×14×18 |
+| **Productos frágiles** (cristalería, arte, instrumentos) | 3–5 cm | Florero de vidrio: producto 15×15×25 → caja 23×23×33 |
+| **Productos pesados** (>10 kg) | 2–3 cm (con refuerzo interno) | Motor eléctrico: producto 20×20×15 → caja 24×24×19 |
+| **Líquidos envasados** (botellas, frascos) | 2–3 cm + divisiones | Botella de salsa: producto 8×8×22 → celda 12×12×26 |
+
+### Fórmula con holgura
+
+```
+Largo caja = Largo producto + (2 × holgura lateral)
+Ancho caja = Ancho producto + (2 × holgura lateral)
+Alto caja  = Alto producto  + (2 × holgura vertical)
+```
+
+**Con la cafetera del ejemplo** (holgura de 2.5 cm para producto semifrágil):
+- Largo: 25 + (2 × 2.5) = **30 cm**
+- Ancho: 18 + (2 × 2.5) = **23 cm**
+- Alto: 30 + (2 × 2.5) = **35 cm**
+
+Medida final de la caja: **30 × 23 × 35 cm** (interior)
+
+## Paso 3: Considerar el material de protección
+
+El espacio de holgura se llena con material de protección. Esto afecta la medida final:
+
+- **Papel kraft arrugado**: Ocupa 1–2 cm por lado. Ideal para productos ligeros a medianos.
+- **Esquineros de cartón**: Se colocan en las 4 esquinas o las 8 aristas. Agregan 2–3 cm por esquina.
+- **Espuma de polietileno**: Para productos de alto valor. Ocupa 2–5 cm según densidad.
+- **Relleno suelto (cacahuates de poliestireno)**: Necesita al menos 3 cm en todas las direcciones para funcionar.
+
+Si ya sabes qué protección usarás, mide su grosor y agrégalo a la holgura base.
+
+## Paso 4: Verificar el peso volumétrico
+
+Una vez que tengas las medidas, calcula el peso volumétrico para asegurarte de que no estás sobredimensionando:
+
+```
+Peso volumétrico (kg) = (Largo × Ancho × Alto en cm) ÷ 5,000
+```
+
+**Ejemplo**: Caja de 30 × 23 × 35 cm
+- Peso volumétrico = 24,150 ÷ 5,000 = **4.83 kg**
+
+Si tu producto pesa 3 kg, la paquetería cobrará por 4.83 kg. La diferencia es razonable. Pero si hubieramos usado una caja de 40 × 30 × 40 (sin calcular bien la holgura), el peso volumétrico sería 9.6 kg — el doble del necesario.
+
+## Ejemplos prácticos por industria
+
+### E-commerce: Set de 3 velas aromáticas
+- Producto: cada vela mide 8 cm de diámetro × 10 cm de alto
+- Acomodo: 3 velas en fila → footprint de 24 × 8 cm, alto 10 cm
+- Holgura: 2 cm (semifrágil) + 1 cm para divisiones de cartón
+- **Caja: 30 × 14 × 14 cm** con divisiones internas
+
+### Alimentos: Caja para 12 frascos de salsa (250 ml)
+- Producto: frasco de 7 cm de diámetro × 15 cm de alto
+- Acomodo: 4 × 3 grid → footprint de 28 × 21 cm
+- Holgura: 2 cm + rejilla divisora interna
+- **Caja: 34 × 27 × 19 cm** con divisor de celdas de cartón corrugado
+
+### Industrial: Motor eléctrico de 12 kg
+- Producto: 20 × 20 × 15 cm
+- Holgura: 3 cm (pesado, necesita esquineros)
+- Material de protección: esquineros de corrugado de 3 cm
+- **Caja doble pared: 26 × 26 × 21 cm** con esquineros y base reforzada
+
+## 5 errores comunes al calcular medidas
+
+1. **Medir por el exterior de otra caja**: Si estás replicando una caja existente, mide por dentro. El grosor del corrugado (3–7 mm por pared) hace una diferencia real.
+
+2. **Olvidar el empaque primario**: Si tu producto va envuelto en plástico burbuja o bolsa, mide el producto ya empacado, no desnudo.
+
+3. **No considerar las solapas**: En cajas RSC (Regular Slotted Container), las solapas superiores e inferiores restan espacio útil en el alto. La medida interior real es el alto especificado.
+
+4. **Confundir centímetros y milímetros**: Un error de unidades puede resultar en cajas 10× más grandes o pequeñas de lo necesario. Confirma siempre la unidad con tu proveedor.
+
+5. **No pedir muestras**: Antes de comprar 500 cajas, pide 5 muestras y mete tu producto. Verifica que cierra bien, que el producto no se mueve en exceso y que resiste un apilamiento de al menos 3 cajas.
+
+## Medidas estándar disponibles en CADECA
+
+Si tu producto se ajusta a una medida estándar, el costo es menor y la entrega más rápida:
+
+| Medida interior (L×A×H) | Uso típico |
+|---|---|
+| 20 × 15 × 10 cm | Cosméticos, joyería, accesorios |
+| 30 × 20 × 15 cm | Ropa, zapatos, libros |
+| 40 × 30 × 20 cm | Electrónicos, kits, alimentos |
+| 40 × 30 × 30 cm | Electrodomésticos pequeños |
+| 50 × 40 × 30 cm | Multipack, productos medianos |
+| 60 × 40 × 40 cm | Productos voluminosos |
+| 60 × 40 × 60 cm | Mudanza, almacenamiento |
+
+Si ninguna medida estándar se ajusta, fabricamos a la medida exacta que necesites desde 200 piezas. Consulta nuestro [catálogo de cajas a la medida](/catalogo/cajas-a-la-medida) o [solicita una cotización personalizada](/cotizar).
