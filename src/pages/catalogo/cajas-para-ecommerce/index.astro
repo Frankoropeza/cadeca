@@ -1,0 +1,180 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const title       = "Catálogo Cajas para E-commerce CDMX | 5 Productos | Mercado Libre, Amazon | CADECA";
+const description = "Catálogo cajas de cartón para e-commerce en CDMX. Mercado Envíos, Amazon FBA, DHL, FedEx, Estafeta, Shopify y medidas personalizadas. Fichas técnicas con specs y medidas. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const productos = [
+  {
+    code:       "CAD-EC-01",
+    badge:      "Más popular",
+    badgeColor: "orange",
+    featured:   true,
+    title:      "Cajas Mercado Envíos — Todas las Tallas",
+    desc:       "Todas las tallas oficiales de Mercado Envíos: Chica, Mediana, Grande y Extra Grande. Doble corrugado ECT-44 compatible con todas las paqueterías de ML. Stock permanente.",
+    imgSrc:     "/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif",
+    imgAlt:     "Cajas Mercado Envíos chica mediana grande en CDMX — CADECA CAD-EC-01",
+    href:       "/catalogo/cajas-para-ecommerce/mercado-envios",
+    specs: [
+      { label: "Plataforma",  value: "Mercado Libre · ML" },
+      { label: "ECT",         value: "ECT-44 (doble BC)" },
+      { label: "Tallas",      value: "Chica · Med · Grande · XL" },
+      { label: "Stock",       value: "Permanente CDMX" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code:       "CAD-EC-02",
+    badge:      "Amazon ready",
+    badgeColor: "blue",
+    featured:   false,
+    title:      "Cajas Amazon FBA / FBM México",
+    desc:       "Medidas aprobadas por Amazon Seller Central México. ECT-44 mínimo exigido por Amazon para FBA. Sin grapas expuestas, cumple todas las políticas de empaque de Amazon.",
+    imgSrc:     "/img/catalogo/cajas-amazon-fba-fbm-seller-central-mexico.avif",
+    imgAlt:     "Cajas Amazon FBA FBM Seller Central México en CDMX — CADECA CAD-EC-02",
+    href:       "/catalogo/cajas-para-ecommerce/amazon-fba",
+    specs: [
+      { label: "Plataforma",  value: "Amazon MX (FBA · FBM)" },
+      { label: "ECT mín.",    value: "ECT-44 certificado" },
+      { label: "Sin grapas",  value: "Cumple política Amazon" },
+      { label: "Tallas",      value: "S · M · L · XL · XXL" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code:       "CAD-EC-03",
+    badge:      "Multi-carrier",
+    badgeColor: "green",
+    featured:   false,
+    title:      "Cajas DHL · FedEx · Estafeta · J&T",
+    desc:       "Medidas optimizadas para reducir el peso volumétrico en DHL, FedEx, Estafeta, J&T y 99Minutos. Calculamos la medida exacta que minimiza tu costo de envío.",
+    imgSrc:     "/img/catalogo/cajas-dhl-fedex-estafeta-paqueterias-cdmx.avif",
+    imgAlt:     "Cajas DHL FedEx Estafeta paqueterías en CDMX — CADECA CAD-EC-03",
+    href:       "/catalogo/cajas-para-ecommerce/paqueterias",
+    specs: [
+      { label: "Carriers",    value: "DHL · FedEx · Estafeta · J&T" },
+      { label: "Optimización",value: "Peso volumétrico" },
+      { label: "ECT",         value: "ECT-44 (doble BC)" },
+      { label: "Stock",       value: "Medidas std. disponibles" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code:       "CAD-EC-04",
+    badge:      "Tienda propia",
+    badgeColor: "blue",
+    featured:   false,
+    title:      "Cajas Shopify / TiendaNube / Tienda Propia",
+    desc:       "Para vendedores con tienda en Shopify, TiendaNube, Instagram o TikTok que gestionan sus propios envíos. Neutras o personalizadas con logo desde 100 piezas.",
+    imgSrc:     "/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif",
+    imgAlt:     "Cajas Shopify TiendaNube tienda propia e-commerce en México — CADECA CAD-EC-04",
+    href:       "/catalogo/cajas-para-ecommerce/tienda-propia",
+    specs: [
+      { label: "Canales",     value: "Shopify · TiendaNube · RRSS" },
+      { label: "Tipo",        value: "Neutra o personalizada" },
+      { label: "ECT",         value: "ECT-32 / ECT-44" },
+      { label: "Logo",        value: "Desde 100 pzas" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code:       "CAD-EC-05",
+    badge:      "A la medida",
+    badgeColor: "blue",
+    featured:   false,
+    title:      "Cajas E-commerce a la Medida",
+    desc:       "Cuando ninguna medida estándar se ajusta exactamente a tu producto. Fabricamos la medida exacta que minimiza el peso volumétrico y reduce el costo de envío por pieza.",
+    imgSrc:     "/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif",
+    imgAlt:     "Cajas e-commerce a la medida peso volumétrico en CDMX — CADECA CAD-EC-05",
+    href:       "/catalogo/cajas-para-ecommerce/medida-ecommerce",
+    specs: [
+      { label: "Dimensiones",  value: "Cualquier L × A × H" },
+      { label: "Objetivo",     value: "Minimizar vol. weight" },
+      { label: "CAD",          value: "Gratis en 24 hrs" },
+      { label: "MOQ",          value: "50 piezas" },
+    ],
+    moq: "50 pzas",
+  },
+];
+---
+
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><span class="current">Cajas para E-commerce</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="cat-ec-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">🛒 Categoría 02 · 5 productos</span>
+      <h1 id="cat-ec-title" class="cat-page-hero__title">
+        Cajas para <span>E-commerce</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Medidas oficiales para Mercado Libre, Amazon MX, DHL, FedEx, Estafeta, Shopify y TiendaNube. Stock permanente en CDMX. Desde 50 piezas con entrega en 24 hrs.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">Productos: <strong>5</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega CDMX: <strong>24 hrs</strong></div>
+        <div class="cat-page-hero__strip-item">ECT estándar: <strong>ECT-44</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-ec-title">
+      <div class="container">
+        <SectionHeader
+          id="prods-ec-title"
+          twoCol
+          title="5 Productos — Cajas para E-commerce"
+          subtitle="Selecciona la plataforma o paquetería para ver la ficha técnica completa con medidas exactas, ECT y condiciones de pedido."
+          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+        >
+          <p>Cada plataforma y paquetería tiene requerimientos distintos de medidas y resistencia. Usar la caja incorrecta genera cobros extra por peso volumétrico o rechazos en centros de distribución. Aquí encontrarás la especificación exacta para cada canal de venta.</p>
+        </SectionHeader>
+        <div class="sku-grid">
+          {productos.map(p => (
+            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+              <div class="sku-card__img-wrap">
+                <img src={p.imgSrc} alt={p.imgAlt}
+                  class="sku-card__img" width="640" height="480"
+                  loading="lazy" decoding="async" />
+                <span class="sku-card__code">{p.code}</span>
+                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
+              </div>
+              <div class="sku-card__body">
+                <h2 class="sku-card__name">{p.title}</h2>
+                <p class="sku-card__desc">{p.desc}</p>
+                <div class="sku-card__specs">
+                  {p.specs.map(s => (
+                    <div>
+                      <span class="sku-card__spec-label">{s.label}</span>
+                      <span class="sku-card__spec-value">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div class="sku-card__footer">
+                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+                  <span class="sku-card__moq">MOQ: {p.moq}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Qué plataforma usas? Te recomendamos la caja exacta en menos de 1 hora" />
+</PageLayout>
