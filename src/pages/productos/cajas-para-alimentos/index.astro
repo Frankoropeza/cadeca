@@ -1,0 +1,383 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import ProductCard   from "@/components/ProductCard.astro";
+import IndustryCard  from "@/components/IndustryCard.astro";
+import ProcessStep   from "@/components/ProcessStep.astro";
+import Testimonial   from "@/components/Testimonial.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const title       = "Cajas de Cartón para Alimentos CDMX | Pizza, Dark Kitchen, Frutas | CADECA";
+const description = "Cajas de cartón para alimentos en CDMX. Aptas para contacto directo con alimentos, resistentes a humedad y grasa. Pizza, dark kitchen, frutas, congelados. Cotiza gratis.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Cajas de Cartón para Alimentos",
+  "description": "Cajas de cartón para contacto con alimentos en CDMX. Aptas según COFEPRIS, resistentes a humedad y grasa. Para pizza, dark kitchen, restaurantes, frutas y congelados.",
+  "brand": { "@type": "Brand", "name": "CADECA" },
+  "manufacturer": { "@type": "Organization", "name": "CADECA" },
+  "url": "https://cadeca.com.mx/productos/cajas-para-alimentos",
+  "image": "https://cadeca.com.mx/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
+  "category": "Cajas para Alimentos",
+  "areaServed": ["Ciudad de México", "Estado de México"],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "CADECA" }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "93"
+  }
+};
+
+const subcategorias = [
+  {
+    title:   "Cajas para Pizza y Comida Rápida",
+    desc:    "Cajas diseñadas para absorber humedad y resistir grasa. Ventilación interna para conservar la textura crujiente. Disponibles en todas las medidas estándar de pizzas individuales y familiares.",
+    imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
+    imgAlt:  "Cajas de cartón para pizza y comida rápida en CDMX — CADECA",
+    href:    "/productos/cajas-para-alimentos#pizza",
+    tags:[
+      { label:"Todas las medidas pizza", href:"/productos/cajas-para-alimentos#pizza" },
+      { label:"Resistente a grasas",     href:"/productos/cajas-para-alimentos#grasa" },
+      { label:"Sin mínimo",             href:"/productos/cajas-para-alimentos#pedido" },
+    ],
+    btnText:"Ver Cajas Pizza",
+  },
+  {
+    title:   "Dark Kitchens y Restaurantes",
+    desc:    "Empaques de alto volumen para dark kitchens y restaurantes con delivery. Resistentes a temperaturas, apilables y diseñables con tu logo para reforzar la identidad de tu marca.",
+    imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
+    imgAlt:  "Cajas de cartón para dark kitchen y restaurantes en CDMX — CADECA",
+    href:    "/productos/cajas-para-alimentos#dark-kitchen",
+    tags:[
+      { label:"Resistente a temperatura", href:"/productos/cajas-para-alimentos#temperatura" },
+      { label:"Logo impreso opcional",    href:"/productos/cajas-personalizadas-logo" },
+      { label:"Alto volumen",            href:"/productos/cajas-para-alimentos#volumen" },
+    ],
+    btnText:"Ver Cajas Dark Kitchen",
+  },
+  {
+    title:   "Frutas, Verduras y Congelados",
+    desc:    "Cajas resistentes a la humedad del hielo y a las condiciones de cámara fría. Certificadas para contacto con productos frescos. Para exportadores, centrales de abasto y distribuidores.",
+    imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
+    imgAlt:  "Cajas de cartón para frutas verduras y congelados CDMX — CADECA",
+    href:    "/productos/cajas-para-alimentos#frutas",
+    tags:[
+      { label:"Resistente a humedad",    href:"/productos/cajas-para-alimentos#humedad" },
+      { label:"Cámara fría",            href:"/productos/cajas-para-alimentos#frio" },
+      { label:"Exportación",            href:"/productos/cajas-para-alimentos#exportacion" },
+    ],
+    btnText:"Ver Cajas Frutas",
+  },
+  {
+    title:   "Productos Orgánicos y Exportación",
+    desc:    "Para exportadores y marcas orgánicas que requieren trazabilidad de materiales. Cartón sin blanqueadores, con certificación FSC y apto según normativas internacionales de importación de alimentos.",
+    imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
+    imgAlt:  "Cajas de cartón para productos orgánicos y exportación México — CADECA",
+    href:    "/productos/cajas-para-alimentos#organicos",
+    tags:[
+      { label:"FSC certificado",         href:"/productos/laminas-carton-corrugado#fsc" },
+      { label:"Sin blanqueadores",       href:"/productos/cajas-para-alimentos#organicos" },
+      { label:"NOM · FDA exportación",   href:"/productos/cajas-para-alimentos#normas" },
+    ],
+    btnText:"Ver Cajas Orgánicos",
+  },
+];
+
+const industrias = [
+  {
+    icon:"🍕",
+    title:"Pizzerías y Franquicias",
+    desc:"El empaque de pizza debe mantener la temperatura, absorber la humedad y resistir la grasa sin deformarse. Atendemos desde pizzerías independientes hasta franquicias con múltiples sucursales en CDMX.",
+    href:"/productos/cajas-para-alimentos#pizza",
+    linkText:"Ver cajas para pizza",
+  },
+  {
+    icon:"🚴",
+    title:"Dark Kitchens y Delivery",
+    desc:"Las dark kitchens necesitan empaques que resistan el trayecto en moto, mantengan la temperatura y lleguen en perfecto estado. Alta rotación, precios de mayoreo y entrega frecuente en toda CDMX.",
+    href:"/productos/cajas-para-alimentos#dark-kitchen",
+    linkText:"Ver cajas para delivery",
+  },
+  {
+    icon:"🥑",
+    title:"Distribuidores de Frutas y Verduras",
+    desc:"La Central de Abasto de CDMX y distribuidores regionales del Estado de México confían en nuestras cajas para transporte de productos frescos. Resistencia a humedad y carga de apilado garantizada.",
+    href:"/productos/cajas-para-alimentos#frutas",
+    linkText:"Ver cajas para distribución",
+  },
+  {
+    icon:"🌿",
+    title:"Exportadores y Marcas Orgánicas",
+    desc:"Para empresas que exportan alimentos a EUA, Canadá y Europa. Certificación FSC, cumplimiento FDA y NOM-051. Documentación técnica completa para aduanas y clientes internacionales.",
+    href:"/productos/cajas-para-alimentos#exportacion",
+    linkText:"Ver cajas para exportación",
+  },
+];
+
+const pasos = [
+  { num:1, title:"Indícanos el alimento",   desc:"Cuéntanos qué producto vas a empacar: tipo de alimento, peso, temperatura de almacenamiento y si requiere contacto directo. Con eso seleccionamos el material correcto." },
+  { num:2, title:"Certificación correcta",  desc:"Verificamos qué norma aplica (NOM, FDA, FSC u otras) para tu producto y mercado de destino. Sin sorpresas en aduanas ni rechazos por incumplimiento." },
+  { num:3, title:"Cotización y muestras",   desc:"Enviamos cotización con precio por volumen y, si lo necesitas, muestra física del modelo antes del pedido final. Sin costo y sin compromiso." },
+  { num:4, title:"Entrega en 24-48 hrs",    desc:"Stock permanente de los modelos más solicitados (pizza, dark kitchen, frutas estándar). Entrega en 24-48 hrs en CDMX y Estado de México." },
+];
+
+const testimonios = [
+  {
+    initials:"CP",
+    name:"Carlos P.",
+    role:"Propietario — Pizzería, Iztapalapa CDMX",
+    text:"Tengo 4 sucursales y necesitaba cajas de pizza confiables en cantidad. CADECA me tiene un precio de mayoreo, siempre hay stock y la entrega es puntual. Las cajas resisten perfectamente el viaje en moto. Son mis proveedores permanentes.",
+  },
+  {
+    initials:"TG",
+    name:"Tamara G.",
+    role:"Gerente de Operaciones — Dark Kitchen, Benito Juárez CDMX",
+    text:"Operamos 3 cocinas virtuales con alto volumen de pedidos por Rappi y UberEats. CADECA nos tiene el inventario que necesitamos cada semana, las cajas resisten el trayecto y la calidad es consistente. Recomendados 100%.",
+  },
+  {
+    initials:"MA",
+    name:"Miguel A.",
+    role:"Exportador — Aguacate y frutas, Estado de México",
+    text:"Exportamos aguacate a EUA y Canada. Necesitábamos cajas que cumplieran con los requerimientos de importación de los compradores estadounidenses. CADECA fabricó el diseño exacto con la documentación correcta. Llevamos 2 temporadas sin un solo rechazo en aduana.",
+  },
+];
+
+const faqs = [
+  {
+    id:"ca1",
+    question:"¿Las cajas para alimentos son aptas para contacto directo con el producto?",
+    answer:"Sí. Nuestras cajas para alimentos están fabricadas con materiales <strong>aptos para contacto directo</strong> según las normas NOM-051-SCFI/SSA1 de COFEPRIS. Para exportación también podemos certificar bajo FDA (EUA) y las normativas europeas de contacto con alimentos. No todos los tipos de cartón son aptos para contacto directo — es importante especificarlo en la cotización.",
+  },
+  {
+    id:"ca2",
+    question:"¿Qué hace diferentes a las cajas para pizza de las cajas corrugado estándar?",
+    answer:"Las cajas para pizza tienen tres características específicas: <strong>1) Resistencia a la grasa</strong> — recubrimiento interno que impide que la grasa empape y debilite el cartón. <strong>2) Absorción de humedad</strong> — el vapor que genera la pizza caliente necesita ser absorbido para no generar condensación. <strong>3) Ventilación</strong> — orificios estratégicos que permiten escape del vapor sin enfriar el producto. Las cajas estándar no tienen estas características.",
+  },
+  {
+    id:"ca3",
+    question:"¿Las cajas para frutas y verduras resisten la humedad del hielo?",
+    answer:"Sí. Tenemos cajas con <strong>tratamiento de resistencia a la humedad</strong> para productos frescos que requieren contacto con hielo o se almacenan en cámara fría. El recubrimiento interno impide que la humedad debilite la estructura del corrugado. Disponibles en medidas para cajas de aguacate, jitomate, chile, flores y frutas de exportación.",
+  },
+  {
+    id:"ca4",
+    question:"¿Puedo personalizar las cajas para alimentos con el logo de mi restaurante?",
+    answer:"Sí. Todas las cajas para alimentos pueden personalizarse con impresión de tu logo en 1 o más colores. Para restaurantes y dark kitchens el mínimo es 100 piezas con impresión. Las tintas que usamos son <strong>base agua y aptas para contacto indirecto con alimentos</strong> — no migran ni contaminan el producto.",
+  },
+  {
+    id:"ca5",
+    question:"¿Tienen cajas para alimentos en stock para entrega inmediata?",
+    answer:"Sí. Las medidas más solicitadas de cajas para pizza (26, 30, 33 y 40 cm) y los formatos estándar de dark kitchen están en inventario permanente. Entrega en 24-48 hrs en CDMX y Estado de México sin necesidad de producción adicional. Para modelos menos comunes o medidas especiales, el tiempo es de 3-5 días hábiles.",
+  },
+  {
+    id:"ca6",
+    question:"¿Pueden fabricar cajas para exportación de alimentos frescos?",
+    answer:"Sí. Para exportación fabricamos cajas con <strong>cartón certificado FSC</strong>, resistente a humedad, con documentación técnica de materiales para cumplir los requerimientos de los compradores de EUA, Canadá y Europa. También generamos las hojas de especificación técnica necesarias para aduanas y auditorías de calidad. Consulta con tu asesor CADECA los requisitos específicos de tu destino.",
+  },
+];
+---
+
+<PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP}>
+
+  <section class="page-hero" aria-labelledby="prod-ca-title">
+    <div class="container">
+      <div class="page-hero__inner">
+        <div class="page-hero__content">
+          <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
+              <li class="breadcrumb__item"><a href="/productos" class="breadcrumb__link">Productos</a></li>
+              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Cajas para Alimentos</li>
+            </ol>
+          </nav>
+          <p class="page-hero__badge">Apto COFEPRIS · Resistente grasa y humedad · FSC disponible</p>
+          <h1 id="prod-ca-title" class="page-hero__title">
+            Cajas de Cartón<br><span>para Alimentos en CDMX</span>
+          </h1>
+          <p class="page-hero__desc">
+            Materiales certificados para contacto con alimentos según COFEPRIS. Resistentes a humedad, grasa y temperatura. Pizza, dark kitchen, frutas, congelados y exportación orgánica.
+          </p>
+          <div class="page-hero__ctas">
+            <a href="#cotizar"       class="btn btn--primary">Cotizar Ahora</a>
+            <a href="#subcategorias" class="btn btn--outline">Ver Tipos</a>
+          </div>
+        </div>
+        <div class="page-hero__stats">
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">NOM</span>
+            <span class="page-hero__stat-label">COFEPRIS / FDA</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">24 hrs</span>
+            <span class="page-hero__stat-label">Entrega CDMX</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">FSC</span>
+            <span class="page-hero__stat-label">Exportación</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">Sin mínimo</span>
+            <span class="page-hero__stat-label">Modelos estándar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="prod-detail" aria-labelledby="detalle-ca-title">
+      <div class="container">
+        <div class="prod-detail__inner">
+          <div class="prod-detail__img-wrap">
+            <img src="/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif"
+              alt="Cajas de cartón para alimentos pizza y restaurantes en CDMX — CADECA"
+              class="prod-detail__img" width="900" height="560"
+              loading="eager" decoding="async" fetchpriority="high" />
+          </div>
+          <div class="prod-detail__content">
+            <span class="prod-detail__label">Empaque apto para alimentos — certificado y resistente</span>
+            <h2 id="detalle-ca-title" class="section-header__title" style="margin:0">
+              Cajas para Alimentos: Certificadas, Resistentes y Disponibles en CDMX
+            </h2>
+            <p class="prod-detail__intro">
+              No todo el cartón es apto para estar en contacto con alimentos. Nuestras cajas para alimentos están fabricadas con materiales certificados según COFEPRIS y normas internacionales. Resistentes a la humedad, grasa y temperatura según el tipo de producto. Stock permanente de los formatos más solicitados con entrega en 24-48 hrs en CDMX.
+            </p>
+            <div>
+              <p class="prod-detail__specs-title">Especificaciones técnicas</p>
+              <div class="prod-detail__specs-grid">
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Norma alimentaria</span>
+                  <span class="prod-detail__spec-value">NOM-051 COFEPRIS</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Exportación</span>
+                  <span class="prod-detail__spec-value">FDA · Normas EU</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Resistencia</span>
+                  <span class="prod-detail__spec-value">Grasa · Humedad · Frío</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Tintas</span>
+                  <span class="prod-detail__spec-value">Base agua (no migran)</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Certificación</span>
+                  <span class="prod-detail__spec-value">FSC bajo pedido</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Aplicaciones</span>
+                  <span class="prod-detail__spec-value">Pizza · DK · Frutas · Export.</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Pedido mínimo</span>
+                  <span class="prod-detail__spec-value">Sin mínimo (modelos std.)</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Entrega CDMX</span>
+                  <span class="prod-detail__spec-value">24 – 48 horas</span>
+                </div>
+              </div>
+            </div>
+            <div class="prod-detail__actions">
+              <a href="#cotizar" class="btn btn--primary">Solicitar Cotización</a>
+              <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener" class="btn btn--outline">WhatsApp Directo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="subcategorias" aria-labelledby="subcats-ca-title">
+      <div class="container">
+        <SectionHeader id="subcats-ca-title" twoCol
+          title="Tipos de Cajas para Alimentos"
+          subtitle="Pizza, dark kitchen, frutas, congelados y exportación orgánica — cada aplicación con el material correcto."
+          link={{ text: "Ver catálogo completo", href: "/productos" }}>
+          <p>Cada tipo de alimento tiene requerimientos distintos de empaque. Las cajas para pizza necesitan resistir grasa y humedad. Las de frutas frescas deben soportar el contacto con hielo. Las de exportación requieren certificaciones específicas. En CADECA tenemos el modelo correcto para cada aplicación.</p>
+        </SectionHeader>
+        <div class="products__grid">
+          {subcategorias.map(p => <ProductCard {...p} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="industries" aria-labelledby="industrias-ca-title">
+      <div class="container">
+        <SectionHeader id="industrias-ca-title" twoCol
+          title="Sectores que Confían en Nuestras Cajas para Alimentos"
+          subtitle="Pizzerías, dark kitchens, exportadores y distribuidores de la zona metropolitana">
+          <p>El sector de alimentos en CDMX es uno de los más dinámicos del país. Dark kitchens, deliveries, exportadores de aguacate y distribuidores de Central de Abasto tienen requerimientos muy específicos que no se pueden resolver con cartón estándar.</p>
+        </SectionHeader>
+        <div class="industries__grid">
+          {industrias.map(i => <IndustryCard {...i} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="process" aria-labelledby="proceso-ca-title">
+      <div class="container">
+        <SectionHeader id="proceso-ca-title"
+          title="Cómo Pedir Cajas para Alimentos en CADECA"
+          subtitle="Del requerimiento a la entrega — rápido, sin complicaciones y con la certificación correcta" />
+        <div class="process__grid">
+          {pasos.map(p => <ProcessStep {...p} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-labelledby="test-ca-title">
+      <div class="container">
+        <div class="trust__testimonials-header">
+          <h2 id="test-ca-title" class="trust__testimonials-title">Negocios de Alimentos en CDMX que Confían en CADECA</h2>
+          <p class="trust__testimonials-subtitle">Pizzerías, dark kitchens y exportadores comparten su experiencia</p>
+        </div>
+        <div class="trust__testimonials">
+          {testimonios.map(t => <Testimonial {...t} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="seo-content" aria-labelledby="seo-ca-title">
+      <div class="container">
+        <h2 id="seo-ca-title" class="seo-content__title">
+          Cajas de Cartón para Alimentos en CDMX: Certificadas, Resistentes y con Entrega Inmediata
+        </h2>
+        <p class="seo-content__text">
+          Las <strong>cajas de cartón para alimentos en la Ciudad de México</strong> deben cumplir requisitos que el cartón corrugado estándar no cubre: materiales aptos para contacto con alimentos según COFEPRIS, resistencia a la grasa y la humedad sin deformarse, y en algunos casos certificaciones de exportación. En CADECA fabricamos y distribuimos cajas para alimentos con stock permanente de los modelos más solicitados — pizzas, dark kitchen y frutas estándar — con <strong>entrega en 24-48 horas en toda la zona metropolitana</strong>.
+        </p>
+        <p class="seo-content__text">
+          Para el sector de <strong>pizzerías y dark kitchens en CDMX</strong>, manejamos todas las medidas estándar (26, 30, 33 y 40 cm para pizza; formatos variados para platillos de dark kitchen) con la resistencia a grasa y temperatura necesaria para que el producto llegue en perfectas condiciones. Para los <strong>exportadores de aguacate, frutas y productos orgánicos del Estado de México</strong>, fabricamos con cartón certificado FSC, resistente a humedad para cadena de frío, con la documentación técnica necesaria para cumplir los requerimientos de importadores en EUA, Canadá y Europa.
+        </p>
+        <p class="seo-content__text">
+          Todas las tintas que usamos en cajas para alimentos son de <strong>base agua, no migran y no contaminan el producto</strong> — a diferencia de las tintas de solvente que algunos proveedores usan y que no son aptas para estar cerca de alimentos. <a href="#cotizar">Cotiza sin compromiso</a> y recibe asesoría gratuita sobre qué certificación necesitas para tu tipo de alimento y mercado de destino.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-ca-title">
+      <div class="container">
+        <SectionHeader id="faq-ca-title" twoCol
+          title="Preguntas Frecuentes: Cajas para Alimentos"
+          subtitle="Certificaciones, normas, resistencia a grasa y humedad, personalización y exportación">
+          <p>Las preguntas más comunes sobre cajas para alimentos: desde la diferencia entre una caja estándar y una apta para alimentos, hasta los requisitos de exportación. Nuestro equipo resuelve consultas específicas por WhatsApp en menos de 2 horas.</p>
+        </SectionHeader>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza cajas para alimentos — certificadas y con entrega en 24 hrs" />
+
+</PageLayout>

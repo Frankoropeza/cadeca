@@ -1,0 +1,383 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import ProductCard   from "@/components/ProductCard.astro";
+import IndustryCard  from "@/components/IndustryCard.astro";
+import ProcessStep   from "@/components/ProcessStep.astro";
+import Testimonial   from "@/components/Testimonial.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+
+const title       = "Láminas de Cartón Corrugado Ecológico CDMX | FSC Certificado | CADECA";
+const description = "Láminas de cartón corrugado ecológico en CDMX. Reciclado posconsumo, FSC certificado, por m². Para fabricantes, empacadoras y marcas con metas ambientales. Cotiza gratis.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Láminas de Cartón Corrugado Ecológico",
+  "description": "Láminas de cartón corrugado con material reciclado posconsumo y certificación FSC en CDMX. Para fabricantes, empacadoras y marcas con metas de sostenibilidad.",
+  "brand": { "@type": "Brand", "name": "CADECA" },
+  "manufacturer": { "@type": "Organization", "name": "CADECA" },
+  "url": "https://cadeca.com.mx/productos/laminas-carton-corrugado",
+  "image": "https://cadeca.com.mx/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
+  "category": "Láminas y Empaques Ecológicos",
+  "areaServed": ["Ciudad de México", "Estado de México"],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "CADECA" }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "37"
+  }
+};
+
+const subcategorias = [
+  {
+    title:   "Láminas Corrugado por m²",
+    desc:    "Venta de láminas de cartón corrugado por metro cuadrado para fabricantes que producen sus propias cajas o usan el corrugado como material de protección interna en embalajes.",
+    imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
+    imgAlt:  "Láminas de cartón corrugado por metro cuadrado en CDMX — CADECA",
+    href:    "/productos/laminas-carton-corrugado#laminas",
+    tags:[
+      { label:"Por m² o lote",      href:"/productos/laminas-carton-corrugado#medidas" },
+      { label:"Simple y doble",     href:"/productos/laminas-carton-corrugado#tipos" },
+      { label:"Todas las flautas",  href:"/productos/laminas-carton-corrugado#flautas" },
+    ],
+    btnText:"Ver Láminas por m²",
+  },
+  {
+    title:   "Cartón Reciclado Posconsumo (PCR)",
+    desc:    "Fabricado con material reciclado posconsumo (PCR) de alta calidad. Misma resistencia que el cartón virgen a menor huella ambiental. Ideal para marcas con compromisos de circularidad.",
+    imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
+    imgAlt:  "Cartón corrugado reciclado posconsumo PCR ecológico CDMX — CADECA",
+    href:    "/productos/laminas-carton-corrugado#reciclado",
+    tags:[
+      { label:"PCR certificado",     href:"/productos/laminas-carton-corrugado#reciclado" },
+      { label:"Misma resistencia",   href:"/productos/laminas-carton-corrugado#resistencia" },
+      { label:"Menor huella CO₂",   href:"/productos/laminas-carton-corrugado#sostenibilidad" },
+    ],
+    btnText:"Ver Cartón PCR",
+  },
+  {
+    title:   "Certificación FSC Cadena de Custodia",
+    desc:    "Cartón con certificación FSC (Forest Stewardship Council) disponible en toda la línea. Documentación completa de cadena de custodia para marcas que reportan métricas de sostenibilidad.",
+    imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
+    imgAlt:  "Cartón corrugado certificación FSC cadena custodia CDMX — CADECA",
+    href:    "/productos/laminas-carton-corrugado#fsc",
+    tags:[
+      { label:"FSC Cadena Custodia",  href:"/productos/laminas-carton-corrugado#fsc" },
+      { label:"Documentación ESG",    href:"/productos/laminas-carton-corrugado#esg" },
+      { label:"Exportación",          href:"/productos/laminas-carton-corrugado#exportacion" },
+    ],
+    btnText:"Ver Certificación FSC",
+  },
+  {
+    title:   "Cajas Ecológicas con Impresión Verde",
+    desc:    "Cajas corrugadas fabricadas con cartón reciclado y tintas base agua. La opción completa para marcas que quieren comunicar sostenibilidad en su packaging sin sacrificar calidad visual.",
+    imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
+    imgAlt:  "Cajas ecológicas cartón reciclado tintas base agua CDMX — CADECA",
+    href:    "/productos/cajas-ecologicas",
+    tags:[
+      { label:"Cartón reciclado",      href:"/productos/laminas-carton-corrugado#reciclado" },
+      { label:"Tintas vegetales",      href:"/productos/cajas-ecologicas#tintas" },
+      { label:"Diseño eco-friendly",   href:"/productos/cajas-ecologicas#diseno" },
+    ],
+    btnText:"Ver Cajas Ecológicas",
+  },
+];
+
+const industrias = [
+  {
+    icon:"🏭",
+    title:"Fabricantes y Empacadoras",
+    desc:"Para plantas que fabrican sus propias cajas o usan láminas de corrugado como protección interna. Venta por m² con pedidos desde un lote mínimo. Entrega en 48-72 hrs en CDMX.",
+    href:"/soluciones/industrial-nearshoring",
+    linkText:"Ver solución fabricantes",
+  },
+  {
+    icon:"🌿",
+    title:"Marcas con Metas ESG",
+    desc:"Para empresas con compromisos públicos de sostenibilidad. Certificación FSC con documentación completa para reportes ESG, auditorías de clientes corporativos y compliance regulatorio.",
+    href:"/productos/laminas-carton-corrugado#esg",
+    linkText:"Ver solución ESG",
+  },
+  {
+    icon:"🛒",
+    title:"Retail y E-commerce Sostenible",
+    desc:"Marcas de retail y e-commerce que comunican sostenibilidad como diferenciador. El packaging ecológico es hoy un argumento de venta real para consumidores conscientes.",
+    href:"/productos/cajas-ecologicas",
+    linkText:"Ver cajas ecológicas",
+  },
+  {
+    icon:"🌎",
+    title:"Exportadores con Requerimientos Verdes",
+    desc:"Compradores internacionales en Europa y EUA exigen cada vez más trazabilidad de materiales. La certificación FSC de CADECA satisface estos requerimientos con documentación oficial.",
+    href:"/productos/laminas-carton-corrugado#exportacion",
+    linkText:"Ver para exportación",
+  },
+];
+
+const pasos = [
+  { num:1, title:"Define tu requerimiento", desc:"¿Necesitas láminas por m², cajas fabricadas o ambas? ¿Tu cliente pide certificación FSC o basta con cartón reciclado PCR? Te asesoramos sin costo." },
+  { num:2, title:"Certificación correcta",  desc:"Verificamos qué certificación aplica para tu reporte ESG o requerimiento de cliente. FSC Cadena de Custodia, PCR certificado u otras normas según tu mercado." },
+  { num:3, title:"Cotización detallada",    desc:"Precio por m² o por pieza según volumen. Con o sin impresión. Con o sin certificación formal. Ajustamos el presupuesto a tu necesidad real." },
+  { num:4, title:"Entrega en 48-72 hrs",   desc:"Láminas y cajas ecológicas entregadas en CDMX y Estado de México con documentación de certificación incluida en el envío." },
+];
+
+const testimonios = [
+  {
+    initials:"PG",
+    name:"Patricia G.",
+    role:"Directora de Sostenibilidad — Grupo retail, Santa Fe CDMX",
+    text:"Necesitábamos cambiar todo nuestro packaging a FSC para nuestro reporte ESG del año. CADECA fue el único proveedor que nos entregó la documentación completa de cadena de custodia en tiempo y forma. Ahora son nuestro proveedor exclusivo de empaques.",
+  },
+  {
+    initials:"OB",
+    name:"Omar B.",
+    role:"Gerente de Compras — Empacadora, Cuautitlán Izcalli",
+    text:"Compramos láminas de corrugado por m² cada semana. CADECA tiene el stock que necesitamos, el precio es competitivo y la calidad del cartón reciclado es tan buena como el virgen. Llevamos 14 meses como clientes.",
+  },
+  {
+    initials:"IS",
+    name:"Isabel S.",
+    role:"Fundadora — Marca de cosméticos sostenible, CDMX",
+    text:"Mi marca comunica sostenibilidad y necesitaba un proveedor que lo respaldara. Con CADECA tengo cartón FSC certificado, tintas base agua y la documentación para publicarlo en mis redes con total transparencia. Perfectos.",
+  },
+];
+
+const faqs = [
+  {
+    id:"lc1",
+    question:"¿Qué es la certificación FSC y por qué la necesito?",
+    answer:"FSC (Forest Stewardship Council) certifica que los materiales forestales provienen de fuentes responsablemente gestionadas. La <strong>certificación FSC Cadena de Custodia</strong> garantiza la trazabilidad del material desde el bosque hasta tu packaging. La necesitas si: tu cliente corporativo la exige, exportas a mercados europeos, reportas métricas ESG o quieres comunicar sostenibilidad con respaldo oficial.",
+  },
+  {
+    id:"lc2",
+    question:"¿Cuál es la diferencia entre cartón FSC y cartón reciclado PCR?",
+    answer:"El <strong>cartón FSC</strong> puede ser de fibra virgen o reciclada, pero certifica la gestión responsable del bosque de origen. El <strong>cartón PCR</strong> (Post Consumer Recycled) está fabricado con material ya usado por el consumidor final, reduciendo la demanda de fibra virgen. Para el máximo impacto ambiental, recomendamos cartón PCR con certificación FSC — ambos no son excluyentes.",
+  },
+  {
+    id:"lc3",
+    question:"¿Las láminas de cartón corrugado se venden por m² o por unidad?",
+    answer:"Las láminas se venden <strong>por m² en lotes</strong>. El tamaño mínimo del lote depende del tipo de corrugado y flauta. Para fabricantes con alto consumo, ofrecemos entregas programadas semanales o quincenales. También podemos fabricar las cajas directamente si no cuentas con maquinaria de troquelado.",
+  },
+  {
+    id:"lc4",
+    question:"¿El cartón reciclado tiene la misma resistencia que el cartón virgen?",
+    answer:"Sí, en las gramaturas que manejamos. Nuestro cartón reciclado PCR cumple los mismos estándares ECT que el cartón virgen equivalente. La diferencia está en el color del liner (ligeramente más oscuro en el reciclado) y en la disponibilidad de algunos gramajes muy altos (200+ g/m²) que solo están en fibra virgen. Para aplicaciones estándar, el reciclado es técnicamente equivalente.",
+  },
+  {
+    id:"lc5",
+    question:"¿Pueden entregar documentación de certificación para mi reporte ESG?",
+    answer:"Sí. Con cada pedido de cartón FSC entregamos la <strong>documentación completa de cadena de custodia</strong>: certificado del proveedor, número de certificación FSC verificable en línea, porcentaje de material certificado y declaración de producto. Esta documentación es suficiente para reportes GRI, TCFD y auditorías de clientes corporativos internacionales.",
+  },
+  {
+    id:"lc6",
+    question:"¿Pueden fabricar cajas con la impresión de mi marca en cartón ecológico?",
+    answer:"Sí. Toda nuestra línea de cartón reciclado y FSC puede imprimirse con tu logo en 1 a 4 colores o full color CMYK, usando <strong>tintas base agua y vegetales</strong> que no afectan la certificación ambiental del cartón. El proceso es idéntico al de las cajas personalizadas convencionales, con el diferencial de que puedes comunicar que el packaging es 100% ecológico y certificado.",
+  },
+];
+---
+
+<PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP}>
+
+  <section class="page-hero" aria-labelledby="prod-lc-title">
+    <div class="container">
+      <div class="page-hero__inner">
+        <div class="page-hero__content">
+          <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
+              <li class="breadcrumb__item"><a href="/productos" class="breadcrumb__link">Productos</a></li>
+              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Láminas y Ecológicas</li>
+            </ol>
+          </nav>
+          <p class="page-hero__badge">FSC Certificado · Reciclado PCR · Documentación ESG incluida</p>
+          <h1 id="prod-lc-title" class="page-hero__title">
+            Láminas de Cartón<br><span>Corrugado Ecológico CDMX</span>
+          </h1>
+          <p class="page-hero__desc">
+            Láminas de corrugado por m², cartón reciclado posconsumo (PCR) y certificación FSC Cadena de Custodia. Para fabricantes, marcas sostenibles y exportadores con requerimientos ambientales.
+          </p>
+          <div class="page-hero__ctas">
+            <a href="#cotizar"       class="btn btn--primary">Cotizar Ahora</a>
+            <a href="#subcategorias" class="btn btn--outline">Ver Opciones</a>
+          </div>
+        </div>
+        <div class="page-hero__stats">
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">FSC</span>
+            <span class="page-hero__stat-label">Cadena de Custodia</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">PCR</span>
+            <span class="page-hero__stat-label">Reciclado posconsumo</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">48-72 h</span>
+            <span class="page-hero__stat-label">Entrega CDMX</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">ESG</span>
+            <span class="page-hero__stat-label">Documentación incluida</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="prod-detail" aria-labelledby="detalle-lc-title">
+      <div class="container">
+        <div class="prod-detail__inner">
+          <div class="prod-detail__img-wrap">
+            <img src="/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif"
+              alt="Láminas de cartón corrugado ecológico reciclado FSC en CDMX — CADECA"
+              class="prod-detail__img" width="900" height="560"
+              loading="eager" decoding="async" fetchpriority="high" />
+          </div>
+          <div class="prod-detail__content">
+            <span class="prod-detail__label">Sostenibilidad real — no solo marketing</span>
+            <h2 id="detalle-lc-title" class="section-header__title" style="margin:0">
+              Cartón Corrugado Ecológico: PCR Certificado y FSC Cadena de Custodia
+            </h2>
+            <p class="prod-detail__intro">
+              Las láminas de cartón corrugado ecológico de CADECA combinan rendimiento técnico con responsabilidad ambiental. Fabricadas con material reciclado posconsumo (PCR) y disponibles con certificación FSC, son la elección correcta para fabricantes, marcas con metas ESG y exportadores cuyos clientes exigen trazabilidad de materiales.
+            </p>
+            <div>
+              <p class="prod-detail__specs-title">Especificaciones técnicas</p>
+              <div class="prod-detail__specs-grid">
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Material</span>
+                  <span class="prod-detail__spec-value">PCR (reciclado posconsumo)</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Certificación</span>
+                  <span class="prod-detail__spec-value">FSC Cadena de Custodia</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Gramaje</span>
+                  <span class="prod-detail__spec-value">115 – 175 g/m²</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Flautas</span>
+                  <span class="prod-detail__spec-value">B · C · E · BC</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Impresión</span>
+                  <span class="prod-detail__spec-value">Tintas base agua / vegetales</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Documentación</span>
+                  <span class="prod-detail__spec-value">ESG · GRI · TCFD</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Formato</span>
+                  <span class="prod-detail__spec-value">Láminas m² · Cajas troqueladas</span>
+                </div>
+                <div class="prod-detail__spec">
+                  <span class="prod-detail__spec-label">Entrega CDMX</span>
+                  <span class="prod-detail__spec-value">48 – 72 horas</span>
+                </div>
+              </div>
+            </div>
+            <div class="prod-detail__actions">
+              <a href="#cotizar" class="btn btn--primary">Solicitar Cotización</a>
+              <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener" class="btn btn--outline">WhatsApp Directo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="subcategorias" aria-labelledby="subcats-lc-title">
+      <div class="container">
+        <SectionHeader id="subcats-lc-title" twoCol
+          title="Línea Ecológica: Láminas, PCR y Certificación FSC"
+          subtitle="Para fabricantes que usan corrugado como materia prima y marcas con metas de sostenibilidad reales."
+          link={{ text: "Ver catálogo completo", href: "/productos" }}>
+          <p>La sostenibilidad en empaque no es solo un claim de marketing — es una decisión técnica con implicaciones en la cadena de suministro. En CADECA te ayudamos a elegir el nivel de certificación correcto para tu requerimiento real: desde cartón reciclado sin certificación hasta FSC con documentación completa para auditorías internacionales.</p>
+        </SectionHeader>
+        <div class="products__grid">
+          {subcategorias.map(p => <ProductCard {...p} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="industries" aria-labelledby="industrias-lc-title">
+      <div class="container">
+        <SectionHeader id="industrias-lc-title" twoCol
+          title="¿Quién Necesita Cartón Corrugado Ecológico?"
+          subtitle="Fabricantes, marcas ESG, retail sostenible y exportadores con requerimientos ambientales">
+          <p>El packaging sostenible dejó de ser un nicho para convertirse en un requisito de mercado. Grandes retailers, marcas de moda y exportadores a Europa ya exigen cartón certificado a sus proveedores. CADECA te da acceso a la misma certificación FSC que usan las empresas Fortune 500.</p>
+        </SectionHeader>
+        <div class="industries__grid">
+          {industrias.map(i => <IndustryCard {...i} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="process" aria-labelledby="proceso-lc-title">
+      <div class="container">
+        <SectionHeader id="proceso-lc-title"
+          title="Cómo Pedir Láminas y Empaques Ecológicos"
+          subtitle="Asesoría en certificación, cotización transparente y documentación ESG incluida" />
+        <div class="process__grid">
+          {pasos.map(p => <ProcessStep {...p} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-labelledby="test-lc-title">
+      <div class="container">
+        <div class="trust__testimonials-header">
+          <h2 id="test-lc-title" class="trust__testimonials-title">Empresas Sostenibles que Confían en CADECA</h2>
+          <p class="trust__testimonials-subtitle">Retail, empacadoras y marcas ecológicas comparten su experiencia</p>
+        </div>
+        <div class="trust__testimonials">
+          {testimonios.map(t => <Testimonial {...t} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="seo-content" aria-labelledby="seo-lc-title">
+      <div class="container">
+        <h2 id="seo-lc-title" class="seo-content__title">
+          Cartón Corrugado Ecológico en CDMX: FSC, PCR y Sostenibilidad Real para tu Negocio
+        </h2>
+        <p class="seo-content__text">
+          Las <strong>láminas de cartón corrugado ecológico en la Ciudad de México</strong> son la solución para fabricantes, empacadoras y marcas que necesitan reducir su huella ambiental sin sacrificar rendimiento ni precio. En CADECA ofrecemos cartón reciclado posconsumo (PCR) con la misma resistencia que el cartón virgen, y disponemos de <strong>certificación FSC Cadena de Custodia</strong> con documentación completa para reportes ESG, auditorías de clientes corporativos y compliance regulatorio en mercados internacionales.
+        </p>
+        <p class="seo-content__text">
+          Para las <strong>marcas de retail y e-commerce con metas de sostenibilidad</strong>, el packaging ecológico es hoy un argumento de venta medible: los consumidores conscientes están dispuestos a pagar más por productos con empaque responsable, y los grandes retailers mexicanos ya están exigiendo a sus proveedores una transición hacia materiales certificados. Nuestra línea de <strong>cajas ecológicas con cartón PCR e impresión en tintas vegetales</strong> cubre este requerimiento sin compromisos en la calidad visual del empaque.
+        </p>
+        <p class="seo-content__text">
+          Para los <strong>exportadores de alimentos y productos orgánicos del Estado de México</strong>, la certificación FSC satisface los requerimientos de los principales importadores de Europa y EUA. Entregamos toda la documentación necesaria para aduanas, auditorías de calidad y verificación por parte del comprador internacional. <a href="#cotizar">Solicita tu cotización</a> especificando el nivel de certificación que necesitas — sin compromiso y con asesoría gratuita incluida.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-lc-title">
+      <div class="container">
+        <SectionHeader id="faq-lc-title" twoCol
+          title="Preguntas Frecuentes: Láminas y Empaques Ecológicos"
+          subtitle="FSC, PCR, diferencias, documentación ESG y opciones de impresión ecológica">
+          <p>Las dudas más comunes sobre cartón ecológico, certificación FSC y cartón reciclado PCR. Nuestro equipo resuelve consultas técnicas y de certificación por WhatsApp en menos de 2 horas.</p>
+        </SectionHeader>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza cartón corrugado ecológico FSC — documentación ESG incluida" />
+
+</PageLayout>
