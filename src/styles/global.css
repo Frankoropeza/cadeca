@@ -1016,6 +1016,18 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   transition: color var(--transition-fast);
 }
 .footer__link:hover { color: var(--color-primary-light); }
+.footer__link--highlight {
+  color: var(--color-primary-light);
+  font-weight: 700;
+}
+.footer__title-link {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+.footer__title-link:hover { color: var(--color-primary-light); }
 
 .footer__locations { display: flex; flex-direction: column; gap: var(--spacing-md); }
 .footer__location-name { display: block; font-size: var(--font-size-sm); font-weight: 700; color: #fff; margin-bottom: 0.35rem; }
