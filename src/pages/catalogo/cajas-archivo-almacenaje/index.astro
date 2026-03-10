@@ -3,63 +3,180 @@ import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture   from "@/components/LeadCapture.astro";
 
-const title       = "Cajas de Cartón para Archivo y Almacenaje CDMX | CADECA";
-const description = "Cajas de cartón para archivo muerto oficio y carta, almacenaje industrial y mudanza corporativa en CDMX. Doble y triple pared, apilables hasta 120 kg. Entrega 24-48 hrs.";
+const title       = "Cajas de Archivo y Almacenaje CDMX | 5 Productos | CADECA";
+const description = "Cajas de cartón para archivo muerto, almacén industrial y almacenaje en CDMX. Tamaño oficio, carta, apilables y mudanza. Fichas técnicas, medidas y precios mayoreo.";
 const WHATSAPP    = "5255XXXXXXXX";
 
-const skus = [
-  { sku:"CAD-AH-01", nombre:"Caja Archivo Muerto Tamaño Oficio",    href:"/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",   img:"/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",          moq:"50 pzas",  entrega:"24 hrs", desc:"Tamaño oficio 35×24×28cm. Con y sin tapa. Stock CDMX." },
-  { sku:"CAD-AH-02", nombre:"Caja Almacén Industrial Reforzada",     href:"/catalogo/cajas-archivo-almacenaje/almacen-industrial",      img:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif",       moq:"100 pzas", entrega:"48 hrs", desc:"ECT-51 y ECT-71, apilable hasta 300 kg en tarima." },
-  { sku:"CAD-AH-03", nombre:"Caja Documentos Tamaño Carta",          href:"/catalogo/cajas-archivo-almacenaje/documentos-carta",        img:"/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif",         moq:"50 pzas",  entrega:"24 hrs", desc:"Tamaño carta 28×22×18cm. Ideal para despachos y notarías." },
-  { sku:"CAD-AH-04", nombre:"Caja Apilable Alta Resistencia",        href:"/catalogo/cajas-archivo-almacenaje/apilable-resistente",     img:"/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif",moq:"100 pzas", entrega:"48 hrs", desc:"Triple pared EB ECT-71. Stack de 5 tarimas sin deformación." },
-  { sku:"CAD-AH-05", nombre:"Caja Mudanza y Archivo Ejecutivo",       href:"/catalogo/cajas-archivo-almacenaje/mudanza-archivo",         img:"/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif",        moq:"Sin mín.", entrega:"24 hrs", desc:"Con asas, doble pared BC, para mudanza de oficinas." },
+const productos = [
+  {
+    code:    "CAD-AH-01",
+    badge:   "Más vendida",
+    badgeColor: "orange",
+    featured: true,
+    title:   "Archivo Muerto Tamaño Oficio",
+    desc:    "Caja estándar para archivo muerto tamaño oficio. Flauta C, ECT-32. Tapa integrada o separada. La solución más usada en oficinas, despachos y archivos corporativos en CDMX. Sin pedido mínimo.",
+    imgSrc:  "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
+    imgAlt:  "Caja archivo muerto tamaño oficio cartón corrugado CDMX — CADECA",
+    href:    "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",
+    specs: [
+      { label: "Tamaño",     value: "Oficio (legal)" },
+      { label: "ECT",        value: "ECT-32" },
+      { label: "Flauta",     value: "C (4mm)" },
+      { label: "Peso máx.",  value: "Hasta 20 kg" },
+    ],
+    moq: "Sin mínimo",
+  },
+  {
+    code:    "CAD-AH-02",
+    badge:   "Industrial",
+    badgeColor: "red",
+    featured: false,
+    title:   "Almacén Industrial — Doble Pared",
+    desc:    "Caja de almacén industrial doble pared BC. ECT-44 y ECT-51 para almacenaje pesado en racks, bodegas y centros de distribución. Resistencia superior al apilamiento prolongado.",
+    imgSrc:  "/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif",
+    imgAlt:  "Caja almacén industrial doble pared corrugado CDMX — CADECA",
+    href:    "/catalogo/cajas-archivo-almacenaje/almacen-industrial",
+    specs: [
+      { label: "Pared",      value: "Doble (BC)" },
+      { label: "ECT",        value: "ECT-44 / ECT-51" },
+      { label: "Flauta",     value: "BC" },
+      { label: "Peso máx.",  value: "Hasta 35 kg" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code:    "CAD-AH-03",
+    badge:   "Oficina",
+    badgeColor: "blue",
+    featured: false,
+    title:   "Documentos Tamaño Carta",
+    desc:    "Caja para documentos tamaño carta. Flauta B/C, ECT-32. Compacta y ligera para oficinas con espacio limitado. Tapa integrada con ranuras de identificación. Sin mínimo, stock permanente.",
+    imgSrc:  "/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif",
+    imgAlt:  "Caja documentos tamaño carta cartón corrugado CDMX — CADECA",
+    href:    "/catalogo/cajas-archivo-almacenaje/documentos-carta",
+    specs: [
+      { label: "Tamaño",     value: "Carta (letter)" },
+      { label: "ECT",        value: "ECT-32" },
+      { label: "Flauta",     value: "B / C" },
+      { label: "Peso máx.",  value: "Hasta 15 kg" },
+    ],
+    moq: "Sin mínimo",
+  },
+  {
+    code:    "CAD-AH-04",
+    badge:   "Resistente",
+    badgeColor: "red",
+    featured: false,
+    title:   "Apilable Resistente — Triple Pared",
+    desc:    "Caja apilable de triple pared BCB/BCF. ECT-51 y ECT-71 para almacenaje prolongado con máxima resistencia a la compresión. Ideal para bodegas industriales y archivos de largo plazo.",
+    imgSrc:  "/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif",
+    imgAlt:  "Caja apilable resistente triple pared corrugado CDMX — CADECA",
+    href:    "/catalogo/cajas-archivo-almacenaje/apilable-resistente",
+    specs: [
+      { label: "Pared",      value: "Triple (BCB/BCF)" },
+      { label: "ECT",        value: "ECT-51 / ECT-71" },
+      { label: "Flauta",     value: "BCB · BCF" },
+      { label: "Peso máx.",  value: "+40 kg" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code:    "CAD-AH-05",
+    badge:   "Con asas",
+    badgeColor: "green",
+    featured: false,
+    title:   "Mudanza y Archivo — Con Asas",
+    desc:    "Caja doble uso para mudanza y archivo con asas troqueladas. Doble pared BC, ECT-44. Diseño ergonómico para manejo manual frecuente. Sin mínimo, stock permanente en CDMX.",
+    imgSrc:  "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif",
+    imgAlt:  "Caja mudanza y archivo con asas cartón corrugado CDMX — CADECA",
+    href:    "/catalogo/cajas-archivo-almacenaje/mudanza-archivo",
+    specs: [
+      { label: "Pared",      value: "Doble (BC) + Asas" },
+      { label: "ECT",        value: "ECT-44" },
+      { label: "Flauta",     value: "BC" },
+      { label: "Peso máx.",  value: "Hasta 25 kg" },
+    ],
+    moq: "Sin mínimo",
+  },
 ];
 ---
-<PageLayout title={title} description={description} whatsapp={WHATSAPP} pageType="page"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Archivo y Almacenaje"}]}>
 
-  <div class="breadcrumb-bar">
-    <div class="container"><ol>
+<PageLayout title={title} description={description} whatsapp={WHATSAPP}>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
       <li><a href="/">Inicio</a></li>
       <li><a href="/catalogo">Catálogo</a></li>
       <li><span class="current">Archivo y Almacenaje</span></li>
-    </ol></div>
+      </ol>
+    </div>
   </div>
 
-  <section class="cat-page-hero" aria-labelledby="cat09-title">
+  <section class="cat-page-hero" aria-labelledby="cat-ah-hub-title">
     <div class="container">
-      <span class="cat-page-hero__eyebrow">Categoría 09 · Corporativo e Institucional</span>
-      <h1 id="cat09-title" class="cat-page-hero__title">Cajas para <span>Archivo y Almacenaje</span></h1>
-      <p class="cat-page-hero__desc">Cajas de cartón para archivo muerto tamaño oficio y carta, almacenaje industrial y mudanza corporativa en CDMX. Corrugado doble y triple pared apilables hasta 300 kg. Para gobierno, despachos, notarías, corporativos e industria.</p>
+      <span class="cat-page-hero__eyebrow">🗄️ Categoría 09 · 5 productos</span>
+      <h1 id="cat-ah-hub-title" class="cat-page-hero__title">
+        Cajas de Archivo <span>y Almacenaje</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Archivo muerto oficio, documentos carta, almacén industrial y cajas apilables. Línea especializada en organización documental y almacenaje prolongado. Stock permanente en CDMX, sin pedido mínimo en modelos estándar.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">Productos: <strong>5</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ desde: <strong>Sin mínimo</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega CDMX: <strong>24-48 hrs</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32 a ECT-71</strong></div>
+      </div>
     </div>
   </section>
 
-  <main id="contenido-principal">
-    <section style="padding:var(--spacing-3xl) 0;">
+  <main id="contenido-principal" role="main">
+    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-ah-title">
       <div class="container">
-        <SectionHeader title="5 SKUs para Archivo y Almacenaje Profesional" subtitle="Desde la caja de archivo carta para notarías hasta la caja industrial triple pared para almacenes con 5 tarimas de altura." />
-        <div class="products-grid" style="margin-top:var(--spacing-xl);">
-          {skus.map(s => (
-            <a href={s.href} class="product-card">
-              <div class="product-card__img-wrap">
-                <img src={s.img} alt={s.nombre + " CDMX — CADECA"} class="product-card__img" loading="lazy" width="900" height="560" />
+        <SectionHeader
+          id="prods-ah-title"
+          twoCol
+          title="5 Productos — Archivo y Almacenaje"
+          subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones ECT y condiciones de pedido."
+          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+        >
+          <p>Cada producto tiene su propia ficha técnica con tabla de medidas disponibles, especificaciones de material, resistencia ECT, flauta, gramaje, peso máximo y condiciones de pedido. Haz clic en cualquier producto para ver todos los detalles.</p>
+        </SectionHeader>
+
+        <div class="sku-grid">
+          {productos.map(p => (
+            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+              <div class="sku-card__img-wrap">
+                <img src={p.imgSrc} alt={p.imgAlt}
+                  class="sku-card__img" width="640" height="480"
+                  loading="lazy" decoding="async" />
+                <span class="sku-card__code">{p.code}</span>
+                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
               </div>
-              <div class="product-card__body">
-                <span class="product-card__sku">{s.sku}</span>
-                <h3 class="product-card__title">{s.nombre}</h3>
-                <p class="product-card__desc">{s.desc}</p>
-                <div class="product-card__meta">
-                  <span>MOQ: {s.moq}</span>
-                  <span>Entrega: {s.entrega}</span>
+              <div class="sku-card__body">
+                <h2 class="sku-card__name">{p.title}</h2>
+                <p class="sku-card__desc">{p.desc}</p>
+                <div class="sku-card__specs">
+                  {p.specs.map(s => (
+                    <div>
+                      <span class="sku-card__spec-label">{s.label}</span>
+                      <span class="sku-card__spec-value">{s.value}</span>
+                    </div>
+                  ))}
                 </div>
-                <span class="product-card__cta">Ver ficha técnica →</span>
+                <div class="sku-card__footer">
+                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+                  <span class="sku-card__moq">MOQ: {p.moq}</span>
+                </div>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </div>
     </section>
   </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza cajas para archivo o almacenaje corporativo — respondemos en 1 hora" />
+  <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas cajas de archivo o almacenaje? Nuestro asesor responde en menos de 2 horas" />
+
 </PageLayout>

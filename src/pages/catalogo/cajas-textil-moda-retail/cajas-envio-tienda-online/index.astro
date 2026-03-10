@@ -3,71 +3,70 @@ import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 
-const title   = "Cajas Envío Tienda Online Shopify TiendaNube CDMX | CAD-TX-05 | CADECA";
-const description = "Cajas de envío para tienda online Shopify y TiendaNube en CDMX. Cartón kraft con impresión de marca, cierre autoclave y compatibles con paqueterías mexicanas. Fabricante directo CADECA.";
+const title   = "Caja Envío Tienda Online Moda E-commerce CDMX | CAD-TX-05 | CADECA";
+const description = "Ficha técnica caja envío para tienda online de moda e-commerce en CDMX. Flauta B/C, ECT-32/44, medidas accesorio a abrigo voluminoso. Compatible Shopify y TiendaNube, MOQ 50 pzas. CADECA fabricante.";
 const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Sobre Rígido",       lah:"30×22×3",   flauta:"E",ect:"ECT-23",vacío:"0.06 kg",máx:"0.5 kg",  disp:"green",  label:"Stock" },
-  { nombre:"Chica",              lah:"25×20×10",  flauta:"B",ect:"ECT-32",vacío:"0.12 kg",máx:"3 kg",    disp:"green",  label:"Stock" },
-  { nombre:"Mediana",            lah:"35×25×15",  flauta:"B",ect:"ECT-32",vacío:"0.20 kg",máx:"5 kg",    disp:"green",  label:"Stock", hl:true },
-  { nombre:"Grande",             lah:"45×35×20",  flauta:"C",ect:"ECT-32",vacío:"0.35 kg",máx:"10 kg",   disp:"green",  label:"Stock", hl:true },
-  { nombre:"XL",                 lah:"60×40×25",  flauta:"C",ect:"ECT-44",vacío:"0.55 kg",máx:"15 kg",   disp:"yellow", label:"48 hrs" },
-  { nombre:"Jumbo",              lah:"70×50×30",  flauta:"BC",ect:"ECT-48",vacío:"0.85 kg",máx:"20 kg",  disp:"yellow", label:"48 hrs" },
-  { nombre:"A la Medida",        lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+  { nombre:"Accesorio Chico",      lah:"25×20×10",  flauta:"B",  ect:"ECT-32",vacío:"0.10 kg",máx:"3 kg",   disp:"green",  label:"Stock" },
+  { nombre:"Prenda Estándar",      lah:"35×25×12",  flauta:"B",  ect:"ECT-32",vacío:"0.16 kg",máx:"5 kg",   disp:"green",  label:"Stock", hl:true },
+  { nombre:"Multi-Prenda",         lah:"40×30×15",  flauta:"C",  ect:"ECT-32",vacío:"0.24 kg",máx:"8 kg",   disp:"green",  label:"Stock", hl:true },
+  { nombre:"Set / Kit Regalo",     lah:"45×35×18",  flauta:"C",  ect:"ECT-32",vacío:"0.34 kg",máx:"10 kg",  disp:"yellow", label:"48 hrs" },
+  { nombre:"Abrigo / Voluminoso",  lah:"55×40×20",  flauta:"C",  ect:"ECT-44",vacío:"0.52 kg",máx:"15 kg",  disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",          lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
 ];
 
 const specs = [
   ["Código SKU",              "CAD-TX-05"],
-  ["Tipo de producto",        "Caja envío e-commerce con branding"],
-  ["Tipo de pared",           "Simple (flauta B/C/E) · Doble (flauta BC)"],
-  ["Flautas disponibles",     "E (1.5 mm) · B (3 mm) · C (4 mm) · BC (7 mm)"],
-  ["Resistencia ECT",         "ECT-23 · ECT-32 · ECT-44 · ECT-48"],
+  ["Tipo de producto",        "Caja envío e-commerce moda con branding"],
+  ["Tipo de pared",           "Simple (flauta B/C) · Doble disponible bajo pedido"],
+  ["Flautas disponibles",     "B (3 mm) · C (4 mm)"],
+  ["Resistencia ECT",         "ECT-32 (flauta B/C) · ECT-44 (doble pared)"],
   ["Gramaje liner",           "150 – 200 g/m² kraft natural"],
   ["Gramaje médium",          "112 – 140 g/m²"],
-  ["Material",                "Kraft liner natural · Kraft blanco interior opcional"],
-  ["Cierre",                  "Autoclave (autoarmable con lengüetas) · Sin cinta adhesiva"],
-  ["Impresión",               "1-2 colores flexografía · Full color offset disponible"],
-  ["Resistencia al estallido","280 – 450 kPa (Mullen) según flauta"],
-  ["Resistencia a la humedad","Cobb60: 35 g/m² (kraft sin recubrimiento)"],
+  ["Material",                "Kraft virgen natural · Kraft blanco interior opcional"],
+  ["Color exterior",          "Kraft marrón natural · Blanco recubierto opcional"],
+  ["Peso máx. producto",      "Hasta 15 kg (ECT-44, flauta C)"],
+  ["Carga de apilado",        "Hasta 100 kg (flauta C, condiciones ideales)"],
+  ["Impresión",               "Flexografía 1-4 colores · Offset CMYK disponible"],
+  ["Cierre",                  "Autoclave sin cinta · Solapa con adhesivo · Tapa telescópica"],
   ["Compatible paqueterías",  "DHL · FedEx · Estafeta · J&T · 99 Minutos · Mercado Envíos"],
-  ["Peso máx. producto",      "Hasta 20 kg (flauta BC doble pared)"],
-  ["Carga de apilado",        "Hasta 80 kg (flauta BC condiciones ideales)"],
+  ["Compatible plataformas",  "Shopify · TiendaNube · WooCommerce · Mercado Shops · VTEX"],
   ["Certificación",           "FSC disponible · Tintas base agua · 100 % reciclable"],
-  ["Pedido mínimo",           "100 pzas"],
+  ["Pedido mínimo",           "50 pzas"],
   ["Tiempo de entrega",       "24-48 hrs stock · 3-5 días personalizada"],
 ];
 
 const faqs = [
   {
     id:"tx05-f1",
-    question:"¿Las cajas son compatibles con Shopify y TiendaNube?",
-    answer:"Sí, nuestras cajas CAD-TX-05 están diseñadas para <strong>integrarse con cualquier plataforma e-commerce</strong> incluyendo Shopify, TiendaNube, WooCommerce y Mercado Shops. Las medidas estándar cumplen con los lineamientos dimensionales de todas las paqueterías mexicanas (DHL, FedEx, Estafeta, J&T, 99 Minutos), evitando cargos por sobrepeso volumétrico.",
+    question:"¿Las cajas son compatibles con Shopify, TiendaNube y otras plataformas?",
+    answer:"Sí, nuestras cajas CAD-TX-05 están diseñadas para <strong>integrarse con cualquier plataforma e-commerce</strong>: Shopify, TiendaNube, WooCommerce, Mercado Shops, VTEX y tienda propia. Las medidas estándar cumplen con los lineamientos dimensionales de todas las paqueterías mexicanas (DHL, FedEx, Estafeta, J&T, 99 Minutos, Mercado Envíos), evitando cargos por <strong>sobrepeso volumétrico</strong> que encarecen los envíos.",
   },
   {
     id:"tx05-f2",
-    question:"¿Puedo imprimir mi marca para experiencia de unboxing?",
-    answer:"Sí, ofrecemos <strong>impresión de 1 a 2 colores en flexografía</strong> sobre kraft natural para un look orgánico y profesional. Puedes imprimir tu logotipo, redes sociales, código QR y mensaje de agradecimiento tanto en el exterior como en el interior de la caja. Para marcas que requieren full color, tenemos la opción de impresión offset CMYK con pedido mínimo de 300 pzas.",
+    question:"¿Cómo lograr una experiencia de unboxing memorable para moda?",
+    answer:"La experiencia de unboxing en moda se construye en capas: <strong>caja exterior</strong> con tu logo impreso en kraft natural (1-2 colores flex), <strong>papel tissue personalizado</strong> envolviendo la prenda, <strong>tarjeta de agradecimiento</strong> o código QR con descuento para recompra, y opcionalmente <strong>sticker de sello</strong> para cerrar el tissue. Todo esto eleva el perceived value y genera contenido UGC cuando el cliente comparte el unboxing en redes sociales.",
   },
   {
     id:"tx05-f3",
-    question:"¿Qué es el cierre autoclave y por qué conviene para envíos?",
-    answer:"El <strong>cierre autoclave</strong> es un sistema de lengüetas que se doblan y encajan a presión, sellando la caja sin necesidad de cinta adhesiva. Esto acelera el proceso de empaque en tu centro de fulfillment, reduce costos de insumos y ofrece una experiencia de unboxing más limpia. La caja se abre fácilmente sin tijeras, ideal para el cliente final.",
+    question:"¿Qué tamaño de caja necesito para envíos de ropa por paquetería?",
+    answer:"Para <strong>accesorios chicos</strong> (cinturones, gorras, carteras), la medida Accesorio Chico de 25×20×10 cm minimiza el costo de envío volumétrico. Para <strong>prendas individuales</strong> (playeras, blusas, jeans), la Prenda Estándar de 35×25×12 cm es la más versátil. Para <strong>pedidos multi-prenda</strong>, usa la Multi-Prenda de 40×30×15 cm. Y para <strong>abrigos o chamarras</strong>, la medida 55×40×20 cm es la adecuada.",
   },
   {
     id:"tx05-f4",
-    question:"¿Qué tamaño de caja necesito para envíos de ropa?",
-    answer:"Para <strong>prendas dobladas</strong> (playeras, blusas, pantalones) recomendamos la medida Mediana de 35×25×15 cm. Para <strong>chamarras o conjuntos</strong>, la Grande de 45×35×20 cm. Para <strong>accesorios pequeños</strong> (cinturones, gorras, carteras), el Sobre Rígido de 30×22×3 cm es perfecto y reduce costos de envío por peso volumétrico.",
+    question:"¿Qué es el cierre autoclave y por qué conviene para e-commerce?",
+    answer:"El <strong>cierre autoclave</strong> es un sistema de lengüetas que se doblan y encajan a presión, sellando la caja sin necesidad de cinta adhesiva ni flejes. Esto acelera el proceso de empaque en tu centro de fulfillment (hasta <strong>3x más rápido</strong> que cinta manual), reduce costos de insumos auxiliares y ofrece una experiencia de unboxing más limpia y premium. La caja se abre fácilmente sin tijeras ni cutter.",
   },
   {
     id:"tx05-f5",
-    question:"¿Soportan el manejo de paqueterías sin dañar el producto?",
-    answer:"Sí, nuestras cajas están fabricadas con <strong>cartón corrugado kraft de alta resistencia</strong> con ECT-32 mínimo. La flauta B de 3 mm absorbe impactos durante el transporte y la resistencia al estallido de 280 kPa protege contra perforaciones. Para productos frágiles o envíos foráneos, recomendamos la flauta C de 4 mm que ofrece mayor amortiguación.",
+    question:"¿Las cajas resisten el manejo de paqueterías nacionales?",
+    answer:"Sí, nuestras cajas están fabricadas con <strong>cartón corrugado kraft de alta resistencia</strong> con ECT-32 mínimo. La flauta B de 3 mm absorbe impactos laterales y la resistencia al estallido de 280+ kPa protege contra perforaciones durante la cadena de distribución. Para envíos foráneos de alto valor o prendas delicadas, recomendamos la flauta C de 4 mm o el upgrade a <strong>ECT-44</strong> que soporta hasta 15 kg.",
   },
   {
     id:"tx05-f6",
-    question:"¿Cuál es el pedido mínimo y tiempo de entrega?",
-    answer:"El <strong>pedido mínimo es de 100 piezas</strong> para cajas con impresión personalizada. Cajas en stock sin personalizar se entregan en 24 hrs en CDMX. Para cajas personalizadas, el tiempo de entrega es de <strong>3 a 5 días hábiles</strong>. Ofrecemos programa de reabastecimiento automático para tiendas con envíos recurrentes — cotiza con tu asesor CADECA.",
+    question:"¿Ofrecen programa de reabastecimiento para tiendas con envíos recurrentes?",
+    answer:"Sí, ofrecemos un <strong>programa de reabastecimiento automático</strong> para tiendas online con volumen recurrente. Definimos contigo la cantidad y frecuencia mensual, almacenamos tu inventario de cajas personalizadas en nuestra bodega CDMX y despachamos por lote según tu demanda. Esto elimina la necesidad de almacenar cajas en tu espacio y garantiza disponibilidad permanente. Aplica a partir de <strong>500 pzas/mes</strong> con contrato trimestral.",
   },
 ];
 ---
@@ -79,9 +78,10 @@ const faqs = [
   pageType="product"
   breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Envío Tienda Online"}]}
   faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
-  product={{name:"Cajas Envío Tienda Online Shopify TiendaNube",sku:"CAD-TX-05",description:"Cajas de envío e-commerce con branding para Shopify y TiendaNube en CDMX — fabricante directo CADECA",image:"/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif",material:"Cartón kraft corrugado flauta B/C con cierre autoclave",category:"Cajas Textil, Moda y Retail",moq:"100"}}
+  product={{name:"Caja Envío Tienda Online Moda E-commerce",sku:"CAD-TX-05",description:"Caja de envío e-commerce para tiendas online de moda en CDMX — fabricante directo CADECA",image:"/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif",material:"Cartón kraft corrugado flauta B/C ECT-32/44",category:"Cajas para Textil, Moda y Retail",moq:"50"}}
 >
 
+  <!-- Breadcrumb -->
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
     <div class="container"><ol>
       <li><a href="/">Inicio</a></li>
@@ -93,17 +93,17 @@ const faqs = [
 
   <section class="cat-page-hero" aria-labelledby="sku-tx05-title">
     <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-TX-05 · Textil, Moda y Retail</span>
+      <span class="cat-page-hero__eyebrow">SKU CAD-TX-05 · Cajas para Textil, Moda y Retail</span>
       <h1 id="sku-tx05-title" class="cat-page-hero__title">
-        Cajas Envío Tienda Online<br><span>Shopify · TiendaNube — CDMX</span>
+        Caja Envío Tienda Online<br><span>E-commerce Moda — CDMX</span>
       </h1>
       <p class="cat-page-hero__desc">
-        Cajas de envío con branding para tiendas online en Shopify y TiendaNube. Cartón kraft con impresión de tu marca, cierre autoclave sin cinta y compatibles con todas las paqueterías de México. Desde 100 pzas con entrega en CDMX.
+        Caja de envío con branding para tiendas online de moda. Compatible con Shopify, TiendaNube, WooCommerce y Mercado Shops. Cartón kraft con impresión de tu marca, cierre autoclave sin cinta adhesiva y compatibles con todas las paqueterías de México.
       </p>
       <div class="cat-page-hero__strip">
         <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-05</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32 / ECT-44</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
         <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
       </div>
     </div>
@@ -118,7 +118,7 @@ const faqs = [
           <div>
             <div class="sku-detail__img-wrap">
               <img src="/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif"
-                alt="Cajas envío tienda online Shopify TiendaNube e-commerce CDMX — CADECA CAD-TX-05"
+                alt="Caja envío tienda online e-commerce moda Shopify TiendaNube CDMX — CADECA CAD-TX-05"
                 class="sku-detail__img" width="880" height="560"
                 loading="eager" decoding="async" fetchpriority="high" />
             </div>
@@ -126,22 +126,22 @@ const faqs = [
 
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-TX-05 · Familia: Textil, Moda y Retail</p>
-            <h2 id="detalle-tx05-title" class="sku-detail__title">Envío Tienda Online — Shopify · TiendaNube</h2>
+            <h2 id="detalle-tx05-title" class="sku-detail__title">Envío Tienda Online — E-commerce Moda</h2>
             <p class="sku-detail__desc">
-              La caja CAD-TX-05 está diseñada específicamente para marcas que venden por Shopify, TiendaNube y otras plataformas e-commerce. Fabricada en cartón kraft natural de alta resistencia con flauta B o C, ofrece protección óptima durante el transporte con paqueterías como DHL, FedEx, Estafeta y J&T. Su cierre autoclave elimina la necesidad de cinta adhesiva, acelerando el empaque y mejorando la experiencia de unboxing del cliente final.
+              La caja CAD-TX-05 está diseñada específicamente para marcas de moda que venden por Shopify, TiendaNube y otras plataformas e-commerce. Fabricada en cartón kraft natural de alta resistencia con flauta B o C, ofrece protección óptima durante el transporte con paqueterías como DHL, FedEx, Estafeta y J&T. Su cierre autoclave elimina la necesidad de cinta adhesiva, acelerando el empaque en fulfillment y mejorando la experiencia de unboxing del cliente final.
             </p>
 
             <div class="sku-detail__strip">
               <div class="sku-detail__strip-item">
                 <span class="sku-detail__strip-value">Kraft</span>
-                <span class="sku-detail__strip-label">Material natural</span>
+                <span class="sku-detail__strip-label">Material natural eco</span>
               </div>
               <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">20 kg</span>
+                <span class="sku-detail__strip-value">15 kg</span>
                 <span class="sku-detail__strip-label">Peso máx.</span>
               </div>
               <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">100 pzas</span>
+                <span class="sku-detail__strip-value">50 pzas</span>
                 <span class="sku-detail__strip-label">Pedido mín.</span>
               </div>
               <div class="sku-detail__strip-item">
@@ -160,7 +160,7 @@ const faqs = [
             </table>
 
             <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-05 Cajas Envío Tienda Online`}
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-05 Caja Envío Tienda Online Moda`}
                  target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-05</a>
               <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
             </div>
@@ -170,6 +170,7 @@ const faqs = [
       </div>
     </section>
 
+    <!-- TABLA DE MEDIDAS -->
     <section class="sku-sizes" aria-labelledby="sizes-tx05-title">
       <div class="container">
         <h2 id="sizes-tx05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
@@ -226,6 +227,6 @@ const faqs = [
 
   </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-05 — Cajas envío para tienda online Shopify y TiendaNube" />
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-05 — Cajas envío para tienda online de moda, desde 50 pzas" />
 
 </PageLayout>

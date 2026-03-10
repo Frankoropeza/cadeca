@@ -3,66 +3,93 @@ import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 
-const title       = "Caja Documentos Tamaño Carta | CAD-AH-03 | CADECA";
-const description = "Caja para documentos tamaño carta 28×22×18 cm en cartón kraft flauta B/C. Tapa integrada, asas troqueladas, apilable. Ideal para archivos de oficina. Entrega CDMX 24-48 hrs.";
-const WHATSAPP    = "5255XXXXXXXX";
+const title   = "Caja Documentos Tamaño Carta CDMX | CAD-AH-03 | CADECA";
+const description = "Ficha técnica caja documentos tamaño carta en CDMX. Flauta B/C, ECT-32, tapa integrada y asas troqueladas. 6 medidas disponibles. Sin mínimo, entrega 24-48 hrs. CADECA fabricante.";
+const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Carta Estándar",     lah:"28 × 22 × 18",  flauta:"B",   ect:"ECT-23", vacío:"0.30 kg", máx:"10 kg", disp:"green",  label:"Stock" },
-  { nombre:"Carta Reforzado",    lah:"28 × 22 × 18",  flauta:"C",   ect:"ECT-32", vacío:"0.38 kg", máx:"12 kg", disp:"green",  label:"Stock" },
-  { nombre:"Media Carta",        lah:"22 × 16 × 14",  flauta:"B",   ect:"ECT-23", vacío:"0.20 kg", máx:"8 kg",  disp:"green",  label:"Stock" },
-  { nombre:"Legal/Carta Combo",  lah:"35 × 22 × 20",  flauta:"C",   ect:"ECT-32", vacío:"0.42 kg", máx:"12 kg", disp:"yellow", label:"3-5 días" },
-  { nombre:"Carta Profunda",     lah:"28 × 22 × 30",  flauta:"C",   ect:"ECT-32", vacío:"0.44 kg", máx:"12 kg", disp:"yellow", label:"3-5 días" },
-  { nombre:"Carta Doble Pared",  lah:"28 × 22 × 18",  flauta:"BC",  ect:"ECT-44", vacío:"0.52 kg", máx:"18 kg", disp:"yellow", label:"3-5 días" },
-  { nombre:"A la Medida",        lah:"Cualquier",      flauta:"A elegir", ect:"A elegir", vacío:"—", máx:"—", disp:"gray", label:"3-5 días" },
+  { nombre:"Carta Estándar",   lah:"40×30×25",    flauta:"C",  ect:"ECT-32",vacío:"0.42 kg",máx:"12 kg", disp:"green",  label:"Stock", hl:true },
+  { nombre:"Carta Compacta",   lah:"40×30×15",    flauta:"B",  ect:"ECT-23",vacío:"0.30 kg",máx:"10 kg", disp:"green",  label:"Stock" },
+  { nombre:"Carta con Tapa",   lah:"40×30×25+tapa",flauta:"C", ect:"ECT-32",vacío:"0.55 kg",máx:"12 kg", disp:"green",  label:"Stock" },
+  { nombre:"Media Carta",      lah:"40×30×12",    flauta:"B",  ect:"ECT-23",vacío:"0.25 kg",máx:"8 kg",  disp:"green",  label:"Stock" },
+  { nombre:"Master 6 Cajas",   lah:"45×35×160",   flauta:"BC", ect:"ECT-44",vacío:"3.20 kg",máx:"72 kg", disp:"yellow", label:"48 hrs" },
+  { nombre:"A la Medida",      lah:"Cualquier",   flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",    disp:"gray",   label:"3-5 días" },
 ];
 
 const specs = [
   ["Código SKU",             "CAD-AH-03"],
   ["Tipo de caja",           "Documentos tamaño carta"],
-  ["Tamaño",                 "Carta (28 × 22 × 18 cm)"],
+  ["Medida estándar",        "40 × 30 × 25 cm (L × A × H)"],
   ["Tipo de flauta",         "B (2.5 mm) / C (4.0 mm)"],
   ["Resistencia ECT",        "ECT-23 / ECT-32 lb/pulg"],
   ["Gramaje liner exterior", "127 g/m²"],
   ["Gramaje liner interior", "127 g/m²"],
   ["Gramaje médium",         "112 g/m²"],
   ["Material",               "Kraft corrugado pared sencilla"],
-  ["Color exterior",         "Kraft natural"],
-  ["Tapa",                   "Integrada con solapa de cierre"],
-  ["Asas",                   "Troqueladas laterales (2 pzas)"],
-  ["Peso vacío",             "0.30 – 0.38 kg"],
-  ["Peso máximo soportado",  "10 – 12 kg"],
-  ["Apilamiento máximo",     "6 niveles cargadas"],
-  ["Resistencia a compresión (BCT)", "≥ 130 kgf"],
+  ["Color exterior",         "Kraft marrón natural"],
+  ["Tapa",                   "Integrada con solapa de cierre o separada (según modelo)"],
+  ["Asas",                   "Troqueladas laterales ergonómicas (2 pzas)"],
+  ["Peso vacío",             "0.42 kg (modelo estándar)"],
+  ["Peso máximo soportado",  "10 – 12 kg según flauta"],
+  ["Apilamiento máximo",     "6 niveles con carga completa"],
+  ["Resistencia a compresión (BCT)", "≥ 130 kgf (ECT-23) · ≥ 180 kgf (ECT-32)"],
   ["Área para etiqueta",     "12 × 6 cm frontal"],
-  ["Pedido mínimo",          "Sin mínimo"],
-  ["Entrega CDMX",           "24 – 48 horas hábiles"],
+  ["Pedido mínimo",          "Sin mínimo (stock) · 50 pzas (medida especial)"],
+  ["Tiempo de entrega",      "24-48 hrs stock · 3-5 días especial"],
+  ["Certificación",          "Cumple NOM-EE-148 (embalaje)"],
 ];
 
 const faqs = [
-  { id:"ah03-f1", question:"¿Qué tamaño de documentos cabe en la caja CAD-AH-03?", answer:"La caja CAD-AH-03 está diseñada para documentos tamaño carta (21.6 × 27.9 cm). Caben perfectamente folders manila, carpetas de argollas delgadas, sobres, formatos impresos y documentos engrapados. Para documentos tamaño oficio, recomendamos la versión Legal/Carta Combo de 35 × 22 × 20 cm." },
-  { id:"ah03-f2", question:"¿Cuántos folders tamaño carta caben en una caja?", answer:"En la versión estándar de 28 × 22 × 18 cm caben aproximadamente 60 a 80 folders manila tamaño carta, dependiendo del grosor del contenido de cada folder. Si utiliza la versión Carta Profunda de 28 × 22 × 30 cm, la capacidad aumenta a 100-120 folders." },
-  { id:"ah03-f3", question:"¿Cómo organizo la identificación de cada caja en el archivo?", answer:"Cada caja cuenta con un área frontal de 12 × 6 cm para etiquetas adhesivas. Recomendamos un sistema de codificación por colores: etiquetas verdes para el año fiscal vigente, amarillas para años anteriores y rojas para documentos pendientes de depuración. También puede escribir directamente sobre el cartón kraft." },
-  { id:"ah03-f4", question:"¿Puedo apilar las cajas de documentos carta?", answer:"Sí. La versión con flauta B (ECT-23) permite apilar hasta 5 niveles con carga completa de 10 kg. La versión reforzada con flauta C (ECT-32) permite hasta 6 niveles con 12 kg cada una. Para apilamiento prolongado mayor a 6 meses, recomendamos la versión doble pared con flauta BC." },
-  { id:"ah03-f5", question:"¿Sirven para mudanza de archivos de oficina?", answer:"Sí, son ideales para mudanzas de archivos de oficina por su tamaño compacto y asas troqueladas. Su peso máximo de 10-12 kg las hace fáciles de cargar. Para mudanzas frecuentes o reutilización intensiva, recomendamos la versión reforzada con flauta C que ofrece mayor durabilidad." },
-  { id:"ah03-f6", question:"¿Cuál es la diferencia entre flauta B y flauta C para esta caja?", answer:"La flauta B (2.5 mm) es más delgada y ofrece mejor superficie de impresión, con ECT-23 y soporte de hasta 10 kg. La flauta C (4.0 mm) es más gruesa, proporciona mayor amortiguación y resistencia con ECT-32 y soporte de hasta 12 kg. Para uso general de oficina, la flauta B es suficiente; para almacenamiento prolongado, recomendamos flauta C." },
+  {
+    id:"ah03-f1",
+    question:"¿Qué tamaño de documentos cabe en la caja CAD-AH-03?",
+    answer:"La caja CAD-AH-03 está diseñada para documentos <strong>tamaño carta (21.6 × 27.9 cm)</strong>. Caben perfectamente <strong>folders manila, carpetas de argollas delgadas, sobres, formatos impresos</strong> y documentos engrapados. Para documentos tamaño oficio (21.6 × 33 cm), recomendamos la <strong>CAD-AH-01 Archivo Muerto Oficio</strong> con medida 50×35×25 cm.",
+  },
+  {
+    id:"ah03-f2",
+    question:"¿Cuántos folders tamaño carta caben en una caja?",
+    answer:"En la versión <strong>Carta Estándar de 40×30×25 cm</strong> caben aproximadamente <strong>80 a 100 folders manila</strong> tamaño carta, dependiendo del grosor del contenido. La versión <strong>Carta Compacta (40×30×15 cm)</strong> almacena de 40 a 60 folders. La versión <strong>Media Carta (40×30×12 cm)</strong> es ideal para archivos parciales con capacidad de 30 a 40 folders.",
+  },
+  {
+    id:"ah03-f3",
+    question:"¿Cómo organizo la identificación de cada caja en el archivo?",
+    answer:"Cada caja cuenta con un <strong>área frontal de 12 × 6 cm para etiquetas adhesivas</strong>. Recomendamos un sistema de codificación por colores: <strong>etiquetas verdes para el año fiscal vigente, amarillas para años anteriores</strong> y rojas para documentos pendientes de depuración. También puede escribir directamente sobre el cartón kraft con marcador permanente o solicitar <strong>campos preimpresos</strong> en pedidos desde 100 pzas.",
+  },
+  {
+    id:"ah03-f4",
+    question:"¿Cuál es la diferencia entre flauta B y flauta C para la caja de documentos carta?",
+    answer:"La <strong>flauta B (2.5 mm)</strong> es más delgada, ocupa menos espacio en estantería y ofrece <strong>ECT-23 con soporte hasta 10 kg</strong>. Ideal para archivos ligeros de oficina. La <strong>flauta C (4.0 mm)</strong> proporciona mayor amortiguación y resistencia con <strong>ECT-32 y soporte hasta 12 kg</strong>. Para archivos que se mueven frecuentemente o almacenamiento prolongado mayor a 1 año, recomendamos <strong>flauta C</strong>.",
+  },
+  {
+    id:"ah03-f5",
+    question:"¿Cuál es la diferencia entre la caja carta CAD-AH-03 y la oficio CAD-AH-01?",
+    answer:"La principal diferencia es la <strong>medida interior</strong>. La CAD-AH-03 mide <strong>40×30×25 cm</strong>, optimizada para documentos carta (21.6×27.9 cm). La CAD-AH-01 mide <strong>50×35×25 cm</strong>, diseñada para documentos oficio (21.6×33 cm). La caja carta es <strong>más compacta y ligera</strong>, ideal para oficinas con espacio limitado. Ambas tienen la misma calidad de cartón kraft y opciones de tapa.",
+  },
+  {
+    id:"ah03-f6",
+    question:"¿Sirven las cajas CAD-AH-03 para mudanza de archivos de oficina?",
+    answer:"Sí, son <strong>ideales para mudanzas de archivos</strong> por su tamaño compacto y peso controlado. Con <strong>asas troqueladas y peso máximo de 10-12 kg</strong>, una sola persona puede cargarlas cómodamente. Para mudanzas corporativas con volúmenes grandes, la versión <strong>Master 6 Cajas (45×35×160 cm)</strong> permite transportar 6 cajas carta apiladas en un solo contenedor reforzado con <strong>ECT-44</strong>.",
+  },
 ];
 ---
 
 <PageLayout
-  title={title} description={description} whatsapp={WHATSAPP} pageType="product"
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
   breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Documentos Carta"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja Documentos Tamaño Carta", sku:"CAD-AH-03", description:"Caja para documentos tamaño carta 28×22×18 cm, cartón kraft flauta B/C, tapa integrada y asas troqueladas.", image:"/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif", material:"Cartón kraft corrugado flauta B/C", category:"Archivo y Almacenaje", moq:"1"}}
+  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+  product={{name:"Caja Documentos Tamaño Carta", sku:"CAD-AH-03", description:"Caja para documentos tamaño carta 40×30×25 cm, cartón kraft flauta B/C ECT-32, tapa integrada y asas troqueladas — CADECA CDMX", image:"/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif", material:"Cartón kraft corrugado flauta B/C ECT-32", category:"Cajas de Archivo y Almacenaje", moq:"1"}}
 >
 
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
     <div class="container">
       <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
-        <li><span class="current">Documentos Carta</span></li>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+      <li><span class="current">Documentos Carta</span></li>
       </ol>
     </div>
   </div>
@@ -70,8 +97,12 @@ const faqs = [
   <section class="cat-page-hero" aria-labelledby="sku-ah03-title">
     <div class="container">
       <span class="cat-page-hero__eyebrow">SKU CAD-AH-03 · Archivo y Almacenaje</span>
-      <h1 id="sku-ah03-title" class="cat-page-hero__title">Caja Documentos Tamaño Carta<br><span>Kraft Flauta B/C — CDMX</span></h1>
-      <p class="cat-page-hero__desc">Caja compacta para documentos tamaño carta en cartón kraft corrugado. Tapa integrada con solapa de cierre y asas troqueladas. Ideal para organización de archivos en oficinas, despachos contables y áreas administrativas.</p>
+      <h1 id="sku-ah03-title" class="cat-page-hero__title">
+        Caja Documentos Tamaño Carta<br><span>Kraft Flauta B/C — CDMX</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Caja compacta para documentos tamaño carta en cartón kraft corrugado. Tapa integrada con solapa de cierre y asas troqueladas. Ideal para organización de archivos en oficinas, despachos contables y áreas administrativas. Sin mínimo, stock permanente en CDMX.
+      </p>
       <div class="cat-page-hero__strip">
         <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-03</strong></div>
         <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
@@ -82,56 +113,122 @@ const faqs = [
   </section>
 
   <main id="contenido-principal" role="main">
+
     <section class="sku-detail" aria-labelledby="detalle-ah03-title">
       <div class="container">
         <div class="sku-detail__grid">
+
           <div>
             <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif" alt="Caja para documentos tamaño carta CAD-AH-03 en cartón kraft corrugado con tapa y asas" class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+              <img src="/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif"
+                alt="Caja documentos tamaño carta CAD-AH-03 en cartón kraft corrugado CDMX — CADECA"
+                class="sku-detail__img" width="880" height="560"
+                loading="eager" decoding="async" fetchpriority="high" />
             </div>
           </div>
+
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AH-03 · Familia: Archivo y Almacenaje</p>
             <h2 id="detalle-ah03-title" class="sku-detail__title">Documentos Carta — Kraft Flauta B/C</h2>
-            <p class="sku-detail__desc">Caja para documentos tamaño carta fabricada en cartón kraft corrugado de pared sencilla. Disponible en flauta B (2.5 mm, ECT-23) y flauta C (4.0 mm, ECT-32). Medida estándar 28 × 22 × 18 cm, diseñada para folders manila, carpetas, formatos impresos y documentos administrativos. Tapa integrada con solapa de cierre y dos asas troqueladas laterales. Soporta de 10 a 12 kg y permite apilamiento hasta 6 niveles. Perfecta para oficinas, despachos, consultorios y áreas de recursos humanos en la CDMX.</p>
+            <p class="sku-detail__desc">
+              Caja para documentos tamaño carta fabricada en cartón kraft corrugado de pared sencilla. Disponible en flauta B (2.5 mm, ECT-23) y flauta C (4.0 mm, ECT-32). Medida estándar 40×30×25 cm, diseñada para folders manila, carpetas, formatos impresos y documentos administrativos. Tapa integrada con solapa de cierre y dos asas troqueladas laterales. Soporta de 10 a 12 kg y permite apilamiento hasta 6 niveles. Perfecta para oficinas, despachos, consultorios y áreas de recursos humanos en la CDMX.
+            </p>
+
             <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-23 / 32</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">10 – 12 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">6 niveles</span><span class="sku-detail__strip-label">Apilamiento</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flauta B/C</span><span class="sku-detail__strip-label">Corrugado</span></div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">ECT-32</span>
+                <span class="sku-detail__strip-label">Resistencia estándar</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">12 kg</span>
+                <span class="sku-detail__strip-label">Peso máx.</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">Sin mín.</span>
+                <span class="sku-detail__strip-label">Pedido</span>
+              </div>
+              <div class="sku-detail__strip-item">
+                <span class="sku-detail__strip-value">24 hrs</span>
+                <span class="sku-detail__strip-label">Entrega CDMX</span>
+              </div>
             </div>
+
             <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>{specs.map(([label, val]) => (<tr><td>{label}</td><td>{val}</td></tr>))}</tbody></table>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {specs.map(([label, val]) => (
+                  <tr><td>{label}</td><td>{val}</td></tr>
+                ))}
+              </tbody>
+            </table>
+
             <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-03 Documentos Carta`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-03</a>
-              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">&larr; Ver categoría</a>
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-03 Documentos Carta`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-03</a>
+              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
     <section class="sku-sizes" aria-labelledby="sizes-ah03-title">
       <div class="container">
-        <h2 id="sizes-ah03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-AH-03</h2>
+        <h2 id="sizes-ah03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+          Medidas Disponibles — CAD-AH-03
+        </h2>
         <div class="catalog-sizes-table-wrap">
           <table class="catalog-sizes-table">
-            <thead><tr><th>Tamaño</th><th>L × A × H (cm)</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
-            <tbody>{medidas.map(m => (<tr class={m.hl ? "highlight" : ""}><td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td><td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}</span></td></tr>))}</tbody>
+            <thead>
+              <tr>
+                <th>Tamaño</th>
+                <th>L × A × H (cm)</th>
+                <th>Flauta</th>
+                <th>ECT</th>
+                <th>Peso vacío</th>
+                <th>Peso máx.</th>
+                <th>Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td>{m.nombre}</td>
+                  <td><strong>{m.lah}</strong></td>
+                  <td>{m.flauta}</td>
+                  <td>{m.ect}</td>
+                  <td>{m.vacío}</td>
+                  <td><strong>{m.máx}</strong></td>
+                  <td>
+                    <span class={`stock-chip stock-chip--${m.disp}`}>
+                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles.</p>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+        </p>
       </div>
     </section>
 
-    <section class="faq" aria-labelledby="faq-ah03-sku-title">
+    <section class="faq" aria-labelledby="faq-ah03-title">
       <div class="container">
-        <h2 id="faq-ah03-sku-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AH-03</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+        <h2 id="faq-ah03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+          Preguntas Técnicas — CAD-AH-03
+        </h2>
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
       </div>
     </section>
+
   </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-03 — Documentos Carta en Cartón Kraft" />
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-03 — Sin mínimo, entrega 24-48 hrs en CDMX" />
 
 </PageLayout>
