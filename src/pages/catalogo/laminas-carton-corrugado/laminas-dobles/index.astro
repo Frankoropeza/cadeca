@@ -1,0 +1,145 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Láminas Cartón Corrugado Doble BC CDMX | ECT-44 Bases Tarima | CAD-LC-02 | CADECA";
+const description = "Láminas doble corrugado BC CDMX. ECT-44, hasta 120×240cm, bases tarima y refuerzo. Desde 50 pzas, 3-5 días. CADECA fabricante.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { talla:"60×40 cm", ml:"60×40 cm", real:"60×40", flauta:"BC",ect:"ECT-44",vacío:"0.18 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
+  { talla:"80×60 cm", ml:"80×60 cm", real:"80×60", flauta:"BC",ect:"ECT-44",vacío:"0.32 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
+  { talla:"100×80 cm", ml:"100×80 cm", real:"100×80", flauta:"BC",ect:"ECT-44",vacío:"0.52 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
+  { talla:"120×100 cm", ml:"120×100 cm", real:"120×100", flauta:"BC",ect:"ECT-44",vacío:"0.78 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
+  { talla:"120×240 cm", ml:"120×240 cm", real:"120×240", flauta:"BC",ect:"ECT-44",vacío:"1.87 kg/ud",máx:"—", disp:"gray", label:"5-7 días", hl:false },
+  { talla:"Personalizada", ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+];
+
+const specs = [
+  ["Código SKU", "CAD-LC-02"],
+  ["Tipo", "Lámina doble BC"],
+  ["Flauta", "BC 7 mm"],
+  ["ECT", "ECT-44"],
+  ["Medida máx.", "120×240 cm"],
+  ["BCT est.", ">250 kg/m²"],
+  ["Aplicaciones", "Bases tarima · Tapas · Divisores"],
+  ["Gramaje", "150-175 g/m²"],
+  ["Corte", "±2 mm"],
+  ["Material", "Kraft marrón"],
+  ["MOQ", "50 pzas"],
+  ["Entrega", "3-5 días hábiles"],
+];
+
+const faqs = [
+  {
+    id:"lc02-f1",
+    question:"¿Cuándo uso lámina doble vs caja corrugada?",
+    answer:"Láminas dobles cuando: producto ya tiene empaque primario y solo necesitas protección en tarima; forma irregular no encaja en caja rectangular; necesitas cubrir superficies planas grandes; o construyes embalaje custom. Costo/m² 15-25% menor que material de caja.",
+  },
+  {
+    id:"lc02-f2",
+    question:"¿Cómo se usan como refuerzo en tarimas?",
+    answer:"1) Layer pad entre capas: distribuye peso y aumenta capacidad de apilamiento 30-40%. 2) Top pad en cima de tarima: protege durante flejado y transporte. 3) Slip sheet sustituto de tarima de madera para cargas ligeras con grúa. ECT-44 es el mínimo recomendado para todas estas aplicaciones.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Láminas Dobles BC"}]}
+  faqItems={[{question:"¿Cuándo uso lámina doble vs caja corrugada?", answer:"Láminas dobles cuando: producto ya tiene empaque primario y solo necesitas protección en tarima; forma irregular no encaja en caja rectangular; necesitas cubrir superficies planas grandes; o construyes embalaje custom. Costo/m² 15-25% menor que material de caja."}, {question:"¿Cómo se usan como refuerzo en tarimas?", answer:"1) Layer pad entre capas: distribuye peso y aumenta capacidad de apilamiento 30-40%. 2) Top pad en cima de tarima: protege durante flejado y transporte. 3) Slip sheet sustituto de tarima de madera para cargas ligeras con grúa. ECT-44 es el mínimo recomendado para todas estas aplicaciones."}]}
+  product={{name:"Láminas Cartón Corrugado Doble BC ECT-44", sku:"CAD-LC-02", description:"Láminas Cartón Corrugado Doble BC ECT-44 en CDMX — fabricante directo CADECA", image:"/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif", material:"Láminas doble corrugado BC ECT-44 bases tarima refuerzo estructural", category:"Láminas de Cartón Corrugado", moq:"50"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+        <li><span class="current">Láminas Dobles BC</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-lc02-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-LC-02 · Láminas de Cartón Corrugado</span>
+      <h1 id="sku-lc02-title" class="cat-page-hero__title">Láminas Doble Corrugado <span>BC ECT-44</span><br>— Bases Tarima CDMX</h1>
+      <p class="cat-page-hero__desc">Doble corrugado BC (7 mm) con ECT-44 y BCT >250 kg/m². Para bases tarima, tapas, divisores y refuerzo estructural. Corte ±2 mm. Desde 50 piezas.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-02</strong></div>
+        <div class="cat-page-hero__strip-item">Flauta: <strong>BC — 7 mm</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-lc02-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif"
+                alt="Láminas cartón corrugado doble BC ECT-44 CDMX — CADECA CAD-LC-02"
+                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-LC-02 · Familia: Láminas de Cartón Corrugado</p>
+            <h2 id="detalle-lc02-title" class="sku-detail__title">Láminas Doble Corrugado — BC ECT-44</h2>
+            <p class="sku-detail__desc">Doble corrugado BC (7 mm) ECT-44 con BCT estimado >250 kg/m². Gramaje 150-175 g/m², corte con precisión ±2 mm. Kraft marrón. Ideal para bases tarima, tapas, divisores y refuerzo estructural en logística.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">BC 7 mm</span><span class="sku-detail__strip-label">Flauta</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-02 Láminas Doble BC ECT-44`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-02</a>
+              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-lc02-title">
+      <div class="container">
+        <h2 id="sizes-lc02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-LC-02</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Medida</th><th>Dimensión (cm)</th><th>Medida real</th><th>Flauta</th><th>ECT</th><th>Peso/ud</th><th></th><th>Disponibilidad</th></tr></thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td></td>
+                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Corte a medida desde 50 piezas. ⏱ Producción bajo pedido.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-lc02-title">
+      <div class="container">
+        <h2 id="faq-lc02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-02</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-02 — Láminas dobles desde 50 piezas, entrega 3-5 días" />
+</PageLayout>

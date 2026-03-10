@@ -1,0 +1,145 @@
+---
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem     from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const title       = "Láminas Cartón Corrugado Simple Flauta C CDMX | ECT-26/32 | CAD-LC-01 | CADECA";
+const description = "Láminas cartón corrugado simple flauta C CDMX. ECT-26/32, hasta 120×240cm, corte a medida. Para protección y embalaje. Desde 100 pzas. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const medidas = [
+  { talla:"60×40 cm", ml:"60×40 cm", real:"60×40", flauta:"C",ect:"ECT-32",vacío:"0.09 kg/ud",máx:"—", disp:"green", label:"Stock", hl:false },
+  { talla:"80×60 cm", ml:"80×60 cm", real:"80×60", flauta:"C",ect:"ECT-32",vacío:"0.16 kg/ud",máx:"—", disp:"green", label:"Stock", hl:false },
+  { talla:"100×80 cm", ml:"100×80 cm", real:"100×80", flauta:"C",ect:"ECT-32",vacío:"0.26 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
+  { talla:"120×100 cm", ml:"120×100 cm", real:"120×100", flauta:"C",ect:"ECT-32",vacío:"0.39 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
+  { talla:"120×240 cm", ml:"120×240 cm", real:"120×240", flauta:"C",ect:"ECT-32",vacío:"0.94 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
+  { talla:"Personalizada", ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+];
+
+const specs = [
+  ["Código SKU", "CAD-LC-01"],
+  ["Tipo", "Lámina corrugado simple"],
+  ["Flauta", "C — 4 mm"],
+  ["ECT", "ECT-26 o ECT-32"],
+  ["Medida máx.", "120×240 cm"],
+  ["Gramaje liner", "115-135 g/m²"],
+  ["Corte a medida", "Sí desde 50 pzas"],
+  ["Material", "Kraft marrón o blanco"],
+  ["Aplicaciones", "Protección · Relleno · Layer pad"],
+  ["Precio", "El más económico"],
+  ["MOQ", "100 pzas"],
+  ["Entrega", "3-5 días hábiles"],
+];
+
+const faqs = [
+  {
+    id:"lc01-f1",
+    question:"¿Cuál es la diferencia entre flauta B y C para láminas?",
+    answer:"Flauta B (3 mm): mayor rigidez puntual, mejor para separadores entre frágiles. Flauta C (4 mm): mejor amortiguación distribuida, menor costo, ideal para protección de superficies grandes, relleno y layer pads.",
+  },
+  {
+    id:"lc01-f2",
+    question:"¿Para qué usos industriales son ideales?",
+    answer:"1) Interleaving entre piezas metálicas para evitar rayones. 2) Corner protection dobladas en ángulo. 3) Layer pads entre niveles de tarima. 4) Void fill en cajas de exportación. 5) Surface protection temporal de pisos y cristales. Las más económicas del catálogo.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Láminas Simples Flauta C"}]}
+  faqItems={[{question:"¿Cuál es la diferencia entre flauta B y C para láminas?", answer:"Flauta B (3 mm): mayor rigidez puntual, mejor para separadores entre frágiles. Flauta C (4 mm): mejor amortiguación distribuida, menor costo, ideal para protección de superficies grandes, relleno y layer pads."}, {question:"¿Para qué usos industriales son ideales?", answer:"1) Interleaving entre piezas metálicas para evitar rayones. 2) Corner protection dobladas en ángulo. 3) Layer pads entre niveles de tarima. 4) Void fill en cajas de exportación. 5) Surface protection temporal de pisos y cristales. Las más económicas del catálogo."}]}
+  product={{name:"Láminas Cartón Corrugado Simple Flauta C", sku:"CAD-LC-01", description:"Láminas Cartón Corrugado Simple Flauta C en CDMX — fabricante directo CADECA", image:"/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif", material:"Láminas cartón corrugado simple flauta C ECT-26/32 kraft corte a medida", category:"Láminas de Cartón Corrugado", moq:"100"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+        <li><span class="current">Láminas Simples Flauta C</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-lc01-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-LC-01 · Láminas de Cartón Corrugado</span>
+      <h1 id="sku-lc01-title" class="cat-page-hero__title">Láminas Corrugado Simple <span>Flauta C</span><br>— ECT-26/32 CDMX</h1>
+      <p class="cat-page-hero__desc">La opción más económica del catálogo. Flauta C de 4 mm para protección, relleno y layer pads. Corte a medida desde 50 piezas. Kraft marrón o blanco hasta 120×240 cm.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-01</strong></div>
+        <div class="cat-page-hero__strip-item">Flauta: <strong>C — 4 mm</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-lc01-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div>
+            <div class="sku-detail__img-wrap">
+              <img src="/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif"
+                alt="Láminas cartón corrugado simple flauta C CDMX — CADECA CAD-LC-01"
+                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-LC-01 · Familia: Láminas de Cartón Corrugado</p>
+            <h2 id="detalle-lc01-title" class="sku-detail__title">Láminas Corrugado Simple — Flauta C ECT-26/32</h2>
+            <p class="sku-detail__desc">Láminas corrugado simple flauta C (4 mm) en ECT-26 o ECT-32. Gramaje liner 115-135 g/m². Corte a medida desde 50 piezas. Kraft marrón o blanco. Ideal para interleaving, layer pads, corner protection, void fill y surface protection.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flauta C</span><span class="sku-detail__strip-label">Tipo</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-26/32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-01 Láminas Corrugado Simple Flauta C`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-01</a>
+              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="sizes-lc01-title">
+      <div class="container">
+        <h2 id="sizes-lc01-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-LC-01</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Medida</th><th>Dimensión (cm)</th><th>Medida real</th><th>Flauta</th><th>ECT</th><th>Peso/ud</th><th></th><th>Disponibilidad</th></tr></thead>
+            <tbody>
+              {medidas.map(m => (
+                <tr class={m.hl ? "highlight" : ""}>
+                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td></td>
+                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Corte a medida desde 50 piezas. ⏱ Producción bajo pedido.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-lc01-title">
+      <div class="container">
+        <h2 id="faq-lc01-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-01</h2>
+        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
+  </main>
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-01 — Láminas simples desde 100 piezas, entrega 3-5 días" />
+</PageLayout>

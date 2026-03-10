@@ -1,0 +1,199 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const WHATSAPP = "5255XXXXXXXX";
+const TEL      = "55 XXXX-XXXX";
+const EMAIL    = "ventas@cadeca.com.mx";
+
+const title       = "Contacto | Cajas de Cartón CDMX | CADECA — Fabricante Directo";
+const description = "Contacta a CADECA, fabricante de cajas de cartón en CDMX. WhatsApp, teléfono y formulario de cotización. Respuesta en menos de 1 hora en horario hábil.";
+
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Contacto" },
+];
+
+const canales = [
+  {
+    icono: "💬",
+    titulo: "WhatsApp",
+    desc: "La forma más rápida. Respuesta en menos de 15 minutos en horario hábil.",
+    cta: "Escribir por WhatsApp",
+    href: `https://wa.me/${WHATSAPP}?text=Hola CADECA, quiero cotizar cajas de cartón`,
+    externo: true,
+    destaca: true,
+  },
+  {
+    icono: "📞",
+    titulo: "Teléfono",
+    desc: "Lunes a viernes de 8:00 a 18:00, sábados de 9:00 a 14:00.",
+    cta: `Llamar a ${TEL}`,
+    href: `tel:+5255XXXXXXXX`,
+    externo: false,
+    destaca: false,
+  },
+  {
+    icono: "✉️",
+    titulo: "Correo electrónico",
+    desc: "Para cotizaciones formales, licitaciones y pedidos con orden de compra.",
+    cta: EMAIL,
+    href: `mailto:${EMAIL}`,
+    externo: false,
+    destaca: false,
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="page"
+  breadcrumbs={breadcrumbs}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><span class="current">Contacto</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="contact-hero" aria-labelledby="contact-title">
+    <div class="container">
+      <span class="contact-hero__eyebrow">Respuesta en menos de 1 hora</span>
+      <h1 id="contact-title" class="contact-hero__title">Habla Directo con el <span>Fabricante</span></h1>
+      <p class="contact-hero__desc">Sin intermediarios, sin call centers. Nuestros asesores técnicos atienden directo y conocen el corrugado de adentro hacia afuera.</p>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+
+    <section class="contact-canales" aria-labelledby="canales-title">
+      <div class="container">
+        <h2 id="canales-title" class="sr-only">Canales de contacto</h2>
+        <div class="contact-canales__grid">
+          {canales.map(c => (
+            <div class={`contact-canal${c.destaca ? " contact-canal--destaca" : ""}`}>
+              <span class="contact-canal__icono">{c.icono}</span>
+              <h3 class="contact-canal__titulo">{c.titulo}</h3>
+              <p class="contact-canal__desc">{c.desc}</p>
+              <a
+                href={c.href}
+                class={`btn ${c.destaca ? "btn--primary" : "btn--outline"}`}
+                {...(c.externo ? { target:"_blank", rel:"noopener" } : {})}
+              >
+                {c.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-horario" aria-labelledby="horario-title">
+      <div class="container">
+        <div class="contact-horario__inner">
+          <h2 id="horario-title" class="contact-horario__title">Horario de Atención</h2>
+          <div class="contact-horario__grid">
+            <div class="contact-horario__item">
+              <span class="contact-horario__dia">Lunes – Viernes</span>
+              <span class="contact-horario__hora">8:00 – 18:00 hrs</span>
+            </div>
+            <div class="contact-horario__item">
+              <span class="contact-horario__dia">Sábados</span>
+              <span class="contact-horario__hora">9:00 – 14:00 hrs</span>
+            </div>
+            <div class="contact-horario__item">
+              <span class="contact-horario__dia">Domingos y festivos</span>
+              <span class="contact-horario__hora">Cerrado</span>
+            </div>
+          </div>
+          <p class="contact-horario__nota">⚡ Los mensajes de WhatsApp fuera de horario se responden a partir del siguiente día hábil a las 8:00 hrs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-ubicacion" aria-labelledby="ubic-title">
+      <div class="container">
+        <h2 id="ubic-title" class="contact-ubicacion__title">Zona de Cobertura</h2>
+        <div class="contact-ubicacion__grid">
+          <div>
+            <h3>📍 Planta y oficinas</h3>
+            <p>Ciudad de México<br><em>(Dirección exacta — pendiente de actualizar)</em></p>
+            <h3 style="margin-top:var(--spacing-lg)">🚚 Entregas express (24 hrs)</h3>
+            <ul>
+              <li>Ciudad de México — todas las alcaldías</li>
+              <li>Naucalpan, Tlalnepantla, Ecatepec</li>
+              <li>Texcoco, Chalco, Ixtapaluca</li>
+              <li>Toluca y área conurbada</li>
+            </ul>
+            <h3 style="margin-top:var(--spacing-lg)">📦 Interior de la República</h3>
+            <p>2-5 días vía paquetería (DHL, FedEx, Estafeta). Consultar disponibilidad.</p>
+          </div>
+          <div class="contact-ubicacion__map">
+            <!-- Placeholder mapa — reemplazar con Google Maps embed cuando tengamos dirección real -->
+            <div style="background:var(--color-accent);border-radius:var(--radius-lg);height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;border:2px dashed var(--color-border);">
+              <span style="font-size:3rem">🗺️</span>
+              <p style="color:var(--color-text-light);font-size:var(--font-size-sm);text-align:center">Mapa de ubicación<br>próximamente</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Prefieres que te contactemos nosotros? Deja tu número y te llamamos" />
+
+</PageLayout>
+
+<style>
+.contact-hero {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #2d4a7a 100%);
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  color: var(--color-white);
+}
+.contact-hero__eyebrow { font-size: var(--font-size-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm); }
+.contact-hero__title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--color-white); margin-bottom: var(--spacing-md); }
+.contact-hero__title span { color: var(--color-primary); }
+.contact-hero__desc { font-size: var(--font-size-lg); color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+/* Canales */
+.contact-canales { padding: var(--spacing-3xl) 0; }
+.contact-canales__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+.contact-canal { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl); text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--spacing-sm); transition: box-shadow var(--transition-fast); }
+.contact-canal:hover { box-shadow: var(--shadow-md); }
+.contact-canal--destaca { border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(224,88,0,0.15); }
+.contact-canal__icono { font-size: 2.5rem; }
+.contact-canal__titulo { font-size: var(--font-size-lg); font-weight: 700; color: var(--color-secondary); }
+.contact-canal__desc { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: 1.6; flex: 1; }
+
+/* Horario */
+.contact-horario { background: var(--color-accent); padding: var(--spacing-3xl) 0; }
+.contact-horario__inner { max-width: 640px; }
+.contact-horario__title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-lg); }
+.contact-horario__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+.contact-horario__item { background: var(--color-white); border-radius: var(--radius-md); padding: var(--spacing-md); text-align: center; }
+.contact-horario__dia { display: block; font-size: var(--font-size-sm); font-weight: 600; color: var(--color-secondary); margin-bottom: 0.25rem; }
+.contact-horario__hora { display: block; font-size: var(--font-size-md); font-weight: 800; color: var(--color-primary); }
+.contact-horario__nota { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: 1.6; }
+
+/* Ubicación */
+.contact-ubicacion { padding: var(--spacing-3xl) 0; }
+.contact-ubicacion__title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-xl); }
+.contact-ubicacion__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: start; }
+.contact-ubicacion__grid h3 { font-size: var(--font-size-md); font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-xs); }
+.contact-ubicacion__grid ul { padding-left: 1.2rem; color: var(--color-text-light); line-height: 2; font-size: var(--font-size-sm); }
+.contact-ubicacion__grid p { color: var(--color-text-light); font-size: var(--font-size-sm); line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .contact-canales__grid { grid-template-columns: 1fr; }
+  .contact-horario__grid { grid-template-columns: 1fr; }
+  .contact-ubicacion__grid { grid-template-columns: 1fr; }
+}
+</style>
