@@ -1,0 +1,32 @@
+---
+// Testimonial.astro — Tarjeta de testimonio de cliente
+export interface Props {
+  initials: string;
+  name:     string;
+  role:     string;
+  text:     string;
+  stars?:   number;
+}
+
+const {
+  initials,
+  name,
+  role,
+  text,
+  stars = 5,
+} = Astro.props;
+
+const starsStr = "★".repeat(stars);
+---
+
+<blockquote class="testimonial">
+  <div class="testimonial__stars" aria-label={`${stars} estrellas`}>{starsStr}</div>
+  <p class="testimonial__text">"{text}"</p>
+  <div class="testimonial__author">
+    <div class="testimonial__avatar">{initials}</div>
+    <div class="testimonial__info">
+      <span class="testimonial__name">{name}</span>
+      <span class="testimonial__role">{role}</span>
+    </div>
+  </div>
+</blockquote>

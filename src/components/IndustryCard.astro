@@ -1,0 +1,25 @@
+---
+// IndustryCard.astro — Tarjeta de nicho / industria
+export interface Props {
+  icon:      string;
+  title:     string;
+  desc:      string;
+  href:      string;
+  linkText?: string;
+}
+
+const {
+  icon,
+  title,
+  desc,
+  href,
+  linkText = "Ver soluciones",
+} = Astro.props;
+---
+
+<article class="industry-card">
+  <div class="industry-card__icon">{icon}</div>
+  <h3 class="industry-card__title">{title}</h3>
+  <p class="industry-card__desc">{desc}</p>
+  <a href={href} class="industry-card__link">{linkText} &rarr;</a>
+</article>

@@ -1,0 +1,222 @@
+---
+// Header.astro — Navegación principal con mega-menu
+export interface Props {
+  whatsapp?: string;
+  currentPath?: string;
+}
+
+const {
+  whatsapp    = "5255XXXXXXXX",
+  currentPath = Astro.url.pathname,
+} = Astro.props;
+
+const isActive = (path: string) =>
+  currentPath === path ? "nav-desktop__link--active" : "";
+---
+
+<a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+<header class="header" id="header" role="banner">
+  <div class="container">
+
+    <!-- Logo -->
+    <a href="/" aria-label="CADECA — Cajas de Cartón CDMX — Inicio">
+      <span class="header__logo-text">CA<span>DECA</span></span>
+    </a>
+
+    <!-- Nav Desktop -->
+    <nav class="nav-desktop" role="navigation" aria-label="Navegación principal">
+      <ul class="nav-desktop__list">
+
+        <li class="nav-desktop__item">
+          <a href="/" class={`nav-desktop__link ${isActive("/")}`}>Inicio</a>
+        </li>
+
+        <!-- Productos -->
+        <li class="nav-desktop__item">
+          <a href="/productos" class={`nav-desktop__link ${isActive("/productos")}`} aria-haspopup="true">
+            Productos <span class="nav-desktop__arrow" aria-hidden="true">▾</span>
+          </a>
+          <div class="mega-menu" role="menu" aria-label="Catálogo de productos">
+            <div class="mega-menu__category">
+              <h3 class="mega-menu__title">Cajas Estándar</h3>
+              <ul class="mega-menu__list">
+                <li><a href="/productos/cajas-corrugado-estandar" class="mega-menu__link" role="menuitem">Corrugado simple</a></li>
+                <li><a href="/productos/cajas-doble-corrugado"    class="mega-menu__link" role="menuitem">Doble corrugado</a></li>
+                <li><a href="/productos/cajas-triple-corrugado"   class="mega-menu__link" role="menuitem">Triple corrugado</a></li>
+                <li><a href="/productos/cajas-mudanza"            class="mega-menu__link" role="menuitem">Cajas para mudanza</a></li>
+              </ul>
+              <a href="/productos/cajas-corrugado-estandar" class="mega-menu__view-all">Ver todas &rarr;</a>
+            </div>
+            <div class="mega-menu__category">
+              <h3 class="mega-menu__title">A Medida y Personalizadas</h3>
+              <ul class="mega-menu__list">
+                <li><a href="/productos/cajas-a-la-medida"          class="mega-menu__link" role="menuitem">Cajas a la medida</a></li>
+                <li><a href="/productos/cajas-personalizadas-logo"   class="mega-menu__link" role="menuitem">Cajas con logo</a></li>
+                <li><a href="/productos/cajas-impresion-full-color"  class="mega-menu__link" role="menuitem">Impresión full color</a></li>
+                <li><a href="/productos/cajas-ecologicas"            class="mega-menu__link" role="menuitem">Cajas ecológicas FSC</a></li>
+              </ul>
+              <a href="/productos/cajas-a-la-medida" class="mega-menu__view-all">Ver todas &rarr;</a>
+            </div>
+            <div class="mega-menu__category">
+              <h3 class="mega-menu__title">Por Industria</h3>
+              <ul class="mega-menu__list">
+                <li><a href="/productos/cajas-para-ecommerce"     class="mega-menu__link" role="menuitem">Para e-commerce</a></li>
+                <li><a href="/productos/cajas-para-alimentos"     class="mega-menu__link" role="menuitem">Para alimentos</a></li>
+                <li><a href="/productos/cajas-industriales"       class="mega-menu__link" role="menuitem">Industrial / Nearshoring</a></li>
+                <li><a href="/productos/laminas-carton-corrugado" class="mega-menu__link" role="menuitem">Láminas corrugado</a></li>
+              </ul>
+              <a href="/productos" class="mega-menu__view-all">Ver catálogo completo &rarr;</a>
+            </div>
+            <div class="mega-menu__category mega-menu__category--cta">
+              <h3 class="mega-menu__title">¿No encuentras lo que buscas?</h3>
+              <p class="mega-menu__desc">Cotiza cualquier medida personalizada. Respondemos en menos de 2 horas.</p>
+              <a href="#cotizar" class="btn btn--primary btn--sm">Cotizar ahora</a>
+              <a href={`https://wa.me/${whatsapp}`} class="mega-menu__whatsapp" target="_blank" rel="noopener">
+                WhatsApp directo →
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Soluciones -->
+        <li class="nav-desktop__item">
+          <a href="/soluciones" class={`nav-desktop__link ${isActive("/soluciones")}`} aria-haspopup="true">
+            Soluciones <span class="nav-desktop__arrow" aria-hidden="true">▾</span>
+          </a>
+          <div class="mega-menu" role="menu" aria-label="Soluciones por industria">
+            <div class="mega-menu__category">
+              <h3 class="mega-menu__title">Por Sector</h3>
+              <ul class="mega-menu__list">
+                <li><a href="/soluciones/ecommerce"            class="mega-menu__link">E-commerce y Marketplaces</a></li>
+                <li><a href="/soluciones/industrial-nearshoring" class="mega-menu__link">Industrial y Nearshoring</a></li>
+                <li><a href="/soluciones/alimentos-bebidas"    class="mega-menu__link">Alimentos y Bebidas</a></li>
+                <li><a href="/soluciones/retail-marcas"        class="mega-menu__link">Retail y Marcas</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__category">
+              <h3 class="mega-menu__title">Servicios</h3>
+              <ul class="mega-menu__list">
+                <li><a href="/cotizar"                       class="mega-menu__link">Cotizador Online</a></li>
+                <li><a href="/servicios/diseno-empaque"      class="mega-menu__link">Diseño de Empaque</a></li>
+                <li><a href="/servicios/entrega-domicilio"   class="mega-menu__link">Entrega a Domicilio</a></li>
+                <li><a href="/servicios/mayoreo"             class="mega-menu__link">Mayoreo y Distribución</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- Zonas -->
+        <li class="nav-desktop__item">
+          <a href="/zonas-de-servicio" class={`nav-desktop__link ${isActive("/zonas-de-servicio")}`} aria-haspopup="true">
+            Zonas <span class="nav-desktop__arrow" aria-hidden="true">▾</span>
+          </a>
+          <div class="mega-menu" role="menu">
+            <div class="mega-menu__category">
+              <h3 class="mega-menu__title">Ciudad de México</h3>
+              <ul class="mega-menu__list">
+                <li><a href="/zonas/vallejo-azcapotzalco" class="mega-menu__link">Vallejo / Azcapotzalco</a></li>
+                <li><a href="/zonas/iztapalapa"            class="mega-menu__link">Iztapalapa</a></li>
+                <li><a href="/zonas/coyoacan-sur-cdmx"     class="mega-menu__link">Coyoacán / Sur CDMX</a></li>
+              </ul>
+              <a href="/zonas-de-servicio" class="mega-menu__view-all">Ver todas las zonas &rarr;</a>
+            </div>
+            <div class="mega-menu__category">
+              <h3 class="mega-menu__title">Estado de México</h3>
+              <ul class="mega-menu__list">
+                <li><a href="/zonas/naucalpan-tlalnepantla" class="mega-menu__link">Naucalpan / Tlalnepantla</a></li>
+                <li><a href="/zonas/ecatepec"               class="mega-menu__link">Ecatepec</a></li>
+                <li><a href="/zonas/toluca-lerma"           class="mega-menu__link">Toluca / Lerma</a></li>
+                <li><a href="/zonas/cuautitlan-izcalli"     class="mega-menu__link">Cuautitlán Izcalli</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-desktop__item">
+          <a href="/blog"     class={`nav-desktop__link ${isActive("/blog")}`}>Blog</a>
+        </li>
+        <li class="nav-desktop__item">
+          <a href="/nosotros" class={`nav-desktop__link ${isActive("/nosotros")}`}>Nosotros</a>
+        </li>
+        <li class="nav-desktop__item">
+          <a href="/contacto" class={`nav-desktop__link ${isActive("/contacto")}`}>Contacto</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <a href={`https://wa.me/${whatsapp}`}
+       class="btn btn--primary btn--sm header__cta"
+       target="_blank" rel="noopener"
+       aria-label="Cotizar por WhatsApp">
+      Cotizar por WhatsApp
+    </a>
+
+    <button class="hamburger" id="hamburger"
+            aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile overlay + nav -->
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<nav class="mobile-nav" id="mobile-nav"
+     role="navigation" aria-label="Navegación móvil" aria-hidden="true">
+  <ul>
+    <li class="mobile-nav__item"><a href="/" class="mobile-nav__link">Inicio</a></li>
+    <li class="mobile-nav__item">
+      <button class="mobile-nav__link" data-toggle
+              aria-expanded="false" aria-controls="mob-productos" id="mob-toggle-productos">
+        Productos <span class="mobile-nav__arrow">▾</span>
+      </button>
+      <div class="mobile-nav__submenu" id="mob-productos">
+        <div class="mobile-nav__subcategory">
+          <div class="mobile-nav__subtitle">Estándar</div>
+          <a href="/productos/cajas-corrugado-estandar" class="mobile-nav__sublink">Corrugado simple</a>
+          <a href="/productos/cajas-doble-corrugado"    class="mobile-nav__sublink">Doble corrugado</a>
+          <a href="/productos/cajas-triple-corrugado"   class="mobile-nav__sublink">Triple corrugado</a>
+        </div>
+        <div class="mobile-nav__subcategory">
+          <div class="mobile-nav__subtitle">Personalizadas</div>
+          <a href="/productos/cajas-a-la-medida"        class="mobile-nav__sublink">A la medida</a>
+          <a href="/productos/cajas-personalizadas-logo" class="mobile-nav__sublink">Con logo</a>
+          <a href="/productos/cajas-ecologicas"          class="mobile-nav__sublink">Ecológicas FSC</a>
+        </div>
+        <div class="mobile-nav__subcategory">
+          <div class="mobile-nav__subtitle">Por Industria</div>
+          <a href="/productos/cajas-para-ecommerce" class="mobile-nav__sublink">Para e-commerce</a>
+          <a href="/productos/cajas-para-alimentos" class="mobile-nav__sublink">Para alimentos</a>
+          <a href="/productos/cajas-industriales"   class="mobile-nav__sublink">Industrial</a>
+        </div>
+        <a href="/productos" class="mobile-nav__sublink mobile-nav__sublink--all">Ver catálogo completo →</a>
+      </div>
+    </li>
+    <li class="mobile-nav__item">
+      <button class="mobile-nav__link" data-toggle
+              aria-expanded="false" aria-controls="mob-soluciones" id="mob-toggle-soluciones">
+        Soluciones <span class="mobile-nav__arrow">▾</span>
+      </button>
+      <div class="mobile-nav__submenu" id="mob-soluciones">
+        <a href="/soluciones/ecommerce"             class="mobile-nav__sublink">E-commerce</a>
+        <a href="/soluciones/industrial-nearshoring" class="mobile-nav__sublink">Industrial / Nearshoring</a>
+        <a href="/soluciones/alimentos-bebidas"      class="mobile-nav__sublink">Alimentos y Bebidas</a>
+        <a href="/soluciones/retail-marcas"          class="mobile-nav__sublink">Retail y Marcas</a>
+        <a href="/soluciones" class="mobile-nav__sublink mobile-nav__sublink--all">Ver todas →</a>
+      </div>
+    </li>
+    <li class="mobile-nav__item"><a href="/zonas-de-servicio" class="mobile-nav__link">Zonas de Servicio</a></li>
+    <li class="mobile-nav__item"><a href="/blog"     class="mobile-nav__link">Blog</a></li>
+    <li class="mobile-nav__item"><a href="/nosotros" class="mobile-nav__link">Nosotros</a></li>
+    <li class="mobile-nav__item"><a href="/contacto" class="mobile-nav__link">Contacto</a></li>
+  </ul>
+  <div class="mobile-nav__cta">
+    <a href={`https://wa.me/${whatsapp}`} class="btn btn--primary" target="_blank" rel="noopener">
+      Cotizar por WhatsApp
+    </a>
+  </div>
+</nav>

@@ -1,0 +1,52 @@
+---
+// PageLayout.astro — Layout completo de página (BaseLayout + Topbar + Header + Footer + WaBubble)
+import BaseLayout   from "@/layouts/BaseLayout.astro";
+import Topbar       from "@/components/Topbar.astro";
+import Header       from "@/components/Header.astro";
+import Footer       from "@/components/Footer.astro";
+import WaBubble     from "@/components/WaBubble.astro";
+
+export interface Props {
+  // SEO (heredados a BaseLayout)
+  title:       string;
+  description: string;
+  canonical?:  string;
+  ogImage?:    string;
+  schema?:     object | object[];
+  // Contacto global (se pasa a Topbar, Header, Footer, WaBubble)
+  phone?:      string;
+  whatsapp?:   string;
+  email?:      string;
+  address?:    string;
+  schedule?:   string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  schema,
+  phone    = "55 XXXX-XXXX",
+  whatsapp = "5255XXXXXXXX",
+  email    = "ventas@cadeca.com.mx",
+  address  = "[Dirección], CDMX",
+  schedule = "Lun–Vie: 8:00 – 18:00 · Sáb: 9:00 – 14:00",
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schema={schema}
+>
+  <Topbar   phone={phone} whatsapp={whatsapp} />
+  <Header   whatsapp={whatsapp} currentPath={Astro.url.pathname} />
+
+  <slot />
+
+  <Footer   phone={phone} whatsapp={whatsapp} email={email} address={address} schedule={schedule} />
+  <WaBubble whatsapp={whatsapp} />
+</BaseLayout>
