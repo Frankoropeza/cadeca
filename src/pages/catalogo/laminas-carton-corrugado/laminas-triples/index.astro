@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Láminas Triple Corrugado BCB CDMX | ECT-61 Sustituto Madera | CAD-LC-03 | CADECA";
 const description = "Láminas triple corrugado BCB CDMX. ECT-61+, 120×200cm, sustituto madera, sin NIMF 15. Desde 25 pzas, 5-7 días. CADECA fabricante.";
@@ -43,6 +44,15 @@ const faqs = [
     answer:"BCT comparable a madera contrachapada 9-12 mm según aplicación. Para layer pads iguala madera 9 mm. Para bases exportación iguala 6 mm. Para laterales de caja industrial, madera 12 mm sigue siendo superior en rigidez lateral. Con esquineros en L puede sustituir madera 12 mm en mayoría de cajas de exportación.",
   },
 ];
+
+const mainImg = "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Láminas Triple Corrugado — vista frontal CDMX" },
+  { src: mainImg, alt: "Láminas Triple Corrugado — detalle corrugación" },
+  { src: mainImg, alt: "Láminas Triple Corrugado — stack apilado" },
+  { src: mainImg, alt: "Láminas Triple Corrugado — contexto uso industrial" },
+  { src: mainImg, alt: "Láminas Triple Corrugado — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -83,12 +93,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-lc03-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif"
-                alt="Láminas triple corrugado BCB sustituto madera CDMX — CADECA CAD-LC-03"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-LC-03 · Familia: Láminas de Cartón Corrugado</p>

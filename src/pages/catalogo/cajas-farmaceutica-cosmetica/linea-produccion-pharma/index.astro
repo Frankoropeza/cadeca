@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Línea Producción Pharma Alta Velocidad CDMX | CAD-FC-05 | CADECA";
 const description = "Caja corrugado para líneas de producción farmacéutica automatizadas en CDMX. Tolerancia ±1mm, troquelado precisión, compatible Bosch, IMA, Marchesini. CADECA.";
@@ -67,6 +68,15 @@ const faqs = [
     answer:"Sí, nuestro departamento de ingeniería diseña el <strong>troquel (suaje) a la medida</strong> de tu producto y equipo de encartonado. El diseño CAD incluye: dimensiones de caja, pestañas de cierre, ventana de inspección (si aplica), zonas de pegado y líneas de doblez. El diseño del troquel no tiene costo; solo se cobra el suaje físico una vez aprobado.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-linea-produccion-farmaceutica-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Línea Producción Pharma — vista frontal CDMX" },
+  { src: mainImg, alt: "Línea Producción Pharma — detalle corrugación" },
+  { src: mainImg, alt: "Línea Producción Pharma — stack apilado" },
+  { src: mainImg, alt: "Línea Producción Pharma — contexto uso industrial" },
+  { src: mainImg, alt: "Línea Producción Pharma — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -112,13 +122,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-linea-produccion-farmaceutica-cdmx.avif"
-                alt="Caja de cartón línea producción pharma alta velocidad CDMX — CADECA CAD-FC-05"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Caja Triple Corrugado Pared Triple Industrial CDMX | CAD-CT-01 | CADECA";
 const description = "Ficha técnica caja triple corrugado pared triple en CDMX. ECT-51 y ECT-71. Para industria pesada, nearshoring y exportación. Desde 50 pzas, entrega 48-72 hrs. CADECA.";
@@ -45,6 +46,15 @@ const faqs = [
     answer:"Sí, con limitaciones. La superficie del triple corrugado (BCB o BCF) es más rugosa que el simple o doble, lo que limita la calidad de impresión a flexografía de 1 o 2 colores. Para una impresión de mayor calidad en cajas industriales, recomendamos usar una etiqueta o sticker impreso y pegarlo sobre la caja en lugar de impresión directa sobre el cartón.",
   },
 ];
+
+const mainImg = "/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Triple Corrugado — vista frontal CDMX" },
+  { src: mainImg, alt: "Triple Corrugado — detalle corrugación" },
+  { src: mainImg, alt: "Triple Corrugado — stack apilado" },
+  { src: mainImg, alt: "Triple Corrugado — contexto uso industrial" },
+  { src: mainImg, alt: "Triple Corrugado — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -86,12 +96,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-ct-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif"
-                alt="Caja de cartón triple corrugado industrial pared triple en CDMX — CADECA CAD-CT-01"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-CT-01 · Familia: Corrugado Estándar</p>

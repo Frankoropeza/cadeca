@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Envío Tienda Online Moda E-commerce CDMX | CAD-TX-05 | CADECA";
 const description = "Ficha técnica caja envío para tienda online de moda e-commerce en CDMX. Flauta B/C, ECT-32/44, medidas accesorio a abrigo voluminoso. Compatible Shopify y TiendaNube, MOQ 50 pzas. CADECA fabricante.";
@@ -69,6 +70,15 @@ const faqs = [
     answer:"Sí, ofrecemos un <strong>programa de reabastecimiento automático</strong> para tiendas online con volumen recurrente. Definimos contigo la cantidad y frecuencia mensual, almacenamos tu inventario de cajas personalizadas en nuestra bodega CDMX y despachamos por lote según tu demanda. Esto elimina la necesidad de almacenar cajas en tu espacio y garantiza disponibilidad permanente. Aplica a partir de <strong>500 pzas/mes</strong> con contrato trimestral.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-envio-tienda-online-shopify-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Envío Tienda Online — vista frontal CDMX" },
+  { src: mainImg, alt: "Envío Tienda Online — detalle corrugación" },
+  { src: mainImg, alt: "Envío Tienda Online — stack apilado" },
+  { src: mainImg, alt: "Envío Tienda Online — contexto uso industrial" },
+  { src: mainImg, alt: "Envío Tienda Online — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -115,13 +125,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-envio-tienda-online-shopify-cdmx.avif"
-                alt="Caja envío tienda online e-commerce moda Shopify TiendaNube CDMX — CADECA CAD-TX-05"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

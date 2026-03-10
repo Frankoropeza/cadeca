@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Láminas Cartón Reciclado FSC CDMX | ECT-32/44 Sustentable | CAD-LC-05 | CADECA";
 const description = "Láminas cartón corrugado reciclado certificado FSC en CDMX. Mismas specs técnicas que virgen. ECT-32/44, desde 50 piezas, entrega 3-5 días. Para marcas sustentables. CADECA.";
@@ -43,6 +44,15 @@ const faqs = [
     question:"¿El cartón reciclado FSC tiene menor resistencia que el cartón virgen?",
     answer:"En especificaciones modernas la diferencia de resistencia es mínima: 5-8% menos en BCT (Box Compression Test) a igual ECT. Los procesos de producción de papel reciclado han mejorado tanto que el ECT-44 reciclado y el ECT-44 virgen tienen comportamientos prácticamente idénticos en condiciones normales de temperatura y humedad. La diferencia visible es el color: el liner reciclado tiene un tono gris-marrón característico versus el marrón oscuro del kraft virgen. Para aplicaciones donde el color exterior no importa — uso industrial, embalaje secundario, almacenamiento interno — el reciclado FSC es equivalente al virgen a igual o menor costo, con la ventaja adicional del certificado para reportes ESG.",
   },
+];
+
+const mainImg = "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Láminas Cartón Corrugado Reciclado FSC — vista frontal CDMX" },
+  { src: mainImg, alt: "Láminas Cartón Corrugado Reciclado FSC — detalle corrugación" },
+  { src: mainImg, alt: "Láminas Cartón Corrugado Reciclado FSC — stack apilado" },
+  { src: mainImg, alt: "Láminas Cartón Corrugado Reciclado FSC — contexto uso industrial" },
+  { src: mainImg, alt: "Láminas Cartón Corrugado Reciclado FSC — medidas referencia" },
 ];
 ---
 
@@ -98,13 +108,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-lc05-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif"
-                alt="Láminas cartón corrugado reciclado certificado FSC en CDMX — CADECA CAD-LC-05"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-LC-05 · Familia: Láminas de Cartón Corrugado</p>

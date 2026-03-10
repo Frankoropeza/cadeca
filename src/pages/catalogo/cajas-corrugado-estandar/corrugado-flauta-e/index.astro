@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Caja Corrugado Micro Flauta E CDMX | Cosméticos y Joyería | CAD-CE-01 | CADECA";
 const description = "Ficha técnica caja corrugado micro flauta E en CDMX. 1.5mm, ECT-23. Para cosméticos, joyería, suplementos y productos de presentación premium. Desde 100 pzas. CADECA.";
@@ -46,6 +47,15 @@ const faqs = [
     answer:"Sí, la flauta E tiene menor resistencia estructural que las flautas más gruesas. Por eso se recomienda solo para productos ligeros (hasta 5 kg) y es ideal para packaging de presentación donde la imagen es prioritaria sobre la resistencia bruta. Para productos que requieren ambos (buena impresión Y alta resistencia), la flauta B es un buen punto medio. Si el producto pesa más de 5 kg, cambia a corrugado simple flauta C o doble corrugado BC.",
   },
 ];
+
+const mainImg = "/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Corrugado Micro — vista frontal CDMX" },
+  { src: mainImg, alt: "Corrugado Micro — detalle corrugación" },
+  { src: mainImg, alt: "Corrugado Micro — stack apilado" },
+  { src: mainImg, alt: "Corrugado Micro — contexto uso industrial" },
+  { src: mainImg, alt: "Corrugado Micro — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -87,12 +97,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-ce-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
-                alt="Caja corrugado micro flauta E para cosméticos y joyería en CDMX — CADECA CAD-CE-01"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-CE-01 · Familia: Corrugado Estándar</p>

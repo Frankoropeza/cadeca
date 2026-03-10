@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Exportación IATA ISTA CDMX | ECT-51/61 | CAD-AM-02 | CADECA";
 const description = "Cajas a la medida para exportación en CDMX. Certificación ISTA 2A/3A, normas IATA para aéreo, ECT-51 mínimo. Desde 25 piezas, entrega 5-7 días. CADECA fabricante.";
@@ -41,6 +42,15 @@ const faqs = [
     question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?",
     answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino.",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja para Exportación — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja para Exportación — detalle corrugación" },
+  { src: mainImg, alt: "Caja para Exportación — stack apilado" },
+  { src: mainImg, alt: "Caja para Exportación — contexto uso industrial" },
+  { src: mainImg, alt: "Caja para Exportación — medidas referencia" },
 ];
 ---
 
@@ -82,12 +92,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-am02-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif"
-                alt="Caja exportación IATA ISTA en CDMX — CADECA CAD-AM-02"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AM-02 · Familia: Cajas a la Medida</p>

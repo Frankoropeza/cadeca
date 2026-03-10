@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Separadores Cartón Corrugado CDMX | Divisiones a la Medida | CAD-LC-04 | CADECA";
 const description = "Separadores cartón corrugado CDMX. Flauta B o E, diseño por caja, precio mínimo. Desde 200 pzas, 3-5 días. CADECA fabricante.";
@@ -43,6 +44,15 @@ const faqs = [
     answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador.",
   },
 ];
+
+const mainImg = "/img/catalogo/separadores-carton-corrugado-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Separadores Cartón — vista frontal CDMX" },
+  { src: mainImg, alt: "Separadores Cartón — detalle corrugación" },
+  { src: mainImg, alt: "Separadores Cartón — stack apilado" },
+  { src: mainImg, alt: "Separadores Cartón — contexto uso industrial" },
+  { src: mainImg, alt: "Separadores Cartón — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -83,12 +93,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-lc04-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/separadores-carton-corrugado-cdmx.avif"
-                alt="Separadores cartón corrugado divisiones a la medida CDMX — CADECA CAD-LC-04"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-LC-04 · Familia: Láminas de Cartón Corrugado</p>

@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Láminas Cartón Corrugado Doble BC CDMX | ECT-44 Bases Tarima | CAD-LC-02 | CADECA";
 const description = "Láminas doble corrugado BC CDMX. ECT-44, hasta 120×240cm, bases tarima y refuerzo. Desde 50 pzas, 3-5 días. CADECA fabricante.";
@@ -43,6 +44,15 @@ const faqs = [
     answer:"1) Layer pad entre capas: distribuye peso y aumenta capacidad de apilamiento 30-40%. 2) Top pad en cima de tarima: protege durante flejado y transporte. 3) Slip sheet sustituto de tarima de madera para cargas ligeras con grúa. ECT-44 es el mínimo recomendado para todas estas aplicaciones.",
   },
 ];
+
+const mainImg = "/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Láminas Doble Corrugado — vista frontal CDMX" },
+  { src: mainImg, alt: "Láminas Doble Corrugado — detalle corrugación" },
+  { src: mainImg, alt: "Láminas Doble Corrugado — stack apilado" },
+  { src: mainImg, alt: "Láminas Doble Corrugado — contexto uso industrial" },
+  { src: mainImg, alt: "Láminas Doble Corrugado — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -83,12 +93,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-lc02-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif"
-                alt="Láminas cartón corrugado doble BC ECT-44 CDMX — CADECA CAD-LC-02"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-LC-02 · Familia: Láminas de Cartón Corrugado</p>

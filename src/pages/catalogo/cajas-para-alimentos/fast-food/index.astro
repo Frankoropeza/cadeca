@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Fast Food Antigrasa CDMX | Hamburguesas Wraps | CAD-AL-02 | CADECA";
 const description = "Cajas fast food antigrasa CDMX. Hamburguesas, wraps, nuggets. FDA compliant, desde 100 pzas, 3-5 días. CADECA.";
@@ -43,6 +44,15 @@ const faqs = [
     answer:"Solo tintas base agua sin metales pesados, aprobadas FDA/COFEPRIS. Interior sin impresión. Si el producto tiene contacto directo con cartón sin envase primario, consúltanos.",
   },
 ];
+
+const mainImg = "/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja Fast Food — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja Fast Food — detalle corrugación" },
+  { src: mainImg, alt: "Caja Fast Food — stack apilado" },
+  { src: mainImg, alt: "Caja Fast Food — contexto uso industrial" },
+  { src: mainImg, alt: "Caja Fast Food — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -83,12 +93,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-al02-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif"
-                alt="Cajas fast food antigrasa FDA compliant CDMX — CADECA CAD-AL-02"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AL-02 · Familia: Cajas para Alimentos</p>

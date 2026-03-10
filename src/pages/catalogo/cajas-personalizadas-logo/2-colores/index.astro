@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Cartón Logo 2 Colores CDMX | Flexo ECT-32 | CAD-PL-02 | CADECA";
 const description = "Cajas de cartón con logo 2 colores en CDMX. Impresión flexo 2 tintas pantone, ECT-32, desde 100 piezas, entrega 5-7 días. Logo + texto o 2 colores de marca. CADECA fabricante.";
@@ -44,6 +45,15 @@ const faqs = [
     answer:"Sí. La combinación más económica de 2 colores es Pantone + Negro, ya que el negro es la tinta base del sistema flexo y no requiere placa adicional en muchos casos. Esta combinación es ideal para logos con tipografía negra y un color corporativo de acento. El costo sería similar a 1 color personalizado + negro. Cualquier combinación de 2 Pantones también es posible; solo confirma los códigos Pantone Coated de tu marca al hacer el pedido.",
   },
 ];
+
+const mainImg = "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja Personalizada Logo 2 Colores — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja Personalizada Logo 2 Colores — detalle corrugación" },
+  { src: mainImg, alt: "Caja Personalizada Logo 2 Colores — stack apilado" },
+  { src: mainImg, alt: "Caja Personalizada Logo 2 Colores — contexto uso industrial" },
+  { src: mainImg, alt: "Caja Personalizada Logo 2 Colores — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -84,12 +94,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-pl02-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif"
-                alt="Cajas cartón personalizadas logo 2 colores flexo en CDMX — CADECA CAD-PL-02"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-PL-02 · Familia: Personalizadas con Logo</p>

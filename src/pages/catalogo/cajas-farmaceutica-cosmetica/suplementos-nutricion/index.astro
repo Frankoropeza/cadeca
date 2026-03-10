@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Suplementos y Nutrición Corrugado CDMX | CAD-FC-04 | CADECA";
 const description = "Caja corrugado para suplementos alimenticios y nutrición en CDMX. Flauta B ECT-32, impresión datos nutricionales NOM-051. Vitaminas, proteínas, colágeno. CADECA.";
@@ -66,6 +67,15 @@ const faqs = [
     answer:"Sí, fabricamos <strong>cajas para kits y suscripciones</strong> con divisiones internas para 2-6 productos. Incluyen diseño personalizado exterior e interior para experiencia de unboxing. Son ideales para marcas de suplementos con modelo de suscripción mensual. Pedido mínimo de 200 pzas por diseño.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-suplementos-nutricion-deportiva-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Suplementos y Nutrición — vista frontal CDMX" },
+  { src: mainImg, alt: "Suplementos y Nutrición — detalle corrugación" },
+  { src: mainImg, alt: "Suplementos y Nutrición — stack apilado" },
+  { src: mainImg, alt: "Suplementos y Nutrición — contexto uso industrial" },
+  { src: mainImg, alt: "Suplementos y Nutrición — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -111,13 +121,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-suplementos-nutricion-deportiva-cdmx.avif"
-                alt="Caja de cartón para suplementos y nutrición CDMX — CADECA CAD-FC-04"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

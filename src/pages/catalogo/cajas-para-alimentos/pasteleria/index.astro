@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Pastelería Tartas CDMX | Base Reforzada | Ventana Acetato | CAD-AL-03 | CADECA";
 const description = "Cajas pastelería CDMX. Pay, tarta, cupcakes, gelatinas. Interior blanco, base reforzada, acetato opcional. Desde 100 pzas, 3-5 días. CADECA.";
@@ -43,6 +44,15 @@ const faqs = [
     answer:"Un pastel de 3-4 kg puede hundir una base simple. La base reforzada usa dos capas, duplicando la rigidez. Crítica para tartas con betún fluido, pasteles de varios pisos y gelatinas. Recomendada para pasteles mayores a 2 kg.",
   },
 ];
+
+const mainImg = "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja Pastelería — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja Pastelería — detalle corrugación" },
+  { src: mainImg, alt: "Caja Pastelería — stack apilado" },
+  { src: mainImg, alt: "Caja Pastelería — contexto uso industrial" },
+  { src: mainImg, alt: "Caja Pastelería — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -83,12 +93,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-al03-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-pasteleria-tartas-cdmx.avif"
-                alt="Cajas pastelería tartas base reforzada ventana acetato CDMX — CADECA CAD-AL-03"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AL-03 · Familia: Cajas para Alimentos</p>

@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Automáticas Alta Velocidad CDMX | ±0.5mm Tolerancia | CAD-AM-05 | CADECA";
 const description = "Cajas para líneas de empaque automáticas en CDMX. Tolerancias ±0.5mm, RSC y auto-erect, compatibles con Bosch, IWK, Marchesini. Desde 500 pzas. CADECA fabricante.";
@@ -41,6 +42,15 @@ const faqs = [
     question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?",
     answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos.",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja Automática — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja Automática — detalle corrugación" },
+  { src: mainImg, alt: "Caja Automática — stack apilado" },
+  { src: mainImg, alt: "Caja Automática — contexto uso industrial" },
+  { src: mainImg, alt: "Caja Automática — medidas referencia" },
 ];
 ---
 
@@ -82,12 +92,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-am05-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif"
-                alt="Caja automática alta velocidad línea de empaque en CDMX — CADECA CAD-AM-05"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AM-05 · Familia: Cajas a la Medida</p>

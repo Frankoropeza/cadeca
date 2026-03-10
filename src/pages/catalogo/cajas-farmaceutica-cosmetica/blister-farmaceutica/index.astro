@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Blíster Farmacéutica Flauta E CDMX | CAD-FC-01 | CADECA";
 const description = "Caja corrugado flauta E para blíster farmacéutico en CDMX. ECT-23, impresión regulatoria NOM-072, medidas estándar y a la medida. Fabricante directo CADECA.";
@@ -66,6 +67,15 @@ const faqs = [
     answer:"Usamos <strong>cartón SBS (Solid Bleached Sulfate)</strong> blanqueado sin cloro elemental, con tintas base agua libres de metales pesados. Para contacto indirecto (el medicamento va en blíster dentro de la caja), estos materiales cumplen con las regulaciones de COFEPRIS y FDA para empaque secundario farmacéutico.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-blister-farmaceutica-corrugado-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Blíster Farmacéutica — vista frontal CDMX" },
+  { src: mainImg, alt: "Blíster Farmacéutica — detalle corrugación" },
+  { src: mainImg, alt: "Blíster Farmacéutica — stack apilado" },
+  { src: mainImg, alt: "Blíster Farmacéutica — contexto uso industrial" },
+  { src: mainImg, alt: "Blíster Farmacéutica — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -111,13 +121,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-blister-farmaceutica-corrugado-cdmx.avif"
-                alt="Caja de cartón para blíster farmacéutica flauta E CDMX — CADECA CAD-FC-01"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Cartón Full Color CMYK CDMX | Offset Digital | CAD-PL-03 | CADECA";
 const description = "Cajas de cartón full color CMYK en CDMX. Impresión offset o digital de alta resolución, papel coated blanco, desde 200 piezas, entrega 7-10 días. Para marcas premium. CADECA.";
@@ -40,6 +41,15 @@ const faqs = [
     question:"¿Puedo imprimir fotografías o degradados en la caja?",
     answer:"Sí, con impresión CMYK offset o digital puedes reproducir fotografías, ilustraciones, degradados y cualquier diseño complejo. La clave es usar papel coated blanco como liner exterior (el kraft marrón estándar no permite colores vivos ni blancos). Para mejores resultados, el archivo debe estar en CMYK con perfil ISO Coated V2, resolución mínima 300 dpi para fotografías y todas las fuentes convertidas a curvas o trazados.",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja Full Color CMYK — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja Full Color CMYK — detalle corrugación" },
+  { src: mainImg, alt: "Caja Full Color CMYK — stack apilado" },
+  { src: mainImg, alt: "Caja Full Color CMYK — contexto uso industrial" },
+  { src: mainImg, alt: "Caja Full Color CMYK — medidas referencia" },
 ];
 ---
 
@@ -81,12 +91,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-pl03-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif"
-                alt="Cajas cartón full color CMYK offset digital en CDMX — CADECA CAD-PL-03"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-PL-03 · Familia: Personalizadas con Logo</p>

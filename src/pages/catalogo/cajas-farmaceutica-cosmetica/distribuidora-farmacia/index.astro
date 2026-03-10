@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Distribuidora Farmacia Doble/Triple Pared CDMX | CAD-FC-03 | CADECA";
 const description = "Caja corrugado doble y triple pared ECT-44 a ECT-71 para distribución farmacéutica. Heavy-duty, apilable, cadena de frío. Fabricante directo CDMX — CADECA.";
@@ -70,6 +71,15 @@ const faqs = [
     answer:"Sí, fabricamos <strong>divisiones (celdas) de cartón corrugado</strong> insertables que protegen frascos, ampollas y viales individualmente durante el transporte. Las divisiones se diseñan a la medida del producto, evitando contacto entre unidades. Para ampollas de vidrio, ofrecemos divisiones con mayor número de celdas y refuerzo en las esquinas.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-distribuidora-farmacia-mayoreo-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Distribuidora Farmacia — vista frontal CDMX" },
+  { src: mainImg, alt: "Distribuidora Farmacia — detalle corrugación" },
+  { src: mainImg, alt: "Distribuidora Farmacia — stack apilado" },
+  { src: mainImg, alt: "Distribuidora Farmacia — contexto uso industrial" },
+  { src: mainImg, alt: "Distribuidora Farmacia — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -115,13 +125,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-distribuidora-farmacia-mayoreo-cdmx.avif"
-                alt="Caja de cartón doble y triple pared para distribución farmacéutica CDMX — CADECA CAD-FC-03"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

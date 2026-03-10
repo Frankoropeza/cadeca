@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Mudanza y Archivo con Asas CDMX | CAD-AH-05 | CADECA";
 const description = "Ficha técnica caja mudanza y archivo con asas troqueladas en CDMX. Doble pared BC, ECT-44, dual-purpose. 6 medidas disponibles. Sin mínimo, entrega 24-48 hrs. CADECA fabricante.";
@@ -72,6 +73,15 @@ const faqs = [
     answer:"Para presentaciones en stock <strong>(Chica, Mediana, Grande y Libros/Documentos)</strong>, la entrega es de <strong>24 a 48 horas hábiles</strong> en toda la zona metropolitana de la CDMX. Para pedidos urgentes el mismo día, <strong>consulte disponibilidad por WhatsApp</strong>. La medida <strong>Extra Grande</strong> requiere <strong>48 horas de producción</strong>. Las medidas a la medida se fabrican en <strong>3 a 5 días hábiles</strong>.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-mudanza-archivo-corporativo-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Mudanza y Archivo — vista frontal CDMX" },
+  { src: mainImg, alt: "Mudanza y Archivo — detalle corrugación" },
+  { src: mainImg, alt: "Mudanza y Archivo — stack apilado" },
+  { src: mainImg, alt: "Mudanza y Archivo — contexto uso industrial" },
+  { src: mainImg, alt: "Mudanza y Archivo — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -119,13 +129,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-mudanza-archivo-corporativo-cdmx.avif"
-                alt="Caja mudanza y archivo con asas CAD-AH-05 en cartón doble pared BC CDMX — CADECA"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

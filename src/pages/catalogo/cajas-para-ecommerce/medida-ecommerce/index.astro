@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas E-commerce a la Medida CDMX | CAD-EC-05 | Peso Volumétrico | CADECA";
 const description = "Ficha técnica cajas e-commerce a la medida en CDMX. Cualquier dimensión exacta que minimice peso volumétrico. Diseño CAD gratis, desde 50 pzas, entrega 3-5 días. CADECA.";
@@ -34,6 +35,15 @@ const faqs = [
     question:"¿Cuándo tiene sentido hacer una caja a la medida en lugar de usar medidas estándar?",
     answer:"Tiene sentido cuando: 1) Tu producto tiene dimensiones irregulares y las cajas estándar te generan exceso de peso volumétrico. 2) Vendes más de 200 piezas/mes y el diferencial de costo por envío justifica la inversión en producción personalizada. 3) Tu producto requiere un ajuste exacto para que no se mueva dentro de la caja sin usar relleno adicional. 4) Tu empaque forma parte de la experiencia de marca y necesitas dimensiones precisas.",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Cajas E-commerce a la Medida — vista frontal CDMX" },
+  { src: mainImg, alt: "Cajas E-commerce a la Medida — detalle corrugación" },
+  { src: mainImg, alt: "Cajas E-commerce a la Medida — stack apilado" },
+  { src: mainImg, alt: "Cajas E-commerce a la Medida — contexto uso industrial" },
+  { src: mainImg, alt: "Cajas E-commerce a la Medida — medidas referencia" },
 ];
 ---
 
@@ -75,12 +85,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-ec05-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif"
-                alt="Cajas e-commerce a la medida peso volumétrico optimizado CDMX — CADECA CAD-EC-05"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-EC-05 · Familia: E-commerce</p>

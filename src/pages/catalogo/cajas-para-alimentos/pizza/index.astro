@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas para Pizza Corrugado CDMX | 20 a 45 cm | Food Grade | CAD-AL-01 | CADECA";
 const description = "Cajas pizza en CDMX. 20-45 cm. Liner food-grade, ECT-32, desde 100 pzas, entrega 3-5 días. CADECA fabricante.";
@@ -44,6 +45,15 @@ const faqs = [
     answer:"Blanco: mejor presentación, colores vivos, ideal para cadenas premium. Kraft: más económico, misma higiene food-grade, ideal para pizzerías artesanales. Para impresión: kraft acepta tintas oscuras bien; colores claros requieren liner blanco.",
   },
 ];
+
+const mainImg = "/img/catalogo/cajas-pizza-corrugado-doble-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja para Pizza — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja para Pizza — detalle corrugación" },
+  { src: mainImg, alt: "Caja para Pizza — stack apilado" },
+  { src: mainImg, alt: "Caja para Pizza — contexto uso industrial" },
+  { src: mainImg, alt: "Caja para Pizza — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -84,12 +94,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-al01-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-pizza-corrugado-doble-cdmx.avif"
-                alt="Cajas para pizza corrugado food grade CDMX — CADECA CAD-AL-01"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AL-01 · Familia: Cajas para Alimentos</p>

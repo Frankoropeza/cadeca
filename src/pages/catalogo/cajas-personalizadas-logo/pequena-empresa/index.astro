@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Personalizadas Pequeña Empresa CDMX | Desde 100 Pzas | CAD-PL-05 | CADECA";
 const description = "Cajas de cartón personalizadas para pequeñas empresas en CDMX. Desde 100 piezas, diseño incluido sin costo, 1-2 colores, entrega 5-7 días. Fabricante directo. CADECA.";
@@ -41,6 +42,15 @@ const faqs = [
     question:"¿Puedo cambiar el diseño de mis cajas en el siguiente pedido?",
     answer:"Sí. Cada pedido puede tener un diseño diferente. El costo de cambio de diseño (nuevas placas de impresión) se aplica solo cuando cambia el arte o los colores; si solo cambias la cantidad sin cambiar el diseño, no hay costo adicional de fotopolímero. Recomendamos estandarizar el diseño en los primeros 2-3 pedidos para maximizar la inversión en placas (que se amortizan en 3-4 reórdenes del mismo diseño).",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif";
+const gallery = [
+  { src: mainImg, alt: "Cajas Personalizadas — vista frontal CDMX" },
+  { src: mainImg, alt: "Cajas Personalizadas — detalle corrugación" },
+  { src: mainImg, alt: "Cajas Personalizadas — stack apilado" },
+  { src: mainImg, alt: "Cajas Personalizadas — contexto uso industrial" },
+  { src: mainImg, alt: "Cajas Personalizadas — medidas referencia" },
 ];
 ---
 
@@ -82,12 +92,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-pl05-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif"
-                alt="Cajas cartón personalizadas pequeña empresa desde 100 piezas en CDMX — CADECA CAD-PL-05"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-PL-05 · Familia: Personalizadas con Logo</p>

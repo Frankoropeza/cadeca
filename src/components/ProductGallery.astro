@@ -1,0 +1,195 @@
+---
+/**
+ * ProductGallery — Galería de imágenes para fichas de producto
+ * Props:
+ *   images: Array<{ src: string, alt: string }>  (máx 5)
+ *   mainAlt: string (fallback alt para imagen principal)
+ */
+export interface Props {
+  images: { src: string; alt: string }[];
+  mainAlt?: string;
+}
+const { images, mainAlt = "Imagen de producto CADECA" } = Astro.props;
+const main = images[0];
+const thumbs = images.slice(1);
+---
+
+<div class="pg" data-gallery>
+  <!-- Imagen principal -->
+  <div class="pg__main">
+    <img
+      id="pg-main-img"
+      class="pg__main-img"
+      src={main.src}
+      alt={main.alt || mainAlt}
+      width="900"
+      height="560"
+      loading="eager"
+    />
+    <!-- Badges -->
+    <div class="pg__badges">
+      <span class="pg__badge pg__badge--primary">⚡ Entrega 48 hrs</span>
+      <span class="pg__badge pg__badge--green">✓ Fabricante directo</span>
+    </div>
+  </div>
+
+  <!-- Miniaturas -->
+  {images.length > 1 && (
+    <div class="pg__thumbs" role="list" aria-label="Más imágenes del producto">
+      {images.map((img, i) => (
+        <button
+          class={`pg__thumb${i === 0 ? " pg__thumb--active" : ""}`}
+          data-src={img.src}
+          data-alt={img.alt || mainAlt}
+          data-idx={i}
+          role="listitem"
+          aria-label={`Ver imagen ${i + 1}`}
+          type="button"
+        >
+          <img
+            src={img.src}
+            alt={img.alt || mainAlt}
+            width="160"
+            height="100"
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </div>
+  )}
+</div>
+
+<style>
+/* ── Gallery wrapper ───────────────────────────────────────── */
+.pg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── Main image ────────────────────────────────────────────── */
+.pg__main {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--color-accent, #fff4ed);
+  aspect-ratio: 16 / 10;
+}
+
+.pg__main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.pg__main-img.is-loading {
+  opacity: 0;
+}
+
+/* ── Badges ───────────────────────────────────────────────── */
+.pg__badges {
+  position: absolute;
+  bottom: 0.875rem;
+  left: 0.875rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pg__badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 100px;
+  backdrop-filter: blur(6px);
+}
+
+.pg__badge--primary {
+  background: rgba(224, 88, 0, 0.92);
+  color: #fff;
+}
+
+.pg__badge--green {
+  background: rgba(22, 101, 52, 0.9);
+  color: #fff;
+}
+
+/* ── Thumbnails ───────────────────────────────────────────── */
+.pg__thumbs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.pg__thumbs::-webkit-scrollbar { display: none; }
+
+.pg__thumb {
+  flex: 0 0 calc(20% - 0.4rem);
+  min-width: 64px;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  scroll-snap-align: start;
+  transition: border-color 0.2s, transform 0.15s;
+  aspect-ratio: 16 / 10;
+}
+
+.pg__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.pg__thumb:hover {
+  border-color: var(--color-primary, #e05800);
+  transform: translateY(-1px);
+}
+
+.pg__thumb--active {
+  border-color: var(--color-primary, #e05800);
+  box-shadow: 0 0 0 2px rgba(224, 88, 0, 0.25);
+}
+
+@media (max-width: 480px) {
+  .pg__thumb { flex: 0 0 calc(25% - 0.375rem); }
+}
+</style>
+
+<script>
+  // Minimal vanilla JS — switch main image on thumb click
+  document.querySelectorAll<HTMLElement>("[data-gallery]").forEach((gallery) => {
+    const mainImg = gallery.querySelector<HTMLImageElement>("#pg-main-img");
+    const thumbs  = gallery.querySelectorAll<HTMLButtonElement>(".pg__thumb");
+
+    thumbs.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const src = btn.dataset.src ?? "";
+        const alt = btn.dataset.alt ?? "";
+        if (!mainImg || mainImg.src.endsWith(src)) return;
+
+        mainImg.classList.add("is-loading");
+        const temp = new Image();
+        temp.onload = () => {
+          mainImg.src = src;
+          mainImg.alt = alt;
+          mainImg.classList.remove("is-loading");
+        };
+        temp.src = src;
+
+        thumbs.forEach(t => t.classList.remove("pg__thumb--active"));
+        btn.classList.add("pg__thumb--active");
+      });
+    });
+  });
+</script>

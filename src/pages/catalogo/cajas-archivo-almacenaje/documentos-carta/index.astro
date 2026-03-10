@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Documentos Tamaño Carta CDMX | CAD-AH-03 | CADECA";
 const description = "Ficha técnica caja documentos tamaño carta en CDMX. Flauta B/C, ECT-32, tapa integrada y asas troqueladas. 6 medidas disponibles. Sin mínimo, entrega 24-48 hrs. CADECA fabricante.";
@@ -71,6 +72,15 @@ const faqs = [
     answer:"Sí, son <strong>ideales para mudanzas de archivos</strong> por su tamaño compacto y peso controlado. Con <strong>asas troqueladas y peso máximo de 10-12 kg</strong>, una sola persona puede cargarlas cómodamente. Para mudanzas corporativas con volúmenes grandes, la versión <strong>Master 6 Cajas (45×35×160 cm)</strong> permite transportar 6 cajas carta apiladas en un solo contenedor reforzado con <strong>ECT-44</strong>.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-documentos-carta-despacho-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Documentos Carta — vista frontal CDMX" },
+  { src: mainImg, alt: "Documentos Carta — detalle corrugación" },
+  { src: mainImg, alt: "Documentos Carta — stack apilado" },
+  { src: mainImg, alt: "Documentos Carta — contexto uso industrial" },
+  { src: mainImg, alt: "Documentos Carta — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -118,13 +128,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-documentos-carta-despacho-cdmx.avif"
-                alt="Caja documentos tamaño carta CAD-AH-03 en cartón kraft corrugado CDMX — CADECA"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

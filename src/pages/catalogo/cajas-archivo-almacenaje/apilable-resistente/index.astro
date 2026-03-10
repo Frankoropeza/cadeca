@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Apilable Resistente Triple Pared CDMX | CAD-AH-04 | CADECA";
 const description = "Ficha técnica caja apilable resistente triple pared BCB/BCF en CDMX. ECT-51 y ECT-71, máxima compresión. 6 medidas disponibles. MOQ 50 pzas, entrega 48-72 hrs. CADECA fabricante.";
@@ -71,6 +72,15 @@ const faqs = [
     answer:"Sí. Ofrecemos <strong>esquineros de cartón prensado en L de 50×50×3 mm</strong> como accesorio complementario para maximizar la resistencia de apilamiento. También fabricamos <strong>divisiones internas y separadores</strong> en cartón corrugado para organizar el contenido. Para cargas extremas superiores a 50 kg, recomendamos combinar la caja con un <strong>pallet de cartón corrugado o tarima de madera</strong> certificada.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Apilable Resistente — vista frontal CDMX" },
+  { src: mainImg, alt: "Apilable Resistente — detalle corrugación" },
+  { src: mainImg, alt: "Apilable Resistente — stack apilado" },
+  { src: mainImg, alt: "Apilable Resistente — contexto uso industrial" },
+  { src: mainImg, alt: "Apilable Resistente — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -118,13 +128,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif"
-                alt="Caja apilable resistente triple pared CAD-AH-04 en cartón kraft virgen BCB/BCF CDMX — CADECA"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Triple Corrugado BCB Industrial CDMX | ECT-61 | CAD-AM-04 | CADECA";
 const description = "Cajas triple corrugado BCB a la medida en CDMX. ECT-61+, hasta 100+ kg, para maquinaria industrial y equipos pesados. Desde 25 piezas, entrega 5-7 días. CADECA fabricante.";
@@ -41,6 +42,15 @@ const faqs = [
     question:"¿Cuál es la diferencia entre ECT-61 y ECT-44 en términos prácticos de resistencia?",
     answer:"El ECT (Edge Crush Test) mide la fuerza necesaria para aplastar el corrugado por el borde. ECT-44 resiste 44 lbs por pulgada lineal de borde; ECT-61 resiste 61 lbs. En términos de BCT (Box Compression Test, la resistencia real de la caja completa), un ECT-44 típico da ~500-600 kg de carga estática; un ECT-61 da ~900-1100 kg. Esto significa que el triple corrugado puede soportar el equivalente a 2 cajas de ECT-44 apiladas sin deformarse. Para maquinaria, equipos industriales o exportación marítima, el BCT de ECT-61 es el mínimo recomendado.",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Triple Corrugado BCB — vista frontal CDMX" },
+  { src: mainImg, alt: "Triple Corrugado BCB — detalle corrugación" },
+  { src: mainImg, alt: "Triple Corrugado BCB — stack apilado" },
+  { src: mainImg, alt: "Triple Corrugado BCB — contexto uso industrial" },
+  { src: mainImg, alt: "Triple Corrugado BCB — medidas referencia" },
 ];
 ---
 
@@ -82,12 +92,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-am04-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif"
-                alt="Caja triple corrugado BCB industrial en CDMX — CADECA CAD-AM-04"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AM-04 · Familia: Cajas a la Medida</p>

@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja para Calzado y Zapatos Corrugado CDMX | CAD-TX-01 | CADECA";
 const description = "Ficha técnica caja corrugado para calzado y zapatos en CDMX. Flauta B/C, ECT-32, medidas zapatilla a master 12 pares. Impresión personalizada, MOQ 200 pzas. CADECA fabricante directo.";
@@ -68,6 +69,15 @@ const faqs = [
     answer:"Sí, todas nuestras cajas de calzado son <strong>100 % reciclables y biodegradables</strong>. Están fabricadas con cartón corrugado de fibra reciclada y/o virgen con tintas base agua. Ofrecemos <strong>certificación FSC</strong> bajo pedido para marcas que requieren cadena de custodia verificada. El cartón kraft sin blanquear es la opción más ecológica y la preferida por marcas con compromiso sustentable.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-calzado-zapatos-corrugado-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Calzado y Zapatos — vista frontal CDMX" },
+  { src: mainImg, alt: "Calzado y Zapatos — detalle corrugación" },
+  { src: mainImg, alt: "Calzado y Zapatos — stack apilado" },
+  { src: mainImg, alt: "Calzado y Zapatos — contexto uso industrial" },
+  { src: mainImg, alt: "Calzado y Zapatos — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -114,13 +124,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-calzado-zapatos-corrugado-cdmx.avif"
-                alt="Caja de cartón corrugado para calzado y zapatos CDMX — CADECA CAD-TX-01"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

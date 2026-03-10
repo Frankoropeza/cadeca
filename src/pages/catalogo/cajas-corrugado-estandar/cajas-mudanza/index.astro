@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas de Cartón para Mudanza con Asas CDMX | CAD-CM-01 | CADECA";
 const description = "Ficha técnica cajas de cartón para mudanza con asas reforzadas en CDMX. Doble corrugado ECT-44. Chica, mediana, grande y extra grande. Sin mínimo, stock permanente. CADECA.";
@@ -42,6 +43,15 @@ const faqs = [
     question:"¿Se pueden reutilizar estas cajas varias veces?",
     answer:"Sí. El doble corrugado BC ECT-44 con kraft virgen es significativamente más duradero que el cartón de caja estándar. En condiciones normales (sin exposición a humedad ni cargas excesivas), estas cajas resisten 3 a 5 ciclos de uso completo. Para empresas de mudanzas profesionales, esto reduce significativamente el costo por mudanza comparado con cajas desechables de menor calidad.",
   },
+];
+
+const mainImg = "/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Cajas para Mudanza — vista frontal CDMX" },
+  { src: mainImg, alt: "Cajas para Mudanza — detalle corrugación" },
+  { src: mainImg, alt: "Cajas para Mudanza — stack apilado" },
+  { src: mainImg, alt: "Cajas para Mudanza — contexto uso industrial" },
+  { src: mainImg, alt: "Cajas para Mudanza — medidas referencia" },
 ];
 ---
 
@@ -84,12 +94,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-cm-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif"
-                alt="Caja de cartón para mudanza con asas reforzadas en CDMX — CADECA CAD-CM-01"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-CM-01 · Familia: Corrugado Estándar</p>

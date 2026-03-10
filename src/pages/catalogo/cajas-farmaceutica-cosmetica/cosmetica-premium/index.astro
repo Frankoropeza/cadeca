@@ -2,6 +2,7 @@
 import PageLayout   from "@/layouts/PageLayout.astro";
 import FaqItem      from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title   = "Caja Cosmética Premium Barniz UV Soft Touch CDMX | CAD-FC-02 | CADECA";
 const description = "Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium. Impresión CMYK + Pantone, certificación FSC. Fabricante directo CDMX — CADECA.";
@@ -70,6 +71,15 @@ const faqs = [
     answer:"La <strong>caja plegadiza</strong> es cartón compacto sin flauta (0.3-0.8 mm). La <strong>caja micro flauta E</strong> (1.5 mm) tiene una onda intermedia que aporta mayor protección al impacto y rigidez estructural, manteniendo superficie de impresión premium. Para cosmética con productos de vidrio o fragancias, la micro flauta E ofrece mejor protección que la plegadiza convencional.",
   },
 ];
+
+const mainImg = "/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Cosmética Premium — vista frontal CDMX" },
+  { src: mainImg, alt: "Cosmética Premium — detalle corrugación" },
+  { src: mainImg, alt: "Cosmética Premium — stack apilado" },
+  { src: mainImg, alt: "Cosmética Premium — contexto uso industrial" },
+  { src: mainImg, alt: "Cosmética Premium — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -115,13 +125,8 @@ const faqs = [
       <div class="container">
         <div class="sku-detail__grid">
 
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif"
-                alt="Caja de cartón cosmética premium con barniz UV y acabado soft touch CDMX — CADECA CAD-FC-02"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
 
           <div class="sku-detail__content">

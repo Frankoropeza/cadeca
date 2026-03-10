@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Mercado Envíos Todas las Tallas CDMX | CAD-EC-01 | CADECA";
 const description = "Ficha técnica cajas para Mercado Envíos en CDMX. Tallas Chica, Mediana, Grande y Extra Grande. Doble corrugado ECT-44. Stock permanente, entrega 24 hrs. CADECA fabricante.";
@@ -44,6 +45,15 @@ const faqs = [
     answer:"Sí. Las medidas de Mercado Envíos también son compatibles con las principales paqueterías del mercado: Estafeta, J&T, DHL y Sendex. El doble corrugado ECT-44 cumple los requerimientos de resistencia de todas estas paqueterías. La única restricción es Amazon FBA, que tiene sus propias medidas específicas — para Amazon te recomendamos el producto CAD-EC-02.",
   },
 ];
+
+const mainImg = "/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Cajas Mercado Envíos — vista frontal CDMX" },
+  { src: mainImg, alt: "Cajas Mercado Envíos — detalle corrugación" },
+  { src: mainImg, alt: "Cajas Mercado Envíos — stack apilado" },
+  { src: mainImg, alt: "Cajas Mercado Envíos — contexto uso industrial" },
+  { src: mainImg, alt: "Cajas Mercado Envíos — medidas referencia" },
+];
 ---
 
 <PageLayout
@@ -84,12 +94,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-ec01-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif"
-                alt="Cajas Mercado Envíos todas las tallas en CDMX — CADECA CAD-EC-01"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-EC-01 · Familia: E-commerce</p>

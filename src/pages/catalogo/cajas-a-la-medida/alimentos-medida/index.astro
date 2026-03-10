@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Alimentos FDA COFEPRIS CDMX | CAD-AM-03 | Food Grade | CADECA";
 const description = "Cajas a la medida para alimentos en CDMX. Liner food-grade, apto contacto indirecto, certificación COFEPRIS disponible, ECT-32/44. Desde 100 pzas. CADECA fabricante.";
@@ -41,6 +42,15 @@ const faqs = [
     question:"¿Qué diferencia hay entre contacto directo e indirecto con alimentos?",
     answer:"Contacto directo significa que el alimento toca directamente el material del empaque, como una bolsa de plástico que contiene arroz a granel. Contacto indirecto significa que el alimento tiene un envase primario y la caja de cartón es el empaque secundario o terciario. La caja de cartón en 99% de las aplicaciones es contacto indirecto — el alimento ya viene en bolsa, envase plástico, lata o vidrio. Las exigencias para contacto indirecto son menos estrictas y más económicas que para contacto directo. Si tu producto necesita contacto directo con cartón (algunas pastas, granos), consúltanos para el liner correcto.",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja para Alimentos — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja para Alimentos — detalle corrugación" },
+  { src: mainImg, alt: "Caja para Alimentos — stack apilado" },
+  { src: mainImg, alt: "Caja para Alimentos — contexto uso industrial" },
+  { src: mainImg, alt: "Caja para Alimentos — medidas referencia" },
 ];
 ---
 
@@ -82,12 +92,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-am03-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif"
-                alt="Caja alimentos food grade COFEPRIS en CDMX — CADECA CAD-AM-03"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AM-03 · Familia: Cajas a la Medida</p>

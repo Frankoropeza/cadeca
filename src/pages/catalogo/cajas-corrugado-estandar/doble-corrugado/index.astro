@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Caja Doble Corrugado Pared Doble BC CDMX | CAD-CD-01 | CADECA";
 const description = "Ficha técnica caja doble corrugado pared doble BC en CDMX. ECT-44 y ECT-51. Para electrónica, Amazon FBA, industria media. Sin mínimo, entrega 24-48 hrs. CADECA.";
@@ -44,6 +45,15 @@ const faqs = [
     question:"¿Cuánto más cuesta el doble corrugado vs el simple?",
     answer:"El doble corrugado tiene un costo superior al simple, generalmente entre un 30% y un 50% más por pieza dependiendo de la medida y el volumen. Sin embargo, este costo extra se justifica cuando el producto cuesta más que la caja (electrónica, maquinaria, artículos de lujo) o cuando los rechazos por daños en tránsito generan más pérdidas que el diferencial de precio del empaque.",
   },
+];
+
+const mainImg = "/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Doble Corrugado — vista frontal CDMX" },
+  { src: mainImg, alt: "Doble Corrugado — detalle corrugación" },
+  { src: mainImg, alt: "Doble Corrugado — stack apilado" },
+  { src: mainImg, alt: "Doble Corrugado — contexto uso industrial" },
+  { src: mainImg, alt: "Doble Corrugado — medidas referencia" },
 ];
 ---
 
@@ -91,13 +101,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-cd-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif"
-                alt="Caja de cartón doble corrugado pared doble BC en CDMX — CADECA CAD-CD-01"
-                class="sku-detail__img" width="880" height="560"
-                loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-CD-01 · Familia: Corrugado Estándar</p>

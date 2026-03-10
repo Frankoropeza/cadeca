@@ -2,6 +2,7 @@
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem     from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
 
 const title       = "Cajas Frutas Verduras Ventiladas CDMX | ECT-44 Cámara Fría | CAD-AL-04 | CADECA";
 const description = "Cajas cartón frutas y verduras CDMX. Ventilaciones laterales, ECT-44 cámara fría, FSC disponible. Desde 50 pzas, 3-5 días. CADECA fabricante.";
@@ -40,6 +41,15 @@ const faqs = [
     question:"¿Diferencia entre cámara fría y temperatura ambiente para el cartón?",
     answer:"A temperatura ambiente el ECT-44 retiene 100% de resistencia. En cámara fría (85-95% HR) baja hasta 40-50% sin WR. Con WR básico incluido en CAD-AL-04 se retiene 70-75% del ECT. Para más de 7 días en cámara o congelación se recomienda CAD-AL-05.",
   },
+];
+
+const mainImg = "/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif";
+const gallery = [
+  { src: mainImg, alt: "Caja Frutas y Verduras — vista frontal CDMX" },
+  { src: mainImg, alt: "Caja Frutas y Verduras — detalle corrugación" },
+  { src: mainImg, alt: "Caja Frutas y Verduras — stack apilado" },
+  { src: mainImg, alt: "Caja Frutas y Verduras — contexto uso industrial" },
+  { src: mainImg, alt: "Caja Frutas y Verduras — medidas referencia" },
 ];
 ---
 
@@ -81,12 +91,8 @@ const faqs = [
     <section class="sku-detail" aria-labelledby="detalle-al04-title">
       <div class="container">
         <div class="sku-detail__grid">
-          <div>
-            <div class="sku-detail__img-wrap">
-              <img src="/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif"
-                alt="Cajas frutas verduras ventiladas cámara fría CDMX — CADECA CAD-AL-04"
-                class="sku-detail__img" width="880" height="560" loading="eager" decoding="async" fetchpriority="high" />
-            </div>
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
           </div>
           <div class="sku-detail__content">
             <p class="sku-detail__code">CAD-AL-04 · Familia: Cajas para Alimentos</p>
