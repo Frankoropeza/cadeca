@@ -60,7 +60,7 @@
   --transition-base: 0.25s ease;
 
   /* Layout */
-  --container-max:   1280px;
+  --container-max:   1400px;
   --container-pad:   1.25rem;
 }
 
