@@ -1,0 +1,630 @@
+---
+import PageLayout     from "@/layouts/PageLayout.astro";
+import SectionHeader  from "@/components/SectionHeader.astro";
+import ProductCard    from "@/components/ProductCard.astro";
+import FaqItem        from "@/components/FaqItem.astro";
+import LeadCapture    from "@/components/LeadCapture.astro";
+
+const title       = "Catálogo de Cajas de Cartón CDMX | Corrugado, Personalizadas y Más | CADECA";
+const description = "Catálogo completo de cajas de cartón en CDMX y Estado de México. Corrugado estándar, a la medida, personalizadas con logo, para e-commerce, alimentos y más. Cotiza en minutos.";
+
+const WHATSAPP = "5255XXXXXXXX"; // ← cambiar
+
+// ── Product Schema ────────────────────────────────────
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Catálogo de Cajas de Cartón CADECA",
+  "description": "Catálogo completo de cajas de cartón corrugado en CDMX y Estado de México",
+  "url": "https://cadeca.com.mx/productos",
+  "numberOfItems": 6,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Cajas Corrugado Estándar",      "url": "https://cadeca.com.mx/productos/cajas-corrugado-estandar" },
+    { "@type": "ListItem", "position": 2, "name": "Cajas a la Medida",             "url": "https://cadeca.com.mx/productos/cajas-a-la-medida" },
+    { "@type": "ListItem", "position": 3, "name": "Cajas Personalizadas con Logo", "url": "https://cadeca.com.mx/productos/cajas-personalizadas-logo" },
+    { "@type": "ListItem", "position": 4, "name": "Cajas para E-commerce",         "url": "https://cadeca.com.mx/productos/cajas-para-ecommerce" },
+    { "@type": "ListItem", "position": 5, "name": "Cajas para Alimentos",          "url": "https://cadeca.com.mx/productos/cajas-para-alimentos" },
+    { "@type": "ListItem", "position": 6, "name": "Láminas y Empaques Ecológicos", "url": "https://cadeca.com.mx/productos/laminas-carton-corrugado" },
+  ],
+};
+
+// ── Categorías de navegación rápida ──────────────────
+const categorias = [
+  { label: "Todos",          href: "#catalogo",                          active: true  },
+  { label: "Estándar",       href: "#cajas-estandar",                    active: false },
+  { label: "A la Medida",    href: "#cajas-medida",                      active: false },
+  { label: "Personalizadas", href: "#cajas-personalizadas",              active: false },
+  { label: "E-commerce",     href: "#cajas-ecommerce",                   active: false },
+  { label: "Alimentos",      href: "#cajas-alimentos",                   active: false },
+  { label: "Ecológicas",     href: "#cajas-ecologicas",                  active: false },
+];
+
+// ── Productos con ficha técnica extendida ────────────
+const productosPrincipales = [
+  {
+    title:   "Cajas Corrugado Estándar",
+    desc:    "La solución de empaque más versátil y económica del mercado. Disponibles en simple, doble y triple pared para todo tipo de productos y sectores.",
+    imgSrc:  "/img/productos/cajas-corrugado-estandar.jpg",
+    imgAlt:  "Cajas de cartón corrugado estándar CDMX — simple, doble y triple pared",
+    href:    "/productos/cajas-corrugado-estandar",
+    tags: [
+      { label: "Corrugado simple (pared simple)", href: "/productos/cajas-corrugado-estandar#simple" },
+      { label: "Doble corrugado (pared doble)",   href: "/productos/cajas-doble-corrugado" },
+      { label: "Triple corrugado (pared triple)", href: "/productos/cajas-triple-corrugado" },
+      { label: "Cajas para mudanza",              href: "/productos/cajas-mudanza" },
+    ],
+    btnText: "Ver Cajas Estándar",
+  },
+  {
+    title:   "Cajas a la Medida",
+    desc:    "Fabricamos cajas en cualquier dimensión exacta que tu producto requiera. Sin costo extra por medidas especiales. Diseño CAD incluido desde el primer pedido.",
+    imgSrc:  "/img/productos/cajas-a-la-medida.jpg",
+    imgAlt:  "Cajas de cartón a la medida personalizadas en dimensión exacta CDMX",
+    href:    "/productos/cajas-a-la-medida",
+    tags: [
+      { label: "Cualquier dimensión exacta (largo × ancho × alto)", href: "/productos/cajas-a-la-medida" },
+      { label: "Alta resistencia ECT certificada",                   href: "/productos/cajas-a-la-medida#resistencia" },
+      { label: "Flauta B, C, E y BC disponibles",                   href: "/productos/cajas-a-la-medida#flautas" },
+      { label: "Diseño CAD sin costo",                              href: "/productos/cajas-a-la-medida#diseno" },
+    ],
+    btnText: "Ver Cajas a la Medida",
+  },
+  {
+    title:   "Cajas Personalizadas con Logo",
+    desc:    "Convierte tu empaque en una herramienta de marketing. Impresión full color de alta definición, tintas base agua y acabados premium. Desde 100 piezas.",
+    imgSrc:  "/img/productos/cajas-personalizadas-logo.jpg",
+    imgAlt:  "Cajas de cartón personalizadas con logo impresión full color para marcas CDMX",
+    href:    "/productos/cajas-personalizadas-logo",
+    tags: [
+      { label: "Impresión 1 a 4 colores Pantone",     href: "/productos/cajas-personalizadas-logo" },
+      { label: "Full color digital (CMYK)",            href: "/productos/cajas-impresion-full-color" },
+      { label: "Acabados: mate, brillante y soft touch", href: "/productos/cajas-personalizadas-logo#acabados" },
+      { label: "Tintas base agua ecológicas",          href: "/productos/cajas-personalizadas-logo#ecologicas" },
+    ],
+    btnText: "Ver Cajas Personalizadas",
+  },
+  {
+    title:   "Cajas para E-commerce",
+    desc:    "El partner de empaque de los vendedores online del área metropolitana. Medidas compatibles con todas las paqueterías. Sin mínimo alto, entrega en 24 hrs.",
+    imgSrc:  "/img/productos/cajas-ecommerce-mercado-libre.jpg",
+    imgAlt:  "Cajas de cartón para e-commerce Mercado Libre Amazon MX TikTok Shop CDMX",
+    href:    "/productos/cajas-para-ecommerce",
+    tags: [
+      { label: "Medidas compatibles Mercado Envíos",  href: "/productos/cajas-para-ecommerce" },
+      { label: "Amazon MX (FBA y FBM)",               href: "/productos/cajas-para-ecommerce#amazon" },
+      { label: "DHL, FedEx, Estafeta, J&T",           href: "/productos/cajas-para-ecommerce#paqueterias" },
+      { label: "TikTok Shop y Shopify",               href: "/productos/cajas-para-ecommerce#tiktok" },
+    ],
+    btnText: "Ver Cajas para E-commerce",
+  },
+  {
+    title:   "Cajas para Alimentos",
+    desc:    "Materiales certificados aptos para contacto directo con alimentos. Resistentes a humedad, grasas y temperaturas extremas. Para pizzerías, dark kitchens y exportadores.",
+    imgSrc:  "/img/productos/cajas-carton-alimentos-pizza.jpg",
+    imgAlt:  "Cajas de cartón para alimentos pizza dark kitchen restaurantes exportación CDMX",
+    href:    "/productos/cajas-para-alimentos",
+    tags: [
+      { label: "Cajas para pizza (varios diámetros)",          href: "/productos/cajas-para-alimentos#pizza" },
+      { label: "Dark kitchens y restaurantes",                  href: "/productos/cajas-para-alimentos#dark-kitchen" },
+      { label: "Frutas, hortalizas y flores (exportación)",    href: "/productos/cajas-para-alimentos#frutas" },
+      { label: "Congelados y refrigerados",                    href: "/productos/cajas-para-alimentos#congelados" },
+    ],
+    btnText: "Ver Cajas para Alimentos",
+  },
+  {
+    title:   "Láminas y Empaques Ecológicos",
+    desc:    "Láminas de cartón corrugado por metro para fabricantes y ensambladores. Cajas con cartón reciclado posconsumo y certificación FSC para marcas con metas de sostenibilidad.",
+    imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico.jpg",
+    imgAlt:  "Láminas de cartón corrugado por metro y empaques ecológicos reciclados FSC CDMX",
+    href:    "/productos/laminas-carton-corrugado",
+    tags: [
+      { label: "Láminas corrugado por m² (todas las flautas)", href: "/productos/laminas-carton-corrugado" },
+      { label: "Cartón reciclado posconsumo (PCR)",            href: "/productos/cajas-ecologicas" },
+      { label: "Certificación FSC cadena de custodia",         href: "/productos/cajas-ecologicas#fsc" },
+      { label: "Impresión con tintas base agua",               href: "/productos/cajas-ecologicas#tintas" },
+    ],
+    btnText: "Ver Láminas y Ecológicos",
+  },
+];
+
+// ── FAQ de productos ──────────────────────────────────
+const faqs = [
+  {
+    id:       "p1",
+    question: "¿Cuál es la diferencia entre cartón simple, doble y triple corrugado?",
+    answer:   "El cartón <strong>simple corrugado</strong> (pared simple) tiene una sola capa de flauta entre dos liners. Es el más económico y ligero, ideal para productos de hasta 5 kg. El <strong>doble corrugado</strong> (pared doble) tiene dos capas de flauta y es más resistente, recomendado para 10-25 kg. El <strong>triple corrugado</strong> (pared triple) ofrece la máxima resistencia para productos pesados, industriales o de exportación.",
+  },
+  {
+    id:       "p2",
+    question: "¿Qué medidas estándar manejan para cajas de cartón?",
+    answer:   "Manejamos todas las medidas estándar del mercado (en cm): <strong>Chica:</strong> 30×20×20 · <strong>Mediana:</strong> 40×30×25 · <strong>Grande:</strong> 50×40×30 · <strong>Extra grande:</strong> 60×50×40. También medidas específicas para paqueterías como Mercado Envíos y Amazon. Para cualquier otra dimensión, fabricamos a la medida sin costo extra.",
+  },
+  {
+    id:       "p3",
+    question: "¿Qué es la resistencia ECT y cómo afecta a mi empaque?",
+    answer:   "El <strong>ECT (Edge Crush Test)</strong> mide cuánta fuerza puede soportar la caja antes de deformarse. Una caja con ECT-32 soporta hasta 32 libras por pulgada lineal. Para e-commerce: ECT-32 es suficiente. Para industria y exportación: recomendamos ECT-44 o ECT-51. Nuestro equipo te ayuda a seleccionar el ECT correcto según el peso y condiciones de envío.",
+  },
+  {
+    id:       "p4",
+    question: "¿Puedo pedir cajas de cartón personalizadas en cantidades pequeñas?",
+    answer:   "Sí. Para cajas personalizadas con logo el mínimo es de <strong>100 piezas</strong>. Para cajas a la medida (sin impresión) el mínimo es de <strong>50 piezas</strong>. Para cajas estándar no hay mínimo. Ofrecemos prueba de diseño digital gratuita antes de producir cualquier pedido personalizado.",
+  },
+  {
+    id:       "p5",
+    question: "¿Cuánto tiempo tarda la producción de cajas personalizadas con logo?",
+    answer:   "El proceso completo toma <strong>3 a 5 días hábiles</strong> desde la aprobación del diseño: Día 1 — revisión de arte y prueba digital. Día 2 — aprobación del cliente. Días 3-5 — producción y control de calidad. Días 5-6 — entrega a domicilio. Para pedidos urgentes consulta disponibilidad.",
+  },
+  {
+    id:       "p6",
+    question: "¿Las cajas para alimentos necesitan alguna certificación especial?",
+    answer:   "Sí. Nuestras cajas para alimentos están fabricadas con materiales <strong>aptos para contacto alimentario</strong> según las normas NOM-051 y criterios COFEPRIS. Para exportación también disponemos de materiales con certificación FDA. Las tintas utilizadas son base agua, sin solventes químicos.",
+  },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  schema={productSchema}
+  whatsapp={WHATSAPP}
+>
+
+  <!-- ══════════════════════════════════════
+       HERO DE PRODUCTOS
+  ══════════════════════════════════════ -->
+  <section class="page-hero" aria-labelledby="page-hero-title">
+    <div class="container">
+      <div class="page-hero__inner">
+
+        <div class="page-hero__content">
+          <!-- Breadcrumb -->
+          <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
+              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Productos</li>
+            </ol>
+          </nav>
+
+          <h1 id="page-hero-title" class="page-hero__title">
+            Catálogo de <span>Cajas de Cartón</span> CDMX
+          </h1>
+          <p class="page-hero__desc">
+            Corrugado estándar, a la medida, personalizadas con logo, para e-commerce, alimentos y ecológicas. Fabricación propia, inventario permanente y entrega en 24–48 hrs en CDMX y Estado de México.
+          </p>
+          <div class="page-hero__ctas">
+            <a href="#cotizar" class="btn btn--primary">Solicitar Cotización</a>
+            <a href="#catalogo"  class="btn btn--outline">Ver Catálogo</a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="page-hero__stats">
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">6</span>
+            <span class="page-hero__stat-label">Categorías de producto</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">+50</span>
+            <span class="page-hero__stat-label">Medidas disponibles</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">24 hrs</span>
+            <span class="page-hero__stat-label">Entrega estándar CDMX</span>
+          </div>
+          <div class="page-hero__stat">
+            <span class="page-hero__stat-value">FSC</span>
+            <span class="page-hero__stat-label">Cartón certificado</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FILTROS / NAV CATEGORÍAS
+  ══════════════════════════════════════ -->
+  <div class="cat-nav" role="navigation" aria-label="Filtrar por categoría">
+    <div class="container">
+      <ul class="cat-nav__list">
+        {categorias.map(c => (
+          <li class="cat-nav__item">
+            <a
+              href={c.href}
+              class={`cat-nav__link ${c.active ? "cat-nav__link--active" : ""}`}
+            >
+              {c.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       MAIN
+  ══════════════════════════════════════ -->
+  <main id="contenido-principal" role="main">
+
+    <!-- ── Catálogo completo ── -->
+    <section class="products" id="catalogo" aria-labelledby="catalogo-title">
+      <div class="container">
+
+        <SectionHeader
+          id="catalogo-title"
+          twoCol
+          title="Catálogo Completo: Todos Nuestros Tipos de Cajas de Cartón"
+          subtitle="Selecciona la categoría que mejor se adapta a tu negocio. Asesoría técnica incluida en cada cotización."
+          link={{ text: "Solicitar cotización personalizada", href: "#cotizar" }}
+        >
+          <p>
+            Cada tipo de caja está diseñado para un uso específico. La elección correcta depende del peso del producto, las condiciones de almacenamiento, el método de envío y si requieres personalización visual. Nuestro equipo te asesora sin costo para que tomes la mejor decisión técnica y económica.
+          </p>
+          <p>
+            Trabajamos con cartón kraft y test en gramaturas desde 115 g/m² hasta 200 g/m², con flautas B (3mm), C (4mm), E (1.5mm) y BC (doble flauta). Todo con cartón certificado FSC disponible bajo pedido.
+          </p>
+        </SectionHeader>
+
+        <div class="products__grid">
+          {productosPrincipales.map(p => <ProductCard {...p} />)}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Comparativa técnica ── -->
+    <section class="comparativa" aria-labelledby="comparativa-title">
+      <div class="container">
+        <SectionHeader
+          id="comparativa-title"
+          title="¿Cuál Tipo de Caja Necesitas? Comparativa Técnica"
+          subtitle="Guía rápida para elegir el corrugado correcto según tu producto y uso"
+        />
+
+        <div class="comparativa__table-wrap">
+          <table class="comparativa__table">
+            <thead>
+              <tr>
+                <th>Tipo de Caja</th>
+                <th>Pared</th>
+                <th>Resistencia</th>
+                <th>Peso máx. producto</th>
+                <th>Ideal para</th>
+                <th>Tiempo entrega</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="/productos/cajas-corrugado-estandar">Corrugado Simple</a></td>
+                <td>Simple</td>
+                <td>ECT-23 / ECT-32</td>
+                <td>Hasta 10 kg</td>
+                <td>E-commerce, ropa, accesorios</td>
+                <td>24-48 hrs</td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-doble-corrugado">Doble Corrugado</a></td>
+                <td>Doble</td>
+                <td>ECT-44</td>
+                <td>Hasta 25 kg</td>
+                <td>Electrónica, menaje, industria media</td>
+                <td>24-48 hrs</td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-triple-corrugado">Triple Corrugado</a></td>
+                <td>Triple</td>
+                <td>ECT-51 / ECT-71</td>
+                <td>+25 kg</td>
+                <td>Industria pesada, exportación, nearshoring</td>
+                <td>48-72 hrs</td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-a-la-medida">A la Medida</a></td>
+                <td>A elegir</td>
+                <td>A especificar</td>
+                <td>Sin límite</td>
+                <td>Cualquier producto con dimensión exacta</td>
+                <td>3-5 días</td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-personalizadas-logo">Personalizadas</a></td>
+                <td>A elegir</td>
+                <td>A especificar</td>
+                <td>Sin límite</td>
+                <td>Marcas, retail, unboxing premium</td>
+                <td>3-5 días</td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-para-alimentos">Para Alimentos</a></td>
+                <td>Simple / Doble</td>
+                <td>ECT-32 / ECT-44</td>
+                <td>Hasta 20 kg</td>
+                <td>Pizza, dark kitchen, frutas, congelados</td>
+                <td>24-48 hrs</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="comparativa__note">
+          ¿Tienes dudas sobre qué tipo elegir?
+          <a href="#cotizar">Cotiza gratis</a> y te asesoramos sin compromiso.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ── Por qué CADECA ── -->
+    <section class="trust" aria-labelledby="trust-prod-title">
+      <div class="container">
+
+        <SectionHeader
+          id="trust-prod-title"
+          twoCol
+          title="¿Por Qué Comprar Cajas de Cartón con CADECA?"
+          subtitle="Fabricante local con inventario permanente, asesoría técnica y entrega garantizada"
+        >
+          <p>
+            A diferencia de los distribuidores, en CADECA producimos directamente lo que vendes. Eso se traduce en precios más bajos, mayor control de calidad en cada lote y tiempos de entrega más cortos. Nuestro inventario permanente de cajas estándar garantiza disponibilidad inmediata incluso para pedidos urgentes.
+          </p>
+          <p>
+            Cada cotización incluye asesoría técnica: te ayudamos a seleccionar el tipo de corrugado, la flauta correcta, el gramaje del liner y el tipo de impresión adecuado para tu producto, ruta de envío y presupuesto. Sin costo adicional.
+          </p>
+        </SectionHeader>
+
+        <div class="trust__grid">
+          <div class="trust__item">
+            <h3 class="trust__item-title">📦 Fabricación Propia</h3>
+            <p class="trust__item-desc">Sin intermediarios. Controlamos todo el proceso de producción desde la materia prima hasta el embalaje final. Mejor precio garantizado.</p>
+          </div>
+          <div class="trust__item">
+            <h3 class="trust__item-title">⚡ Inventario Permanente</h3>
+            <p class="trust__item-desc">Stock disponible de los modelos más solicitados. Cajas estándar listas para entrega en 24 hrs sin necesidad de producción adicional.</p>
+          </div>
+          <div class="trust__item">
+            <h3 class="trust__item-title">🔬 Asesoría Técnica</h3>
+            <p class="trust__item-desc">Ingenieros de empaque que analizan tu producto, peso, ruta de envío y presupuesto para recomendarte la solución exacta.</p>
+          </div>
+          <div class="trust__item">
+            <h3 class="trust__item-title">🌿 Cartón Certificado FSC</h3>
+            <p class="trust__item-desc">Disponible en todas las categorías bajo pedido. Certificación de cadena de custodia para marcas con compromisos de sostenibilidad.</p>
+          </div>
+          <div class="trust__item">
+            <h3 class="trust__item-title">🎨 Diseño Sin Costo</h3>
+            <p class="trust__item-desc">Prueba de diseño digital gratuita para todos los pedidos personalizados. No pagas hasta aprobar el arte final.</p>
+          </div>
+          <div class="trust__item">
+            <h3 class="trust__item-title">🚚 Entrega Metropolitana</h3>
+            <p class="trust__item-desc">Rutas establecidas en toda CDMX y municipios del Estado de México. Logística coordinada directa a tu negocio o almacén.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SEO content ── -->
+    <section class="seo-content" aria-labelledby="seo-prod-title">
+      <div class="container">
+        <h2 id="seo-prod-title" class="seo-content__title">
+          Cajas de Cartón Corrugado en CDMX: La Guía Completa para Elegir el Empaque Correcto
+        </h2>
+        <p class="seo-content__text">
+          El mercado de <strong>cajas de cartón corrugado en la Ciudad de México</strong> ofrece múltiples opciones que pueden resultar confusas para quien busca por primera vez un proveedor confiable. En CADECA simplificamos el proceso: te ayudamos a identificar exactamente qué tipo de caja necesitas según el peso de tu producto, cómo lo vas a transportar y si requieres personalización visual. Nuestra experiencia en el sector nos permite recomendar desde <a href="/productos/cajas-corrugado-estandar">cajas corrugado estándar</a> para e-commerce hasta <a href="/productos/cajas-triple-corrugado">triple corrugado industrial</a> para proyectos de nearshoring en parques del Estado de México.
+        </p>
+        <p class="seo-content__text">
+          Para los <strong>vendedores de Mercado Libre, Amazon MX y TikTok Shop</strong>, nuestras <a href="/productos/cajas-para-ecommerce">cajas para e-commerce</a> son el estándar de la industria: medidas precisas compatibles con las guías de paquetería, corrugado de doble pared para protección en tránsito y precios de mayoreo accesibles desde 50 piezas. Para quienes necesitan packaging que refuerce su imagen de marca, las <a href="/productos/cajas-personalizadas-logo">cajas personalizadas con logo</a> ofrecen impresión full color, tintas base agua y acabados premium desde 100 piezas con diseño gratuito incluido.
+        </p>
+        <p class="seo-content__text">
+          El sector alimentario en CDMX y Estado de México tiene requerimientos específicos que atendemos con nuestra línea de <a href="/productos/cajas-para-alimentos">cajas para alimentos</a>: materiales aptos para contacto alimentario según criterios COFEPRIS, resistencia a humedad y grasas, y formatos especiales para pizzas, flores de exportación y productos congelados. Y para empresas con metas de sostenibilidad, toda nuestra línea puede producirse con <strong>cartón reciclado posconsumo y certificación FSC</strong> a solicitud. <a href="#cotizar">Cotiza hoy</a> — sin mínimo en estándar, sin compromiso y con respuesta en menos de 2 horas.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="faq" aria-labelledby="faq-prod-title">
+      <div class="container">
+        <SectionHeader
+          id="faq-prod-title"
+          twoCol
+          title="Preguntas Frecuentes sobre Nuestros Productos"
+          subtitle="Guía técnica rápida sobre tipos de corrugado, medidas, resistencias y procesos de personalización"
+        >
+          <p>
+            Conocer las especificaciones técnicas del cartón corrugado te permite tomar mejores decisiones de compra y evitar sobre-costos por usar un empaque inadecuado para tu producto.
+          </p>
+          <p>
+            Si después de leer estas respuestas aún tienes dudas, nuestro equipo técnico resuelve consultas específicas por WhatsApp en tiempo real.
+          </p>
+        </SectionHeader>
+
+        <div class="faq__list">
+          {faqs.map(f => <FaqItem {...f} />)}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lead Capture -->
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tu tipo de caja ideal en minutos" />
+
+</PageLayout>
+
+<style>
+/* ── Page Hero ────────────────────────────── */
+.page-hero {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+  padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+  color: #fff;
+}
+.page-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+@media (min-width: 1024px) {
+  .page-hero__inner {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--spacing-3xl);
+  }
+}
+
+/* Breadcrumb */
+.breadcrumb { margin-bottom: var(--spacing-md); }
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumb__item { font-size: var(--font-size-xs); color: rgba(255,255,255,0.55); }
+.breadcrumb__item::after { content: "/"; margin-left: 0.5rem; }
+.breadcrumb__item:last-child::after { display: none; }
+.breadcrumb__link { color: rgba(255,255,255,0.7); transition: color var(--transition-fast); }
+.breadcrumb__link:hover { color: var(--color-primary-light); }
+.breadcrumb__item--active { color: rgba(255,255,255,0.9); }
+
+.page-hero__title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: var(--line-height-tight);
+  color: #fff;
+  margin-bottom: var(--spacing-md);
+}
+.page-hero__title span { color: var(--color-primary-light); }
+.page-hero__desc {
+  font-size: var(--font-size-lg);
+  color: rgba(255,255,255,0.8);
+  line-height: var(--line-height-relaxed);
+  max-width: 640px;
+  margin-bottom: var(--spacing-xl);
+}
+.page-hero__ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.page-hero__ctas .btn--outline {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+.page-hero__ctas .btn--outline:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #fff;
+}
+
+/* Stats */
+.page-hero__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  flex-shrink: 0;
+}
+@media (min-width: 640px) { .page-hero__stats { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1024px) { .page-hero__stats { grid-template-columns: repeat(2, 1fr); min-width: 280px; } }
+
+.page-hero__stat {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: background var(--transition-fast);
+}
+.page-hero__stat:hover { background: rgba(255,255,255,0.13); }
+.page-hero__stat-value {
+  display: block;
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-primary-light);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.page-hero__stat-label {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+/* ── Cat Nav ──────────────────────────────── */
+.cat-nav {
+  background: var(--color-white);
+  border-bottom: 2px solid var(--color-border);
+  position: sticky;
+  top: 72px; /* height del header */
+  z-index: 100;
+}
+.cat-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0.75rem 0;
+}
+.cat-nav__list::-webkit-scrollbar { display: none; }
+.cat-nav__link {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-light);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  border: 1.5px solid transparent;
+}
+.cat-nav__link:hover { color: var(--color-primary); background: var(--color-accent); }
+.cat-nav__link--active {
+  color: var(--color-primary);
+  background: var(--color-accent);
+  border-color: var(--color-primary);
+}
+
+/* ── Comparativa Table ─────────────────────── */
+.comparativa { padding: var(--spacing-3xl) 0; background: var(--color-white); }
+.comparativa__table-wrap { overflow-x: auto; margin-top: var(--spacing-xl); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); }
+.comparativa__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  min-width: 700px;
+}
+.comparativa__table thead {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.comparativa__table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.comparativa__table td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  vertical-align: middle;
+}
+.comparativa__table td a { color: var(--color-primary); font-weight: 600; }
+.comparativa__table td a:hover { text-decoration: underline; }
+.comparativa__table tbody tr:last-child td { border-bottom: none; }
+.comparativa__table tbody tr:hover { background: var(--color-accent); }
+.comparativa__table tbody tr:nth-child(even) { background: #FAFAFA; }
+.comparativa__table tbody tr:nth-child(even):hover { background: var(--color-accent); }
+
+.comparativa__note {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+.comparativa__note a { color: var(--color-primary); font-weight: 700; }
+</style>
