@@ -3,9 +3,11 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://cadeca.com.mx", // ← cambiar al dominio real
+  site: "https://cajas-de-carton.com",
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      filter: (page) => page !== undefined,
+    }),
   ],
 });
