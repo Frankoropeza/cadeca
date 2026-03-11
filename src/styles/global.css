@@ -2023,3 +2023,64 @@ pre, code {
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+/* ======================================
+   cat-blog-links — Sección "Del Blog" en páginas de categoría
+   ====================================== */
+.cat-blog-links {
+  background: var(--color-accent);
+  padding: var(--spacing-2xl) 0;
+  border-top: 2px solid var(--color-border);
+}
+.cat-blog-links__title {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin: 0 0 0.5rem;
+}
+.cat-blog-links__subtitle {
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-lg);
+  font-size: 0.95rem;
+}
+.cat-blog-links__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+.cat-blog-links__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: #fff;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.cat-blog-links__item:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+.cat-blog-links__arrow {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.cat-blog-links__more {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.cat-blog-links__more:hover {
+  text-decoration: underline;
+}
