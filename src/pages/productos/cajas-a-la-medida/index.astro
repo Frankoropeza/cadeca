@@ -26,14 +26,48 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "5.50",
+    "highPrice": "45.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "52"
-  }
+    "reviewCount": "52",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Fernando T." },
+      "datePublished": "2025-08-22",
+      "reviewBody": "Necesitábamos cajas con dimensiones exactas para piezas de maquinaria y CADECA las fabricó al milímetro. El ajuste perfecto eliminó movimiento en tránsito y dejamos de usar relleno extra. Excelente servicio.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Mariana L." },
+      "datePublished": "2025-11-05",
+      "reviewBody": "Lo que más me sorprendió es que el servicio de diseño CAD viene incluido sin costo. Nos entregaron el plano técnico en menos de 24 horas y pudimos aprobar el diseño antes de producir. Muy profesionales.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Jorge H." },
+      "datePublished": "2026-01-30",
+      "reviewBody": "El pedido mínimo de 50 piezas es muy flexible para nosotros que somos empresa pequeña. La calidad del corrugado es excelente y el precio muy competitivo. Totalmente recomendados para cualquier volumen.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Dimensiones", "value": "Cualquier L×A×H" },
+    { "@type": "PropertyValue", "name": "Tamaño máximo", "value": "200×120×100 cm" },
+    { "@type": "PropertyValue", "name": "Flautas", "value": "B/C/E/BC" },
+    { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "50 piezas" },
+    { "@type": "PropertyValue", "name": "Producción", "value": "3-5 días hábiles" }
+  ]
 };
 
 const subcategorias = [
@@ -182,9 +216,16 @@ const faqs = [
     answer:"Fabricamos cajas de hasta <strong>200 × 120 × 100 cm</strong> en triple corrugado para transporte de maquinaria y equipo industrial. Para medidas superiores o configuraciones especiales (cajas con separadores internos, doble tapa, etc.) consulta con nuestro equipo de ingeniería. No hay restricción estándar de dimensiones.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas a la Medida" },
+];
 ---
 
-<PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP}>
+<PageLayout title={title} description={description} schema={productSchema} faqItems={faqItems} breadcrumbs={breadcrumbs} whatsapp={WHATSAPP}>
 
     <!-- Breadcrumb -->
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">

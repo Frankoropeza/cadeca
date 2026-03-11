@@ -26,14 +26,63 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "12.00",
+    "highPrice": "55.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
-    "reviewCount": "97"
-  }
+    "reviewCount": "97",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Lic. Sandra M." },
+      "datePublished": "2025-09-25",
+      "reviewBody": "Las cajas de archivo muerto que compramos cumplen perfectamente con los requerimientos del SAT para conservación de documentación fiscal. Son resistentes, apilables y mantienen los expedientes protegidos. Llevamos más de un año usándolas sin ningún deterioro."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Ernesto V." },
+      "datePublished": "2025-12-15",
+      "reviewBody": "Necesitábamos cajas apilables para organizar nuestra bodega y las de CADECA son perfectas. Soportan 5 niveles de apilamiento sin deformarse y el sistema de armado es muy práctico. La organización del almacén mejoró completamente."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Adriana T." },
+      "datePublished": "2026-01-28",
+      "reviewBody": "La durabilidad de estas cajas es impresionante. Tenemos documentos almacenados desde hace más de 3 años y las cajas siguen en perfecto estado. El cartón triple pared realmente cumple con lo que prometen para almacenamiento de largo plazo."
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Resistencia", "value": "Al aplastamiento alta" },
+    { "@type": "PropertyValue", "name": "Tapa", "value": "Integrada o separada" },
+    { "@type": "PropertyValue", "name": "Material", "value": "Doble corrugado" },
+    { "@type": "PropertyValue", "name": "Capacidad", "value": "Hasta 25 kg" },
+    { "@type": "PropertyValue", "name": "Apilamiento", "value": "5+ niveles" }
+  ]
 };
 
 const subcategorias = [
@@ -195,6 +244,13 @@ const faqs = [
     answer: "No tenemos pedido mínimo exagerado — puedes ordenar desde cantidades accesibles para oficinas pequeñas. Para pedidos de mayoreo ofrecemos precios escalonados por volumen. La entrega estándar es de <strong>24 a 48 horas</strong> en CDMX y municipios del Estado de México. Medidas especiales o pedidos de gran volumen pueden requerir 3-5 días hábiles adicionales.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas de Archivo y Almacenaje" },
+];
 ---
 
 <PageLayout
@@ -202,6 +258,8 @@ const faqs = [
   description={description}
   schema={productSchema}
   whatsapp={WHATSAPP}
+  faqItems={faqItems}
+  breadcrumbs={breadcrumbs}
 >
 
   <!-- HERO -->

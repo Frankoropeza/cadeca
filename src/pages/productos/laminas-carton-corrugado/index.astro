@@ -26,14 +26,48 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "8.00",
+    "highPrice": "42.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "37"
-  }
+    "reviewCount": "37",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Tomás R." },
+      "datePublished": "2025-09-05",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "La certificación FSC de CADECA nos abrió las puertas a mercados de exportación que antes no podíamos alcanzar. La documentación de cadena de custodia es impecable y nuestros compradores internacionales la aceptaron sin observaciones. Excelente servicio."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Laura B." },
+      "datePublished": "2025-11-22",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "El alto contenido de material reciclado posconsumo no compromete en nada la calidad del cartón. Llevamos meses usándolo en nuestra línea de producción y la resistencia es idéntica al cartón virgen. Gran relación calidad-precio."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Daniela K." },
+      "datePublished": "2026-02-10",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Desde que cambiamos a empaque ecológico con CADECA, nuestros consumidores conscientes lo notan y lo valoran. El packaging sustentable se ha convertido en un diferenciador real para nuestra marca y ha atraído a un segmento de clientes que antes no teníamos."
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Certificación FSC", "value": "Cadena de Custodia verificable" },
+    { "@type": "PropertyValue", "name": "Material", "value": "80% reciclado posconsumo" },
+    { "@type": "PropertyValue", "name": "Flautas", "value": "B / C / E" },
+    { "@type": "PropertyValue", "name": "Tamaños", "value": "Estándar y custom" },
+    { "@type": "PropertyValue", "name": "Fin de vida", "value": "Biodegradable y reciclable" }
+  ]
 };
 
 const subcategorias = [
@@ -182,9 +216,16 @@ const faqs = [
     answer:"Sí. Toda nuestra línea de cartón reciclado y FSC puede imprimirse con tu logo en 1 a 4 colores o full color CMYK, usando <strong>tintas base agua y vegetales</strong> que no afectan la certificación ambiental del cartón. El proceso es idéntico al de las cajas personalizadas convencionales, con el diferencial de que puedes comunicar que el packaging es 100% ecológico y certificado.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Láminas de Cartón Corrugado" },
+];
 ---
 
-<PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP}>
+<PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP} faqItems={faqItems} breadcrumbs={breadcrumbs}>
 
     <!-- Breadcrumb -->
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">

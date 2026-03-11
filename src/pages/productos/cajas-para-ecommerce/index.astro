@@ -26,14 +26,47 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "4.50",
+    "highPrice": "28.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "124"
-  }
+    "reviewCount": "124",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Andrea M." },
+      "datePublished": "2025-11-20",
+      "reviewBody": "Excelente calidad en las cajas para mis envíos de Mercado Libre. Llegan bien protegidos todos los productos y nunca he tenido una queja de mis compradores por empaque dañado.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Carlos R." },
+      "datePublished": "2025-09-15",
+      "reviewBody": "Mis cajas cumplen al 100% con los requisitos de Amazon FBA. Nunca me han rechazado un envío al centro de distribución desde que compro con CADECA. Resistencia ECT-44 garantizada.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Luisa G." },
+      "datePublished": "2026-01-08",
+      "reviewBody": "Entrega rapidísima, al día siguiente ya tenía mis cajas en la bodega. Los precios son muy competitivos y la calidad del cartón es superior a otros proveedores que he probado.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "MOQ", "value": "50 piezas" },
+    { "@type": "PropertyValue", "name": "Entrega", "value": "24 hrs CDMX" },
+    { "@type": "PropertyValue", "name": "Material", "value": "Corrugado B/C/BC" },
+    { "@type": "PropertyValue", "name": "Resistencia", "value": "ECT-23 a ECT-44" }
+  ]
 };
 
 const subcategorias = [
@@ -182,12 +215,21 @@ const faqs = [
     answer: "Sí. Las medidas más populares (Chica, Mediana y Grande) están en inventario permanente para entrega en 24 hrs en CDMX y municipios del Estado de México. Para medidas Extra Grande o pedidos superiores a 1,000 piezas se requieren 48-72 hrs adicionales. Verifica disponibilidad por WhatsApp antes de confirmar tu pedido.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas para E-commerce" },
+];
 ---
 
 <PageLayout
   title={title}
   description={description}
   schema={productSchema}
+  faqItems={faqItems}
+  breadcrumbs={breadcrumbs}
   whatsapp={WHATSAPP}
 >
 

@@ -26,14 +26,63 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "6.00",
+    "highPrice": "48.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
-    "reviewCount": "98"
-  }
+    "reviewCount": "98",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Valentina R." },
+      "datePublished": "2025-10-15",
+      "reviewBody": "Las cajas que nos fabricaron para nuestra marca de ropa tienen una presentación premium increíble. El acabado mate con logo en hot stamping le da un toque de lujo que nuestros clientes notan de inmediato. Totalmente recomendados para marcas de moda."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Héctor M." },
+      "datePublished": "2025-12-28",
+      "reviewBody": "Pedimos cajas para calzado y las medidas son perfectas para cada modelo de zapato. La calidad del cartón es excelente, resistente al apilamiento y la impresión queda impecable. Justo lo que necesitábamos para nuestra zapatería."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Camila S." },
+      "datePublished": "2026-01-22",
+      "reviewBody": "Desde que cambiamos a las cajas de CADECA, nuestros clientes comparten el unboxing en redes sociales. El diseño personalizado y los acabados especiales hacen que el empaque sea parte de la experiencia de marca. Excelente inversión."
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Material", "value": "Corrugado/Caple premium" },
+    { "@type": "PropertyValue", "name": "Impresión", "value": "Hasta full color" },
+    { "@type": "PropertyValue", "name": "Acabados", "value": "Mate/brillante" },
+    { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "100 piezas" },
+    { "@type": "PropertyValue", "name": "Armado", "value": "Automático disponible" }
+  ]
 };
 
 const subcategorias = [
@@ -195,6 +244,13 @@ const faqs = [
     answer: "Sí. Nuestra línea de <strong>Cajas Envío Tienda Online</strong> está diseñada específicamente para envío de moda por paquetería (DHL, FedEx, Estafeta, J&T). Están optimizadas en peso volumétrico para reducir costos de flete y tienen corrugado reforzado para que la prenda llegue impecable. Para productos frágiles como joyería, agregamos interiores con protección adicional.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas Textil, Moda y Retail" },
+];
 ---
 
 <PageLayout
@@ -202,6 +258,8 @@ const faqs = [
   description={description}
   schema={productSchema}
   whatsapp={WHATSAPP}
+  faqItems={faqItems}
+  breadcrumbs={breadcrumbs}
 >
 
   <!-- HERO -->

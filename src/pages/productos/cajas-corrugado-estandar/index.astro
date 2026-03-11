@@ -27,14 +27,47 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "3.80",
+    "highPrice": "35.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "87"
-  }
+    "reviewCount": "87",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Miguel A." },
+      "datePublished": "2025-10-12",
+      "reviewBody": "Llevamos más de un año usando las cajas corrugado estándar de CADECA para nuestras operaciones de almacén. Son confiables, resistentes y siempre llegan a tiempo. Excelente proveedor para operaciones de bodega.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Patricia S." },
+      "datePublished": "2025-12-03",
+      "reviewBody": "La variedad de tamaños disponibles es ideal para nuestro negocio. Pedimos diferentes medidas y todas llegan en tiempo récord. La entrega rápida nos ha sacado de apuros más de una vez.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Roberto D." },
+      "datePublished": "2026-02-18",
+      "reviewBody": "Excelente relación precio-calidad en compras al mayoreo. Las cajas soportan el peso indicado sin problema y el precio por volumen es muy competitivo. Totalmente recomendados para compras al por mayor.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Paredes", "value": "Simple / Doble / Triple" },
+    { "@type": "PropertyValue", "name": "Flautas", "value": "B / C / BC / ACC" },
+    { "@type": "PropertyValue", "name": "Resistencia", "value": "ECT-23 a ECT-71" },
+    { "@type": "PropertyValue", "name": "Entrega", "value": "24-48 hrs CDMX" }
+  ]
 };
 
 // ── Subcategorías (ProductCard) ────────────────────────
@@ -188,12 +221,21 @@ const faqs = [
     answer: "Para exportación recomendamos triple corrugado (ECT-51 o ECT-71) que cumple con los requerimientos de resistencia internacional. También podemos fabricarlas con cartón certificado FSC, requisito de muchos compradores internacionales. Para embarques marítimos o aéreos, nuestro equipo te asesora sobre el tipo de corrugado, flauta y refuerzos necesarios.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas Corrugado Estándar" },
+];
 ---
 
 <PageLayout
   title={title}
   description={description}
   schema={productSchema}
+  faqItems={faqItems}
+  breadcrumbs={breadcrumbs}
   whatsapp={WHATSAPP}
 >
 

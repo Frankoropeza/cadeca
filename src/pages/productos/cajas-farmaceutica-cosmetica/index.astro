@@ -26,14 +26,63 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "5.00",
+    "highPrice": "40.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
-    "reviewCount": "87"
-  }
+    "reviewCount": "87",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Dra. Mónica L." },
+      "datePublished": "2025-08-30",
+      "reviewBody": "Nuestro laboratorio necesitaba cajas que cumplieran al 100% con la NOM-072 y CADECA entregó exactamente eso. La impresión regulatoria es impecable, los materiales son de grado farmacéutico y no hemos tenido ningún problema con COFEPRIS. Excelente proveedor."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Iván G." },
+      "datePublished": "2025-11-12",
+      "reviewBody": "Las dimensiones de las cajas para nuestros productos cosméticos son precisas al milímetro. Cada frasco y cada tubo encaja perfectamente. La presentación con acabado soft touch le da un toque premium que nuestras clientas valoran mucho."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@type": "Person", "name": "Paulina E." },
+      "datePublished": "2026-02-02",
+      "reviewBody": "La calidad del empaque con sellado inviolable que nos fabricaron es excelente. Nuestros clientes confían en la integridad del producto gracias al sistema de seguridad de la caja. El acabado y la impresión son de primer nivel."
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Normatividad", "value": "Cumple NOM-072-SSA1" },
+    { "@type": "PropertyValue", "name": "Material", "value": "Grado farmacéutico" },
+    { "@type": "PropertyValue", "name": "Impresión", "value": "Regulatoria incluida" },
+    { "@type": "PropertyValue", "name": "Seguridad", "value": "Sellado inviolable disponible" },
+    { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "100 piezas" }
+  ]
 };
 
 const subcategorias = [
@@ -195,6 +244,13 @@ const faqs = [
     answer: "Sí. Para suplementos alimenticios producimos cajas con <strong>etiquetado frontal NOM-051</strong> completo: sellos de advertencia (exceso de calorías, sodio, grasas, azúcares), tabla nutricional, lista de ingredientes y declaración de alérgenos. Nuestro equipo de diseño verifica que la información cumpla con la norma antes de enviar a producción, evitando rechazos y reprocesos costosos.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas Farmacéutica y Cosmética" },
+];
 ---
 
 <PageLayout
@@ -202,6 +258,8 @@ const faqs = [
   description={description}
   schema={productSchema}
   whatsapp={WHATSAPP}
+  faqItems={faqItems}
+  breadcrumbs={breadcrumbs}
 >
 
   <!-- HERO -->

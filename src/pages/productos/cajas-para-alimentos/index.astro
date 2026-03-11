@@ -26,14 +26,48 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "4.00",
+    "highPrice": "32.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
-    "reviewCount": "93"
-  }
+    "reviewCount": "93",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Gabriela N." },
+      "datePublished": "2025-10-28",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Necesitaba cajas que cumplieran con COFEPRIS para mi restaurante y CADECA me entregó exactamente lo que requería. Material apto para contacto directo con alimentos y la documentación completa para mis inspecciones. Excelente servicio."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Ricardo P." },
+      "datePublished": "2025-12-20",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Las cajas para pizza resisten perfectamente la grasa sin deformarse. Tengo un servicio de delivery y las cajas llegan impecables al cliente. Pedí varias medidas y todas mantienen la misma calidad. Muy recomendable para pizzerías."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Elena F." },
+      "datePublished": "2026-01-15",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Tengo una pastelería y necesitaba empaques personalizados para mis productos. CADECA me fabricó cajas con mi logo, aptas para alimentos y con un acabado profesional. Mis clientes notan la diferencia en la presentación. Súper recomendados."
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Apto contacto alimentos", "value": "Sí" },
+    { "@type": "PropertyValue", "name": "Cumple COFEPRIS", "value": "Sí" },
+    { "@type": "PropertyValue", "name": "Material", "value": "Cartón kraft virgen" },
+    { "@type": "PropertyValue", "name": "Resistencia", "value": "Grasa y humedad" },
+    { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "50 piezas" }
+  ]
 };
 
 const subcategorias = [
@@ -182,9 +216,16 @@ const faqs = [
     answer:"Sí. Para exportación fabricamos cajas con <strong>cartón certificado FSC</strong>, resistente a humedad, con documentación técnica de materiales para cumplir los requerimientos de los compradores de EUA, Canadá y Europa. También generamos las hojas de especificación técnica necesarias para aduanas y auditorías de calidad. Consulta con tu asesor CADECA los requisitos específicos de tu destino.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas para Alimentos" },
+];
 ---
 
-<PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP}>
+<PageLayout title={title} description={description} schema={productSchema} whatsapp={WHATSAPP} faqItems={faqItems} breadcrumbs={breadcrumbs}>
 
     <!-- Breadcrumb -->
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">

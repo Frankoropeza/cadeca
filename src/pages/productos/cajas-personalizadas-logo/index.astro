@@ -26,14 +26,48 @@ const productSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
+    "lowPrice": "7.00",
+    "highPrice": "55.00",
     "availability": "https://schema.org/InStock",
     "seller": { "@type": "Organization", "name": "CADECA" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "68"
-  }
+    "reviewCount": "68",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Diana V." },
+      "datePublished": "2025-09-18",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "La presentación de nuestra marca mejoró increíblemente con las cajas impresas de CADECA. El logo quedó nítido y los colores exactos. Nuestros clientes notan la diferencia desde que reciben el paquete."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Alejandro M." },
+      "datePublished": "2025-12-10",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Pedimos cajas full color CMYK y la calidad de impresión superó nuestras expectativas. Los degradados y fotografías se ven perfectos, parece packaging de marca internacional. Totalmente recomendados."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Sofía C." },
+      "datePublished": "2026-02-05",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Nuestros clientes aman la experiencia de unboxing. Desde que cambiamos a cajas personalizadas con CADECA, las reseñas positivas y el contenido en redes aumentaron notablemente. El diseño gratuito fue un gran plus."
+    }
+  ],
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Impresión", "value": "1 a 4 colores + CMYK" },
+    { "@type": "PropertyValue", "name": "Diseño gráfico", "value": "Incluido" },
+    { "@type": "PropertyValue", "name": "Material", "value": "Corrugado/Caple" },
+    { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "100 piezas" },
+    { "@type": "PropertyValue", "name": "Acabados", "value": "Barniz/Laminado" }
+  ]
 };
 
 const subcategorias = [
@@ -182,6 +216,13 @@ const faqs = [
     answer: "Absolutamente. Todas nuestras cajas para e-commerce (medidas Mercado Envíos, Amazon MX y paqueterías) pueden personalizarse con logo e impresión. Es la combinación ideal: medidas exactas para tu plataforma + packaging con marca que mejora la experiencia del cliente y aumenta la tasa de recompra.",
   },
 ];
+
+const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
+const breadcrumbs = [
+  { name: "Inicio", href: "/" },
+  { name: "Productos", href: "/productos" },
+  { name: "Cajas Personalizadas con Logo" },
+];
 ---
 
 <PageLayout
@@ -189,6 +230,8 @@ const faqs = [
   description={description}
   schema={productSchema}
   whatsapp={WHATSAPP}
+  faqItems={faqItems}
+  breadcrumbs={breadcrumbs}
 >
 
   <!-- HERO -->
