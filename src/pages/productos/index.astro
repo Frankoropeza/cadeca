@@ -15,15 +15,18 @@ const productSchema = {
   "@type": "ItemList",
   "name": "Catálogo de Cajas de Cartón CADECA",
   "description": "Catálogo completo de cajas de cartón corrugado en CDMX y Estado de México",
-  "url": "https://cadeca.com.mx/productos",
-  "numberOfItems": 6,
+  "url": "https://cajas-de-carton.com/productos",
+  "numberOfItems": 9,
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Cajas Corrugado Estándar",      "url": "https://cadeca.com.mx/productos/cajas-corrugado-estandar" },
-    { "@type": "ListItem", "position": 2, "name": "Cajas a la Medida",             "url": "https://cadeca.com.mx/productos/cajas-a-la-medida" },
-    { "@type": "ListItem", "position": 3, "name": "Cajas Personalizadas con Logo", "url": "https://cadeca.com.mx/productos/cajas-personalizadas-logo" },
-    { "@type": "ListItem", "position": 4, "name": "Cajas para E-commerce",         "url": "https://cadeca.com.mx/productos/cajas-para-ecommerce" },
-    { "@type": "ListItem", "position": 5, "name": "Cajas para Alimentos",          "url": "https://cadeca.com.mx/productos/cajas-para-alimentos" },
-    { "@type": "ListItem", "position": 6, "name": "Láminas y Empaques Ecológicos", "url": "https://cadeca.com.mx/productos/laminas-carton-corrugado" },
+    { "@type": "ListItem", "position": 1, "name": "Cajas Corrugado Estándar",              "url": "https://cajas-de-carton.com/productos/cajas-corrugado-estandar" },
+    { "@type": "ListItem", "position": 2, "name": "Cajas a la Medida",                     "url": "https://cajas-de-carton.com/productos/cajas-a-la-medida" },
+    { "@type": "ListItem", "position": 3, "name": "Cajas Personalizadas con Logo",         "url": "https://cajas-de-carton.com/productos/cajas-personalizadas-logo" },
+    { "@type": "ListItem", "position": 4, "name": "Cajas para E-commerce",                 "url": "https://cajas-de-carton.com/productos/cajas-para-ecommerce" },
+    { "@type": "ListItem", "position": 5, "name": "Cajas para Alimentos",                  "url": "https://cajas-de-carton.com/productos/cajas-para-alimentos" },
+    { "@type": "ListItem", "position": 6, "name": "Láminas y Empaques Ecológicos",         "url": "https://cajas-de-carton.com/productos/laminas-carton-corrugado" },
+    { "@type": "ListItem", "position": 7, "name": "Cajas para Textil, Moda y Retail",      "url": "https://cajas-de-carton.com/productos/cajas-textil-moda-retail" },
+    { "@type": "ListItem", "position": 8, "name": "Cajas para Farmacéutica y Cosmética",   "url": "https://cajas-de-carton.com/productos/cajas-farmaceutica-cosmetica" },
+    { "@type": "ListItem", "position": 9, "name": "Cajas de Archivo y Almacenaje",         "url": "https://cajas-de-carton.com/productos/cajas-archivo-almacenaje" },
   ],
 };
 
@@ -168,17 +171,89 @@ const productos = [
       { label: "Certificación FSC",         href: "/productos/cajas-ecologicas#fsc" },
     ],
   },
+  {
+    title:      "Cajas para Textil, Moda y Retail",
+    desc:       "Cajas para calzado, ropa, accesorios, displays punto de venta y envío de tienda online. Impresión personalizada y experiencia de unboxing para marcas de moda.",
+    imgSrc:     "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif",
+    imgAlt:     "Cajas de cartón para textil moda y retail en CDMX — CADECA",
+    href:       "/productos/cajas-textil-moda-retail",
+    badge:      "Moda y Retail",
+    badgeColor: "info" as const,
+    minPiezas:  "Desde 50 pzas",
+    entrega:    "24-48 hrs CDMX",
+    category:   "textil",
+    specs: [
+      { label: "Aplicaciones",   value: "Calzado · Ropa · Accesorios" },
+      { label: "Impresión",      value: "1 color, 4 col., Full Color" },
+      { label: "Acabados",       value: "Mate · Brillante · Soft touch" },
+      { label: "Personalización", value: "Logo desde 100 pzas" },
+    ],
+    tags: [
+      { label: "Cajas para calzado",     href: "/catalogo/cajas-textil-moda-retail/cajas-calzado-zapatos" },
+      { label: "Cajas para ropa",        href: "/catalogo/cajas-textil-moda-retail/cajas-ropa-prendas" },
+      { label: "Retail punto de venta",  href: "/catalogo/cajas-textil-moda-retail/cajas-retail-punto-venta" },
+    ],
+  },
+  {
+    title:      "Cajas para Farmacéutica y Cosmética",
+    desc:       "Empaques para blíster, cosmética premium, distribución farmacéutica, suplementos y líneas automatizadas. Cumplimiento NOM-072, acabados soft touch y barniz UV.",
+    imgSrc:     "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
+    imgAlt:     "Cajas de cartón para industria farmacéutica y cosmética en CDMX — CADECA",
+    href:       "/productos/cajas-farmaceutica-cosmetica",
+    badge:      "NOM-072",
+    badgeColor: "success" as const,
+    minPiezas:  "Desde 200 pzas",
+    entrega:    "3-5 días hábiles",
+    category:   "farmaceutica",
+    specs: [
+      { label: "Certificación",  value: "NOM-072 · FSC" },
+      { label: "Acabados",       value: "Soft touch · Barniz UV" },
+      { label: "Flauta",         value: "E (micro) y BC" },
+      { label: "Aplicaciones",   value: "Blíster · Cosmética · Suplementos" },
+    ],
+    tags: [
+      { label: "Blíster farmacéutica",  href: "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica" },
+      { label: "Cosmética premium",     href: "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium" },
+      { label: "Suplementos NOM-051",   href: "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion" },
+    ],
+  },
+  {
+    title:      "Cajas de Archivo y Almacenaje",
+    desc:       "Archivo muerto oficio y carta, almacén industrial, cajas apilables triple pared y mudanza con asas. Soluciones de almacenamiento a largo plazo con máxima resistencia.",
+    imgSrc:     "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
+    imgAlt:     "Cajas de archivo y almacenaje en CDMX — CADECA",
+    href:       "/productos/cajas-archivo-almacenaje",
+    badge:      "Archivo y Bodega",
+    badgeColor: "info" as const,
+    minPiezas:  "Sin mínimo",
+    entrega:    "24-48 hrs CDMX",
+    category:   "archivo",
+    specs: [
+      { label: "Tamaños",       value: "Oficio · Carta · Industrial" },
+      { label: "Pared",         value: "Doble y triple corrugado" },
+      { label: "Resistencia",   value: "Apilable hasta 5 niveles" },
+      { label: "Accesorios",    value: "Asas · Tapa · Etiqueta" },
+    ],
+    tags: [
+      { label: "Archivo muerto oficio",  href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio" },
+      { label: "Almacén industrial",     href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial" },
+      { label: "Mudanza con asas",       href: "/catalogo/cajas-archivo-almacenaje/mudanza-archivo" },
+    ],
+  },
 ];
 
 // ── Categorías filtro ──────────────────────────────────
 const cats = [
-  { id: "todos",         label: "Todos los productos",  count: 6  },
+  { id: "todos",         label: "Todos los productos",  count: 9  },
   { id: "estandar",      label: "Estándar",             count: 1  },
   { id: "medida",        label: "A la Medida",          count: 1  },
   { id: "personalizadas",label: "Personalizadas",       count: 1  },
   { id: "ecommerce",     label: "E-commerce",           count: 1  },
   { id: "alimentos",     label: "Alimentos",            count: 1  },
   { id: "ecologico",     label: "Ecológicas FSC",       count: 1  },
+  { id: "textil",        label: "Textil y Moda",        count: 1  },
+  { id: "farmaceutica",  label: "Farmacéutica",         count: 1  },
+  { id: "archivo",       label: "Archivo",              count: 1  },
 ];
 
 // ── FAQ técnico ────────────────────────────────────────
@@ -244,7 +319,7 @@ const faqs = [
             Catálogo de <span>Cajas de Cartón</span><br>CDMX y Estado de México
           </h1>
           <p class="prod-hero__desc">
-            Corrugado estándar, a la medida, personalizadas con logo, para e-commerce, alimentos y ecológicas FSC. Asesoría técnica gratuita y cotización en menos de 2 horas.
+            Corrugado estándar, a la medida, personalizadas, e-commerce, alimentos, textil y moda, farmacéutica, archivo y ecológicas FSC. Asesoría técnica gratuita y cotización en menos de 2 horas.
           </p>
           <div class="prod-hero__ctas">
             <a href="#catalogo" class="btn btn--primary">Ver catálogo completo</a>
@@ -255,7 +330,7 @@ const faqs = [
         <!-- Stats -->
         <div class="prod-hero__stats">
           <div class="prod-hero__stat">
-            <span class="prod-hero__stat-num">6</span>
+            <span class="prod-hero__stat-num">9</span>
             <span class="prod-hero__stat-label">Líneas de producto</span>
           </div>
           <div class="prod-hero__stat">
@@ -401,6 +476,33 @@ const faqs = [
                 <td>Hasta 20 kg</td>
                 <td>Sin mínimo</td>
                 <td>Pizza, dark kitchen, frutas, congelados</td>
+                <td><span class="chip chip--green">24-48 hrs</span></td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-textil-moda-retail">Textil, Moda y Retail</a></td>
+                <td><span class="chip chip--gray">Simple/Doble</span></td>
+                <td>ECT-23 / ECT-32</td>
+                <td>Hasta 15 kg</td>
+                <td>50 pzas</td>
+                <td>Calzado, ropa, accesorios, retail</td>
+                <td><span class="chip chip--green">24-48 hrs</span></td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></td>
+                <td><span class="chip chip--blue">Flauta E / BC</span></td>
+                <td>ECT-32 / ECT-44</td>
+                <td>Hasta 10 kg</td>
+                <td>200 pzas</td>
+                <td>Blíster, cosmética, suplementos</td>
+                <td><span class="chip chip--yellow">3-5 días</span></td>
+              </tr>
+              <tr>
+                <td><a href="/productos/cajas-archivo-almacenaje">Archivo y Almacenaje</a></td>
+                <td><span class="chip chip--orange">Doble/Triple</span></td>
+                <td>ECT-44 / ECT-51</td>
+                <td>+25 kg</td>
+                <td>Sin mínimo</td>
+                <td>Archivo muerto, bodega, mudanza</td>
                 <td><span class="chip chip--green">24-48 hrs</span></td>
               </tr>
             </tbody>
