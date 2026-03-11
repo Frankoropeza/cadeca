@@ -1,27 +1,32 @@
 ---
-// IndustryCard.astro — Tarjeta de nicho / industria
+// IndustryCard.astro — Tarjeta de sector/industria compacta 4 columnas
 export interface Props {
-  img:       string;
+  icon:      string;
+  tag:       string;
   title:     string;
   desc:      string;
   href:      string;
   linkText?: string;
+  accent?:   string;
 }
 
 const {
-  img,
+  icon,
+  tag,
   title,
   desc,
   href,
   linkText = "Ver soluciones",
+  accent = "#E05800",
 } = Astro.props;
 ---
 
-<article class="industry-card">
-  <div class="industry-card__img-wrapper">
-    <img src={img} alt={title} class="industry-card__img" width="400" height="260" loading="lazy" />
+<a href={href} class="ind-card" style={`--ind-accent: ${accent}`}>
+  <div class="ind-card__top">
+    <span class="ind-card__icon" aria-hidden="true">{icon}</span>
+    <span class="ind-card__tag">{tag}</span>
   </div>
-  <h3 class="industry-card__title">{title}</h3>
-  <p class="industry-card__desc">{desc}</p>
-  <a href={href} class="industry-card__link">{linkText} &rarr;</a>
-</article>
+  <h3 class="ind-card__title">{title}</h3>
+  <p class="ind-card__desc">{desc}</p>
+  <span class="ind-card__cta">{linkText} →</span>
+</a>
