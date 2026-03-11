@@ -449,6 +449,59 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Sección Zonas en Homepage -->
+  <section class="home-zonas">
+    <div class="container">
+      <div class="home-zonas__header">
+        <h2 class="home-zonas__title">Entrega en Toda la ZMVM</h2>
+        <p class="home-zonas__subtitle">Guías específicas por zona con tiempos de entrega, tipos de caja más solicitados y colonias cubiertas</p>
+      </div>
+      <div class="home-zonas__grid">
+        <a href="/blog/cajas-carton-iztapalapa-cdmx" class="home-zona-pill">🏭 Iztapalapa</a>
+        <a href="/blog/cajas-carton-azcapotzalco-cdmx" class="home-zona-pill">🏭 Azcapotzalco</a>
+        <a href="/blog/cajas-carton-gustavo-a-madero-cdmx" class="home-zona-pill">🏭 Gustavo A. Madero</a>
+        <a href="/blog/cajas-carton-miguel-hidalgo-cdmx" class="home-zona-pill">🏢 Miguel Hidalgo</a>
+        <a href="/blog/cajas-carton-cuauhtemoc-cdmx" class="home-zona-pill">🏪 Cuauhtémoc</a>
+        <a href="/blog/cajas-carton-benito-juarez-cdmx" class="home-zona-pill">🛍️ Benito Juárez</a>
+        <a href="/blog/cajas-carton-venustiano-carranza-cdmx" class="home-zona-pill">✈️ Venustiano Carranza</a>
+        <a href="/blog/cajas-carton-alvaro-obregon-cdmx" class="home-zona-pill">🎨 Álvaro Obregón</a>
+        <a href="/blog/cajas-carton-coyoacan-cdmx" class="home-zona-pill">🌳 Coyoacán</a>
+        <a href="/blog/cajas-carton-tlalpan-cdmx" class="home-zona-pill">🌲 Tlalpan</a>
+        <a href="/blog/cajas-carton-xochimilco-cdmx" class="home-zona-pill">🌻 Xochimilco</a>
+        <a href="/blog/cajas-carton-iztacalco-cdmx" class="home-zona-pill">🏭 Iztacalco</a>
+        <a href="/blog/cajas-carton-cuajimalpa-cdmx" class="home-zona-pill">🏢 Cuajimalpa</a>
+        <a href="/blog/cajas-carton-tlahuac-cdmx" class="home-zona-pill">🏗️ Tláhuac</a>
+        <a href="/blog/cajas-carton-magdalena-contreras-cdmx" class="home-zona-pill">🏘️ Magdalena Contreras</a>
+        <a href="/blog/cajas-carton-milpa-alta-cdmx" class="home-zona-pill">🌽 Milpa Alta</a>
+        <a href="/blog/cajas-carton-naucalpan-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏭 Naucalpan</a>
+        <a href="/blog/cajas-carton-tlalnepantla-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏭 Tlalnepantla</a>
+        <a href="/blog/cajas-carton-ecatepec-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏗️ Ecatepec</a>
+        <a href="/blog/cajas-carton-nezahualcoyotl-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🛒 Nezahualcóyotl</a>
+        <a href="/blog/cajas-carton-atizapan-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">⚙️ Atizapán</a>
+        <a href="/blog/cajas-carton-cuautitlan-izcalli-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏭 Cuautitlán Izcalli</a>
+      </div>
+      <div style="text-align:center; margin-top: var(--spacing-lg)">
+        <a href="/zonas-de-servicio" class="btn btn--secondary">Ver todas las zonas de cobertura →</a>
+      </div>
+    </div>
+  </section>
+
   <LeadCapture whatsapp={WHATSAPP} />
 
 </PageLayout>
+
+<style>
+.home-zonas {
+  padding: var(--spacing-2xl) 0;
+  background: var(--color-accent);
+  border-top: 1px solid var(--color-border);
+}
+.home-zonas__header { text-align: center; margin-bottom: var(--spacing-xl); }
+.home-zonas__title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800; color: var(--color-secondary); margin: 0 0 0.75rem; }
+.home-zonas__subtitle { color: var(--color-text-light); max-width: 500px; margin: 0 auto; line-height: 1.6; font-size: 0.95rem; }
+.home-zonas__grid { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: var(--spacing-lg); }
+.home-zona-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 1rem; background: #fff; border: 1.5px solid var(--color-border); border-radius: 30px; text-decoration: none; color: var(--color-text); font-size: 0.82rem; font-weight: 600; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+.home-zona-pill:hover { border-color: var(--color-primary); color: var(--color-primary); background: #fff8f5; }
+.home-zona-pill--edomex { background: #f0f4ff; border-color: #c5d0f0; color: #1565c0; }
+.home-zona-pill--edomex:hover { border-color: #1565c0; background: #e3f2fd; }
+</style>

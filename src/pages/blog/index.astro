@@ -16,6 +16,7 @@ const CATEGORIES = [
   { name: "Industria",      slug: "industria",      color: "#0066CC", icon: "🏭" },
   { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32", icon: "♻️" },
   { name: "Consejos",       slug: "consejos",       color: "#6A1B9A", icon: "💡" },
+  { name: "Zonas",          slug: "zonas",          color: "#E05800", icon: "📍" },
 ];
 
 const allTags = [...new Set(allPosts.flatMap(p => p.data.tags || []))].slice(0, 20);
