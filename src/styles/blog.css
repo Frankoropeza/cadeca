@@ -387,8 +387,8 @@
 @media (min-width: 1024px) {
   .blog-sidebar {
     position: sticky;
-    top: calc(var(--header-h, 80px) + 1rem);
-    max-height: calc(100vh - var(--header-h, 80px) - 2rem);
+    top: 1rem;
+    max-height: calc(100vh - 2rem);
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--color-border) transparent;
