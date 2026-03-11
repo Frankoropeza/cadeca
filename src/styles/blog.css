@@ -988,3 +988,218 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE FIXES — < 768px
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Filter bar: más compacto en mobile */
+@media (max-width: 639px) {
+  .blog-filter-bar__link {
+    padding: 0.4em 0.85em;
+    font-size: 0.8rem;
+  }
+}
+
+/* Featured hero: columna única clara */
+@media (max-width: 767px) {
+  .blog-featured-hero {
+    grid-template-columns: 1fr;
+  }
+  .blog-featured-hero__img-wrap {
+    aspect-ratio: 16/9;
+    min-height: unset;
+  }
+  .blog-featured-hero__body {
+    padding: var(--spacing-md);
+  }
+  .blog-featured-hero__title {
+    font-size: 1.2rem;
+  }
+  .blog-featured-hero__desc {
+    display: none; /* demasiado texto en móvil chico */
+  }
+}
+
+/* Blog hero: más compacto */
+@media (max-width: 639px) {
+  .blog-hero {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+  }
+  .blog-hero__stats {
+    gap: var(--spacing-lg);
+  }
+  .blog-hero__stat strong {
+    font-size: 1.5rem;
+  }
+}
+
+/* Blog layout: sidebar DESPUÉS del contenido en mobile */
+@media (max-width: 1023px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
+  }
+  /* En artículo individual, mueve sidebar arriba solo el TOC */
+  .blog-sidebar {
+    position: static !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+}
+
+/* Post hero: ajuste mobile */
+@media (max-width: 639px) {
+  .post-hero {
+    padding: var(--spacing-lg) 0;
+  }
+  .post-hero__title {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  .post-hero__meta {
+    font-size: 0.78rem;
+    gap: 0.35rem 0.6rem;
+  }
+  .post-hero__breadcrumb {
+    font-size: 0.72rem;
+  }
+}
+
+/* Post cover: menos alto en mobile */
+@media (max-width: 639px) {
+  .post-cover {
+    aspect-ratio: 16/9;
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+  }
+}
+
+/* Share bar: scroll horizontal en mobile */
+@media (max-width: 639px) {
+  .post-share {
+    padding: var(--spacing-sm) var(--spacing-md);
+    gap: 0.5rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .post-share::-webkit-scrollbar { display: none; }
+  .post-share__btn {
+    padding: 0.4em 0.85em;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .post-share__label {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+/* Prose: fixes críticos mobile */
+@media (max-width: 639px) {
+  .prose {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .prose h2 {
+    font-size: 1.3rem;
+    margin: 1.75rem 0 0.75rem;
+  }
+  .prose h3 {
+    font-size: 1.1rem;
+  }
+  /* Tablas: scroll horizontal en vez de desbordarse */
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 0.82rem;
+  }
+  /* Imágenes no desbordan */
+  .prose img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Blockquote más compacto */
+  .prose blockquote {
+    padding: 0.75em 1em;
+    margin: 1em 0;
+  }
+}
+
+/* Tags: más pequeño en mobile */
+@media (max-width: 639px) {
+  .post-tags {
+    padding: var(--spacing-md);
+    gap: 0.4rem;
+  }
+  .post-tags__tag {
+    font-size: 0.75rem;
+  }
+}
+
+/* Author box: columna en mobile muy chico */
+@media (max-width: 479px) {
+  .post-author {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* TOC: colapsable visual en mobile */
+@media (max-width: 1023px) {
+  .toc {
+    margin-bottom: 0;
+  }
+  .toc__list {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+/* Sidebar CTA: ajuste mobile */
+@media (max-width: 639px) {
+  .sidebar-cta {
+    padding: var(--spacing-md);
+  }
+  .sidebar-cta__icon {
+    font-size: 2rem;
+  }
+}
+
+/* Related posts: columna única en mobile */
+@media (max-width: 639px) {
+  .related-posts__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards: footer más pequeño */
+@media (max-width: 479px) {
+  .blog-card__body {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  .blog-card__title {
+    font-size: 0.925rem;
+  }
+  .blog-card__footer {
+    font-size: 0.72rem;
+  }
+}
+
+/* Section header */
+@media (max-width: 639px) {
+  .blog-section-header__title {
+    font-size: 1rem;
+  }
+}
+
+/* Post nav */
+@media (max-width: 479px) {
+  .post-nav {
+    grid-template-columns: 1fr;
+  }
+}
