@@ -98,11 +98,7 @@
   margin-bottom: var(--spacing-2xl);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.blog-featured-hero:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  transition:, box-shadow 0.25s;
 }
 @media (min-width: 768px) {
   .blog-featured-hero {
@@ -121,9 +117,8 @@
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s;
+  transition:;
 }
-.blog-featured-hero:hover .blog-featured-hero__img { transform: scale(1.04); }
 .blog-featured-hero__badge {
   position: absolute;
   top: 1rem; left: 1rem;
@@ -220,7 +215,7 @@
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:, box-shadow 0.25s;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -228,8 +223,6 @@
   border: 1px solid var(--color-border);
 }
 .blog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
   border-color: var(--color-primary);
 }
 .blog-card__img-wrap {
@@ -241,9 +234,8 @@
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s;
+  transition:;
 }
-.blog-card:hover .blog-card__img { transform: scale(1.05); }
 .blog-card__placeholder {
   width: 100%;
   aspect-ratio: 16/9;
@@ -513,7 +505,7 @@
   padding: 0.7em 1.5em;
   border-radius: 99px;
   text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
+  transition:background 0.2s, ;
   width: 100%;
 }
 .sidebar-cta__btn:hover {
@@ -821,7 +813,7 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: transform 0.15s, opacity 0.15s;
+  transition:, opacity 0.15s;
 }
 .post-share__btn:hover { transform: translateY(-1px); opacity: 0.9; }
 .post-share__btn--wa   { background: #25D366; color: #fff; }
