@@ -1938,14 +1938,17 @@ pre, code {
 .page-hero-std__title span { color: var(--color-primary-light, #FF8C42); }
 .page-hero-std__desc {
   font-size: clamp(0.95rem, 1.5vw, 1.05rem);
-  color: rgba(255,255,255,0.82);
-  line-height: 1.65;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
   margin: 0;
-  max-width: 640px;
+  max-width: 660px;
 }
 .page-hero-std__desc--2 {
-  color: rgba(255,255,255,0.68);
-  font-size: 0.93rem;
+  color: rgba(255,255,255,0.85);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 660px;
 }
 .page-hero-std--centered .page-hero-std__desc { max-width: 680px; margin: 0 auto; }
 .page-hero-std__chips {
