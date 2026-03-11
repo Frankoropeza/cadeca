@@ -62,16 +62,6 @@ const metrics = (stats && stats.length > 0)
           </div>
         )}
 
-        {metrics.length > 0 && (
-          <div class="page-hero-std__metrics">
-            {metrics.map(m => (
-              <div class="page-hero-std__metric">
-                <span class="page-hero-std__metric-value">{m.value}</span>
-                {m.label && <span class="page-hero-std__metric-label">{m.label}</span>}
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
       <!-- COLUMNA DERECHA — solo si hay desc2 -->
