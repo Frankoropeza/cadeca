@@ -1623,11 +1623,12 @@ img, video, iframe { max-width: 100%; height: auto; }
 .sku-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
 }
 @media (min-width: 640px)  { .sku-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .sku-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px)  { .sku-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .sku-grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* Tarjeta SKU para catálogo */
 .sku-card {
