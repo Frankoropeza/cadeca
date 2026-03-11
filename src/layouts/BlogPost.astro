@@ -315,9 +315,21 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
   <WaBubble />
 </BaseLayout>
 
-<!-- TOC Active Heading (IntersectionObserver) -->
+<!-- Reading progress + TOC Active Heading -->
 <script>
 (function() {
+  // Reading progress bar
+  const bar = document.querySelector('.reading-progress__bar') as HTMLElement | null;
+  if (bar) {
+    const update = () => {
+      const el = document.documentElement;
+      const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
   const tocLinks = document.querySelectorAll('#toc-list a[data-heading]');
   if (!tocLinks.length) return;
 
