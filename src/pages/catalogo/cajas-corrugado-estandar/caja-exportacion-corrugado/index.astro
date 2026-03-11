@@ -1,131 +1,131 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Corrugado para Exportación IATA/ISTA CDMX | CAD-CS-10 | CADECA";
+const title  = "Caja Corrugado para Exportación IATA/ISTA CDMX | CAD-CS-10 | CADECA";
 const description = "Caja corrugado para exportación IATA/ISTA en CDMX. Doble y triple pared, normas internacionales, apta para contenedor y carga aérea. Desde 50 pzas. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU",    "CAD-CS-10"],
-  ["Tipo de pared", "Doble BC / Triple BCB"],
-  ["Flauta",        "BC (7mm) / BCB (11mm)"],
-  ["Resistencia",   "ECT-44 / ECT-71"],
-  ["Gramaje liner", "175–200 g/m² kraft virgen"],
-  ["Material",      "Kraft virgen certificado"],
-  ["Normas",        "IATA · ISTA · ASTM D4169"],
-  ["Cierre",        "4 solapas + cintilla de seguridad"],
-  ["Pedido mínimo", "50 piezas"],
-  ["Entrega CDMX",  "24–48 hrs"],
+ ["Código SKU",  "CAD-CS-10"],
+ ["Tipo de pared", "Doble BC / Triple BCB"],
+ ["Flauta",  "BC (7mm) / BCB (11mm)"],
+ ["Resistencia",  "ECT-44 / ECT-71"],
+ ["Gramaje liner", "175–200 g/m² kraft virgen"],
+ ["Material",  "Kraft virgen certificado"],
+ ["Normas",  "IATA · ISTA · ASTM D4169"],
+ ["Cierre",  "4 solapas + cintilla de seguridad"],
+ ["Pedido mínimo", "50 piezas"],
+ ["Entrega CDMX",  "24–48 hrs"],
 ];
 
 const faqs = [
-  {
-    id: "cs10-f1",
-    question: "¿Qué normas cumple la caja de exportación IATA/ISTA?",
-    answer: "La caja CAD-CS-10 está diseñada para cumplir con las principales normas internacionales de transporte: IATA (International Air Transport Association) para carga aérea, ISTA (International Safe Transit Association) para pruebas de vibración y caída, y ASTM D4169 para ciclos de distribución simulados. Esto garantiza que el empaque superará las pruebas de resistencia exigidas en aduanas internacionales y centros de distribución globales como Amazon FBA USA o FedEx International Priority.",
-  },
-  {
-    id: "cs10-f2",
-    question: "¿Cuál es la diferencia entre el CAD-CS-10 y el corrugado estándar para exportación?",
-    answer: "Las principales diferencias son: (1) Liner de mayor gramaje: 175-200 g/m² virgen versus 115-150 g/m² estándar, lo que aporta mayor resistencia a la humedad en travesías largas. (2) Cumplimiento ISTA y ASTM, que implica pruebas de caída libre, vibración y compresión estandarizadas. (3) Opción de cierre con cintilla de seguridad adicional para contenedores. (4) Disponible con tratamiento anti-humedad para carga marítima de larga distancia.",
-  },
-  {
-    id: "cs10-f3",
-    question: "¿Cómo sé qué medida elegir para exportar en contenedor de 20 o 40 pies?",
-    answer: "La optimización de medidas para contenedor es crítica para maximizar el número de unidades por embarque y reducir costos. Nuestro equipo técnico ofrece gratuitamente el análisis de configuración de tarima para contenedor de 20 y 40 pies estándar (ISO). Con las dimensiones de tu producto, calculamos la medida de caja que maximiza el llenado del contenedor. Este servicio está incluido sin costo adicional para pedidos de exportación desde 50 piezas.",
-  },
+ {
+ id: "cs10-f1",
+ question: "¿Qué normas cumple la caja de exportación IATA/ISTA?",
+ answer: "La caja CAD-CS-10 está diseñada para cumplir con las principales normas internacionales de transporte: IATA (International Air Transport Association) para carga aérea, ISTA (International Safe Transit Association) para pruebas de vibración y caída, y ASTM D4169 para ciclos de distribución simulados. Esto garantiza que el empaque superará las pruebas de resistencia exigidas en aduanas internacionales y centros de distribución globales como Amazon FBA USA o FedEx International Priority.",
+ },
+ {
+ id: "cs10-f2",
+ question: "¿Cuál es la diferencia entre el CAD-CS-10 y el corrugado estándar para exportación?",
+ answer: "Las principales diferencias son: (1) Liner de mayor gramaje: 175-200 g/m² virgen versus 115-150 g/m² estándar, lo que aporta mayor resistencia a la humedad en travesías largas. (2) Cumplimiento ISTA y ASTM, que implica pruebas de caída libre, vibración y compresión estandarizadas. (3) Opción de cierre con cintilla de seguridad adicional para contenedores. (4) Disponible con tratamiento anti-humedad para carga marítima de larga distancia.",
+ },
+ {
+ id: "cs10-f3",
+ question: "¿Cómo sé qué medida elegir para exportar en contenedor de 20 o 40 pies?",
+ answer: "La optimización de medidas para contenedor es crítica para maximizar el número de unidades por embarque y reducir costos. Nuestro equipo técnico ofrece gratuitamente el análisis de configuración de tarima para contenedor de 20 y 40 pies estándar (ISO). Con las dimensiones de tu producto, calculamos la medida de caja que maximiza el llenado del contenedor. Este servicio está incluido sin costo adicional para pedidos de exportación desde 50 piezas.",
+ },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-exportacion-hero-cdmx.avif",      alt: "Caja corrugado para exportación IATA/ISTA — hero" },
-  { src: "/img/catalogo/caja-exportacion-container-cdmx.avif", alt: "Caja exportación en contenedor internacional CDMX" },
-  { src: "/img/catalogo/caja-exportacion-esquina-cdmx.avif",   alt: "Detalle esquina caja exportación triple pared" },
-  { src: "/img/catalogo/caja-exportacion-pallet-cdmx.avif",    alt: "Pallet cajas exportación para embarque CDMX" },
-  { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",alt: "Triple pared para exportación industrial CDMX" },
+ { src: "/img/catalogo/caja-exportacion-hero-cdmx.avif",  alt: "Caja corrugado para exportación IATA/ISTA — hero" },
+ { src: "/img/catalogo/caja-exportacion-container-cdmx.avif", alt: "Caja exportación en contenedor internacional CDMX" },
+ { src: "/img/catalogo/caja-exportacion-esquina-cdmx.avif",  alt: "Detalle esquina caja exportación triple pared" },
+ { src: "/img/catalogo/caja-exportacion-pallet-cdmx.avif",  alt: "Pallet cajas exportación para embarque CDMX" },
+ { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",alt: "Triple pared para exportación industrial CDMX" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Caja Exportación Corrugado"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja Corrugado para Exportación IATA/ISTA",sku:"CAD-CS-10",description:"Caja corrugado IATA/ISTA doble y triple pared para exportación en CDMX — CADECA",image:gallery[0].src,material:"Kraft virgen 175-200g/m² doble/triple pared",category:"Cajas Corrugado Estándar",moq:"50"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Caja Exportación Corrugado"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja Corrugado para Exportación IATA/ISTA",sku:"CAD-CS-10",description:"Caja corrugado IATA/ISTA doble y triple pared para exportación en CDMX — CADECA",image:gallery[0].src,material:"Kraft virgen 175-200g/m² doble/triple pared",category:"Cajas Corrugado Estándar",moq:"50"}}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
-        <li><span class="current">Caja Exportación Corrugado</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+ <li><span class="current">Caja Exportación Corrugado</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cs10-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-CS-10 · Corrugado Estándar</span>
-      <h1 id="sku-cs10-title" class="cat-page-hero__title">Caja Corrugado para <span>Exportación IATA/ISTA</span></h1>
-      <p class="cat-page-hero__desc">
-        Doble y triple pared con cumplimiento de normas internacionales IATA, ISTA y ASTM D4169. Aptas para contenedor marítimo y carga aérea. Liner kraft virgen 175-200 g/m². Desde 50 piezas con entrega en 24–48 hrs en CDMX.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-10</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-71</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cs10-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-CS-10 · Corrugado Estándar</span>
+ <h1 id="sku-cs10-title" class="cat-page-hero__title">Caja Corrugado para <span>Exportación IATA/ISTA</span></h1>
+ <p class="cat-page-hero__desc">
+ Doble y triple pared con cumplimiento de normas internacionales IATA, ISTA y ASTM D4169. Aptas para contenedor marítimo y carga aérea. Liner kraft virgen 175-200 g/m². Desde 50 piezas con entrega en 24–48 hrs en CDMX.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-10</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-71</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cs10-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-CS-10 · Familia: Corrugado Estándar</p>
-            <h2 id="detalle-cs10-title" class="sku-detail__title">Caja Corrugado para Exportación IATA/ISTA</h2>
-            <p class="sku-detail__desc">
-              El CAD-CS-10 es la solución de empaque para exportación de CADECA, con certificaciones internacionales IATA, ISTA y ASTM D4169. Disponible en doble corrugado BC (ECT-44) y triple corrugado BCB (ECT-71), con liner kraft virgen de alto gramaje para resistir las condiciones extremas de carga marítima y aérea. Incluye asesoría técnica gratuita para optimización de medidas en contenedor y análisis de configuración de tarima.
-            </p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">IATA/ISTA</span><span class="sku-detail__strip-label">Normas</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Resistencia máx.</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 g/m²</span><span class="sku-detail__strip-label">Gramaje liner</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-10 Caja Corrugado para Exportación`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-10</a>
-              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cs10-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-CS-10 · Familia: Corrugado Estándar</p>
+ <h2 id="detalle-cs10-title" class="sku-detail__title">Caja Corrugado para Exportación IATA/ISTA</h2>
+ <p class="sku-detail__desc">
+ El CAD-CS-10 es la solución de empaque para exportación de CADECA, con certificaciones internacionales IATA, ISTA y ASTM D4169. Disponible en doble corrugado BC (ECT-44) y triple corrugado BCB (ECT-71), con liner kraft virgen de alto gramaje para resistir las condiciones extremas de carga marítima y aérea. Incluye asesoría técnica gratuita para optimización de medidas en contenedor y análisis de configuración de tarima.
+ </p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">IATA/ISTA</span><span class="sku-detail__strip-label">Normas</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Resistencia máx.</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 g/m²</span><span class="sku-detail__strip-label">Gramaje liner</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-10 Caja Corrugado para Exportación`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-10</a>
+ <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cs10-title">
-      <div class="container">
-        <h2 id="faq-cs10-title" class="sku-faq__title">Preguntas Frecuentes — Caja Exportación IATA/ISTA</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cs10-title">
+ <div class="container">
+ <h2 id="faq-cs10-title" class="sku-faq__title">Preguntas Frecuentes — Caja Exportación IATA/ISTA</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tu Caja de Exportación — Asesoría Técnica Gratuita CDMX" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza tu Caja de Exportación — Asesoría Técnica Gratuita CDMX" />
 </PageLayout>

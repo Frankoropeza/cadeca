@@ -1,151 +1,151 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Láminas Triple Corrugado BCB CDMX | ECT-61 Sustituto Madera | CAD-LC-03 | CADECA";
+const title  = "Láminas Triple Corrugado BCB CDMX | ECT-61 Sustituto Madera | CAD-LC-03 | CADECA";
 const description = "Láminas triple corrugado BCB CDMX. ECT-61+, 120×200cm, sustituto madera, sin NIMF 15. Desde 25 pzas, 5-7 días. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"60×40 cm", ml:"60×40 cm", real:"60×40", flauta:"BCB",ect:"ECT-61",vacío:"0.36 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:false },
-  { talla:"80×60 cm", ml:"80×60 cm", real:"80×60", flauta:"BCB",ect:"ECT-61",vacío:"0.64 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:false },
-  { talla:"100×80 cm", ml:"100×80 cm", real:"100×80", flauta:"BCB",ect:"ECT-61",vacío:"1.04 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:true },
-  { talla:"120×100 cm", ml:"120×100 cm", real:"120×100", flauta:"BCB",ect:"ECT-61",vacío:"1.56 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:true },
-  { talla:"120×200 cm", ml:"120×200 cm", real:"120×200", flauta:"BCB",ect:"ECT-61",vacío:"3.12 kg/ud",máx:"—", disp:"gray", label:"7-10 días", hl:false },
-  { talla:"Personalizada", ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+ { talla:"60×40 cm", ml:"60×40 cm", real:"60×40", flauta:"BCB",ect:"ECT-61",vacío:"0.36 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:false },
+ { talla:"80×60 cm", ml:"80×60 cm", real:"80×60", flauta:"BCB",ect:"ECT-61",vacío:"0.64 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:false },
+ { talla:"100×80 cm", ml:"100×80 cm", real:"100×80", flauta:"BCB",ect:"ECT-61",vacío:"1.04 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:true },
+ { talla:"120×100 cm", ml:"120×100 cm", real:"120×100", flauta:"BCB",ect:"ECT-61",vacío:"1.56 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:true },
+ { talla:"120×200 cm", ml:"120×200 cm", real:"120×200", flauta:"BCB",ect:"ECT-61",vacío:"3.12 kg/ud",máx:"—", disp:"gray", label:"7-10 días", hl:false },
+ { talla:"Personalizada", ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
 ];
 
 const specs = [
-  ["Código SKU", "CAD-LC-03"],
-  ["Tipo", "Lámina triple BCB"],
-  ["Flauta", "BCB 12 mm"],
-  ["ECT", "ECT-61+"],
-  ["Medida máx.", "120×200 cm"],
-  ["BCT est.", ">500 kg/m²"],
-  ["Sin NIMF 15", "Sí — ventaja exportación"],
-  ["Aplicaciones", "Sustituto madera · Exportación"],
-  ["Gramaje", "175-200 g/m²"],
-  ["Corte", "±2 mm"],
-  ["MOQ", "25 pzas"],
-  ["Entrega", "5-7 días hábiles"],
+ ["Código SKU", "CAD-LC-03"],
+ ["Tipo", "Lámina triple BCB"],
+ ["Flauta", "BCB 12 mm"],
+ ["ECT", "ECT-61+"],
+ ["Medida máx.", "120×200 cm"],
+ ["BCT est.", ">500 kg/m²"],
+ ["Sin NIMF 15", "Sí — ventaja exportación"],
+ ["Aplicaciones", "Sustituto madera · Exportación"],
+ ["Gramaje", "175-200 g/m²"],
+ ["Corte", "±2 mm"],
+ ["MOQ", "25 pzas"],
+ ["Entrega", "5-7 días hábiles"],
 ];
 
 const faqs = [
-  {
-    id:"lc03-f1",
-    question:"¿Puede sustituir la madera en embalaje industrial?",
-    answer:"En muchas aplicaciones sí. Ventajas: sin NIMF 15 para exportación, 60-70% más ligero a resistencia equivalente, 100% reciclable, se imprime fácilmente. Limitaciones: menor resistencia a humedad extrema prolongada y menor rigidez lateral sin esquineros.",
-  },
-  {
-    id:"lc03-f2",
-    question:"¿Qué grosor de madera equivale en resistencia al aplastamiento?",
-    answer:"BCT comparable a madera contrachapada 9-12 mm según aplicación. Para layer pads iguala madera 9 mm. Para bases exportación iguala 6 mm. Para laterales de caja industrial, madera 12 mm sigue siendo superior en rigidez lateral. Con esquineros en L puede sustituir madera 12 mm en mayoría de cajas de exportación.",
-  },
+ {
+ id:"lc03-f1",
+ question:"¿Puede sustituir la madera en embalaje industrial?",
+ answer:"En muchas aplicaciones sí. Ventajas: sin NIMF 15 para exportación, 60-70% más ligero a resistencia equivalente, 100% reciclable, se imprime fácilmente. Limitaciones: menor resistencia a humedad extrema prolongada y menor rigidez lateral sin esquineros.",
+ },
+ {
+ id:"lc03-f2",
+ question:"¿Qué grosor de madera equivale en resistencia al aplastamiento?",
+ answer:"BCT comparable a madera contrachapada 9-12 mm según aplicación. Para layer pads iguala madera 9 mm. Para bases exportación iguala 6 mm. Para laterales de caja industrial, madera 12 mm sigue siendo superior en rigidez lateral. Con esquineros en L puede sustituir madera 12 mm en mayoría de cajas de exportación.",
+ },
 ];
 
 const mainImg = "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif", alt: "Láminas triples — principal" },
-  { src: "/img/catalogo/lamina-triple-hero-cdmx.avif", alt: "Lámina triple — hero" },
-  { src: "/img/catalogo/lamina-triple-grosor-cdmx.avif", alt: "Grosor triple pared" },
-  { src: "/img/catalogo/lamina-triple-pallet-cdmx.avif", alt: "Láminas triples — pallet" },
-  { src: "/img/catalogo/lamina-triple-capas-cdmx.avif", alt: "Corte transversal 3 capas" },
+ { src: "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif", alt: "Láminas triples — principal" },
+ { src: "/img/catalogo/lamina-triple-hero-cdmx.avif", alt: "Lámina triple — hero" },
+ { src: "/img/catalogo/lamina-triple-grosor-cdmx.avif", alt: "Grosor triple pared" },
+ { src: "/img/catalogo/lamina-triple-pallet-cdmx.avif", alt: "Láminas triples — pallet" },
+ { src: "/img/catalogo/lamina-triple-capas-cdmx.avif", alt: "Corte transversal 3 capas" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Láminas Triples BCB"}]}
-  faqItems={[{question:"¿Puede sustituir la madera en embalaje industrial?", answer:"En muchas aplicaciones sí. Ventajas: sin NIMF 15 para exportación, 60-70% más ligero a resistencia equivalente, 100% reciclable, se imprime fácilmente. Limitaciones: menor resistencia a humedad extrema prolongada y menor rigidez lateral sin esquineros."}, {question:"¿Qué grosor de madera equivale en resistencia al aplastamiento?", answer:"BCT comparable a madera contrachapada 9-12 mm según aplicación. Para layer pads iguala madera 9 mm. Para bases exportación iguala 6 mm. Para laterales de caja industrial, madera 12 mm sigue siendo superior en rigidez lateral. Con esquineros en L puede sustituir madera 12 mm en mayoría de cajas de exportación."}]}
-  product={{name:"Láminas Triple Corrugado BCB Sustituto Madera", sku:"CAD-LC-03", description:"Láminas Triple Corrugado BCB Sustituto Madera en CDMX — fabricante directo CADECA", image:"/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif", material:"Láminas triple corrugado BCB ECT-61 sustituto madera exportación industrial", category:"Láminas de Cartón Corrugado", moq:"25"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Láminas Triples BCB"}]}
+ faqItems={[{question:"¿Puede sustituir la madera en embalaje industrial?", answer:"En muchas aplicaciones sí. Ventajas: sin NIMF 15 para exportación, 60-70% más ligero a resistencia equivalente, 100% reciclable, se imprime fácilmente. Limitaciones: menor resistencia a humedad extrema prolongada y menor rigidez lateral sin esquineros."}, {question:"¿Qué grosor de madera equivale en resistencia al aplastamiento?", answer:"BCT comparable a madera contrachapada 9-12 mm según aplicación. Para layer pads iguala madera 9 mm. Para bases exportación iguala 6 mm. Para laterales de caja industrial, madera 12 mm sigue siendo superior en rigidez lateral. Con esquineros en L puede sustituir madera 12 mm en mayoría de cajas de exportación."}]}
+ product={{name:"Láminas Triple Corrugado BCB Sustituto Madera", sku:"CAD-LC-03", description:"Láminas Triple Corrugado BCB Sustituto Madera en CDMX — fabricante directo CADECA", image:"/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif", material:"Láminas triple corrugado BCB ECT-61 sustituto madera exportación industrial", category:"Láminas de Cartón Corrugado", moq:"25"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
-        <li><span class="current">Láminas Triples BCB</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+ <li><span class="current">Láminas Triples BCB</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-lc03-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-LC-03 · Láminas de Cartón Corrugado</span>
-      <h1 id="sku-lc03-title" class="cat-page-hero__title">Láminas Triple Corrugado <span>BCB ECT-61+</span><br>— Sustituto Madera CDMX</h1>
-      <p class="cat-page-hero__desc">Triple corrugado BCB (12 mm) con ECT-61+ y BCT >500 kg/m². Sin NIMF 15 para exportación. 60-70% más ligero que madera equivalente. 100% reciclable. Desde 25 piezas.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-03</strong></div>
-        <div class="cat-page-hero__strip-item">Flauta: <strong>BCB — 12 mm</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-lc03-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-LC-03 · Láminas de Cartón Corrugado</span>
+ <h1 id="sku-lc03-title" class="cat-page-hero__title">Láminas Triple Corrugado <span>BCB ECT-61+</span><br>— Sustituto Madera CDMX</h1>
+ <p class="cat-page-hero__desc">Triple corrugado BCB (12 mm) con ECT-61+ y BCT >500 kg/m². Sin NIMF 15 para exportación. 60-70% más ligero que madera equivalente. 100% reciclable. Desde 25 piezas.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-03</strong></div>
+ <div class="cat-page-hero__strip-item">Flauta: <strong>BCB — 12 mm</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-lc03-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-LC-03 · Familia: Láminas de Cartón Corrugado</p>
-            <h2 id="detalle-lc03-title" class="sku-detail__title">Láminas Triple Corrugado — BCB Sustituto Madera</h2>
-            <p class="sku-detail__desc">Triple corrugado BCB (12 mm) ECT-61+ con BCT estimado >500 kg/m². Gramaje 175-200 g/m². Sin NIMF 15 para exportación libre de fumigación. 60-70% más ligero que madera contrachapada equivalente. Hasta 120×200 cm.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">BCB 12 mm</span><span class="sku-detail__strip-label">Flauta</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-61+</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-03 Láminas Triple BCB Sustituto Madera`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-03</a>
-              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-lc03-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-LC-03 · Familia: Láminas de Cartón Corrugado</p>
+ <h2 id="detalle-lc03-title" class="sku-detail__title">Láminas Triple Corrugado — BCB Sustituto Madera</h2>
+ <p class="sku-detail__desc">Triple corrugado BCB (12 mm) ECT-61+ con BCT estimado >500 kg/m². Gramaje 175-200 g/m². Sin NIMF 15 para exportación libre de fumigación. 60-70% más ligero que madera contrachapada equivalente. Hasta 120×200 cm.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">BCB 12 mm</span><span class="sku-detail__strip-label">Flauta</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-61+</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-03 Láminas Triple BCB Sustituto Madera`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-03</a>
+ <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-lc03-title">
-      <div class="container">
-        <h2 id="sizes-lc03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-LC-03</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Medida</th><th>Dimensión (cm)</th><th>Medida real</th><th>Flauta</th><th>ECT</th><th>Peso/ud</th><th></th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
-                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td></td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Corte a medida desde 25 piezas. ⏱ Producción bajo pedido.</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-lc03-title">
+ <div class="container">
+ <h2 id="sizes-lc03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-LC-03</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Medida</th><th>Dimensión (cm)</th><th>Medida real</th><th>Flauta</th><th>ECT</th><th>Peso/ud</th><th></th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+ <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Corte a medida desde 25 piezas.  Producción bajo pedido.</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-lc03-title">
-      <div class="container">
-        <h2 id="faq-lc03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-03</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-03 — Láminas triples desde 25 piezas, entrega 5-7 días" />
+ <section class="faq" aria-labelledby="faq-lc03-title">
+ <div class="container">
+ <h2 id="faq-lc03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-03</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-03 — Láminas triples desde 25 piezas, entrega 5-7 días" />
 </PageLayout>

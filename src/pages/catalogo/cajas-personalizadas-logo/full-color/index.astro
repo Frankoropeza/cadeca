@@ -1,149 +1,149 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Cajas Cartón Full Color CMYK CDMX | Offset Digital | CAD-PL-03 | CADECA";
+const title  = "Cajas Cartón Full Color CMYK CDMX | Offset Digital | CAD-PL-03 | CADECA";
 const description = "Cajas de cartón full color CMYK en CDMX. Impresión offset o digital de alta resolución, papel coated blanco, desde 200 piezas, entrega 7-10 días. Para marcas premium. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"S", ml:"28×22×12 cm", real:"28×22×12", flauta:"C",ect:"ECT-32",vacío:"0.30 kg",máx:"8 kg", disp:"yellow", label:"7-10 días", hl:true },
-  { talla:"M", ml:"38×30×18 cm", real:"38×30×18", flauta:"C",ect:"ECT-32",vacío:"0.48 kg",máx:"12 kg", disp:"yellow", label:"7-10 días", hl:true },
-  { talla:"L", ml:"50×38×25 cm", real:"50×38×25", flauta:"BC",ect:"ECT-44",vacío:"0.82 kg",máx:"18 kg", disp:"yellow", label:"7-10 días", hl:false },
-  { talla:"XL", ml:"60×45×30 cm", real:"60×45×30", flauta:"BC",ect:"ECT-44",vacío:"1.20 kg",máx:"25 kg", disp:"gray", label:"10-15 días", hl:false },
-  { talla:"A la Medida", ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+ { talla:"S", ml:"28×22×12 cm", real:"28×22×12", flauta:"C",ect:"ECT-32",vacío:"0.30 kg",máx:"8 kg", disp:"yellow", label:"7-10 días", hl:true },
+ { talla:"M", ml:"38×30×18 cm", real:"38×30×18", flauta:"C",ect:"ECT-32",vacío:"0.48 kg",máx:"12 kg", disp:"yellow", label:"7-10 días", hl:true },
+ { talla:"L", ml:"50×38×25 cm", real:"50×38×25", flauta:"BC",ect:"ECT-44",vacío:"0.82 kg",máx:"18 kg", disp:"yellow", label:"7-10 días", hl:false },
+ { talla:"XL", ml:"60×45×30 cm", real:"60×45×30", flauta:"BC",ect:"ECT-44",vacío:"1.20 kg",máx:"25 kg", disp:"gray", label:"10-15 días", hl:false },
+ { talla:"A la Medida", ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
 ];
 
 const specs = [
-  ["Código SKU", "CAD-PL-03"],
-  ["Tipo impresión", "Offset litográfico o digital"],
-  ["Colores", "CMYK + Pantone especial opcional"],
-  ["Papel exterior", "Kraft blanco coated 170g"],
-  ["Resolución", "200 lpi offset / 720 dpi digital"],
-  ["Acabados", "Barniz mate o brillante estándar"],
-  ["Tipo de pared", "Simple ECT-32 o doble ECT-44"],
-  ["Diseño", "Gratis — requiere archivo PDF CMYK"],
-  ["Perfil de color", "ISO Coated V2"],
-  ["Pedido mínimo", "200 piezas"],
-  ["Entrega CDMX", "7-10 días hábiles"],
+ ["Código SKU", "CAD-PL-03"],
+ ["Tipo impresión", "Offset litográfico o digital"],
+ ["Colores", "CMYK + Pantone especial opcional"],
+ ["Papel exterior", "Kraft blanco coated 170g"],
+ ["Resolución", "200 lpi offset / 720 dpi digital"],
+ ["Acabados", "Barniz mate o brillante estándar"],
+ ["Tipo de pared", "Simple ECT-32 o doble ECT-44"],
+ ["Diseño", "Gratis — requiere archivo PDF CMYK"],
+ ["Perfil de color", "ISO Coated V2"],
+ ["Pedido mínimo", "200 piezas"],
+ ["Entrega CDMX", "7-10 días hábiles"],
 ];
 
 const faqs = [
-  {
-    id:"pl03-f1",
-    question:"¿Cuál es la diferencia entre impresión offset y digital en cajas full color?",
-    answer:"El offset litográfico usa planchas de aluminio grabadas con el diseño y aplica tinta en capas sobre papel. Ofrece la mayor calidad de color, nitidez y consistencia entre piezas. Es más económico en volúmenes de 500+ piezas. La impresión digital usa cabezales de inyección de tinta de alta resolución, sin placas, por lo que cada pieza puede ser diferente (personalización variable). Es más económica en 200-500 piezas y tiene tiempos de producción más cortos. Para cajas de cartón corrugado, el offset es el estándar de la industria para volúmenes medios y altos.",
-  },
-  {
-    id:"pl03-f2",
-    question:"¿Puedo imprimir fotografías o degradados en la caja?",
-    answer:"Sí, con impresión CMYK offset o digital puedes reproducir fotografías, ilustraciones, degradados y cualquier diseño complejo. La clave es usar papel coated blanco como liner exterior (el kraft marrón estándar no permite colores vivos ni blancos). Para mejores resultados, el archivo debe estar en CMYK con perfil ISO Coated V2, resolución mínima 300 dpi para fotografías y todas las fuentes convertidas a curvas o trazados.",
-  },
+ {
+ id:"pl03-f1",
+ question:"¿Cuál es la diferencia entre impresión offset y digital en cajas full color?",
+ answer:"El offset litográfico usa planchas de aluminio grabadas con el diseño y aplica tinta en capas sobre papel. Ofrece la mayor calidad de color, nitidez y consistencia entre piezas. Es más económico en volúmenes de 500+ piezas. La impresión digital usa cabezales de inyección de tinta de alta resolución, sin placas, por lo que cada pieza puede ser diferente (personalización variable). Es más económica en 200-500 piezas y tiene tiempos de producción más cortos. Para cajas de cartón corrugado, el offset es el estándar de la industria para volúmenes medios y altos.",
+ },
+ {
+ id:"pl03-f2",
+ question:"¿Puedo imprimir fotografías o degradados en la caja?",
+ answer:"Sí, con impresión CMYK offset o digital puedes reproducir fotografías, ilustraciones, degradados y cualquier diseño complejo. La clave es usar papel coated blanco como liner exterior (el kraft marrón estándar no permite colores vivos ni blancos). Para mejores resultados, el archivo debe estar en CMYK con perfil ISO Coated V2, resolución mínima 300 dpi para fotografías y todas las fuentes convertidas a curvas o trazados.",
+ },
 ];
 
 const mainImg = "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif", alt: "Caja full color CMYK — principal" },
-  { src: "/img/catalogo/caja-cmyk-hero-cdmx.avif", alt: "Full color CMYK — hero" },
-  { src: "/img/catalogo/caja-cmyk-stack-cdmx.avif", alt: "Cajas CMYK — apiladas" },
-  { src: "/img/catalogo/caja-cmyk-unboxing-cdmx.avif", alt: "Caja CMYK — experiencia unboxing" },
-  { src: "/img/catalogo/caja-cmyk-detalle-cdmx.avif", alt: "Detalle impresión CMYK" },
+ { src: "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif", alt: "Caja full color CMYK — principal" },
+ { src: "/img/catalogo/caja-cmyk-hero-cdmx.avif", alt: "Full color CMYK — hero" },
+ { src: "/img/catalogo/caja-cmyk-stack-cdmx.avif", alt: "Cajas CMYK — apiladas" },
+ { src: "/img/catalogo/caja-cmyk-unboxing-cdmx.avif", alt: "Caja CMYK — experiencia unboxing" },
+ { src: "/img/catalogo/caja-cmyk-detalle-cdmx.avif", alt: "Detalle impresión CMYK" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo"}, {name:"Full Color CMYK"}]}
-  faqItems={[{question:"¿Cuál es la diferencia entre impresión offset y digital en cajas full color?", answer:"El offset litográfico usa planchas de aluminio grabadas con el diseño y aplica tinta en capas sobre papel. Ofrece la mayor calidad de color, nitidez y consistencia entre piezas. Es más económico en volúmenes de 500+ piezas. La impresión digital usa cabezales de inyección de tinta de alta resolución, sin placas, por lo que cada pieza puede ser diferente (personalización variable). Es más económica en 200-500 piezas y tiene tiempos de producción más cortos. Para cajas de cartón corrugado, el offset es el estándar de la industria para volúmenes medios y altos."}, {question:"¿Puedo imprimir fotografías o degradados en la caja?", answer:"Sí, con impresión CMYK offset o digital puedes reproducir fotografías, ilustraciones, degradados y cualquier diseño complejo. La clave es usar papel coated blanco como liner exterior (el kraft marrón estándar no permite colores vivos ni blancos). Para mejores resultados, el archivo debe estar en CMYK con perfil ISO Coated V2, resolución mínima 300 dpi para fotografías y todas las fuentes convertidas a curvas o trazados."}]}
-  product={{name:"Caja Cartón Full Color CMYK Impresión Offset", sku:"CAD-PL-03", description:"Caja Cartón Full Color CMYK Impresión Offset en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif", material:"Cartón corrugado simple kraft blanco coated impresión offset CMYK", category:"Cajas de Cartón Personalizadas con Logo", moq:"200"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo"}, {name:"Full Color CMYK"}]}
+ faqItems={[{question:"¿Cuál es la diferencia entre impresión offset y digital en cajas full color?", answer:"El offset litográfico usa planchas de aluminio grabadas con el diseño y aplica tinta en capas sobre papel. Ofrece la mayor calidad de color, nitidez y consistencia entre piezas. Es más económico en volúmenes de 500+ piezas. La impresión digital usa cabezales de inyección de tinta de alta resolución, sin placas, por lo que cada pieza puede ser diferente (personalización variable). Es más económica en 200-500 piezas y tiene tiempos de producción más cortos. Para cajas de cartón corrugado, el offset es el estándar de la industria para volúmenes medios y altos."}, {question:"¿Puedo imprimir fotografías o degradados en la caja?", answer:"Sí, con impresión CMYK offset o digital puedes reproducir fotografías, ilustraciones, degradados y cualquier diseño complejo. La clave es usar papel coated blanco como liner exterior (el kraft marrón estándar no permite colores vivos ni blancos). Para mejores resultados, el archivo debe estar en CMYK con perfil ISO Coated V2, resolución mínima 300 dpi para fotografías y todas las fuentes convertidas a curvas o trazados."}]}
+ product={{name:"Caja Cartón Full Color CMYK Impresión Offset", sku:"CAD-PL-03", description:"Caja Cartón Full Color CMYK Impresión Offset en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif", material:"Cartón corrugado simple kraft blanco coated impresión offset CMYK", category:"Cajas de Cartón Personalizadas con Logo", moq:"200"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-personalizadas-logo">Personalizadas con Logo</a></li>
-        <li><span class="current">Full Color CMYK</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo">Personalizadas con Logo</a></li>
+ <li><span class="current">Full Color CMYK</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-pl03-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-PL-03 · Personalizadas con Logo</span>
-      <h1 id="sku-pl03-title" class="cat-page-hero__title">Cajas <span>Full Color CMYK</span><br>— Offset / Digital CDMX</h1>
-      <p class="cat-page-hero__desc">Impresión offset o digital CMYK de alta resolución sobre papel coated blanco. Reproduce fotografías, degradados e ilustraciones sin límite de colores. Para marcas que necesitan impacto visual máximo.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-03</strong></div>
-        <div class="cat-page-hero__strip-item">Impresión: <strong>Offset CMYK</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>7-10 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-pl03-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-PL-03 · Personalizadas con Logo</span>
+ <h1 id="sku-pl03-title" class="cat-page-hero__title">Cajas <span>Full Color CMYK</span><br>— Offset / Digital CDMX</h1>
+ <p class="cat-page-hero__desc">Impresión offset o digital CMYK de alta resolución sobre papel coated blanco. Reproduce fotografías, degradados e ilustraciones sin límite de colores. Para marcas que necesitan impacto visual máximo.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-03</strong></div>
+ <div class="cat-page-hero__strip-item">Impresión: <strong>Offset CMYK</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>7-10 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-pl03-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-PL-03 · Familia: Personalizadas con Logo</p>
-            <h2 id="detalle-pl03-title" class="sku-detail__title">Caja Full Color CMYK — Offset / Digital</h2>
-            <p class="sku-detail__desc">Impresión offset litográfico o digital de alta resolución sobre liner kraft blanco coated. Reproduce cualquier diseño: fotografías, degradados, ilustraciones, colores corporativos exactos. Acabado estándar con barniz mate o brillante incluido. Para marcas premium, e-commerce con experiencia de unboxing, o productos que compiten en punto de venta.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">CMYK Offset</span><span class="sku-detail__strip-label">Impresión</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 lpi</span><span class="sku-detail__strip-label">Resolución</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7-10 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-03 Caja Full Color CMYK`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-03</a>
-              <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-pl03-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-PL-03 · Familia: Personalizadas con Logo</p>
+ <h2 id="detalle-pl03-title" class="sku-detail__title">Caja Full Color CMYK — Offset / Digital</h2>
+ <p class="sku-detail__desc">Impresión offset litográfico o digital de alta resolución sobre liner kraft blanco coated. Reproduce cualquier diseño: fotografías, degradados, ilustraciones, colores corporativos exactos. Acabado estándar con barniz mate o brillante incluido. Para marcas premium, e-commerce con experiencia de unboxing, o productos que compiten en punto de venta.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">CMYK Offset</span><span class="sku-detail__strip-label">Impresión</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 lpi</span><span class="sku-detail__strip-label">Resolución</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7-10 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-03 Caja Full Color CMYK`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-03</a>
+ <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-pl03-title">
-      <div class="container">
-        <h2 id="sizes-pl03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-PL-03</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
-                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Fabricamos cualquier medida personalizada desde 200 piezas. ⏱ Producción bajo pedido.</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-pl03-title">
+ <div class="container">
+ <h2 id="sizes-pl03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-PL-03</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+ <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Fabricamos cualquier medida personalizada desde 200 piezas.  Producción bajo pedido.</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-pl03-title">
-      <div class="container">
-        <h2 id="faq-pl03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-PL-03</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-PL-03 — Full color CMYK, entrega 7-10 días" />
+ <section class="faq" aria-labelledby="faq-pl03-title">
+ <div class="container">
+ <h2 id="faq-pl03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-PL-03</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-PL-03 — Full color CMYK, entrega 7-10 días" />
 </PageLayout>

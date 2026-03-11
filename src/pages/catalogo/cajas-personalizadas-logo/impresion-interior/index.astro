@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Impresión Interior Unboxing Premium CDMX | CAD-PL-09 | CADECA";
+const title  = "Caja Impresión Interior Unboxing Premium CDMX | CAD-PL-09 | CADECA";
 const description = "Caja con impresión interior personalizada en CDMX. Sorpresa al abrir, unboxing premium. Exterior kraft + interior full color. MOQ 300 pzas. Diseño incluido. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-PL-09"],
-  ["Exterior", "Kraft natural o logo 1–2 colores"],
-  ["Interior", "Impresión full color CMYK"],
-  ["Resistencia", "ECT-32"],
-  ["Unboxing", "Diseñado para redes sociales"],
-  ["Arte", "Gratuito con logo vectorial"],
-  ["Muestra", "Física sin costo"],
-  ["Pedido mínimo", "300 piezas"],
-  ["Entrega", "8–12 días hábiles"],
+ ["Código SKU", "CAD-PL-09"],
+ ["Exterior", "Kraft natural o logo 1–2 colores"],
+ ["Interior", "Impresión full color CMYK"],
+ ["Resistencia", "ECT-32"],
+ ["Unboxing", "Diseñado para redes sociales"],
+ ["Arte", "Gratuito con logo vectorial"],
+ ["Muestra", "Física sin costo"],
+ ["Pedido mínimo", "300 piezas"],
+ ["Entrega", "8–12 días hábiles"],
 ];
 
 const faqs = [
-  { id:"cad-pl-09-f1", question:"¿Por qué la impresión interior genera más engagement en redes?", answer:"La sorpresa visual al abrir la caja activa una respuesta emocional positiva que los clientes comparten naturalmente en TikTok e Instagram. Un interior bien diseñado puede generar docenas de unboxings orgánicos que equivalen a publicidad gratuita. Marcas como subscription boxes y DTC de cosmética reportan incrementos de 40% a 80% en unboxings compartidos después de implementar impresión interior." },
-  { id:"cad-pl-09-f2", question:"¿El interior impreso encarece mucho la caja?", answer:"El sobrecosto de la impresión interior varía según el área cubierta y el número de colores, pero en general es un incremento de 15% a 25% sobre el precio de una caja sin impresión interior. Para pedidos de 500 piezas o más, el costo adicional se vuelve muy pequeño por unidad y el impacto en la percepción de valor es desproporcionadamente mayor." },
-  { id:"cad-pl-09-f3", question:"¿Puedo poner mensajes personalizados por cliente en el interior?", answer:"Para mensajes individualizados por cliente (nombre del comprador, código de descuento, etc.) necesitarías impresión digital variable, que manejamos para tirajes menores. Para el unboxing experience estándar con diseño fijo, usamos impresión flexográfica que es más económica para tirajes de 300 piezas o más." },
+ { id:"cad-pl-09-f1", question:"¿Por qué la impresión interior genera más engagement en redes?", answer:"La sorpresa visual al abrir la caja activa una respuesta emocional positiva que los clientes comparten naturalmente en TikTok e Instagram. Un interior bien diseñado puede generar docenas de unboxings orgánicos que equivalen a publicidad gratuita. Marcas como subscription boxes y DTC de cosmética reportan incrementos de 40% a 80% en unboxings compartidos después de implementar impresión interior." },
+ { id:"cad-pl-09-f2", question:"¿El interior impreso encarece mucho la caja?", answer:"El sobrecosto de la impresión interior varía según el área cubierta y el número de colores, pero en general es un incremento de 15% a 25% sobre el precio de una caja sin impresión interior. Para pedidos de 500 piezas o más, el costo adicional se vuelve muy pequeño por unidad y el impacto en la percepción de valor es desproporcionadamente mayor." },
+ { id:"cad-pl-09-f3", question:"¿Puedo poner mensajes personalizados por cliente en el interior?", answer:"Para mensajes individualizados por cliente (nombre del comprador, código de descuento, etc.) necesitarías impresión digital variable, que manejamos para tirajes menores. Para el unboxing experience estándar con diseño fijo, usamos impresión flexográfica que es más económica para tirajes de 300 piezas o más." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-cmyk-unboxing-cdmx.avif", alt: "Unboxing caja impresión interior" },
-  { src: "/img/catalogo/caja-cmyk-interior-cdmx.avif", alt: "Interior personalizado caja" },
-  { src: "/img/catalogo/caja-shopify-unboxing-cdmx.avif", alt: "Unboxing premium DTC" },
-  { src: "/img/catalogo/caja-2colores-retail-cdmx.avif", alt: "Caja personalizada exterior" },
-  { src: "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif", alt: "Full color impresión" },
+ { src: "/img/catalogo/caja-cmyk-unboxing-cdmx.avif", alt: "Unboxing caja impresión interior" },
+ { src: "/img/catalogo/caja-cmyk-interior-cdmx.avif", alt: "Interior personalizado caja" },
+ { src: "/img/catalogo/caja-shopify-unboxing-cdmx.avif", alt: "Unboxing premium DTC" },
+ { src: "/img/catalogo/caja-2colores-retail-cdmx.avif", alt: "Caja personalizada exterior" },
+ { src: "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif", alt: "Full color impresión" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo"},{name:"Caja con Impresión Interior Sorpresa"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja con Impresión Interior Sorpresa",sku:"CAD-PL-09",description:"Caja con impresión interior para crear sorpresa al abrir: exterior neutro o con logo y el interior totalmente personalizado con tu marca. Ideal para unboxing en redes sociales.",image:gallery[0].src,material:"CAD-PL-09",category:"Cajas Personalizadas con Logo",moq:"300 piezas"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo"},{name:"Caja con Impresión Interior Sorpresa"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja con Impresión Interior Sorpresa",sku:"CAD-PL-09",description:"Caja con impresión interior para crear sorpresa al abrir: exterior neutro o con logo y el interior totalmente personalizado con tu marca. Ideal para unboxing en redes sociales.",image:gallery[0].src,material:"CAD-PL-09",category:"Cajas Personalizadas con Logo",moq:"300 piezas"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-personalizadas-logo">Cajas Personalizadas con Logo</a></li>
-        <li><span class="current">Caja con Impresión Interior Sorpresa</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo">Cajas Personalizadas con Logo</a></li>
+ <li><span class="current">Caja con Impresión Interior Sorpresa</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadpl09-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-PL-09 · Cajas Personalizadas con Logo</span>
-      <h1 id="sku-cadpl09-title" class="cat-page-hero__title">Caja con <span>Impresión Interior</span> — Sorpresa al Abrir CDMX</h1>
-      <p class="cat-page-hero__desc">Caja con impresión interior para crear sorpresa al abrir: exterior neutro o con logo y el interior totalmente personalizado con tu marca. Ideal para unboxing en redes sociales.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-09</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>300 piezas</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadpl09-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-PL-09 · Cajas Personalizadas con Logo</span>
+ <h1 id="sku-cadpl09-title" class="cat-page-hero__title">Caja con <span>Impresión Interior</span> — Sorpresa al Abrir CDMX</h1>
+ <p class="cat-page-hero__desc">Caja con impresión interior para crear sorpresa al abrir: exterior neutro o con logo y el interior totalmente personalizado con tu marca. Ideal para unboxing en redes sociales.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-09</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>300 piezas</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadpl09-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-PL-09 · Familia: Cajas Personalizadas con Logo</p>
-            <h2 id="detalle-cadpl09-title" class="sku-detail__title">Caja con Impresión Interior Sorpresa</h2>
-            <p class="sku-detail__desc">La impresión interior es el detalle que diferencia una marca memorable de una genérica. El cliente abre la caja y descubre un mundo de color, mensajes personalizados o ilustraciones que refuerzan la identidad de marca. CAD-PL-09 tiene exterior en kraft natural o con logo de 1 a 2 colores, e interior impreso en full color CMYK. Ideal para marcas DTC, suscripción boxes y regalos corporativos que quieren crear contenido viral de unboxing en TikTok e Instagram.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Interior CMYK</span><span class="sku-detail__strip-label">Impresión</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Kraft</span><span class="sku-detail__strip-label">Exterior</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">300 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Unboxing</span><span class="sku-detail__strip-label">Viral</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-09 Caja con Impresión Interior Sorpresa`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-09</a>
-              <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadpl09-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-PL-09 · Familia: Cajas Personalizadas con Logo</p>
+ <h2 id="detalle-cadpl09-title" class="sku-detail__title">Caja con Impresión Interior Sorpresa</h2>
+ <p class="sku-detail__desc">La impresión interior es el detalle que diferencia una marca memorable de una genérica. El cliente abre la caja y descubre un mundo de color, mensajes personalizados o ilustraciones que refuerzan la identidad de marca. CAD-PL-09 tiene exterior en kraft natural o con logo de 1 a 2 colores, e interior impreso en full color CMYK. Ideal para marcas DTC, suscripción boxes y regalos corporativos que quieren crear contenido viral de unboxing en TikTok e Instagram.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Interior CMYK</span><span class="sku-detail__strip-label">Impresión</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Kraft</span><span class="sku-detail__strip-label">Exterior</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">300 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Unboxing</span><span class="sku-detail__strip-label">Viral</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-09 Caja con Impresión Interior Sorpresa`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-09</a>
+ <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadpl09-title">
-      <div class="container">
-        <h2 id="faq-cadpl09-title" class="sku-faq__title">Preguntas Frecuentes — Caja con Impresión Interior Sorpresa</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadpl09-title">
+ <div class="container">
+ <h2 id="faq-cadpl09-title" class="sku-faq__title">Preguntas Frecuentes — Caja con Impresión Interior Sorpresa</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Quieres que tus clientes compartan el unboxing? Crea la caja sorpresa que genera contenido viral" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Quieres que tus clientes compartan el unboxing? Crea la caja sorpresa que genera contenido viral" />
 </PageLayout>

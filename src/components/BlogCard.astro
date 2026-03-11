@@ -2,62 +2,62 @@
 import "@/styles/blog.css";
 
 export interface Props {
-  title: string;
-  slug: string;
-  description: string;
-  pubDate: Date;
-  category: string;
-  readingTime?: number;
-  image?: string;
-  imageAlt?: string;
-  featured?: boolean;
+ title: string;
+ slug: string;
+ description: string;
+ pubDate: Date;
+ category: string;
+ readingTime?: number;
+ image?: string;
+ imageAlt?: string;
+ featured?: boolean;
 }
 
 const {
-  title,
-  slug,
-  description,
-  pubDate,
-  category,
-  readingTime,
-  image,
-  imageAlt,
-  featured = false,
+ title,
+ slug,
+ description,
+ pubDate,
+ category,
+ readingTime,
+ image,
+ imageAlt,
+ featured = false,
 } = Astro.props;
 
 const categorySlug = category.toLowerCase()
-  .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-  .replace(/\s+/g, "-");
+ .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+ .replace(/\s+/g, "-");
 
 const formattedDate = pubDate.toLocaleDateString("es-MX", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
+ day: "numeric",
+ month: "long",
+ year: "numeric",
 });
 ---
 
 <article class={`blog-card ${featured ? "blog-card--featured" : ""}`}>
-  <a href={`/blog/${slug}`} aria-label={`Leer: ${title}`}>
-    {image ? (
-      <img src={image} alt={imageAlt || title} class="blog-card__image" loading="lazy" />
-    ) : (
-      <div class={`blog-card__placeholder blog-card__placeholder--${categorySlug}`}>
-        CADECA
-      </div>
-    )}
-  </a>
-  <div class="blog-card__body">
-    <div class="blog-card__meta">
-      <span class={`blog-card__category blog-card__category--${categorySlug}`}>{category}</span>
-      <span class="blog-card__date">{formattedDate}</span>
-      {readingTime && <span class="blog-card__reading">· {readingTime} min de lectura</span>}
-    </div>
-    <h3 class="blog-card__title">
-      <a href={`/blog/${slug}`}>{title}</a>
-    </h3>
-    <p class="blog-card__desc">{description}</p>
-    <a href={`/blog/${slug}`} class="blog-card__link">
-      Leer más <span aria-hidden="true">→</span>
-    </a>
-  </div>
+ <a href={`/blog/${slug}`} aria-label={`Leer: ${title}`}>
+ {image ? (
+ <img src={image} alt={imageAlt || title} class="blog-card__image" loading="lazy" />
+ ) : (
+ <div class={`blog-card__placeholder blog-card__placeholder--${categorySlug}`}>
+ CADECA
+ </div>
+ )}
+ </a>
+ <div class="blog-card__body">
+ <div class="blog-card__meta">
+ <span class={`blog-card__category blog-card__category--${categorySlug}`}>{category}</span>
+ <span class="blog-card__date">{formattedDate}</span>
+ {readingTime && <span class="blog-card__reading">· {readingTime} min de lectura</span>}
+ </div>
+ <h3 class="blog-card__title">
+ <a href={`/blog/${slug}`}>{title}</a>
+ </h3>
+ <p class="blog-card__desc">{description}</p>
+ <a href={`/blog/${slug}`} class="blog-card__link">
+ Leer más <span aria-hidden="true">→</span>
+ </a>
+ </div>
 </article>

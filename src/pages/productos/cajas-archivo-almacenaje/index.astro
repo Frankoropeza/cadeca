@@ -1,499 +1,499 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import ProductCard   from "@/components/ProductCard.astro";
+import ProductCard  from "@/components/ProductCard.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
-import ProcessStep   from "@/components/ProcessStep.astro";
-import Testimonial   from "@/components/Testimonial.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import Testimonial  from "@/components/Testimonial.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 
-const title       = "Cajas de Archivo y Almacenaje CDMX | Archivo Muerto, Industrial, Apilable | CADECA";
+const title  = "Cajas de Archivo y Almacenaje CDMX | Archivo Muerto, Industrial, Apilable | CADECA";
 const description = "Cajas de archivo y almacenaje en CDMX. Archivo muerto, almacén industrial, apilables triple pared y mudanza. Guarda documentos, inventario y expedientes. Entrega 24-48 hrs. Cotiza gratis.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Cajas de Archivo y Almacenaje",
-  "description": "Cajas de cartón corrugado para archivo muerto, almacenaje industrial, documentos y mudanza. Triple pared apilable, resistente a la humedad. Entrega 24-48 hrs en CDMX y Estado de México.",
-  "brand": { "@type": "Brand", "name": "CADECA" },
-  "manufacturer": { "@type": "Organization", "name": "CADECA" },
-  "url": "https://cajas-de-carton.com/productos/cajas-archivo-almacenaje",
-  "image": "https://cajas-de-carton.com/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
-  "category": "Cajas de Archivo y Almacenaje",
-  "areaServed": ["Ciudad de México", "Estado de México"],
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "lowPrice": "12.00",
-    "highPrice": "55.00",
-    "availability": "https://schema.org/InStock",
-    "seller": { "@type": "Organization", "name": "CADECA" }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "97",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": { "@type": "Person", "name": "Lic. Sandra M." },
-      "datePublished": "2025-09-25",
-      "reviewBody": "Las cajas de archivo muerto que compramos cumplen perfectamente con los requerimientos del SAT para conservación de documentación fiscal. Son resistentes, apilables y mantienen los expedientes protegidos. Llevamos más de un año usándolas sin ningún deterioro."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": { "@type": "Person", "name": "Ernesto V." },
-      "datePublished": "2025-12-15",
-      "reviewBody": "Necesitábamos cajas apilables para organizar nuestra bodega y las de CADECA son perfectas. Soportan 5 niveles de apilamiento sin deformarse y el sistema de armado es muy práctico. La organización del almacén mejoró completamente."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": { "@type": "Person", "name": "Adriana T." },
-      "datePublished": "2026-01-28",
-      "reviewBody": "La durabilidad de estas cajas es impresionante. Tenemos documentos almacenados desde hace más de 3 años y las cajas siguen en perfecto estado. El cartón triple pared realmente cumple con lo que prometen para almacenamiento de largo plazo."
-    }
-  ],
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Resistencia", "value": "Al aplastamiento alta" },
-    { "@type": "PropertyValue", "name": "Tapa", "value": "Integrada o separada" },
-    { "@type": "PropertyValue", "name": "Material", "value": "Doble corrugado" },
-    { "@type": "PropertyValue", "name": "Capacidad", "value": "Hasta 25 kg" },
-    { "@type": "PropertyValue", "name": "Apilamiento", "value": "5+ niveles" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "Cajas de Archivo y Almacenaje",
+ "description": "Cajas de cartón corrugado para archivo muerto, almacenaje industrial, documentos y mudanza. Triple pared apilable, resistente a la humedad. Entrega 24-48 hrs en CDMX y Estado de México.",
+ "brand": { "@type": "Brand", "name": "CADECA" },
+ "manufacturer": { "@type": "Organization", "name": "CADECA" },
+ "url": "https://cajas-de-carton.com/productos/cajas-archivo-almacenaje",
+ "image": "https://cajas-de-carton.com/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
+ "category": "Cajas de Archivo y Almacenaje",
+ "areaServed": ["Ciudad de México", "Estado de México"],
+ "offers": {
+ "@type": "AggregateOffer",
+ "priceCurrency": "MXN",
+ "lowPrice": "12.00",
+ "highPrice": "55.00",
+ "availability": "https://schema.org/InStock",
+ "seller": { "@type": "Organization", "name": "CADECA" }
+ },
+ "aggregateRating": {
+ "@type": "AggregateRating",
+ "ratingValue": "4.8",
+ "reviewCount": "97",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "review": [
+ {
+ "@type": "Review",
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "5",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "author": { "@type": "Person", "name": "Lic. Sandra M." },
+ "datePublished": "2025-09-25",
+ "reviewBody": "Las cajas de archivo muerto que compramos cumplen perfectamente con los requerimientos del SAT para conservación de documentación fiscal. Son resistentes, apilables y mantienen los expedientes protegidos. Llevamos más de un año usándolas sin ningún deterioro."
+ },
+ {
+ "@type": "Review",
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "5",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "author": { "@type": "Person", "name": "Ernesto V." },
+ "datePublished": "2025-12-15",
+ "reviewBody": "Necesitábamos cajas apilables para organizar nuestra bodega y las de CADECA son perfectas. Soportan 5 niveles de apilamiento sin deformarse y el sistema de armado es muy práctico. La organización del almacén mejoró completamente."
+ },
+ {
+ "@type": "Review",
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "5",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "author": { "@type": "Person", "name": "Adriana T." },
+ "datePublished": "2026-01-28",
+ "reviewBody": "La durabilidad de estas cajas es impresionante. Tenemos documentos almacenados desde hace más de 3 años y las cajas siguen en perfecto estado. El cartón triple pared realmente cumple con lo que prometen para almacenamiento de largo plazo."
+ }
+ ],
+ "additionalProperty": [
+ { "@type": "PropertyValue", "name": "Resistencia", "value": "Al aplastamiento alta" },
+ { "@type": "PropertyValue", "name": "Tapa", "value": "Integrada o separada" },
+ { "@type": "PropertyValue", "name": "Material", "value": "Doble corrugado" },
+ { "@type": "PropertyValue", "name": "Capacidad", "value": "Hasta 25 kg" },
+ { "@type": "PropertyValue", "name": "Apilamiento", "value": "5+ niveles" }
+ ]
 };
 
 const subcategorias = [
-  {
-    title:   "Archivo Muerto Tamaño Oficio",
-    desc:    "Cajas de archivo muerto tamaño oficio con tapa y agarraderas laterales. Ideales para expedientes legales, contables y administrativos. Corrugado resistente para apilamiento prolongado en bodega.",
-    imgSrc:  "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
-    imgAlt:  "Cajas de archivo muerto tamaño oficio en CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",
-    tags: [
-      { label: "Tamaño oficio",       href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio" },
-      { label: "Con tapa y asas",     href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio" },
-      { label: "Apilable en bodega",  href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio" },
-    ],
-    btnText: "Ver Archivo Muerto Oficio",
-  },
-  {
-    title:   "Documentos Tamaño Carta",
-    desc:    "Cajas para documentos tamaño carta con acceso frontal o superior. Perfectas para oficinas, consultorios y despachos que necesitan organizar papelería, facturas y correspondencia.",
-    imgSrc:  "/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif",
-    imgAlt:  "Cajas para documentos tamaño carta en CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/documentos-carta",
-    tags: [
-      { label: "Tamaño carta",        href: "/catalogo/cajas-archivo-almacenaje/documentos-carta" },
-      { label: "Acceso frontal",       href: "/catalogo/cajas-archivo-almacenaje/documentos-carta" },
-      { label: "Oficina y despacho",   href: "/catalogo/cajas-archivo-almacenaje/documentos-carta" },
-    ],
-    btnText: "Ver Documentos Carta",
-  },
-  {
-    title:   "Almacén Industrial",
-    desc:    "Cajas de almacenaje industrial para bodegas, centros de distribución y almacenes. Alta resistencia al apilamiento vertical, diseñadas para almacenamiento prolongado de inventario y mercancía.",
-    imgSrc:  "/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif",
-    imgAlt:  "Cajas de almacén industrial para bodegas en CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/almacen-industrial",
-    tags: [
-      { label: "Uso industrial",       href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial" },
-      { label: "Alta resistencia",     href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial" },
-      { label: "Bodega y CEDIS",       href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial" },
-    ],
-    btnText: "Ver Almacén Industrial",
-  },
-  {
-    title:   "Apilable Resistente Triple Pared",
-    desc:    "Cajas apilables de triple pared para almacenaje de largo plazo. Soportan hasta 5 niveles de apilamiento sin deformarse. Ideales para archivos pesados, refacciones y productos voluminosos.",
-    imgSrc:  "/img/catalogo/cajas-carton-triple-corrugado-industrial-cdmx.avif",
-    imgAlt:  "Cajas apilables triple pared resistentes en CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/apilable-resistente",
-    tags: [
-      { label: "Triple pared",         href: "/catalogo/cajas-archivo-almacenaje/apilable-resistente" },
-      { label: "5 niveles apilamiento", href: "/catalogo/cajas-archivo-almacenaje/apilable-resistente" },
-      { label: "Largo plazo",          href: "/catalogo/cajas-archivo-almacenaje/apilable-resistente" },
-    ],
-    btnText: "Ver Apilable Triple Pared",
-  },
-  {
-    title:   "Mudanza y Archivo con Asas",
-    desc:    "Cajas de mudanza con asas reforzadas para transportar documentos, libros y objetos pesados. Doble y triple pared según el peso. Con agarraderas troqueladas para carga y descarga segura.",
-    imgSrc:  "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif",
-    imgAlt:  "Cajas de mudanza y archivo con asas reforzadas en CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/mudanza-archivo",
-    tags: [
-      { label: "Asas troqueladas",    href: "/catalogo/cajas-archivo-almacenaje/mudanza-archivo" },
-      { label: "Doble y triple pared", href: "/catalogo/cajas-archivo-almacenaje/mudanza-archivo" },
-      { label: "Mudanza y transporte", href: "/catalogo/cajas-archivo-almacenaje/mudanza-archivo" },
-    ],
-    btnText: "Ver Mudanza y Archivo",
-  },
+ {
+ title:  "Archivo Muerto Tamaño Oficio",
+ desc:  "Cajas de archivo muerto tamaño oficio con tapa y agarraderas laterales. Ideales para expedientes legales, contables y administrativos. Corrugado resistente para apilamiento prolongado en bodega.",
+ imgSrc:  "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
+ imgAlt:  "Cajas de archivo muerto tamaño oficio en CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",
+ tags: [
+ { label: "Tamaño oficio",  href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio" },
+ { label: "Con tapa y asas",  href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio" },
+ { label: "Apilable en bodega",  href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio" },
+ ],
+ btnText: "Ver Archivo Muerto Oficio",
+ },
+ {
+ title:  "Documentos Tamaño Carta",
+ desc:  "Cajas para documentos tamaño carta con acceso frontal o superior. Perfectas para oficinas, consultorios y despachos que necesitan organizar papelería, facturas y correspondencia.",
+ imgSrc:  "/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif",
+ imgAlt:  "Cajas para documentos tamaño carta en CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/documentos-carta",
+ tags: [
+ { label: "Tamaño carta",  href: "/catalogo/cajas-archivo-almacenaje/documentos-carta" },
+ { label: "Acceso frontal",  href: "/catalogo/cajas-archivo-almacenaje/documentos-carta" },
+ { label: "Oficina y despacho",  href: "/catalogo/cajas-archivo-almacenaje/documentos-carta" },
+ ],
+ btnText: "Ver Documentos Carta",
+ },
+ {
+ title:  "Almacén Industrial",
+ desc:  "Cajas de almacenaje industrial para bodegas, centros de distribución y almacenes. Alta resistencia al apilamiento vertical, diseñadas para almacenamiento prolongado de inventario y mercancía.",
+ imgSrc:  "/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif",
+ imgAlt:  "Cajas de almacén industrial para bodegas en CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/almacen-industrial",
+ tags: [
+ { label: "Uso industrial",  href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial" },
+ { label: "Alta resistencia",  href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial" },
+ { label: "Bodega y CEDIS",  href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial" },
+ ],
+ btnText: "Ver Almacén Industrial",
+ },
+ {
+ title:  "Apilable Resistente Triple Pared",
+ desc:  "Cajas apilables de triple pared para almacenaje de largo plazo. Soportan hasta 5 niveles de apilamiento sin deformarse. Ideales para archivos pesados, refacciones y productos voluminosos.",
+ imgSrc:  "/img/catalogo/cajas-carton-triple-corrugado-industrial-cdmx.avif",
+ imgAlt:  "Cajas apilables triple pared resistentes en CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/apilable-resistente",
+ tags: [
+ { label: "Triple pared",  href: "/catalogo/cajas-archivo-almacenaje/apilable-resistente" },
+ { label: "5 niveles apilamiento", href: "/catalogo/cajas-archivo-almacenaje/apilable-resistente" },
+ { label: "Largo plazo",  href: "/catalogo/cajas-archivo-almacenaje/apilable-resistente" },
+ ],
+ btnText: "Ver Apilable Triple Pared",
+ },
+ {
+ title:  "Mudanza y Archivo con Asas",
+ desc:  "Cajas de mudanza con asas reforzadas para transportar documentos, libros y objetos pesados. Doble y triple pared según el peso. Con agarraderas troqueladas para carga y descarga segura.",
+ imgSrc:  "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif",
+ imgAlt:  "Cajas de mudanza y archivo con asas reforzadas en CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/mudanza-archivo",
+ tags: [
+ { label: "Asas troqueladas",  href: "/catalogo/cajas-archivo-almacenaje/mudanza-archivo" },
+ { label: "Doble y triple pared", href: "/catalogo/cajas-archivo-almacenaje/mudanza-archivo" },
+ { label: "Mudanza y transporte", href: "/catalogo/cajas-archivo-almacenaje/mudanza-archivo" },
+ ],
+ btnText: "Ver Mudanza y Archivo",
+ },
 ];
 
 const industrias = [
-  {
-    img:      "/img/industrias/industrial-placeholder.svg",
-    title:    "Despachos Contables y Legales",
-    desc:     "El SAT exige conservar documentación fiscal hasta por 5 años. Nuestras cajas de archivo muerto protegen expedientes, facturas y contratos con resistencia a la humedad y apilamiento seguro en bodega.",
-    href:     "/soluciones/archivo",
-    linkText: "Ver solución contable",
-  },
-  {
-    img:      "/img/industrias/industrial-placeholder.svg",
-    title:    "Almacenes e Inventarios",
-    desc:     "Centros de distribución y bodegas industriales necesitan cajas que soporten apilamiento de 5+ niveles sin colapsarse. Nuestras cajas de almacenaje industrial están diseñadas para almacenamiento prolongado.",
-    href:     "/soluciones/almacenaje",
-    linkText: "Ver solución almacén",
-  },
-  {
-    img:      "/img/industrias/industrial-placeholder.svg",
-    title:    "Oficinas Corporativas",
-    desc:     "Organiza expedientes de recursos humanos, nóminas, contratos y papelería general. Cajas tamaño carta y oficio con identificación frontal para acceso rápido sin desarmar el apilamiento.",
-    href:     "/soluciones/oficinas",
-    linkText: "Ver solución oficinas",
-  },
-  {
-    img:      "/img/industrias/industrial-placeholder.svg",
-    title:    "Mudanzas Residenciales",
-    desc:     "Cajas con asas reforzadas para transportar libros, documentos y objetos del hogar. Triple pared para lo más pesado, doble pared para lo ligero. Fáciles de cargar, apilar y almacenar después de la mudanza.",
-    href:     "/soluciones/mudanzas",
-    linkText: "Ver solución mudanza",
-  },
+ {
+ img:  "/img/industrias/industrial-placeholder.svg",
+ title:  "Despachos Contables y Legales",
+ desc:  "El SAT exige conservar documentación fiscal hasta por 5 años. Nuestras cajas de archivo muerto protegen expedientes, facturas y contratos con resistencia a la humedad y apilamiento seguro en bodega.",
+ href:  "/soluciones/archivo",
+ linkText: "Ver solución contable",
+ },
+ {
+ img:  "/img/industrias/industrial-placeholder.svg",
+ title:  "Almacenes e Inventarios",
+ desc:  "Centros de distribución y bodegas industriales necesitan cajas que soporten apilamiento de 5+ niveles sin colapsarse. Nuestras cajas de almacenaje industrial están diseñadas para almacenamiento prolongado.",
+ href:  "/soluciones/almacenaje",
+ linkText: "Ver solución almacén",
+ },
+ {
+ img:  "/img/industrias/industrial-placeholder.svg",
+ title:  "Oficinas Corporativas",
+ desc:  "Organiza expedientes de recursos humanos, nóminas, contratos y papelería general. Cajas tamaño carta y oficio con identificación frontal para acceso rápido sin desarmar el apilamiento.",
+ href:  "/soluciones/oficinas",
+ linkText: "Ver solución oficinas",
+ },
+ {
+ img:  "/img/industrias/industrial-placeholder.svg",
+ title:  "Mudanzas Residenciales",
+ desc:  "Cajas con asas reforzadas para transportar libros, documentos y objetos del hogar. Triple pared para lo más pesado, doble pared para lo ligero. Fáciles de cargar, apilar y almacenar después de la mudanza.",
+ href:  "/soluciones/mudanzas",
+ linkText: "Ver solución mudanza",
+ },
 ];
 
 const pasos = [
-  { num: 1, title: "Cuéntanos qué necesitas guardar", desc: "Documentos, expedientes, inventario, mercancía o artículos de mudanza. Con esa información seleccionamos la medida, tipo de corrugado y resistencia adecuada." },
-  { num: 2, title: "Cotiza en menos de 2 horas",      desc: "Enviamos precio, disponibilidad y especificaciones por WhatsApp. Para pedidos urgentes respondemos en menos de 1 hora." },
-  { num: 3, title: "Pide sin mínimo exagerado",        desc: "Pedidos desde cantidades accesibles. Precios de mayoreo por volumen. Ideal tanto para oficinas pequeñas como para bodegas industriales." },
-  { num: 4, title: "Recibe en tu ubicación",           desc: "Entrega en 24-48 horas en CDMX y área metropolitana. Coordinamos horario directo a tu oficina, bodega o domicilio." },
+ { num: 1, title: "Cuéntanos qué necesitas guardar", desc: "Documentos, expedientes, inventario, mercancía o artículos de mudanza. Con esa información seleccionamos la medida, tipo de corrugado y resistencia adecuada." },
+ { num: 2, title: "Cotiza en menos de 2 horas",  desc: "Enviamos precio, disponibilidad y especificaciones por WhatsApp. Para pedidos urgentes respondemos en menos de 1 hora." },
+ { num: 3, title: "Pide sin mínimo exagerado",  desc: "Pedidos desde cantidades accesibles. Precios de mayoreo por volumen. Ideal tanto para oficinas pequeñas como para bodegas industriales." },
+ { num: 4, title: "Recibe en tu ubicación",  desc: "Entrega en 24-48 horas en CDMX y área metropolitana. Coordinamos horario directo a tu oficina, bodega o domicilio." },
 ];
 
 const testimonios = [
-  {
-    initials: "LH",
-    name:     "Laura H.",
-    role:     "Contadora Pública — Benito Juárez, CDMX",
-    text:     "Necesitaba organizar 10 años de archivo muerto para una auditoría del SAT. CADECA me entregó 200 cajas tamaño oficio al día siguiente. Son resistentes, apilables y mis expedientes están perfectamente protegidos. Excelente calidad y servicio.",
-  },
-  {
-    initials: "JR",
-    name:     "Jorge R.",
-    role:     "Gerente de Almacén — Naucalpan, Estado de México",
-    text:     "Probamos cajas de varios proveedores y las de CADECA son las únicas que aguantan 5 niveles de apilamiento en bodega sin deformarse. Las usamos para inventario de refacciones y ya llevamos más de un año sin problemas. Totalmente recomendados.",
-  },
-  {
-    initials: "MC",
-    name:     "Mariana C.",
-    role:     "Coordinadora de Mudanzas — Coyoacán, CDMX",
-    text:     "Mis clientes siempre me preguntan dónde consigo las cajas. Las de CADECA con asas troqueladas son perfectas para mudanza: fáciles de cargar, no se rompen con libros pesados y el precio es muy competitivo. Las compro cada mes.",
-  },
+ {
+ initials: "LH",
+ name:  "Laura H.",
+ role:  "Contadora Pública — Benito Juárez, CDMX",
+ text:  "Necesitaba organizar 10 años de archivo muerto para una auditoría del SAT. CADECA me entregó 200 cajas tamaño oficio al día siguiente. Son resistentes, apilables y mis expedientes están perfectamente protegidos. Excelente calidad y servicio.",
+ },
+ {
+ initials: "JR",
+ name:  "Jorge R.",
+ role:  "Gerente de Almacén — Naucalpan, Estado de México",
+ text:  "Probamos cajas de varios proveedores y las de CADECA son las únicas que aguantan 5 niveles de apilamiento en bodega sin deformarse. Las usamos para inventario de refacciones y ya llevamos más de un año sin problemas. Totalmente recomendados.",
+ },
+ {
+ initials: "MC",
+ name:  "Mariana C.",
+ role:  "Coordinadora de Mudanzas — Coyoacán, CDMX",
+ text:  "Mis clientes siempre me preguntan dónde consigo las cajas. Las de CADECA con asas troqueladas son perfectas para mudanza: fáciles de cargar, no se rompen con libros pesados y el precio es muy competitivo. Las compro cada mes.",
+ },
 ];
 
 const faqs = [
-  {
-    id: "ar1",
-    question: "¿Qué medida de caja necesito para archivo muerto tamaño oficio?",
-    answer: "La medida estándar para archivo muerto tamaño oficio es <strong>38 × 32 × 25 cm</strong> (largo × ancho × alto). Esta medida acomoda carpetas, expedientes y folders tamaño oficio de forma vertical u horizontal. Manejamos stock permanente en corrugado doble y triple pared, con tapa incluida y agarraderas laterales para fácil manejo.",
-  },
-  {
-    id: "ar2",
-    question: "¿Cuántos niveles puedo apilar las cajas de archivo sin que se deformen?",
-    answer: "Depende del tipo de corrugado: las cajas de <strong>doble pared</strong> soportan hasta 3 niveles de apilamiento con carga completa. Las de <strong>triple pared</strong> soportan hasta 5 niveles sin deformación. Para almacenamiento prolongado (+1 año) en bodega recomendamos siempre triple pared, especialmente si hay variaciones de humedad en el entorno.",
-  },
-  {
-    id: "ar3",
-    question: "¿Las cajas de archivo protegen contra la humedad?",
-    answer: "Nuestras cajas estándar están fabricadas en cartón kraft corrugado que resiste humedad ambiental normal. Para bodegas con humedad elevada recomendamos la opción con <strong>tratamiento resistente a la humedad</strong> o cajas de triple pared que ofrecen mayor barrera. Adicionalmente, sugerimos no colocar las cajas directamente sobre el piso — usa tarimas o racks para mejor ventilación.",
-  },
-  {
-    id: "ar4",
-    question: "¿Cuánto tiempo puedo almacenar documentos en estas cajas?",
-    answer: "Con el corrugado adecuado y condiciones normales de bodega (sin humedad extrema ni exposición solar directa), las cajas de archivo pueden conservar documentos <strong>de 5 a 10 años</strong> sin problemas. Para cumplir con la obligación fiscal del SAT (5 años mínimo), recomendamos triple pared con tapa para máxima protección de tus expedientes.",
-  },
-  {
-    id: "ar5",
-    question: "¿Tienen cajas de mudanza con asas reforzadas?",
-    answer: "Sí. Nuestra línea de <strong>mudanza y archivo con asas</strong> incluye cajas con agarraderas troqueladas en los costados para carga y descarga segura. Disponibles en doble pared (para ropa, documentos y objetos ligeros) y triple pared (para libros, herramientas y objetos pesados). Todas las medidas están disponibles con entrega en 24-48 hrs en CDMX.",
-  },
-  {
-    id: "ar6",
-    question: "¿Cuál es el pedido mínimo y el tiempo de entrega?",
-    answer: "No tenemos pedido mínimo exagerado — puedes ordenar desde cantidades accesibles para oficinas pequeñas. Para pedidos de mayoreo ofrecemos precios escalonados por volumen. La entrega estándar es de <strong>24 a 48 horas</strong> en CDMX y municipios del Estado de México. Medidas especiales o pedidos de gran volumen pueden requerir 3-5 días hábiles adicionales.",
-  },
+ {
+ id: "ar1",
+ question: "¿Qué medida de caja necesito para archivo muerto tamaño oficio?",
+ answer: "La medida estándar para archivo muerto tamaño oficio es <strong>38 × 32 × 25 cm</strong> (largo × ancho × alto). Esta medida acomoda carpetas, expedientes y folders tamaño oficio de forma vertical u horizontal. Manejamos stock permanente en corrugado doble y triple pared, con tapa incluida y agarraderas laterales para fácil manejo.",
+ },
+ {
+ id: "ar2",
+ question: "¿Cuántos niveles puedo apilar las cajas de archivo sin que se deformen?",
+ answer: "Depende del tipo de corrugado: las cajas de <strong>doble pared</strong> soportan hasta 3 niveles de apilamiento con carga completa. Las de <strong>triple pared</strong> soportan hasta 5 niveles sin deformación. Para almacenamiento prolongado (+1 año) en bodega recomendamos siempre triple pared, especialmente si hay variaciones de humedad en el entorno.",
+ },
+ {
+ id: "ar3",
+ question: "¿Las cajas de archivo protegen contra la humedad?",
+ answer: "Nuestras cajas estándar están fabricadas en cartón kraft corrugado que resiste humedad ambiental normal. Para bodegas con humedad elevada recomendamos la opción con <strong>tratamiento resistente a la humedad</strong> o cajas de triple pared que ofrecen mayor barrera. Adicionalmente, sugerimos no colocar las cajas directamente sobre el piso — usa tarimas o racks para mejor ventilación.",
+ },
+ {
+ id: "ar4",
+ question: "¿Cuánto tiempo puedo almacenar documentos en estas cajas?",
+ answer: "Con el corrugado adecuado y condiciones normales de bodega (sin humedad extrema ni exposición solar directa), las cajas de archivo pueden conservar documentos <strong>de 5 a 10 años</strong> sin problemas. Para cumplir con la obligación fiscal del SAT (5 años mínimo), recomendamos triple pared con tapa para máxima protección de tus expedientes.",
+ },
+ {
+ id: "ar5",
+ question: "¿Tienen cajas de mudanza con asas reforzadas?",
+ answer: "Sí. Nuestra línea de <strong>mudanza y archivo con asas</strong> incluye cajas con agarraderas troqueladas en los costados para carga y descarga segura. Disponibles en doble pared (para ropa, documentos y objetos ligeros) y triple pared (para libros, herramientas y objetos pesados). Todas las medidas están disponibles con entrega en 24-48 hrs en CDMX.",
+ },
+ {
+ id: "ar6",
+ question: "¿Cuál es el pedido mínimo y el tiempo de entrega?",
+ answer: "No tenemos pedido mínimo exagerado — puedes ordenar desde cantidades accesibles para oficinas pequeñas. Para pedidos de mayoreo ofrecemos precios escalonados por volumen. La entrega estándar es de <strong>24 a 48 horas</strong> en CDMX y municipios del Estado de México. Medidas especiales o pedidos de gran volumen pueden requerir 3-5 días hábiles adicionales.",
+ },
 ];
 
 const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Productos", href: "/productos" },
-  { name: "Cajas de Archivo y Almacenaje" },
+ { name: "Inicio", href: "/" },
+ { name: "Productos", href: "/productos" },
+ { name: "Cajas de Archivo y Almacenaje" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  schema={productSchema}
-  whatsapp={WHATSAPP}
-  faqItems={faqItems}
-  breadcrumbs={breadcrumbs}
+ title={title}
+ description={description}
+ schema={productSchema}
+ whatsapp={WHATSAPP}
+ faqItems={faqItems}
+ breadcrumbs={breadcrumbs}
 >
 
-  <!-- HERO -->
-    <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/productos">Productos</a></li>
-      <li><span class="current">Cajas de Archivo y Almacenaje</span></li>
-      </ol>
-    </div>
-  </div>
+ <!-- HERO -->
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/productos">Productos</a></li>
+ <li><span class="current">Cajas de Archivo y Almacenaje</span></li>
+ </ol>
+ </div>
+ </div>
 
 
-  <!-- Banner catálogo técnico -->
-  <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
-    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-      <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas medidas exactas, resistencia al apilamiento y fichas técnicas?</span>
-      <a href="/catalogo/cajas-archivo-almacenaje" style="background:var(--color-primary);color:#fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
-    </div>
-  </div>
+ <!-- Banner catálogo técnico -->
+ <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
+ <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+ <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas medidas exactas, resistencia al apilamiento y fichas técnicas?</span>
+ <a href="/catalogo/cajas-archivo-almacenaje" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
+ </div>
+ </div>
 
-  <section class="page-hero" aria-labelledby="prod-arch-title">
-    <div class="container">
-      <div class="page-hero__inner">
-        <div class="page-hero__content">
-          <p class="page-hero__badge">Archivo Muerto · Almacén Industrial · Apilable · Mudanza</p>
-          <h1 id="prod-arch-title" class="page-hero__title">
-            Cajas de Archivo y<br><span>Almacenaje en CDMX</span>
-          </h1>
-          <p class="page-hero__desc">
-            Cajas de cartón corrugado para archivo muerto, almacén industrial, documentos y mudanza. Triple pared apilable, resistente y durable. Entrega en 24-48 hrs en CDMX y Estado de México. Más de 10 medidas disponibles.
-          </p>
-          <div class="page-hero__ctas">
-            <a href="#cotizar"       class="btn btn--primary">Cotizar Ahora</a>
-            <a href="#subcategorias" class="btn btn--outline">Ver Medidas</a>
-          </div>
-        </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">24-48 hrs</span>
-            <span class="page-hero__stat-label">Entrega CDMX</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">Triple pared</span>
-            <span class="page-hero__stat-label">Máxima resistencia</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">+10</span>
-            <span class="page-hero__stat-label">Medidas disponibles</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section class="page-hero" aria-labelledby="prod-arch-title">
+ <div class="container">
+ <div class="page-hero__inner">
+ <div class="page-hero__content">
+ <p class="page-hero__badge">Archivo Muerto · Almacén Industrial · Apilable · Mudanza</p>
+ <h1 id="prod-arch-title" class="page-hero__title">
+ Cajas de Archivo y<br><span>Almacenaje en CDMX</span>
+ </h1>
+ <p class="page-hero__desc">
+ Cajas de cartón corrugado para archivo muerto, almacén industrial, documentos y mudanza. Triple pared apilable, resistente y durable. Entrega en 24-48 hrs en CDMX y Estado de México. Más de 10 medidas disponibles.
+ </p>
+ <div class="page-hero__ctas">
+ <a href="cotizar"  class="btn btn--primary">Cotizar Ahora</a>
+ <a href="subcategorias" class="btn btn--outline">Ver Medidas</a>
+ </div>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">24-48 hrs</span>
+ <span class="page-hero__stat-label">Entrega CDMX</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">Triple pared</span>
+ <span class="page-hero__stat-label">Máxima resistencia</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">+10</span>
+ <span class="page-hero__stat-label">Medidas disponibles</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <!-- DETALLE DEL PRODUCTO -->
-    <section class="prod-detail" aria-labelledby="detalle-arch-title">
-      <div class="container">
-        <div class="prod-detail__inner">
-          <div class="prod-detail__img-wrap">
-            <img
-              src="/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif"
-              alt="Cajas de archivo y almacenaje en cartón corrugado en CDMX — CADECA"
-              class="prod-detail__img"
-              width="900" height="560"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-          <div class="prod-detail__content">
-            <span class="prod-detail__label">Organización y protección para tus documentos y mercancía</span>
-            <h2 id="detalle-arch-title" class="section-header__title" style="margin:0">
-              Cajas de Archivo y Almacenaje: Resistentes, Apilables y Duraderas
-            </h2>
-            <p class="prod-detail__intro">
-              Las cajas de archivo y almacenaje de CADECA están diseñadas para proteger documentos, expedientes, inventario y mercancía durante años. Fabricadas en cartón corrugado doble y triple pared, soportan apilamiento de hasta 5 niveles sin deformarse. Ideales para despachos contables, bodegas industriales, oficinas corporativas y mudanzas residenciales en toda la CDMX y Estado de México.
-            </p>
-            <div>
-              <p class="prod-detail__specs-title">Especificaciones técnicas</p>
-              <div class="prod-detail__specs-grid">
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Tipo de pared</span>
-                  <span class="prod-detail__spec-value">Doble y Triple corrugado</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Apilamiento</span>
-                  <span class="prod-detail__spec-value">Hasta 5 niveles (triple)</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Medidas disponibles</span>
-                  <span class="prod-detail__spec-value">Oficio · Carta · Industrial</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Uso recomendado</span>
-                  <span class="prod-detail__spec-value">Archivo · Bodega · Mudanza</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Material</span>
-                  <span class="prod-detail__spec-value">Kraft corrugado resistente</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Accesorios</span>
-                  <span class="prod-detail__spec-value">Tapa, asas troqueladas</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Durabilidad</span>
-                  <span class="prod-detail__spec-value">5-10 años en condiciones normales</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Entrega CDMX</span>
-                  <span class="prod-detail__spec-value">24-48 horas (stock)</span>
-                </div>
-              </div>
-            </div>
-            <div class="prod-detail__actions">
-              <a href="#cotizar"                      class="btn btn--primary">Solicitar Cotización</a>
-              <a href={`https://wa.me/${WHATSAPP}`}
-                 target="_blank" rel="noopener"      class="btn btn--outline">WhatsApp Directo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- DETALLE DEL PRODUCTO -->
+ <section class="prod-detail" aria-labelledby="detalle-arch-title">
+ <div class="container">
+ <div class="prod-detail__inner">
+ <div class="prod-detail__img-wrap">
+ <img
+ src="/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif"
+ alt="Cajas de archivo y almacenaje en cartón corrugado en CDMX — CADECA"
+ class="prod-detail__img"
+ width="900" height="560"
+ loading="eager"
+ decoding="async"
+ fetchpriority="high"
+ />
+ </div>
+ <div class="prod-detail__content">
+ <span class="prod-detail__label">Organización y protección para tus documentos y mercancía</span>
+ <h2 id="detalle-arch-title" class="section-header__title" style="margin:0">
+ Cajas de Archivo y Almacenaje: Resistentes, Apilables y Duraderas
+ </h2>
+ <p class="prod-detail__intro">
+ Las cajas de archivo y almacenaje de CADECA están diseñadas para proteger documentos, expedientes, inventario y mercancía durante años. Fabricadas en cartón corrugado doble y triple pared, soportan apilamiento de hasta 5 niveles sin deformarse. Ideales para despachos contables, bodegas industriales, oficinas corporativas y mudanzas residenciales en toda la CDMX y Estado de México.
+ </p>
+ <div>
+ <p class="prod-detail__specs-title">Especificaciones técnicas</p>
+ <div class="prod-detail__specs-grid">
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Tipo de pared</span>
+ <span class="prod-detail__spec-value">Doble y Triple corrugado</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Apilamiento</span>
+ <span class="prod-detail__spec-value">Hasta 5 niveles (triple)</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Medidas disponibles</span>
+ <span class="prod-detail__spec-value">Oficio · Carta · Industrial</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Uso recomendado</span>
+ <span class="prod-detail__spec-value">Archivo · Bodega · Mudanza</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Material</span>
+ <span class="prod-detail__spec-value">Kraft corrugado resistente</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Accesorios</span>
+ <span class="prod-detail__spec-value">Tapa, asas troqueladas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Durabilidad</span>
+ <span class="prod-detail__spec-value">5-10 años en condiciones normales</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Entrega CDMX</span>
+ <span class="prod-detail__spec-value">24-48 horas (stock)</span>
+ </div>
+ </div>
+ </div>
+ <div class="prod-detail__actions">
+ <a href="cotizar"  class="btn btn--primary">Solicitar Cotización</a>
+ <a href={`https://wa.me/${WHATSAPP}`}
+ target="_blank" rel="noopener"  class="btn btn--outline">WhatsApp Directo</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- SUBCATEGORÍAS -->
-    <section class="products" id="subcategorias" aria-labelledby="subcats-arch-title">
-      <div class="container">
-        <SectionHeader
-          id="subcats-arch-title"
-          twoCol
-          title="Cajas para Cada Necesidad de Archivo y Almacenaje"
-          subtitle="Archivo muerto, documentos, almacén industrial, apilables triple pared y mudanza. Medidas y resistencia para cada uso."
-          link={{ text: "Ver catálogo completo", href: "/productos" }}
-        >
-          <p>Cada necesidad de almacenamiento requiere un tipo de caja diferente. Los expedientes legales necesitan medida oficio con tapa. El almacén industrial exige triple pared apilable. La mudanza requiere asas reforzadas. En CADECA tenemos la caja correcta para cada caso.</p>
-          <p>Manejamos inventario permanente de las medidas más solicitadas para archivo muerto y almacenaje. Para medidas especiales fabricamos sobre pedido en 3-5 días hábiles.</p>
-        </SectionHeader>
-        <div class="products__grid">
-          {subcategorias.map(p => <ProductCard {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- SUBCATEGORÍAS -->
+ <section class="products" id="subcategorias" aria-labelledby="subcats-arch-title">
+ <div class="container">
+ <SectionHeader
+ id="subcats-arch-title"
+ twoCol
+ title="Cajas para Cada Necesidad de Archivo y Almacenaje"
+ subtitle="Archivo muerto, documentos, almacén industrial, apilables triple pared y mudanza. Medidas y resistencia para cada uso."
+ link={{ text: "Ver catálogo completo", href: "/productos" }}
+ >
+ <p>Cada necesidad de almacenamiento requiere un tipo de caja diferente. Los expedientes legales necesitan medida oficio con tapa. El almacén industrial exige triple pared apilable. La mudanza requiere asas reforzadas. En CADECA tenemos la caja correcta para cada caso.</p>
+ <p>Manejamos inventario permanente de las medidas más solicitadas para archivo muerto y almacenaje. Para medidas especiales fabricamos sobre pedido en 3-5 días hábiles.</p>
+ </SectionHeader>
+ <div class="products__grid">
+ {subcategorias.map(p => <ProductCard {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- QUIÉN USA ESTE PRODUCTO -->
-    <section class="industries" aria-labelledby="industrias-arch-title">
-      <div class="container">
-        <SectionHeader
-          id="industrias-arch-title"
-          twoCol
-          title="¿Quién Compra Cajas de Archivo y Almacenaje en CADECA?"
-          subtitle="Desde despachos contables hasta bodegas industriales en la zona metropolitana"
-        >
-          <p>El archivo documental y el almacenaje organizado son obligaciones legales y operativas para miles de empresas en la CDMX. Nuestras cajas de archivo y almacenaje están diseñadas para cumplir con los requerimientos del SAT, proteger inventario en bodega y facilitar mudanzas residenciales y corporativas.</p>
-          <p>Todos nuestros clientes tienen acceso al mismo inventario, asesoría técnica gratuita y precios de mayoreo escalonados por volumen.</p>
-        </SectionHeader>
-        <div class="industries__grid">
-          {industrias.map(i => <IndustryCard {...i} />)}
-        </div>
-      </div>
-    </section>
+ <!-- QUIÉN USA ESTE PRODUCTO -->
+ <section class="industries" aria-labelledby="industrias-arch-title">
+ <div class="container">
+ <SectionHeader
+ id="industrias-arch-title"
+ twoCol
+ title="¿Quién Compra Cajas de Archivo y Almacenaje en CADECA?"
+ subtitle="Desde despachos contables hasta bodegas industriales en la zona metropolitana"
+ >
+ <p>El archivo documental y el almacenaje organizado son obligaciones legales y operativas para miles de empresas en la CDMX. Nuestras cajas de archivo y almacenaje están diseñadas para cumplir con los requerimientos del SAT, proteger inventario en bodega y facilitar mudanzas residenciales y corporativas.</p>
+ <p>Todos nuestros clientes tienen acceso al mismo inventario, asesoría técnica gratuita y precios de mayoreo escalonados por volumen.</p>
+ </SectionHeader>
+ <div class="industries__grid">
+ {industrias.map(i => <IndustryCard {...i} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- PROCESO -->
-    <section class="process" aria-labelledby="proceso-arch-title">
-      <div class="container">
-        <SectionHeader
-          id="proceso-arch-title"
-          title="Cómo Pedir tus Cajas de Archivo y Almacenaje"
-          subtitle="Simple, rápido y sin complicaciones — tu archivo organizado en menos de 48 horas"
-        />
-        <div class="process__grid">
-          {pasos.map(p => <ProcessStep {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- PROCESO -->
+ <section class="process" aria-labelledby="proceso-arch-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-arch-title"
+ title="Cómo Pedir tus Cajas de Archivo y Almacenaje"
+ subtitle="Simple, rápido y sin complicaciones — tu archivo organizado en menos de 48 horas"
+ />
+ <div class="process__grid">
+ {pasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="trust" aria-labelledby="test-arch-title">
-      <div class="container">
-        <div class="trust__testimonials-header">
-          <h2 id="test-arch-title" class="trust__testimonials-title">
-            Empresas y Profesionales de CDMX que Confían en CADECA
-          </h2>
-          <p class="trust__testimonials-subtitle">
-            Contadores, gerentes de almacén y coordinadores de mudanza comparten su experiencia
-          </p>
-        </div>
-        <div class="trust__testimonials">
-          {testimonios.map(t => <Testimonial {...t} />)}
-        </div>
-      </div>
-    </section>
+ <!-- TESTIMONIOS -->
+ <section class="trust" aria-labelledby="test-arch-title">
+ <div class="container">
+ <div class="trust__testimonials-header">
+ <h2 id="test-arch-title" class="trust__testimonials-title">
+ Empresas y Profesionales de CDMX que Confían en CADECA
+ </h2>
+ <p class="trust__testimonials-subtitle">
+ Contadores, gerentes de almacén y coordinadores de mudanza comparten su experiencia
+ </p>
+ </div>
+ <div class="trust__testimonials">
+ {testimonios.map(t => <Testimonial {...t} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- SEO CONTENT -->
-    <section class="seo-content" aria-labelledby="seo-arch-title">
-      <div class="container">
-        <h2 id="seo-arch-title" class="seo-content__title">
-          Cajas de Archivo y Almacenaje en CDMX: Guía Completa para Organizar tu Bodega, Oficina o Mudanza
-        </h2>
-        <p class="seo-content__text">
-          El almacenamiento organizado de documentos y mercancía no es opcional en México: el SAT obliga a conservar documentación fiscal por al menos 5 años, y un almacén desordenado genera pérdidas de inventario y tiempo. En CADECA fabricamos <strong>cajas de archivo y almacenaje en CDMX</strong> diseñadas específicamente para cada necesidad: desde el despacho contable que guarda expedientes de auditoría hasta la bodega industrial que necesita cajas apilables de triple pared que soporten años de almacenamiento.
-        </p>
-        <p class="seo-content__text">
-          Nuestras <strong>cajas de archivo muerto tamaño oficio</strong> son las más solicitadas por despachos contables y legales de la CDMX. Incluyen tapa y agarraderas laterales para fácil manejo y apilamiento en bodega. Para <strong>oficinas corporativas</strong>, las cajas tamaño carta con identificación frontal permiten organizar nóminas, contratos y correspondencia sin desarmar pilas de archivo. Y para <strong>bodegas e inventarios industriales</strong>, nuestras cajas de triple pared soportan hasta 5 niveles de apilamiento sin deformarse, con entrega en 24-48 horas en toda la zona metropolitana.
-        </p>
-        <p class="seo-content__text">
-          Si estás planeando una mudanza o necesitas reorganizar tu archivo, nuestras <a href="/catalogo/cajas-archivo-almacenaje/mudanza-archivo">cajas de mudanza con asas reforzadas</a> facilitan la carga y descarga de objetos pesados como libros y expedientes. Para necesidades de almacenaje industrial de largo plazo, consulta nuestra <a href="/catalogo/cajas-archivo-almacenaje/apilable-resistente">línea de cajas apilables triple pared</a>. La <strong>cotización es gratuita y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con lo que necesitas guardar y te recomendamos la caja ideal.
-        </p>
-      </div>
-    </section>
+ <!-- SEO CONTENT -->
+ <section class="seo-content" aria-labelledby="seo-arch-title">
+ <div class="container">
+ <h2 id="seo-arch-title" class="seo-content__title">
+ Cajas de Archivo y Almacenaje en CDMX: Guía Completa para Organizar tu Bodega, Oficina o Mudanza
+ </h2>
+ <p class="seo-content__text">
+ El almacenamiento organizado de documentos y mercancía no es opcional en México: el SAT obliga a conservar documentación fiscal por al menos 5 años, y un almacén desordenado genera pérdidas de inventario y tiempo. En CADECA fabricamos <strong>cajas de archivo y almacenaje en CDMX</strong> diseñadas específicamente para cada necesidad: desde el despacho contable que guarda expedientes de auditoría hasta la bodega industrial que necesita cajas apilables de triple pared que soporten años de almacenamiento.
+ </p>
+ <p class="seo-content__text">
+ Nuestras <strong>cajas de archivo muerto tamaño oficio</strong> son las más solicitadas por despachos contables y legales de la CDMX. Incluyen tapa y agarraderas laterales para fácil manejo y apilamiento en bodega. Para <strong>oficinas corporativas</strong>, las cajas tamaño carta con identificación frontal permiten organizar nóminas, contratos y correspondencia sin desarmar pilas de archivo. Y para <strong>bodegas e inventarios industriales</strong>, nuestras cajas de triple pared soportan hasta 5 niveles de apilamiento sin deformarse, con entrega en 24-48 horas en toda la zona metropolitana.
+ </p>
+ <p class="seo-content__text">
+ Si estás planeando una mudanza o necesitas reorganizar tu archivo, nuestras <a href="/catalogo/cajas-archivo-almacenaje/mudanza-archivo">cajas de mudanza con asas reforzadas</a> facilitan la carga y descarga de objetos pesados como libros y expedientes. Para necesidades de almacenaje industrial de largo plazo, consulta nuestra <a href="/catalogo/cajas-archivo-almacenaje/apilable-resistente">línea de cajas apilables triple pared</a>. La <strong>cotización es gratuita y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con lo que necesitas guardar y te recomendamos la caja ideal.
+ </p>
+ </div>
+ </section>
 
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-arch-title">
-      <div class="container">
-        <SectionHeader
-          id="faq-arch-title"
-          twoCol
-          title="Preguntas Frecuentes: Cajas de Archivo y Almacenaje"
-          subtitle="Todo sobre medidas, resistencia, apilamiento, durabilidad y pedidos"
-        >
-          <p>Las dudas más frecuentes de nuestros clientes antes de hacer su primer pedido de cajas de archivo y almacenaje. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
-          <p>Respondemos consultas técnicas sobre medidas, tipo de corrugado, resistencia al apilamiento y durabilidad en menos de 1 hora, sin costo y sin compromiso de compra.</p>
-        </SectionHeader>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <!-- FAQ -->
+ <section class="faq" aria-labelledby="faq-arch-title">
+ <div class="container">
+ <SectionHeader
+ id="faq-arch-title"
+ twoCol
+ title="Preguntas Frecuentes: Cajas de Archivo y Almacenaje"
+ subtitle="Todo sobre medidas, resistencia, apilamiento, durabilidad y pedidos"
+ >
+ <p>Las dudas más frecuentes de nuestros clientes antes de hacer su primer pedido de cajas de archivo y almacenaje. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
+ <p>Respondemos consultas técnicas sobre medidas, tipo de corrugado, resistencia al apilamiento y durabilidad en menos de 1 hora, sin costo y sin compromiso de compra.</p>
+ </SectionHeader>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas de archivo y almacenaje en minutos" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas de archivo y almacenaje en minutos" />
 
 </PageLayout>

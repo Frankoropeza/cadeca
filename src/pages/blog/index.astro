@@ -1,263 +1,263 @@
 ---
-import PageLayout   from "@/layouts/PageLayout.astro";
-import PageHero     from "@/components/PageHero.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import PageHero  from "@/components/PageHero.astro";
 import "@/styles/blog.css";
 import { getCollection } from "astro:content";
 
 const allPosts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+ (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
 const featuredPost = allPosts.find(p => p.data.featured) || allPosts[0];
-const gridPosts    = allPosts.filter(p => p.slug !== featuredPost.slug);
+const gridPosts  = allPosts.filter(p => p.slug !== featuredPost.slug);
 
 const CATEGORIES = [
-  { name: "Guías",          slug: "guias",          color: "#1C2B4A", icon: "📚" },
-  { name: "E-commerce",     slug: "e-commerce",     color: "#E05800", icon: "🛒" },
-  { name: "Industria",      slug: "industria",      color: "#0066CC", icon: "🏭" },
-  { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32", icon: "♻️" },
-  { name: "Consejos",       slug: "consejos",       color: "#6A1B9A", icon: "💡" },
-  { name: "Zonas",          slug: "zonas",          color: "#E05800", icon: "📍" },
+ { name: "Guías",  slug: "guias",  color: "1C2B4A", icon: "" },
+ { name: "E-commerce",  slug: "e-commerce",  color: "E05800", icon: "" },
+ { name: "Industria",  slug: "industria",  color: "0066CC", icon: "" },
+ { name: "Sostenibilidad", slug: "sostenibilidad", color: "2E7D32", icon: "️" },
+ { name: "Consejos",  slug: "consejos",  color: "6A1B9A", icon: "" },
+ { name: "Zonas",  slug: "zonas",  color: "E05800", icon: "" },
 ];
 
 const allTags = [...new Set(allPosts.flatMap(p => p.data.tags || []))].slice(0, 20);
 
 const SITE = "https://cajas-de-carton.com";
 const schemaBlog = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Blog CADECA — Guías y Consejos de Empaque",
-  "description": "Artículos especializados sobre cajas de cartón corrugado, empaques para e-commerce, industria y sostenibilidad en CDMX.",
-  "url": `${SITE}/blog`,
-  "publisher": {
-    "@type": "Organization",
-    "name": "CADECA",
-    "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
-  },
-  "blogPost": allPosts.map(post => ({
-    "@type": "BlogPosting",
-    "headline": post.data.title,
-    "description": post.data.description,
-    "datePublished": post.data.pubDate.toISOString(),
-    "url": `${SITE}/blog/${post.slug}`,
-  })),
+ "@context": "https://schema.org",
+ "@type": "Blog",
+ "name": "Blog CADECA — Guías y Consejos de Empaque",
+ "description": "Artículos especializados sobre cajas de cartón corrugado, empaques para e-commerce, industria y sostenibilidad en CDMX.",
+ "url": `${SITE}/blog`,
+ "publisher": {
+ "@type": "Organization",
+ "name": "CADECA",
+ "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
+ },
+ "blogPost": allPosts.map(post => ({
+ "@type": "BlogPosting",
+ "headline": post.data.title,
+ "description": post.data.description,
+ "datePublished": post.data.pubDate.toISOString(),
+ "url": `${SITE}/blog/${post.slug}`,
+ })),
 };
 
 function catSlug(name: string) {
-  return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
+ return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
 }
 function formatDate(d: Date) {
-  return d.toLocaleDateString("es-MX", { day: "numeric", month: "short", year: "numeric" });
+ return d.toLocaleDateString("es-MX", { day: "numeric", month: "short", year: "numeric" });
 }
 ---
 
 <PageLayout
-  title="Blog CADECA — Guías y Consejos de Cajas de Cartón | CDMX"
-  description="Artículos especializados sobre cajas de cartón corrugado, empaques para e-commerce, industria, sostenibilidad y consejos prácticos para tu negocio en CDMX."
-  schema={schemaBlog}
-  breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Blog" }]}
+ title="Blog CADECA — Guías y Consejos de Cajas de Cartón | CDMX"
+ description="Artículos especializados sobre cajas de cartón corrugado, empaques para e-commerce, industria, sostenibilidad y consejos prácticos para tu negocio en CDMX."
+ schema={schemaBlog}
+ breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Blog" }]}
 >
 
-  <!-- Hero -->
-  <PageHero
-    eyebrow="Centro de Conocimiento · Empaque Corrugado"
-    titleHtml={true}
-    title="Blog <span>CADECA</span>"
-    desc="Guías técnicas, consejos de compra y tendencias sobre empaques de cartón corrugado para hacer crecer tu negocio en CDMX y Estado de México."
-    desc2="Contenido escrito por expertos en corrugado con más de 15 años en el mercado metropolitano. Aprende a elegir el tipo de caja correcto, optimizar costos logísticos y mejorar la experiencia de tus clientes.||Artículos basados en datos reales del mercado mexicano: tarifas de paqueterías, normativas COFEPRIS, requisitos Amazon y Mercado Libre. Conocimiento que ahorra tiempo y dinero."
-    stats={[
-      { value: String(allPosts.length), label: "Artículos" },
-      { value: String(CATEGORIES.length), label: "Categorías" },
-      { value: "100%", label: "Gratuito" },
-    ]}
-    ctas={[
-      { href: "/catalogo/", label: "Ver catálogo de productos", variant: "primary" },
-      { href: "/cotizar", label: "Cotizar ahora", variant: "outline" },
-    ]}
-  />
+ <!-- Hero -->
+ <PageHero
+ eyebrow="Centro de Conocimiento · Empaque Corrugado"
+ titleHtml={true}
+ title="Blog <span>CADECA</span>"
+ desc="Guías técnicas, consejos de compra y tendencias sobre empaques de cartón corrugado para hacer crecer tu negocio en CDMX y Estado de México."
+ desc2="Contenido escrito por expertos en corrugado con más de 15 años en el mercado metropolitano. Aprende a elegir el tipo de caja correcto, optimizar costos logísticos y mejorar la experiencia de tus clientes.||Artículos basados en datos reales del mercado mexicano: tarifas de paqueterías, normativas COFEPRIS, requisitos Amazon y Mercado Libre. Conocimiento que ahorra tiempo y dinero."
+ stats={[
+ { value: String(allPosts.length), label: "Artículos" },
+ { value: String(CATEGORIES.length), label: "Categorías" },
+ { value: "100%", label: "Gratuito" },
+ ]}
+ ctas={[
+ { href: "/catalogo/", label: "Ver catálogo de productos", variant: "primary" },
+ { href: "/cotizar", label: "Cotizar ahora", variant: "outline" },
+ ]}
+ />
 
-  <!-- Filter Bar -->
-  <div class="blog-filter-bar">
-    <div class="container">
-      <div class="blog-filter-bar__inner">
-        <a href="/blog" class="blog-filter-bar__link blog-filter-bar__link--active">
-          🗂 Todos <span class="blog-filter-bar__count">{allPosts.length}</span>
-        </a>
-        {CATEGORIES.map(cat => {
-          const count = allPosts.filter(p => p.data.category === cat.name).length;
-          return (
-            <a href={`/blog/categoria/${cat.slug}`} class="blog-filter-bar__link">
-              {cat.icon} {cat.name}
-              {count > 0 && <span class="blog-filter-bar__count">{count}</span>}
-            </a>
-          );
-        })}
-      </div>
-    </div>
-  </div>
+ <!-- Filter Bar -->
+ <div class="blog-filter-bar">
+ <div class="container">
+ <div class="blog-filter-bar__inner">
+ <a href="/blog" class="blog-filter-bar__link blog-filter-bar__link--active">
+ Todos <span class="blog-filter-bar__count">{allPosts.length}</span>
+ </a>
+ {CATEGORIES.map(cat => {
+ const count = allPosts.filter(p => p.data.category === cat.name).length;
+ return (
+ <a href={`/blog/categoria/${cat.slug}`} class="blog-filter-bar__link">
+ {cat.icon} {cat.name}
+ {count > 0 && <span class="blog-filter-bar__count">{count}</span>}
+ </a>
+ );
+ })}
+ </div>
+ </div>
+ </div>
 
-  <!-- Body -->
-  <div class="container">
-    <div class="blog-layout">
+ <!-- Body -->
+ <div class="container">
+ <div class="blog-layout">
 
-      <!-- Main column -->
-      <div>
+ <!-- Main column -->
+ <div>
 
-        <!-- Featured Post -->
-        <a href={`/blog/${featuredPost.slug}`} class="blog-featured-hero">
-          <div class="blog-featured-hero__img-wrap">
-            {featuredPost.data.image ? (
-              <img
-                class="blog-featured-hero__img"
-                src={featuredPost.data.image}
-                alt={featuredPost.data.imageAlt || featuredPost.data.title}
-                width="720" height="405"
-                loading="eager"
-              />
-            ) : (
-              <div class={`blog-card__placeholder blog-card__placeholder--${catSlug(featuredPost.data.category)}`} style="height:100%">
-                CADECA
-              </div>
-            )}
-            <span class="blog-featured-hero__badge">⭐ Destacado</span>
-          </div>
-          <div class="blog-featured-hero__body">
-            <div class="blog-featured-hero__cat">{featuredPost.data.category}</div>
-            <h2 class="blog-featured-hero__title">{featuredPost.data.title}</h2>
-            <p class="blog-featured-hero__desc">{featuredPost.data.description}</p>
-            <div class="blog-featured-hero__meta">
-              {featuredPost.data.readingTime && (
-                <span>⏱ {featuredPost.data.readingTime} min de lectura</span>
-              )}
-            </div>
-            <span class="blog-featured-hero__read">Leer artículo</span>
-          </div>
-        </a>
+ <!-- Featured Post -->
+ <a href={`/blog/${featuredPost.slug}`} class="blog-featured-hero">
+ <div class="blog-featured-hero__img-wrap">
+ {featuredPost.data.image ? (
+ <img
+ class="blog-featured-hero__img"
+ src={featuredPost.data.image}
+ alt={featuredPost.data.imageAlt || featuredPost.data.title}
+ width="720" height="405"
+ loading="eager"
+ />
+ ) : (
+ <div class={`blog-card__placeholder blog-card__placeholder--${catSlug(featuredPost.data.category)}`} style="height:100%">
+ CADECA
+ </div>
+ )}
+ <span class="blog-featured-hero__badge"> Destacado</span>
+ </div>
+ <div class="blog-featured-hero__body">
+ <div class="blog-featured-hero__cat">{featuredPost.data.category}</div>
+ <h2 class="blog-featured-hero__title">{featuredPost.data.title}</h2>
+ <p class="blog-featured-hero__desc">{featuredPost.data.description}</p>
+ <div class="blog-featured-hero__meta">
+ {featuredPost.data.readingTime && (
+ <span> {featuredPost.data.readingTime} min de lectura</span>
+ )}
+ </div>
+ <span class="blog-featured-hero__read">Leer artículo</span>
+ </div>
+ </a>
 
-        <!-- All Posts Grid -->
-        <div class="blog-section-header">
-          <h2 class="blog-section-header__title">Todos los artículos</h2>
-          <hr class="blog-section-header__line" />
-        </div>
+ <!-- All Posts Grid -->
+ <div class="blog-section-header">
+ <h2 class="blog-section-header__title">Todos los artículos</h2>
+ <hr class="blog-section-header__line" />
+ </div>
 
-        <div class="blog-grid">
-          {gridPosts.map(post => {
-            const cs = catSlug(post.data.category);
-            return (
-              <a href={`/blog/${post.slug}`} class="blog-card">
-                <div class="blog-card__img-wrap">
-                  {post.data.image ? (
-                    <img
-                      class="blog-card__img"
-                      src={post.data.image}
-                      alt={post.data.imageAlt || post.data.title}
-                      width="480" height="270"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div class={`blog-card__placeholder blog-card__placeholder--${cs}`}>
-                      CADECA
-                    </div>
-                  )}
-                  <span class={`blog-card__cat-badge blog-card__cat-badge--${cs}`}>
-                    {post.data.category}
-                  </span>
-                </div>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">{post.data.title}</h3>
-                  <p class="blog-card__desc">{post.data.description}</p>
-                  <div class="blog-card__footer">
-                    <span>{post.data.category}</span>
-                    <span class="blog-card__read-more">
-                      {post.data.readingTime ? `${post.data.readingTime} min →` : "Leer →"}
-                    </span>
-                  </div>
-                </div>
-              </a>
-            );
-          })}
-        </div>
+ <div class="blog-grid">
+ {gridPosts.map(post => {
+ const cs = catSlug(post.data.category);
+ return (
+ <a href={`/blog/${post.slug}`} class="blog-card">
+ <div class="blog-card__img-wrap">
+ {post.data.image ? (
+ <img
+ class="blog-card__img"
+ src={post.data.image}
+ alt={post.data.imageAlt || post.data.title}
+ width="480" height="270"
+ loading="lazy"
+ />
+ ) : (
+ <div class={`blog-card__placeholder blog-card__placeholder--${cs}`}>
+ CADECA
+ </div>
+ )}
+ <span class={`blog-card__cat-badge blog-card__cat-badge--${cs}`}>
+ {post.data.category}
+ </span>
+ </div>
+ <div class="blog-card__body">
+ <h3 class="blog-card__title">{post.data.title}</h3>
+ <p class="blog-card__desc">{post.data.description}</p>
+ <div class="blog-card__footer">
+ <span>{post.data.category}</span>
+ <span class="blog-card__read-more">
+ {post.data.readingTime ? `${post.data.readingTime} min →` : "Leer →"}
+ </span>
+ </div>
+ </div>
+ </a>
+ );
+ })}
+ </div>
 
-      </div>
+ </div>
 
-      <!-- Sidebar -->
-      <aside class="blog-sidebar">
+ <!-- Sidebar -->
+ <aside class="blog-sidebar">
 
-        <!-- CTA Cotizar -->
-        <div class="sidebar-cta">
-          <span class="sidebar-cta__icon">📦</span>
-          <h3 class="sidebar-cta__title">¿Necesitas cajas para tu negocio?</h3>
-          <p class="sidebar-cta__desc">Cotización sin compromiso. Entrega en 24–48 hrs en CDMX y Edomex.</p>
-          <a href="/cotizar" class="sidebar-cta__btn">Solicitar cotización</a>
-          <a href="https://wa.me/5255XXXXXXXX?text=Hola%20CADECA%2C%20me%20interesa%20cotizar%20cajas." class="sidebar-cta__btn sidebar-cta__btn--wa" target="_blank" rel="noopener">
-            💬 WhatsApp directo
-          </a>
-        </div>
+ <!-- CTA Cotizar -->
+ <div class="sidebar-cta">
+ <span class="sidebar-cta__icon"></span>
+ <h3 class="sidebar-cta__title">¿Necesitas cajas para tu negocio?</h3>
+ <p class="sidebar-cta__desc">Cotización sin compromiso. Entrega en 24–48 hrs en CDMX y Edomex.</p>
+ <a href="/cotizar" class="sidebar-cta__btn">Solicitar cotización</a>
+ <a href="https://wa.me/5255XXXXXXXX?text=Hola%20CADECA%2C%20me%20interesa%20cotizar%20cajas." class="sidebar-cta__btn sidebar-cta__btn--wa" target="_blank" rel="noopener">
+ WhatsApp directo
+ </a>
+ </div>
 
-        <!-- Categorías -->
-        <div class="blog-sidebar__widget">
-          <div class="blog-sidebar__widget-header">
-            <div class="blog-sidebar__widget-icon">🗂</div>
-            <h3 class="blog-sidebar__widget-title">Categorías</h3>
-          </div>
-          <nav class="sidebar-categories">
-            {CATEGORIES.map(cat => {
-              const count = allPosts.filter(p => p.data.category === cat.name).length;
-              return (
-                <a href={`/blog/categoria/${cat.slug}`} class="sidebar-categories__item">
-                  <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
-                  <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
-                  <span class="sidebar-categories__count">{count}</span>
-                </a>
-              );
-            })}
-          </nav>
-        </div>
+ <!-- Categorías -->
+ <div class="blog-sidebar__widget">
+ <div class="blog-sidebar__widget-header">
+ <div class="blog-sidebar__widget-icon"></div>
+ <h3 class="blog-sidebar__widget-title">Categorías</h3>
+ </div>
+ <nav class="sidebar-categories">
+ {CATEGORIES.map(cat => {
+ const count = allPosts.filter(p => p.data.category === cat.name).length;
+ return (
+ <a href={`/blog/categoria/${cat.slug}`} class="sidebar-categories__item">
+ <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
+ <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
+ <span class="sidebar-categories__count">{count}</span>
+ </a>
+ );
+ })}
+ </nav>
+ </div>
 
-        <!-- Artículos recientes -->
-        <div class="blog-sidebar__widget">
-          <div class="blog-sidebar__widget-header">
-            <div class="blog-sidebar__widget-icon">🕐</div>
-            <h3 class="blog-sidebar__widget-title">Recientes</h3>
-          </div>
-          <nav class="sidebar-recent">
-            {allPosts.slice(0, 5).map(post => (
-              <a href={`/blog/${post.slug}`} class="sidebar-recent__item">
-                <div class="sidebar-recent__thumb">
-                  {post.data.image ? (
-                    <img src={post.data.image} alt={post.data.title} width="56" height="42" loading="lazy" />
-                  ) : (
-                    <div class={`sidebar-recent__thumb-placeholder blog-card__placeholder--${catSlug(post.data.category)}`}>
-                      C
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <div class="sidebar-recent__title">{post.data.title}</div>
-                  <div class="sidebar-recent__date">{post.data.category}</div>
-                </div>
-              </a>
-            ))}
-          </nav>
-        </div>
+ <!-- Artículos recientes -->
+ <div class="blog-sidebar__widget">
+ <div class="blog-sidebar__widget-header">
+ <div class="blog-sidebar__widget-icon"></div>
+ <h3 class="blog-sidebar__widget-title">Recientes</h3>
+ </div>
+ <nav class="sidebar-recent">
+ {allPosts.slice(0, 5).map(post => (
+ <a href={`/blog/${post.slug}`} class="sidebar-recent__item">
+ <div class="sidebar-recent__thumb">
+ {post.data.image ? (
+ <img src={post.data.image} alt={post.data.title} width="56" height="42" loading="lazy" />
+ ) : (
+ <div class={`sidebar-recent__thumb-placeholder blog-card__placeholder--${catSlug(post.data.category)}`}>
+ C
+ </div>
+ )}
+ </div>
+ <div>
+ <div class="sidebar-recent__title">{post.data.title}</div>
+ <div class="sidebar-recent__date">{post.data.category}</div>
+ </div>
+ </a>
+ ))}
+ </nav>
+ </div>
 
-        <!-- Tags -->
-        {allTags.length > 0 && (
-          <div class="blog-sidebar__widget">
-            <div class="blog-sidebar__widget-header">
-              <div class="blog-sidebar__widget-icon">🏷</div>
-              <h3 class="blog-sidebar__widget-title">Temas</h3>
-            </div>
-            <div class="sidebar-tags">
-              {allTags.map(tag => (
-                <span class="sidebar-tags__tag">#{tag}</span>
-              ))}
-            </div>
-          </div>
-        )}
+ <!-- Tags -->
+ {allTags.length > 0 && (
+ <div class="blog-sidebar__widget">
+ <div class="blog-sidebar__widget-header">
+ <div class="blog-sidebar__widget-icon"></div>
+ <h3 class="blog-sidebar__widget-title">Temas</h3>
+ </div>
+ <div class="sidebar-tags">
+ {allTags.map(tag => (
+ <span class="sidebar-tags__tag">{tag}</span>
+ ))}
+ </div>
+ </div>
+ )}
 
-      </aside>
-    </div>
-  </div>
+ </aside>
+ </div>
+ </div>
 
 </PageLayout>

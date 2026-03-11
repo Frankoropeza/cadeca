@@ -1,16 +1,16 @@
 ---
 // ProcessStep.astro — Paso del proceso de compra
 export interface Props {
-  num:   number | string;
-  title: string;
-  desc:  string;
+ num:  number | string;
+ title: string;
+ desc:  string;
 }
 
 const { num, title, desc } = Astro.props;
 ---
 
 <div class="process-step">
-  <div class="process-step__num">{num}</div>
-  <p class="process-step__title">{title}</p>
-  <p class="process-step__desc">{desc}</p>
+ <div class="process-step__num">{num}</div>
+ <p class="process-step__title">{title}</p>
+ <p class="process-step__desc">{desc}</p>
 </div>

@@ -1,163 +1,163 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
-import PageHero   from "@/components/PageHero.astro";
+import PageHero  from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
-const TEL      = "55 XXXX-XXXX";
-const EMAIL    = "ventas@cadeca.com.mx";
+const TEL  = "55 XXXX-XXXX";
+const EMAIL  = "ventas@cadeca.com.mx";
 
-const title       = "Contacto | Cajas de Cartón CDMX | CADECA — Fabricante Directo";
+const title  = "Contacto | Cajas de Cartón CDMX | CADECA — Fabricante Directo";
 const description = "Contacta a CADECA, fabricante de cajas de cartón en CDMX. WhatsApp, teléfono y formulario de cotización. Respuesta en menos de 1 hora en horario hábil.";
 
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Contacto" },
+ { name: "Inicio", href: "/" },
+ { name: "Contacto" },
 ];
 
 const canales = [
-  {
-    icono: "💬",
-    titulo: "WhatsApp",
-    desc: "La forma más rápida. Respuesta en menos de 15 minutos en horario hábil.",
-    cta: "Escribir por WhatsApp",
-    href: `https://wa.me/${WHATSAPP}?text=Hola CADECA, quiero cotizar cajas de cartón`,
-    externo: true,
-    destaca: true,
-  },
-  {
-    icono: "📞",
-    titulo: "Teléfono",
-    desc: "Lunes a viernes de 8:00 a 18:00, sábados de 9:00 a 14:00.",
-    cta: `Llamar a ${TEL}`,
-    href: `tel:+5255XXXXXXXX`,
-    externo: false,
-    destaca: false,
-  },
-  {
-    icono: "✉️",
-    titulo: "Correo electrónico",
-    desc: "Para cotizaciones formales, licitaciones y pedidos con orden de compra.",
-    cta: EMAIL,
-    href: `mailto:${EMAIL}`,
-    externo: false,
-    destaca: false,
-  },
+ {
+ icono: "",
+ titulo: "WhatsApp",
+ desc: "La forma más rápida. Respuesta en menos de 15 minutos en horario hábil.",
+ cta: "Escribir por WhatsApp",
+ href: `https://wa.me/${WHATSAPP}?text=Hola CADECA, quiero cotizar cajas de cartón`,
+ externo: true,
+ destaca: true,
+ },
+ {
+ icono: "",
+ titulo: "Teléfono",
+ desc: "Lunes a viernes de 8:00 a 18:00, sábados de 9:00 a 14:00.",
+ cta: `Llamar a ${TEL}`,
+ href: `tel:+5255XXXXXXXX`,
+ externo: false,
+ destaca: false,
+ },
+ {
+ icono: "️",
+ titulo: "Correo electrónico",
+ desc: "Para cotizaciones formales, licitaciones y pedidos con orden de compra.",
+ cta: EMAIL,
+ href: `mailto:${EMAIL}`,
+ externo: false,
+ destaca: false,
+ },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="page"
-  breadcrumbs={breadcrumbs}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="page"
+ breadcrumbs={breadcrumbs}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><span class="current">Contacto</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><span class="current">Contacto</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <PageHero
-    eyebrow="Respuesta garantizada en menos de 1 hora"
-    titleHtml={true}
-    title="Habla Directo con el <span>Fabricante</span>"
-    desc="Sin intermediarios, sin call centers. Nuestros asesores técnicos atienden directo y conocen el corrugado de adentro hacia afuera."
-    desc2="Precio, disponibilidad y tiempo de entrega en un solo mensaje. Atendemos WhatsApp de lunes a sábado de 8 a.m. a 6 p.m. y correo electrónico con respuesta el mismo día hábil.||Para visitar nuestra planta en CDMX y revisar muestras físicas, agenda una cita con 24 horas de anticipación. Sin costo, sin compromiso."
-    chips={[
-      { label: "WhatsApp directo" },
-      { label: "Lun–Sáb 8am–6pm" },
-      { label: "Visita a planta" },
-      { label: "Respuesta < 1 hora" },
-    ]}
-    ctas={[
-      { href: `https://wa.me/${WHATSAPP}`, label: "Escribir por WhatsApp", variant: "primary" },
-    ]}
-  />
+ <PageHero
+ eyebrow="Respuesta garantizada en menos de 1 hora"
+ titleHtml={true}
+ title="Habla Directo con el <span>Fabricante</span>"
+ desc="Sin intermediarios, sin call centers. Nuestros asesores técnicos atienden directo y conocen el corrugado de adentro hacia afuera."
+ desc2="Precio, disponibilidad y tiempo de entrega en un solo mensaje. Atendemos WhatsApp de lunes a sábado de 8 a.m. a 6 p.m. y correo electrónico con respuesta el mismo día hábil.||Para visitar nuestra planta en CDMX y revisar muestras físicas, agenda una cita con 24 horas de anticipación. Sin costo, sin compromiso."
+ chips={[
+ { label: "WhatsApp directo" },
+ { label: "Lun–Sáb 8am–6pm" },
+ { label: "Visita a planta" },
+ { label: "Respuesta < 1 hora" },
+ ]}
+ ctas={[
+ { href: `https://wa.me/${WHATSAPP}`, label: "Escribir por WhatsApp", variant: "primary" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <section class="contact-canales" aria-labelledby="canales-title">
-      <div class="container">
-        <h2 id="canales-title" class="sr-only">Canales de contacto</h2>
-        <div class="contact-canales__grid">
-          {canales.map(c => (
-            <div class={`contact-canal${c.destaca ? " contact-canal--destaca" : ""}`}>
-              <span class="contact-canal__icono">{c.icono}</span>
-              <h3 class="contact-canal__titulo">{c.titulo}</h3>
-              <p class="contact-canal__desc">{c.desc}</p>
-              <a
-                href={c.href}
-                class={`btn ${c.destaca ? "btn--primary" : "btn--outline"}`}
-                {...(c.externo ? { target:"_blank", rel:"noopener" } : {})}
-              >
-                {c.cta}
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+ <section class="contact-canales" aria-labelledby="canales-title">
+ <div class="container">
+ <h2 id="canales-title" class="sr-only">Canales de contacto</h2>
+ <div class="contact-canales__grid">
+ {canales.map(c => (
+ <div class={`contact-canal${c.destaca ? " contact-canal--destaca" : ""}`}>
+ <span class="contact-canal__icono">{c.icono}</span>
+ <h3 class="contact-canal__titulo">{c.titulo}</h3>
+ <p class="contact-canal__desc">{c.desc}</p>
+ <a
+ href={c.href}
+ class={`btn ${c.destaca ? "btn--primary" : "btn--outline"}`}
+ {...(c.externo ? { target:"_blank", rel:"noopener" } : {})}
+ >
+ {c.cta}
+ </a>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
 
-    <section class="contact-horario" aria-labelledby="horario-title">
-      <div class="container">
-        <div class="contact-horario__inner">
-          <h2 id="horario-title" class="contact-horario__title">Horario de Atención</h2>
-          <div class="contact-horario__grid">
-            <div class="contact-horario__item">
-              <span class="contact-horario__dia">Lunes – Viernes</span>
-              <span class="contact-horario__hora">8:00 – 18:00 hrs</span>
-            </div>
-            <div class="contact-horario__item">
-              <span class="contact-horario__dia">Sábados</span>
-              <span class="contact-horario__hora">9:00 – 14:00 hrs</span>
-            </div>
-            <div class="contact-horario__item">
-              <span class="contact-horario__dia">Domingos y festivos</span>
-              <span class="contact-horario__hora">Cerrado</span>
-            </div>
-          </div>
-          <p class="contact-horario__nota">⚡ Los mensajes de WhatsApp fuera de horario se responden a partir del siguiente día hábil a las 8:00 hrs.</p>
-        </div>
-      </div>
-    </section>
+ <section class="contact-horario" aria-labelledby="horario-title">
+ <div class="container">
+ <div class="contact-horario__inner">
+ <h2 id="horario-title" class="contact-horario__title">Horario de Atención</h2>
+ <div class="contact-horario__grid">
+ <div class="contact-horario__item">
+ <span class="contact-horario__dia">Lunes – Viernes</span>
+ <span class="contact-horario__hora">8:00 – 18:00 hrs</span>
+ </div>
+ <div class="contact-horario__item">
+ <span class="contact-horario__dia">Sábados</span>
+ <span class="contact-horario__hora">9:00 – 14:00 hrs</span>
+ </div>
+ <div class="contact-horario__item">
+ <span class="contact-horario__dia">Domingos y festivos</span>
+ <span class="contact-horario__hora">Cerrado</span>
+ </div>
+ </div>
+ <p class="contact-horario__nota"> Los mensajes de WhatsApp fuera de horario se responden a partir del siguiente día hábil a las 8:00 hrs.</p>
+ </div>
+ </div>
+ </section>
 
-    <section class="contact-ubicacion" aria-labelledby="ubic-title">
-      <div class="container">
-        <h2 id="ubic-title" class="contact-ubicacion__title">Zona de Cobertura</h2>
-        <div class="contact-ubicacion__grid">
-          <div>
-            <h3>📍 Planta y oficinas</h3>
-            <p>Ciudad de México<br><em>(Dirección exacta — pendiente de actualizar)</em></p>
-            <h3 style="margin-top:var(--spacing-lg)">🚚 Entregas express (24 hrs)</h3>
-            <ul>
-              <li>Ciudad de México — todas las alcaldías</li>
-              <li>Naucalpan, Tlalnepantla, Ecatepec</li>
-              <li>Texcoco, Chalco, Ixtapaluca</li>
-              <li>Toluca y área conurbada</li>
-            </ul>
-            <h3 style="margin-top:var(--spacing-lg)">📦 Interior de la República</h3>
-            <p>2-5 días vía paquetería (DHL, FedEx, Estafeta). Consultar disponibilidad.</p>
-          </div>
-          <div class="contact-ubicacion__map">
-            <!-- Placeholder mapa — reemplazar con Google Maps embed cuando tengamos dirección real -->
-            <div style="background:var(--color-accent);border-radius:var(--radius-lg);height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;border:2px dashed var(--color-border);">
-              <span style="font-size:3rem">🗺️</span>
-              <p style="color:var(--color-text-light);font-size:var(--font-size-sm);text-align:center">Mapa de ubicación<br>próximamente</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <section class="contact-ubicacion" aria-labelledby="ubic-title">
+ <div class="container">
+ <h2 id="ubic-title" class="contact-ubicacion__title">Zona de Cobertura</h2>
+ <div class="contact-ubicacion__grid">
+ <div>
+ <h3> Planta y oficinas</h3>
+ <p>Ciudad de México<br><em>(Dirección exacta — pendiente de actualizar)</em></p>
+ <h3 style="margin-top:var(--spacing-lg)"> Entregas express (24 hrs)</h3>
+ <ul>
+ <li>Ciudad de México — todas las alcaldías</li>
+ <li>Naucalpan, Tlalnepantla, Ecatepec</li>
+ <li>Texcoco, Chalco, Ixtapaluca</li>
+ <li>Toluca y área conurbada</li>
+ </ul>
+ <h3 style="margin-top:var(--spacing-lg)"> Interior de la República</h3>
+ <p>2-5 días vía paquetería (DHL, FedEx, Estafeta). Consultar disponibilidad.</p>
+ </div>
+ <div class="contact-ubicacion__map">
+ <!-- Placeholder mapa — reemplazar con Google Maps embed cuando tengamos dirección real -->
+ <div style="background:var(--color-accent);border-radius:var(--radius-lg);height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;border:2px dashed var(--color-border);">
+ <span style="font-size:3rem">️</span>
+ <p style="color:var(--color-text-light);font-size:var(--font-size-sm);text-align:center">Mapa de ubicación<br>próximamente</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Prefieres que te contactemos nosotros? Deja tu número y te llamamos" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Prefieres que te contactemos nosotros? Deja tu número y te llamamos" />
 
 </PageLayout>
 

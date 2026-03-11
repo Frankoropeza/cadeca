@@ -1,149 +1,149 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Cajas Frutas Verduras Ventiladas CDMX | ECT-44 Cámara Fría | CAD-AL-04 | CADECA";
+const title  = "Cajas Frutas Verduras Ventiladas CDMX | ECT-44 Cámara Fría | CAD-AL-04 | CADECA";
 const description = "Cajas cartón frutas y verduras CDMX. Ventilaciones laterales, ECT-44 cámara fría, FSC disponible. Desde 50 pzas, 3-5 días. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"Chica", ml:"40×30×15 cm", real:"40×30×15", flauta:"BC",ect:"ECT-44",vacío:"0.55 kg",máx:"8 kg", disp:"yellow", label:"3-5 días", hl:false },
-  { talla:"Mediana", ml:"50×30×20 cm", real:"50×30×20", flauta:"BC",ect:"ECT-44",vacío:"0.75 kg",máx:"12 kg", disp:"yellow", label:"3-5 días", hl:true },
-  { talla:"Grande", ml:"60×40×25 cm", real:"60×40×25", flauta:"BC",ect:"ECT-44",vacío:"1.10 kg",máx:"18 kg", disp:"yellow", label:"3-5 días", hl:true },
-  { talla:"XL", ml:"80×40×25 cm", real:"80×40×25", flauta:"BC",ect:"ECT-44",vacío:"1.40 kg",máx:"25 kg", disp:"gray", label:"5-7 días", hl:false },
-  { talla:"A la Medida", ml:"Personalizada", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+ { talla:"Chica", ml:"40×30×15 cm", real:"40×30×15", flauta:"BC",ect:"ECT-44",vacío:"0.55 kg",máx:"8 kg", disp:"yellow", label:"3-5 días", hl:false },
+ { talla:"Mediana", ml:"50×30×20 cm", real:"50×30×20", flauta:"BC",ect:"ECT-44",vacío:"0.75 kg",máx:"12 kg", disp:"yellow", label:"3-5 días", hl:true },
+ { talla:"Grande", ml:"60×40×25 cm", real:"60×40×25", flauta:"BC",ect:"ECT-44",vacío:"1.10 kg",máx:"18 kg", disp:"yellow", label:"3-5 días", hl:true },
+ { talla:"XL", ml:"80×40×25 cm", real:"80×40×25", flauta:"BC",ect:"ECT-44",vacío:"1.40 kg",máx:"25 kg", disp:"gray", label:"5-7 días", hl:false },
+ { talla:"A la Medida", ml:"Personalizada", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
 ];
 
 const specs = [
-  ["Código SKU", "CAD-AL-04"],
-  ["Aplicación", "Frutas · Verduras · Flores"],
-  ["Ventilaciones", "15-20% área lateral"],
-  ["Pared", "Doble BC ECT-44"],
-  ["Humedad", "WR básico incluido"],
-  ["Cámara fría", "Hasta -4 °C con WR"],
-  ["Apilamiento", "4-6 cajas llenas"],
-  ["Liner", "Kraft marrón o blanco"],
-  ["FSC", "Disponible"],
-  ["MOQ", "50 pzas"],
-  ["Entrega", "3-5 días hábiles"],
+ ["Código SKU", "CAD-AL-04"],
+ ["Aplicación", "Frutas · Verduras · Flores"],
+ ["Ventilaciones", "15-20% área lateral"],
+ ["Pared", "Doble BC ECT-44"],
+ ["Humedad", "WR básico incluido"],
+ ["Cámara fría", "Hasta -4 °C con WR"],
+ ["Apilamiento", "4-6 cajas llenas"],
+ ["Liner", "Kraft marrón o blanco"],
+ ["FSC", "Disponible"],
+ ["MOQ", "50 pzas"],
+ ["Entrega", "3-5 días hábiles"],
 ];
 
 const faqs = [
-  {
-    id:"al04-f1",
-    question:"¿Por qué necesitan ventilaciones laterales?",
-    answer:"Las frutas y verduras siguen respirando, liberando calor, CO2 y humedad. Sin ventilación, la humedad acumulada acelera la descomposición. Las ventilaciones permiten flujo de aire frío de la cámara. Las cajas sin ventilaciones duran 30-40% menos en cámara.",
-  },
-  {
-    id:"al04-f2",
-    question:"¿Diferencia entre cámara fría y temperatura ambiente para el cartón?",
-    answer:"A temperatura ambiente el ECT-44 retiene 100% de resistencia. En cámara fría (85-95% HR) baja hasta 40-50% sin WR. Con WR básico incluido en CAD-AL-04 se retiene 70-75% del ECT. Para más de 7 días en cámara o congelación se recomienda CAD-AL-05.",
-  },
+ {
+ id:"al04-f1",
+ question:"¿Por qué necesitan ventilaciones laterales?",
+ answer:"Las frutas y verduras siguen respirando, liberando calor, CO2 y humedad. Sin ventilación, la humedad acumulada acelera la descomposición. Las ventilaciones permiten flujo de aire frío de la cámara. Las cajas sin ventilaciones duran 30-40% menos en cámara.",
+ },
+ {
+ id:"al04-f2",
+ question:"¿Diferencia entre cámara fría y temperatura ambiente para el cartón?",
+ answer:"A temperatura ambiente el ECT-44 retiene 100% de resistencia. En cámara fría (85-95% HR) baja hasta 40-50% sin WR. Con WR básico incluido en CAD-AL-04 se retiene 70-75% del ECT. Para más de 7 días en cámara o congelación se recomienda CAD-AL-05.",
+ },
 ];
 
 const mainImg = "/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif", alt: "Caja frutas/verduras — principal" },
-  { src: "/img/catalogo/caja-frutas-hero-cdmx.avif", alt: "Caja frutas — hero" },
-  { src: "/img/catalogo/caja-frutas-ventilacion-cdmx.avif", alt: "Caja frutas — ventilación" },
-  { src: "/img/catalogo/caja-frutas-mercado-cdmx.avif", alt: "Cajas — mercado central" },
-  { src: "/img/catalogo/caja-frutas-interior-cdmx.avif", alt: "Caja frutas — interior" },
+ { src: "/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif", alt: "Caja frutas/verduras — principal" },
+ { src: "/img/catalogo/caja-frutas-hero-cdmx.avif", alt: "Caja frutas — hero" },
+ { src: "/img/catalogo/caja-frutas-ventilacion-cdmx.avif", alt: "Caja frutas — ventilación" },
+ { src: "/img/catalogo/caja-frutas-mercado-cdmx.avif", alt: "Cajas — mercado central" },
+ { src: "/img/catalogo/caja-frutas-interior-cdmx.avif", alt: "Caja frutas — interior" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Alimentos", href:"/catalogo/cajas-para-alimentos"}, {name:"Frutas y Verduras"}]}
-  faqItems={[{question:"¿Por qué necesitan ventilaciones laterales?", answer:"Las frutas y verduras siguen respirando, liberando calor, CO2 y humedad. Sin ventilación, la humedad acumulada acelera la descomposición. Las ventilaciones permiten flujo de aire frío de la cámara. Las cajas sin ventilaciones duran 30-40% menos en cámara."}, {question:"¿Diferencia entre cámara fría y temperatura ambiente para el cartón?", answer:"A temperatura ambiente el ECT-44 retiene 100% de resistencia. En cámara fría (85-95% HR) baja hasta 40-50% sin WR. Con WR básico incluido en CAD-AL-04 se retiene 70-75% del ECT. Para más de 7 días en cámara o congelación se recomienda CAD-AL-05."}]}
-  product={{name:"Caja Frutas Verduras Ventiladas Cámara Fría", sku:"CAD-AL-04", description:"Caja Frutas Verduras Ventiladas Cámara Fría en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif", material:"Cartón doble corrugado ECT-44 ventilaciones frutas verduras cámara fría", category:"Cajas para Alimentos", moq:"50"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Alimentos", href:"/catalogo/cajas-para-alimentos"}, {name:"Frutas y Verduras"}]}
+ faqItems={[{question:"¿Por qué necesitan ventilaciones laterales?", answer:"Las frutas y verduras siguen respirando, liberando calor, CO2 y humedad. Sin ventilación, la humedad acumulada acelera la descomposición. Las ventilaciones permiten flujo de aire frío de la cámara. Las cajas sin ventilaciones duran 30-40% menos en cámara."}, {question:"¿Diferencia entre cámara fría y temperatura ambiente para el cartón?", answer:"A temperatura ambiente el ECT-44 retiene 100% de resistencia. En cámara fría (85-95% HR) baja hasta 40-50% sin WR. Con WR básico incluido en CAD-AL-04 se retiene 70-75% del ECT. Para más de 7 días en cámara o congelación se recomienda CAD-AL-05."}]}
+ product={{name:"Caja Frutas Verduras Ventiladas Cámara Fría", sku:"CAD-AL-04", description:"Caja Frutas Verduras Ventiladas Cámara Fría en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif", material:"Cartón doble corrugado ECT-44 ventilaciones frutas verduras cámara fría", category:"Cajas para Alimentos", moq:"50"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-para-alimentos">Alimentos</a></li>
-        <li><span class="current">Frutas y Verduras</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-para-alimentos">Alimentos</a></li>
+ <li><span class="current">Frutas y Verduras</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-al04-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AL-04 · Cajas para Alimentos</span>
-      <h1 id="sku-al04-title" class="cat-page-hero__title">Cajas Frutas y Verduras <span>Ventiladas</span><br>— ECT-44 Cámara Fría CDMX</h1>
-      <p class="cat-page-hero__desc">Ventilaciones laterales 15-20% para flujo de aire en cámara fría. Doble corrugado BC ECT-44 con WR básico incluido. Apta hasta -4 °C. Desde 50 piezas.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-04</strong></div>
-        <div class="cat-page-hero__strip-item">Pared: <strong>Doble BC ECT-44</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-al04-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AL-04 · Cajas para Alimentos</span>
+ <h1 id="sku-al04-title" class="cat-page-hero__title">Cajas Frutas y Verduras <span>Ventiladas</span><br>— ECT-44 Cámara Fría CDMX</h1>
+ <p class="cat-page-hero__desc">Ventilaciones laterales 15-20% para flujo de aire en cámara fría. Doble corrugado BC ECT-44 con WR básico incluido. Apta hasta -4 °C. Desde 50 piezas.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-04</strong></div>
+ <div class="cat-page-hero__strip-item">Pared: <strong>Doble BC ECT-44</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-al04-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AL-04 · Familia: Cajas para Alimentos</p>
-            <h2 id="detalle-al04-title" class="sku-detail__title">Caja Frutas y Verduras — Ventiladas Cámara Fría</h2>
-            <p class="sku-detail__desc">Doble corrugado BC ECT-44 con ventilaciones laterales 15-20%. WR básico incluido para cámara fría hasta -4 °C. Apilamiento 4-6 cajas llenas. Liner kraft marrón o blanco. FSC disponible.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">15-20%</span><span class="sku-detail__strip-label">Ventilación</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AL-04 Caja Frutas Verduras Ventiladas`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AL-04</a>
-              <a href="/catalogo/cajas-para-alimentos" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-al04-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AL-04 · Familia: Cajas para Alimentos</p>
+ <h2 id="detalle-al04-title" class="sku-detail__title">Caja Frutas y Verduras — Ventiladas Cámara Fría</h2>
+ <p class="sku-detail__desc">Doble corrugado BC ECT-44 con ventilaciones laterales 15-20%. WR básico incluido para cámara fría hasta -4 °C. Apilamiento 4-6 cajas llenas. Liner kraft marrón o blanco. FSC disponible.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">15-20%</span><span class="sku-detail__strip-label">Ventilación</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AL-04 Caja Frutas Verduras Ventiladas`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AL-04</a>
+ <a href="/catalogo/cajas-para-alimentos" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-al04-title">
-      <div class="container">
-        <h2 id="sizes-al04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-AL-04</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
-                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Fabricamos cualquier medida personalizada desde 50 piezas. ⏱ Producción bajo pedido.</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-al04-title">
+ <div class="container">
+ <h2 id="sizes-al04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-AL-04</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+ <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Fabricamos cualquier medida personalizada desde 50 piezas.  Producción bajo pedido.</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-al04-title">
-      <div class="container">
-        <h2 id="faq-al04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AL-04</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AL-04 — Cajas frutas y verduras desde 50 piezas, entrega 3-5 días" />
+ <section class="faq" aria-labelledby="faq-al04-title">
+ <div class="container">
+ <h2 id="faq-al04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AL-04</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AL-04 — Cajas frutas y verduras desde 50 piezas, entrega 3-5 días" />
 </PageLayout>

@@ -1,144 +1,144 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Cajas de Cartón para Mudanza con Asas CDMX | CAD-CM-01 | CADECA";
+const title  = "Cajas de Cartón para Mudanza con Asas CDMX | CAD-CM-01 | CADECA";
 const description = "Ficha técnica cajas de cartón para mudanza con asas reforzadas en CDMX. Doble corrugado ECT-44. Chica, mediana, grande y extra grande. Sin mínimo, stock permanente. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Chica",        lah:"30×25×25",flauta:"BC",ect:"ECT-44",vacío:"0.55 kg",máx:"12 kg",disp:"green",  label:"Stock" },
-  { nombre:"Mediana",      lah:"40×30×30",flauta:"BC",ect:"ECT-44",vacío:"0.75 kg",máx:"15 kg",disp:"green",  label:"Stock",  hl:true },
-  { nombre:"Grande",       lah:"50×40×40",flauta:"BC",ect:"ECT-44",vacío:"1.10 kg",máx:"18 kg",disp:"green",  label:"Stock",  hl:true },
-  { nombre:"Extra Grande", lah:"60×45×45",flauta:"BC",ect:"ECT-44",vacío:"1.50 kg",máx:"20 kg",disp:"yellow", label:"48 hrs" },
-  { nombre:"Ropa/Wardrobe",lah:"50×50×90",flauta:"BC",ect:"ECT-44",vacío:"2.20 kg",máx:"15 kg",disp:"yellow", label:"48 hrs" },
+ { nombre:"Chica",  lah:"30×25×25",flauta:"BC",ect:"ECT-44",vacío:"0.55 kg",máx:"12 kg",disp:"green",  label:"Stock" },
+ { nombre:"Mediana",  lah:"40×30×30",flauta:"BC",ect:"ECT-44",vacío:"0.75 kg",máx:"15 kg",disp:"green",  label:"Stock",  hl:true },
+ { nombre:"Grande",  lah:"50×40×40",flauta:"BC",ect:"ECT-44",vacío:"1.10 kg",máx:"18 kg",disp:"green",  label:"Stock",  hl:true },
+ { nombre:"Extra Grande", lah:"60×45×45",flauta:"BC",ect:"ECT-44",vacío:"1.50 kg",máx:"20 kg",disp:"yellow", label:"48 hrs" },
+ { nombre:"Ropa/Wardrobe",lah:"50×50×90",flauta:"BC",ect:"ECT-44",vacío:"2.20 kg",máx:"15 kg",disp:"yellow", label:"48 hrs" },
 ];
 
 const specs = [
-  ["Código SKU",           "CAD-CM-01"],
-  ["Tipo de pared",        "Doble corrugado (BC)"],
-  ["Flauta",               "BC (7mm)"],
-  ["Resistencia ECT",      "ECT-44"],
-  ["Gramaje liner",        "150 – 175 g/m²"],
-  ["Característica especial","Asas troqueladas reforzadas"],
-  ["Material",             "Kraft virgen"],
-  ["Peso máx. producto",   "Hasta 20 kg con asas / 25 kg sin asas"],
-  ["Carga de apilado",     "Hasta 150 kg (condiciones ideales)"],
-  ["Impresión",            "Instrucciones uso impresas · Logo opcional"],
-  ["Reutilización",        "Alta durabilidad, múltiples usos"],
-  ["Pedido mínimo",        "Sin mínimo (inventario permanente)"],
-  ["Tiempo de entrega",    "24 hrs CDMX · 48 hrs Estado de México"],
+ ["Código SKU",  "CAD-CM-01"],
+ ["Tipo de pared",  "Doble corrugado (BC)"],
+ ["Flauta",  "BC (7mm)"],
+ ["Resistencia ECT",  "ECT-44"],
+ ["Gramaje liner",  "150 – 175 g/m²"],
+ ["Característica especial","Asas troqueladas reforzadas"],
+ ["Material",  "Kraft virgen"],
+ ["Peso máx. producto",  "Hasta 20 kg con asas / 25 kg sin asas"],
+ ["Carga de apilado",  "Hasta 150 kg (condiciones ideales)"],
+ ["Impresión",  "Instrucciones uso impresas · Logo opcional"],
+ ["Reutilización",  "Alta durabilidad, múltiples usos"],
+ ["Pedido mínimo",  "Sin mínimo (inventario permanente)"],
+ ["Tiempo de entrega",  "24 hrs CDMX · 48 hrs Estado de México"],
 ];
 
 const faqs = [
-  {
-    id:"cm-f1",
-    question:"¿Las asas de la caja de mudanza soportan el peso del contenido?",
-    answer:"Las asas troqueladas del CAD-CM-01 están diseñadas para soportar el peso recomendado de cada talla: hasta 12 kg la chica, 15 kg la mediana y 18 kg la grande. Para el modelo Extra Grande (60×45×45) recomendamos no exceder 15 kg con carga en asas aunque la caja pueda contener hasta 20 kg, ya que el esfuerzo de la extracción por asas es diferente al de apilar.",
-  },
-  {
-    id:"cm-f2",
-    question:"¿Se pueden reutilizar estas cajas varias veces?",
-    answer:"Sí. El doble corrugado BC ECT-44 con kraft virgen es significativamente más duradero que el cartón de caja estándar. En condiciones normales (sin exposición a humedad ni cargas excesivas), estas cajas resisten 3 a 5 ciclos de uso completo. Para empresas de mudanzas profesionales, esto reduce significativamente el costo por mudanza comparado con cajas desechables de menor calidad.",
-  },
+ {
+ id:"cm-f1",
+ question:"¿Las asas de la caja de mudanza soportan el peso del contenido?",
+ answer:"Las asas troqueladas del CAD-CM-01 están diseñadas para soportar el peso recomendado de cada talla: hasta 12 kg la chica, 15 kg la mediana y 18 kg la grande. Para el modelo Extra Grande (60×45×45) recomendamos no exceder 15 kg con carga en asas aunque la caja pueda contener hasta 20 kg, ya que el esfuerzo de la extracción por asas es diferente al de apilar.",
+ },
+ {
+ id:"cm-f2",
+ question:"¿Se pueden reutilizar estas cajas varias veces?",
+ answer:"Sí. El doble corrugado BC ECT-44 con kraft virgen es significativamente más duradero que el cartón de caja estándar. En condiciones normales (sin exposición a humedad ni cargas excesivas), estas cajas resisten 3 a 5 ciclos de uso completo. Para empresas de mudanzas profesionales, esto reduce significativamente el costo por mudanza comparado con cajas desechables de menor calidad.",
+ },
 ];
 
 const mainImg = "/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", alt: "Cajas de mudanza — vista principal" },
-  { src: "/img/catalogo/caja-chica-estandar-hero-cdmx.avif", alt: "Cajas mudanza — hero" },
-  { src: "/img/catalogo/caja-chica-estandar-stack-cdmx.avif", alt: "Cajas mudanza — apiladas" },
-  { src: "/img/catalogo/caja-chica-estandar-uso-cdmx.avif", alt: "Cajas mudanza — uso real" },
-  { src: "/img/catalogo/caja-chica-estandar-interior-cdmx.avif", alt: "Caja mudanza — interior" },
+ { src: "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", alt: "Cajas de mudanza — vista principal" },
+ { src: "/img/catalogo/caja-chica-estandar-hero-cdmx.avif", alt: "Cajas mudanza — hero" },
+ { src: "/img/catalogo/caja-chica-estandar-stack-cdmx.avif", alt: "Cajas mudanza — apiladas" },
+ { src: "/img/catalogo/caja-chica-estandar-uso-cdmx.avif", alt: "Cajas mudanza — uso real" },
+ { src: "/img/catalogo/caja-chica-estandar-interior-cdmx.avif", alt: "Caja mudanza — interior" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar"}, {name:"Cajas Mudanza"}]}
-  faqItems={[{question:"¿Cuántas cajas de mudanza necesito para una mudanza de departamento?", answer:"Como referencia general: Estudio (40-60m²): 15-25 cajas. Departamento 1 recámara: 25-40 cajas. Departamento 2 recámaras: 40-60 cajas. Casa 3 recámaras: 60-100 cajas. La distribución típica es: 30% cajas Chicas (libros, vajilla), 40% Medianas (ropa, cocina general), 20% Grandes (ropa voluminosa, juguetes), 10% Extra Grandes (cobijas, almohadas). Pedido mínimo CAD-CM-01: 10 piezas por talla."}, {question:"¿Cuál es la diferencia entre caja de mudanza y caja corrugado estándar?", answer:"Las cajas de mudanza tienen solapas reforzadas con doble pegado o grapado para soportar el manejo repetido (abrir, cargar, apilar, transportar), fondo doble para mayor resistencia vertical cuando están llenas, medidas estandarizadas que se apilan eficientemente en camión de mudanza, y resisten humedad moderada de un día de trabajo. Las cajas corrugado estándar están diseñadas para un solo ciclo de empaque-transporte-desempaque. Para mudanza, el costo adicional de la caja reforzada se amortiza en la protección del contenido."}]}
-  product={{name:"Caja Mudanza Doble Corrugado", sku:"CAD-CM-01", description:"Caja Mudanza Doble Corrugado en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", material:"Cartón doble corrugado flauta BC ECT-44 para mudanza", category:"Cajas de Cartón Corrugado Estándar", moq:"10"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar"}, {name:"Cajas Mudanza"}]}
+ faqItems={[{question:"¿Cuántas cajas de mudanza necesito para una mudanza de departamento?", answer:"Como referencia general: Estudio (40-60m²): 15-25 cajas. Departamento 1 recámara: 25-40 cajas. Departamento 2 recámaras: 40-60 cajas. Casa 3 recámaras: 60-100 cajas. La distribución típica es: 30% cajas Chicas (libros, vajilla), 40% Medianas (ropa, cocina general), 20% Grandes (ropa voluminosa, juguetes), 10% Extra Grandes (cobijas, almohadas). Pedido mínimo CAD-CM-01: 10 piezas por talla."}, {question:"¿Cuál es la diferencia entre caja de mudanza y caja corrugado estándar?", answer:"Las cajas de mudanza tienen solapas reforzadas con doble pegado o grapado para soportar el manejo repetido (abrir, cargar, apilar, transportar), fondo doble para mayor resistencia vertical cuando están llenas, medidas estandarizadas que se apilan eficientemente en camión de mudanza, y resisten humedad moderada de un día de trabajo. Las cajas corrugado estándar están diseñadas para un solo ciclo de empaque-transporte-desempaque. Para mudanza, el costo adicional de la caja reforzada se amortiza en la protección del contenido."}]}
+ product={{name:"Caja Mudanza Doble Corrugado", sku:"CAD-CM-01", description:"Caja Mudanza Doble Corrugado en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", material:"Cartón doble corrugado flauta BC ECT-44 para mudanza", category:"Cajas de Cartón Corrugado Estándar", moq:"10"}}
 >
-    <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/catalogo">Catálogo</a></li>
-      <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
-      <li><span class="current">Cajas Mudanza</span></li>
-      </ol>
-    </div>
-  </div>
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+ <li><span class="current">Cajas Mudanza</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cm-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-CM-01 · Corrugado Estándar</span>
-      <h1 id="sku-cm-title" class="cat-page-hero__title">Cajas para Mudanza<br><span>Asas Reforzadas — CDMX</span></h1>
-      <p class="cat-page-hero__desc">Doble corrugado BC con asas troqueladas reforzadas para manejo manual frecuente. Sin pedido mínimo, en inventario permanente. Chica, mediana, grande, extra grande y wardrobe.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CM-01</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cm-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-CM-01 · Corrugado Estándar</span>
+ <h1 id="sku-cm-title" class="cat-page-hero__title">Cajas para Mudanza<br><span>Asas Reforzadas — CDMX</span></h1>
+ <p class="cat-page-hero__desc">Doble corrugado BC con asas troqueladas reforzadas para manejo manual frecuente. Sin pedido mínimo, en inventario permanente. Chica, mediana, grande, extra grande y wardrobe.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CM-01</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cm-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-CM-01 · Familia: Corrugado Estándar</p>
-            <h2 id="detalle-cm-title" class="sku-detail__title">Cajas para Mudanza — Con Asas Reforzadas</h2>
-            <p class="sku-detail__desc">Diseñadas específicamente para el manejo manual frecuente. Asas troqueladas reforzadas, doble corrugado BC y cierre seguro de cuatro solapas. En inventario permanente en CDMX para entrega inmediata sin pedido mínimo. Disponibles en 5 tallas incluyendo modelo wardrobe para ropa colgada.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">20 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Sin mín.</span><span class="sku-detail__strip-label">Pedido</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([label, val]) => <tr><td>{label}</td><td>{val}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CM-01 Cajas Mudanza`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CM-01</a>
-              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cm-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-CM-01 · Familia: Corrugado Estándar</p>
+ <h2 id="detalle-cm-title" class="sku-detail__title">Cajas para Mudanza — Con Asas Reforzadas</h2>
+ <p class="sku-detail__desc">Diseñadas específicamente para el manejo manual frecuente. Asas troqueladas reforzadas, doble corrugado BC y cierre seguro de cuatro solapas. En inventario permanente en CDMX para entrega inmediata sin pedido mínimo. Disponibles en 5 tallas incluyendo modelo wardrobe para ropa colgada.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">20 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Sin mín.</span><span class="sku-detail__strip-label">Pedido</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([label, val]) => <tr><td>{label}</td><td>{val}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CM-01 Cajas Mudanza`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CM-01</a>
+ <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-cm-title">
-      <div class="container">
-        <h2 id="sizes-cm-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Tallas Disponibles — CAD-CM-01</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Talla</th><th>L × A × H (cm)</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
-            <tbody>{medidas.map(m => <tr class={m.hl?"highlight":""}><td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td><td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td></tr>)}</tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">✓ Stock permanente en CDMX · ⏱ Producción 48 hrs</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-cm-title">
+ <div class="container">
+ <h2 id="sizes-cm-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Tallas Disponibles — CAD-CM-01</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Talla</th><th>L × A × H (cm)</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+ <tbody>{medidas.map(m => <tr class={m.hl?"highlight":""}><td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td><td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td></tr>)}</tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Stock permanente en CDMX ·  Producción 48 hrs</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-cm-title">
-      <div class="container">
-        <h2 id="faq-cm-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-CM-01</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-CM-01 — Sin mínimo, stock permanente, entrega 24 hrs CDMX" />
+ <section class="faq" aria-labelledby="faq-cm-title">
+ <div class="container">
+ <h2 id="faq-cm-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-CM-01</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-CM-01 — Sin mínimo, stock permanente, entrega 24 hrs CDMX" />
 </PageLayout>

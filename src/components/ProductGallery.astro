@@ -2,12 +2,12 @@
 /**
  * ProductGallery — Galería de imágenes para fichas de producto
  * Props:
- *   images: Array<{ src: string, alt: string }>  (máx 5)
- *   mainAlt: string (fallback alt para imagen principal)
+ *  images: Array<{ src: string, alt: string }> (máx 5)
+ *  mainAlt: string (fallback alt para imagen principal)
  */
 export interface Props {
-  images: { src: string; alt: string }[];
-  mainAlt?: string;
+ images: { src: string; alt: string }[];
+ mainAlt?: string;
 }
 const { images, mainAlt = "Imagen de producto CADECA" } = Astro.props;
 const main = images[0];
@@ -15,78 +15,78 @@ const thumbs = images.slice(1);
 ---
 
 <div class="pg" data-gallery>
-  <!-- Imagen principal -->
-  <div class="pg__main">
-    <img
-      id="pg-main-img"
-      class="pg__main-img"
-      src={main.src}
-      alt={main.alt || mainAlt}
-      width="880"
-      height="550"
-      sizes="(max-width: 959px) 100vw, 440px"
-      loading="eager"
-      decoding="async"
-    />
-    <!-- Badges -->
-    <div class="pg__badges">
-      <span class="pg__badge pg__badge--primary">⚡ Entrega 48 hrs</span>
-      <span class="pg__badge pg__badge--green">✓ Fabricante directo</span>
-    </div>
-  </div>
+ <!-- Imagen principal -->
+ <div class="pg__main">
+ <img
+ id="pg-main-img"
+ class="pg__main-img"
+ src={main.src}
+ alt={main.alt || mainAlt}
+ width="880"
+ height="550"
+ sizes="(max-width: 959px) 100vw, 440px"
+ loading="eager"
+ decoding="async"
+ />
+ <!-- Badges -->
+ <div class="pg__badges">
+ <span class="pg__badge pg__badge--primary"> Entrega 48 hrs</span>
+ <span class="pg__badge pg__badge--green"> Fabricante directo</span>
+ </div>
+ </div>
 
-  <!-- Miniaturas -->
-  {images.length > 1 && (
-    <div class="pg__thumbs" role="list" aria-label="Más imágenes del producto">
-      {images.map((img, i) => (
-        <button
-          class={`pg__thumb${i === 0 ? " pg__thumb--active" : ""}`}
-          data-src={img.src}
-          data-alt={img.alt || mainAlt}
-          data-idx={i}
-          role="listitem"
-          aria-label={`Ver imagen ${i + 1}`}
-          type="button"
-        >
-          <img
-            src={img.src}
-            alt={img.alt || mainAlt}
-            width="176"
-            height="110"
-            loading="lazy"
-            decoding="async"
-          />
-        </button>
-      ))}
-    </div>
-  )}
+ <!-- Miniaturas -->
+ {images.length > 1 && (
+ <div class="pg__thumbs" role="list" aria-label="Más imágenes del producto">
+ {images.map((img, i) => (
+ <button
+ class={`pg__thumb${i === 0 ? " pg__thumb--active" : ""}`}
+ data-src={img.src}
+ data-alt={img.alt || mainAlt}
+ data-idx={i}
+ role="listitem"
+ aria-label={`Ver imagen ${i + 1}`}
+ type="button"
+ >
+ <img
+ src={img.src}
+ alt={img.alt || mainAlt}
+ width="176"
+ height="110"
+ loading="lazy"
+ decoding="async"
+ />
+ </button>
+ ))}
+ </div>
+ )}
 </div>
 
 
 <script>
-  // Minimal vanilla JS — switch main image on thumb click
-  document.querySelectorAll<HTMLElement>("[data-gallery]").forEach((gallery) => {
-    const mainImg = gallery.querySelector<HTMLImageElement>("#pg-main-img");
-    const thumbs  = gallery.querySelectorAll<HTMLButtonElement>(".pg__thumb");
+ // Minimal vanilla JS — switch main image on thumb click
+ document.querySelectorAll<HTMLElement>("[data-gallery]").forEach((gallery) => {
+ const mainImg = gallery.querySelector<HTMLImageElement>("pg-main-img");
+ const thumbs  = gallery.querySelectorAll<HTMLButtonElement>(".pg__thumb");
 
-    thumbs.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const src = btn.dataset.src ?? "";
-        const alt = btn.dataset.alt ?? "";
-        if (!mainImg || mainImg.src.endsWith(src)) return;
+ thumbs.forEach((btn) => {
+ btn.addEventListener("click", () => {
+ const src = btn.dataset.src ?? "";
+ const alt = btn.dataset.alt ?? "";
+ if (!mainImg || mainImg.src.endsWith(src)) return;
 
-        mainImg.classList.add("is-loading");
-        const temp = new Image();
-        temp.onload = () => {
-          mainImg.src = src;
-          mainImg.alt = alt;
-          mainImg.classList.remove("is-loading");
-        };
-        temp.src = src;
+ mainImg.classList.add("is-loading");
+ const temp = new Image();
+ temp.onload = () => {
+ mainImg.src = src;
+ mainImg.alt = alt;
+ mainImg.classList.remove("is-loading");
+ };
+ temp.src = src;
 
-        thumbs.forEach(t => t.classList.remove("pg__thumb--active"));
-        btn.classList.add("pg__thumb--active");
-      });
-    });
-  });
+ thumbs.forEach(t => t.classList.remove("pg__thumb--active"));
+ btn.classList.add("pg__thumb--active");
+ });
+ });
+ });
 </script>

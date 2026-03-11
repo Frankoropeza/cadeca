@@ -1,223 +1,223 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
-import FaqItem    from "@/components/FaqItem.astro";
-import PageHero   from "@/components/PageHero.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import PageHero  from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 
-const title       = "Cotizar Cajas de Cartón CDMX | Respuesta en 1 Hora | CADECA";
+const title  = "Cotizar Cajas de Cartón CDMX | Respuesta en 1 Hora | CADECA";
 const description = "Cotiza cajas de cartón corrugado en CDMX. Respuesta en menos de 1 hora en horario hábil. Cajas estándar, a la medida y personalizadas con logo. CADECA fabricante directo.";
 
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Cotizar" },
+ { name: "Inicio", href: "/" },
+ { name: "Cotizar" },
 ];
 
 const faqs = [
-  { question: "¿Cuánto tiempo tarda en llegar mi cotización?", answer: "En horario hábil (Lun-Vie 8:00-18:00, Sáb 9:00-14:00) respondemos en menos de 60 minutos por WhatsApp. Para cotizaciones con mucho detalle técnico puede tomar hasta 2-3 horas." },
-  { question: "¿Cuánto es el pedido mínimo?", answer: "Depende del tipo de caja: cajas estándar desde 50 piezas, cajas personalizadas con logo desde 100 piezas, cajas a la medida desde 25-50 piezas según el tipo. Consulta el catálogo para el MOQ exacto por SKU." },
-  { question: "¿El diseño y el CAD tienen costo?", answer: "No. El diseño CAD para cajas a la medida es gratuito y lo entregamos en 24 horas. La vectorización de logotipos para impresión también es sin costo en el primer pedido." },
-  { question: "¿Puedo pedir muestras antes de hacer el pedido completo?", answer: "Sí. Para pedidos de cajas a la medida y personalizadas entregamos de 3 a 5 muestras de preproducción para que valides en tu línea o con tu producto antes del pedido completo." },
+ { question: "¿Cuánto tiempo tarda en llegar mi cotización?", answer: "En horario hábil (Lun-Vie 8:00-18:00, Sáb 9:00-14:00) respondemos en menos de 60 minutos por WhatsApp. Para cotizaciones con mucho detalle técnico puede tomar hasta 2-3 horas." },
+ { question: "¿Cuánto es el pedido mínimo?", answer: "Depende del tipo de caja: cajas estándar desde 50 piezas, cajas personalizadas con logo desde 100 piezas, cajas a la medida desde 25-50 piezas según el tipo. Consulta el catálogo para el MOQ exacto por SKU." },
+ { question: "¿El diseño y el CAD tienen costo?", answer: "No. El diseño CAD para cajas a la medida es gratuito y lo entregamos en 24 horas. La vectorización de logotipos para impresión también es sin costo en el primer pedido." },
+ { question: "¿Puedo pedir muestras antes de hacer el pedido completo?", answer: "Sí. Para pedidos de cajas a la medida y personalizadas entregamos de 3 a 5 muestras de preproducción para que valides en tu línea o con tu producto antes del pedido completo." },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="page"
-  breadcrumbs={breadcrumbs}
-  faqItems={faqs}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="page"
+ breadcrumbs={breadcrumbs}
+ faqItems={faqs}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><span class="current">Cotizar</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><span class="current">Cotizar</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <PageHero
-    eyebrow="Respuesta garantizada en menos de 1 hora"
-    titleHtml={true}
-    title="Cotiza tus Cajas de <span>Cartón en CDMX</span>"
-    desc="Completa el formulario o escríbenos por WhatsApp. Sin rodeos: precio, disponibilidad y tiempo de entrega en un solo mensaje."
-    desc2="Enviamos cotización detallada con precio unitario, precio por volumen, tiempo de producción y opciones de personalización. Sin letra chica, sin costos ocultos.||¿Tienes un plano técnico o muestra física? Compártenos las medidas exactas y el uso final: diseñamos la solución óptima para tu producto y presupuesto en menos de 2 horas."
-    chips={[
-      { label: "Cotización en 2 horas" },
-      { label: "Sin compromiso" },
-      { label: "Precio unitario + volumen" },
-      { label: "Diseño CAD gratis" },
-    ]}
-    ctas={[
-      { href: `https://wa.me/${WHATSAPP}`, label: "WhatsApp directo", variant: "primary" },
-    ]}
-  />
+ <PageHero
+ eyebrow="Respuesta garantizada en menos de 1 hora"
+ titleHtml={true}
+ title="Cotiza tus Cajas de <span>Cartón en CDMX</span>"
+ desc="Completa el formulario o escríbenos por WhatsApp. Sin rodeos: precio, disponibilidad y tiempo de entrega en un solo mensaje."
+ desc2="Enviamos cotización detallada con precio unitario, precio por volumen, tiempo de producción y opciones de personalización. Sin letra chica, sin costos ocultos.||¿Tienes un plano técnico o muestra física? Compártenos las medidas exactas y el uso final: diseñamos la solución óptima para tu producto y presupuesto en menos de 2 horas."
+ chips={[
+ { label: "Cotización en 2 horas" },
+ { label: "Sin compromiso" },
+ { label: "Precio unitario + volumen" },
+ { label: "Diseño CAD gratis" },
+ ]}
+ ctas={[
+ { href: `https://wa.me/${WHATSAPP}`, label: "WhatsApp directo", variant: "primary" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <section class="cotizar-form-section">
-      <div class="container">
-        <div class="cotizar-layout">
+ <section class="cotizar-form-section">
+ <div class="container">
+ <div class="cotizar-layout">
 
-          <div class="cotizar-form-wrap">
-            <h2 class="cotizar-form-wrap__title">Formulario de Cotización</h2>
-            <form id="cotizar-page-form" class="cotizar-form" novalidate>
+ <div class="cotizar-form-wrap">
+ <h2 class="cotizar-form-wrap__title">Formulario de Cotización</h2>
+ <form id="cotizar-page-form" class="cotizar-form" novalidate>
 
-              <div class="cotizar-form__group">
-                <label for="cot-nombre" class="cotizar-form__label">Nombre completo *</label>
-                <input id="cot-nombre" name="nombre" type="text" class="cotizar-form__input" placeholder="Tu nombre" required />
-              </div>
+ <div class="cotizar-form__group">
+ <label for="cot-nombre" class="cotizar-form__label">Nombre completo *</label>
+ <input id="cot-nombre" name="nombre" type="text" class="cotizar-form__input" placeholder="Tu nombre" required />
+ </div>
 
-              <div class="cotizar-form__group">
-                <label for="cot-empresa" class="cotizar-form__label">Empresa (opcional)</label>
-                <input id="cot-empresa" name="empresa" type="text" class="cotizar-form__input" placeholder="Nombre de tu empresa o negocio" />
-              </div>
+ <div class="cotizar-form__group">
+ <label for="cot-empresa" class="cotizar-form__label">Empresa (opcional)</label>
+ <input id="cot-empresa" name="empresa" type="text" class="cotizar-form__input" placeholder="Nombre de tu empresa o negocio" />
+ </div>
 
-              <div class="cotizar-form__row">
-                <div class="cotizar-form__group">
-                  <label for="cot-contacto" class="cotizar-form__label">WhatsApp o teléfono *</label>
-                  <input id="cot-contacto" name="contacto" type="tel" class="cotizar-form__input" placeholder="55 1234-5678" required />
-                </div>
-                <div class="cotizar-form__group">
-                  <label for="cot-email" class="cotizar-form__label">Correo electrónico</label>
-                  <input id="cot-email" name="email" type="email" class="cotizar-form__input" placeholder="tu@correo.com" />
-                </div>
-              </div>
+ <div class="cotizar-form__row">
+ <div class="cotizar-form__group">
+ <label for="cot-contacto" class="cotizar-form__label">WhatsApp o teléfono *</label>
+ <input id="cot-contacto" name="contacto" type="tel" class="cotizar-form__input" placeholder="55 1234-5678" required />
+ </div>
+ <div class="cotizar-form__group">
+ <label for="cot-email" class="cotizar-form__label">Correo electrónico</label>
+ <input id="cot-email" name="email" type="email" class="cotizar-form__input" placeholder="tu@correo.com" />
+ </div>
+ </div>
 
-              <div class="cotizar-form__group">
-                <label for="cot-tipo" class="cotizar-form__label">Tipo de caja *</label>
-                <select id="cot-tipo" name="tipo" class="cotizar-form__select" required>
-                  <option value="">Selecciona el tipo</option>
-                  <optgroup label="Corrugado Estándar">
-                    <option>Corrugado simple (ECT-32)</option>
-                    <option>Doble corrugado (ECT-44)</option>
-                    <option>Triple corrugado (ECT-61)</option>
-                    <option>Cajas mudanza</option>
-                  </optgroup>
-                  <optgroup label="E-commerce">
-                    <option>Cajas Mercado Envíos</option>
-                    <option>Cajas Amazon FBA/FBM</option>
-                    <option>Cajas paqueterías (DHL/FedEx/Estafeta)</option>
-                    <option>E-commerce a la medida</option>
-                  </optgroup>
-                  <optgroup label="Personalizadas">
-                    <option>Caja con logo 1 color</option>
-                    <option>Caja con logo 2 colores</option>
-                    <option>Caja full color CMYK</option>
-                    <option>Acabados especiales (barniz UV)</option>
-                  </optgroup>
-                  <optgroup label="Especiales">
-                    <option>Caja a la medida industrial</option>
-                    <option>Caja para alimentos (food grade)</option>
-                    <option>Cajas para pizza</option>
-                    <option>Láminas de cartón corrugado</option>
-                    <option>Separadores y divisiones</option>
-                    <option>Otro — lo describo abajo</option>
-                  </optgroup>
-                </select>
-              </div>
+ <div class="cotizar-form__group">
+ <label for="cot-tipo" class="cotizar-form__label">Tipo de caja *</label>
+ <select id="cot-tipo" name="tipo" class="cotizar-form__select" required>
+ <option value="">Selecciona el tipo</option>
+ <optgroup label="Corrugado Estándar">
+ <option>Corrugado simple (ECT-32)</option>
+ <option>Doble corrugado (ECT-44)</option>
+ <option>Triple corrugado (ECT-61)</option>
+ <option>Cajas mudanza</option>
+ </optgroup>
+ <optgroup label="E-commerce">
+ <option>Cajas Mercado Envíos</option>
+ <option>Cajas Amazon FBA/FBM</option>
+ <option>Cajas paqueterías (DHL/FedEx/Estafeta)</option>
+ <option>E-commerce a la medida</option>
+ </optgroup>
+ <optgroup label="Personalizadas">
+ <option>Caja con logo 1 color</option>
+ <option>Caja con logo 2 colores</option>
+ <option>Caja full color CMYK</option>
+ <option>Acabados especiales (barniz UV)</option>
+ </optgroup>
+ <optgroup label="Especiales">
+ <option>Caja a la medida industrial</option>
+ <option>Caja para alimentos (food grade)</option>
+ <option>Cajas para pizza</option>
+ <option>Láminas de cartón corrugado</option>
+ <option>Separadores y divisiones</option>
+ <option>Otro — lo describo abajo</option>
+ </optgroup>
+ </select>
+ </div>
 
-              <div class="cotizar-form__row">
-                <div class="cotizar-form__group">
-                  <label for="cot-medida" class="cotizar-form__label">Medida aprox. (Largo × Ancho × Alto cm)</label>
-                  <input id="cot-medida" name="medida" type="text" class="cotizar-form__input" placeholder="30 × 20 × 15" />
-                </div>
-                <div class="cotizar-form__group">
-                  <label for="cot-cantidad" class="cotizar-form__label">Cantidad estimada *</label>
-                  <select id="cot-cantidad" name="cantidad" class="cotizar-form__select" required>
-                    <option value="">Selecciona</option>
-                    <option>25 – 50 piezas</option>
-                    <option>51 – 100 piezas</option>
-                    <option>101 – 500 piezas</option>
-                    <option>501 – 1,000 piezas</option>
-                    <option>1,001 – 5,000 piezas</option>
-                    <option>Más de 5,000 piezas</option>
-                  </select>
-                </div>
-              </div>
+ <div class="cotizar-form__row">
+ <div class="cotizar-form__group">
+ <label for="cot-medida" class="cotizar-form__label">Medida aprox. (Largo × Ancho × Alto cm)</label>
+ <input id="cot-medida" name="medida" type="text" class="cotizar-form__input" placeholder="30 × 20 × 15" />
+ </div>
+ <div class="cotizar-form__group">
+ <label for="cot-cantidad" class="cotizar-form__label">Cantidad estimada *</label>
+ <select id="cot-cantidad" name="cantidad" class="cotizar-form__select" required>
+ <option value="">Selecciona</option>
+ <option>25 – 50 piezas</option>
+ <option>51 – 100 piezas</option>
+ <option>101 – 500 piezas</option>
+ <option>501 – 1,000 piezas</option>
+ <option>1,001 – 5,000 piezas</option>
+ <option>Más de 5,000 piezas</option>
+ </select>
+ </div>
+ </div>
 
-              <div class="cotizar-form__group">
-                <label for="cot-detalles" class="cotizar-form__label">Detalles adicionales (producto, uso, urgencia)</label>
-                <textarea id="cot-detalles" name="detalles" class="cotizar-form__textarea" rows="4" placeholder="Describe tu producto, si es para e-commerce, industrial, alimentos... Cualquier detalle que nos ayude a cotizar con precisión."></textarea>
-              </div>
+ <div class="cotizar-form__group">
+ <label for="cot-detalles" class="cotizar-form__label">Detalles adicionales (producto, uso, urgencia)</label>
+ <textarea id="cot-detalles" name="detalles" class="cotizar-form__textarea" rows="4" placeholder="Describe tu producto, si es para e-commerce, industrial, alimentos... Cualquier detalle que nos ayude a cotizar con precisión."></textarea>
+ </div>
 
-              <button type="submit" class="btn btn--primary btn--full btn--lg">
-                Enviar cotización por WhatsApp →
-              </button>
-              <p class="cotizar-form__nota">Al enviar, se abrirá WhatsApp con tu información precargada. Respondemos en menos de 1 hora en horario hábil.</p>
-            </form>
-          </div>
+ <button type="submit" class="btn btn--primary btn--full btn--lg">
+ Enviar cotización por WhatsApp →
+ </button>
+ <p class="cotizar-form__nota">Al enviar, se abrirá WhatsApp con tu información precargada. Respondemos en menos de 1 hora en horario hábil.</p>
+ </form>
+ </div>
 
-          <div class="cotizar-sidebar">
-            <div class="cotizar-sidebar__card">
-              <h3>💬 ¿Prefieres WhatsApp directo?</h3>
-              <p>Escríbenos con las medidas y cantidad y te respondemos al momento.</p>
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón en CDMX`} target="_blank" rel="noopener" class="btn btn--primary btn--full">Abrir WhatsApp</a>
-            </div>
+ <div class="cotizar-sidebar">
+ <div class="cotizar-sidebar__card">
+ <h3> ¿Prefieres WhatsApp directo?</h3>
+ <p>Escríbenos con las medidas y cantidad y te respondemos al momento.</p>
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón en CDMX`} target="_blank" rel="noopener" class="btn btn--primary btn--full">Abrir WhatsApp</a>
+ </div>
 
-            <div class="cotizar-sidebar__card" style="margin-top:var(--spacing-md)">
-              <h3>⚡ Tiempo de respuesta</h3>
-              <ul class="cotizar-sidebar__list">
-                <li>WhatsApp: <strong>&lt; 15 min</strong></li>
-                <li>Formulario: <strong>&lt; 1 hora</strong></li>
-                <li>CAD a la medida: <strong>24 hrs</strong></li>
-                <li>Muestra física: <strong>48 hrs</strong></li>
-              </ul>
-            </div>
+ <div class="cotizar-sidebar__card" style="margin-top:var(--spacing-md)">
+ <h3> Tiempo de respuesta</h3>
+ <ul class="cotizar-sidebar__list">
+ <li>WhatsApp: <strong>&lt; 15 min</strong></li>
+ <li>Formulario: <strong>&lt; 1 hora</strong></li>
+ <li>CAD a la medida: <strong>24 hrs</strong></li>
+ <li>Muestra física: <strong>48 hrs</strong></li>
+ </ul>
+ </div>
 
-            <div class="cotizar-sidebar__card" style="margin-top:var(--spacing-md)">
-              <h3>📋 Información útil para tu cotización</h3>
-              <ul class="cotizar-sidebar__list">
-                <li>Medida del producto (L × A × H)</li>
-                <li>Peso del producto</li>
-                <li>Cantidad mensual estimada</li>
-                <li>¿Necesita impresión de logo?</li>
-                <li>¿Uso en e-commerce o industrial?</li>
-                <li>¿Hay urgencia de entrega?</li>
-              </ul>
-            </div>
-          </div>
+ <div class="cotizar-sidebar__card" style="margin-top:var(--spacing-md)">
+ <h3> Información útil para tu cotización</h3>
+ <ul class="cotizar-sidebar__list">
+ <li>Medida del producto (L × A × H)</li>
+ <li>Peso del producto</li>
+ <li>Cantidad mensual estimada</li>
+ <li>¿Necesita impresión de logo?</li>
+ <li>¿Uso en e-commerce o industrial?</li>
+ <li>¿Hay urgencia de entrega?</li>
+ </ul>
+ </div>
+ </div>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-cotizar-title">
-      <div class="container">
-        <h2 id="faq-cotizar-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Frecuentes sobre Cotizaciones</h2>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem id={`cot-${faqs.indexOf(f)}`} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
+ <section class="faq" aria-labelledby="faq-cotizar-title">
+ <div class="container">
+ <h2 id="faq-cotizar-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Frecuentes sobre Cotizaciones</h2>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem id={`cot-${faqs.indexOf(f)}`} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 </PageLayout>
 
 <script>
-  document.getElementById('cotizar-page-form')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const form     = e.target as HTMLFormElement;
-    const nombre   = (form.querySelector('[name="nombre"]')   as HTMLInputElement)?.value.trim();
-    const empresa  = (form.querySelector('[name="empresa"]')  as HTMLInputElement)?.value.trim();
-    const contacto = (form.querySelector('[name="contacto"]') as HTMLInputElement)?.value.trim();
-    const tipo     = (form.querySelector('[name="tipo"]')     as HTMLSelectElement)?.value;
-    const medida   = (form.querySelector('[name="medida"]')   as HTMLInputElement)?.value.trim();
-    const cantidad = (form.querySelector('[name="cantidad"]') as HTMLSelectElement)?.value;
-    const detalles = (form.querySelector('[name="detalles"]') as HTMLTextAreaElement)?.value.trim();
+ document.getElementById('cotizar-page-form')?.addEventListener('submit', (e) => {
+ e.preventDefault();
+ const form  = e.target as HTMLFormElement;
+ const nombre  = (form.querySelector('[name="nombre"]')  as HTMLInputElement)?.value.trim();
+ const empresa  = (form.querySelector('[name="empresa"]')  as HTMLInputElement)?.value.trim();
+ const contacto = (form.querySelector('[name="contacto"]') as HTMLInputElement)?.value.trim();
+ const tipo  = (form.querySelector('[name="tipo"]')  as HTMLSelectElement)?.value;
+ const medida  = (form.querySelector('[name="medida"]')  as HTMLInputElement)?.value.trim();
+ const cantidad = (form.querySelector('[name="cantidad"]') as HTMLSelectElement)?.value;
+ const detalles = (form.querySelector('[name="detalles"]') as HTMLTextAreaElement)?.value.trim();
 
-    let msg = `Hola CADECA, soy ${nombre}`;
-    if (empresa) msg += ` de ${empresa}`;
-    msg += `.\n\n📦 Tipo de caja: ${tipo}`;
-    if (medida) msg += `\n📐 Medida: ${medida} cm`;
-    msg += `\n🔢 Cantidad: ${cantidad}`;
-    if (detalles) msg += `\n📝 Detalles: ${detalles}`;
-    msg += `\n📱 Contacto: ${contacto}`;
+ let msg = `Hola CADECA, soy ${nombre}`;
+ if (empresa) msg += ` de ${empresa}`;
+ msg += `.\n\n Tipo de caja: ${tipo}`;
+ if (medida) msg += `\n Medida: ${medida} cm`;
+ msg += `\n Cantidad: ${cantidad}`;
+ if (detalles) msg += `\n Detalles: ${detalles}`;
+ msg += `\n Contacto: ${contacto}`;
 
-    window.open(`https://wa.me/5255XXXXXXXX?text=${encodeURIComponent(msg)}`, '_blank');
-  });
+ window.open(`https://wa.me/5255XXXXXXXX?text=${encodeURIComponent(msg)}`, '_blank');
+ });
 </script>
 

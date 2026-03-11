@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Personalizada Laminado Mate Soft Touch CDMX | Premium | CAD-PL-07 | CADECA";
+const title  = "Caja Personalizada Laminado Mate Soft Touch CDMX | Premium | CAD-PL-07 | CADECA";
 const description = "Caja con laminado mate soft touch en CDMX. Textura suave al tacto, imagen premium. Ideal para marcas DTC, cosmética y moda. MOQ 300 pzas. Diseño incluido. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-PL-07"],
-  ["Acabado", "Laminado BOPP mate soft touch"],
-  ["Impresión", "Full color CMYK 4 colores"],
-  ["Resistencia", "ECT-32"],
-  ["Liner", "Blanco o Kraft"],
-  ["Diseño", "Gratuito con logo vectorial"],
-  ["Muestra física", "Sin costo"],
-  ["Pedido mínimo", "300 piezas"],
-  ["Entrega", "8–12 días hábiles"],
+ ["Código SKU", "CAD-PL-07"],
+ ["Acabado", "Laminado BOPP mate soft touch"],
+ ["Impresión", "Full color CMYK 4 colores"],
+ ["Resistencia", "ECT-32"],
+ ["Liner", "Blanco o Kraft"],
+ ["Diseño", "Gratuito con logo vectorial"],
+ ["Muestra física", "Sin costo"],
+ ["Pedido mínimo", "300 piezas"],
+ ["Entrega", "8–12 días hábiles"],
 ];
 
 const faqs = [
-  { id:"cad-pl-07-f1", question:"¿El laminado mate es más resistente que el barniz UV?", answer:"Sí. El laminado BOPP mate es una película plástica adherida a la superficie que ofrece mayor resistencia a los rayones, la humedad y el desgaste por fricción comparado con el barniz UV. Para productos que se exhiben en punto de venta y se manipulan frecuentemente, el laminado mate es la opción más duradera." },
-  { id:"cad-pl-07-f2", question:"¿Puedo combinar laminado mate con hot stamping dorado?", answer:"Sí. El laminado mate + hot stamping dorado o plateado es una de las combinaciones más elegantes y usadas en cosmética y joyería de lujo. El contraste entre la textura mate aterciopelada y el brillo metálico del hot stamping crea un efecto visual muy sofisticado. Pregunta por el costo adicional del hot stamping en tu cotización." },
-  { id:"cad-pl-07-f3", question:"¿En cuánto tiempo tengo la muestra física?", answer:"Producimos una muestra física en 3 a 4 días hábiles después de que apruebas el arte digital. La muestra tiene el mismo acabado que el pedido de producción. La enviamos a CDMX sin costo o puedes recogerla en nuestras instalaciones." },
+ { id:"cad-pl-07-f1", question:"¿El laminado mate es más resistente que el barniz UV?", answer:"Sí. El laminado BOPP mate es una película plástica adherida a la superficie que ofrece mayor resistencia a los rayones, la humedad y el desgaste por fricción comparado con el barniz UV. Para productos que se exhiben en punto de venta y se manipulan frecuentemente, el laminado mate es la opción más duradera." },
+ { id:"cad-pl-07-f2", question:"¿Puedo combinar laminado mate con hot stamping dorado?", answer:"Sí. El laminado mate + hot stamping dorado o plateado es una de las combinaciones más elegantes y usadas en cosmética y joyería de lujo. El contraste entre la textura mate aterciopelada y el brillo metálico del hot stamping crea un efecto visual muy sofisticado. Pregunta por el costo adicional del hot stamping en tu cotización." },
+ { id:"cad-pl-07-f3", question:"¿En cuánto tiempo tengo la muestra física?", answer:"Producimos una muestra física en 3 a 4 días hábiles después de que apruebas el arte digital. La muestra tiene el mismo acabado que el pedido de producción. La enviamos a CDMX sin costo o puedes recogerla en nuestras instalaciones." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-acabados-softtouch-cdmx.avif", alt: "Caja laminado mate soft touch premium" },
-  { src: "/img/catalogo/caja-acabados-hero-cdmx.avif", alt: "Acabados especiales corrugado" },
-  { src: "/img/catalogo/caja-cosmetica-premium-display-cdmx.avif", alt: "Display cosmética laminado mate" },
-  { src: "/img/catalogo/caja-cosmetica-premium-interior-cdmx.avif", alt: "Interior caja premium mate" },
-  { src: "/img/catalogo/caja-acabados-showcase-cdmx.avif", alt: "Showcase laminados acabados" },
+ { src: "/img/catalogo/caja-acabados-softtouch-cdmx.avif", alt: "Caja laminado mate soft touch premium" },
+ { src: "/img/catalogo/caja-acabados-hero-cdmx.avif", alt: "Acabados especiales corrugado" },
+ { src: "/img/catalogo/caja-cosmetica-premium-display-cdmx.avif", alt: "Display cosmética laminado mate" },
+ { src: "/img/catalogo/caja-cosmetica-premium-interior-cdmx.avif", alt: "Interior caja premium mate" },
+ { src: "/img/catalogo/caja-acabados-showcase-cdmx.avif", alt: "Showcase laminados acabados" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo"},{name:"Caja Personalizada Laminado Mate Soft Touch"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja Personalizada Laminado Mate Soft Touch",sku:"CAD-PL-07",description:"Caja con laminado mate soft touch: acabado aterciopelado que comunica lujo y cuidado. Ideal para marcas DTC, cosmética premium y canastas navideñas. Desde 300 piezas.",image:gallery[0].src,material:"CAD-PL-07",category:"Cajas Personalizadas con Logo",moq:"300 piezas"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo"},{name:"Caja Personalizada Laminado Mate Soft Touch"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja Personalizada Laminado Mate Soft Touch",sku:"CAD-PL-07",description:"Caja con laminado mate soft touch: acabado aterciopelado que comunica lujo y cuidado. Ideal para marcas DTC, cosmética premium y canastas navideñas. Desde 300 piezas.",image:gallery[0].src,material:"CAD-PL-07",category:"Cajas Personalizadas con Logo",moq:"300 piezas"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-personalizadas-logo">Cajas Personalizadas con Logo</a></li>
-        <li><span class="current">Caja Personalizada Laminado Mate Soft Touch</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo">Cajas Personalizadas con Logo</a></li>
+ <li><span class="current">Caja Personalizada Laminado Mate Soft Touch</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadpl07-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-PL-07 · Cajas Personalizadas con Logo</span>
-      <h1 id="sku-cadpl07-title" class="cat-page-hero__title">Caja Personalizada <span>Laminado Mate</span> Soft Touch — Toque Premium</h1>
-      <p class="cat-page-hero__desc">Caja con laminado mate soft touch: acabado aterciopelado que comunica lujo y cuidado. Ideal para marcas DTC, cosmética premium y canastas navideñas. Desde 300 piezas.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-07</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>300 piezas</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadpl07-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-PL-07 · Cajas Personalizadas con Logo</span>
+ <h1 id="sku-cadpl07-title" class="cat-page-hero__title">Caja Personalizada <span>Laminado Mate</span> Soft Touch — Toque Premium</h1>
+ <p class="cat-page-hero__desc">Caja con laminado mate soft touch: acabado aterciopelado que comunica lujo y cuidado. Ideal para marcas DTC, cosmética premium y canastas navideñas. Desde 300 piezas.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-07</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>300 piezas</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadpl07-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-PL-07 · Familia: Cajas Personalizadas con Logo</p>
-            <h2 id="detalle-cadpl07-title" class="sku-detail__title">Caja Personalizada Laminado Mate Soft Touch</h2>
-            <p class="sku-detail__desc">El laminado mate soft touch transforma una caja ordinaria en un objeto de deseo: la textura suave al tacto comunica calidad antes de abrir el empaque. Es el acabado preferido de marcas de cosmética de lujo, perfumerías, marcas DTC de ropa y artículos de regalo. CAD-PL-07 combina impresión CMYK 4 colores con laminado BOPP mate soft touch aplicado en toda la superficie exterior. El resultado es una caja que protege mejor que el barniz UV y crea una experiencia de unboxing memorable.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Soft Touch</span><span class="sku-detail__strip-label">Acabado</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">CMYK</span><span class="sku-detail__strip-label">4 colores</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">300 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">8–12 días</span><span class="sku-detail__strip-label">Entrega</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-07 Caja Personalizada Laminado Mate Soft Touch`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-07</a>
-              <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadpl07-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-PL-07 · Familia: Cajas Personalizadas con Logo</p>
+ <h2 id="detalle-cadpl07-title" class="sku-detail__title">Caja Personalizada Laminado Mate Soft Touch</h2>
+ <p class="sku-detail__desc">El laminado mate soft touch transforma una caja ordinaria en un objeto de deseo: la textura suave al tacto comunica calidad antes de abrir el empaque. Es el acabado preferido de marcas de cosmética de lujo, perfumerías, marcas DTC de ropa y artículos de regalo. CAD-PL-07 combina impresión CMYK 4 colores con laminado BOPP mate soft touch aplicado en toda la superficie exterior. El resultado es una caja que protege mejor que el barniz UV y crea una experiencia de unboxing memorable.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Soft Touch</span><span class="sku-detail__strip-label">Acabado</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">CMYK</span><span class="sku-detail__strip-label">4 colores</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">300 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">8–12 días</span><span class="sku-detail__strip-label">Entrega</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-07 Caja Personalizada Laminado Mate Soft Touch`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-07</a>
+ <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadpl07-title">
-      <div class="container">
-        <h2 id="faq-cadpl07-title" class="sku-faq__title">Preguntas Frecuentes — Caja Personalizada Laminado Mate Soft Touch</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadpl07-title">
+ <div class="container">
+ <h2 id="faq-cadpl07-title" class="sku-faq__title">Preguntas Frecuentes — Caja Personalizada Laminado Mate Soft Touch</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Tu marca quiere ese toque premium? Cotiza tu caja con laminado soft touch — diseño gratuito" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Tu marca quiere ese toque premium? Cotiza tu caja con laminado soft touch — diseño gratuito" />
 </PageLayout>

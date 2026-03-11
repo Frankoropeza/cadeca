@@ -1,384 +1,389 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
-import PageHero      from "@/components/PageHero.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero  from "@/components/PageHero.astro";
 
-const title       = "Catálogo Completo de Cajas de Cartón B2B CDMX | 9 Categorías | CADECA";
+const title  = "Catálogo Completo de Cajas de Cartón B2B CDMX | 9 Categorías | CADECA";
 const description = "Catálogo B2B de cajas de cartón corrugado CADECA. 9 categorías, 45 productos. Corrugado, e-commerce, farmacéutica, textil, archivo, alimentos y personalizadas. CDMX.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const schema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Catálogo de Productos CADECA",
-  "url": "https://cajas-de-carton.com/catalogo",
+ "@context": "https://schema.org",
+ "@type": "CollectionPage",
+ "name": "Catálogo de Productos CADECA",
+ "url": "https://cajas-de-carton.com/catalogo",
 };
 
 const categorias = [
-  {
-    num:      "01",
-    title:    "Cajas Corrugado Estándar",
-    desc:     "Simple, doble y triple pared. La línea de mayor disponibilidad con inventario permanente en CDMX. ECT-23 hasta ECT-71 en flautas B, C, E y BC.",
-    imgSrc:   "/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
-    imgAlt:   "Categoría cajas de cartón corrugado estándar CADECA",
-    href:     "/catalogo/cajas-corrugado-estandar",
-    productos: 5,
-    moq:      "Sin mínimo",
-    entrega:  "24-48 hrs",
-    productos_preview: [
-      "Corrugado Simple — Pared Simple",
-      "Doble Corrugado — Pared Doble (BC)",
-      "Triple Corrugado — Pared Triple",
-      "Cajas para Mudanza con Asas",
-      "Corrugado Micro — Flauta E",
-    ],
-  },
-  {
-    num:      "02",
-    title:    "Cajas para E-commerce",
-    desc:     "Medidas oficiales Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Corrugado doble ECT-44 con stock permanente. Desde 50 piezas.",
-    imgSrc:   "/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
-    imgAlt:   "Categoría cajas de cartón para e-commerce CADECA",
-    href:     "/catalogo/cajas-para-ecommerce",
-    productos: 5,
-    moq:      "50 pzas",
-    entrega:  "24 hrs",
-    productos_preview: [
-      "Cajas Mercado Envíos — Todas las tallas",
-      "Cajas Amazon FBA / FBM",
-      "Cajas DHL · FedEx · Estafeta",
-      "Cajas Shopify / TiendaNube",
-      "Cajas Sobre Medida E-commerce",
-    ],
-  },
-  {
-    num:      "03",
-    title:    "Cajas Personalizadas con Logo",
-    desc:     "Impresión 1 color, 4 colores y full color CMYK. Acabados mate, brillante y soft touch. Diseño gráfico gratuito y prueba digital sin costo.",
-    imgSrc:   "/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif",
-    imgAlt:   "Categoría cajas de cartón personalizadas con logo CADECA",
-    href:     "/catalogo/cajas-personalizadas-logo",
-    productos: 5,
-    moq:      "100 pzas",
-    entrega:  "3-5 días",
-    productos_preview: [
-      "Impresión 1 Color — Pantone",
-      "Impresión 4 Colores — Offset",
-      "Full Color CMYK — Digital",
-      "Acabados Premium — Mate y Brillante",
-      "Unboxing Experience — Interior Impreso",
-    ],
-  },
-  {
-    num:      "04",
-    title:    "Cajas a la Medida",
-    desc:     "Cualquier dimensión exacta sin cargo adicional. Diseño CAD en 24 hrs sin costo. Asesoría técnica de ingeniería de empaque incluida.",
-    imgSrc:   "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
-    imgAlt:   "Categoría cajas de cartón a la medida CADECA",
-    href:     "/catalogo/cajas-a-la-medida",
-    productos: 5,
-    moq:      "50 pzas",
-    entrega:  "3-5 días",
-    productos_preview: [
-      "Medidas Exactas — Cualquier L×A×H",
-      "Alta Resistencia — ECT Calculado",
-      "Flauta Especial — B, C, E, BC o BCB",
-      "Industrial y Nearshoring",
-      "Exportación — ISTA y ASTM",
-    ],
-  },
-  {
-    num:      "05",
-    title:    "Cajas para Alimentos",
-    desc:     "Materiales certificados COFEPRIS para contacto con alimentos. Resistentes a grasa, humedad y temperatura. Pizza, dark kitchen, frutas y exportación.",
-    imgSrc:   "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
-    imgAlt:   "Categoría cajas de cartón para alimentos CADECA",
-    href:     "/catalogo/cajas-para-alimentos",
-    productos: 5,
-    moq:      "Sin mínimo",
-    entrega:  "24-48 hrs",
-    productos_preview: [
-      "Cajas para Pizza — Todas las tallas",
-      "Dark Kitchen y Delivery",
-      "Frutas, Verduras y Congelados",
-      "Productos Orgánicos — Sin blanqueadores",
-      "Exportación Alimentaria — FDA / NOM",
-    ],
-  },
-  {
-    num:      "06",
-    title:    "Láminas y Empaques Ecológicos",
-    desc:     "Cartón reciclado posconsumo (PCR) y certificación FSC. Para fabricantes, marcas con metas ESG y exportadores con requerimientos de trazabilidad ambiental.",
-    imgSrc:   "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
-    imgAlt:   "Categoría láminas cartón corrugado ecológico FSC CADECA",
-    href:     "/catalogo/laminas-carton-corrugado",
-    productos: 5,
-    moq:      "Por m²",
-    entrega:  "48-72 hrs",
-    productos_preview: [
-      "Láminas Corrugado — Por m²",
-      "Cartón Reciclado PCR Posconsumo",
-      "Certificación FSC Cadena de Custodia",
-      "Cajas Eco con Impresión Vegetal",
-      "Empaques Biodegradables",
-    ],
-  },
-  {
-    num:      "07",
-    title:    "Cajas para Industria Farmacéutica y Cosmética",
-    desc:     "Empaques para blíster, cosmética premium, distribución farmacéutica, suplementos y líneas automatizadas. Cumplimiento NOM-072, acabados soft touch y barniz UV.",
-    imgSrc:   "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
-    imgAlt:   "Categoría cajas de cartón para industria farmacéutica y cosmética CADECA",
-    href:     "/catalogo/cajas-farmaceutica-cosmetica",
-    productos: 5,
-    moq:      "200 pzas",
-    entrega:  "3-5 días",
-    productos_preview: [
-      "Blíster Farmacéutica — Flauta E",
-      "Cosmética Premium — Acabados Especiales",
-      "Distribuidora Farmacia — Doble Pared BC",
-      "Suplementos y Nutrición — NOM-051",
-      "Línea Producción Pharma — Alta Velocidad",
-    ],
-  },
-  {
-    num:      "08",
-    title:    "Cajas para Textil, Moda y Retail",
-    desc:     "Cajas para calzado, ropa, accesorios, displays punto de venta y envío de tienda online. Impresión personalizada y experiencia de unboxing para marcas de moda.",
-    imgSrc:   "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif",
-    imgAlt:   "Categoría cajas de cartón para textil moda y retail CADECA",
-    href:     "/catalogo/cajas-textil-moda-retail",
-    productos: 5,
-    moq:      "50 pzas",
-    entrega:  "24-48 hrs",
-    productos_preview: [
-      "Calzado y Zapatos — Corrugado Simple",
-      "Ropa y Prendas — Corrugado Kraft",
-      "Accesorios y Bolsas — Pared Simple",
-      "Retail Punto de Venta — Display",
-      "Envío Tienda Online — E-commerce Moda",
-    ],
-  },
-  {
-    num:      "09",
-    title:    "Cajas de Archivo y Almacenaje",
-    desc:     "Archivo muerto oficio y carta, almacén industrial, cajas apilables triple pared y mudanza con asas. Soluciones de almacenamiento a largo plazo con máxima resistencia.",
-    imgSrc:   "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
-    imgAlt:   "Categoría cajas de archivo y almacenaje CADECA",
-    href:     "/catalogo/cajas-archivo-almacenaje",
-    productos: 5,
-    moq:      "Sin mínimo",
-    entrega:  "24-48 hrs",
-    productos_preview: [
-      "Archivo Muerto — Tamaño Oficio",
-      "Almacén Industrial — Doble Pared",
-      "Documentos — Tamaño Carta",
-      "Apilable Resistente — Triple Pared",
-      "Mudanza y Archivo — Con Asas",
-    ],
-  },
+ {
+ num:  "01",
+ title:  "Cajas Corrugado Estándar",
+ desc:  "Simple, doble y triple pared. La línea de mayor disponibilidad con inventario permanente en CDMX. ECT-23 hasta ECT-71 en flautas B, C, E y BC.",
+ imgSrc:  "/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
+ imgAlt:  "Categoría cajas de cartón corrugado estándar CADECA",
+ href:  "/catalogo/cajas-corrugado-estandar",
+ productos: 5,
+ moq:  "Sin mínimo",
+ entrega:  "24-48 hrs",
+ productos_preview: [
+ "Corrugado Simple — Pared Simple",
+ "Doble Corrugado — Pared Doble (BC)",
+ "Triple Corrugado — Pared Triple",
+ "Cajas para Mudanza con Asas",
+ "Corrugado Micro — Flauta E",
+ ],
+ },
+ {
+ num:  "02",
+ title:  "Cajas para E-commerce",
+ desc:  "Medidas oficiales Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Corrugado doble ECT-44 con stock permanente. Desde 50 piezas.",
+ imgSrc:  "/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
+ imgAlt:  "Categoría cajas de cartón para e-commerce CADECA",
+ href:  "/catalogo/cajas-para-ecommerce",
+ productos: 5,
+ moq:  "50 pzas",
+ entrega:  "24 hrs",
+ productos_preview: [
+ "Cajas Mercado Envíos — Todas las tallas",
+ "Cajas Amazon FBA / FBM",
+ "Cajas DHL · FedEx · Estafeta",
+ "Cajas Shopify / TiendaNube",
+ "Cajas Sobre Medida E-commerce",
+ ],
+ },
+ {
+ num:  "03",
+ title:  "Cajas Personalizadas con Logo",
+ desc:  "Impresión 1 color, 4 colores y full color CMYK. Acabados mate, brillante y soft touch. Diseño gráfico gratuito y prueba digital sin costo.",
+ imgSrc:  "/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif",
+ imgAlt:  "Categoría cajas de cartón personalizadas con logo CADECA",
+ href:  "/catalogo/cajas-personalizadas-logo",
+ productos: 5,
+ moq:  "100 pzas",
+ entrega:  "3-5 días",
+ productos_preview: [
+ "Impresión 1 Color — Pantone",
+ "Impresión 4 Colores — Offset",
+ "Full Color CMYK — Digital",
+ "Acabados Premium — Mate y Brillante",
+ "Unboxing Experience — Interior Impreso",
+ ],
+ },
+ {
+ num:  "04",
+ title:  "Cajas a la Medida",
+ desc:  "Cualquier dimensión exacta sin cargo adicional. Diseño CAD en 24 hrs sin costo. Asesoría técnica de ingeniería de empaque incluida.",
+ imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
+ imgAlt:  "Categoría cajas de cartón a la medida CADECA",
+ href:  "/catalogo/cajas-a-la-medida",
+ productos: 5,
+ moq:  "50 pzas",
+ entrega:  "3-5 días",
+ productos_preview: [
+ "Medidas Exactas — Cualquier L×A×H",
+ "Alta Resistencia — ECT Calculado",
+ "Flauta Especial — B, C, E, BC o BCB",
+ "Industrial y Nearshoring",
+ "Exportación — ISTA y ASTM",
+ ],
+ },
+ {
+ num:  "05",
+ title:  "Cajas para Alimentos",
+ desc:  "Materiales certificados COFEPRIS para contacto con alimentos. Resistentes a grasa, humedad y temperatura. Pizza, dark kitchen, frutas y exportación.",
+ imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
+ imgAlt:  "Categoría cajas de cartón para alimentos CADECA",
+ href:  "/catalogo/cajas-para-alimentos",
+ productos: 5,
+ moq:  "Sin mínimo",
+ entrega:  "24-48 hrs",
+ productos_preview: [
+ "Cajas para Pizza — Todas las tallas",
+ "Dark Kitchen y Delivery",
+ "Frutas, Verduras y Congelados",
+ "Productos Orgánicos — Sin blanqueadores",
+ "Exportación Alimentaria — FDA / NOM",
+ ],
+ },
+ {
+ num:  "06",
+ title:  "Láminas y Empaques Ecológicos",
+ desc:  "Cartón reciclado posconsumo (PCR) y certificación FSC. Para fabricantes, marcas con metas ESG y exportadores con requerimientos de trazabilidad ambiental.",
+ imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
+ imgAlt:  "Categoría láminas cartón corrugado ecológico FSC CADECA",
+ href:  "/catalogo/laminas-carton-corrugado",
+ productos: 5,
+ moq:  "Por m²",
+ entrega:  "48-72 hrs",
+ productos_preview: [
+ "Láminas Corrugado — Por m²",
+ "Cartón Reciclado PCR Posconsumo",
+ "Certificación FSC Cadena de Custodia",
+ "Cajas Eco con Impresión Vegetal",
+ "Empaques Biodegradables",
+ ],
+ },
+ {
+ num:  "07",
+ title:  "Cajas para Industria Farmacéutica y Cosmética",
+ desc:  "Empaques para blíster, cosmética premium, distribución farmacéutica, suplementos y líneas automatizadas. Cumplimiento NOM-072, acabados soft touch y barniz UV.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
+ imgAlt:  "Categoría cajas de cartón para industria farmacéutica y cosmética CADECA",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica",
+ productos: 5,
+ moq:  "200 pzas",
+ entrega:  "3-5 días",
+ productos_preview: [
+ "Blíster Farmacéutica — Flauta E",
+ "Cosmética Premium — Acabados Especiales",
+ "Distribuidora Farmacia — Doble Pared BC",
+ "Suplementos y Nutrición — NOM-051",
+ "Línea Producción Pharma — Alta Velocidad",
+ ],
+ },
+ {
+ num:  "08",
+ title:  "Cajas para Textil, Moda y Retail",
+ desc:  "Cajas para calzado, ropa, accesorios, displays punto de venta y envío de tienda online. Impresión personalizada y experiencia de unboxing para marcas de moda.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif",
+ imgAlt:  "Categoría cajas de cartón para textil moda y retail CADECA",
+ href:  "/catalogo/cajas-textil-moda-retail",
+ productos: 5,
+ moq:  "50 pzas",
+ entrega:  "24-48 hrs",
+ productos_preview: [
+ "Calzado y Zapatos — Corrugado Simple",
+ "Ropa y Prendas — Corrugado Kraft",
+ "Accesorios y Bolsas — Pared Simple",
+ "Retail Punto de Venta — Display",
+ "Envío Tienda Online — E-commerce Moda",
+ ],
+ },
+ {
+ num:  "09",
+ title:  "Cajas de Archivo y Almacenaje",
+ desc:  "Archivo muerto oficio y carta, almacén industrial, cajas apilables triple pared y mudanza con asas. Soluciones de almacenamiento a largo plazo con máxima resistencia.",
+ imgSrc:  "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
+ imgAlt:  "Categoría cajas de archivo y almacenaje CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje",
+ productos: 5,
+ moq:  "Sin mínimo",
+ entrega:  "24-48 hrs",
+ productos_preview: [
+ "Archivo Muerto — Tamaño Oficio",
+ "Almacén Industrial — Doble Pared",
+ "Documentos — Tamaño Carta",
+ "Apilable Resistente — Triple Pared",
+ "Mudanza y Archivo — Con Asas",
+ ],
+ },
 ];
 ---
 
 <PageLayout title={title} description={description} schema={schema} whatsapp={WHATSAPP}>
 
-  <!-- HERO -->
-  <PageHero
-    eyebrow="Catálogo 2025–2026 · Fabricante Directo"
-    titleHtml={true}
-    title="Catálogo de <span>Cajas de Cartón</span> CADECA"
-    desc="9 categorías, 45 productos con ficha técnica completa. Corrugado estándar, e-commerce, alimentos, personalizado, farmacéutico, textil, archivo y láminas. Stock inmediato en CDMX."
-    desc2="Cada producto incluye especificaciones técnicas completas: resistencia ECT, gramaje del papel, tipo de flauta y opciones de acabado. Documentación disponible para auditorías ISO y certificaciones de proveedor.||Operamos con inventario permanente en CDMX y realizamos entregas a toda el área metropolitana, Estado de México y principales ciudades del país. Asesoría de empaque sin costo, cotización en menos de 2 horas."
-    chips={[
-      { label: "9 Categorías" },
-      { label: "45 SKUs" },
-      { label: "+30 en stock inmediato" },
-      { label: "Entrega 24–48 hrs CDMX" },
-    ]}
-    ctas={[
-      { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
-      { href: `https://wa.me/${WHATSAPP}`, label: "WhatsApp directo", variant: "outline" },
-    ]}
-  />
+ <!-- BREADCRUMB -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><span class="current">Catálogo</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <!-- NAV -->
-  <nav class="catalog-nav" aria-label="Categorías del catálogo">
-    <div class="container">
-      <div class="catalog-nav__inner">
-        <div class="catalog-nav__breadcrumb">
-          <a href="/">Inicio</a>
-          <span class="sep">/</span>
-          <span>Catálogo</span>
-        </div>
-        <div class="catalog-nav__actions">
-          {categorias.map(c => (
-            <a href={c.href} class="catalog-nav__chapter-link">Cat. {c.num}</a>
-          ))}
-        </div>
-      </div>
-    </div>
-  </nav>
+ <!-- HERO -->
+ <PageHero
+ eyebrow="Catálogo 2025–2026 · Fabricante Directo"
+ titleHtml={true}
+ title="Catálogo de <span>Cajas de Cartón</span> CADECA"
+ desc="9 categorías, 45 productos con ficha técnica completa. Corrugado estándar, e-commerce, alimentos, personalizado, farmacéutico, textil, archivo y láminas. Stock inmediato en CDMX."
+ desc2="Cada producto incluye especificaciones técnicas completas: resistencia ECT, gramaje del papel, tipo de flauta y opciones de acabado. Documentación disponible para auditorías ISO y certificaciones de proveedor.||Operamos con inventario permanente en CDMX y realizamos entregas a toda el área metropolitana, Estado de México y principales ciudades del país. Asesoría de empaque sin costo, cotización en menos de 2 horas."
+ chips={[
+ { label: "9 Categorías" },
+ { label: "45 SKUs" },
+ { label: "+30 en stock inmediato" },
+ { label: "Entrega 24–48 hrs CDMX" },
+ ]}
+ ctas={[
+ { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
+ { href: `https://wa.me/${WHATSAPP}`, label: "WhatsApp directo", variant: "outline" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
-    <section class="catalog-index" id="categorias" aria-labelledby="cat-idx-title">
-      <div class="container">
-        <SectionHeader
-          id="cat-idx-title"
-          twoCol
-          title="9 Categorías · 45 Productos"
-          subtitle="Selecciona la categoría que necesitas para ver los 5 productos disponibles con ficha técnica completa, medidas y especificaciones."
-        >
-          <p>Cada categoría contiene 5 productos específicos con su propio código SKU, tabla de especificaciones técnicas, medidas disponibles y condiciones de pedido. Haz clic en cualquier categoría para ver sus productos.</p>
-          <p>¿No encuentras lo que necesitas? Fabricamos a la medida en cualquier dimensión. <a href="/catalogo/cajas-a-la-medida" style="color:var(--color-primary);font-weight:700;">Ver categoría medidas especiales →</a></p>
-        </SectionHeader>
+ <!-- NAV -->
+ <nav class="catalog-nav" aria-label="Categorías del catálogo">
+ <div class="container">
+ <div class="catalog-nav__inner">
+ <div class="catalog-nav__actions">
+ {categorias.map(c => (
+ <a href={c.href} class="catalog-nav__chapter-link">Cat. {c.num}</a>
+ ))}
+ </div>
+ </div>
+ </div>
+ </nav>
 
-        <div class="catalog-index__grid">
-          {categorias.map(cat => (
-            <article class="catalog-card">
-              <div class="catalog-card__img-wrap">
-                <img src={cat.imgSrc} alt={cat.imgAlt}
-                  class="catalog-card__img" width="640" height="360"
-                  loading="lazy" decoding="async" />
-                <span class="catalog-card__chapter">Categoría {cat.num}</span>
-                <span class="catalog-card__variants-count">{cat.productos} productos</span>
-              </div>
-              <div class="catalog-card__body">
-                <h2 class="catalog-card__title">{cat.title}</h2>
-                <p class="catalog-card__desc">{cat.desc}</p>
+ <main id="contenido-principal" role="main">
+ <section class="catalog-index" id="categorias" aria-labelledby="cat-idx-title">
+ <div class="container">
+ <SectionHeader
+ id="cat-idx-title"
+ twoCol
+ title="9 Categorías · 45 Productos"
+ subtitle="Selecciona la categoría que necesitas para ver los 5 productos disponibles con ficha técnica completa, medidas y especificaciones."
+ >
+ <p>Cada categoría contiene 5 productos específicos con su propio código SKU, tabla de especificaciones técnicas, medidas disponibles y condiciones de pedido. Haz clic en cualquier categoría para ver sus productos.</p>
+ <p>¿No encuentras lo que necesitas? Fabricamos a la medida en cualquier dimensión. <a href="/catalogo/cajas-a-la-medida" style="color:var(--color-primary);font-weight:700;">Ver categoría medidas especiales →</a></p>
+ </SectionHeader>
 
-                <!-- Preview de los 5 productos -->
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
-                  {cat.productos_preview.map((p, i) => (
-                    <li style="font-size:0.78rem;color:var(--color-text-light);display:flex;align-items:center;gap:0.5rem;">
-                      <span style="font-weight:700;color:var(--color-primary);font-size:0.65rem;background:rgba(224,88,0,0.1);padding:0.1rem 0.4rem;border-radius:3px;font-family:monospace">
-                        {String(i+1).padStart(2,'0')}
-                      </span>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
+ <div class="catalog-index__grid">
+ {categorias.map(cat => (
+ <article class="catalog-card">
+ <div class="catalog-card__img-wrap">
+ <img src={cat.imgSrc} alt={cat.imgAlt}
+ class="catalog-card__img" width="640" height="360"
+ loading="lazy" decoding="async" />
+ <span class="catalog-card__chapter">Categoría {cat.num}</span>
+ <span class="catalog-card__variants-count">{cat.productos} productos</span>
+ </div>
+ <div class="catalog-card__body">
+ <h2 class="catalog-card__title">{cat.title}</h2>
+ <p class="catalog-card__desc">{cat.desc}</p>
 
-                <div class="catalog-card__footer">
-                  <a href={cat.href} class="catalog-card__link">
-                    Ver {cat.productos} productos →
-                  </a>
-                  <span class="catalog-card__moq">MOQ: {cat.moq}</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+ <!-- Preview de los 5 productos -->
+ <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
+ {cat.productos_preview.map((p, i) => (
+ <li style="font-size:0.78rem;color:var(--color-text-light);display:flex;align-items:center;gap:0.5rem;">
+ <span style="font-weight:700;color:var(--color-primary);font-size:0.65rem;background:rgba(224,88,0,0.1);padding:0.1rem 0.4rem;border-radius:3px;font-family:monospace">
+ {String(i+1).padStart(2,'0')}
+ </span>
+ {p}
+ </li>
+ ))}
+ </ul>
 
-    <!-- Tabla comparativa general -->
-    <section class="catalog-summary" aria-labelledby="summary-hub-title">
-      <div class="container">
-        <h2 id="summary-hub-title" class="catalog-summary__title">Comparativa Rápida entre Categorías</h2>
-        <p class="catalog-summary__subtitle">Resumen de condiciones de pedido y entrega por categoría</p>
-        <div class="catalog-summary__table-wrap">
-          <table class="catalog-summary__table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Categoría</th>
-                <th>Productos</th>
-                <th>MOQ</th>
-                <th>Entrega CDMX</th>
-                <th>Personalización</th>
-                <th>Certificaciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>01</td>
-                <td><a href="/catalogo/cajas-corrugado-estandar" style="color:var(--color-primary-light)">Corrugado Estándar</a></td>
-                <td>5</td>
-                <td>Sin mínimo</td>
-                <td>24 – 48 hrs</td>
-                <td>Logo opcional</td>
-                <td>FSC disponible</td>
-              </tr>
-              <tr class="recommended">
-                <td>02</td>
-                <td><a href="/catalogo/cajas-para-ecommerce" style="color:var(--color-primary-light)">E-commerce</a></td>
-                <td>5</td>
-                <td>50 pzas</td>
-                <td>24 hrs</td>
-                <td>Logo desde 100 pzas</td>
-                <td>FSC disponible</td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td><a href="/catalogo/cajas-personalizadas-logo" style="color:var(--color-primary-light)">Personalizadas</a></td>
-                <td>5</td>
-                <td>100 pzas</td>
-                <td>3 – 5 días</td>
-                <td>Full color CMYK</td>
-                <td>Tintas base agua</td>
-              </tr>
-              <tr>
-                <td>04</td>
-                <td><a href="/catalogo/cajas-a-la-medida" style="color:var(--color-primary-light)">A la Medida</a></td>
-                <td>5</td>
-                <td>50 pzas</td>
-                <td>3 – 5 días</td>
-                <td>Logo opcional</td>
-                <td>FSC · ISTA · ASTM</td>
-              </tr>
-              <tr>
-                <td>05</td>
-                <td><a href="/catalogo/cajas-para-alimentos" style="color:var(--color-primary-light)">Para Alimentos</a></td>
-                <td>5</td>
-                <td>Sin mínimo</td>
-                <td>24 – 48 hrs</td>
-                <td>Tintas no migran</td>
-                <td>COFEPRIS · FDA</td>
-              </tr>
-              <tr>
-                <td>06</td>
-                <td><a href="/catalogo/laminas-carton-corrugado" style="color:var(--color-primary-light)">Ecológicas FSC</a></td>
-                <td>5</td>
-                <td>Por m²</td>
-                <td>48 – 72 hrs</td>
-                <td>Tintas vegetales</td>
-                <td>FSC · PCR · ESG</td>
-              </tr>
-              <tr>
-                <td>07</td>
-                <td><a href="/catalogo/cajas-farmaceutica-cosmetica" style="color:var(--color-primary-light)">Farmacéutica y Cosmética</a></td>
-                <td>5</td>
-                <td>200 pzas</td>
-                <td>3 – 5 días</td>
-                <td>Full color · Acabados</td>
-                <td>NOM-072 · FSC</td>
-              </tr>
-              <tr>
-                <td>08</td>
-                <td><a href="/catalogo/cajas-textil-moda-retail" style="color:var(--color-primary-light)">Textil, Moda y Retail</a></td>
-                <td>5</td>
-                <td>50 pzas</td>
-                <td>24 – 48 hrs</td>
-                <td>Logo y unboxing</td>
-                <td>FSC disponible</td>
-              </tr>
-              <tr>
-                <td>09</td>
-                <td><a href="/catalogo/cajas-archivo-almacenaje" style="color:var(--color-primary-light)">Archivo y Almacenaje</a></td>
-                <td>5</td>
-                <td>Sin mínimo</td>
-                <td>24 – 48 hrs</td>
-                <td>Etiqueta opcional</td>
-                <td>Resistencia apilado</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </main>
+ <div class="catalog-card__footer">
+ <a href={cat.href} class="catalog-card__link">
+ Ver {cat.productos} productos →
+ </a>
+ <span class="catalog-card__moq">MOQ: {cat.moq}</span>
+ </div>
+ </div>
+ </article>
+ ))}
+ </div>
+ </div>
+ </section>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas asesoría técnica? Tu consultor responde en menos de 2 horas" />
+ <!-- Tabla comparativa general -->
+ <section class="catalog-summary" aria-labelledby="summary-hub-title">
+ <div class="container">
+ <h2 id="summary-hub-title" class="catalog-summary__title">Comparativa Rápida entre Categorías</h2>
+ <p class="catalog-summary__subtitle">Resumen de condiciones de pedido y entrega por categoría</p>
+ <div class="catalog-summary__table-wrap">
+ <table class="catalog-summary__table">
+ <thead>
+ <tr>
+ <th></th>
+ <th>Categoría</th>
+ <th>Productos</th>
+ <th>MOQ</th>
+ <th>Entrega CDMX</th>
+ <th>Personalización</th>
+ <th>Certificaciones</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>01</td>
+ <td><a href="/catalogo/cajas-corrugado-estandar" style="color:var(--color-primary-light)">Corrugado Estándar</a></td>
+ <td>5</td>
+ <td>Sin mínimo</td>
+ <td>24 – 48 hrs</td>
+ <td>Logo opcional</td>
+ <td>FSC disponible</td>
+ </tr>
+ <tr class="recommended">
+ <td>02</td>
+ <td><a href="/catalogo/cajas-para-ecommerce" style="color:var(--color-primary-light)">E-commerce</a></td>
+ <td>5</td>
+ <td>50 pzas</td>
+ <td>24 hrs</td>
+ <td>Logo desde 100 pzas</td>
+ <td>FSC disponible</td>
+ </tr>
+ <tr>
+ <td>03</td>
+ <td><a href="/catalogo/cajas-personalizadas-logo" style="color:var(--color-primary-light)">Personalizadas</a></td>
+ <td>5</td>
+ <td>100 pzas</td>
+ <td>3 – 5 días</td>
+ <td>Full color CMYK</td>
+ <td>Tintas base agua</td>
+ </tr>
+ <tr>
+ <td>04</td>
+ <td><a href="/catalogo/cajas-a-la-medida" style="color:var(--color-primary-light)">A la Medida</a></td>
+ <td>5</td>
+ <td>50 pzas</td>
+ <td>3 – 5 días</td>
+ <td>Logo opcional</td>
+ <td>FSC · ISTA · ASTM</td>
+ </tr>
+ <tr>
+ <td>05</td>
+ <td><a href="/catalogo/cajas-para-alimentos" style="color:var(--color-primary-light)">Para Alimentos</a></td>
+ <td>5</td>
+ <td>Sin mínimo</td>
+ <td>24 – 48 hrs</td>
+ <td>Tintas no migran</td>
+ <td>COFEPRIS · FDA</td>
+ </tr>
+ <tr>
+ <td>06</td>
+ <td><a href="/catalogo/laminas-carton-corrugado" style="color:var(--color-primary-light)">Ecológicas FSC</a></td>
+ <td>5</td>
+ <td>Por m²</td>
+ <td>48 – 72 hrs</td>
+ <td>Tintas vegetales</td>
+ <td>FSC · PCR · ESG</td>
+ </tr>
+ <tr>
+ <td>07</td>
+ <td><a href="/catalogo/cajas-farmaceutica-cosmetica" style="color:var(--color-primary-light)">Farmacéutica y Cosmética</a></td>
+ <td>5</td>
+ <td>200 pzas</td>
+ <td>3 – 5 días</td>
+ <td>Full color · Acabados</td>
+ <td>NOM-072 · FSC</td>
+ </tr>
+ <tr>
+ <td>08</td>
+ <td><a href="/catalogo/cajas-textil-moda-retail" style="color:var(--color-primary-light)">Textil, Moda y Retail</a></td>
+ <td>5</td>
+ <td>50 pzas</td>
+ <td>24 – 48 hrs</td>
+ <td>Logo y unboxing</td>
+ <td>FSC disponible</td>
+ </tr>
+ <tr>
+ <td>09</td>
+ <td><a href="/catalogo/cajas-archivo-almacenaje" style="color:var(--color-primary-light)">Archivo y Almacenaje</a></td>
+ <td>5</td>
+ <td>Sin mínimo</td>
+ <td>24 – 48 hrs</td>
+ <td>Etiqueta opcional</td>
+ <td>Resistencia apilado</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </section>
+ </main>
+
+ <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas asesoría técnica? Tu consultor responde en menos de 2 horas" />
 
 </PageLayout>

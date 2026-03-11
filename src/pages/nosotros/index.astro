@@ -1,213 +1,213 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
-import PageHero      from "@/components/PageHero.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero  from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 
-const title       = "Nosotros | Fabricante de Cajas de Cartón en CDMX | CADECA";
+const title  = "Nosotros | Fabricante de Cajas de Cartón en CDMX | CADECA";
 const description = "Conoce CADECA, fabricante directo de cajas de cartón corrugado en CDMX. Más de 20 años en la industria del empaque, tecnología de punta y compromiso con la sustentabilidad.";
 
 const valores = [
-  { icono: "🏭", titulo: "Fabricante Directo", desc: "Sin intermediarios. Producimos cada caja en nuestra planta en CDMX — eso se traduce en precio justo, calidad controlada y entrega rápida." },
-  { icono: "🎯", titulo: "Precisión Técnica", desc: "Cada caja cumple con ECT verificado en laboratorio. No vendemos especificaciones de papel — vendemos resistencia real y demostrable." },
-  { icono: "⚡", titulo: "Entrega Express", desc: "Stock permanente de medidas estándar con entrega en 24 hrs en CDMX. Producción bajo pedido en 3-5 días hábiles." },
-  { icono: "🤝", titulo: "Asesoría Sin Costo", desc: "Nuestros asesores técnicos calculan gratis el corrugado correcto para tu producto, el peso volumétrico óptimo y el diseño de separadores." },
-  { icono: "🌱", titulo: "Sustentabilidad", desc: "Trabajamos con fibra certificada FSC y papel reciclado. Nuestro proceso productivo reduce el desperdicio de material al mínimo." },
-  { icono: "📐", titulo: "A la Medida Real", desc: "Fabricamos cualquier L×A×H con tolerancia ±0.5mm. Si lo puedes medir, lo podemos fabricar." },
+ { icono: "", titulo: "Fabricante Directo", desc: "Sin intermediarios. Producimos cada caja en nuestra planta en CDMX — eso se traduce en precio justo, calidad controlada y entrega rápida." },
+ { icono: "", titulo: "Precisión Técnica", desc: "Cada caja cumple con ECT verificado en laboratorio. No vendemos especificaciones de papel — vendemos resistencia real y demostrable." },
+ { icono: "", titulo: "Entrega Express", desc: "Stock permanente de medidas estándar con entrega en 24 hrs en CDMX. Producción bajo pedido en 3-5 días hábiles." },
+ { icono: "", titulo: "Asesoría Sin Costo", desc: "Nuestros asesores técnicos calculan gratis el corrugado correcto para tu producto, el peso volumétrico óptimo y el diseño de separadores." },
+ { icono: "", titulo: "Sustentabilidad", desc: "Trabajamos con fibra certificada FSC y papel reciclado. Nuestro proceso productivo reduce el desperdicio de material al mínimo." },
+ { icono: "", titulo: "A la Medida Real", desc: "Fabricamos cualquier L×A×H con tolerancia ±0.5mm. Si lo puedes medir, lo podemos fabricar." },
 ];
 
 const cifras = [
-  { numero: "20+",   etiqueta: "Años en la industria" },
-  { numero: "500+",  etiqueta: "Clientes activos" },
-  { numero: "50+",   etiqueta: "SKUs en catálogo" },
-  { numero: "24 hrs",etiqueta: "Entrega express CDMX" },
+ { numero: "20+",  etiqueta: "Años en la industria" },
+ { numero: "500+",  etiqueta: "Clientes activos" },
+ { numero: "50+",  etiqueta: "SKUs en catálogo" },
+ { numero: "24 hrs",etiqueta: "Entrega express CDMX" },
 ];
 
 const equipo = [
-  { nombre: "Dirección General",     desc: "Liderazgo con más de 20 años en la industria del corrugado en México." },
-  { nombre: "Ingeniería de Producto", desc: "Diseño CAD, cálculo de ECT y desarrollo de nuevas soluciones de empaque." },
-  { nombre: "Producción",             desc: "Planta en CDMX con equipos de corte, troquelado e impresión flexo de última generación." },
-  { nombre: "Ventas y Asesoría",      desc: "Asesores técnicos que hablan el idioma del corrugado, no solo del precio." },
+ { nombre: "Dirección General",  desc: "Liderazgo con más de 20 años en la industria del corrugado en México." },
+ { nombre: "Ingeniería de Producto", desc: "Diseño CAD, cálculo de ECT y desarrollo de nuevas soluciones de empaque." },
+ { nombre: "Producción",  desc: "Planta en CDMX con equipos de corte, troquelado e impresión flexo de última generación." },
+ { nombre: "Ventas y Asesoría",  desc: "Asesores técnicos que hablan el idioma del corrugado, no solo del precio." },
 ];
 
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Nosotros" },
+ { name: "Inicio", href: "/" },
+ { name: "Nosotros" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="page"
-  breadcrumbs={breadcrumbs}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="page"
+ breadcrumbs={breadcrumbs}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><span class="current">Nosotros</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><span class="current">Nosotros</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <PageHero
-    eyebrow="Fabricante directo · CDMX desde 2008"
-    titleHtml={true}
-    title="El Fabricante de Cajas de Cartón <span>Más Confiable</span> de CDMX"
-    desc="Producción propia sin intermediarios. Más de 15 años fabricando cajas de cartón corrugado para las empresas más exigentes de la Zona Metropolitana del Valle de México."
-    desc2="De PyMEs en Mercado Libre a plantas de nearshoring con auditorías internacionales: CADECA suministra empaques a más de 800 empresas activas en CDMX y Estado de México.||Sin intermediarios, sin mínimos irracionales. Nuestro equipo técnico en planta atiende cada pedido con la misma seriedad, desde 50 cajas hasta 500,000 piezas mensuales."
-    stats={[
-      { value: "15+", label: "años de experiencia" },
-      { value: "500+", label: "clientes activos" },
-      { value: "24 hrs", label: "entrega CDMX" },
-      { value: "45", label: "SKUs en catálogo" },
-    ]}
-    ctas={[
-      { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
-      { href: "/catalogo/", label: "Ver catálogo", variant: "outline" },
-    ]}
-  />
+ <PageHero
+ eyebrow="Fabricante directo · CDMX desde 2008"
+ titleHtml={true}
+ title="El Fabricante de Cajas de Cartón <span>Más Confiable</span> de CDMX"
+ desc="Producción propia sin intermediarios. Más de 15 años fabricando cajas de cartón corrugado para las empresas más exigentes de la Zona Metropolitana del Valle de México."
+ desc2="De PyMEs en Mercado Libre a plantas de nearshoring con auditorías internacionales: CADECA suministra empaques a más de 800 empresas activas en CDMX y Estado de México.||Sin intermediarios, sin mínimos irracionales. Nuestro equipo técnico en planta atiende cada pedido con la misma seriedad, desde 50 cajas hasta 500,000 piezas mensuales."
+ stats={[
+ { value: "15+", label: "años de experiencia" },
+ { value: "500+", label: "clientes activos" },
+ { value: "24 hrs", label: "entrega CDMX" },
+ { value: "45", label: "SKUs en catálogo" },
+ ]}
+ ctas={[
+ { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
+ { href: "/catalogo/", label: "Ver catálogo", variant: "outline" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <!-- Cifras clave -->
-    <section class="about-stats" aria-label="Cifras clave CADECA">
-      <div class="container">
-        <div class="about-stats__grid">
-          {cifras.map(c => (
-            <div class="about-stats__item">
-              <span class="about-stats__numero">{c.numero}</span>
-              <span class="about-stats__etiqueta">{c.etiqueta}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+ <!-- Cifras clave -->
+ <section class="about-stats" aria-label="Cifras clave CADECA">
+ <div class="container">
+ <div class="about-stats__grid">
+ {cifras.map(c => (
+ <div class="about-stats__item">
+ <span class="about-stats__numero">{c.numero}</span>
+ <span class="about-stats__etiqueta">{c.etiqueta}</span>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
 
-    <!-- Historia -->
-    <section class="about-historia" aria-labelledby="historia-title">
-      <div class="container">
-        <div class="about-historia__grid">
-          <div class="about-historia__img-wrap">
-            <img
-              src="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
-              alt="Planta de fabricación de cajas de cartón corrugado CADECA en CDMX"
-              width="640" height="480" loading="lazy" decoding="async"
-            />
-          </div>
-          <div class="about-historia__content">
-            <span class="about-historia__eyebrow">Nuestra historia</span>
-            <h2 id="historia-title" class="about-historia__title">Más de 20 Años Fabricando la Caja Correcta</h2>
-            <p>Empezamos con una pregunta simple: ¿por qué tantas empresas reciben cajas que no se ajustan a su producto, cobran por resistencia que no necesitan o, peor, les fallan en tránsito?</p>
-            <p>CADECA nació para cambiar eso. Fabricamos directamente en CDMX, con materia prima verificada y procesos controlados. Cada caja que sale de nuestra planta tiene la especificación técnica exacta que la situación requiere — ni más, ni menos.</p>
-            <p>Hoy atendemos a más de 500 clientes activos: desde el vendedor de Mercado Libre con 100 cajas al mes hasta la empresa industrial que necesita triple corrugado para exportar maquinaria.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- Historia -->
+ <section class="about-historia" aria-labelledby="historia-title">
+ <div class="container">
+ <div class="about-historia__grid">
+ <div class="about-historia__img-wrap">
+ <img
+ src="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
+ alt="Planta de fabricación de cajas de cartón corrugado CADECA en CDMX"
+ width="640" height="480" loading="lazy" decoding="async"
+ />
+ </div>
+ <div class="about-historia__content">
+ <span class="about-historia__eyebrow">Nuestra historia</span>
+ <h2 id="historia-title" class="about-historia__title">Más de 20 Años Fabricando la Caja Correcta</h2>
+ <p>Empezamos con una pregunta simple: ¿por qué tantas empresas reciben cajas que no se ajustan a su producto, cobran por resistencia que no necesitan o, peor, les fallan en tránsito?</p>
+ <p>CADECA nació para cambiar eso. Fabricamos directamente en CDMX, con materia prima verificada y procesos controlados. Cada caja que sale de nuestra planta tiene la especificación técnica exacta que la situación requiere — ni más, ni menos.</p>
+ <p>Hoy atendemos a más de 500 clientes activos: desde el vendedor de Mercado Libre con 100 cajas al mes hasta la empresa industrial que necesita triple corrugado para exportar maquinaria.</p>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- Valores -->
-    <section class="about-valores" aria-labelledby="valores-title" style="background:var(--color-accent);padding:var(--spacing-3xl) 0;">
-      <div class="container">
-        <SectionHeader
-          id="valores-title"
-          centered
-          title="Por Qué CADECA"
-          subtitle="Lo que nos diferencia no es el slogan — son las decisiones de diseño y producción que tomamos cada día."
-        />
-        <div class="about-valores__grid">
-          {valores.map(v => (
-            <div class="about-valores__card">
-              <span class="about-valores__icono">{v.icono}</span>
-              <h3 class="about-valores__titulo">{v.titulo}</h3>
-              <p class="about-valores__desc">{v.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+ <!-- Valores -->
+ <section class="about-valores" aria-labelledby="valores-title" style="background:var(--color-accent);padding:var(--spacing-3xl) 0;">
+ <div class="container">
+ <SectionHeader
+ id="valores-title"
+ centered
+ title="Por Qué CADECA"
+ subtitle="Lo que nos diferencia no es el slogan — son las decisiones de diseño y producción que tomamos cada día."
+ />
+ <div class="about-valores__grid">
+ {valores.map(v => (
+ <div class="about-valores__card">
+ <span class="about-valores__icono">{v.icono}</span>
+ <h3 class="about-valores__titulo">{v.titulo}</h3>
+ <p class="about-valores__desc">{v.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
 
-    <!-- Equipo -->
-    <section class="about-equipo" aria-labelledby="equipo-title">
-      <div class="container">
-        <SectionHeader
-          id="equipo-title"
-          centered
-          title="El Equipo Detrás de Cada Caja"
-          subtitle="Personas con experiencia real en la industria del corrugado en México."
-        />
-        <div class="about-equipo__grid">
-          {equipo.map(e => (
-            <div class="about-equipo__item">
-              <h3 class="about-equipo__nombre">{e.nombre}</h3>
-              <p class="about-equipo__desc">{e.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+ <!-- Equipo -->
+ <section class="about-equipo" aria-labelledby="equipo-title">
+ <div class="container">
+ <SectionHeader
+ id="equipo-title"
+ centered
+ title="El Equipo Detrás de Cada Caja"
+ subtitle="Personas con experiencia real en la industria del corrugado en México."
+ />
+ <div class="about-equipo__grid">
+ {equipo.map(e => (
+ <div class="about-equipo__item">
+ <h3 class="about-equipo__nombre">{e.nombre}</h3>
+ <p class="about-equipo__desc">{e.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
 
-    <!-- Ubicación -->
-    <section class="about-zona" aria-labelledby="zona-title" style="background:var(--color-secondary);padding:var(--spacing-3xl) 0;">
-      <div class="container">
-        <div class="about-zona__inner">
-          <div>
-            <h2 id="zona-title" class="about-zona__title">Fabricamos en CDMX,<br>Entregamos en Toda la ZMVM</h2>
-            <p class="about-zona__desc">Nuestra planta está ubicada en la Ciudad de México con cobertura de entrega express en toda la Zona Metropolitana del Valle de México — CDMX y Estado de México — en 24 a 48 hrs.</p>
-            <ul class="about-zona__list">
-              <li>📍 Planta en Ciudad de México</li>
-              <li>🚚 Entrega express CDMX: 24 hrs</li>
-              <li>🗺️ Cobertura: ZMVM — CDMX + Edomex</li>
-              <li>📦 Interior de la República: 2-5 días (paquetería)</li>
-            </ul>
-            <a href="/zonas-de-servicio" class="btn btn--primary" style="margin-top:var(--spacing-lg)">Ver zonas de servicio →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- Ubicación -->
+ <section class="about-zona" aria-labelledby="zona-title" style="background:var(--color-secondary);padding:var(--spacing-3xl) 0;">
+ <div class="container">
+ <div class="about-zona__inner">
+ <div>
+ <h2 id="zona-title" class="about-zona__title">Fabricamos en CDMX,<br>Entregamos en Toda la ZMVM</h2>
+ <p class="about-zona__desc">Nuestra planta está ubicada en la Ciudad de México con cobertura de entrega express en toda la Zona Metropolitana del Valle de México — CDMX y Estado de México — en 24 a 48 hrs.</p>
+ <ul class="about-zona__list">
+ <li> Planta en Ciudad de México</li>
+ <li> Entrega express CDMX: 24 hrs</li>
+ <li>️ Cobertura: ZMVM — CDMX + Edomex</li>
+ <li> Interior de la República: 2-5 días (paquetería)</li>
+ </ul>
+ <a href="/zonas-de-servicio" class="btn btn--primary" style="margin-top:var(--spacing-lg)">Ver zonas de servicio →</a>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- Certificaciones -->
-    <section class="about-certs" aria-labelledby="certs-title">
-      <div class="container">
-        <SectionHeader
-          id="certs-title"
-          centered
-          title="Compromisos de Calidad"
-          subtitle="No son sellos decorativos — son los estándares que definen cómo fabricamos."
-        />
-        <div class="about-certs__grid">
-          <div class="about-certs__item">
-            <span class="about-certs__badge">ECT</span>
-            <h3>ECT Verificado</h3>
-            <p>Cada lote lleva prueba de Edge Crush Test. Te entregamos la resistencia que cotizamos.</p>
-          </div>
-          <div class="about-certs__item">
-            <span class="about-certs__badge">FSC</span>
-            <h3>Opción FSC</h3>
-            <p>Fibra certificada FSC disponible para marcas con política ambiental y reportes ESG.</p>
-          </div>
-          <div class="about-certs__item">
-            <span class="about-certs__badge">COFEPRIS</span>
-            <h3>Food Grade</h3>
-            <p>Liner food-grade y tintas base agua sin metales pesados. Carta de cumplimiento COFEPRIS disponible.</p>
-          </div>
-          <div class="about-certs__item">
-            <span class="about-certs__badge">ISTA</span>
-            <h3>ISTA / IATA</h3>
-            <p>Cajas de exportación diseñadas conforme normas ISTA 2A/3A e IATA para carga aérea y marítima.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- Certificaciones -->
+ <section class="about-certs" aria-labelledby="certs-title">
+ <div class="container">
+ <SectionHeader
+ id="certs-title"
+ centered
+ title="Compromisos de Calidad"
+ subtitle="No son sellos decorativos — son los estándares que definen cómo fabricamos."
+ />
+ <div class="about-certs__grid">
+ <div class="about-certs__item">
+ <span class="about-certs__badge">ECT</span>
+ <h3>ECT Verificado</h3>
+ <p>Cada lote lleva prueba de Edge Crush Test. Te entregamos la resistencia que cotizamos.</p>
+ </div>
+ <div class="about-certs__item">
+ <span class="about-certs__badge">FSC</span>
+ <h3>Opción FSC</h3>
+ <p>Fibra certificada FSC disponible para marcas con política ambiental y reportes ESG.</p>
+ </div>
+ <div class="about-certs__item">
+ <span class="about-certs__badge">COFEPRIS</span>
+ <h3>Food Grade</h3>
+ <p>Liner food-grade y tintas base agua sin metales pesados. Carta de cumplimiento COFEPRIS disponible.</p>
+ </div>
+ <div class="about-certs__item">
+ <span class="about-certs__badge">ISTA</span>
+ <h3>ISTA / IATA</h3>
+ <p>Cajas de exportación diseñadas conforme normas ISTA 2A/3A e IATA para carga aérea y marítima.</p>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Listo para trabajar con el fabricante directo? Cotiza en menos de 1 hora" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Listo para trabajar con el fabricante directo? Cotiza en menos de 1 hora" />
 
 </PageLayout>
 

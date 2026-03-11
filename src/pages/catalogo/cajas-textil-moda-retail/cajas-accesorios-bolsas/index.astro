@@ -1,236 +1,236 @@
 ---
-import PageLayout   from "@/layouts/PageLayout.astro";
-import FaqItem      from "@/components/FaqItem.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title   = "Caja para Accesorios y Bolsas Corrugado CDMX | CAD-TX-03 | CADECA";
+const title  = "Caja para Accesorios y Bolsas Corrugado CDMX | CAD-TX-03 | CADECA";
 const description = "Ficha técnica caja corrugado para accesorios y bolsas de moda en CDMX. Flauta E, ECT-23, medidas joyería a bolsa grande. Acabados premium, impresión CMYK, MOQ 300 pzas. CADECA fabricante.";
 const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Joyería",              lah:"12×8×4",    flauta:"E",  ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"green",  label:"Stock" },
-  { nombre:"Gafas / Lentes",       lah:"18×8×6",    flauta:"E",  ect:"ECT-23",vacío:"0.03 kg",máx:"0.5 kg", disp:"green",  label:"Stock", hl:true },
-  { nombre:"Cinturón / Cartera",   lah:"25×15×8",   flauta:"E",  ect:"ECT-23",vacío:"0.06 kg",máx:"1 kg",   disp:"green",  label:"Stock", hl:true },
-  { nombre:"Bolsa Mediana",        lah:"35×25×15",  flauta:"E",  ect:"ECT-23",vacío:"0.12 kg",máx:"2 kg",   disp:"yellow", label:"48 hrs" },
-  { nombre:"Bolsa Grande",         lah:"45×35×20",  flauta:"E",  ect:"ECT-23",vacío:"0.20 kg",máx:"3 kg",   disp:"yellow", label:"48 hrs" },
-  { nombre:"A la Medida",          lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+ { nombre:"Joyería",  lah:"12×8×4",  flauta:"E",  ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"green",  label:"Stock" },
+ { nombre:"Gafas / Lentes",  lah:"18×8×6",  flauta:"E",  ect:"ECT-23",vacío:"0.03 kg",máx:"0.5 kg", disp:"green",  label:"Stock", hl:true },
+ { nombre:"Cinturón / Cartera",  lah:"25×15×8",  flauta:"E",  ect:"ECT-23",vacío:"0.06 kg",máx:"1 kg",  disp:"green",  label:"Stock", hl:true },
+ { nombre:"Bolsa Mediana",  lah:"35×25×15",  flauta:"E",  ect:"ECT-23",vacío:"0.12 kg",máx:"2 kg",  disp:"yellow", label:"48 hrs" },
+ { nombre:"Bolsa Grande",  lah:"45×35×20",  flauta:"E",  ect:"ECT-23",vacío:"0.20 kg",máx:"3 kg",  disp:"yellow", label:"48 hrs" },
+ { nombre:"A la Medida",  lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
 ];
 
 const specs = [
-  ["Código SKU",              "CAD-TX-03"],
-  ["Tipo de pared",           "Simple (micro flauta E)"],
-  ["Flauta",                  "E (1.5 mm)"],
-  ["Resistencia ECT",         "ECT-23"],
-  ["Gramaje liner",           "150 – 200 g/m²"],
-  ["Gramaje médium",          "112 g/m²"],
-  ["Material",                "SBS blanqueado · GC1 recubierto · Cartón compacto"],
-  ["Color exterior",          "Blanco recubierto · Kraft natural opcional"],
-  ["Peso máx. producto",      "Hasta 3 kg"],
-  ["Carga de apilado",        "Hasta 40 kg (condiciones ideales)"],
-  ["Impresión",               "Full color CMYK offset · Flexografía 1-4 colores"],
-  ["Acabados premium",        "Barniz UV selectivo · Hot stamping oro/plata · Laminado soft touch"],
-  ["Inserto interior",        "Espuma EVA · Cartón troquelado · Satín — a medida del producto"],
-  ["Cierre",                  "Magnético oculto · Solapa con imán · Tapa rígida"],
-  ["Certificación",           "FSC disponible bajo pedido"],
-  ["Pedido mínimo",           "300 pzas"],
-  ["Tiempo de entrega",       "24-48 hrs stock · 5-7 días personalizada con acabados premium"],
+ ["Código SKU",  "CAD-TX-03"],
+ ["Tipo de pared",  "Simple (micro flauta E)"],
+ ["Flauta",  "E (1.5 mm)"],
+ ["Resistencia ECT",  "ECT-23"],
+ ["Gramaje liner",  "150 – 200 g/m²"],
+ ["Gramaje médium",  "112 g/m²"],
+ ["Material",  "SBS blanqueado · GC1 recubierto · Cartón compacto"],
+ ["Color exterior",  "Blanco recubierto · Kraft natural opcional"],
+ ["Peso máx. producto",  "Hasta 3 kg"],
+ ["Carga de apilado",  "Hasta 40 kg (condiciones ideales)"],
+ ["Impresión",  "Full color CMYK offset · Flexografía 1-4 colores"],
+ ["Acabados premium",  "Barniz UV selectivo · Hot stamping oro/plata · Laminado soft touch"],
+ ["Inserto interior",  "Espuma EVA · Cartón troquelado · Satín — a medida del producto"],
+ ["Cierre",  "Magnético oculto · Solapa con imán · Tapa rígida"],
+ ["Certificación",  "FSC disponible bajo pedido"],
+ ["Pedido mínimo",  "300 pzas"],
+ ["Tiempo de entrega",  "24-48 hrs stock · 5-7 días personalizada con acabados premium"],
 ];
 
 const faqs = [
-  {
-    id:"tx03-f1",
-    question:"¿Qué tipo de inserto recomiendan para joyería y accesorios?",
-    answer:"Para joyería recomendamos <strong>inserto de espuma EVA recubierta con satín o terciopelo</strong>, troquelado a la forma exacta del anillo, pulsera o collar para que la pieza quede sujeta y protegida. Para gafas y lentes, un <strong>inserto de cartón troquelado con ranura</strong> es suficiente y más económico. Para bolsas de diseñador, ofrecemos <strong>papel tissue personalizado</strong> y bolsa de tela antipolvo como complemento. Todos los insertos se fabrican a la medida exacta de tu producto.",
-  },
-  {
-    id:"tx03-f2",
-    question:"¿Pueden lograr un acabado de lujo en corridas de 300 piezas?",
-    answer:"Sí, a partir de <strong>300 piezas</strong> ofrecemos la gama completa de acabados premium: impresión CMYK offset de alta resolución, barniz UV selectivo para resaltar logotipos, <strong>hot stamping en oro, plata, oro rosa o holográfico</strong>, laminado soft touch para efecto aterciopelado, y relieve seco (emboss/deboss) para texturas táctiles. Se pueden combinar varios acabados en una misma caja para máximo impacto visual y táctil.",
-  },
-  {
-    id:"tx03-f3",
-    question:"¿Las cajas sirven tanto para venta en mostrador como para e-commerce?",
-    answer:"Sí, nuestras cajas CAD-TX-03 están diseñadas para <strong>doble uso: punto de venta y envío e-commerce</strong>. El cierre magnético oculto permite una apertura suave y elegante ideal para la experiencia en tienda física. Para envío, la estructura de micro-flauta E con ECT-23 resiste el transporte por paquetería sin deformarse. Recomendamos agregar un <strong>sleeve o fajilla exterior</strong> como protección adicional para envíos.",
-  },
-  {
-    id:"tx03-f4",
-    question:"¿Qué material recomiendan para cajas de bolsas de diseñador?",
-    answer:"Para bolsas de diseñador recomendamos <strong>cartón GC1 de 300 g/m² con laminado mate</strong> y hot stamping del logotipo. El GC1 ofrece la máxima blancura y rigidez para una percepción premium. La medida Bolsa Mediana (35×25×15 cm) o Bolsa Grande (45×35×20 cm) se ajusta a la mayoría de bolsos tipo clutch, tote y crossbody. Incluimos papel tissue personalizado y, opcionalmente, <strong>bolsa de tela antipolvo</strong> como complemento integral.",
-  },
-  {
-    id:"tx03-f5",
-    question:"¿Cuál es la diferencia entre laminado mate, brillante y soft touch?",
-    answer:"<strong>Laminado mate:</strong> Acabado suave sin reflejos, transmite elegancia y sofisticación. Es el más popular en packaging de moda premium. <strong>Laminado brillante:</strong> Acabado con alto brillo que resalta colores vivos y fotografías, ideal para marcas juveniles y vibrantes. <strong>Laminado soft touch:</strong> Acabado aterciopelado al tacto que genera una experiencia sensorial única al tomar la caja. Es el más premium y costoso de los tres, recomendado para joyería y accesorios de lujo.",
-  },
-  {
-    id:"tx03-f6",
-    question:"¿Las cajas de accesorios son ecológicas y reciclables?",
-    answer:"Sí, nuestras cajas de accesorios son <strong>reciclables y fabricadas con materiales responsables</strong>. El cartón base es reciclable y biodegradable. Los laminados mate y brillante son de BOPP reciclable. Para marcas con compromiso ambiental extremo, ofrecemos una <strong>versión sin laminado con barniz base agua y tintas vegetales</strong> que mantiene un acabado elegante siendo 100 % biodegradable. Certificación FSC disponible bajo pedido.",
-  },
+ {
+ id:"tx03-f1",
+ question:"¿Qué tipo de inserto recomiendan para joyería y accesorios?",
+ answer:"Para joyería recomendamos <strong>inserto de espuma EVA recubierta con satín o terciopelo</strong>, troquelado a la forma exacta del anillo, pulsera o collar para que la pieza quede sujeta y protegida. Para gafas y lentes, un <strong>inserto de cartón troquelado con ranura</strong> es suficiente y más económico. Para bolsas de diseñador, ofrecemos <strong>papel tissue personalizado</strong> y bolsa de tela antipolvo como complemento. Todos los insertos se fabrican a la medida exacta de tu producto.",
+ },
+ {
+ id:"tx03-f2",
+ question:"¿Pueden lograr un acabado de lujo en corridas de 300 piezas?",
+ answer:"Sí, a partir de <strong>300 piezas</strong> ofrecemos la gama completa de acabados premium: impresión CMYK offset de alta resolución, barniz UV selectivo para resaltar logotipos, <strong>hot stamping en oro, plata, oro rosa o holográfico</strong>, laminado soft touch para efecto aterciopelado, y relieve seco (emboss/deboss) para texturas táctiles. Se pueden combinar varios acabados en una misma caja para máximo impacto visual y táctil.",
+ },
+ {
+ id:"tx03-f3",
+ question:"¿Las cajas sirven tanto para venta en mostrador como para e-commerce?",
+ answer:"Sí, nuestras cajas CAD-TX-03 están diseñadas para <strong>doble uso: punto de venta y envío e-commerce</strong>. El cierre magnético oculto permite una apertura suave y elegante ideal para la experiencia en tienda física. Para envío, la estructura de micro-flauta E con ECT-23 resiste el transporte por paquetería sin deformarse. Recomendamos agregar un <strong>sleeve o fajilla exterior</strong> como protección adicional para envíos.",
+ },
+ {
+ id:"tx03-f4",
+ question:"¿Qué material recomiendan para cajas de bolsas de diseñador?",
+ answer:"Para bolsas de diseñador recomendamos <strong>cartón GC1 de 300 g/m² con laminado mate</strong> y hot stamping del logotipo. El GC1 ofrece la máxima blancura y rigidez para una percepción premium. La medida Bolsa Mediana (35×25×15 cm) o Bolsa Grande (45×35×20 cm) se ajusta a la mayoría de bolsos tipo clutch, tote y crossbody. Incluimos papel tissue personalizado y, opcionalmente, <strong>bolsa de tela antipolvo</strong> como complemento integral.",
+ },
+ {
+ id:"tx03-f5",
+ question:"¿Cuál es la diferencia entre laminado mate, brillante y soft touch?",
+ answer:"<strong>Laminado mate:</strong> Acabado suave sin reflejos, transmite elegancia y sofisticación. Es el más popular en packaging de moda premium. <strong>Laminado brillante:</strong> Acabado con alto brillo que resalta colores vivos y fotografías, ideal para marcas juveniles y vibrantes. <strong>Laminado soft touch:</strong> Acabado aterciopelado al tacto que genera una experiencia sensorial única al tomar la caja. Es el más premium y costoso de los tres, recomendado para joyería y accesorios de lujo.",
+ },
+ {
+ id:"tx03-f6",
+ question:"¿Las cajas de accesorios son ecológicas y reciclables?",
+ answer:"Sí, nuestras cajas de accesorios son <strong>reciclables y fabricadas con materiales responsables</strong>. El cartón base es reciclable y biodegradable. Los laminados mate y brillante son de BOPP reciclable. Para marcas con compromiso ambiental extremo, ofrecemos una <strong>versión sin laminado con barniz base agua y tintas vegetales</strong> que mantiene un acabado elegante siendo 100 % biodegradable. Certificación FSC disponible bajo pedido.",
+ },
 ];
 
 const mainImg = "/img/catalogo/caja-accesorios-bolsas-premium-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/caja-accesorios-bolsas-premium-cdmx.avif", alt: "Cajas accesorios — principal" },
-  { src: "/img/catalogo/caja-accesorios-bolsas-hero-cdmx.avif", alt: "Accesorios — hero luxury" },
-  { src: "/img/catalogo/caja-accesorios-bolsas-stack-cdmx.avif", alt: "Cajas accesorios — boutique" },
-  { src: "/img/catalogo/caja-accesorios-bolsas-interior-cdmx.avif", alt: "Interior premium — padding" },
-  { src: "/img/catalogo/caja-accesorios-bolsas-joyeria-cdmx.avif", alt: "Cajas joyería — múltiples tallas" },
+ { src: "/img/catalogo/caja-accesorios-bolsas-premium-cdmx.avif", alt: "Cajas accesorios — principal" },
+ { src: "/img/catalogo/caja-accesorios-bolsas-hero-cdmx.avif", alt: "Accesorios — hero luxury" },
+ { src: "/img/catalogo/caja-accesorios-bolsas-stack-cdmx.avif", alt: "Cajas accesorios — boutique" },
+ { src: "/img/catalogo/caja-accesorios-bolsas-interior-cdmx.avif", alt: "Interior premium — padding" },
+ { src: "/img/catalogo/caja-accesorios-bolsas-joyeria-cdmx.avif", alt: "Cajas joyería — múltiples tallas" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Accesorios y Bolsas"}]}
-  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
-  product={{name:"Caja para Accesorios y Bolsas Corrugado Pared Simple",sku:"CAD-TX-03",description:"Caja de cartón corrugado para accesorios y bolsas de moda en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-accesorios-bolsas-premium-cdmx.avif",material:"Cartón GC1/SBS micro-flauta E ECT-23 con acabados premium",category:"Cajas para Textil, Moda y Retail",moq:"300"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Accesorios y Bolsas"}]}
+ faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+ product={{name:"Caja para Accesorios y Bolsas Corrugado Pared Simple",sku:"CAD-TX-03",description:"Caja de cartón corrugado para accesorios y bolsas de moda en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-accesorios-bolsas-premium-cdmx.avif",material:"Cartón GC1/SBS micro-flauta E ECT-23 con acabados premium",category:"Cajas para Textil, Moda y Retail",moq:"300"}}
 >
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container"><ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/catalogo">Catálogo</a></li>
-      <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
-      <li><span class="current">Accesorios y Bolsas</span></li>
-    </ol></div>
-  </div>
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container"><ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+ <li><span class="current">Accesorios y Bolsas</span></li>
+ </ol></div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-tx03-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-TX-03 · Cajas para Textil, Moda y Retail</span>
-      <h1 id="sku-tx03-title" class="cat-page-hero__title">
-        Caja para Accesorios y Bolsas<br><span>Pared Simple Premium — CDMX</span>
-      </h1>
-      <p class="cat-page-hero__desc">
-        Cajas premium de cartón micro-flauta E para accesorios de moda: joyería, gafas, cinturones, carteras y bolsas de diseñador. Impresión full color CMYK con acabados de lujo — barniz UV selectivo, hot stamping y laminado soft touch. Insertos personalizados para cada pieza.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-03</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>300 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-tx03-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-TX-03 · Cajas para Textil, Moda y Retail</span>
+ <h1 id="sku-tx03-title" class="cat-page-hero__title">
+ Caja para Accesorios y Bolsas<br><span>Pared Simple Premium — CDMX</span>
+ </h1>
+ <p class="cat-page-hero__desc">
+ Cajas premium de cartón micro-flauta E para accesorios de moda: joyería, gafas, cinturones, carteras y bolsas de diseñador. Impresión full color CMYK con acabados de lujo — barniz UV selectivo, hot stamping y laminado soft touch. Insertos personalizados para cada pieza.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-03</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>300 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <section class="sku-detail" aria-labelledby="detalle-tx03-title">
-      <div class="container">
-        <div class="sku-detail__grid">
+ <section class="sku-detail" aria-labelledby="detalle-tx03-title">
+ <div class="container">
+ <div class="sku-detail__grid">
 
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
 
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-TX-03 · Familia: Textil, Moda y Retail</p>
-            <h2 id="detalle-tx03-title" class="sku-detail__title">Accesorios y Bolsas — Pared Simple Premium</h2>
-            <p class="sku-detail__desc">
-              La caja CAD-TX-03 está diseñada para productos de alto valor percibido: anillos, pulseras, collares, gafas de sol, cinturones, carteras y bolsas de diseñador. Fabricada en cartón GC1 o SBS de alta blancura con micro-flauta E, acepta impresión offset CMYK de alta resolución y la gama completa de acabados premium. Incluye inserto interior personalizado (espuma EVA, cartón troquelado o satín) para sujetar y proteger cada pieza con presentación de lujo.
-            </p>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-TX-03 · Familia: Textil, Moda y Retail</p>
+ <h2 id="detalle-tx03-title" class="sku-detail__title">Accesorios y Bolsas — Pared Simple Premium</h2>
+ <p class="sku-detail__desc">
+ La caja CAD-TX-03 está diseñada para productos de alto valor percibido: anillos, pulseras, collares, gafas de sol, cinturones, carteras y bolsas de diseñador. Fabricada en cartón GC1 o SBS de alta blancura con micro-flauta E, acepta impresión offset CMYK de alta resolución y la gama completa de acabados premium. Incluye inserto interior personalizado (espuma EVA, cartón troquelado o satín) para sujetar y proteger cada pieza con presentación de lujo.
+ </p>
 
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">Premium</span>
-                <span class="sku-detail__strip-label">Acabados de lujo</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">3 kg</span>
-                <span class="sku-detail__strip-label">Peso máx.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">300 pzas</span>
-                <span class="sku-detail__strip-label">Pedido mín.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">5-7 días</span>
-                <span class="sku-detail__strip-label">Entrega CDMX</span>
-              </div>
-            </div>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">Premium</span>
+ <span class="sku-detail__strip-label">Acabados de lujo</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">3 kg</span>
+ <span class="sku-detail__strip-label">Peso máx.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">300 pzas</span>
+ <span class="sku-detail__strip-label">Pedido mín.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">5-7 días</span>
+ <span class="sku-detail__strip-label">Entrega CDMX</span>
+ </div>
+ </div>
 
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table">
-              <tbody>
-                {specs.map(([label, val]) => (
-                  <tr><td>{label}</td><td>{val}</td></tr>
-                ))}
-              </tbody>
-            </table>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table">
+ <tbody>
+ {specs.map(([label, val]) => (
+ <tr><td>{label}</td><td>{val}</td></tr>
+ ))}
+ </tbody>
+ </table>
 
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-03 Caja Accesorios y Bolsas`}
-                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-03</a>
-              <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-03 Caja Accesorios y Bolsas`}
+ target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-03</a>
+ <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <!-- TABLA DE MEDIDAS -->
-    <section class="sku-sizes" aria-labelledby="sizes-tx03-title">
-      <div class="container">
-        <h2 id="sizes-tx03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
-          Medidas Disponibles — CAD-TX-03
-        </h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead>
-              <tr>
-                <th>Tamaño</th>
-                <th>L × A × H (cm)</th>
-                <th>Flauta</th>
-                <th>ECT</th>
-                <th>Peso vacío</th>
-                <th>Peso máx.</th>
-                <th>Disponibilidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td>{m.nombre}</td>
-                  <td><strong>{m.lah}</strong></td>
-                  <td>{m.flauta}</td>
-                  <td>{m.ect}</td>
-                  <td>{m.vacío}</td>
-                  <td><strong>{m.máx}</strong></td>
-                  <td>
-                    <span class={`stock-chip stock-chip--${m.disp}`}>
-                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
-          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
-        </p>
-      </div>
-    </section>
+ <!-- TABLA DE MEDIDAS -->
+ <section class="sku-sizes" aria-labelledby="sizes-tx03-title">
+ <div class="container">
+ <h2 id="sizes-tx03-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+ Medidas Disponibles — CAD-TX-03
+ </h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead>
+ <tr>
+ <th>Tamaño</th>
+ <th>L × A × H (cm)</th>
+ <th>Flauta</th>
+ <th>ECT</th>
+ <th>Peso vacío</th>
+ <th>Peso máx.</th>
+ <th>Disponibilidad</th>
+ </tr>
+ </thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td>{m.nombre}</td>
+ <td><strong>{m.lah}</strong></td>
+ <td>{m.flauta}</td>
+ <td>{m.ect}</td>
+ <td>{m.vacío}</td>
+ <td><strong>{m.máx}</strong></td>
+ <td>
+ <span class={`stock-chip stock-chip--${m.disp}`}>
+ {m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}
+ </span>
+ </td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+ Stock permanente ·  Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+ </p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-tx03-title">
-      <div class="container">
-        <h2 id="faq-tx03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
-          Preguntas Técnicas — CAD-TX-03
-        </h2>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <section class="faq" aria-labelledby="faq-tx03-title">
+ <div class="container">
+ <h2 id="faq-tx03-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+ Preguntas Técnicas — CAD-TX-03
+ </h2>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-03 — Cajas premium para accesorios y bolsas de moda" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-03 — Cajas premium para accesorios y bolsas de moda" />
 
 </PageLayout>

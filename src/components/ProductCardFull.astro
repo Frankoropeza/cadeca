@@ -1,131 +1,131 @@
 ---
 // ProductCardFull.astro — Tarjeta de producto extendida con specs y badges
 export interface Spec {
-  label: string;
-  value: string;
+ label: string;
+ value: string;
 }
 export interface Tag {
-  label: string;
-  href:  string;
+ label: string;
+ href:  string;
 }
 export interface Props {
-  title:      string;
-  desc:       string;
-  imgSrc:     string;
-  imgAlt:     string;
-  href:       string;
-  tags?:      Tag[];
-  specs?:     Spec[];
-  badge?:     string;
-  badgeColor?: "primary" | "success" | "info";
-  minPiezas?: string;
-  entrega?:   string;
-  desde?:     string;
-  featured?:  boolean;
-  category?:  string;
+ title:  string;
+ desc:  string;
+ imgSrc:  string;
+ imgAlt:  string;
+ href:  string;
+ tags?:  Tag[];
+ specs?:  Spec[];
+ badge?:  string;
+ badgeColor?: "primary" | "success" | "info";
+ minPiezas?: string;
+ entrega?:  string;
+ desde?:  string;
+ featured?:  boolean;
+ category?:  string;
 }
 
 const {
-  title,
-  desc,
-  imgSrc,
-  imgAlt,
-  href,
-  tags      = [],
-  specs     = [],
-  badge,
-  badgeColor = "primary",
-  minPiezas,
-  entrega,
-  desde,
-  featured  = false,
-  category  = "",
+ title,
+ desc,
+ imgSrc,
+ imgAlt,
+ href,
+ tags  = [],
+ specs  = [],
+ badge,
+ badgeColor = "primary",
+ minPiezas,
+ entrega,
+ desde,
+ featured  = false,
+ category  = "",
 } = Astro.props;
 ---
 
 <article
-  class={`product-card-full ${featured ? "product-card-full--featured" : ""}`}
-  data-category={category}
+ class={`product-card-full ${featured ? "product-card-full--featured" : ""}`}
+ data-category={category}
 >
-  <!-- Imagen -->
-  <div class="product-card-full__img-wrap">
-    {badge && (
-      <span class={`product-card-full__badge product-card-full__badge--${badgeColor}`}>
-        {badge}
-      </span>
-    )}
-    <img
-      src={imgSrc}
-      alt={imgAlt}
-      class="product-card-full__img"
-      loading="lazy"
-      decoding="async"
-      width="900"
-      height="560"
-      fetchpriority="low"
-    />
-  </div>
+ <!-- Imagen -->
+ <div class="product-card-full__img-wrap">
+ {badge && (
+ <span class={`product-card-full__badge product-card-full__badge--${badgeColor}`}>
+ {badge}
+ </span>
+ )}
+ <img
+ src={imgSrc}
+ alt={imgAlt}
+ class="product-card-full__img"
+ loading="lazy"
+ decoding="async"
+ width="900"
+ height="560"
+ fetchpriority="low"
+ />
+ </div>
 
-  <!-- Body -->
-  <div class="product-card-full__body">
+ <!-- Body -->
+ <div class="product-card-full__body">
 
-    <div class="product-card-full__top">
-      <h3 class="product-card-full__title">{title}</h3>
-      <p class="product-card-full__desc">{desc}</p>
-    </div>
+ <div class="product-card-full__top">
+ <h3 class="product-card-full__title">{title}</h3>
+ <p class="product-card-full__desc">{desc}</p>
+ </div>
 
-    <!-- Specs técnicos -->
-    {specs.length > 0 && (
-      <div class="product-card-full__specs">
-        {specs.map(s => (
-          <div class="product-card-full__spec">
-            <span class="product-card-full__spec-label">{s.label}</span>
-            <span class="product-card-full__spec-value">{s.value}</span>
-          </div>
-        ))}
-      </div>
-    )}
+ <!-- Specs técnicos -->
+ {specs.length > 0 && (
+ <div class="product-card-full__specs">
+ {specs.map(s => (
+ <div class="product-card-full__spec">
+ <span class="product-card-full__spec-label">{s.label}</span>
+ <span class="product-card-full__spec-value">{s.value}</span>
+ </div>
+ ))}
+ </div>
+ )}
 
-    <!-- Info rápida -->
-    <div class="product-card-full__info">
-      {minPiezas && (
-        <div class="product-card-full__info-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span>Mínimo: <strong>{minPiezas}</strong></span>
-        </div>
-      )}
-      {entrega && (
-        <div class="product-card-full__info-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Entrega: <strong>{entrega}</strong></span>
-        </div>
-      )}
-      {desde && (
-        <div class="product-card-full__info-item product-card-full__info-item--price">
-          <span>Desde</span>
-          <strong>{desde}</strong>
-        </div>
-      )}
-    </div>
+ <!-- Info rápida -->
+ <div class="product-card-full__info">
+ {minPiezas && (
+ <div class="product-card-full__info-item">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+ <span>Mínimo: <strong>{minPiezas}</strong></span>
+ </div>
+ )}
+ {entrega && (
+ <div class="product-card-full__info-item">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+ <span>Entrega: <strong>{entrega}</strong></span>
+ </div>
+ )}
+ {desde && (
+ <div class="product-card-full__info-item product-card-full__info-item--price">
+ <span>Desde</span>
+ <strong>{desde}</strong>
+ </div>
+ )}
+ </div>
 
-    <!-- Subcategorías -->
-    {tags.length > 0 && (
-      <div class="product-card-full__tags">
-        {tags.map(tag => (
-          <a href={tag.href} class="product-card-full__tag">{tag.label}</a>
-        ))}
-      </div>
-    )}
+ <!-- Subcategorías -->
+ {tags.length > 0 && (
+ <div class="product-card-full__tags">
+ {tags.map(tag => (
+ <a href={tag.href} class="product-card-full__tag">{tag.label}</a>
+ ))}
+ </div>
+ )}
 
-    <!-- CTA -->
-    <div class="product-card-full__actions">
-      <a href={href} class="product-card-full__btn-primary">
-        Ver producto
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#cotizar" class="product-card-full__btn-secondary">Cotizar</a>
-    </div>
+ <!-- CTA -->
+ <div class="product-card-full__actions">
+ <a href={href} class="product-card-full__btn-primary">
+ Ver producto
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+ </a>
+ <a href="cotizar" class="product-card-full__btn-secondary">Cotizar</a>
+ </div>
 
-  </div>
+ </div>
 </article>
 

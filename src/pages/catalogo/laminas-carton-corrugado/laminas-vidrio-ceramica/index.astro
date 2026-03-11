@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Láminas Corrugado Vidrio Cerámica CDMX | Amortiguación | CAD-LA-09 | CADECA";
+const title  = "Láminas Corrugado Vidrio Cerámica CDMX | Amortiguación | CAD-LA-09 | CADECA";
 const description = "Láminas de cartón corrugado para vidrio, cerámica y artículos frágiles en CDMX. Doble pared amortiguante, celdas de separación. MOQ 50 pzas. Entrega 24 hrs. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-LA-09"],
-  ["Pared", "Doble corrugado BC (7mm)"],
-  ["Resistencia", "ECT-44"],
-  ["Amortiguación", "Alta absorción de impacto"],
-  ["Separadores", "Celda hexagonal opcional"],
-  ["Material", "Kraft virgen"],
-  ["Uso", "Vidrio / cerámica / frágiles"],
-  ["Pedido mínimo", "50 láminas"],
-  ["Entrega CDMX", "24 hrs"],
+ ["Código SKU", "CAD-LA-09"],
+ ["Pared", "Doble corrugado BC (7mm)"],
+ ["Resistencia", "ECT-44"],
+ ["Amortiguación", "Alta absorción de impacto"],
+ ["Separadores", "Celda hexagonal opcional"],
+ ["Material", "Kraft virgen"],
+ ["Uso", "Vidrio / cerámica / frágiles"],
+ ["Pedido mínimo", "50 láminas"],
+ ["Entrega CDMX", "24 hrs"],
 ];
 
 const faqs = [
-  { id:"cad-la-09-f1", question:"¿Los separadores hexagonales se venden por separado?", answer:"Sí. Los separadores de cartón en celda hexagonal (honeycomb) son un producto complementario que se cotiza por separado. Se insertan entre las láminas y el producto para crear una cámara de aire que absorbe los impactos por vibración durante el transporte. Para embarques de vidrio y cerámica de alto valor, la combinación lámina + honeycomb ofrece la mejor protección disponible." },
-  { id:"cad-la-09-f2", question:"¿Tienen láminas en tamaños para espejos grandes?", answer:"Para espejos grandes (de 60×90 cm en adelante), usamos el servicio de corte a medida CAD-LA-06 que produce láminas en cualquier dimensión. Para espejos estándar de 40×60 cm y 60×90 cm, tenemos medidas en stock. Consultanos la dimensión específica de tus espejos para confirmar disponibilidad." },
-  { id:"cad-la-09-f3", question:"¿El corrugado es suficiente para vidrio plano en contenedor?", answer:"Para envíos nacionales con manejo cuidadoso, sí. Para exportación marítima o aérea de vidrio plano de alto valor (vidrio templado, laminado o espejos de diseño), recomendamos combinar láminas doble pared con el recubrimiento antihumedad y flejes de poliéster para asegurar el paquete. Consultanos el proyecto específico para una propuesta integral." },
+ { id:"cad-la-09-f1", question:"¿Los separadores hexagonales se venden por separado?", answer:"Sí. Los separadores de cartón en celda hexagonal (honeycomb) son un producto complementario que se cotiza por separado. Se insertan entre las láminas y el producto para crear una cámara de aire que absorbe los impactos por vibración durante el transporte. Para embarques de vidrio y cerámica de alto valor, la combinación lámina + honeycomb ofrece la mejor protección disponible." },
+ { id:"cad-la-09-f2", question:"¿Tienen láminas en tamaños para espejos grandes?", answer:"Para espejos grandes (de 60×90 cm en adelante), usamos el servicio de corte a medida CAD-LA-06 que produce láminas en cualquier dimensión. Para espejos estándar de 40×60 cm y 60×90 cm, tenemos medidas en stock. Consultanos la dimensión específica de tus espejos para confirmar disponibilidad." },
+ { id:"cad-la-09-f3", question:"¿El corrugado es suficiente para vidrio plano en contenedor?", answer:"Para envíos nacionales con manejo cuidadoso, sí. Para exportación marítima o aérea de vidrio plano de alto valor (vidrio templado, laminado o espejos de diseño), recomendamos combinar láminas doble pared con el recubrimiento antihumedad y flejes de poliéster para asegurar el paquete. Consultanos el proyecto específico para una propuesta integral." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/lamina-doble-hero-cdmx.avif", alt: "Láminas corrugado vidrio cerámica CDMX" },
-  { src: "/img/catalogo/lamina-doble-capas-cdmx.avif", alt: "Capas doble corrugado frágiles" },
-  { src: "/img/catalogo/lamina-doble-bodega-cdmx.avif", alt: "Bodega láminas vidrio" },
-  { src: "/img/catalogo/lamina-doble-perfil-cdmx.avif", alt: "Perfil doble pared amortiguante" },
-  { src: "/img/catalogo/separadores-carton-corrugado-cdmx.avif", alt: "Separadores cartón cerámica" },
+ { src: "/img/catalogo/lamina-doble-hero-cdmx.avif", alt: "Láminas corrugado vidrio cerámica CDMX" },
+ { src: "/img/catalogo/lamina-doble-capas-cdmx.avif", alt: "Capas doble corrugado frágiles" },
+ { src: "/img/catalogo/lamina-doble-bodega-cdmx.avif", alt: "Bodega láminas vidrio" },
+ { src: "/img/catalogo/lamina-doble-perfil-cdmx.avif", alt: "Perfil doble pared amortiguante" },
+ { src: "/img/catalogo/separadores-carton-corrugado-cdmx.avif", alt: "Separadores cartón cerámica" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Vidrio y Cerámica"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Láminas Corrugado para Vidrio y Cerámica",sku:"CAD-LA-09",description:"Láminas doble pared amortiguante para vidrio, cerámica y artículos frágiles. Con opción de celdas de separación hexagonal para mayor protección. Desde 50 piezas en CDMX.",image:gallery[0].src,material:"CAD-LA-09",category:"Láminas de Cartón Corrugado",moq:"50 láminas"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Vidrio y Cerámica"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Láminas Corrugado para Vidrio y Cerámica",sku:"CAD-LA-09",description:"Láminas doble pared amortiguante para vidrio, cerámica y artículos frágiles. Con opción de celdas de separación hexagonal para mayor protección. Desde 50 piezas en CDMX.",image:gallery[0].src,material:"CAD-LA-09",category:"Láminas de Cartón Corrugado",moq:"50 láminas"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
-        <li><span class="current">Láminas Corrugado para Vidrio y Cerámica</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+ <li><span class="current">Láminas Corrugado para Vidrio y Cerámica</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadla09-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-LA-09 · Láminas de Cartón Corrugado</span>
-      <h1 id="sku-cadla09-title" class="cat-page-hero__title">Láminas Corrugado para <span>Vidrio</span> y Cerámica CDMX</h1>
-      <p class="cat-page-hero__desc">Láminas doble pared amortiguante para vidrio, cerámica y artículos frágiles. Con opción de celdas de separación hexagonal para mayor protección. Desde 50 piezas en CDMX.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-09</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 láminas</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadla09-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-LA-09 · Láminas de Cartón Corrugado</span>
+ <h1 id="sku-cadla09-title" class="cat-page-hero__title">Láminas Corrugado para <span>Vidrio</span> y Cerámica CDMX</h1>
+ <p class="cat-page-hero__desc">Láminas doble pared amortiguante para vidrio, cerámica y artículos frágiles. Con opción de celdas de separación hexagonal para mayor protección. Desde 50 piezas en CDMX.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-09</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 láminas</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadla09-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-LA-09 · Familia: Láminas de Cartón Corrugado</p>
-            <h2 id="detalle-cadla09-title" class="sku-detail__title">Láminas Corrugado para Vidrio y Cerámica</h2>
-            <p class="sku-detail__desc">El vidrio y la cerámica son materiales frágiles que requieren amortiguación y separación para sobrevivir el transporte. CAD-LA-09 usa doble pared BC con alta capacidad de absorción de impactos, disponible en medidas estándar para la industria del vidrio en CDMX: vidrio flotado, espejos y cerámica decorativa. También ofrecemos separadores en celda hexagonal (honeycomb) como complemento para artículos de alto valor.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Doble pared</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Honeycomb</span><span class="sku-detail__strip-label">Separador op.</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Stock CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-09 Láminas Corrugado para Vidrio y Cerámica`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-09</a>
-              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadla09-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-LA-09 · Familia: Láminas de Cartón Corrugado</p>
+ <h2 id="detalle-cadla09-title" class="sku-detail__title">Láminas Corrugado para Vidrio y Cerámica</h2>
+ <p class="sku-detail__desc">El vidrio y la cerámica son materiales frágiles que requieren amortiguación y separación para sobrevivir el transporte. CAD-LA-09 usa doble pared BC con alta capacidad de absorción de impactos, disponible en medidas estándar para la industria del vidrio en CDMX: vidrio flotado, espejos y cerámica decorativa. También ofrecemos separadores en celda hexagonal (honeycomb) como complemento para artículos de alto valor.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Doble pared</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Honeycomb</span><span class="sku-detail__strip-label">Separador op.</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Stock CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-09 Láminas Corrugado para Vidrio y Cerámica`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-09</a>
+ <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadla09-title">
-      <div class="container">
-        <h2 id="faq-cadla09-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado para Vidrio y Cerámica</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadla09-title">
+ <div class="container">
+ <h2 id="faq-cadla09-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado para Vidrio y Cerámica</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Distribuyes vidrio o cerámica? Cotiza las láminas con amortiguación adecuada para tu carga frágil" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Distribuyes vidrio o cerámica? Cotiza las láminas con amortiguación adecuada para tu carga frágil" />
 </PageLayout>

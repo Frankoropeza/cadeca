@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Mudanza Residencial Reforzada CDMX | 4 tamaños | CAD-AH-08 | CADECA";
+const title  = "Caja Mudanza Residencial Reforzada CDMX | 4 tamaños | CAD-AH-08 | CADECA";
 const description = "Caja de mudanza residencial reforzada en CDMX. 4 tamaños: chica, mediana, grande y extra. Doble corrugado ECT-44, manijas reforzadas. MOQ 20 pzas. Entrega 24 hrs. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-AH-08"],
-  ["Tamaños", "Chica/Mediana/Grande/Extra"],
-  ["Tipo", "Doble corrugado BC"],
-  ["Resistencia", "ECT-44"],
-  ["Manijas", "Troqueladas reforzadas"],
-  ["Cierre", "4 solapas + cinta incluida"],
-  ["Pedido mínimo", "20 piezas (mixto)"],
-  ["Entrega CDMX", "24 hrs en stock"],
-  ["Reciclable", "100% postconsumer"],
+ ["Código SKU", "CAD-AH-08"],
+ ["Tamaños", "Chica/Mediana/Grande/Extra"],
+ ["Tipo", "Doble corrugado BC"],
+ ["Resistencia", "ECT-44"],
+ ["Manijas", "Troqueladas reforzadas"],
+ ["Cierre", "4 solapas + cinta incluida"],
+ ["Pedido mínimo", "20 piezas (mixto)"],
+ ["Entrega CDMX", "24 hrs en stock"],
+ ["Reciclable", "100% postconsumer"],
 ];
 
 const faqs = [
-  { id:"cad-ah-08-f1", question:"¿Qué tamaño es mejor para libros?", answer:"Recomendamos la caja Chica (30×30×30 cm) para libros y archivos pesados. Una caja grande llena de libros puede superar los 30 kg que es el límite recomendado para carga manual segura. Los libros van en cajas chicas y los objetos voluminosos pero livianos van en las grandes." },
-  { id:"cad-ah-08-f2", question:"¿El MOQ de 20 piezas puede ser mixto entre tamaños?", answer:"Sí. Puedes pedir 5 chicas, 5 medianas, 5 grandes y 5 extra grandes en un solo pedido de 20 piezas. El MOQ aplica al pedido total, no por tamaño. Si necesitas más de algún tamaño específico, cada tamaño adicional puede pedirse en lotes de 10." },
-  { id:"cad-ah-08-f3", question:"¿Incluyen cinta adhesiva?", answer:"Las cajas incluyen cinta adhesiva de papel de 2 rollos de 50 metros por pedido de 20 a 50 piezas. Para pedidos mayores, proporcionamos cinta a precio de costo. También ofrecemos kit de mudanza completo: cajas + cinta + marcador permanente + papel periódico para relleno." },
+ { id:"cad-ah-08-f1", question:"¿Qué tamaño es mejor para libros?", answer:"Recomendamos la caja Chica (30×30×30 cm) para libros y archivos pesados. Una caja grande llena de libros puede superar los 30 kg que es el límite recomendado para carga manual segura. Los libros van en cajas chicas y los objetos voluminosos pero livianos van en las grandes." },
+ { id:"cad-ah-08-f2", question:"¿El MOQ de 20 piezas puede ser mixto entre tamaños?", answer:"Sí. Puedes pedir 5 chicas, 5 medianas, 5 grandes y 5 extra grandes en un solo pedido de 20 piezas. El MOQ aplica al pedido total, no por tamaño. Si necesitas más de algún tamaño específico, cada tamaño adicional puede pedirse en lotes de 10." },
+ { id:"cad-ah-08-f3", question:"¿Incluyen cinta adhesiva?", answer:"Las cajas incluyen cinta adhesiva de papel de 2 rollos de 50 metros por pedido de 20 a 50 piezas. Para pedidos mayores, proporcionamos cinta a precio de costo. También ofrecemos kit de mudanza completo: cajas + cinta + marcador permanente + papel periódico para relleno." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-mudanza-corporativa-hero-cdmx.avif", alt: "Caja mudanza residencial reforzada CDMX" },
-  { src: "/img/catalogo/caja-mudanza-corporativa-interior-cdmx.avif", alt: "Interior caja mudanza" },
-  { src: "/img/catalogo/caja-mudanza-corporativa-stack-cdmx.avif", alt: "Apilado cajas mudanza" },
-  { src: "/img/catalogo/caja-mudanza-corporativa-lobby-cdmx.avif", alt: "Cajas mudanza lobby" },
-  { src: "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", alt: "Cajas mudanza resistentes doble pared" },
+ { src: "/img/catalogo/caja-mudanza-corporativa-hero-cdmx.avif", alt: "Caja mudanza residencial reforzada CDMX" },
+ { src: "/img/catalogo/caja-mudanza-corporativa-interior-cdmx.avif", alt: "Interior caja mudanza" },
+ { src: "/img/catalogo/caja-mudanza-corporativa-stack-cdmx.avif", alt: "Apilado cajas mudanza" },
+ { src: "/img/catalogo/caja-mudanza-corporativa-lobby-cdmx.avif", alt: "Cajas mudanza lobby" },
+ { src: "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", alt: "Cajas mudanza resistentes doble pared" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas de Archivo y Almacenaje",href:"/catalogo/cajas-archivo-almacenaje"},{name:"Caja de Mudanza Residencial Reforzada"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja de Mudanza Residencial Reforzada",sku:"CAD-AH-08",description:"Caja de mudanza residencial en doble corrugado ECT-44 con manijas reforzadas. 4 tamaños en stock (chica, mediana, grande, extra grande). Desde 20 piezas en CDMX.",image:gallery[0].src,material:"CAD-AH-08",category:"Cajas de Archivo y Almacenaje",moq:"20 piezas (mixto)"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas de Archivo y Almacenaje",href:"/catalogo/cajas-archivo-almacenaje"},{name:"Caja de Mudanza Residencial Reforzada"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja de Mudanza Residencial Reforzada",sku:"CAD-AH-08",description:"Caja de mudanza residencial en doble corrugado ECT-44 con manijas reforzadas. 4 tamaños en stock (chica, mediana, grande, extra grande). Desde 20 piezas en CDMX.",image:gallery[0].src,material:"CAD-AH-08",category:"Cajas de Archivo y Almacenaje",moq:"20 piezas (mixto)"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-archivo-almacenaje">Cajas de Archivo y Almacenaje</a></li>
-        <li><span class="current">Caja de Mudanza Residencial Reforzada</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-archivo-almacenaje">Cajas de Archivo y Almacenaje</a></li>
+ <li><span class="current">Caja de Mudanza Residencial Reforzada</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadah08-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AH-08 · Cajas de Archivo y Almacenaje</span>
-      <h1 id="sku-cadah08-title" class="cat-page-hero__title">Caja de <span>Mudanza Residencial</span> Reforzada — 4 Tamaños CDMX</h1>
-      <p class="cat-page-hero__desc">Caja de mudanza residencial en doble corrugado ECT-44 con manijas reforzadas. 4 tamaños en stock (chica, mediana, grande, extra grande). Desde 20 piezas en CDMX.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-08</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>20 piezas (mixto)</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadah08-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AH-08 · Cajas de Archivo y Almacenaje</span>
+ <h1 id="sku-cadah08-title" class="cat-page-hero__title">Caja de <span>Mudanza Residencial</span> Reforzada — 4 Tamaños CDMX</h1>
+ <p class="cat-page-hero__desc">Caja de mudanza residencial en doble corrugado ECT-44 con manijas reforzadas. 4 tamaños en stock (chica, mediana, grande, extra grande). Desde 20 piezas en CDMX.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-08</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>20 piezas (mixto)</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadah08-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AH-08 · Familia: Cajas de Archivo y Almacenaje</p>
-            <h2 id="detalle-cadah08-title" class="sku-detail__title">Caja de Mudanza Residencial Reforzada</h2>
-            <p class="sku-detail__desc">Una mudanza residencial bien organizada empieza con la caja correcta por tipo de contenido: chica para libros y vajilla pesada, mediana para ropa y artículos de cocina, grande para ropa de cama y objetos voluminosos, extra grande para ropa de temporada y almohadas. CAD-AH-08 tiene los 4 tamaños en doble corrugado ECT-44 con manijas troqueladas reforzadas que facilitan el cargue y apilado. MOQ de solo 20 piezas para mudanzas pequeñas.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 tamaños</span><span class="sku-detail__strip-label">Stock</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">20 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-08 Caja de Mudanza Residencial Reforzada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-08</a>
-              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadah08-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AH-08 · Familia: Cajas de Archivo y Almacenaje</p>
+ <h2 id="detalle-cadah08-title" class="sku-detail__title">Caja de Mudanza Residencial Reforzada</h2>
+ <p class="sku-detail__desc">Una mudanza residencial bien organizada empieza con la caja correcta por tipo de contenido: chica para libros y vajilla pesada, mediana para ropa y artículos de cocina, grande para ropa de cama y objetos voluminosos, extra grande para ropa de temporada y almohadas. CAD-AH-08 tiene los 4 tamaños en doble corrugado ECT-44 con manijas troqueladas reforzadas que facilitan el cargue y apilado. MOQ de solo 20 piezas para mudanzas pequeñas.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 tamaños</span><span class="sku-detail__strip-label">Stock</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">20 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-08 Caja de Mudanza Residencial Reforzada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-08</a>
+ <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadah08-title">
-      <div class="container">
-        <h2 id="faq-cadah08-title" class="sku-faq__title">Preguntas Frecuentes — Caja de Mudanza Residencial Reforzada</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadah08-title">
+ <div class="container">
+ <h2 id="faq-cadah08-title" class="sku-faq__title">Preguntas Frecuentes — Caja de Mudanza Residencial Reforzada</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Tienes mudanza próxima? Pide tus cajas reforzadas desde 20 piezas con entrega en 24 hrs en CDMX" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Tienes mudanza próxima? Pide tus cajas reforzadas desde 20 piezas con entrega en 24 hrs en CDMX" />
 </PageLayout>

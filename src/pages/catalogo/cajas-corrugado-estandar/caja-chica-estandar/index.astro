@@ -1,131 +1,131 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Corrugado Chica Estándar CDMX | CAD-CS-11 | E-commerce Farmacia | CADECA";
+const title  = "Caja Corrugado Chica Estándar CDMX | CAD-CS-11 | E-commerce Farmacia | CADECA";
 const description = "Caja corrugado chica estándar en CDMX. Alta rotación para e-commerce, farmacia y cosmética. ECT-32 medidas pequeñas, MOQ 50 pzas, entrega 24 hrs. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU",    "CAD-CS-11"],
-  ["Tipo de pared", "Simple corrugado"],
-  ["Flauta",        "B / E (1.5–3mm)"],
-  ["Resistencia",   "ECT-32"],
-  ["Gramaje liner", "115–150 g/m²"],
-  ["Material",      "Kraft test / virgen"],
-  ["Cierre",        "4 solapas autoblocante"],
-  ["Medidas std.",  "10×10×10 · 15×10×10 · 20×15×10 · 25×20×15 cm"],
-  ["Pedido mínimo", "50 piezas"],
-  ["Entrega CDMX",  "24–48 hrs"],
+ ["Código SKU",  "CAD-CS-11"],
+ ["Tipo de pared", "Simple corrugado"],
+ ["Flauta",  "B / E (1.5–3mm)"],
+ ["Resistencia",  "ECT-32"],
+ ["Gramaje liner", "115–150 g/m²"],
+ ["Material",  "Kraft test / virgen"],
+ ["Cierre",  "4 solapas autoblocante"],
+ ["Medidas std.",  "10×10×10 · 15×10×10 · 20×15×10 · 25×20×15 cm"],
+ ["Pedido mínimo", "50 piezas"],
+ ["Entrega CDMX",  "24–48 hrs"],
 ];
 
 const faqs = [
-  {
-    id: "cs11-f1",
-    question: "¿Cuáles son las medidas chicas estándar más vendidas en CDMX?",
-    answer: "Las 4 medidas chicas de mayor rotación en CDMX son: (1) 10×10×10 cm: perfecto para joyería, accesorios, suplementos en cápsulas y artículos de cosmetología. (2) 15×10×10 cm: ideal para velas, perfumes de 100ml, cosméticos individuales y productos de farmacia. (3) 20×15×10 cm: estándar para cosméticos medianos, libros de bolsillo y artículos de ferretería pequeña. (4) 25×20×15 cm: el más versátil para ropa doblada, calzado infantil y productos de salud. Todas disponibles en stock permanente.",
-  },
-  {
-    id: "cs11-f2",
-    question: "¿Qué flauta es mejor para cajas chicas: flauta B o flauta E?",
-    answer: "Depende del uso. Flauta E (1.5mm) es ideal cuando la superficie de impresión es prioritaria: la menor ondulación del médium produce un acabado de impresión casi tan nítido como cartoncillo, lo que la hace perfecta para cosmética y productos de presentación premium. Flauta B (3mm) ofrece mayor protección al impacto para productos frágiles como vidrio, cerámica o electrónica pequeña. Para e-commerce estándar con productos no frágiles, la flauta B en ECT-32 es la opción más equilibrada entre costo y protección.",
-  },
-  {
-    id: "cs11-f3",
-    question: "¿La caja chica es compatible con Mercado Envíos Chica?",
-    answer: "Sí. Nuestra medida 20×15×10 cm es compatible con la categoría Chica de Mercado Envíos (límite 20×20×15 cm), y la medida 15×10×10 cm entra en la categoría Micro de ML. Ambas cumplen con el ECT-32 mínimo recomendado para e-commerce. Al pedir el CAD-CS-11, especifica si es para Mercado Libre para que nuestro asesor confirme la compatibilidad exacta con las tablas de tallas vigentes de ML, que se actualizan periódicamente.",
-  },
+ {
+ id: "cs11-f1",
+ question: "¿Cuáles son las medidas chicas estándar más vendidas en CDMX?",
+ answer: "Las 4 medidas chicas de mayor rotación en CDMX son: (1) 10×10×10 cm: perfecto para joyería, accesorios, suplementos en cápsulas y artículos de cosmetología. (2) 15×10×10 cm: ideal para velas, perfumes de 100ml, cosméticos individuales y productos de farmacia. (3) 20×15×10 cm: estándar para cosméticos medianos, libros de bolsillo y artículos de ferretería pequeña. (4) 25×20×15 cm: el más versátil para ropa doblada, calzado infantil y productos de salud. Todas disponibles en stock permanente.",
+ },
+ {
+ id: "cs11-f2",
+ question: "¿Qué flauta es mejor para cajas chicas: flauta B o flauta E?",
+ answer: "Depende del uso. Flauta E (1.5mm) es ideal cuando la superficie de impresión es prioritaria: la menor ondulación del médium produce un acabado de impresión casi tan nítido como cartoncillo, lo que la hace perfecta para cosmética y productos de presentación premium. Flauta B (3mm) ofrece mayor protección al impacto para productos frágiles como vidrio, cerámica o electrónica pequeña. Para e-commerce estándar con productos no frágiles, la flauta B en ECT-32 es la opción más equilibrada entre costo y protección.",
+ },
+ {
+ id: "cs11-f3",
+ question: "¿La caja chica es compatible con Mercado Envíos Chica?",
+ answer: "Sí. Nuestra medida 20×15×10 cm es compatible con la categoría Chica de Mercado Envíos (límite 20×20×15 cm), y la medida 15×10×10 cm entra en la categoría Micro de ML. Ambas cumplen con el ECT-32 mínimo recomendado para e-commerce. Al pedir el CAD-CS-11, especifica si es para Mercado Libre para que nuestro asesor confirme la compatibilidad exacta con las tablas de tallas vigentes de ML, que se actualizan periódicamente.",
+ },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-chica-estandar-hero-cdmx.avif",    alt: "Caja corrugado chica estándar CDMX — hero" },
-  { src: "/img/catalogo/caja-chica-estandar-stack-cdmx.avif",   alt: "Cajas chicas corrugado apiladas CDMX" },
-  { src: "/img/catalogo/caja-chica-estandar-interior-cdmx.avif",alt: "Interior caja corrugado chica estándar CDMX" },
-  { src: "/img/catalogo/caja-chica-estandar-uso-cdmx.avif",     alt: "Caja chica estándar en uso real e-commerce CDMX" },
-  { src: "/img/catalogo/corrugado-simple-angulo-45-cdmx.avif",  alt: "Caja corrugado chica ángulo 45° CDMX" },
+ { src: "/img/catalogo/caja-chica-estandar-hero-cdmx.avif",  alt: "Caja corrugado chica estándar CDMX — hero" },
+ { src: "/img/catalogo/caja-chica-estandar-stack-cdmx.avif",  alt: "Cajas chicas corrugado apiladas CDMX" },
+ { src: "/img/catalogo/caja-chica-estandar-interior-cdmx.avif",alt: "Interior caja corrugado chica estándar CDMX" },
+ { src: "/img/catalogo/caja-chica-estandar-uso-cdmx.avif",  alt: "Caja chica estándar en uso real e-commerce CDMX" },
+ { src: "/img/catalogo/corrugado-simple-angulo-45-cdmx.avif",  alt: "Caja corrugado chica ángulo 45° CDMX" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Caja Chica Estándar"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja Corrugado Chica Estándar",sku:"CAD-CS-11",description:"Caja corrugado chica estándar ECT-32 para e-commerce y farmacia en CDMX — CADECA",image:gallery[0].src,material:"Kraft test ECT-32 flauta B/E",category:"Cajas Corrugado Estándar",moq:"50"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Caja Chica Estándar"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja Corrugado Chica Estándar",sku:"CAD-CS-11",description:"Caja corrugado chica estándar ECT-32 para e-commerce y farmacia en CDMX — CADECA",image:gallery[0].src,material:"Kraft test ECT-32 flauta B/E",category:"Cajas Corrugado Estándar",moq:"50"}}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
-        <li><span class="current">Caja Chica Estándar</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+ <li><span class="current">Caja Chica Estándar</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cs11-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-CS-11 · Corrugado Estándar</span>
-      <h1 id="sku-cs11-title" class="cat-page-hero__title">Caja Corrugado <span>Chica Estándar</span></h1>
-      <p class="cat-page-hero__desc">
-        Medidas pequeñas de alta rotación para e-commerce, farmacia, cosmética y accesorios. ECT-32 en flautas B y E. 4 medidas en stock permanente en CDMX. MOQ 50 pzas con entrega en 24–48 hrs.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-11</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cs11-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-CS-11 · Corrugado Estándar</span>
+ <h1 id="sku-cs11-title" class="cat-page-hero__title">Caja Corrugado <span>Chica Estándar</span></h1>
+ <p class="cat-page-hero__desc">
+ Medidas pequeñas de alta rotación para e-commerce, farmacia, cosmética y accesorios. ECT-32 en flautas B y E. 4 medidas en stock permanente en CDMX. MOQ 50 pzas con entrega en 24–48 hrs.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-11</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cs11-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-CS-11 · Familia: Corrugado Estándar</p>
-            <h2 id="detalle-cs11-title" class="sku-detail__title">Caja Corrugado Chica Estándar</h2>
-            <p class="sku-detail__desc">
-              El CAD-CS-11 es la referencia de CADECA para cajas de formato pequeño con alta rotación. Disponible en 4 medidas estándar con stock permanente en CDMX para farmacéuticas, cosméticas, tiendas de e-commerce y negocios locales. Flauta B o E según requerimiento de impresión o protección. ECT-32 garantizado. Compatible con tallas Micro y Chica de Mercado Envíos.
-            </p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 medidas</span><span class="sku-detail__strip-label">En stock</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-11 Caja Corrugado Chica Estándar`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-11</a>
-              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cs11-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-CS-11 · Familia: Corrugado Estándar</p>
+ <h2 id="detalle-cs11-title" class="sku-detail__title">Caja Corrugado Chica Estándar</h2>
+ <p class="sku-detail__desc">
+ El CAD-CS-11 es la referencia de CADECA para cajas de formato pequeño con alta rotación. Disponible en 4 medidas estándar con stock permanente en CDMX para farmacéuticas, cosméticas, tiendas de e-commerce y negocios locales. Flauta B o E según requerimiento de impresión o protección. ECT-32 garantizado. Compatible con tallas Micro y Chica de Mercado Envíos.
+ </p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 medidas</span><span class="sku-detail__strip-label">En stock</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-11 Caja Corrugado Chica Estándar`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-11</a>
+ <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cs11-title">
-      <div class="container">
-        <h2 id="faq-cs11-title" class="sku-faq__title">Preguntas Frecuentes — Caja Chica Estándar</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cs11-title">
+ <div class="container">
+ <h2 id="faq-cs11-title" class="sku-faq__title">Preguntas Frecuentes — Caja Chica Estándar</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza Caja Chica Estándar — Stock Permanente CDMX, 50 pzas mín." />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza Caja Chica Estándar — Stock Permanente CDMX, 50 pzas mín." />
 </PageLayout>

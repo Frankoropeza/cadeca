@@ -1,15 +1,15 @@
 ---
-import PageLayout      from "@/layouts/PageLayout.astro";
-import SectionHeader   from "@/components/SectionHeader.astro";
-import ProductCard     from "@/components/ProductCard.astro";
-import IndustryCard    from "@/components/IndustryCard.astro";
-import ProcessStep     from "@/components/ProcessStep.astro";
-import Testimonial     from "@/components/Testimonial.astro";
-import FaqItem         from "@/components/FaqItem.astro";
-import LeadCapture     from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import SectionHeader  from "@/components/SectionHeader.astro";
+import ProductCard  from "@/components/ProductCard.astro";
+import IndustryCard  from "@/components/IndustryCard.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import Testimonial  from "@/components/Testimonial.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 
 // ── SEO ──────────────────────────────────────────────
-const title       = "Cajas de Cartón CDMX y Estado de México | CADECA";
+const title  = "Cajas de Cartón CDMX y Estado de México | CADECA";
 const description = "La mejor empresa de cajas de cartón en CDMX y Estado de México. Corrugado estándar, a medida y personalizadas al mayoreo. Entrega en 24-48 hrs. Cotiza gratis.";
 
 // ── Datos del negocio ─────────────────────────────────
@@ -17,470 +17,470 @@ const WHATSAPP = "5255XXXXXXXX";  // ← cambiar
 
 // ── FAQ Schema ────────────────────────────────────────
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
-      "acceptedAnswer": { "@type": "Answer", "text": "En CADECA somos tu mejor opción para comprar cajas de cartón al mayoreo en la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Cotización en menos de 2 horas." }},
-    { "@type": "Question", "name": "¿Qué tipos de cajas de cartón venden?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Corrugado estándar (simple, doble y triple pared), cajas a la medida, personalizadas con logo, para e-commerce, para alimentos y láminas de cartón corrugado." }},
-    { "@type": "Question", "name": "¿Cuál es el pedido mínimo de cajas de cartón?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para cajas estándar no hay mínimo. Para cajas a la medida desde 50 piezas. Para personalizadas con logo desde 100 piezas." }},
-    { "@type": "Question", "name": "¿Hacen entregas a domicilio en CDMX y Estado de México?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, entregamos en toda la CDMX y Estado de México. Cajas estándar en 24-48 hrs, personalizadas en 3-5 días hábiles." }},
-    { "@type": "Question", "name": "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Desde 50 piezas, entrega en 24 hrs en CDMX." }},
-    { "@type": "Question", "name": "¿Ofrecen cajas de cartón ecológicas o recicladas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Contamos con cajas de material reciclado posconsumo, tintas base agua y cartón certificado FSC." }},
-    { "@type": "Question", "name": "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Llena el formulario o escríbenos por WhatsApp con las medidas (largo × ancho × alto), cantidad y archivo de diseño. Respondemos en menos de 2 horas con precio y prueba de diseño sin costo." }},
-  ],
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ { "@type": "Question", "name": "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
+ "acceptedAnswer": { "@type": "Answer", "text": "En CADECA somos tu mejor opción para comprar cajas de cartón al mayoreo en la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Cotización en menos de 2 horas." }},
+ { "@type": "Question", "name": "¿Qué tipos de cajas de cartón venden?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Corrugado estándar (simple, doble y triple pared), cajas a la medida, personalizadas con logo, para e-commerce, para alimentos y láminas de cartón corrugado." }},
+ { "@type": "Question", "name": "¿Cuál es el pedido mínimo de cajas de cartón?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Para cajas estándar no hay mínimo. Para cajas a la medida desde 50 piezas. Para personalizadas con logo desde 100 piezas." }},
+ { "@type": "Question", "name": "¿Hacen entregas a domicilio en CDMX y Estado de México?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Sí, entregamos en toda la CDMX y Estado de México. Cajas estándar en 24-48 hrs, personalizadas en 3-5 días hábiles." }},
+ { "@type": "Question", "name": "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Sí, medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Desde 50 piezas, entrega en 24 hrs en CDMX." }},
+ { "@type": "Question", "name": "¿Ofrecen cajas de cartón ecológicas o recicladas?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Sí. Contamos con cajas de material reciclado posconsumo, tintas base agua y cartón certificado FSC." }},
+ { "@type": "Question", "name": "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Llena el formulario o escríbenos por WhatsApp con las medidas (largo × ancho × alto), cantidad y archivo de diseño. Respondemos en menos de 2 horas con precio y prueba de diseño sin costo." }},
+ ],
 };
 
 // ── Datos de contenido ────────────────────────────────
 const productos = [
-  {
-    title:   "Cajas Corrugado Estándar",
-    desc:    "La solución de empaque más versátil y económica. Simple, doble y triple pared disponibles. Medidas estándar para todos los sectores.",
-    imgSrc:  "/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
-    imgAlt:  "Cajas de cartón corrugado estándar en CDMX y Estado de México — CADECA",
-    href:    "/productos/cajas-corrugado-estandar",
-    tags: [
-      { label: "Caja corrugado simple",  href: "/productos/cajas-corrugado-estandar" },
-      { label: "Caja doble corrugado",   href: "/catalogo/cajas-corrugado-estandar/doble-corrugado" },
-      { label: "Caja triple corrugado",  href: "/catalogo/cajas-corrugado-estandar/triple-corrugado" },
-      { label: "Cajas para mudanza",     href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza" },
-    ],
-  },
-  {
-    title:   "Cajas a la Medida",
-    desc:    "Fabricamos en cualquier dimensión exacta. Sin costo extra por medidas especiales. Diseño CAD incluido.",
-    imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
-    imgAlt:  "Cajas de cartón a la medida en CDMX y Estado de México — CADECA",
-    href:    "/productos/cajas-a-la-medida",
-    tags: [
-      { label: "Dimensión exacta",   href: "/productos/cajas-a-la-medida" },
-      { label: "Alta resistencia ECT", href: "/productos/cajas-a-la-medida#resistencia" },
-      { label: "Flauta B, C, E y BC",  href: "/productos/cajas-a-la-medida#flautas" },
-    ],
-  },
-  {
-    title:   "Cajas Personalizadas con Logo",
-    desc:    "Eleva la imagen de tu marca con impresión full color. Tintas base agua, acabados mate y brillante. Desde 100 piezas.",
-    imgSrc:  "/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif",
-    imgAlt:  "Cajas de cartón personalizadas con logo impresión full color México — CADECA",
-    href:    "/productos/cajas-personalizadas-logo",
-    tags: [
-      { label: "Impresión 1 a 4 colores", href: "/productos/cajas-personalizadas-logo" },
-      { label: "Full color digital",       href: "/catalogo/cajas-personalizadas-logo/full-color" },
-      { label: "Tintas base agua",         href: "/productos/cajas-personalizadas-logo#ecologicas" },
-    ],
-  },
-  {
-    title:   "Cajas para E-commerce",
-    desc:    "Medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Desde 50 piezas, entrega en 24 hrs.",
-    imgSrc:  "/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
-    imgAlt:  "Cajas de cartón para e-commerce Mercado Libre y Amazon MX en CDMX — CADECA",
-    href:    "/productos/cajas-para-ecommerce",
-    tags: [
-      { label: "Cajas Mercado Libre", href: "/productos/cajas-para-ecommerce" },
-      { label: "Cajas Amazon MX",     href: "/productos/cajas-para-ecommerce#amazon" },
-      { label: "TikTok Shop / Shopify", href: "/productos/cajas-para-ecommerce#tiktok" },
-    ],
-  },
-  {
-    title:   "Cajas para Alimentos",
-    desc:    "Materiales aptos para contacto alimentario. Resistencia a humedad y grasas. Para pizza, dark kitchens, frutas y congelados.",
-    imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
-    imgAlt:  "Cajas de cartón para alimentos pizza y restaurantes en CDMX — CADECA",
-    href:    "/productos/cajas-para-alimentos",
-    tags: [
-      { label: "Cajas para pizza",        href: "/productos/cajas-para-alimentos" },
-      { label: "Dark kitchens",           href: "/productos/cajas-para-alimentos#dark-kitchen" },
-      { label: "Frutas, flores, exportación", href: "/productos/cajas-para-alimentos#frutas" },
-    ],
-  },
-  {
-    title:   "Láminas y Empaques Ecológicos",
-    desc:    "Láminas de cartón corrugado por metro para fabricantes. Cajas con material reciclado y certificación FSC.",
-    imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
-    imgAlt:  "Láminas de cartón corrugado ecológico reciclado FSC en CDMX — CADECA",
-    href:    "/productos/laminas-carton-corrugado",
-    tags: [
-      { label: "Láminas corrugado por m²", href: "/productos/laminas-carton-corrugado" },
-      { label: "Cartón reciclado",          href: "/catalogo/laminas-carton-corrugado/laminas-ecologicas" },
-      { label: "Certificación FSC",         href: "/productos/cajas-ecologicas#fsc" },
-    ],
-  },
+ {
+ title:  "Cajas Corrugado Estándar",
+ desc:  "La solución de empaque más versátil y económica. Simple, doble y triple pared disponibles. Medidas estándar para todos los sectores.",
+ imgSrc:  "/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
+ imgAlt:  "Cajas de cartón corrugado estándar en CDMX y Estado de México — CADECA",
+ href:  "/productos/cajas-corrugado-estandar",
+ tags: [
+ { label: "Caja corrugado simple",  href: "/productos/cajas-corrugado-estandar" },
+ { label: "Caja doble corrugado",  href: "/catalogo/cajas-corrugado-estandar/doble-corrugado" },
+ { label: "Caja triple corrugado",  href: "/catalogo/cajas-corrugado-estandar/triple-corrugado" },
+ { label: "Cajas para mudanza",  href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza" },
+ ],
+ },
+ {
+ title:  "Cajas a la Medida",
+ desc:  "Fabricamos en cualquier dimensión exacta. Sin costo extra por medidas especiales. Diseño CAD incluido.",
+ imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
+ imgAlt:  "Cajas de cartón a la medida en CDMX y Estado de México — CADECA",
+ href:  "/productos/cajas-a-la-medida",
+ tags: [
+ { label: "Dimensión exacta",  href: "/productos/cajas-a-la-medida" },
+ { label: "Alta resistencia ECT", href: "/productos/cajas-a-la-medidaresistencia" },
+ { label: "Flauta B, C, E y BC",  href: "/productos/cajas-a-la-medidaflautas" },
+ ],
+ },
+ {
+ title:  "Cajas Personalizadas con Logo",
+ desc:  "Eleva la imagen de tu marca con impresión full color. Tintas base agua, acabados mate y brillante. Desde 100 piezas.",
+ imgSrc:  "/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif",
+ imgAlt:  "Cajas de cartón personalizadas con logo impresión full color México — CADECA",
+ href:  "/productos/cajas-personalizadas-logo",
+ tags: [
+ { label: "Impresión 1 a 4 colores", href: "/productos/cajas-personalizadas-logo" },
+ { label: "Full color digital",  href: "/catalogo/cajas-personalizadas-logo/full-color" },
+ { label: "Tintas base agua",  href: "/productos/cajas-personalizadas-logoecologicas" },
+ ],
+ },
+ {
+ title:  "Cajas para E-commerce",
+ desc:  "Medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Desde 50 piezas, entrega en 24 hrs.",
+ imgSrc:  "/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
+ imgAlt:  "Cajas de cartón para e-commerce Mercado Libre y Amazon MX en CDMX — CADECA",
+ href:  "/productos/cajas-para-ecommerce",
+ tags: [
+ { label: "Cajas Mercado Libre", href: "/productos/cajas-para-ecommerce" },
+ { label: "Cajas Amazon MX",  href: "/productos/cajas-para-ecommerceamazon" },
+ { label: "TikTok Shop / Shopify", href: "/productos/cajas-para-ecommercetiktok" },
+ ],
+ },
+ {
+ title:  "Cajas para Alimentos",
+ desc:  "Materiales aptos para contacto alimentario. Resistencia a humedad y grasas. Para pizza, dark kitchens, frutas y congelados.",
+ imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
+ imgAlt:  "Cajas de cartón para alimentos pizza y restaurantes en CDMX — CADECA",
+ href:  "/productos/cajas-para-alimentos",
+ tags: [
+ { label: "Cajas para pizza",  href: "/productos/cajas-para-alimentos" },
+ { label: "Dark kitchens",  href: "/productos/cajas-para-alimentosdark-kitchen" },
+ { label: "Frutas, flores, exportación", href: "/productos/cajas-para-alimentosfrutas" },
+ ],
+ },
+ {
+ title:  "Láminas y Empaques Ecológicos",
+ desc:  "Láminas de cartón corrugado por metro para fabricantes. Cajas con material reciclado y certificación FSC.",
+ imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
+ imgAlt:  "Láminas de cartón corrugado ecológico reciclado FSC en CDMX — CADECA",
+ href:  "/productos/laminas-carton-corrugado",
+ tags: [
+ { label: "Láminas corrugado por m²", href: "/productos/laminas-carton-corrugado" },
+ { label: "Cartón reciclado",  href: "/catalogo/laminas-carton-corrugado/laminas-ecologicas" },
+ { label: "Certificación FSC",  href: "/productos/cajas-ecologicasfsc" },
+ ],
+ },
 ];
 
 const industrias = [
-  {
-    img:      "/img/categorias/cajas-para-ecommerce-hero-cdmx.avif",
-    imgAlt:   "Cajas de cartón para e-commerce Mercado Libre Amazon CDMX",
-    tag:      "E-Commerce",
-    title:    "E-commerce y Vendedores Online",
-    desc:     "Mercado Libre, Amazon MX, TikTok Shop, Shopify. Cajas estándar desde 50 piezas. Entrega 24 hrs en CDMX.",
-    href:     "/catalogo/cajas-para-ecommerce/",
-    linkText: "Ver cajas para e-commerce",
-  },
-  {
-    img:      "/img/categorias/cajas-a-la-medida-hero-cdmx.avif",
-    imgAlt:   "Cajas de cartón industriales a la medida para nearshoring CDMX",
-    tag:      "Industria",
-    title:    "Industrial y Nearshoring",
-    desc:     "Naucalpan, Tlalnepantla, Cuautitlán. Alta resistencia, grandes volúmenes y documentación para proveedor calificado.",
-    href:     "/catalogo/cajas-a-la-medida/",
-    linkText: "Ver cajas industriales",
-  },
-  {
-    img:      "/img/categorias/cajas-para-alimentos-hero-cdmx.avif",
-    imgAlt:   "Cajas de cartón para alimentos restaurantes dark kitchens CDMX",
-    tag:      "Alimentos",
-    title:    "Alimentos y Restaurantes",
-    desc:     "Dark kitchens, restaurantes y exportadores. Contacto alimentario, resistentes a humedad, para flores, frutas y congelados.",
-    href:     "/catalogo/cajas-para-alimentos/",
-    linkText: "Ver cajas para alimentos",
-  },
-  {
-    img:      "/img/categorias/cajas-personalizadas-logo-hero-cdmx.avif",
-    imgAlt:   "Cajas de cartón personalizadas con logo para marcas y retail CDMX",
-    tag:      "Retail & Marcas",
-    title:    "Retail, Marcas y Startups",
-    desc:     "Packaging como marketing. Cajas personalizadas con logo para marcas DTC y startups. Desde 100 piezas con prueba de diseño.",
-    href:     "/catalogo/cajas-personalizadas-logo/",
-    linkText: "Ver cajas personalizadas",
-  },
+ {
+ img:  "/img/categorias/cajas-para-ecommerce-hero-cdmx.avif",
+ imgAlt:  "Cajas de cartón para e-commerce Mercado Libre Amazon CDMX",
+ tag:  "E-Commerce",
+ title:  "E-commerce y Vendedores Online",
+ desc:  "Mercado Libre, Amazon MX, TikTok Shop, Shopify. Cajas estándar desde 50 piezas. Entrega 24 hrs en CDMX.",
+ href:  "/catalogo/cajas-para-ecommerce/",
+ linkText: "Ver cajas para e-commerce",
+ },
+ {
+ img:  "/img/categorias/cajas-a-la-medida-hero-cdmx.avif",
+ imgAlt:  "Cajas de cartón industriales a la medida para nearshoring CDMX",
+ tag:  "Industria",
+ title:  "Industrial y Nearshoring",
+ desc:  "Naucalpan, Tlalnepantla, Cuautitlán. Alta resistencia, grandes volúmenes y documentación para proveedor calificado.",
+ href:  "/catalogo/cajas-a-la-medida/",
+ linkText: "Ver cajas industriales",
+ },
+ {
+ img:  "/img/categorias/cajas-para-alimentos-hero-cdmx.avif",
+ imgAlt:  "Cajas de cartón para alimentos restaurantes dark kitchens CDMX",
+ tag:  "Alimentos",
+ title:  "Alimentos y Restaurantes",
+ desc:  "Dark kitchens, restaurantes y exportadores. Contacto alimentario, resistentes a humedad, para flores, frutas y congelados.",
+ href:  "/catalogo/cajas-para-alimentos/",
+ linkText: "Ver cajas para alimentos",
+ },
+ {
+ img:  "/img/categorias/cajas-personalizadas-logo-hero-cdmx.avif",
+ imgAlt:  "Cajas de cartón personalizadas con logo para marcas y retail CDMX",
+ tag:  "Retail & Marcas",
+ title:  "Retail, Marcas y Startups",
+ desc:  "Packaging como marketing. Cajas personalizadas con logo para marcas DTC y startups. Desde 100 piezas con prueba de diseño.",
+ href:  "/catalogo/cajas-personalizadas-logo/",
+ linkText: "Ver cajas personalizadas",
+ },
 ];
 
 const pasos = [
-  { num: 1, title: "Cotiza en Minutos",  desc: "Usa el formulario o escríbenos por WhatsApp. Respondemos en menos de 2 horas con precio y tiempo de entrega." },
-  { num: 2, title: "Aprueba tu Diseño", desc: "Para personalizadas te enviamos prueba de diseño digital sin costo. Para estándar confirmamos medidas y cantidad." },
-  { num: 3, title: "Producción Rápida", desc: "Estándar: 24-48 hrs. Personalizadas: 3-5 días hábiles. Producción propia sin intermediarios." },
-  { num: 4, title: "Entrega a tu Puerta", desc: "Llevamos tu pedido directo a tu negocio, bodega o domicilio en CDMX y Estado de México. Factura incluida." },
+ { num: 1, title: "Cotiza en Minutos",  desc: "Usa el formulario o escríbenos por WhatsApp. Respondemos en menos de 2 horas con precio y tiempo de entrega." },
+ { num: 2, title: "Aprueba tu Diseño", desc: "Para personalizadas te enviamos prueba de diseño digital sin costo. Para estándar confirmamos medidas y cantidad." },
+ { num: 3, title: "Producción Rápida", desc: "Estándar: 24-48 hrs. Personalizadas: 3-5 días hábiles. Producción propia sin intermediarios." },
+ { num: 4, title: "Entrega a tu Puerta", desc: "Llevamos tu pedido directo a tu negocio, bodega o domicilio en CDMX y Estado de México. Factura incluida." },
 ];
 
 const testimonios = [
-  {
-    initials: "MR",
-    name:     "Miguel R.",
-    role:     "Vendedor en Mercado Libre — Iztapalapa, CDMX",
-    text:     "Necesitaba cajas para mis envíos de Mercado Libre en medidas específicas y con entrega rápida. CADECA me respondió en 1 hora, tuve mis cajas al día siguiente a las 10 am. Ya no busco otro proveedor.",
-  },
-  {
-    initials: "LG",
-    name:     "Ing. Laura G.",
-    role:     "Gerente de Compras — Planta Manufacturera, Tlalnepantla",
-    text:     "Somos una planta manufacturera en Tlalnepantla. Buscábamos un proveedor local con cajas de triple corrugado de alta resistencia. CADECA cumplió con especificaciones técnicas, tiempos y precios de mayoreo. Excelente aliado.",
-  },
-  {
-    initials: "AC",
-    name:     "Andrea C.",
-    role:     "Fundadora — Startup DTC, Coyoacán, CDMX",
-    text:     "Lanzamos nuestra marca de skincare y queríamos cajas personalizadas con nuestro logo. El proceso con CADECA fue sencillo, rápido y el resultado superó nuestras expectativas. Llegaron en 4 días con la prueba aprobada.",
-  },
+ {
+ initials: "MR",
+ name:  "Miguel R.",
+ role:  "Vendedor en Mercado Libre — Iztapalapa, CDMX",
+ text:  "Necesitaba cajas para mis envíos de Mercado Libre en medidas específicas y con entrega rápida. CADECA me respondió en 1 hora, tuve mis cajas al día siguiente a las 10 am. Ya no busco otro proveedor.",
+ },
+ {
+ initials: "LG",
+ name:  "Ing. Laura G.",
+ role:  "Gerente de Compras — Planta Manufacturera, Tlalnepantla",
+ text:  "Somos una planta manufacturera en Tlalnepantla. Buscábamos un proveedor local con cajas de triple corrugado de alta resistencia. CADECA cumplió con especificaciones técnicas, tiempos y precios de mayoreo. Excelente aliado.",
+ },
+ {
+ initials: "AC",
+ name:  "Andrea C.",
+ role:  "Fundadora — Startup DTC, Coyoacán, CDMX",
+ text:  "Lanzamos nuestra marca de skincare y queríamos cajas personalizadas con nuestro logo. El proceso con CADECA fue sencillo, rápido y el resultado superó nuestras expectativas. Llegaron en 4 días con la prueba aprobada.",
+ },
 ];
 
 const faqs = [
-  {
-    id:       "1",
-    question: "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
-    answer:   "En CADECA somos tu mejor opción para comprar cajas de cartón al mayoreo en la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Contáctanos por WhatsApp para una cotización en menos de 2 horas con precio, tiempo de entrega y opciones de pago.",
-  },
-  {
-    id:       "2",
-    question: "¿Qué tipos de cajas de cartón venden?",
-    answer:   "Manejamos 6 categorías: (1) Corrugado estándar en simple, doble y triple pared; (2) Cajas a la medida en cualquier dimensión; (3) Personalizadas con logo e impresión full color; (4) Para e-commerce compatibles con Mercado Envíos, Amazon y paqueterías; (5) Para alimentos resistentes a humedad y grasas; y (6) Láminas de cartón corrugado y cajas ecológicas FSC.",
-  },
-  {
-    id:       "3",
-    question: "¿Cuál es el pedido mínimo de cajas de cartón?",
-    answer:   "Para cajas estándar no hay mínimo — puedes pedir desde 1 pieza. Para cajas a la medida el mínimo es de 50 piezas. Para personalizadas con logo el mínimo es de 100 piezas. Te asesoramos según el volumen y presupuesto de tu negocio.",
-  },
-  {
-    id:       "4",
-    question: "¿Hacen entregas a domicilio en CDMX y Estado de México?",
-    answer:   "Sí, entregamos en toda la Ciudad de México y Estado de México. Cajas estándar en 24 a 48 horas, personalizadas o a la medida en 3 a 5 días hábiles. Tenemos rutas establecidas para Naucalpan, Tlalnepantla, Ecatepec, Toluca y más.",
-  },
-  {
-    id:       "5",
-    question: "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
-    answer:   "Sí. Tenemos cajas estándar en todas las medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Pedidos desde 50 piezas, entrega en 24 hrs en CDMX. Somos el partner preferido de los vendedores online del área metropolitana.",
-  },
-  {
-    id:       "6",
-    question: "¿Ofrecen cajas de cartón ecológicas o recicladas?",
-    answer:   "Sí. Contamos con cajas fabricadas con material reciclado posconsumo, impresión con tintas base agua y cartón certificado FSC que garantiza procedencia sostenible. Ideales para marcas con compromiso ambiental.",
-  },
-  {
-    id:       "7",
-    question: "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
-    answer:   "Es muy sencillo: llena el formulario de cotización o escríbenos por WhatsApp indicando las medidas (largo × ancho × alto en cm), la cantidad aproximada y si tienes archivo de diseño (PDF, AI o PNG). Te enviamos propuesta en menos de 2 horas con precio y prueba de diseño digital sin costo.",
-  },
+ {
+ id:  "1",
+ question: "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
+ answer:  "En CADECA somos tu mejor opción para comprar cajas de cartón al mayoreo en la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Contáctanos por WhatsApp para una cotización en menos de 2 horas con precio, tiempo de entrega y opciones de pago.",
+ },
+ {
+ id:  "2",
+ question: "¿Qué tipos de cajas de cartón venden?",
+ answer:  "Manejamos 6 categorías: (1) Corrugado estándar en simple, doble y triple pared; (2) Cajas a la medida en cualquier dimensión; (3) Personalizadas con logo e impresión full color; (4) Para e-commerce compatibles con Mercado Envíos, Amazon y paqueterías; (5) Para alimentos resistentes a humedad y grasas; y (6) Láminas de cartón corrugado y cajas ecológicas FSC.",
+ },
+ {
+ id:  "3",
+ question: "¿Cuál es el pedido mínimo de cajas de cartón?",
+ answer:  "Para cajas estándar no hay mínimo — puedes pedir desde 1 pieza. Para cajas a la medida el mínimo es de 50 piezas. Para personalizadas con logo el mínimo es de 100 piezas. Te asesoramos según el volumen y presupuesto de tu negocio.",
+ },
+ {
+ id:  "4",
+ question: "¿Hacen entregas a domicilio en CDMX y Estado de México?",
+ answer:  "Sí, entregamos en toda la Ciudad de México y Estado de México. Cajas estándar en 24 a 48 horas, personalizadas o a la medida en 3 a 5 días hábiles. Tenemos rutas establecidas para Naucalpan, Tlalnepantla, Ecatepec, Toluca y más.",
+ },
+ {
+ id:  "5",
+ question: "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
+ answer:  "Sí. Tenemos cajas estándar en todas las medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Pedidos desde 50 piezas, entrega en 24 hrs en CDMX. Somos el partner preferido de los vendedores online del área metropolitana.",
+ },
+ {
+ id:  "6",
+ question: "¿Ofrecen cajas de cartón ecológicas o recicladas?",
+ answer:  "Sí. Contamos con cajas fabricadas con material reciclado posconsumo, impresión con tintas base agua y cartón certificado FSC que garantiza procedencia sostenible. Ideales para marcas con compromiso ambiental.",
+ },
+ {
+ id:  "7",
+ question: "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
+ answer:  "Es muy sencillo: llena el formulario de cotización o escríbenos por WhatsApp indicando las medidas (largo × ancho × alto en cm), la cantidad aproximada y si tienes archivo de diseño (PDF, AI o PNG). Te enviamos propuesta en menos de 2 horas con precio y prueba de diseño digital sin costo.",
+ },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="home"
-  faqItems={faqs.map(f => ({question: f.question, answer: f.answer}))}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="home"
+ faqItems={faqs.map(f => ({question: f.question, answer: f.answer}))}
 >
 
-  <!-- ══════════════════════════════════════
-       HERO
-  ══════════════════════════════════════ -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container">
-      <div class="hero__inner">
+ <!-- ══════════════════════════════════════
+ HERO
+ ══════════════════════════════════════ -->
+ <section class="hero" aria-labelledby="hero-title">
+ <div class="container">
+ <div class="hero__inner">
 
-        <div class="hero__left">
-          <p class="hero__badge">La Mejor Empresa de Cajas de Cartón en México</p>
-          <h1 id="hero-title" class="hero__title">
-            Cajas de Cartón en<br><span>CDMX y Estado de México</span>
-          </h1>
-          <p class="hero__intro">
-            Corrugado estándar, a la medida y personalizadas con logo. Venta al mayoreo y menudeo con entrega a domicilio en 24–48 horas. Asesoría gratuita y cotización inmediata.
-          </p>
-          <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary">Solicitar Cotización</a>
-            <a href="#productos" class="btn btn--outline">Ver Catálogo</a>
-          </div></div>
-        </div>
+ <div class="hero__left">
+ <p class="hero__badge">La Mejor Empresa de Cajas de Cartón en México</p>
+ <h1 id="hero-title" class="hero__title">
+ Cajas de Cartón en<br><span>CDMX y Estado de México</span>
+ </h1>
+ <p class="hero__intro">
+ Corrugado estándar, a la medida y personalizadas con logo. Venta al mayoreo y menudeo con entrega a domicilio en 24–48 horas. Asesoría gratuita y cotización inmediata.
+ </p>
+ <div class="hero__ctas">
+ <a href="/cotizar" class="btn btn--primary">Solicitar Cotización</a>
+ <a href="productos" class="btn btn--outline">Ver Catálogo</a>
+ </div></div>
+ </div>
 
-        <div class="hero__right">
-          <p><strong>CADECA</strong> es la empresa de cajas de cartón corrugado con mayor presencia en la Ciudad de México y Estado de México. Suministramos empaques para comercio electrónico, manufactura, alimentos, retail y proyectos de nearshoring.</p>
-          <p>Nuestro catálogo abarca cajas corrugadas de simple, doble y triple pared, cajas a la medida, packaging personalizado con impresión full color y líneas especializadas para vendedores de Mercado Libre, Amazon MX y TikTok Shop.</p>
-          <p>Operamos con inventario permanente en CDMX y enviamos a todo el área metropolitana, Estado de México, Toluca y puntos estratégicos del país. Respuesta de cotización en <strong>menos de 2 horas</strong>.</p>
-        </div>
+ <div class="hero__right">
+ <p><strong>CADECA</strong> es la empresa de cajas de cartón corrugado con mayor presencia en la Ciudad de México y Estado de México. Suministramos empaques para comercio electrónico, manufactura, alimentos, retail y proyectos de nearshoring.</p>
+ <p>Nuestro catálogo abarca cajas corrugadas de simple, doble y triple pared, cajas a la medida, packaging personalizado con impresión full color y líneas especializadas para vendedores de Mercado Libre, Amazon MX y TikTok Shop.</p>
+ <p>Operamos con inventario permanente en CDMX y enviamos a todo el área metropolitana, Estado de México, Toluca y puntos estratégicos del país. Respuesta de cotización en <strong>menos de 2 horas</strong>.</p>
+ </div>
 
-      </div>
-    </div>
-  </section>
+ </div>
+ </div>
+ </section>
 
-  <!-- CTA Band -->
-  <div class="cta-band">
-    <div class="container">
-      <div>
-        <p class="cta-band__text">Explora nuestro catálogo completo de cajas de cartón</p>
-        <p class="cta-band__sub">Corrugado estándar, a medida, personalizadas y ecológicas con soporte técnico.</p>
-      </div>
-      <a href="/productos" class="btn btn--white">
-        Ver Catálogo
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
+ <!-- CTA Band -->
+ <div class="cta-band">
+ <div class="container">
+ <div>
+ <p class="cta-band__text">Explora nuestro catálogo completo de cajas de cartón</p>
+ <p class="cta-band__sub">Corrugado estándar, a medida, personalizadas y ecológicas con soporte técnico.</p>
+ </div>
+ <a href="/productos" class="btn btn--white">
+ Ver Catálogo
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+ </a>
+ </div>
+ </div>
 
-  <!-- ══════════════════════════════════════
-       MAIN
-  ══════════════════════════════════════ -->
-  <main id="contenido-principal" role="main">
+ <!-- ══════════════════════════════════════
+ MAIN
+ ══════════════════════════════════════ -->
+ <main id="contenido-principal" role="main">
 
-    <!-- Productos -->
-    <section class="products" id="productos" aria-labelledby="productos-title">
-      <div class="container">
-        <SectionHeader
-          id="productos-title"
-          twoCol
-          title="Catálogo de Cajas de Cartón: Corrugado, A Medida, Personalizadas y Más"
-          subtitle="Empaques certificados FSC y con cartón reciclado posconsumo. Selecciona una categoría para conocer especificaciones y cotizar."
-          link={{ text: "Ver catálogo completo", href: "/productos" }}
-        >
-          <p>Nuestro catálogo integra las soluciones de empaque más completas del mercado metropolitano: cajas corrugadas de alta resistencia para industria y nearshoring, packaging ligero para e-commerce, cajas personalizadas con logo y líneas especiales para alimentos y refrigerados.</p>
-          <p>Cada producto cuenta con especificaciones técnicas detalladas: resistencia ECT, gramaje del papel, tipo de flauta y opciones de acabado. Trabajamos con pymes, plantas industriales e instaladores que requieren documentación completa.</p>
-        </SectionHeader>
+ <!-- Productos -->
+ <section class="products" id="productos" aria-labelledby="productos-title">
+ <div class="container">
+ <SectionHeader
+ id="productos-title"
+ twoCol
+ title="Catálogo de Cajas de Cartón: Corrugado, A Medida, Personalizadas y Más"
+ subtitle="Empaques certificados FSC y con cartón reciclado posconsumo. Selecciona una categoría para conocer especificaciones y cotizar."
+ link={{ text: "Ver catálogo completo", href: "/productos" }}
+ >
+ <p>Nuestro catálogo integra las soluciones de empaque más completas del mercado metropolitano: cajas corrugadas de alta resistencia para industria y nearshoring, packaging ligero para e-commerce, cajas personalizadas con logo y líneas especiales para alimentos y refrigerados.</p>
+ <p>Cada producto cuenta con especificaciones técnicas detalladas: resistencia ECT, gramaje del papel, tipo de flauta y opciones de acabado. Trabajamos con pymes, plantas industriales e instaladores que requieren documentación completa.</p>
+ </SectionHeader>
 
-        <div class="products__grid">
-          {productos.map(p => <ProductCard {...p} />)}
-        </div>
-      </div>
-    </section>
+ <div class="products__grid">
+ {productos.map(p => <ProductCard {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- Industrias -->
-    <section class="industries" aria-labelledby="industrias-title">
-      <div class="container">
-        <SectionHeader
-          id="industrias-title"
-          twoCol
-          title="Soluciones de Empaque por Industria en CDMX y Estado de México"
-          subtitle="Nichos especializados con alta demanda y poca competencia digital. El proveedor #1 en cada sector."
-        >
-          <p>En CADECA no solo vendemos cajas, diseñamos soluciones adaptadas a las necesidades específicas de cada industria. Conocemos los requerimientos técnicos, normativos y logísticos para darte exactamente lo que tu negocio necesita.</p>
-          <p>Atendemos desde el emprendedor que vende en Mercado Libre hasta plantas manufactureras con requerimientos de nearshoring y corporativos con auditorías de proveedor.</p>
-        </SectionHeader>
+ <!-- Industrias -->
+ <section class="industries" aria-labelledby="industrias-title">
+ <div class="container">
+ <SectionHeader
+ id="industrias-title"
+ twoCol
+ title="Soluciones de Empaque por Industria en CDMX y Estado de México"
+ subtitle="Nichos especializados con alta demanda y poca competencia digital. El proveedor 1 en cada sector."
+ >
+ <p>En CADECA no solo vendemos cajas, diseñamos soluciones adaptadas a las necesidades específicas de cada industria. Conocemos los requerimientos técnicos, normativos y logísticos para darte exactamente lo que tu negocio necesita.</p>
+ <p>Atendemos desde el emprendedor que vende en Mercado Libre hasta plantas manufactureras con requerimientos de nearshoring y corporativos con auditorías de proveedor.</p>
+ </SectionHeader>
 
-        <div class="industries__grid">
-          {industrias.map(i => <IndustryCard {...i} />)}
-        </div>
-      </div>
-    </section>
+ <div class="industries__grid">
+ {industrias.map(i => <IndustryCard {...i} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- Proceso -->
-    <section class="process" aria-labelledby="proceso-title">
-      <div class="container">
-        <SectionHeader
-          id="proceso-title"
-          title="Cómo Funciona: Tu Caja Lista en 4 Pasos"
-          subtitle="Proceso simple, rápido y sin complicaciones"
-        />
-        <div class="process__grid">
-          {pasos.map(p => <ProcessStep {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- Proceso -->
+ <section class="process" aria-labelledby="proceso-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-title"
+ title="Cómo Funciona: Tu Caja Lista en 4 Pasos"
+ subtitle="Proceso simple, rápido y sin complicaciones"
+ />
+ <div class="process__grid">
+ {pasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- Trust + Testimonios -->
-    <section class="trust" aria-labelledby="confianza-title">
-      <div class="container">
+ <!-- Trust + Testimonios -->
+ <section class="trust" aria-labelledby="confianza-title">
+ <div class="container">
 
-        <SectionHeader
-          id="confianza-title"
-          twoCol
-          title="Por Qué Elegir CADECA como tu Proveedor de Cajas de Cartón"
-          subtitle="Fabricante local con cobertura metropolitana, asesoría técnica y disponibilidad inmediata"
-        >
-          <p>Elegir un proveedor de cajas de cartón impacta directamente en tus costos operativos, la imagen de tu marca y la seguridad de tus productos en tránsito. En CADECA combinamos producción propia —sin intermediarios— con conocimiento profundo del mercado metropolitano.</p>
-          <p>Nuestro inventario permanente garantiza abastecimiento sin demoras, mientras que el equipo técnico asesora en la selección del tipo de corrugado, resistencia y acabado óptimo para cada producto.</p>
-        </SectionHeader>
+ <SectionHeader
+ id="confianza-title"
+ twoCol
+ title="Por Qué Elegir CADECA como tu Proveedor de Cajas de Cartón"
+ subtitle="Fabricante local con cobertura metropolitana, asesoría técnica y disponibilidad inmediata"
+ >
+ <p>Elegir un proveedor de cajas de cartón impacta directamente en tus costos operativos, la imagen de tu marca y la seguridad de tus productos en tránsito. En CADECA combinamos producción propia —sin intermediarios— con conocimiento profundo del mercado metropolitano.</p>
+ <p>Nuestro inventario permanente garantiza abastecimiento sin demoras, mientras que el equipo técnico asesora en la selección del tipo de corrugado, resistencia y acabado óptimo para cada producto.</p>
+ </SectionHeader>
 
-        <div class="trust__grid">
-          <div class="trust__item"><h3 class="trust__item-title">Producción Propia</h3><p class="trust__item-desc">Sin intermediarios. Directo de fábrica. Mejor precio, mayor control de calidad y tiempos de producción más rápidos.</p></div>
-          <div class="trust__item"><h3 class="trust__item-title">Entrega en 24 hrs CDMX</h3><p class="trust__item-desc">Inventario permanente de cajas estándar. Para pedidos urgentes tenemos respuesta inmediata y entrega el mismo día en zonas clave.</p></div>
-          <div class="trust__item"><h3 class="trust__item-title">Sin Mínimo en Estándar</h3><p class="trust__item-desc">Atendemos desde 1 pieza en cajas estándar. Para personalizadas desde 100 piezas. Ajustamos la cantidad a tu ritmo de venta.</p></div>
-          <div class="trust__item"><h3 class="trust__item-title">Cartón Certificado FSC</h3><p class="trust__item-desc">Materiales con trazabilidad y certificación de cadena de custodia. Cartón reciclado posconsumo disponible para marcas sostenibles.</p></div>
-          <div class="trust__item"><h3 class="trust__item-title">Asesoría Técnica Real</h3><p class="trust__item-desc">Te ayudamos a elegir el tipo de corrugado, flauta y resistencia correcta según el peso, condiciones de almacén y destino de envío.</p></div>
-          <div class="trust__item"><h3 class="trust__item-title">Cobertura Metropolitana</h3><p class="trust__item-desc">CDMX completa y Estado de México: Naucalpan, Tlalnepantla, Ecatepec, Toluca, Lerma, Cuautitlán y más.</p></div>
-        </div>
+ <div class="trust__grid">
+ <div class="trust__item"><h3 class="trust__item-title">Producción Propia</h3><p class="trust__item-desc">Sin intermediarios. Directo de fábrica. Mejor precio, mayor control de calidad y tiempos de producción más rápidos.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Entrega en 24 hrs CDMX</h3><p class="trust__item-desc">Inventario permanente de cajas estándar. Para pedidos urgentes tenemos respuesta inmediata y entrega el mismo día en zonas clave.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Sin Mínimo en Estándar</h3><p class="trust__item-desc">Atendemos desde 1 pieza en cajas estándar. Para personalizadas desde 100 piezas. Ajustamos la cantidad a tu ritmo de venta.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Cartón Certificado FSC</h3><p class="trust__item-desc">Materiales con trazabilidad y certificación de cadena de custodia. Cartón reciclado posconsumo disponible para marcas sostenibles.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Asesoría Técnica Real</h3><p class="trust__item-desc">Te ayudamos a elegir el tipo de corrugado, flauta y resistencia correcta según el peso, condiciones de almacén y destino de envío.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Cobertura Metropolitana</h3><p class="trust__item-desc">CDMX completa y Estado de México: Naucalpan, Tlalnepantla, Ecatepec, Toluca, Lerma, Cuautitlán y más.</p></div>
+ </div>
 
-        <div class="trust__testimonials-header">
-          <h3 class="trust__testimonials-title">Lo que dicen nuestros clientes</h3>
-          <p class="trust__testimonials-subtitle">Empresas de toda el área metropolitana confían en CADECA</p>
-        </div>
-        <div class="trust__testimonials">
-          {testimonios.map(t => <Testimonial {...t} />)}
-        </div>
+ <div class="trust__testimonials-header">
+ <h3 class="trust__testimonials-title">Lo que dicen nuestros clientes</h3>
+ <p class="trust__testimonials-subtitle">Empresas de toda el área metropolitana confían en CADECA</p>
+ </div>
+ <div class="trust__testimonials">
+ {testimonios.map(t => <Testimonial {...t} />)}
+ </div>
 
-      </div>
-    </section>
+ </div>
+ </section>
 
-    <!-- SEO Content -->
-    <section class="seo-content" aria-labelledby="seo-title">
-      <div class="container">
-        <h2 id="seo-title" class="seo-content__title">
-          Venta de Cajas de Cartón en CDMX y Estado de México: Calidad, Variedad y Entrega Rápida
-        </h2>
-        <p class="seo-content__text">
-          La correcta selección de <strong>cajas de cartón corrugado</strong> es una decisión crítica que impacta en costos de empaque, la protección del producto en tránsito y la percepción de tu marca. En CDMX y Estado de México, la demanda crece impulsada por el boom del e-commerce —Mercado Libre, Amazon MX y TikTok Shop—, la expansión industrial del nearshoring y la exigencia de empaques sostenibles. CADECA atiende todos estos frentes con un catálogo integral de <a href="/productos/cajas-corrugado-estandar">cajas corrugadas estándar</a>, <a href="/productos/cajas-a-la-medida">cajas a la medida</a> y <a href="/productos/cajas-personalizadas-logo">cajas personalizadas con logo</a>.
-        </p>
-        <p class="seo-content__text">
-          Como <strong>fabricante de cajas de cartón en CDMX</strong>, ofrecemos ventajas que los distribuidores no pueden igualar: producción directa sin intermediarios, control total de calidad, tiempos de entrega garantizados y precios de mayoreo accesibles desde pedidos pequeños. Nuestras <strong>cajas corrugadas</strong> están fabricadas con cartón certificado FSC en simple, doble y triple pared —flautas B, C, E y BC—, con resistencia ECT adaptada al peso de cada producto. Para vendedores de Mercado Libre y Amazon MX, mantenemos stock permanente con <strong>entrega en 24 horas en CDMX</strong>.
-        </p>
-        <p class="seo-content__text">
-          Cubrimos toda la zona metropolitana: CDMX en todas sus alcaldías, y Estado de México en los municipios clave: Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli, Toluca y Lerma. Atendemos desde el emprendedor que vende desde casa hasta plantas manufactureras con nearshoring. Cada pedido incluye asesoría técnica, factura electrónica y respaldo de un proveedor local que conoce el mercado metropolitano. <a href="/cotizar">Solicita tu cotización sin compromiso</a> o escríbenos por <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener">WhatsApp</a>.
-        </p>
-      </div>
-    </section>
+ <!-- SEO Content -->
+ <section class="seo-content" aria-labelledby="seo-title">
+ <div class="container">
+ <h2 id="seo-title" class="seo-content__title">
+ Venta de Cajas de Cartón en CDMX y Estado de México: Calidad, Variedad y Entrega Rápida
+ </h2>
+ <p class="seo-content__text">
+ La correcta selección de <strong>cajas de cartón corrugado</strong> es una decisión crítica que impacta en costos de empaque, la protección del producto en tránsito y la percepción de tu marca. En CDMX y Estado de México, la demanda crece impulsada por el boom del e-commerce —Mercado Libre, Amazon MX y TikTok Shop—, la expansión industrial del nearshoring y la exigencia de empaques sostenibles. CADECA atiende todos estos frentes con un catálogo integral de <a href="/productos/cajas-corrugado-estandar">cajas corrugadas estándar</a>, <a href="/productos/cajas-a-la-medida">cajas a la medida</a> y <a href="/productos/cajas-personalizadas-logo">cajas personalizadas con logo</a>.
+ </p>
+ <p class="seo-content__text">
+ Como <strong>fabricante de cajas de cartón en CDMX</strong>, ofrecemos ventajas que los distribuidores no pueden igualar: producción directa sin intermediarios, control total de calidad, tiempos de entrega garantizados y precios de mayoreo accesibles desde pedidos pequeños. Nuestras <strong>cajas corrugadas</strong> están fabricadas con cartón certificado FSC en simple, doble y triple pared —flautas B, C, E y BC—, con resistencia ECT adaptada al peso de cada producto. Para vendedores de Mercado Libre y Amazon MX, mantenemos stock permanente con <strong>entrega en 24 horas en CDMX</strong>.
+ </p>
+ <p class="seo-content__text">
+ Cubrimos toda la zona metropolitana: CDMX en todas sus alcaldías, y Estado de México en los municipios clave: Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli, Toluca y Lerma. Atendemos desde el emprendedor que vende desde casa hasta plantas manufactureras con nearshoring. Cada pedido incluye asesoría técnica, factura electrónica y respaldo de un proveedor local que conoce el mercado metropolitano. <a href="/cotizar">Solicita tu cotización sin compromiso</a> o escríbenos por <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener">WhatsApp</a>.
+ </p>
+ </div>
+ </section>
 
-    <!-- FAQ -->
-    <section class="faq" id="faq" aria-labelledby="faq-title">
-      <div class="container">
-        <SectionHeader
-          id="faq-title"
-          twoCol
-          title="Preguntas Frecuentes sobre Cajas de Cartón en CDMX"
-          subtitle="Resolvemos las dudas más comunes sobre tipos de cajas, pedidos mínimos, entrega y personalización"
-        >
-          <p>Entendemos que elegir el empaque correcto implica decisiones técnicas importantes: resistencia, medidas, tipo de corrugado y logística. Aquí respondemos las consultas más frecuentes de nuestros clientes.</p>
-          <p>Si tu pregunta no aparece aquí, nuestro equipo está disponible por WhatsApp, teléfono y correo para resolver cualquier duda en minutos.</p>
-        </SectionHeader>
+ <!-- FAQ -->
+ <section class="faq" id="faq" aria-labelledby="faq-title">
+ <div class="container">
+ <SectionHeader
+ id="faq-title"
+ twoCol
+ title="Preguntas Frecuentes sobre Cajas de Cartón en CDMX"
+ subtitle="Resolvemos las dudas más comunes sobre tipos de cajas, pedidos mínimos, entrega y personalización"
+ >
+ <p>Entendemos que elegir el empaque correcto implica decisiones técnicas importantes: resistencia, medidas, tipo de corrugado y logística. Aquí respondemos las consultas más frecuentes de nuestros clientes.</p>
+ <p>Si tu pregunta no aparece aquí, nuestro equipo está disponible por WhatsApp, teléfono y correo para resolver cualquier duda en minutos.</p>
+ </SectionHeader>
 
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <!-- Lead Capture -->
+ <!-- Lead Capture -->
 
-  <!-- ══════════════════════════════════════
-       CATÁLOGO B2B — Cross-link
-  ══════════════════════════════════════ -->
-  <section style="background:var(--color-secondary);padding:var(--spacing-3xl) 0;" aria-labelledby="catalogo-b2b-title">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--spacing-3xl);align-items:center;">
-        <div>
-          <span style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);display:block;margin-bottom:0.75rem;">Catálogo Técnico B2B</span>
-          <h2 id="catalogo-b2b-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:white;margin-bottom:1rem;line-height:1.2;">Fichas Técnicas con ECT, Medidas y Especificaciones</h2>
-          <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Accede a las especificaciones exactas de cada producto: flauta, ECT, gramaje, peso máximo, medidas disponibles y tiempo de producción. 30 fichas técnicas completas para tu área de compras.</p>
-          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-            <a href="/catalogo" class="btn btn--primary btn--lg">Ver Catálogo Completo</a>
-            <a href="/cotizar" style="border:2px solid rgba(255,255,255,0.4);color:white;padding:0.75rem 1.5rem;border-radius:0.5rem;font-weight:700;text-decoration:none;font-size:0.9rem;">Cotizar ahora →</a>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;">
-          {[
-            {icon:"📦", label:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar", tag:"5 SKUs"},
-            {icon:"🛒", label:"Para E-commerce", href:"/catalogo/cajas-para-ecommerce", tag:"5 SKUs"},
-            {icon:"🎨", label:"Personalizadas", href:"/catalogo/cajas-personalizadas-logo", tag:"5 SKUs"},
-            {icon:"📐", label:"A la Medida", href:"/catalogo/cajas-a-la-medida", tag:"5 SKUs"},
-            {icon:"🍕", label:"Para Alimentos", href:"/catalogo/cajas-para-alimentos", tag:"5 SKUs"},
-            {icon:"🌱", label:"Láminas FSC", href:"/catalogo/laminas-carton-corrugado", tag:"5 SKUs"},
-          ].map(item => (
-            <a href={item.href} style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.75rem;padding:1rem;text-decoration:none;transition:background 0.2s;display:flex;align-items:center;gap:0.75rem;">
-              <span style="font-size:1.5rem;">{item.icon}</span>
-              <div>
-                <span style="font-size:0.85rem;font-weight:700;color:white;display:block;">{item.label}</span>
-                <span style="font-size:0.7rem;color:var(--color-primary);font-weight:600;">{item.tag}</span>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- ══════════════════════════════════════
+ CATÁLOGO B2B — Cross-link
+ ══════════════════════════════════════ -->
+ <section style="background:var(--color-secondary);padding:var(--spacing-3xl) 0;" aria-labelledby="catalogo-b2b-title">
+ <div class="container">
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--spacing-3xl);align-items:center;">
+ <div>
+ <span style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);display:block;margin-bottom:0.75rem;">Catálogo Técnico B2B</span>
+ <h2 id="catalogo-b2b-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:white;margin-bottom:1rem;line-height:1.2;">Fichas Técnicas con ECT, Medidas y Especificaciones</h2>
+ <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Accede a las especificaciones exactas de cada producto: flauta, ECT, gramaje, peso máximo, medidas disponibles y tiempo de producción. 30 fichas técnicas completas para tu área de compras.</p>
+ <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+ <a href="/catalogo" class="btn btn--primary btn--lg">Ver Catálogo Completo</a>
+ <a href="/cotizar" style="border:2px solid rgba(255,255,255,0.4);color:white;padding:0.75rem 1.5rem;border-radius:0.5rem;font-weight:700;text-decoration:none;font-size:0.9rem;">Cotizar ahora →</a>
+ </div>
+ </div>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;">
+ {[
+ {icon:"", label:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar", tag:"5 SKUs"},
+ {icon:"", label:"Para E-commerce", href:"/catalogo/cajas-para-ecommerce", tag:"5 SKUs"},
+ {icon:"", label:"Personalizadas", href:"/catalogo/cajas-personalizadas-logo", tag:"5 SKUs"},
+ {icon:"", label:"A la Medida", href:"/catalogo/cajas-a-la-medida", tag:"5 SKUs"},
+ {icon:"", label:"Para Alimentos", href:"/catalogo/cajas-para-alimentos", tag:"5 SKUs"},
+ {icon:"", label:"Láminas FSC", href:"/catalogo/laminas-carton-corrugado", tag:"5 SKUs"},
+ ].map(item => (
+ <a href={item.href} style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.75rem;padding:1rem;text-decoration:none;transition:background 0.2s;display:flex;align-items:center;gap:0.75rem;">
+ <span style="font-size:1.5rem;">{item.icon}</span>
+ <div>
+ <span style="font-size:0.85rem;font-weight:700;color:white;display:block;">{item.label}</span>
+ <span style="font-size:0.7rem;color:var(--color-primary);font-weight:600;">{item.tag}</span>
+ </div>
+ </a>
+ ))}
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <!-- Sección Zonas en Homepage -->
-  <section class="home-zonas">
-    <div class="container">
-      <div class="home-zonas__header">
-        <h2 class="home-zonas__title">Entrega en Toda la ZMVM</h2>
-        <p class="home-zonas__subtitle">Guías específicas por zona con tiempos de entrega, tipos de caja más solicitados y colonias cubiertas</p>
-      </div>
-      <div class="home-zonas__grid">
-        <a href="/blog/cajas-carton-iztapalapa-cdmx" class="home-zona-pill">🏭 Iztapalapa</a>
-        <a href="/blog/cajas-carton-azcapotzalco-cdmx" class="home-zona-pill">🏭 Azcapotzalco</a>
-        <a href="/blog/cajas-carton-gustavo-a-madero-cdmx" class="home-zona-pill">🏭 Gustavo A. Madero</a>
-        <a href="/blog/cajas-carton-miguel-hidalgo-cdmx" class="home-zona-pill">🏢 Miguel Hidalgo</a>
-        <a href="/blog/cajas-carton-cuauhtemoc-cdmx" class="home-zona-pill">🏪 Cuauhtémoc</a>
-        <a href="/blog/cajas-carton-benito-juarez-cdmx" class="home-zona-pill">🛍️ Benito Juárez</a>
-        <a href="/blog/cajas-carton-venustiano-carranza-cdmx" class="home-zona-pill">✈️ Venustiano Carranza</a>
-        <a href="/blog/cajas-carton-alvaro-obregon-cdmx" class="home-zona-pill">🎨 Álvaro Obregón</a>
-        <a href="/blog/cajas-carton-coyoacan-cdmx" class="home-zona-pill">🌳 Coyoacán</a>
-        <a href="/blog/cajas-carton-tlalpan-cdmx" class="home-zona-pill">🌲 Tlalpan</a>
-        <a href="/blog/cajas-carton-xochimilco-cdmx" class="home-zona-pill">🌻 Xochimilco</a>
-        <a href="/blog/cajas-carton-iztacalco-cdmx" class="home-zona-pill">🏭 Iztacalco</a>
-        <a href="/blog/cajas-carton-cuajimalpa-cdmx" class="home-zona-pill">🏢 Cuajimalpa</a>
-        <a href="/blog/cajas-carton-tlahuac-cdmx" class="home-zona-pill">🏗️ Tláhuac</a>
-        <a href="/blog/cajas-carton-magdalena-contreras-cdmx" class="home-zona-pill">🏘️ Magdalena Contreras</a>
-        <a href="/blog/cajas-carton-milpa-alta-cdmx" class="home-zona-pill">🌽 Milpa Alta</a>
-        <a href="/blog/cajas-carton-naucalpan-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏭 Naucalpan</a>
-        <a href="/blog/cajas-carton-tlalnepantla-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏭 Tlalnepantla</a>
-        <a href="/blog/cajas-carton-ecatepec-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏗️ Ecatepec</a>
-        <a href="/blog/cajas-carton-nezahualcoyotl-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🛒 Nezahualcóyotl</a>
-        <a href="/blog/cajas-carton-atizapan-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">⚙️ Atizapán</a>
-        <a href="/blog/cajas-carton-cuautitlan-izcalli-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">🏭 Cuautitlán Izcalli</a>
-      </div>
-      <div style="text-align:center; margin-top: var(--spacing-lg)">
-        <a href="/zonas-de-servicio" class="btn btn--secondary">Ver todas las zonas de cobertura →</a>
-      </div>
-    </div>
-  </section>
+ <!-- Sección Zonas en Homepage -->
+ <section class="home-zonas">
+ <div class="container">
+ <div class="home-zonas__header">
+ <h2 class="home-zonas__title">Entrega en Toda la ZMVM</h2>
+ <p class="home-zonas__subtitle">Guías específicas por zona con tiempos de entrega, tipos de caja más solicitados y colonias cubiertas</p>
+ </div>
+ <div class="home-zonas__grid">
+ <a href="/blog/cajas-carton-iztapalapa-cdmx" class="home-zona-pill"> Iztapalapa</a>
+ <a href="/blog/cajas-carton-azcapotzalco-cdmx" class="home-zona-pill"> Azcapotzalco</a>
+ <a href="/blog/cajas-carton-gustavo-a-madero-cdmx" class="home-zona-pill"> Gustavo A. Madero</a>
+ <a href="/blog/cajas-carton-miguel-hidalgo-cdmx" class="home-zona-pill"> Miguel Hidalgo</a>
+ <a href="/blog/cajas-carton-cuauhtemoc-cdmx" class="home-zona-pill"> Cuauhtémoc</a>
+ <a href="/blog/cajas-carton-benito-juarez-cdmx" class="home-zona-pill">️ Benito Juárez</a>
+ <a href="/blog/cajas-carton-venustiano-carranza-cdmx" class="home-zona-pill">️ Venustiano Carranza</a>
+ <a href="/blog/cajas-carton-alvaro-obregon-cdmx" class="home-zona-pill"> Álvaro Obregón</a>
+ <a href="/blog/cajas-carton-coyoacan-cdmx" class="home-zona-pill"> Coyoacán</a>
+ <a href="/blog/cajas-carton-tlalpan-cdmx" class="home-zona-pill"> Tlalpan</a>
+ <a href="/blog/cajas-carton-xochimilco-cdmx" class="home-zona-pill"> Xochimilco</a>
+ <a href="/blog/cajas-carton-iztacalco-cdmx" class="home-zona-pill"> Iztacalco</a>
+ <a href="/blog/cajas-carton-cuajimalpa-cdmx" class="home-zona-pill"> Cuajimalpa</a>
+ <a href="/blog/cajas-carton-tlahuac-cdmx" class="home-zona-pill">️ Tláhuac</a>
+ <a href="/blog/cajas-carton-magdalena-contreras-cdmx" class="home-zona-pill">️ Magdalena Contreras</a>
+ <a href="/blog/cajas-carton-milpa-alta-cdmx" class="home-zona-pill"> Milpa Alta</a>
+ <a href="/blog/cajas-carton-naucalpan-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex"> Naucalpan</a>
+ <a href="/blog/cajas-carton-tlalnepantla-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex"> Tlalnepantla</a>
+ <a href="/blog/cajas-carton-ecatepec-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">️ Ecatepec</a>
+ <a href="/blog/cajas-carton-nezahualcoyotl-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex"> Nezahualcóyotl</a>
+ <a href="/blog/cajas-carton-atizapan-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex">️ Atizapán</a>
+ <a href="/blog/cajas-carton-cuautitlan-izcalli-estado-de-mexico" class="home-zona-pill home-zona-pill--edomex"> Cuautitlán Izcalli</a>
+ </div>
+ <div style="text-align:center; margin-top: var(--spacing-lg)">
+ <a href="/zonas-de-servicio" class="btn btn--secondary">Ver todas las zonas de cobertura →</a>
+ </div>
+ </div>
+ </section>
 
-  <LeadCapture whatsapp={WHATSAPP} />
+ <LeadCapture whatsapp={WHATSAPP} />
 
 </PageLayout>
 

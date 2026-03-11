@@ -1,383 +1,383 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
-import PageHero      from "@/components/PageHero.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero  from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 
-const title       = "Zonas de Servicio Cajas de Cartón CDMX y Estado de México | CADECA";
+const title  = "Zonas de Servicio Cajas de Cartón CDMX y Estado de México | CADECA";
 const description = "CADECA entrega cajas de cartón corrugado en toda la ZMVM. CDMX, Naucalpan, Tlalnepantla, Ecatepec, Toluca, Cuautitlán y más. Entrega express 24 hrs. Fabricante directo.";
 
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Zonas de Servicio" },
+ { name: "Inicio", href: "/" },
+ { name: "Zonas de Servicio" },
 ];
 
 const faqs = [
-  {
-    question: "¿Cuánto tiempo tarda la entrega en CDMX?",
-    answer: "Para productos en stock (cajas estándar, Mercado Envíos, Amazon FBA) la entrega en CDMX es en 24 horas hábiles desde la confirmación del pedido. Para pedidos de producción bajo pedido, el tiempo es de 3 a 5 días hábiles más el tiempo de entrega según zona.",
-  },
-  {
-    question: "¿Tienen costo de envío o entrega a domicilio?",
-    answer: "Para pedidos mayores a cierto volumen (consultar con asesor) la entrega en CDMX y zona metropolitana es sin costo adicional. Para pedidos pequeños o zonas alejadas se aplica costo de flete según cotización. En todos los casos informamos el costo antes de confirmar el pedido.",
-  },
-  {
-    question: "¿Pueden entregar en el interior de la República?",
-    answer: "Sí. Para clientes fuera de la ZMVM enviamos vía paquetería (DHL, FedEx, Estafeta, J&T) con el costo a cargo del cliente. El tiempo de entrega varía de 2 a 5 días hábiles según el destino. Consulta disponibilidad para tu ciudad.",
-  },
-  {
-    question: "¿Puedo recoger directamente en planta?",
-    answer: "Sí. Nuestras instalaciones están en CDMX y puedes coordinar la recolección directa para ahorrar el costo de flete. Comunícate con tu asesor para agendar la fecha y hora de recolección.",
-  },
+ {
+ question: "¿Cuánto tiempo tarda la entrega en CDMX?",
+ answer: "Para productos en stock (cajas estándar, Mercado Envíos, Amazon FBA) la entrega en CDMX es en 24 horas hábiles desde la confirmación del pedido. Para pedidos de producción bajo pedido, el tiempo es de 3 a 5 días hábiles más el tiempo de entrega según zona.",
+ },
+ {
+ question: "¿Tienen costo de envío o entrega a domicilio?",
+ answer: "Para pedidos mayores a cierto volumen (consultar con asesor) la entrega en CDMX y zona metropolitana es sin costo adicional. Para pedidos pequeños o zonas alejadas se aplica costo de flete según cotización. En todos los casos informamos el costo antes de confirmar el pedido.",
+ },
+ {
+ question: "¿Pueden entregar en el interior de la República?",
+ answer: "Sí. Para clientes fuera de la ZMVM enviamos vía paquetería (DHL, FedEx, Estafeta, J&T) con el costo a cargo del cliente. El tiempo de entrega varía de 2 a 5 días hábiles según el destino. Consulta disponibilidad para tu ciudad.",
+ },
+ {
+ question: "¿Puedo recoger directamente en planta?",
+ answer: "Sí. Nuestras instalaciones están en CDMX y puedes coordinar la recolección directa para ahorrar el costo de flete. Comunícate con tu asesor para agendar la fecha y hora de recolección.",
+ },
 ];
 
 const zonasCDMX = [
-  { nombre: "Vallejo / Azcapotzalco",     alcaldias: ["Azcapotzalco","Gustavo A. Madero"],          entrega: "24 hrs",  clase: "zona--destacada" },
-  { nombre: "Iztapalapa",                  alcaldias: ["Iztapalapa","Iztacalco"],                      entrega: "24 hrs",  clase: "" },
-  { nombre: "Venustiano Carranza / Centro",alcaldias: ["Venustiano Carranza","Cuauhtémoc"],            entrega: "24 hrs",  clase: "" },
-  { nombre: "Coyoacán / Benito Juárez",    alcaldias: ["Coyoacán","Benito Juárez","Álvaro Obregón"],   entrega: "24 hrs",  clase: "" },
-  { nombre: "Tlalpan / Xochimilco",        alcaldias: ["Tlalpan","Xochimilco","Milpa Alta"],           entrega: "24-48 hrs",clase:"" },
-  { nombre: "Miguel Hidalgo / Cuajimalpa", alcaldias: ["Miguel Hidalgo","Cuajimalpa"],                entrega: "24 hrs",  clase: "" },
-  { nombre: "Tláhuac / Milpa Alta",        alcaldias: ["Tláhuac","Milpa Alta"],                       entrega: "48 hrs",  clase: "" },
+ { nombre: "Vallejo / Azcapotzalco",  alcaldias: ["Azcapotzalco","Gustavo A. Madero"],  entrega: "24 hrs",  clase: "zona--destacada" },
+ { nombre: "Iztapalapa",  alcaldias: ["Iztapalapa","Iztacalco"],  entrega: "24 hrs",  clase: "" },
+ { nombre: "Venustiano Carranza / Centro",alcaldias: ["Venustiano Carranza","Cuauhtémoc"],  entrega: "24 hrs",  clase: "" },
+ { nombre: "Coyoacán / Benito Juárez",  alcaldias: ["Coyoacán","Benito Juárez","Álvaro Obregón"],  entrega: "24 hrs",  clase: "" },
+ { nombre: "Tlalpan / Xochimilco",  alcaldias: ["Tlalpan","Xochimilco","Milpa Alta"],  entrega: "24-48 hrs",clase:"" },
+ { nombre: "Miguel Hidalgo / Cuajimalpa", alcaldias: ["Miguel Hidalgo","Cuajimalpa"],  entrega: "24 hrs",  clase: "" },
+ { nombre: "Tláhuac / Milpa Alta",  alcaldias: ["Tláhuac","Milpa Alta"],  entrega: "48 hrs",  clase: "" },
 ];
 
 const zonasEdomex = [
-  { nombre: "Naucalpan / Tlalnepantla",    municipios: ["Naucalpan de Juárez","Tlalnepantla de Baz"], entrega: "24 hrs",  clase: "zona--destacada" },
-  { nombre: "Ecatepec",                    municipios: ["Ecatepec de Morelos"],                        entrega: "24-48 hrs",clase:"zona--destacada" },
-  { nombre: "Toluca / Lerma / Zinacantepec",municipios:["Toluca","Lerma","Zinacantepec","Metepec"],    entrega: "48 hrs",  clase: "" },
-  { nombre: "Cuautitlán Izcalli / Tultitlán",municipios:["Cuautitlán Izcalli","Tultitlán"],           entrega: "24-48 hrs",clase:"" },
-  { nombre: "Texcoco / Chimalhuacán",      municipios: ["Texcoco","Chimalhuacán","Los Reyes La Paz"],  entrega: "48 hrs",  clase: "" },
-  { nombre: "Chalco / Ixtapaluca",         municipios: ["Chalco","Ixtapaluca","Valle de Chalco"],     entrega: "48 hrs",  clase: "" },
-  { nombre: "Atizapán / Nicolás Romero",   municipios: ["Atizapán de Zaragoza","Nicolás Romero"],     entrega: "48 hrs",  clase: "" },
+ { nombre: "Naucalpan / Tlalnepantla",  municipios: ["Naucalpan de Juárez","Tlalnepantla de Baz"], entrega: "24 hrs",  clase: "zona--destacada" },
+ { nombre: "Ecatepec",  municipios: ["Ecatepec de Morelos"],  entrega: "24-48 hrs",clase:"zona--destacada" },
+ { nombre: "Toluca / Lerma / Zinacantepec",municipios:["Toluca","Lerma","Zinacantepec","Metepec"],  entrega: "48 hrs",  clase: "" },
+ { nombre: "Cuautitlán Izcalli / Tultitlán",municipios:["Cuautitlán Izcalli","Tultitlán"],  entrega: "24-48 hrs",clase:"" },
+ { nombre: "Texcoco / Chimalhuacán",  municipios: ["Texcoco","Chimalhuacán","Los Reyes La Paz"],  entrega: "48 hrs",  clase: "" },
+ { nombre: "Chalco / Ixtapaluca",  municipios: ["Chalco","Ixtapaluca","Valle de Chalco"],  entrega: "48 hrs",  clase: "" },
+ { nombre: "Atizapán / Nicolás Romero",  municipios: ["Atizapán de Zaragoza","Nicolás Romero"],  entrega: "48 hrs",  clase: "" },
 ];
 
 const schemaServiceArea = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Entrega de Cajas de Cartón Corrugado en ZMVM",
-  "provider": { "@type": "LocalBusiness", "@id": "https://cajas-de-carton.com/#negocio" },
-  "areaServed": [
-    { "@type": "City", "name": "Ciudad de México", "containedInPlace": { "@type": "Country", "name": "México" } },
-    { "@type": "State", "name": "Estado de México", "containedInPlace": { "@type": "Country", "name": "México" } },
-  ],
-  "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Cajas de Cartón Corrugado", "url": "https://cajas-de-carton.com/catalogo" },
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "name": "Entrega de Cajas de Cartón Corrugado en ZMVM",
+ "provider": { "@type": "LocalBusiness", "@id": "https://cajas-de-carton.com/negocio" },
+ "areaServed": [
+ { "@type": "City", "name": "Ciudad de México", "containedInPlace": { "@type": "Country", "name": "México" } },
+ { "@type": "State", "name": "Estado de México", "containedInPlace": { "@type": "Country", "name": "México" } },
+ ],
+ "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Cajas de Cartón Corrugado", "url": "https://cajas-de-carton.com/catalogo" },
 };
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="page"
-  breadcrumbs={breadcrumbs}
-  faqItems={faqs}
-  schema={schemaServiceArea}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="page"
+ breadcrumbs={breadcrumbs}
+ faqItems={faqs}
+ schema={schemaServiceArea}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><span class="current">Zonas de Servicio</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><span class="current">Zonas de Servicio</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <PageHero
-    eyebrow="CDMX · Estado de México · ZMVM completa"
-    titleHtml={true}
-    title="Entrega de Cajas de Cartón en <span>Toda la ZMVM</span>"
-    desc="Cobertura completa en las 16 alcaldías de CDMX y los principales municipios del Estado de México. Entrega express en 24 horas para productos en stock."
-    desc2="Flota propia de reparto en zona metropolitana. Sin costos de envío en pedidos superiores a 200 piezas dentro del área de cobertura CDMX y municipios conurbados del Estado de México.||Tiempos de entrega garantizados: mismo día en pedidos antes de las 2 p.m., 24 horas para el resto. Para pedidos urgentes fuera de hora, contáctanos por WhatsApp y evaluamos disponibilidad."
-    chips={[
-      { label: "16 alcaldías CDMX" },
-      { label: "6 municipios EDOMEX" },
-      { label: "Entrega 24–48 hrs" },
-      { label: "Recolección en planta disponible" },
-    ]}
-    ctas={[
-      { href: "/cotizar", label: "Cotizar con entrega", variant: "primary" },
-      { href: "/catalogo/", label: "Ver catálogo", variant: "outline" },
-    ]}
-  />
+ <PageHero
+ eyebrow="CDMX · Estado de México · ZMVM completa"
+ titleHtml={true}
+ title="Entrega de Cajas de Cartón en <span>Toda la ZMVM</span>"
+ desc="Cobertura completa en las 16 alcaldías de CDMX y los principales municipios del Estado de México. Entrega express en 24 horas para productos en stock."
+ desc2="Flota propia de reparto en zona metropolitana. Sin costos de envío en pedidos superiores a 200 piezas dentro del área de cobertura CDMX y municipios conurbados del Estado de México.||Tiempos de entrega garantizados: mismo día en pedidos antes de las 2 p.m., 24 horas para el resto. Para pedidos urgentes fuera de hora, contáctanos por WhatsApp y evaluamos disponibilidad."
+ chips={[
+ { label: "16 alcaldías CDMX" },
+ { label: "6 municipios EDOMEX" },
+ { label: "Entrega 24–48 hrs" },
+ { label: "Recolección en planta disponible" },
+ ]}
+ ctas={[
+ { href: "/cotizar", label: "Cotizar con entrega", variant: "primary" },
+ { href: "/catalogo/", label: "Ver catálogo", variant: "outline" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <!-- CDMX -->
-    <section class="zonas-section" aria-labelledby="cdmx-title">
-      <div class="container">
-        <SectionHeader
-          id="cdmx-title"
-          title="Ciudad de México — 16 Alcaldías"
-          subtitle="Cobertura completa en toda la CDMX. Entrega en 24 hrs para pedidos en stock. Para pedidos de producción: 3-5 días hábiles de fabricación + entrega."
-        />
-        <div class="zonas-grid">
-          {zonasCDMX.map(z => (
-            <div class={`zona-card ${z.clase}`}>
-              <div class="zona-card__header">
-                <h3 class="zona-card__nombre">{z.nombre}</h3>
-                <span class={`zona-chip zona-chip--${z.entrega === "24 hrs" ? "green" : "blue"}`}>
-                  ⚡ {z.entrega}
-                </span>
-              </div>
-              <p class="zona-card__alcaldias">{z.alcaldias.join(" · ")}</p>
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
-                Cotizar para {z.nombre.split("/")[0].trim()} →
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+ <!-- CDMX -->
+ <section class="zonas-section" aria-labelledby="cdmx-title">
+ <div class="container">
+ <SectionHeader
+ id="cdmx-title"
+ title="Ciudad de México — 16 Alcaldías"
+ subtitle="Cobertura completa en toda la CDMX. Entrega en 24 hrs para pedidos en stock. Para pedidos de producción: 3-5 días hábiles de fabricación + entrega."
+ />
+ <div class="zonas-grid">
+ {zonasCDMX.map(z => (
+ <div class={`zona-card ${z.clase}`}>
+ <div class="zona-card__header">
+ <h3 class="zona-card__nombre">{z.nombre}</h3>
+ <span class={`zona-chip zona-chip--${z.entrega === "24 hrs" ? "green" : "blue"}`}>
+ {z.entrega}
+ </span>
+ </div>
+ <p class="zona-card__alcaldias">{z.alcaldias.join(" · ")}</p>
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
+ Cotizar para {z.nombre.split("/")[0].trim()} →
+ </a>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
 
-    <!-- Estado de México -->
-    <section class="zonas-section zonas-section--alt" aria-labelledby="edomex-title">
-      <div class="container">
-        <SectionHeader
-          id="edomex-title"
-          title="Estado de México — Zona Metropolitana"
-          subtitle="Los principales municipios industriales y comerciales del Estado de México. Entrega en 24 a 48 horas según distancia desde nuestra planta en CDMX."
-        />
-        <div class="zonas-grid">
-          {zonasEdomex.map(z => (
-            <div class={`zona-card ${z.clase}`}>
-              <div class="zona-card__header">
-                <h3 class="zona-card__nombre">{z.nombre}</h3>
-                <span class={`zona-chip zona-chip--${z.entrega === "24 hrs" ? "green" : "blue"}`}>
-                  ⚡ {z.entrega}
-                </span>
-              </div>
-              <p class="zona-card__alcaldias">{z.municipios.join(" · ")}</p>
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
-                Cotizar para {z.nombre.split("/")[0].trim()} →
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+ <!-- Estado de México -->
+ <section class="zonas-section zonas-section--alt" aria-labelledby="edomex-title">
+ <div class="container">
+ <SectionHeader
+ id="edomex-title"
+ title="Estado de México — Zona Metropolitana"
+ subtitle="Los principales municipios industriales y comerciales del Estado de México. Entrega en 24 a 48 horas según distancia desde nuestra planta en CDMX."
+ />
+ <div class="zonas-grid">
+ {zonasEdomex.map(z => (
+ <div class={`zona-card ${z.clase}`}>
+ <div class="zona-card__header">
+ <h3 class="zona-card__nombre">{z.nombre}</h3>
+ <span class={`zona-chip zona-chip--${z.entrega === "24 hrs" ? "green" : "blue"}`}>
+ {z.entrega}
+ </span>
+ </div>
+ <p class="zona-card__alcaldias">{z.municipios.join(" · ")}</p>
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
+ Cotizar para {z.nombre.split("/")[0].trim()} →
+ </a>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
 
-    <!-- Cómo funciona -->
-    <section class="zonas-proceso" aria-labelledby="proceso-title">
-      <div class="container">
-        <SectionHeader
-          id="proceso-title"
-          centered
-          title="¿Cómo Funciona la Entrega?"
-          subtitle="Del pedido a tu almacén sin complicaciones."
-        />
-        <div class="proceso-steps">
-          <div class="proceso-step">
-            <span class="proceso-step__num">01</span>
-            <h3 class="proceso-step__titulo">Cotiza en menos de 1 hora</h3>
-            <p class="proceso-step__desc">Envíanos la medida, tipo de caja y cantidad por WhatsApp o formulario. Respondemos con precio y disponibilidad en menos de 60 minutos en horario hábil.</p>
-          </div>
-          <div class="proceso-step">
-            <span class="proceso-step__num">02</span>
-            <h3 class="proceso-step__titulo">Confirma y paga</h3>
-            <p class="proceso-step__desc">50% de anticipo para arrancar producción. 50% contra entrega o previo. Aceptamos transferencia, tarjeta y efectivo.</p>
-          </div>
-          <div class="proceso-step">
-            <span class="proceso-step__num">03</span>
-            <h3 class="proceso-step__titulo">Producimos en 3-5 días</h3>
-            <p class="proceso-step__desc">Para cajas en stock: listas en 24 hrs. Para producción bajo pedido: 3-5 días hábiles con calidad ECT verificado en planta.</p>
-          </div>
-          <div class="proceso-step">
-            <span class="proceso-step__num">04</span>
-            <h3 class="proceso-step__titulo">Entregamos en tu almacén</h3>
-            <p class="proceso-step__desc">Coordinamos la entrega a domicilio en tu zona o puedes recoger directamente en nuestra planta en CDMX. Sin sorpresas en el costo de flete.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- Cómo funciona -->
+ <section class="zonas-proceso" aria-labelledby="proceso-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-title"
+ centered
+ title="¿Cómo Funciona la Entrega?"
+ subtitle="Del pedido a tu almacén sin complicaciones."
+ />
+ <div class="proceso-steps">
+ <div class="proceso-step">
+ <span class="proceso-step__num">01</span>
+ <h3 class="proceso-step__titulo">Cotiza en menos de 1 hora</h3>
+ <p class="proceso-step__desc">Envíanos la medida, tipo de caja y cantidad por WhatsApp o formulario. Respondemos con precio y disponibilidad en menos de 60 minutos en horario hábil.</p>
+ </div>
+ <div class="proceso-step">
+ <span class="proceso-step__num">02</span>
+ <h3 class="proceso-step__titulo">Confirma y paga</h3>
+ <p class="proceso-step__desc">50% de anticipo para arrancar producción. 50% contra entrega o previo. Aceptamos transferencia, tarjeta y efectivo.</p>
+ </div>
+ <div class="proceso-step">
+ <span class="proceso-step__num">03</span>
+ <h3 class="proceso-step__titulo">Producimos en 3-5 días</h3>
+ <p class="proceso-step__desc">Para cajas en stock: listas en 24 hrs. Para producción bajo pedido: 3-5 días hábiles con calidad ECT verificado en planta.</p>
+ </div>
+ <div class="proceso-step">
+ <span class="proceso-step__num">04</span>
+ <h3 class="proceso-step__titulo">Entregamos en tu almacén</h3>
+ <p class="proceso-step__desc">Coordinamos la entrega a domicilio en tu zona o puedes recoger directamente en nuestra planta en CDMX. Sin sorpresas en el costo de flete.</p>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-zonas-title">
-      <div class="container">
-        <h2 id="faq-zonas-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Frecuentes sobre Entregas</h2>
-        <div class="faq__list">
-          {faqs.map((f, i) => <FaqItem id={`z-faq-${i}`} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
+ <!-- FAQ -->
+ <section class="faq" aria-labelledby="faq-zonas-title">
+ <div class="container">
+ <h2 id="faq-zonas-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Frecuentes sobre Entregas</h2>
+ <div class="faq__list">
+ {faqs.map((f, i) => <FaqItem id={`z-faq-${i}`} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <!-- Hub de Zonas con cards -->
-  <section class="zonas-hub">
-    <div class="container">
-      <div class="zonas-hub__header">
-        <h2 class="zonas-hub__title">Guías de Entrega por Alcaldía y Municipio</h2>
-        <p class="zonas-hub__subtitle">Selecciona tu zona para ver tiempos de entrega, colonias cubiertas y tipos de caja más solicitados</p>
-      </div>
+ <!-- Hub de Zonas con cards -->
+ <section class="zonas-hub">
+ <div class="container">
+ <div class="zonas-hub__header">
+ <h2 class="zonas-hub__title">Guías de Entrega por Alcaldía y Municipio</h2>
+ <p class="zonas-hub__subtitle">Selecciona tu zona para ver tiempos de entrega, colonias cubiertas y tipos de caja más solicitados</p>
+ </div>
 
-      <h3 class="zonas-hub__group-title">🏙️ Ciudad de México — 16 Alcaldías</h3>
-      <div class="zonas-hub__grid">
-        <a href="/blog/cajas-carton-iztapalapa-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏭</span>
-          <span class="zona-card-hub__name">Iztapalapa</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Zona industrial oriente, PyMEs, Central de Abasto</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-azcapotzalco-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏭</span>
-          <span class="zona-card-hub__name">Azcapotzalco</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Vallejo industrial, manufactura, metal-mecánica</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-gustavo-a-madero-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏭</span>
-          <span class="zona-card-hub__name">Gustavo A. Madero</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Zona industrial norte, mercados, distribución</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-venustiano-carranza-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">✈️</span>
-          <span class="zona-card-hub__name">Venustiano Carranza</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Aeropuerto, logística, zona oriente</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-miguel-hidalgo-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏢</span>
-          <span class="zona-card-hub__name">Miguel Hidalgo</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Polanco, Lomas, zona corporativa poniente</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-cuauhtemoc-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏪</span>
-          <span class="zona-card-hub__name">Cuauhtémoc</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Centro Histórico, Tepito, mayoristas</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-benito-juarez-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🛍️</span>
-          <span class="zona-card-hub__name">Benito Juárez</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Del Valle, Narvarte, e-commerce y retail</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-alvaro-obregon-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🎨</span>
-          <span class="zona-card-hub__name">Álvaro Obregón</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Santa Fe, Mixcoac, zona poniente</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-coyoacan-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🌳</span>
-          <span class="zona-card-hub__name">Coyoacán</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Comercio artesanal, universidades, sur CDMX</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-iztacalco-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏭</span>
-          <span class="zona-card-hub__name">Iztacalco</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Zona industrial, manufactura, oriente</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-cuajimalpa-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏢</span>
-          <span class="zona-card-hub__name">Cuajimalpa</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Santa Fe, corporativos, zona poniente</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-tlalpan-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🌲</span>
-          <span class="zona-card-hub__name">Tlalpan</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Zona sur, crecimiento comercial e industrial</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-xochimilco-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🌻</span>
-          <span class="zona-card-hub__name">Xochimilco</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Agroindustria, alimentos, zona sur</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-tlahuac-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏗️</span>
-          <span class="zona-card-hub__name">Tláhuac</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Zona oriente sur, PyMEs emergentes</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-magdalena-contreras-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🏘️</span>
-          <span class="zona-card-hub__name">Magdalena Contreras</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Zona residencial sur, pequeño comercio</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-milpa-alta-cdmx" class="zona-card-hub">
-          <span class="zona-card-hub__icon">🌽</span>
-          <span class="zona-card-hub__name">Milpa Alta</span>
-          <span class="zona-card-hub__badge">48 hrs</span>
-          <span class="zona-card-hub__desc">Agroindustria, alimentos, zona rural sur</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-      </div>
+ <h3 class="zonas-hub__group-title">️ Ciudad de México — 16 Alcaldías</h3>
+ <div class="zonas-hub__grid">
+ <a href="/blog/cajas-carton-iztapalapa-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Iztapalapa</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Zona industrial oriente, PyMEs, Central de Abasto</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-azcapotzalco-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Azcapotzalco</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Vallejo industrial, manufactura, metal-mecánica</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-gustavo-a-madero-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Gustavo A. Madero</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Zona industrial norte, mercados, distribución</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-venustiano-carranza-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon">️</span>
+ <span class="zona-card-hub__name">Venustiano Carranza</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Aeropuerto, logística, zona oriente</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-miguel-hidalgo-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Miguel Hidalgo</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Polanco, Lomas, zona corporativa poniente</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-cuauhtemoc-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Cuauhtémoc</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Centro Histórico, Tepito, mayoristas</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-benito-juarez-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon">️</span>
+ <span class="zona-card-hub__name">Benito Juárez</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Del Valle, Narvarte, e-commerce y retail</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-alvaro-obregon-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Álvaro Obregón</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Santa Fe, Mixcoac, zona poniente</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-coyoacan-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Coyoacán</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Comercio artesanal, universidades, sur CDMX</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-iztacalco-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Iztacalco</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Zona industrial, manufactura, oriente</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-cuajimalpa-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Cuajimalpa</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Santa Fe, corporativos, zona poniente</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-tlalpan-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Tlalpan</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Zona sur, crecimiento comercial e industrial</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-xochimilco-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Xochimilco</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Agroindustria, alimentos, zona sur</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-tlahuac-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon">️</span>
+ <span class="zona-card-hub__name">Tláhuac</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Zona oriente sur, PyMEs emergentes</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-magdalena-contreras-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon">️</span>
+ <span class="zona-card-hub__name">Magdalena Contreras</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Zona residencial sur, pequeño comercio</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-milpa-alta-cdmx" class="zona-card-hub">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Milpa Alta</span>
+ <span class="zona-card-hub__badge">48 hrs</span>
+ <span class="zona-card-hub__desc">Agroindustria, alimentos, zona rural sur</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ </div>
 
-      <h3 class="zonas-hub__group-title" style="margin-top: var(--spacing-2xl)">🗺️ Estado de México — 6 Municipios Clave</h3>
-      <div class="zonas-hub__grid zonas-hub__grid--edomex">
-        <a href="/blog/cajas-carton-naucalpan-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
-          <span class="zona-card-hub__icon">🏭</span>
-          <span class="zona-card-hub__name">Naucalpan de Juárez</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Parque Industrial Naucalpan, manufactura, automotriz</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-tlalnepantla-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
-          <span class="zona-card-hub__icon">🏭</span>
-          <span class="zona-card-hub__name">Tlalnepantla de Baz</span>
-          <span class="zona-card-hub__badge">24 hrs</span>
-          <span class="zona-card-hub__desc">Mayor zona industrial EDOMEX, exportación</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-ecatepec-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
-          <span class="zona-card-hub__icon">🏗️</span>
-          <span class="zona-card-hub__name">Ecatepec de Morelos</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Mayor municipio EDOMEX, PyMEs, distribución</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-nezahualcoyotl-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
-          <span class="zona-card-hub__icon">🛒</span>
-          <span class="zona-card-hub__name">Nezahualcóyotl</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Comercio popular, mercados, zona oriente</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-atizapan-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
-          <span class="zona-card-hub__icon">⚙️</span>
-          <span class="zona-card-hub__name">Atizapán de Zaragoza</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Zona industrial norte, manufactura</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-        <a href="/blog/cajas-carton-cuautitlan-izcalli-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
-          <span class="zona-card-hub__icon">🏭</span>
-          <span class="zona-card-hub__name">Cuautitlán Izcalli</span>
-          <span class="zona-card-hub__badge">24-48 hrs</span>
-          <span class="zona-card-hub__desc">Zona industrial norte, automotriz, logística</span>
-          <span class="zona-card-hub__cta">Ver guía →</span>
-        </a>
-      </div>
-    </div>
-  </section>
+ <h3 class="zonas-hub__group-title" style="margin-top: var(--spacing-2xl)">️ Estado de México — 6 Municipios Clave</h3>
+ <div class="zonas-hub__grid zonas-hub__grid--edomex">
+ <a href="/blog/cajas-carton-naucalpan-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Naucalpan de Juárez</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Parque Industrial Naucalpan, manufactura, automotriz</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-tlalnepantla-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Tlalnepantla de Baz</span>
+ <span class="zona-card-hub__badge">24 hrs</span>
+ <span class="zona-card-hub__desc">Mayor zona industrial EDOMEX, exportación</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-ecatepec-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
+ <span class="zona-card-hub__icon">️</span>
+ <span class="zona-card-hub__name">Ecatepec de Morelos</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Mayor municipio EDOMEX, PyMEs, distribución</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-nezahualcoyotl-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Nezahualcóyotl</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Comercio popular, mercados, zona oriente</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-atizapan-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
+ <span class="zona-card-hub__icon">️</span>
+ <span class="zona-card-hub__name">Atizapán de Zaragoza</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Zona industrial norte, manufactura</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ <a href="/blog/cajas-carton-cuautitlan-izcalli-estado-de-mexico" class="zona-card-hub zona-card-hub--edomex">
+ <span class="zona-card-hub__icon"></span>
+ <span class="zona-card-hub__name">Cuautitlán Izcalli</span>
+ <span class="zona-card-hub__badge">24-48 hrs</span>
+ <span class="zona-card-hub__desc">Zona industrial norte, automotriz, logística</span>
+ <span class="zona-card-hub__cta">Ver guía →</span>
+ </a>
+ </div>
+ </div>
+ </section>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿En qué zona estás? Verificamos disponibilidad y tiempo de entrega en menos de 15 minutos" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿En qué zona estás? Verificamos disponibilidad y tiempo de entrega en menos de 15 minutos" />
 
 </PageLayout>

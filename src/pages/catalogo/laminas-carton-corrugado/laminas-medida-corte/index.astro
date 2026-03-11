@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Láminas Corrugado a la Medida Corte Exacto CDMX | CAD-LA-06 | CADECA";
+const title  = "Láminas Corrugado a la Medida Corte Exacto CDMX | CAD-LA-06 | CADECA";
 const description = "Láminas de cartón corrugado a la medida con corte exacto en CDMX. Simple, doble o triple pared. Para fabricantes y talleres. MOQ 50 piezas. Entrega 24 hrs. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-LA-06"],
-  ["Corte", "Cizalla ±2mm precisión"],
-  ["Pared", "Simple / Doble / Triple a elección"],
-  ["Medidas", "Cualquier L×A personalizado"],
-  ["Resistencia", "ECT-32/44/71 según pared"],
-  ["Material", "Kraft virgen o reciclado"],
-  ["Presentación", "Paquetes enzunchados en pallet"],
-  ["Pedido mínimo", "50 láminas/medida"],
-  ["Entrega CDMX", "24–48 hrs"],
+ ["Código SKU", "CAD-LA-06"],
+ ["Corte", "Cizalla ±2mm precisión"],
+ ["Pared", "Simple / Doble / Triple a elección"],
+ ["Medidas", "Cualquier L×A personalizado"],
+ ["Resistencia", "ECT-32/44/71 según pared"],
+ ["Material", "Kraft virgen o reciclado"],
+ ["Presentación", "Paquetes enzunchados en pallet"],
+ ["Pedido mínimo", "50 láminas/medida"],
+ ["Entrega CDMX", "24–48 hrs"],
 ];
 
 const faqs = [
-  { id:"cad-la-06-f1", question:"¿Cuál es la medida máxima que pueden cortar?", answer:"Nuestras cizallas trabajan hasta 2.44 m de ancho y largo libre. Para láminas más grandes, evaluamos el proyecto específico. La mayoría de proyectos industriales caben dentro de estos rangos. Consulta con nuestro equipo técnico para proyectos con dimensiones especiales." },
-  { id:"cad-la-06-f2", question:"¿Puedo pedir distintas medidas en el mismo pedido?", answer:"Sí. Puedes pedir 5 medidas diferentes en el mismo pedido siempre que cada medida cumpla el MOQ de 50 láminas. Las láminas de distintas medidas se entregan enzunchadas por separado y etiquetadas con sus dimensiones para fácil identificación en tu taller." },
-  { id:"cad-la-06-f3", question:"¿Tienen catálogo de espesores disponibles?", answer:"Para simple pared manejamos flautas A (4.5mm), B (3mm), C (4mm) y E (1.5mm). Para doble pared, BC (7mm) y EB. Para triple pared, BCB y BCA. El más vendido para láminas a medida es BC (doble pared 7mm) por el equilibrio entre resistencia y peso. Especifica el espesor al cotizar." },
+ { id:"cad-la-06-f1", question:"¿Cuál es la medida máxima que pueden cortar?", answer:"Nuestras cizallas trabajan hasta 2.44 m de ancho y largo libre. Para láminas más grandes, evaluamos el proyecto específico. La mayoría de proyectos industriales caben dentro de estos rangos. Consulta con nuestro equipo técnico para proyectos con dimensiones especiales." },
+ { id:"cad-la-06-f2", question:"¿Puedo pedir distintas medidas en el mismo pedido?", answer:"Sí. Puedes pedir 5 medidas diferentes en el mismo pedido siempre que cada medida cumpla el MOQ de 50 láminas. Las láminas de distintas medidas se entregan enzunchadas por separado y etiquetadas con sus dimensiones para fácil identificación en tu taller." },
+ { id:"cad-la-06-f3", question:"¿Tienen catálogo de espesores disponibles?", answer:"Para simple pared manejamos flautas A (4.5mm), B (3mm), C (4mm) y E (1.5mm). Para doble pared, BC (7mm) y EB. Para triple pared, BCB y BCA. El más vendido para láminas a medida es BC (doble pared 7mm) por el equilibrio entre resistencia y peso. Especifica el espesor al cotizar." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/lamina-medida-hero-cdmx.avif", alt: "Láminas corrugado a la medida corte exacto CDMX" },
-  { src: "/img/catalogo/lamina-medida-corte-cdmx.avif", alt: "Corte cizalla láminas corrugado" },
-  { src: "/img/catalogo/lamina-medida-borde-cdmx.avif", alt: "Borde lámina cortada a medida" },
-  { src: "/img/catalogo/lamina-medida-tallas-cdmx.avif", alt: "Tallas láminas a la medida" },
-  { src: "/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif", alt: "Láminas doble pared medida" },
+ { src: "/img/catalogo/lamina-medida-hero-cdmx.avif", alt: "Láminas corrugado a la medida corte exacto CDMX" },
+ { src: "/img/catalogo/lamina-medida-corte-cdmx.avif", alt: "Corte cizalla láminas corrugado" },
+ { src: "/img/catalogo/lamina-medida-borde-cdmx.avif", alt: "Borde lámina cortada a medida" },
+ { src: "/img/catalogo/lamina-medida-tallas-cdmx.avif", alt: "Tallas láminas a la medida" },
+ { src: "/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif", alt: "Láminas doble pared medida" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado a la Medida con Corte Exacto"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Láminas Corrugado a la Medida con Corte Exacto",sku:"CAD-LA-06",description:"Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales.",image:gallery[0].src,material:"CAD-LA-06",category:"Láminas de Cartón Corrugado",moq:"50 láminas/medida"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado a la Medida con Corte Exacto"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Láminas Corrugado a la Medida con Corte Exacto",sku:"CAD-LA-06",description:"Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales.",image:gallery[0].src,material:"CAD-LA-06",category:"Láminas de Cartón Corrugado",moq:"50 láminas/medida"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
-        <li><span class="current">Láminas Corrugado a la Medida con Corte Exacto</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+ <li><span class="current">Láminas Corrugado a la Medida con Corte Exacto</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadla06-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-LA-06 · Láminas de Cartón Corrugado</span>
-      <h1 id="sku-cadla06-title" class="cat-page-hero__title">Láminas Corrugado <span>a la Medida</span> — Corte Exacto CDMX</h1>
-      <p class="cat-page-hero__desc">Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-06</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 láminas/medida</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadla06-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-LA-06 · Láminas de Cartón Corrugado</span>
+ <h1 id="sku-cadla06-title" class="cat-page-hero__title">Láminas Corrugado <span>a la Medida</span> — Corte Exacto CDMX</h1>
+ <p class="cat-page-hero__desc">Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-06</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 láminas/medida</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadla06-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-LA-06 · Familia: Láminas de Cartón Corrugado</p>
-            <h2 id="detalle-cadla06-title" class="sku-detail__title">Láminas Corrugado a la Medida con Corte Exacto</h2>
-            <p class="sku-detail__desc">Cuando las medidas estándar no son suficientes, CADECA corta láminas a la dimensión exacta que tu proceso requiere. Cualquier largo y ancho, en simple, doble o triple pared. Ideal para fabricantes de cajas que compran planos para sus líneas de troquelado, talleres de empaque que hacen formatos especiales y proyectos de ingeniería de empaque. Corte por cizalla de alta precisión con tolerancia de ±2mm. Desde 50 láminas por medida.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">±2mm</span><span class="sku-detail__strip-label">Precisión</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Triple op.</span><span class="sku-detail__strip-label">Pared</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-06 Láminas Corrugado a la Medida con Corte Exacto`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-06</a>
-              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadla06-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-LA-06 · Familia: Láminas de Cartón Corrugado</p>
+ <h2 id="detalle-cadla06-title" class="sku-detail__title">Láminas Corrugado a la Medida con Corte Exacto</h2>
+ <p class="sku-detail__desc">Cuando las medidas estándar no son suficientes, CADECA corta láminas a la dimensión exacta que tu proceso requiere. Cualquier largo y ancho, en simple, doble o triple pared. Ideal para fabricantes de cajas que compran planos para sus líneas de troquelado, talleres de empaque que hacen formatos especiales y proyectos de ingeniería de empaque. Corte por cizalla de alta precisión con tolerancia de ±2mm. Desde 50 láminas por medida.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">±2mm</span><span class="sku-detail__strip-label">Precisión</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Triple op.</span><span class="sku-detail__strip-label">Pared</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-06 Láminas Corrugado a la Medida con Corte Exacto`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-06</a>
+ <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadla06-title">
-      <div class="container">
-        <h2 id="faq-cadla06-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado a la Medida con Corte Exacto</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadla06-title">
+ <div class="container">
+ <h2 id="faq-cadla06-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado a la Medida con Corte Exacto</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Fabricas cajas o empaques? Cotiza tus láminas a la medida exacta con corte en 24 horas" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Fabricas cajas o empaques? Cotiza tus láminas a la medida exacta con corte en 24 horas" />
 </PageLayout>

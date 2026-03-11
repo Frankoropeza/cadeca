@@ -1,259 +1,259 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
-import PageHero      from "@/components/PageHero.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero  from "@/components/PageHero.astro";
 
-const title       = "Catálogo Láminas Cartón Corrugado CDMX | Simple, Doble, Triple, Separadores | CADECA";
+const title  = "Catálogo Láminas Cartón Corrugado CDMX | Simple, Doble, Triple, Separadores | CADECA";
 const description = "Catálogo láminas cartón corrugado CDMX. Simple flauta C, doble BC, triple BCB, separadores y ecológicas FSC. Desde 25 pzas. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const productos = [
-  {
-    code:       "CAD-LC-01",
-    badge:      "Más económico",
-    badgeColor: "orange",
-    featured:   true,
-    title:      "Láminas Simples Flauta C",
-    desc:       "Láminas corrugado simple flauta C ECT-26/32. Hasta 120×240 cm, corte a medida. La opción más económica para protección, relleno y layer pads. Desde 100 pzas.",
-    imgSrc:     "/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif",
-    imgAlt:     "Láminas cartón corrugado simple flauta C CDMX — CADECA CAD-LC-01",
-    href:       "/catalogo/laminas-carton-corrugado/laminas-simples",
-    specs: [
-      { label: "Flauta",    value: "C — 4 mm" },
-      { label: "ECT",       value: "ECT-26/32" },
-      { label: "MOQ",       value: "100 piezas" },
-      { label: "Entrega",   value: "3-5 días" },
-    ],
-    moq: "100 pzas",
-  },
-  {
-    code:       "CAD-LC-02",
-    badge:      "ECT-44",
-    badgeColor: "blue",
-    featured:   false,
-    title:      "Láminas Dobles BC",
-    desc:       "Láminas doble corrugado BC ECT-44. Bases tarima, tapas y divisores. BCT >250 kg/m². Hasta 120×240 cm. Desde 50 pzas.",
-    imgSrc:     "/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif",
-    imgAlt:     "Láminas cartón corrugado doble BC CDMX — CADECA CAD-LC-02",
-    href:       "/catalogo/laminas-carton-corrugado/laminas-dobles",
-    specs: [
-      { label: "Flauta",    value: "BC — 7 mm" },
-      { label: "ECT",       value: "ECT-44" },
-      { label: "MOQ",       value: "50 piezas" },
-      { label: "Entrega",   value: "3-5 días" },
-    ],
-    moq: "50 pzas",
-  },
-  {
-    code:       "CAD-LC-03",
-    badge:      "Sustituto madera",
-    badgeColor: "blue",
-    featured:   false,
-    title:      "Láminas Triples BCB",
-    desc:       "Láminas triple corrugado BCB ECT-61+. Sustituto de madera sin NIMF 15. BCT >500 kg/m². Ideal exportación industrial. Desde 25 pzas.",
-    imgSrc:     "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
-    imgAlt:     "Láminas cartón corrugado triple BCB CDMX — CADECA CAD-LC-03",
-    href:       "/catalogo/laminas-carton-corrugado/laminas-triples",
-    specs: [
-      { label: "Flauta",    value: "BCB — 12 mm" },
-      { label: "ECT",       value: "ECT-61+" },
-      { label: "MOQ",       value: "25 piezas" },
-      { label: "Entrega",   value: "5-7 días" },
-    ],
-    moq: "25 pzas",
-  },
-  {
-    code:       "CAD-LC-04",
-    badge:      "Menor costo",
-    badgeColor: "green",
-    featured:   false,
-    title:      "Separadores y Divisiones",
-    desc:       "Separadores ranurados a la medida. Flauta B o E, ensamblaje sin pegamento. Diseño CAD gratis en 24 hrs. El precio más bajo por unidad. Desde 200 pzas.",
-    imgSrc:     "/img/catalogo/separadores-carton-corrugado-cdmx.avif",
-    imgAlt:     "Separadores cartón corrugado divisiones CDMX — CADECA CAD-LC-04",
-    href:       "/catalogo/laminas-carton-corrugado/separadores",
-    specs: [
-      { label: "Flauta",    value: "B 3 mm o E 1.5 mm" },
-      { label: "Diseño",    value: "CAD gratis 24 hrs" },
-      { label: "MOQ",       value: "200 piezas" },
-      { label: "Entrega",   value: "3-5 días" },
-    ],
-    moq: "200 pzas",
-  },
-  {
-    code:       "CAD-LC-05",
-    badge:      "FSC",
-    badgeColor: "green",
-    featured:   false,
-    title:      "Láminas Ecológicas FSC",
-    desc:       "Láminas cartón reciclado certificado FSC. Mismas specs que virgen, ECT-32/44. Fibra 100% post-consumo. Para marcas sustentables. Desde 50 pzas.",
-    imgSrc:     "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif",
-    imgAlt:     "Láminas cartón reciclado ecológico FSC CDMX — CADECA CAD-LC-05",
-    href:       "/catalogo/laminas-carton-corrugado/laminas-ecologicas",
-    specs: [
-      { label: "Certificación", value: "FSC Recycled" },
-      { label: "ECT",           value: "ECT-32/44" },
-      { label: "MOQ",           value: "50 piezas" },
-      { label: "Entrega",       value: "3-5 días" },
-    ],
-    moq: "50 pzas",
-  },
+ {
+ code:  "CAD-LC-01",
+ badge:  "Más económico",
+ badgeColor: "orange",
+ featured:  true,
+ title:  "Láminas Simples Flauta C",
+ desc:  "Láminas corrugado simple flauta C ECT-26/32. Hasta 120×240 cm, corte a medida. La opción más económica para protección, relleno y layer pads. Desde 100 pzas.",
+ imgSrc:  "/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif",
+ imgAlt:  "Láminas cartón corrugado simple flauta C CDMX — CADECA CAD-LC-01",
+ href:  "/catalogo/laminas-carton-corrugado/laminas-simples",
+ specs: [
+ { label: "Flauta",  value: "C — 4 mm" },
+ { label: "ECT",  value: "ECT-26/32" },
+ { label: "MOQ",  value: "100 piezas" },
+ { label: "Entrega",  value: "3-5 días" },
+ ],
+ moq: "100 pzas",
+ },
+ {
+ code:  "CAD-LC-02",
+ badge:  "ECT-44",
+ badgeColor: "blue",
+ featured:  false,
+ title:  "Láminas Dobles BC",
+ desc:  "Láminas doble corrugado BC ECT-44. Bases tarima, tapas y divisores. BCT >250 kg/m². Hasta 120×240 cm. Desde 50 pzas.",
+ imgSrc:  "/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif",
+ imgAlt:  "Láminas cartón corrugado doble BC CDMX — CADECA CAD-LC-02",
+ href:  "/catalogo/laminas-carton-corrugado/laminas-dobles",
+ specs: [
+ { label: "Flauta",  value: "BC — 7 mm" },
+ { label: "ECT",  value: "ECT-44" },
+ { label: "MOQ",  value: "50 piezas" },
+ { label: "Entrega",  value: "3-5 días" },
+ ],
+ moq: "50 pzas",
+ },
+ {
+ code:  "CAD-LC-03",
+ badge:  "Sustituto madera",
+ badgeColor: "blue",
+ featured:  false,
+ title:  "Láminas Triples BCB",
+ desc:  "Láminas triple corrugado BCB ECT-61+. Sustituto de madera sin NIMF 15. BCT >500 kg/m². Ideal exportación industrial. Desde 25 pzas.",
+ imgSrc:  "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif",
+ imgAlt:  "Láminas cartón corrugado triple BCB CDMX — CADECA CAD-LC-03",
+ href:  "/catalogo/laminas-carton-corrugado/laminas-triples",
+ specs: [
+ { label: "Flauta",  value: "BCB — 12 mm" },
+ { label: "ECT",  value: "ECT-61+" },
+ { label: "MOQ",  value: "25 piezas" },
+ { label: "Entrega",  value: "5-7 días" },
+ ],
+ moq: "25 pzas",
+ },
+ {
+ code:  "CAD-LC-04",
+ badge:  "Menor costo",
+ badgeColor: "green",
+ featured:  false,
+ title:  "Separadores y Divisiones",
+ desc:  "Separadores ranurados a la medida. Flauta B o E, ensamblaje sin pegamento. Diseño CAD gratis en 24 hrs. El precio más bajo por unidad. Desde 200 pzas.",
+ imgSrc:  "/img/catalogo/separadores-carton-corrugado-cdmx.avif",
+ imgAlt:  "Separadores cartón corrugado divisiones CDMX — CADECA CAD-LC-04",
+ href:  "/catalogo/laminas-carton-corrugado/separadores",
+ specs: [
+ { label: "Flauta",  value: "B 3 mm o E 1.5 mm" },
+ { label: "Diseño",  value: "CAD gratis 24 hrs" },
+ { label: "MOQ",  value: "200 piezas" },
+ { label: "Entrega",  value: "3-5 días" },
+ ],
+ moq: "200 pzas",
+ },
+ {
+ code:  "CAD-LC-05",
+ badge:  "FSC",
+ badgeColor: "green",
+ featured:  false,
+ title:  "Láminas Ecológicas FSC",
+ desc:  "Láminas cartón reciclado certificado FSC. Mismas specs que virgen, ECT-32/44. Fibra 100% post-consumo. Para marcas sustentables. Desde 50 pzas.",
+ imgSrc:  "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif",
+ imgAlt:  "Láminas cartón reciclado ecológico FSC CDMX — CADECA CAD-LC-05",
+ href:  "/catalogo/laminas-carton-corrugado/laminas-ecologicas",
+ specs: [
+ { label: "Certificación", value: "FSC Recycled" },
+ { label: "ECT",  value: "ECT-32/44" },
+ { label: "MOQ",  value: "50 piezas" },
+ { label: "Entrega",  value: "3-5 días" },
+ ],
+ moq: "50 pzas",
+ },
 
-  {
-    code: "CAD-LA-06", badge: "A medida", badgeColor: "orange", featured: false,
-    title: "Láminas Corrugado a la Medida — Corte Exacto",
-    desc: "Cualquier dimensión L×A, simple/doble/triple pared. Corte por cizalla ±2mm. Para fabricantes de cajas y proyectos especiales de empaque. Desde 50 láminas.",
-    imgSrc: "/img/catalogo/lamina-medida-hero-cdmx.avif",
-    imgAlt: "Láminas corrugado a la medida corte exacto CDMX — CADECA CAD-LA-06",
-    href: "/catalogo/laminas-carton-corrugado/laminas-medida-corte",
-    specs: [{ label:"Corte",value:"±2mm precisión"},{label:"Pared",value:"Simple/Doble/Triple"},{label:"Medidas",value:"Cualquier L×A"},{label:"MOQ",value:"50 láminas"}],
-    moq: "50 láminas",
-  },
-  {
-    code: "CAD-LA-07", badge: "Exportación", badgeColor: "blue", featured: false,
-    title: "Láminas Corrugado para Exportación — Contenedor",
-    desc: "Triple pared ECT-71 en dimensiones para contenedor 20' y 40'. Apta carga marítima y aérea. Certificación ISTA disponible. Antihumedad opcional.",
-    imgSrc: "/img/catalogo/lamina-export-hero-cdmx.avif",
-    imgAlt: "Láminas corrugado exportación contenedor CDMX — CADECA CAD-LA-07",
-    href: "/catalogo/laminas-carton-corrugado/laminas-exportacion-contenedor",
-    specs: [{ label:"Resistencia",value:"ECT-71 triple"},{label:"Dimensiones",value:"Cont. 20' y 40'"},{label:"ISTA",value:"Disponible"},{label:"MOQ",value:"100 láminas"}],
-    moq: "100 láminas",
-  },
-  {
-    code: "CAD-LA-08", badge: "Muebles", badgeColor: "green", featured: false,
-    title: "Láminas Corrugado para Muebles y Tapizado",
-    desc: "Simple pared flauta B/C para mueblería y tapicería. Flexible, de corte limpio, no raya acabados de madera o tela. Usado por carpinterías en CDMX. Desde 50 láminas.",
-    imgSrc: "/img/catalogo/lamina-simple-hero-cdmx.avif",
-    imgAlt: "Láminas corrugado muebles tapizado carpintería CDMX — CADECA CAD-LA-08",
-    href: "/catalogo/laminas-carton-corrugado/laminas-muebles-tapizado",
-    specs: [{ label:"Pared",value:"Simple B/C"},{label:"Flexibilidad",value:"Alta"},{label:"Sin rayaduras",value:"Acabados"},{label:"MOQ",value:"50 láminas"}],
-    moq: "50 láminas",
-  },
-  {
-    code: "CAD-LA-09", badge: "Vidrio", badgeColor: "blue", featured: false,
-    title: "Láminas Corrugado para Vidrio y Cerámica",
-    desc: "Doble pared BC alta amortiguación para vidrio flotado, espejos y cerámica. Con opción de separadores hexagonales honeycomb. Para industria del vidrio en CDMX.",
-    imgSrc: "/img/catalogo/lamina-doble-hero-cdmx.avif",
-    imgAlt: "Láminas corrugado vidrio cerámica amortiguación CDMX — CADECA CAD-LA-09",
-    href: "/catalogo/laminas-carton-corrugado/laminas-vidrio-ceramica",
-    specs: [{ label:"Resistencia",value:"ECT-44"},{label:"Honeycomb",value:"Opcional"},{label:"Uso",value:"Vidrio/cerámica"},{label:"MOQ",value:"50 láminas"}],
-    moq: "50 láminas",
-  },
-  {
-    code: "CAD-LA-10", badge: "Automotriz", badgeColor: "orange", featured: false,
-    title: "Láminas Corrugado para Industria Automotriz",
-    desc: "Triple pared ECT-71 para interleaving entre piezas metálicas. Con papel VCI anticorrosión integrado opcional. Para proveedores Tier 1 y Tier 2. Desde 100 láminas.",
-    imgSrc: "/img/catalogo/lamina-triple-hero-cdmx.avif",
-    imgAlt: "Láminas corrugado industria automotriz interleaving CDMX — CADECA CAD-LA-10",
-    href: "/catalogo/laminas-carton-corrugado/laminas-automotriz-metalica",
-    specs: [{ label:"Resistencia",value:"ECT-71"},{label:"VCI",value:"Anticorrosión op."},{label:"Tier",value:"1/2 compatible"},{label:"MOQ",value:"100 láminas"}],
-    moq: "100 láminas",
-  },
+ {
+ code: "CAD-LA-06", badge: "A medida", badgeColor: "orange", featured: false,
+ title: "Láminas Corrugado a la Medida — Corte Exacto",
+ desc: "Cualquier dimensión L×A, simple/doble/triple pared. Corte por cizalla ±2mm. Para fabricantes de cajas y proyectos especiales de empaque. Desde 50 láminas.",
+ imgSrc: "/img/catalogo/lamina-medida-hero-cdmx.avif",
+ imgAlt: "Láminas corrugado a la medida corte exacto CDMX — CADECA CAD-LA-06",
+ href: "/catalogo/laminas-carton-corrugado/laminas-medida-corte",
+ specs: [{ label:"Corte",value:"±2mm precisión"},{label:"Pared",value:"Simple/Doble/Triple"},{label:"Medidas",value:"Cualquier L×A"},{label:"MOQ",value:"50 láminas"}],
+ moq: "50 láminas",
+ },
+ {
+ code: "CAD-LA-07", badge: "Exportación", badgeColor: "blue", featured: false,
+ title: "Láminas Corrugado para Exportación — Contenedor",
+ desc: "Triple pared ECT-71 en dimensiones para contenedor 20' y 40'. Apta carga marítima y aérea. Certificación ISTA disponible. Antihumedad opcional.",
+ imgSrc: "/img/catalogo/lamina-export-hero-cdmx.avif",
+ imgAlt: "Láminas corrugado exportación contenedor CDMX — CADECA CAD-LA-07",
+ href: "/catalogo/laminas-carton-corrugado/laminas-exportacion-contenedor",
+ specs: [{ label:"Resistencia",value:"ECT-71 triple"},{label:"Dimensiones",value:"Cont. 20' y 40'"},{label:"ISTA",value:"Disponible"},{label:"MOQ",value:"100 láminas"}],
+ moq: "100 láminas",
+ },
+ {
+ code: "CAD-LA-08", badge: "Muebles", badgeColor: "green", featured: false,
+ title: "Láminas Corrugado para Muebles y Tapizado",
+ desc: "Simple pared flauta B/C para mueblería y tapicería. Flexible, de corte limpio, no raya acabados de madera o tela. Usado por carpinterías en CDMX. Desde 50 láminas.",
+ imgSrc: "/img/catalogo/lamina-simple-hero-cdmx.avif",
+ imgAlt: "Láminas corrugado muebles tapizado carpintería CDMX — CADECA CAD-LA-08",
+ href: "/catalogo/laminas-carton-corrugado/laminas-muebles-tapizado",
+ specs: [{ label:"Pared",value:"Simple B/C"},{label:"Flexibilidad",value:"Alta"},{label:"Sin rayaduras",value:"Acabados"},{label:"MOQ",value:"50 láminas"}],
+ moq: "50 láminas",
+ },
+ {
+ code: "CAD-LA-09", badge: "Vidrio", badgeColor: "blue", featured: false,
+ title: "Láminas Corrugado para Vidrio y Cerámica",
+ desc: "Doble pared BC alta amortiguación para vidrio flotado, espejos y cerámica. Con opción de separadores hexagonales honeycomb. Para industria del vidrio en CDMX.",
+ imgSrc: "/img/catalogo/lamina-doble-hero-cdmx.avif",
+ imgAlt: "Láminas corrugado vidrio cerámica amortiguación CDMX — CADECA CAD-LA-09",
+ href: "/catalogo/laminas-carton-corrugado/laminas-vidrio-ceramica",
+ specs: [{ label:"Resistencia",value:"ECT-44"},{label:"Honeycomb",value:"Opcional"},{label:"Uso",value:"Vidrio/cerámica"},{label:"MOQ",value:"50 láminas"}],
+ moq: "50 láminas",
+ },
+ {
+ code: "CAD-LA-10", badge: "Automotriz", badgeColor: "orange", featured: false,
+ title: "Láminas Corrugado para Industria Automotriz",
+ desc: "Triple pared ECT-71 para interleaving entre piezas metálicas. Con papel VCI anticorrosión integrado opcional. Para proveedores Tier 1 y Tier 2. Desde 100 láminas.",
+ imgSrc: "/img/catalogo/lamina-triple-hero-cdmx.avif",
+ imgAlt: "Láminas corrugado industria automotriz interleaving CDMX — CADECA CAD-LA-10",
+ href: "/catalogo/laminas-carton-corrugado/laminas-automotriz-metalica",
+ specs: [{ label:"Resistencia",value:"ECT-71"},{label:"VCI",value:"Anticorrosión op."},{label:"Tier",value:"1/2 compatible"},{label:"MOQ",value:"100 láminas"}],
+ moq: "100 láminas",
+ },
 ];
 ---
 
 <PageLayout
-  ogImage="/img/categorias/laminas-carton-corrugado-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}
-  pageType="category"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas Cartón Corrugado"}]}>
+ ogImage="/img/categorias/laminas-carton-corrugado-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}
+ pageType="category"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas Cartón Corrugado"}]}>
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><span class="current">Láminas Cartón Corrugado</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><span class="current">Láminas Cartón Corrugado</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <PageHero
-    eyebrow="Categoría 06 · 5 Productos"
-    titleHtml={true}
-    title="Láminas de <span>Cartón Corrugado</span>"
-    desc="Cartón reciclado posconsumo (PCR) y certificación FSC. Para fabricantes, marcas con metas ESG y exportadores con requerimientos de trazabilidad ambiental."
-    desc2="Láminas de cartón corrugado por pieza o palé para tapizado, separadores, protección de embarques y fabricación propia de cajas. Simple, doble y triple pared en medidas estándar y a la medida con corte exacto desde fábrica.||Proveedores de mueblería, vidrio, cerámica y electrónica nos eligen para proteger productos frágiles en tránsito. Ofrecemos entrega de láminas en palés completos con flejes y documentación de gramaje para procesos de certificación y auditorías de proveedor."
-    chips={[
-      { label: "5 Productos" },
-      { label: "Certificación FSC" },
-      { label: "PCR disponible" },
-      { label: "Corte a medida" },
-    ]}
-    ctas={[
-      { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
-      { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
-    ]}
-  />
+ <PageHero
+ eyebrow="Categoría 06 · 5 Productos"
+ titleHtml={true}
+ title="Láminas de <span>Cartón Corrugado</span>"
+ desc="Cartón reciclado posconsumo (PCR) y certificación FSC. Para fabricantes, marcas con metas ESG y exportadores con requerimientos de trazabilidad ambiental."
+ desc2="Láminas de cartón corrugado por pieza o palé para tapizado, separadores, protección de embarques y fabricación propia de cajas. Simple, doble y triple pared en medidas estándar y a la medida con corte exacto desde fábrica.||Proveedores de mueblería, vidrio, cerámica y electrónica nos eligen para proteger productos frágiles en tránsito. Ofrecemos entrega de láminas en palés completos con flejes y documentación de gramaje para procesos de certificación y auditorías de proveedor."
+ chips={[
+ { label: "5 Productos" },
+ { label: "Certificación FSC" },
+ { label: "PCR disponible" },
+ { label: "Corte a medida" },
+ ]}
+ ctas={[
+ { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+ { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
-    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-lc-title">
-      <div class="container">
-        <SectionHeader
-          id="prods-lc-title"
-          twoCol
-          title="5 Productos — Láminas Cartón Corrugado"
-          subtitle="Selecciona el tipo de lámina para ver la ficha técnica completa con medidas, resistencia y condiciones de pedido."
-          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
-        >
-          <p>Desde láminas simples para protección hasta triple corrugado sustituto de madera. Cada ficha incluye ECT, BCT, medidas estándar y corte personalizado.</p>
-        </SectionHeader>
-        <div class="sku-grid">
-          {productos.map(p => (
-            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
-              <div class="sku-card__img-wrap">
-                <img src={p.imgSrc} alt={p.imgAlt}
-                  class="sku-card__img" width="640" height="480"
-                  loading="lazy" decoding="async" />
-                <span class="sku-card__code">{p.code}</span>
-                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
-              </div>
-              <div class="sku-card__body">
-                <h2 class="sku-card__name">{p.title}</h2>
-                <p class="sku-card__desc">{p.desc}</p>
-                <div class="sku-card__specs">
-                  {p.specs.map(s => (
-                    <div>
-                      <span class="sku-card__spec-label">{s.label}</span>
-                      <span class="sku-card__spec-value">{s.value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div class="sku-card__footer">
-                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
-                  <span class="sku-card__moq">MOQ: {p.moq}</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  </main>
+ <main id="contenido-principal" role="main">
+ <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-lc-title">
+ <div class="container">
+ <SectionHeader
+ id="prods-lc-title"
+ twoCol
+ title="5 Productos — Láminas Cartón Corrugado"
+ subtitle="Selecciona el tipo de lámina para ver la ficha técnica completa con medidas, resistencia y condiciones de pedido."
+ link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+ >
+ <p>Desde láminas simples para protección hasta triple corrugado sustituto de madera. Cada ficha incluye ECT, BCT, medidas estándar y corte personalizado.</p>
+ </SectionHeader>
+ <div class="sku-grid">
+ {productos.map(p => (
+ <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+ <div class="sku-card__img-wrap">
+ <img src={p.imgSrc} alt={p.imgAlt}
+ class="sku-card__img" width="640" height="480"
+ loading="lazy" decoding="async" />
+ <span class="sku-card__code">{p.code}</span>
+ <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
+ </div>
+ <div class="sku-card__body">
+ <h2 class="sku-card__name">{p.title}</h2>
+ <p class="sku-card__desc">{p.desc}</p>
+ <div class="sku-card__specs">
+ {p.specs.map(s => (
+ <div>
+ <span class="sku-card__spec-label">{s.label}</span>
+ <span class="sku-card__spec-value">{s.value}</span>
+ </div>
+ ))}
+ </div>
+ <div class="sku-card__footer">
+ <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+ <span class="sku-card__moq">MOQ: {p.moq}</span>
+ </div>
+ </div>
+ </article>
+ ))}
+ </div>
+ </div>
+ </section>
+ </main>
 
 
-  <!-- Del Blog CADECA -->
-  <section class="cat-blog-links">
-    <div class="container">
-      <h2 class="cat-blog-links__title">📚 Del Blog CADECA</h2>
-      <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
-      <div class="cat-blog-links__grid">
-        <a href="/blog/carton-reciclado-vs-virgen-analisis-completo" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Reciclado vs virgen: análisis completo</span>
-        </a>
-        <a href="/blog/glosario-terminos-carton-corrugado-mexico" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Glosario técnico del corrugado</span>
-        </a>
-        <a href="/blog/economia-circular-carton-empresa-mexico" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Economía circular con cartón</span>
-        </a>
-      </div>
-      <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
-    </div>
-  </section>
+ <!-- Del Blog CADECA -->
+ <section class="cat-blog-links">
+ <div class="container">
+ <h2 class="cat-blog-links__title"> Del Blog CADECA</h2>
+ <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
+ <div class="cat-blog-links__grid">
+ <a href="/blog/carton-reciclado-vs-virgen-analisis-completo" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Reciclado vs virgen: análisis completo</span>
+ </a>
+ <a href="/blog/glosario-terminos-carton-corrugado-mexico" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Glosario técnico del corrugado</span>
+ </a>
+ <a href="/blog/economia-circular-carton-empresa-mexico" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Economía circular con cartón</span>
+ </a>
+ </div>
+ <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
+ </div>
+ </section>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Qué tipo de lámina necesitas? Te asesoramos gratis en menos de 1 hora" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Qué tipo de lámina necesitas? Te asesoramos gratis en menos de 1 hora" />
 </PageLayout>

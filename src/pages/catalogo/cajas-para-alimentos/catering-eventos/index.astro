@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Catering Eventos Corporativos CDMX | Presentación premium | CAD-AL-10 | CADECA";
+const title  = "Caja Catering Eventos Corporativos CDMX | Presentación premium | CAD-AL-10 | CADECA";
 const description = "Caja para catering y eventos corporativos en CDMX. Presentación premium, kraft o blanco personalizable, food-grade. Ideal banquetes y buffets. MOQ 100 pzas. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-AL-10"],
-  ["Certificación", "Food-grade NOM-051"],
-  ["Liner", "Blanco alta blancura"],
-  ["Uso", "Catering corporativo y eventos"],
-  ["Medidas", "3 estándar bandejas/individual"],
-  ["Impresión", "Logo opcional 1 color"],
-  ["Resistencia", "ECT-32"],
-  ["Pedido mínimo", "100 piezas"],
-  ["Entrega CDMX", "24–48 hrs"],
+ ["Código SKU", "CAD-AL-10"],
+ ["Certificación", "Food-grade NOM-051"],
+ ["Liner", "Blanco alta blancura"],
+ ["Uso", "Catering corporativo y eventos"],
+ ["Medidas", "3 estándar bandejas/individual"],
+ ["Impresión", "Logo opcional 1 color"],
+ ["Resistencia", "ECT-32"],
+ ["Pedido mínimo", "100 piezas"],
+ ["Entrega CDMX", "24–48 hrs"],
 ];
 
 const faqs = [
-  { id:"cad-al-10-f1", question:"¿Pueden entregar para un evento con 24 horas de anticipación?", answer:"Para pedidos de medidas en stock (hasta 500 piezas), entregamos en 24 horas hábiles en CDMX. Para pedidos especiales fuera de stock o con personalización, el tiempo mínimo es de 3 a 5 días. Recomendamos coordinar con al menos 5 días de anticipación para eventos grandes." },
-  { id:"cad-al-10-f2", question:"¿Las cajas se pueden calentar en horno convencional?", answer:"No. Las cajas de cartón corrugado no son aptas para horno. Están diseñadas para el transporte y presentación de alimentos ya preparados, no para cocción. Para catering con alimentos que deben servirse calientes, el corrugado actúa como aislante térmico durante el transporte pero no reemplaza el uso de charolas de aluminio o contenedores aptos para horno." },
-  { id:"cad-al-10-f3", question:"¿Puedo personalizar con el logo del evento o del cliente corporativo?", answer:"Sí. Para eventos corporativos con pedidos de 200+ piezas, podemos imprimir el logo del cliente o del evento en la caja. Para eventos menores a 200 piezas, ofrecemos stickers personalizados de alta calidad que se aplican en fábrica antes de entrega." },
+ { id:"cad-al-10-f1", question:"¿Pueden entregar para un evento con 24 horas de anticipación?", answer:"Para pedidos de medidas en stock (hasta 500 piezas), entregamos en 24 horas hábiles en CDMX. Para pedidos especiales fuera de stock o con personalización, el tiempo mínimo es de 3 a 5 días. Recomendamos coordinar con al menos 5 días de anticipación para eventos grandes." },
+ { id:"cad-al-10-f2", question:"¿Las cajas se pueden calentar en horno convencional?", answer:"No. Las cajas de cartón corrugado no son aptas para horno. Están diseñadas para el transporte y presentación de alimentos ya preparados, no para cocción. Para catering con alimentos que deben servirse calientes, el corrugado actúa como aislante térmico durante el transporte pero no reemplaza el uso de charolas de aluminio o contenedores aptos para horno." },
+ { id:"cad-al-10-f3", question:"¿Puedo personalizar con el logo del evento o del cliente corporativo?", answer:"Sí. Para eventos corporativos con pedidos de 200+ piezas, podemos imprimir el logo del cliente o del evento en la caja. Para eventos menores a 200 piezas, ofrecemos stickers personalizados de alta calidad que se aplican en fábrica antes de entrega." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif", alt: "Caja catering eventos corporativos CDMX" },
-  { src: "/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif", alt: "Empaque catering premium" },
-  { src: "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif", alt: "Food-grade catering" },
-  { src: "/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif", alt: "Corrugado doble catering" },
-  { src: "/img/catalogo/corrugado-doble-pared-hero-cdmx.avif", alt: "Catering empaque profesional" },
+ { src: "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif", alt: "Caja catering eventos corporativos CDMX" },
+ { src: "/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif", alt: "Empaque catering premium" },
+ { src: "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif", alt: "Food-grade catering" },
+ { src: "/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif", alt: "Corrugado doble catering" },
+ { src: "/img/catalogo/corrugado-doble-pared-hero-cdmx.avif", alt: "Catering empaque profesional" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas para Alimentos",href:"/catalogo/cajas-para-alimentos"},{name:"Caja para Catering y Eventos Corporativos"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja para Catering y Eventos Corporativos",sku:"CAD-AL-10",description:"Caja para servicio de catering corporativo y eventos: presentación premium, food-grade, medidas para menús completos o postres. Personalizable con logo desde 100 piezas.",image:gallery[0].src,material:"CAD-AL-10",category:"Cajas para Alimentos",moq:"100 piezas"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas para Alimentos",href:"/catalogo/cajas-para-alimentos"},{name:"Caja para Catering y Eventos Corporativos"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja para Catering y Eventos Corporativos",sku:"CAD-AL-10",description:"Caja para servicio de catering corporativo y eventos: presentación premium, food-grade, medidas para menús completos o postres. Personalizable con logo desde 100 piezas.",image:gallery[0].src,material:"CAD-AL-10",category:"Cajas para Alimentos",moq:"100 piezas"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-para-alimentos">Cajas para Alimentos</a></li>
-        <li><span class="current">Caja para Catering y Eventos Corporativos</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-para-alimentos">Cajas para Alimentos</a></li>
+ <li><span class="current">Caja para Catering y Eventos Corporativos</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadal10-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AL-10 · Cajas para Alimentos</span>
-      <h1 id="sku-cadal10-title" class="cat-page-hero__title">Caja para <span>Catering</span> y Eventos Corporativos CDMX</h1>
-      <p class="cat-page-hero__desc">Caja para servicio de catering corporativo y eventos: presentación premium, food-grade, medidas para menús completos o postres. Personalizable con logo desde 100 piezas.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-10</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadal10-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AL-10 · Cajas para Alimentos</span>
+ <h1 id="sku-cadal10-title" class="cat-page-hero__title">Caja para <span>Catering</span> y Eventos Corporativos CDMX</h1>
+ <p class="cat-page-hero__desc">Caja para servicio de catering corporativo y eventos: presentación premium, food-grade, medidas para menús completos o postres. Personalizable con logo desde 100 piezas.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-10</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadal10-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AL-10 · Familia: Cajas para Alimentos</p>
-            <h2 id="detalle-cadal10-title" class="sku-detail__title">Caja para Catering y Eventos Corporativos</h2>
-            <p class="sku-detail__desc">El servicio de catering corporativo y de eventos exige un empaque que comunique la calidad del servicio desde el primer contacto visual. CAD-AL-10 tiene liner blanco de alta blancura para una apariencia limpia y premium, es food-grade certificado y viene en medidas para menús completos (bandejas de 1/2 de 3 porciones) y para postres y entradas individuales. Personalizable con logo y nombre del servicio desde 100 piezas para eventos con entregas recurrentes.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Food-grade</span><span class="sku-detail__strip-label">Certificado</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Blanco</span><span class="sku-detail__strip-label">Liner premium</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Stock CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AL-10 Caja para Catering y Eventos Corporativos`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AL-10</a>
-              <a href="/catalogo/cajas-para-alimentos" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadal10-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AL-10 · Familia: Cajas para Alimentos</p>
+ <h2 id="detalle-cadal10-title" class="sku-detail__title">Caja para Catering y Eventos Corporativos</h2>
+ <p class="sku-detail__desc">El servicio de catering corporativo y de eventos exige un empaque que comunique la calidad del servicio desde el primer contacto visual. CAD-AL-10 tiene liner blanco de alta blancura para una apariencia limpia y premium, es food-grade certificado y viene en medidas para menús completos (bandejas de 1/2 de 3 porciones) y para postres y entradas individuales. Personalizable con logo y nombre del servicio desde 100 piezas para eventos con entregas recurrentes.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Food-grade</span><span class="sku-detail__strip-label">Certificado</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Blanco</span><span class="sku-detail__strip-label">Liner premium</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Stock CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AL-10 Caja para Catering y Eventos Corporativos`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AL-10</a>
+ <a href="/catalogo/cajas-para-alimentos" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadal10-title">
-      <div class="container">
-        <h2 id="faq-cadal10-title" class="sku-faq__title">Preguntas Frecuentes — Caja para Catering y Eventos Corporativos</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadal10-title">
+ <div class="container">
+ <h2 id="faq-cadal10-title" class="sku-faq__title">Preguntas Frecuentes — Caja para Catering y Eventos Corporativos</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Ofreces catering corporativo? Cotiza la caja que hace lucir tu servicio desde el primer momento" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Ofreces catering corporativo? Cotiza la caja que hace lucir tu servicio desde el primer momento" />
 </PageLayout>

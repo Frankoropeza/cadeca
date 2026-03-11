@@ -1,499 +1,499 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import ProductCard   from "@/components/ProductCard.astro";
+import ProductCard  from "@/components/ProductCard.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
-import ProcessStep   from "@/components/ProcessStep.astro";
-import Testimonial   from "@/components/Testimonial.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import Testimonial  from "@/components/Testimonial.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 
-const title       = "Cajas para Industria Farmacéutica y Cosmética CDMX | Blíster, Cosmética Premium | CADECA";
+const title  = "Cajas para Industria Farmacéutica y Cosmética CDMX | Blíster, Cosmética Premium | CADECA";
 const description = "Cajas de cartón para industria farmacéutica y cosmética en CDMX. Blíster farmacéutica, cosmética premium, suplementos, líneas de producción pharma. Cumplimiento NOM-072. Desde 200 piezas, entrega 3-5 días. Cotiza gratis.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Cajas para Industria Farmacéutica y Cosmética",
-  "description": "Cajas de cartón para laboratorios farmacéuticos, marcas de cosmética, distribuidoras y líneas de producción pharma en CDMX. Cumplimiento NOM-072 y acabados premium.",
-  "brand": { "@type": "Brand", "name": "CADECA" },
-  "manufacturer": { "@type": "Organization", "name": "CADECA" },
-  "url": "https://cajas-de-carton.com/productos/cajas-farmaceutica-cosmetica",
-  "image": "https://cajas-de-carton.com/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
-  "category": "Cajas para Industria Farmacéutica y Cosmética",
-  "areaServed": ["Ciudad de México", "Estado de México"],
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "lowPrice": "5.00",
-    "highPrice": "40.00",
-    "availability": "https://schema.org/InStock",
-    "seller": { "@type": "Organization", "name": "CADECA" }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "87",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": { "@type": "Person", "name": "Dra. Mónica L." },
-      "datePublished": "2025-08-30",
-      "reviewBody": "Nuestro laboratorio necesitaba cajas que cumplieran al 100% con la NOM-072 y CADECA entregó exactamente eso. La impresión regulatoria es impecable, los materiales son de grado farmacéutico y no hemos tenido ningún problema con COFEPRIS. Excelente proveedor."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": { "@type": "Person", "name": "Iván G." },
-      "datePublished": "2025-11-12",
-      "reviewBody": "Las dimensiones de las cajas para nuestros productos cosméticos son precisas al milímetro. Cada frasco y cada tubo encaja perfectamente. La presentación con acabado soft touch le da un toque premium que nuestras clientas valoran mucho."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": { "@type": "Person", "name": "Paulina E." },
-      "datePublished": "2026-02-02",
-      "reviewBody": "La calidad del empaque con sellado inviolable que nos fabricaron es excelente. Nuestros clientes confían en la integridad del producto gracias al sistema de seguridad de la caja. El acabado y la impresión son de primer nivel."
-    }
-  ],
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Normatividad", "value": "Cumple NOM-072-SSA1" },
-    { "@type": "PropertyValue", "name": "Material", "value": "Grado farmacéutico" },
-    { "@type": "PropertyValue", "name": "Impresión", "value": "Regulatoria incluida" },
-    { "@type": "PropertyValue", "name": "Seguridad", "value": "Sellado inviolable disponible" },
-    { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "100 piezas" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "Cajas para Industria Farmacéutica y Cosmética",
+ "description": "Cajas de cartón para laboratorios farmacéuticos, marcas de cosmética, distribuidoras y líneas de producción pharma en CDMX. Cumplimiento NOM-072 y acabados premium.",
+ "brand": { "@type": "Brand", "name": "CADECA" },
+ "manufacturer": { "@type": "Organization", "name": "CADECA" },
+ "url": "https://cajas-de-carton.com/productos/cajas-farmaceutica-cosmetica",
+ "image": "https://cajas-de-carton.com/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
+ "category": "Cajas para Industria Farmacéutica y Cosmética",
+ "areaServed": ["Ciudad de México", "Estado de México"],
+ "offers": {
+ "@type": "AggregateOffer",
+ "priceCurrency": "MXN",
+ "lowPrice": "5.00",
+ "highPrice": "40.00",
+ "availability": "https://schema.org/InStock",
+ "seller": { "@type": "Organization", "name": "CADECA" }
+ },
+ "aggregateRating": {
+ "@type": "AggregateRating",
+ "ratingValue": "4.8",
+ "reviewCount": "87",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "review": [
+ {
+ "@type": "Review",
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "5",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "author": { "@type": "Person", "name": "Dra. Mónica L." },
+ "datePublished": "2025-08-30",
+ "reviewBody": "Nuestro laboratorio necesitaba cajas que cumplieran al 100% con la NOM-072 y CADECA entregó exactamente eso. La impresión regulatoria es impecable, los materiales son de grado farmacéutico y no hemos tenido ningún problema con COFEPRIS. Excelente proveedor."
+ },
+ {
+ "@type": "Review",
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "5",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "author": { "@type": "Person", "name": "Iván G." },
+ "datePublished": "2025-11-12",
+ "reviewBody": "Las dimensiones de las cajas para nuestros productos cosméticos son precisas al milímetro. Cada frasco y cada tubo encaja perfectamente. La presentación con acabado soft touch le da un toque premium que nuestras clientas valoran mucho."
+ },
+ {
+ "@type": "Review",
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "5",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "author": { "@type": "Person", "name": "Paulina E." },
+ "datePublished": "2026-02-02",
+ "reviewBody": "La calidad del empaque con sellado inviolable que nos fabricaron es excelente. Nuestros clientes confían en la integridad del producto gracias al sistema de seguridad de la caja. El acabado y la impresión son de primer nivel."
+ }
+ ],
+ "additionalProperty": [
+ { "@type": "PropertyValue", "name": "Normatividad", "value": "Cumple NOM-072-SSA1" },
+ { "@type": "PropertyValue", "name": "Material", "value": "Grado farmacéutico" },
+ { "@type": "PropertyValue", "name": "Impresión", "value": "Regulatoria incluida" },
+ { "@type": "PropertyValue", "name": "Seguridad", "value": "Sellado inviolable disponible" },
+ { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "100 piezas" }
+ ]
 };
 
 const subcategorias = [
-  {
-    title:   "Blíster Farmacéutica — Flauta E",
-    desc:    "Cajas plegadizas con flauta E para blíster de medicamentos. Dimensiones exactas para tabletas, cápsulas y ampolletas. Impresión full color con datos NOM-072 obligatorios.",
-    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
-    imgAlt:  "Cajas blíster farmacéutica flauta E para medicamentos en CDMX — CADECA",
-    href:    "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica",
-    tags: [
-      { label: "Flauta E · Plegadiza",   href: "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica" },
-      { label: "NOM-072 compliant",       href: "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica" },
-      { label: "Desde 200 pzas",          href: "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica" },
-    ],
-    btnText: "Ver Blíster Farmacéutica",
-  },
-  {
-    title:   "Cosmética Premium — Acabados Especiales",
-    desc:    "Cajas rígidas y plegadizas con acabados especiales: barniz UV selectivo, hot stamping, laminado soft touch y ventanas de acetato. Para marcas de skincare, maquillaje y perfumería premium.",
-    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif",
-    imgAlt:  "Cajas cosmética premium con acabados especiales barniz UV en CDMX — CADECA",
-    href:    "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium",
-    tags: [
-      { label: "Hot stamping · UV selectivo",  href: "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium" },
-      { label: "Soft touch · Laminado",         href: "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium" },
-      { label: "Desde 200 pzas",                href: "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium" },
-    ],
-    btnText: "Ver Cosmética Premium",
-  },
-  {
-    title:   "Distribuidora Farmacia — Doble Pared BC",
-    desc:    "Cajas de corrugado doble pared BC para distribución mayorista de medicamentos. Resistencia apilamiento para palletizado y protección contra humedad en cadena de frío.",
-    imgSrc:  "/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif",
-    imgAlt:  "Cajas distribuidora farmacia doble pared BC resistente en CDMX — CADECA",
-    href:    "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia",
-    tags: [
-      { label: "Doble pared BC",            href: "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia" },
-      { label: "Cadena de frío",             href: "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia" },
-      { label: "Palletizado industrial",     href: "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia" },
-    ],
-    btnText: "Ver Distribuidora Farmacia",
-  },
-  {
-    title:   "Suplementos y Nutrición — NOM-051",
-    desc:    "Cajas para suplementos alimenticios, vitaminas y proteínas con cumplimiento NOM-051 de etiquetado frontal. Impresión a 1 color o full color con tabla nutricional integrada.",
-    imgSrc:  "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif",
-    imgAlt:  "Cajas suplementos y nutrición NOM-051 etiquetado frontal en CDMX — CADECA",
-    href:    "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion",
-    tags: [
-      { label: "NOM-051 compliant",         href: "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion" },
-      { label: "Etiquetado frontal",         href: "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion" },
-      { label: "Desde 200 pzas",            href: "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion" },
-    ],
-    btnText: "Ver Suplementos y Nutrición",
-  },
-  {
-    title:   "Línea Producción Pharma — Alta Velocidad",
-    desc:    "Cajas diseñadas para líneas de producción automatizadas de alta velocidad. Tolerancias dimensionales estrictas, pre-doblado y compatibilidad con encartonadoras industriales.",
-    imgSrc:  "/img/catalogo/cajas-carton-corrugado-simple-pared-cdmx.avif",
-    imgAlt:  "Cajas línea producción pharma alta velocidad industrial en CDMX — CADECA",
-    href:    "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma",
-    tags: [
-      { label: "Alta velocidad",             href: "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma" },
-      { label: "Encartonadoras compat.",     href: "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma" },
-      { label: "Tolerancias estrictas",      href: "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma" },
-    ],
-    btnText: "Ver Línea Producción Pharma",
-  },
+ {
+ title:  "Blíster Farmacéutica — Flauta E",
+ desc:  "Cajas plegadizas con flauta E para blíster de medicamentos. Dimensiones exactas para tabletas, cápsulas y ampolletas. Impresión full color con datos NOM-072 obligatorios.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
+ imgAlt:  "Cajas blíster farmacéutica flauta E para medicamentos en CDMX — CADECA",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica",
+ tags: [
+ { label: "Flauta E · Plegadiza",  href: "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica" },
+ { label: "NOM-072 compliant",  href: "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica" },
+ { label: "Desde 200 pzas",  href: "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica" },
+ ],
+ btnText: "Ver Blíster Farmacéutica",
+ },
+ {
+ title:  "Cosmética Premium — Acabados Especiales",
+ desc:  "Cajas rígidas y plegadizas con acabados especiales: barniz UV selectivo, hot stamping, laminado soft touch y ventanas de acetato. Para marcas de skincare, maquillaje y perfumería premium.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif",
+ imgAlt:  "Cajas cosmética premium con acabados especiales barniz UV en CDMX — CADECA",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium",
+ tags: [
+ { label: "Hot stamping · UV selectivo",  href: "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium" },
+ { label: "Soft touch · Laminado",  href: "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium" },
+ { label: "Desde 200 pzas",  href: "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium" },
+ ],
+ btnText: "Ver Cosmética Premium",
+ },
+ {
+ title:  "Distribuidora Farmacia — Doble Pared BC",
+ desc:  "Cajas de corrugado doble pared BC para distribución mayorista de medicamentos. Resistencia apilamiento para palletizado y protección contra humedad en cadena de frío.",
+ imgSrc:  "/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif",
+ imgAlt:  "Cajas distribuidora farmacia doble pared BC resistente en CDMX — CADECA",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia",
+ tags: [
+ { label: "Doble pared BC",  href: "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia" },
+ { label: "Cadena de frío",  href: "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia" },
+ { label: "Palletizado industrial",  href: "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia" },
+ ],
+ btnText: "Ver Distribuidora Farmacia",
+ },
+ {
+ title:  "Suplementos y Nutrición — NOM-051",
+ desc:  "Cajas para suplementos alimenticios, vitaminas y proteínas con cumplimiento NOM-051 de etiquetado frontal. Impresión a 1 color o full color con tabla nutricional integrada.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif",
+ imgAlt:  "Cajas suplementos y nutrición NOM-051 etiquetado frontal en CDMX — CADECA",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion",
+ tags: [
+ { label: "NOM-051 compliant",  href: "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion" },
+ { label: "Etiquetado frontal",  href: "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion" },
+ { label: "Desde 200 pzas",  href: "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion" },
+ ],
+ btnText: "Ver Suplementos y Nutrición",
+ },
+ {
+ title:  "Línea Producción Pharma — Alta Velocidad",
+ desc:  "Cajas diseñadas para líneas de producción automatizadas de alta velocidad. Tolerancias dimensionales estrictas, pre-doblado y compatibilidad con encartonadoras industriales.",
+ imgSrc:  "/img/catalogo/cajas-carton-corrugado-simple-pared-cdmx.avif",
+ imgAlt:  "Cajas línea producción pharma alta velocidad industrial en CDMX — CADECA",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma",
+ tags: [
+ { label: "Alta velocidad",  href: "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma" },
+ { label: "Encartonadoras compat.",  href: "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma" },
+ { label: "Tolerancias estrictas",  href: "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma" },
+ ],
+ btnText: "Ver Línea Producción Pharma",
+ },
 ];
 
 const industrias = [
-  {
-    img:      "/img/industrias/retail-placeholder.svg",
-    title:    "Laboratorios Farmacéuticos",
-    desc:     "Cajas para medicamentos de patente y genéricos con cumplimiento NOM-072. Blíster, ampolletas, frascos y dispositivos médicos con trazabilidad de lote y caducidad.",
-    href:     "/soluciones/farmaceutica",
-    linkText: "Ver solución pharma",
-  },
-  {
-    img:      "/img/industrias/retail-placeholder.svg",
-    title:    "Marcas de Cosmética",
-    desc:     "Empaque premium para skincare, maquillaje y perfumería. Acabados especiales que comunican calidad: hot stamping, barniz UV selectivo, soft touch y ventanas de acetato.",
-    href:     "/soluciones/cosmetica",
-    linkText: "Ver solución cosmética",
-  },
-  {
-    img:      "/img/industrias/retail-placeholder.svg",
-    title:    "Distribuidoras Farmacéuticas",
-    desc:     "Cajas de corrugado doble pared para distribución mayorista. Resistencia al apilamiento, protección contra humedad y compatibilidad con cadena de frío para medicamentos sensibles.",
-    href:     "/soluciones/distribuidora",
-    linkText: "Ver solución distribuidora",
-  },
-  {
-    img:      "/img/industrias/retail-placeholder.svg",
-    title:    "Suplementos y Nutrición",
-    desc:     "Cajas con cumplimiento NOM-051 para suplementos alimenticios, vitaminas, proteínas y productos naturistas. Etiquetado frontal, tabla nutricional y sellos de advertencia integrados.",
-    href:     "/soluciones/suplementos",
-    linkText: "Ver solución suplementos",
-  },
+ {
+ img:  "/img/industrias/retail-placeholder.svg",
+ title:  "Laboratorios Farmacéuticos",
+ desc:  "Cajas para medicamentos de patente y genéricos con cumplimiento NOM-072. Blíster, ampolletas, frascos y dispositivos médicos con trazabilidad de lote y caducidad.",
+ href:  "/soluciones/farmaceutica",
+ linkText: "Ver solución pharma",
+ },
+ {
+ img:  "/img/industrias/retail-placeholder.svg",
+ title:  "Marcas de Cosmética",
+ desc:  "Empaque premium para skincare, maquillaje y perfumería. Acabados especiales que comunican calidad: hot stamping, barniz UV selectivo, soft touch y ventanas de acetato.",
+ href:  "/soluciones/cosmetica",
+ linkText: "Ver solución cosmética",
+ },
+ {
+ img:  "/img/industrias/retail-placeholder.svg",
+ title:  "Distribuidoras Farmacéuticas",
+ desc:  "Cajas de corrugado doble pared para distribución mayorista. Resistencia al apilamiento, protección contra humedad y compatibilidad con cadena de frío para medicamentos sensibles.",
+ href:  "/soluciones/distribuidora",
+ linkText: "Ver solución distribuidora",
+ },
+ {
+ img:  "/img/industrias/retail-placeholder.svg",
+ title:  "Suplementos y Nutrición",
+ desc:  "Cajas con cumplimiento NOM-051 para suplementos alimenticios, vitaminas, proteínas y productos naturistas. Etiquetado frontal, tabla nutricional y sellos de advertencia integrados.",
+ href:  "/soluciones/suplementos",
+ linkText: "Ver solución suplementos",
+ },
 ];
 
 const pasos = [
-  { num: 1, title: "Cuéntanos tu producto",     desc: "Medicamento, cosmético, suplemento o dispositivo médico. Con eso definimos el tipo de caja, material y acabados necesarios para tu industria." },
-  { num: 2, title: "Cotiza en 2 horas",          desc: "Enviamos precio, especificaciones técnicas y opciones de acabado por WhatsApp. Incluimos asesoría sobre cumplimiento normativo NOM sin costo." },
-  { num: 3, title: "Pedido desde 200 pzas",      desc: "Mínimos accesibles para marcas en desarrollo y laboratorios pequeños. Precios de mayoreo desde 500 piezas con descuentos escalonados por volumen." },
-  { num: 4, title: "Entrega en tu laboratorio",  desc: "3-5 días hábiles en CDMX y área metropolitana. Entregas coordinadas con tu calendario de producción, directo a tu laboratorio o centro de distribución." },
+ { num: 1, title: "Cuéntanos tu producto",  desc: "Medicamento, cosmético, suplemento o dispositivo médico. Con eso definimos el tipo de caja, material y acabados necesarios para tu industria." },
+ { num: 2, title: "Cotiza en 2 horas",  desc: "Enviamos precio, especificaciones técnicas y opciones de acabado por WhatsApp. Incluimos asesoría sobre cumplimiento normativo NOM sin costo." },
+ { num: 3, title: "Pedido desde 200 pzas",  desc: "Mínimos accesibles para marcas en desarrollo y laboratorios pequeños. Precios de mayoreo desde 500 piezas con descuentos escalonados por volumen." },
+ { num: 4, title: "Entrega en tu laboratorio",  desc: "3-5 días hábiles en CDMX y área metropolitana. Entregas coordinadas con tu calendario de producción, directo a tu laboratorio o centro de distribución." },
 ];
 
 const testimonios = [
-  {
-    initials: "DH",
-    name:     "Dr. Daniel H.",
-    role:     "Director de Operaciones — Laboratorio Farmacéutico, Azcapotzalco, CDMX",
-    text:     "Llevamos 2 años trabajando con CADECA para nuestras cajas blíster. La calidad de impresión cumple NOM-072, las tolerancias dimensionales son exactas para nuestras encartonadoras y nunca hemos tenido un rechazo de COFEPRIS por empaque. Altamente recomendados.",
-  },
-  {
-    initials: "MC",
-    name:     "Mariana C.",
-    role:     "Fundadora — Marca de Skincare Premium, Polanco, CDMX",
-    text:     "CADECA entendió que para una marca de cosmética premium el empaque ES el producto. El acabado soft touch con hot stamping dorado que nos hicieron es espectacular. Mis clientas fotografían la caja antes de abrirla — eso es branding que funciona.",
-  },
-  {
-    initials: "JP",
-    name:     "José P.",
-    role:     "Gerente de Logística — Distribuidora Farmacéutica, Naucalpan, Edo. Méx.",
-    text:     "Compramos 5,000 cajas mensuales de doble pared para distribución de medicamentos. CADECA cumple en tiempo, calidad y precio. Las cajas resisten el apilamiento de 6 niveles en tarima y mantienen integridad en cadena de frío. Son nuestro proveedor fijo.",
-  },
+ {
+ initials: "DH",
+ name:  "Dr. Daniel H.",
+ role:  "Director de Operaciones — Laboratorio Farmacéutico, Azcapotzalco, CDMX",
+ text:  "Llevamos 2 años trabajando con CADECA para nuestras cajas blíster. La calidad de impresión cumple NOM-072, las tolerancias dimensionales son exactas para nuestras encartonadoras y nunca hemos tenido un rechazo de COFEPRIS por empaque. Altamente recomendados.",
+ },
+ {
+ initials: "MC",
+ name:  "Mariana C.",
+ role:  "Fundadora — Marca de Skincare Premium, Polanco, CDMX",
+ text:  "CADECA entendió que para una marca de cosmética premium el empaque ES el producto. El acabado soft touch con hot stamping dorado que nos hicieron es espectacular. Mis clientas fotografían la caja antes de abrirla — eso es branding que funciona.",
+ },
+ {
+ initials: "JP",
+ name:  "José P.",
+ role:  "Gerente de Logística — Distribuidora Farmacéutica, Naucalpan, Edo. Méx.",
+ text:  "Compramos 5,000 cajas mensuales de doble pared para distribución de medicamentos. CADECA cumple en tiempo, calidad y precio. Las cajas resisten el apilamiento de 6 niveles en tarima y mantienen integridad en cadena de frío. Son nuestro proveedor fijo.",
+ },
 ];
 
 const faqs = [
-  {
-    id: "fc1",
-    question: "¿Qué norma NOM aplica para cajas de medicamentos en México?",
-    answer: "La <strong>NOM-072-SSA1-2012</strong> establece los requisitos de etiquetado de medicamentos de venta libre y con receta. Esto incluye información obligatoria que debe aparecer en el empaque primario y secundario: denominación genérica, forma farmacéutica, cantidad, lote, caducidad, laboratorio fabricante y datos de COFEPRIS. En CADECA producimos cajas con todos estos elementos correctamente impresos y verificados antes de entrega.",
-  },
-  {
-    id: "fc2",
-    question: "¿Qué acabados especiales ofrecen para cajas de cosmética premium?",
-    answer: "Para cosmética premium ofrecemos: <strong>Barniz UV selectivo</strong> (brillo en zonas específicas), <strong>hot stamping</strong> (dorado, plateado, oro rosa), <strong>laminado soft touch</strong> (textura aterciopelada), <strong>embossing/debossing</strong> (relieve y bajo relieve), <strong>ventanas de acetato</strong> y <strong>foil holográfico</strong>. Todos los acabados son combinables entre sí. El pedido mínimo para acabados especiales es de 200 piezas.",
-  },
-  {
-    id: "fc3",
-    question: "¿Cuál es el pedido mínimo para cajas farmacéuticas?",
-    answer: "El pedido mínimo es de <strong>200 piezas</strong> para cajas farmacéuticas y de cosmética. Para pedidos de 500+ piezas aplican precios de mayoreo. Para 1,000+ piezas tenemos precios especiales por volumen. Laboratorios con consumo recurrente pueden acceder a contratos anuales con precios fijos y entregas programadas.",
-  },
-  {
-    id: "fc4",
-    question: "¿Las cajas son compatibles con encartonadoras automáticas?",
-    answer: "Sí. Nuestras cajas para líneas de producción pharma están fabricadas con <strong>tolerancias dimensionales de +/- 0.5mm</strong>, pre-doblado preciso y corte limpio para alimentación automática en encartonadoras de alta velocidad. Trabajamos con las especificaciones técnicas de tu máquina para garantizar compatibilidad al 100%. Enviamos muestras de prueba antes de la producción completa.",
-  },
-  {
-    id: "fc5",
-    question: "¿Cumplen con los requisitos de COFEPRIS para empaque farmacéutico?",
-    answer: "Sí. Nuestras cajas farmacéuticas cumplen con los requerimientos de <strong>COFEPRIS</strong> en cuanto a materiales seguros (libres de metales pesados), impresión legible e indeleble de información regulatoria, y trazabilidad de lote. Utilizamos tintas certificadas para contacto indirecto con alimentos y medicamentos. Podemos proporcionar certificados de materiales y fichas técnicas para auditorías.",
-  },
-  {
-    id: "fc6",
-    question: "¿Ofrecen cajas con cumplimiento NOM-051 para suplementos alimenticios?",
-    answer: "Sí. Para suplementos alimenticios producimos cajas con <strong>etiquetado frontal NOM-051</strong> completo: sellos de advertencia (exceso de calorías, sodio, grasas, azúcares), tabla nutricional, lista de ingredientes y declaración de alérgenos. Nuestro equipo de diseño verifica que la información cumpla con la norma antes de enviar a producción, evitando rechazos y reprocesos costosos.",
-  },
+ {
+ id: "fc1",
+ question: "¿Qué norma NOM aplica para cajas de medicamentos en México?",
+ answer: "La <strong>NOM-072-SSA1-2012</strong> establece los requisitos de etiquetado de medicamentos de venta libre y con receta. Esto incluye información obligatoria que debe aparecer en el empaque primario y secundario: denominación genérica, forma farmacéutica, cantidad, lote, caducidad, laboratorio fabricante y datos de COFEPRIS. En CADECA producimos cajas con todos estos elementos correctamente impresos y verificados antes de entrega.",
+ },
+ {
+ id: "fc2",
+ question: "¿Qué acabados especiales ofrecen para cajas de cosmética premium?",
+ answer: "Para cosmética premium ofrecemos: <strong>Barniz UV selectivo</strong> (brillo en zonas específicas), <strong>hot stamping</strong> (dorado, plateado, oro rosa), <strong>laminado soft touch</strong> (textura aterciopelada), <strong>embossing/debossing</strong> (relieve y bajo relieve), <strong>ventanas de acetato</strong> y <strong>foil holográfico</strong>. Todos los acabados son combinables entre sí. El pedido mínimo para acabados especiales es de 200 piezas.",
+ },
+ {
+ id: "fc3",
+ question: "¿Cuál es el pedido mínimo para cajas farmacéuticas?",
+ answer: "El pedido mínimo es de <strong>200 piezas</strong> para cajas farmacéuticas y de cosmética. Para pedidos de 500+ piezas aplican precios de mayoreo. Para 1,000+ piezas tenemos precios especiales por volumen. Laboratorios con consumo recurrente pueden acceder a contratos anuales con precios fijos y entregas programadas.",
+ },
+ {
+ id: "fc4",
+ question: "¿Las cajas son compatibles con encartonadoras automáticas?",
+ answer: "Sí. Nuestras cajas para líneas de producción pharma están fabricadas con <strong>tolerancias dimensionales de +/- 0.5mm</strong>, pre-doblado preciso y corte limpio para alimentación automática en encartonadoras de alta velocidad. Trabajamos con las especificaciones técnicas de tu máquina para garantizar compatibilidad al 100%. Enviamos muestras de prueba antes de la producción completa.",
+ },
+ {
+ id: "fc5",
+ question: "¿Cumplen con los requisitos de COFEPRIS para empaque farmacéutico?",
+ answer: "Sí. Nuestras cajas farmacéuticas cumplen con los requerimientos de <strong>COFEPRIS</strong> en cuanto a materiales seguros (libres de metales pesados), impresión legible e indeleble de información regulatoria, y trazabilidad de lote. Utilizamos tintas certificadas para contacto indirecto con alimentos y medicamentos. Podemos proporcionar certificados de materiales y fichas técnicas para auditorías.",
+ },
+ {
+ id: "fc6",
+ question: "¿Ofrecen cajas con cumplimiento NOM-051 para suplementos alimenticios?",
+ answer: "Sí. Para suplementos alimenticios producimos cajas con <strong>etiquetado frontal NOM-051</strong> completo: sellos de advertencia (exceso de calorías, sodio, grasas, azúcares), tabla nutricional, lista de ingredientes y declaración de alérgenos. Nuestro equipo de diseño verifica que la información cumpla con la norma antes de enviar a producción, evitando rechazos y reprocesos costosos.",
+ },
 ];
 
 const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Productos", href: "/productos" },
-  { name: "Cajas Farmacéutica y Cosmética" },
+ { name: "Inicio", href: "/" },
+ { name: "Productos", href: "/productos" },
+ { name: "Cajas Farmacéutica y Cosmética" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  schema={productSchema}
-  whatsapp={WHATSAPP}
-  faqItems={faqItems}
-  breadcrumbs={breadcrumbs}
+ title={title}
+ description={description}
+ schema={productSchema}
+ whatsapp={WHATSAPP}
+ faqItems={faqItems}
+ breadcrumbs={breadcrumbs}
 >
 
-  <!-- HERO -->
-    <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/productos">Productos</a></li>
-      <li><span class="current">Cajas Farmacéutica y Cosmética</span></li>
-      </ol>
-    </div>
-  </div>
+ <!-- HERO -->
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/productos">Productos</a></li>
+ <li><span class="current">Cajas Farmacéutica y Cosmética</span></li>
+ </ol>
+ </div>
+ </div>
 
 
-  <!-- Banner catálogo técnico -->
-  <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
-    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-      <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, fichas de materiales y cumplimiento NOM?</span>
-      <a href="/catalogo/cajas-farmaceutica-cosmetica" style="background:var(--color-primary);color:#fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
-    </div>
-  </div>
+ <!-- Banner catálogo técnico -->
+ <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
+ <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+ <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, fichas de materiales y cumplimiento NOM?</span>
+ <a href="/catalogo/cajas-farmaceutica-cosmetica" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
+ </div>
+ </div>
 
-  <section class="page-hero" aria-labelledby="prod-pharma-title">
-    <div class="container">
-      <div class="page-hero__inner">
-        <div class="page-hero__content">
-          <p class="page-hero__badge">Blíster · Cosmética Premium · Distribuidora · Suplementos · Línea Pharma</p>
-          <h1 id="prod-pharma-title" class="page-hero__title">
-            Cajas para Industria<br><span>Farmacéutica y Cosmética en CDMX</span>
-          </h1>
-          <p class="page-hero__desc">
-            Empaque especializado para laboratorios farmacéuticos, marcas de cosmética premium, distribuidoras y líneas de producción automatizadas. Cumplimiento NOM-072, acabados especiales y entregas en 3-5 días hábiles en CDMX y Estado de México. Desde 200 piezas.
-          </p>
-          <div class="page-hero__ctas">
-            <a href="#cotizar"       class="btn btn--primary">Cotizar Ahora</a>
-            <a href="#subcategorias" class="btn btn--outline">Ver Categorías</a>
-          </div>
-        </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">3-5 días</span>
-            <span class="page-hero__stat-label">Entrega CDMX</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">NOM-072</span>
-            <span class="page-hero__stat-label">Cumplimiento pharma</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">Premium</span>
-            <span class="page-hero__stat-label">Acabados especiales</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section class="page-hero" aria-labelledby="prod-pharma-title">
+ <div class="container">
+ <div class="page-hero__inner">
+ <div class="page-hero__content">
+ <p class="page-hero__badge">Blíster · Cosmética Premium · Distribuidora · Suplementos · Línea Pharma</p>
+ <h1 id="prod-pharma-title" class="page-hero__title">
+ Cajas para Industria<br><span>Farmacéutica y Cosmética en CDMX</span>
+ </h1>
+ <p class="page-hero__desc">
+ Empaque especializado para laboratorios farmacéuticos, marcas de cosmética premium, distribuidoras y líneas de producción automatizadas. Cumplimiento NOM-072, acabados especiales y entregas en 3-5 días hábiles en CDMX y Estado de México. Desde 200 piezas.
+ </p>
+ <div class="page-hero__ctas">
+ <a href="cotizar"  class="btn btn--primary">Cotizar Ahora</a>
+ <a href="subcategorias" class="btn btn--outline">Ver Categorías</a>
+ </div>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">3-5 días</span>
+ <span class="page-hero__stat-label">Entrega CDMX</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">NOM-072</span>
+ <span class="page-hero__stat-label">Cumplimiento pharma</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">Premium</span>
+ <span class="page-hero__stat-label">Acabados especiales</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <!-- DETALLE DEL PRODUCTO -->
-    <section class="prod-detail" aria-labelledby="detalle-pharma-title">
-      <div class="container">
-        <div class="prod-detail__inner">
-          <div class="prod-detail__img-wrap">
-            <img
-              src="/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif"
-              alt="Cajas de cartón para industria farmacéutica y cosmética en CDMX — CADECA"
-              class="prod-detail__img"
-              width="900" height="560"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-          <div class="prod-detail__content">
-            <span class="prod-detail__label">El empaque que cumple la norma y eleva tu marca</span>
-            <h2 id="detalle-pharma-title" class="section-header__title" style="margin:0">
-              Cajas Farmacéuticas y Cosméticas: Cumplimiento Normativo y Acabados Premium
-            </h2>
-            <p class="prod-detail__intro">
-              La industria farmacéutica y cosmética requiere empaque que combine cumplimiento regulatorio estricto con presentación impecable. En CADECA fabricamos cajas que cumplen NOM-072 para medicamentos, NOM-051 para suplementos y ofrecemos acabados premium para marcas de cosmética que necesitan que su empaque comunique calidad desde el primer contacto visual.
-            </p>
-            <div>
-              <p class="prod-detail__specs-title">Especificaciones técnicas</p>
-              <div class="prod-detail__specs-grid">
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Tipo de caja</span>
-                  <span class="prod-detail__spec-value">Plegadiza · Rígida · Corrugado</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Flauta</span>
-                  <span class="prod-detail__spec-value">E (blíster) · BC (distribución)</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Normatividad</span>
-                  <span class="prod-detail__spec-value">NOM-072 · NOM-051 · COFEPRIS</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Acabados</span>
-                  <span class="prod-detail__spec-value">UV · Hot stamping · Soft touch</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Material</span>
-                  <span class="prod-detail__spec-value">SBS · Kraft · Caple · Couché</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Impresión</span>
-                  <span class="prod-detail__spec-value">1 color a full color CMYK</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Pedido mínimo</span>
-                  <span class="prod-detail__spec-value">200 piezas</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Entrega CDMX</span>
-                  <span class="prod-detail__spec-value">3-5 días hábiles</span>
-                </div>
-              </div>
-            </div>
-            <div class="prod-detail__actions">
-              <a href="#cotizar"                      class="btn btn--primary">Solicitar Cotización</a>
-              <a href={`https://wa.me/${WHATSAPP}`}
-                 target="_blank" rel="noopener"      class="btn btn--outline">WhatsApp Directo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- DETALLE DEL PRODUCTO -->
+ <section class="prod-detail" aria-labelledby="detalle-pharma-title">
+ <div class="container">
+ <div class="prod-detail__inner">
+ <div class="prod-detail__img-wrap">
+ <img
+ src="/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif"
+ alt="Cajas de cartón para industria farmacéutica y cosmética en CDMX — CADECA"
+ class="prod-detail__img"
+ width="900" height="560"
+ loading="eager"
+ decoding="async"
+ fetchpriority="high"
+ />
+ </div>
+ <div class="prod-detail__content">
+ <span class="prod-detail__label">El empaque que cumple la norma y eleva tu marca</span>
+ <h2 id="detalle-pharma-title" class="section-header__title" style="margin:0">
+ Cajas Farmacéuticas y Cosméticas: Cumplimiento Normativo y Acabados Premium
+ </h2>
+ <p class="prod-detail__intro">
+ La industria farmacéutica y cosmética requiere empaque que combine cumplimiento regulatorio estricto con presentación impecable. En CADECA fabricamos cajas que cumplen NOM-072 para medicamentos, NOM-051 para suplementos y ofrecemos acabados premium para marcas de cosmética que necesitan que su empaque comunique calidad desde el primer contacto visual.
+ </p>
+ <div>
+ <p class="prod-detail__specs-title">Especificaciones técnicas</p>
+ <div class="prod-detail__specs-grid">
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Tipo de caja</span>
+ <span class="prod-detail__spec-value">Plegadiza · Rígida · Corrugado</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Flauta</span>
+ <span class="prod-detail__spec-value">E (blíster) · BC (distribución)</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Normatividad</span>
+ <span class="prod-detail__spec-value">NOM-072 · NOM-051 · COFEPRIS</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Acabados</span>
+ <span class="prod-detail__spec-value">UV · Hot stamping · Soft touch</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Material</span>
+ <span class="prod-detail__spec-value">SBS · Kraft · Caple · Couché</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Impresión</span>
+ <span class="prod-detail__spec-value">1 color a full color CMYK</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Pedido mínimo</span>
+ <span class="prod-detail__spec-value">200 piezas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Entrega CDMX</span>
+ <span class="prod-detail__spec-value">3-5 días hábiles</span>
+ </div>
+ </div>
+ </div>
+ <div class="prod-detail__actions">
+ <a href="cotizar"  class="btn btn--primary">Solicitar Cotización</a>
+ <a href={`https://wa.me/${WHATSAPP}`}
+ target="_blank" rel="noopener"  class="btn btn--outline">WhatsApp Directo</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- SUBCATEGORÍAS -->
-    <section class="products" id="subcategorias" aria-labelledby="subcats-pharma-title">
-      <div class="container">
-        <SectionHeader
-          id="subcats-pharma-title"
-          twoCol
-          title="Cajas para Cada Segmento Farmacéutico y Cosmético"
-          subtitle="Blíster, cosmética premium, distribución, suplementos y líneas de producción automatizadas. Soluciones específicas para cada necesidad."
-          link={{ text: "Ver catálogo completo", href: "/catalogo/cajas-farmaceutica-cosmetica" }}
-        >
-          <p>Cada segmento de la industria farmacéutica y cosmética tiene requerimientos únicos de empaque. Un blíster de medicamento necesita cumplir NOM-072 al pie de la letra. Una crema de skincare premium necesita un empaque que justifique su precio. Una distribuidora necesita resistencia para palletizado. En CADECA cubrimos todos estos requerimientos.</p>
-          <p>Fabricamos desde 200 piezas con calidad consistente y cumplimiento normativo verificado. Para laboratorios con consumo recurrente ofrecemos contratos anuales con precios fijos y entregas programadas.</p>
-        </SectionHeader>
-        <div class="products__grid">
-          {subcategorias.map(p => <ProductCard {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- SUBCATEGORÍAS -->
+ <section class="products" id="subcategorias" aria-labelledby="subcats-pharma-title">
+ <div class="container">
+ <SectionHeader
+ id="subcats-pharma-title"
+ twoCol
+ title="Cajas para Cada Segmento Farmacéutico y Cosmético"
+ subtitle="Blíster, cosmética premium, distribución, suplementos y líneas de producción automatizadas. Soluciones específicas para cada necesidad."
+ link={{ text: "Ver catálogo completo", href: "/catalogo/cajas-farmaceutica-cosmetica" }}
+ >
+ <p>Cada segmento de la industria farmacéutica y cosmética tiene requerimientos únicos de empaque. Un blíster de medicamento necesita cumplir NOM-072 al pie de la letra. Una crema de skincare premium necesita un empaque que justifique su precio. Una distribuidora necesita resistencia para palletizado. En CADECA cubrimos todos estos requerimientos.</p>
+ <p>Fabricamos desde 200 piezas con calidad consistente y cumplimiento normativo verificado. Para laboratorios con consumo recurrente ofrecemos contratos anuales con precios fijos y entregas programadas.</p>
+ </SectionHeader>
+ <div class="products__grid">
+ {subcategorias.map(p => <ProductCard {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- QUIÉN USA ESTE PRODUCTO -->
-    <section class="industries" aria-labelledby="industrias-pharma-title">
-      <div class="container">
-        <SectionHeader
-          id="industrias-pharma-title"
-          twoCol
-          title="¿Quién Compra Cajas Farmacéuticas y Cosméticas en CADECA?"
-          subtitle="Desde laboratorios pequeños hasta grandes distribuidoras de la zona metropolitana"
-        >
-          <p>La industria farmacéutica y cosmética en México genera más de $500,000 MDP anuales y la CDMX concentra la mayor cantidad de laboratorios, distribuidoras y marcas de cosmética del país. Nuestras cajas están diseñadas para cumplir las exigencias normativas y estéticas de cada segmento de esta industria.</p>
-          <p>Todos nuestros clientes tienen acceso a asesoría técnica gratuita sobre cumplimiento NOM, selección de materiales y acabados especiales.</p>
-        </SectionHeader>
-        <div class="industries__grid">
-          {industrias.map(i => <IndustryCard {...i} />)}
-        </div>
-      </div>
-    </section>
+ <!-- QUIÉN USA ESTE PRODUCTO -->
+ <section class="industries" aria-labelledby="industrias-pharma-title">
+ <div class="container">
+ <SectionHeader
+ id="industrias-pharma-title"
+ twoCol
+ title="¿Quién Compra Cajas Farmacéuticas y Cosméticas en CADECA?"
+ subtitle="Desde laboratorios pequeños hasta grandes distribuidoras de la zona metropolitana"
+ >
+ <p>La industria farmacéutica y cosmética en México genera más de $500,000 MDP anuales y la CDMX concentra la mayor cantidad de laboratorios, distribuidoras y marcas de cosmética del país. Nuestras cajas están diseñadas para cumplir las exigencias normativas y estéticas de cada segmento de esta industria.</p>
+ <p>Todos nuestros clientes tienen acceso a asesoría técnica gratuita sobre cumplimiento NOM, selección de materiales y acabados especiales.</p>
+ </SectionHeader>
+ <div class="industries__grid">
+ {industrias.map(i => <IndustryCard {...i} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- PROCESO -->
-    <section class="process" aria-labelledby="proceso-pharma-title">
-      <div class="container">
-        <SectionHeader
-          id="proceso-pharma-title"
-          title="Cómo Pedir tus Cajas Farmacéuticas o Cosméticas"
-          subtitle="Proceso estructurado para cumplir tus requerimientos normativos y de presentación"
-        />
-        <div class="process__grid">
-          {pasos.map(p => <ProcessStep {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- PROCESO -->
+ <section class="process" aria-labelledby="proceso-pharma-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-pharma-title"
+ title="Cómo Pedir tus Cajas Farmacéuticas o Cosméticas"
+ subtitle="Proceso estructurado para cumplir tus requerimientos normativos y de presentación"
+ />
+ <div class="process__grid">
+ {pasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="trust" aria-labelledby="test-pharma-title">
-      <div class="container">
-        <div class="trust__testimonials-header">
-          <h2 id="test-pharma-title" class="trust__testimonials-title">
-            Laboratorios y Marcas de CDMX que Confían en CADECA
-          </h2>
-          <p class="trust__testimonials-subtitle">
-            Farmacéuticas, marcas de cosmética y distribuidoras comparten su experiencia
-          </p>
-        </div>
-        <div class="trust__testimonials">
-          {testimonios.map(t => <Testimonial {...t} />)}
-        </div>
-      </div>
-    </section>
+ <!-- TESTIMONIOS -->
+ <section class="trust" aria-labelledby="test-pharma-title">
+ <div class="container">
+ <div class="trust__testimonials-header">
+ <h2 id="test-pharma-title" class="trust__testimonials-title">
+ Laboratorios y Marcas de CDMX que Confían en CADECA
+ </h2>
+ <p class="trust__testimonials-subtitle">
+ Farmacéuticas, marcas de cosmética y distribuidoras comparten su experiencia
+ </p>
+ </div>
+ <div class="trust__testimonials">
+ {testimonios.map(t => <Testimonial {...t} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- SEO CONTENT -->
-    <section class="seo-content" aria-labelledby="seo-pharma-title">
-      <div class="container">
-        <h2 id="seo-pharma-title" class="seo-content__title">
-          Cajas para Industria Farmacéutica y Cosmética en CDMX: Cumplimiento Normativo y Presentación Premium
-        </h2>
-        <p class="seo-content__text">
-          En la industria farmacéutica mexicana, el empaque no es solo protección — es cumplimiento regulatorio. Una caja de medicamento que no incluye correctamente los datos de <strong>NOM-072</strong> puede resultar en sanciones de COFEPRIS y retiro de producto del mercado. En CADECA hemos eliminado ese riesgo: todas nuestras cajas farmacéuticas incluyen verificación de información regulatoria antes de producción, tintas certificadas para contacto indirecto con medicamentos y trazabilidad completa de materiales.
-        </p>
-        <p class="seo-content__text">
-          Para las <strong>marcas de cosmética en CDMX</strong>, el empaque es la primera impresión de la marca. Nuestras cajas con acabados especiales — barniz UV selectivo, hot stamping, laminado soft touch — transforman un empaque funcional en una experiencia de marca premium. Para <strong>distribuidoras farmacéuticas</strong>, fabricamos cajas de corrugado doble pared BC que resisten apilamiento de 6 niveles en tarima y mantienen integridad en cadena de frío. Entrega en <strong>3-5 días hábiles en toda la CDMX y municipios del Estado de México</strong>.
-        </p>
-        <p class="seo-content__text">
-          Si produces <strong>suplementos alimenticios</strong>, nuestras cajas cumplen con <a href="/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion">NOM-051 de etiquetado frontal</a> completo. Para <strong>líneas de producción automatizadas</strong>, fabricamos cajas con tolerancias de +/- 0.5mm compatibles con encartonadoras de alta velocidad. El proceso de <strong>cotización es gratuito y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con las especificaciones de tu producto y te asesoramos sobre la mejor solución de empaque para tu industria.
-        </p>
-      </div>
-    </section>
+ <!-- SEO CONTENT -->
+ <section class="seo-content" aria-labelledby="seo-pharma-title">
+ <div class="container">
+ <h2 id="seo-pharma-title" class="seo-content__title">
+ Cajas para Industria Farmacéutica y Cosmética en CDMX: Cumplimiento Normativo y Presentación Premium
+ </h2>
+ <p class="seo-content__text">
+ En la industria farmacéutica mexicana, el empaque no es solo protección — es cumplimiento regulatorio. Una caja de medicamento que no incluye correctamente los datos de <strong>NOM-072</strong> puede resultar en sanciones de COFEPRIS y retiro de producto del mercado. En CADECA hemos eliminado ese riesgo: todas nuestras cajas farmacéuticas incluyen verificación de información regulatoria antes de producción, tintas certificadas para contacto indirecto con medicamentos y trazabilidad completa de materiales.
+ </p>
+ <p class="seo-content__text">
+ Para las <strong>marcas de cosmética en CDMX</strong>, el empaque es la primera impresión de la marca. Nuestras cajas con acabados especiales — barniz UV selectivo, hot stamping, laminado soft touch — transforman un empaque funcional en una experiencia de marca premium. Para <strong>distribuidoras farmacéuticas</strong>, fabricamos cajas de corrugado doble pared BC que resisten apilamiento de 6 niveles en tarima y mantienen integridad en cadena de frío. Entrega en <strong>3-5 días hábiles en toda la CDMX y municipios del Estado de México</strong>.
+ </p>
+ <p class="seo-content__text">
+ Si produces <strong>suplementos alimenticios</strong>, nuestras cajas cumplen con <a href="/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion">NOM-051 de etiquetado frontal</a> completo. Para <strong>líneas de producción automatizadas</strong>, fabricamos cajas con tolerancias de +/- 0.5mm compatibles con encartonadoras de alta velocidad. El proceso de <strong>cotización es gratuito y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con las especificaciones de tu producto y te asesoramos sobre la mejor solución de empaque para tu industria.
+ </p>
+ </div>
+ </section>
 
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-pharma-title">
-      <div class="container">
-        <SectionHeader
-          id="faq-pharma-title"
-          twoCol
-          title="Preguntas Frecuentes: Cajas Farmacéuticas y Cosméticas"
-          subtitle="Todo sobre NOM-072, acabados especiales, COFEPRIS, encartonadoras y pedidos mínimos"
-        >
-          <p>Las dudas más frecuentes de laboratorios y marcas de cosmética antes de hacer su primer pedido con CADECA. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
-          <p>Respondemos consultas técnicas sobre normatividad, materiales, acabados y compatibilidad con líneas de producción en menos de 2 horas, sin costo y sin compromiso de compra.</p>
-        </SectionHeader>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <!-- FAQ -->
+ <section class="faq" aria-labelledby="faq-pharma-title">
+ <div class="container">
+ <SectionHeader
+ id="faq-pharma-title"
+ twoCol
+ title="Preguntas Frecuentes: Cajas Farmacéuticas y Cosméticas"
+ subtitle="Todo sobre NOM-072, acabados especiales, COFEPRIS, encartonadoras y pedidos mínimos"
+ >
+ <p>Las dudas más frecuentes de laboratorios y marcas de cosmética antes de hacer su primer pedido con CADECA. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
+ <p>Respondemos consultas técnicas sobre normatividad, materiales, acabados y compatibilidad con líneas de producción en menos de 2 horas, sin costo y sin compromiso de compra.</p>
+ </SectionHeader>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas farmacéuticas y cosméticas en minutos" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas farmacéuticas y cosméticas en minutos" />
 
 </PageLayout>

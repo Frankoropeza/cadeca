@@ -1,236 +1,236 @@
 ---
-import PageLayout   from "@/layouts/PageLayout.astro";
-import FaqItem      from "@/components/FaqItem.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title   = "Caja para Ropa y Prendas Corrugado Kraft CDMX | CAD-TX-02 | CADECA";
+const title  = "Caja para Ropa y Prendas Corrugado Kraft CDMX | CAD-TX-02 | CADECA";
 const description = "Ficha técnica caja corrugado kraft para ropa y prendas de vestir en CDMX. Flauta E/B, ECT-23/32, medidas camiseta a set regalo. Acabado kraft natural, MOQ 200 pzas. CADECA fabricante.";
 const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Camiseta / Polo",      lah:"30×22×8",   flauta:"E",  ect:"ECT-23",vacío:"0.08 kg",máx:"1.5 kg", disp:"green",  label:"Stock", hl:true },
-  { nombre:"Vestido / Abrigo",     lah:"45×35×12",  flauta:"B",  ect:"ECT-32",vacío:"0.22 kg",máx:"3 kg",   disp:"green",  label:"Stock", hl:true },
-  { nombre:"Jeans / Pantalón",     lah:"35×25×10",  flauta:"E",  ect:"ECT-23",vacío:"0.12 kg",máx:"2 kg",   disp:"green",  label:"Stock" },
-  { nombre:"Set Regalo",           lah:"40×30×15",  flauta:"B",  ect:"ECT-32",vacío:"0.26 kg",máx:"4 kg",   disp:"yellow", label:"48 hrs" },
-  { nombre:"Master Prendas",       lah:"60×40×30",  flauta:"B",  ect:"ECT-32",vacío:"0.68 kg",máx:"15 kg",  disp:"yellow", label:"48 hrs" },
-  { nombre:"A la Medida",          lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+ { nombre:"Camiseta / Polo",  lah:"30×22×8",  flauta:"E",  ect:"ECT-23",vacío:"0.08 kg",máx:"1.5 kg", disp:"green",  label:"Stock", hl:true },
+ { nombre:"Vestido / Abrigo",  lah:"45×35×12",  flauta:"B",  ect:"ECT-32",vacío:"0.22 kg",máx:"3 kg",  disp:"green",  label:"Stock", hl:true },
+ { nombre:"Jeans / Pantalón",  lah:"35×25×10",  flauta:"E",  ect:"ECT-23",vacío:"0.12 kg",máx:"2 kg",  disp:"green",  label:"Stock" },
+ { nombre:"Set Regalo",  lah:"40×30×15",  flauta:"B",  ect:"ECT-32",vacío:"0.26 kg",máx:"4 kg",  disp:"yellow", label:"48 hrs" },
+ { nombre:"Master Prendas",  lah:"60×40×30",  flauta:"B",  ect:"ECT-32",vacío:"0.68 kg",máx:"15 kg",  disp:"yellow", label:"48 hrs" },
+ { nombre:"A la Medida",  lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
 ];
 
 const specs = [
-  ["Código SKU",              "CAD-TX-02"],
-  ["Tipo de pared",           "Simple (pared simple)"],
-  ["Flautas disponibles",     "E (1.5 mm) · B (3 mm)"],
-  ["Resistencia ECT",         "ECT-23 (flauta E) · ECT-32 (flauta B)"],
-  ["Gramaje liner",           "127 – 175 g/m²"],
-  ["Gramaje médium",          "112 – 127 g/m²"],
-  ["Material",                "Kraft virgen natural · Test liner blanqueado opcional"],
-  ["Color exterior",          "Kraft marrón natural (sin blanquear)"],
-  ["Peso máx. producto",      "Hasta 4 kg (individual) · 15 kg (master)"],
-  ["Carga de apilado",        "Hasta 80 kg (flauta B, condiciones ideales)"],
-  ["Impresión",               "Flexografía 1-4 colores · Offset disponible"],
-  ["Acabado exterior",        "Kraft natural · Laminado mate · Barniz mate"],
-  ["Interior",                "Blanco liso · Papel tissue opcional · Impresión interior disponible"],
-  ["Cierre",                  "Tapa abatible · Telescópica · Magnético opcional"],
-  ["Certificación",           "FSC disponible bajo pedido"],
-  ["Pedido mínimo",           "200 pzas"],
-  ["Tiempo de entrega",       "24-48 hrs stock · 3-5 días personalizada"],
+ ["Código SKU",  "CAD-TX-02"],
+ ["Tipo de pared",  "Simple (pared simple)"],
+ ["Flautas disponibles",  "E (1.5 mm) · B (3 mm)"],
+ ["Resistencia ECT",  "ECT-23 (flauta E) · ECT-32 (flauta B)"],
+ ["Gramaje liner",  "127 – 175 g/m²"],
+ ["Gramaje médium",  "112 – 127 g/m²"],
+ ["Material",  "Kraft virgen natural · Test liner blanqueado opcional"],
+ ["Color exterior",  "Kraft marrón natural (sin blanquear)"],
+ ["Peso máx. producto",  "Hasta 4 kg (individual) · 15 kg (master)"],
+ ["Carga de apilado",  "Hasta 80 kg (flauta B, condiciones ideales)"],
+ ["Impresión",  "Flexografía 1-4 colores · Offset disponible"],
+ ["Acabado exterior",  "Kraft natural · Laminado mate · Barniz mate"],
+ ["Interior",  "Blanco liso · Papel tissue opcional · Impresión interior disponible"],
+ ["Cierre",  "Tapa abatible · Telescópica · Magnético opcional"],
+ ["Certificación",  "FSC disponible bajo pedido"],
+ ["Pedido mínimo",  "200 pzas"],
+ ["Tiempo de entrega",  "24-48 hrs stock · 3-5 días personalizada"],
 ];
 
 const faqs = [
-  {
-    id:"tx02-f1",
-    question:"¿Qué flauta es mejor para empacar prendas de ropa?",
-    answer:"Para prendas ligeras como <strong>camisetas, polos y blusas</strong>, la flauta E (1.5 mm) es ideal: perfil bajo, excelente superficie de impresión y menor volumen de envío. Para prendas más voluminosas como <strong>vestidos, abrigos y chamarras</strong>, la flauta B (3 mm) ofrece mayor rigidez estructural y protección. En ambos casos, el acabado kraft natural comunica una estética eco-friendly muy valorada por marcas de moda contemporánea.",
-  },
-  {
-    id:"tx02-f2",
-    question:"¿Pueden incluir papel tissue con logo dentro de la caja?",
-    answer:"Sí, ofrecemos <strong>papel tissue personalizado</strong> como complemento. Disponible en blanco, negro, kraft o con tu logotipo impreso en 1 color. Se coloca plegado dentro de la caja envolviendo la prenda para una experiencia de unboxing premium. El papel tissue eleva significativamente la percepción de marca y es un diferenciador clave en e-commerce de moda. Costo adicional según tiraje.",
-  },
-  {
-    id:"tx02-f3",
-    question:"¿La caja kraft sirve para envíos por paquetería nacional?",
-    answer:"Sí, nuestras cajas CAD-TX-02 con flauta B y <strong>ECT-32 soportan el manejo de todas las paqueterías</strong> nacionales: Estafeta, DHL, FedEx, J&T, 99 Minutos y Mercado Envíos. La resistencia al estallido de 280 kPa protege contra perforaciones durante el transporte. Para envíos de alto valor, recomendamos agregar <strong>sello de seguridad o cinta personalizada</strong> como evidencia de apertura.",
-  },
-  {
-    id:"tx02-f4",
-    question:"¿Por qué elegir acabado kraft natural para ropa?",
-    answer:"El acabado <strong>kraft natural sin blanquear</strong> es la tendencia dominante en packaging de moda por tres razones: primero, comunica una imagen <strong>eco-friendly y sustentable</strong> que resuena con el consumidor actual; segundo, reduce costos de producción al eliminar el proceso de blanqueo; tercero, la textura kraft es un lienzo ideal para impresión en 1-2 colores con look artesanal y orgánico que muchas marcas boutique buscan.",
-  },
-  {
-    id:"tx02-f5",
-    question:"¿Qué opciones de cierre tienen para experiencia de unboxing?",
-    answer:"Ofrecemos tres tipos de cierre: <strong>Tapa abatible</strong> estilo libro que se abre revelando la prenda, ideal para experiencias de unboxing en e-commerce. <strong>Tapa telescópica</strong> que encaja sobre la base, más económica y eficiente para operaciones de alto volumen. <strong>Cierre magnético</strong> oculto que ofrece una apertura suave y lujosa, perfecto para sets regalo y marcas premium. Todos compatibles con impresión personalizada.",
-  },
-  {
-    id:"tx02-f6",
-    question:"¿La caja de ropa es reciclable y ecológica?",
-    answer:"Sí, todas nuestras cajas de ropa son <strong>100 % reciclables y biodegradables</strong>. El cartón kraft natural es la opción más ecológica al no requerir blanqueo químico. Las tintas son base agua y los laminados opcionales son de BOPP reciclable. Ofrecemos <strong>certificación FSC</strong> para marcas que necesitan cadena de custodia verificada, cada vez más solicitada por retailers internacionales y cadenas departamentales.",
-  },
+ {
+ id:"tx02-f1",
+ question:"¿Qué flauta es mejor para empacar prendas de ropa?",
+ answer:"Para prendas ligeras como <strong>camisetas, polos y blusas</strong>, la flauta E (1.5 mm) es ideal: perfil bajo, excelente superficie de impresión y menor volumen de envío. Para prendas más voluminosas como <strong>vestidos, abrigos y chamarras</strong>, la flauta B (3 mm) ofrece mayor rigidez estructural y protección. En ambos casos, el acabado kraft natural comunica una estética eco-friendly muy valorada por marcas de moda contemporánea.",
+ },
+ {
+ id:"tx02-f2",
+ question:"¿Pueden incluir papel tissue con logo dentro de la caja?",
+ answer:"Sí, ofrecemos <strong>papel tissue personalizado</strong> como complemento. Disponible en blanco, negro, kraft o con tu logotipo impreso en 1 color. Se coloca plegado dentro de la caja envolviendo la prenda para una experiencia de unboxing premium. El papel tissue eleva significativamente la percepción de marca y es un diferenciador clave en e-commerce de moda. Costo adicional según tiraje.",
+ },
+ {
+ id:"tx02-f3",
+ question:"¿La caja kraft sirve para envíos por paquetería nacional?",
+ answer:"Sí, nuestras cajas CAD-TX-02 con flauta B y <strong>ECT-32 soportan el manejo de todas las paqueterías</strong> nacionales: Estafeta, DHL, FedEx, J&T, 99 Minutos y Mercado Envíos. La resistencia al estallido de 280 kPa protege contra perforaciones durante el transporte. Para envíos de alto valor, recomendamos agregar <strong>sello de seguridad o cinta personalizada</strong> como evidencia de apertura.",
+ },
+ {
+ id:"tx02-f4",
+ question:"¿Por qué elegir acabado kraft natural para ropa?",
+ answer:"El acabado <strong>kraft natural sin blanquear</strong> es la tendencia dominante en packaging de moda por tres razones: primero, comunica una imagen <strong>eco-friendly y sustentable</strong> que resuena con el consumidor actual; segundo, reduce costos de producción al eliminar el proceso de blanqueo; tercero, la textura kraft es un lienzo ideal para impresión en 1-2 colores con look artesanal y orgánico que muchas marcas boutique buscan.",
+ },
+ {
+ id:"tx02-f5",
+ question:"¿Qué opciones de cierre tienen para experiencia de unboxing?",
+ answer:"Ofrecemos tres tipos de cierre: <strong>Tapa abatible</strong> estilo libro que se abre revelando la prenda, ideal para experiencias de unboxing en e-commerce. <strong>Tapa telescópica</strong> que encaja sobre la base, más económica y eficiente para operaciones de alto volumen. <strong>Cierre magnético</strong> oculto que ofrece una apertura suave y lujosa, perfecto para sets regalo y marcas premium. Todos compatibles con impresión personalizada.",
+ },
+ {
+ id:"tx02-f6",
+ question:"¿La caja de ropa es reciclable y ecológica?",
+ answer:"Sí, todas nuestras cajas de ropa son <strong>100 % reciclables y biodegradables</strong>. El cartón kraft natural es la opción más ecológica al no requerir blanqueo químico. Las tintas son base agua y los laminados opcionales son de BOPP reciclable. Ofrecemos <strong>certificación FSC</strong> para marcas que necesitan cadena de custodia verificada, cada vez más solicitada por retailers internacionales y cadenas departamentales.",
+ },
 ];
 
 const mainImg = "/img/catalogo/caja-ropa-prendas-envio-moda-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/caja-ropa-prendas-envio-moda-cdmx.avif", alt: "Cajas ropa/prendas — principal" },
-  { src: "/img/catalogo/caja-ropa-prendas-hero-cdmx.avif", alt: "Caja prendas — hero" },
-  { src: "/img/catalogo/caja-ropa-prendas-stack-cdmx.avif", alt: "Cajas ropa — apiladas" },
-  { src: "/img/catalogo/caja-ropa-prendas-interior-cdmx.avif", alt: "Interior caja — tissue paper" },
-  { src: "/img/catalogo/caja-ropa-prendas-despacho-cdmx.avif", alt: "Despacho — listas courier" },
+ { src: "/img/catalogo/caja-ropa-prendas-envio-moda-cdmx.avif", alt: "Cajas ropa/prendas — principal" },
+ { src: "/img/catalogo/caja-ropa-prendas-hero-cdmx.avif", alt: "Caja prendas — hero" },
+ { src: "/img/catalogo/caja-ropa-prendas-stack-cdmx.avif", alt: "Cajas ropa — apiladas" },
+ { src: "/img/catalogo/caja-ropa-prendas-interior-cdmx.avif", alt: "Interior caja — tissue paper" },
+ { src: "/img/catalogo/caja-ropa-prendas-despacho-cdmx.avif", alt: "Despacho — listas courier" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Ropa y Prendas"}]}
-  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
-  product={{name:"Caja para Ropa y Prendas Corrugado Kraft",sku:"CAD-TX-02",description:"Caja de cartón corrugado kraft para ropa y prendas de vestir en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-ropa-prendas-envio-moda-cdmx.avif",material:"Cartón corrugado kraft flauta E/B ECT-23/32",category:"Cajas para Textil, Moda y Retail",moq:"200"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Ropa y Prendas"}]}
+ faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+ product={{name:"Caja para Ropa y Prendas Corrugado Kraft",sku:"CAD-TX-02",description:"Caja de cartón corrugado kraft para ropa y prendas de vestir en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-ropa-prendas-envio-moda-cdmx.avif",material:"Cartón corrugado kraft flauta E/B ECT-23/32",category:"Cajas para Textil, Moda y Retail",moq:"200"}}
 >
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container"><ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/catalogo">Catálogo</a></li>
-      <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
-      <li><span class="current">Ropa y Prendas</span></li>
-    </ol></div>
-  </div>
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container"><ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+ <li><span class="current">Ropa y Prendas</span></li>
+ </ol></div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-tx02-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-TX-02 · Cajas para Textil, Moda y Retail</span>
-      <h1 id="sku-tx02-title" class="cat-page-hero__title">
-        Caja para Ropa y Prendas<br><span>Corrugado Kraft — CDMX</span>
-      </h1>
-      <p class="cat-page-hero__desc">
-        Caja de cartón corrugado kraft natural para prendas de vestir. Flauta E para prendas ligeras y flauta B para voluminosas. Acabado eco-friendly ideal para marcas de moda, boutiques y e-commerce de ropa. Papel tissue y cierre magnético opcionales.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-02</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-tx02-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-TX-02 · Cajas para Textil, Moda y Retail</span>
+ <h1 id="sku-tx02-title" class="cat-page-hero__title">
+ Caja para Ropa y Prendas<br><span>Corrugado Kraft — CDMX</span>
+ </h1>
+ <p class="cat-page-hero__desc">
+ Caja de cartón corrugado kraft natural para prendas de vestir. Flauta E para prendas ligeras y flauta B para voluminosas. Acabado eco-friendly ideal para marcas de moda, boutiques y e-commerce de ropa. Papel tissue y cierre magnético opcionales.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-02</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <section class="sku-detail" aria-labelledby="detalle-tx02-title">
-      <div class="container">
-        <div class="sku-detail__grid">
+ <section class="sku-detail" aria-labelledby="detalle-tx02-title">
+ <div class="container">
+ <div class="sku-detail__grid">
 
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
 
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-TX-02 · Familia: Textil, Moda y Retail</p>
-            <h2 id="detalle-tx02-title" class="sku-detail__title">Ropa y Prendas — Corrugado Kraft</h2>
-            <p class="sku-detail__desc">
-              La caja CAD-TX-02 está optimizada para el empaque de prendas de vestir con acabado kraft natural que comunica sustentabilidad y estilo. Disponible en flauta E para camisetas, polos y prendas ligeras, o flauta B para vestidos, abrigos y conjuntos. Interior blanco liso con opción de papel tissue personalizado y cierre magnético para experiencias de unboxing memorables. Ideal para boutiques, marcas independientes y tiendas online de moda.
-            </p>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-TX-02 · Familia: Textil, Moda y Retail</p>
+ <h2 id="detalle-tx02-title" class="sku-detail__title">Ropa y Prendas — Corrugado Kraft</h2>
+ <p class="sku-detail__desc">
+ La caja CAD-TX-02 está optimizada para el empaque de prendas de vestir con acabado kraft natural que comunica sustentabilidad y estilo. Disponible en flauta E para camisetas, polos y prendas ligeras, o flauta B para vestidos, abrigos y conjuntos. Interior blanco liso con opción de papel tissue personalizado y cierre magnético para experiencias de unboxing memorables. Ideal para boutiques, marcas independientes y tiendas online de moda.
+ </p>
 
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">Kraft</span>
-                <span class="sku-detail__strip-label">Acabado natural eco</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">4 kg</span>
-                <span class="sku-detail__strip-label">Peso máx.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">200 pzas</span>
-                <span class="sku-detail__strip-label">Pedido mín.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">24-48 hrs</span>
-                <span class="sku-detail__strip-label">Entrega CDMX</span>
-              </div>
-            </div>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">Kraft</span>
+ <span class="sku-detail__strip-label">Acabado natural eco</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">4 kg</span>
+ <span class="sku-detail__strip-label">Peso máx.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">200 pzas</span>
+ <span class="sku-detail__strip-label">Pedido mín.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">24-48 hrs</span>
+ <span class="sku-detail__strip-label">Entrega CDMX</span>
+ </div>
+ </div>
 
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table">
-              <tbody>
-                {specs.map(([label, val]) => (
-                  <tr><td>{label}</td><td>{val}</td></tr>
-                ))}
-              </tbody>
-            </table>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table">
+ <tbody>
+ {specs.map(([label, val]) => (
+ <tr><td>{label}</td><td>{val}</td></tr>
+ ))}
+ </tbody>
+ </table>
 
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-02 Caja Ropa y Prendas Kraft`}
-                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-02</a>
-              <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-02 Caja Ropa y Prendas Kraft`}
+ target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-02</a>
+ <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <!-- TABLA DE MEDIDAS -->
-    <section class="sku-sizes" aria-labelledby="sizes-tx02-title">
-      <div class="container">
-        <h2 id="sizes-tx02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
-          Medidas Disponibles — CAD-TX-02
-        </h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead>
-              <tr>
-                <th>Tamaño</th>
-                <th>L × A × H (cm)</th>
-                <th>Flauta</th>
-                <th>ECT</th>
-                <th>Peso vacío</th>
-                <th>Peso máx.</th>
-                <th>Disponibilidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td>{m.nombre}</td>
-                  <td><strong>{m.lah}</strong></td>
-                  <td>{m.flauta}</td>
-                  <td>{m.ect}</td>
-                  <td>{m.vacío}</td>
-                  <td><strong>{m.máx}</strong></td>
-                  <td>
-                    <span class={`stock-chip stock-chip--${m.disp}`}>
-                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
-          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
-        </p>
-      </div>
-    </section>
+ <!-- TABLA DE MEDIDAS -->
+ <section class="sku-sizes" aria-labelledby="sizes-tx02-title">
+ <div class="container">
+ <h2 id="sizes-tx02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+ Medidas Disponibles — CAD-TX-02
+ </h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead>
+ <tr>
+ <th>Tamaño</th>
+ <th>L × A × H (cm)</th>
+ <th>Flauta</th>
+ <th>ECT</th>
+ <th>Peso vacío</th>
+ <th>Peso máx.</th>
+ <th>Disponibilidad</th>
+ </tr>
+ </thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td>{m.nombre}</td>
+ <td><strong>{m.lah}</strong></td>
+ <td>{m.flauta}</td>
+ <td>{m.ect}</td>
+ <td>{m.vacío}</td>
+ <td><strong>{m.máx}</strong></td>
+ <td>
+ <span class={`stock-chip stock-chip--${m.disp}`}>
+ {m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}
+ </span>
+ </td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+ Stock permanente ·  Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+ </p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-tx02-title">
-      <div class="container">
-        <h2 id="faq-tx02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
-          Preguntas Técnicas — CAD-TX-02
-        </h2>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <section class="faq" aria-labelledby="faq-tx02-title">
+ <div class="container">
+ <h2 id="faq-tx02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+ Preguntas Técnicas — CAD-TX-02
+ </h2>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-02 — Cajas kraft para ropa y prendas, entrega 24-48 hrs CDMX" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-02 — Cajas kraft para ropa y prendas, entrega 24-48 hrs CDMX" />
 
 </PageLayout>

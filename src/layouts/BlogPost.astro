@@ -1,362 +1,362 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Topbar     from "@/components/Topbar.astro";
-import Header     from "@/components/Header.astro";
-import Footer     from "@/components/Footer.astro";
-import WaBubble   from "@/components/WaBubble.astro";
+import Topbar  from "@/components/Topbar.astro";
+import Header  from "@/components/Header.astro";
+import Footer  from "@/components/Footer.astro";
+import WaBubble  from "@/components/WaBubble.astro";
 import "@/styles/blog.css";
 
 export interface Props {
-  title:        string;
-  description:  string;
-  pubDate:      Date;
-  updatedDate?: Date;
-  author:       string;
-  category:     string;
-  tags:         string[];
-  image?:       string;
-  imageAlt?:    string;
-  readingTime?: number;
-  headings:     { depth: number; slug: string; text: string }[];
-  slug:         string;
-  relatedPosts?: { slug: string; title: string; category: string; pubDate: Date; image?: string }[];
+ title:  string;
+ description:  string;
+ pubDate:  Date;
+ updatedDate?: Date;
+ author:  string;
+ category:  string;
+ tags:  string[];
+ image?:  string;
+ imageAlt?:  string;
+ readingTime?: number;
+ headings:  { depth: number; slug: string; text: string }[];
+ slug:  string;
+ relatedPosts?: { slug: string; title: string; category: string; pubDate: Date; image?: string }[];
 }
 
 const {
-  title, description, pubDate, updatedDate,
-  author, category, tags, image, imageAlt,
-  readingTime, headings, slug, relatedPosts = [],
+ title, description, pubDate, updatedDate,
+ author, category, tags, image, imageAlt,
+ readingTime, headings, slug, relatedPosts = [],
 } = Astro.props;
 
 const SITE = "https://cajas-de-carton.com";
 const pageUrl = `${SITE}/blog/${slug}`;
 
 function catSlug(name: string) {
-  return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
+ return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
 }
 function formatDate(d: Date) {
-  return d.toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" });
+ return d.toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" });
 }
 
 const cs = catSlug(category);
 
 const categoryColors: Record<string, string> = {
-  "E-commerce":     "#E05800",
-  "Guías":          "#1C2B4A",
-  "Industria":      "#0066CC",
-  "Sostenibilidad": "#2E7D32",
-  "Consejos":       "#6A1B9A",
+ "E-commerce":  "E05800",
+ "Guías":  "1C2B4A",
+ "Industria":  "0066CC",
+ "Sostenibilidad": "2E7D32",
+ "Consejos":  "6A1B9A",
 };
 
 const CATEGORIES = [
-  { name: "Guías",          slug: "guias",          color: "#1C2B4A", icon: "📚" },
-  { name: "E-commerce",     slug: "e-commerce",     color: "#E05800", icon: "🛒" },
-  { name: "Industria",      slug: "industria",      color: "#0066CC", icon: "🏭" },
-  { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32", icon: "♻️" },
-  { name: "Consejos",       slug: "consejos",       color: "#6A1B9A", icon: "💡" },
+ { name: "Guías",  slug: "guias",  color: "1C2B4A", icon: "" },
+ { name: "E-commerce",  slug: "e-commerce",  color: "E05800", icon: "" },
+ { name: "Industria",  slug: "industria",  color: "0066CC", icon: "" },
+ { name: "Sostenibilidad", slug: "sostenibilidad", color: "2E7D32", icon: "️" },
+ { name: "Consejos",  slug: "consejos",  color: "6A1B9A", icon: "" },
 ];
 
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Blog",   href: "/blog" },
-  { name: title },
+ { name: "Inicio", href: "/" },
+ { name: "Blog",  href: "/blog" },
+ { name: title },
 ];
 
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
 const schemaArticle = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": title,
-  "description": description,
-  "author": { "@type": "Organization", "name": author },
-  "publisher": {
-    "@type": "Organization",
-    "name": "CADECA",
-    "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
-  },
-  "datePublished": pubDate.toISOString(),
-  ...(updatedDate ? { "dateModified": updatedDate.toISOString() } : {}),
-  "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
-  ...(image ? { "image": `${SITE}${image}` } : {}),
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": title,
+ "description": description,
+ "author": { "@type": "Organization", "name": author },
+ "publisher": {
+ "@type": "Organization",
+ "name": "CADECA",
+ "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
+ },
+ "datePublished": pubDate.toISOString(),
+ ...(updatedDate ? { "dateModified": updatedDate.toISOString() } : {}),
+ "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+ ...(image ? { "image": `${SITE}${image}` } : {}),
 };
 
 const schemaBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((b, i) => ({
-    "@type": "ListItem",
-    "position": i + 1,
-    "name": b.name,
-    ...(b.href ? { "item": `${SITE}${b.href}` } : {}),
-  })),
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": breadcrumbs.map((b, i) => ({
+ "@type": "ListItem",
+ "position": i + 1,
+ "name": b.name,
+ ...(b.href ? { "item": `${SITE}${b.href}` } : {}),
+ })),
 };
 
 const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y me interesa cotizar cajas.`);
 ---
 
 <BaseLayout
-  title={`${title} | Blog CADECA`}
-  description={description}
-  ogImage={image || "/img/og-cadeca.jpg"}
-  schema={[schemaArticle, schemaBreadcrumb]}
-  breadcrumbs={breadcrumbs}
+ title={`${title} | Blog CADECA`}
+ description={description}
+ ogImage={image || "/img/og-cadeca.jpg"}
+ schema={[schemaArticle, schemaBreadcrumb]}
+ breadcrumbs={breadcrumbs}
 >
-  <Topbar />
-  <Header currentPath={Astro.url.pathname} />
+ <Topbar />
+ <Header currentPath={Astro.url.pathname} />
 
-  <!-- Reading Progress -->
-  <div class="reading-progress" aria-hidden="true">
-    <div class="reading-progress__bar"></div>
-  </div>
+ <!-- Reading Progress -->
+ <div class="reading-progress" aria-hidden="true">
+ <div class="reading-progress__bar"></div>
+ </div>
 
-  <!-- Post Hero -->
-  <section class="post-hero">
-    <div class="container">
-      <div class="post-hero__inner">
-        <nav class="post-hero__breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Inicio</a>
-          <span>/</span>
-          <a href="/blog">Blog</a>
-          <span>/</span>
-          <span>{category}</span>
-        </nav>
-        <span class="post-hero__cat" style={`background:${categoryColors[category] || "#E05800"}`}>
-          {category}
-        </span>
-        <h1 class="post-hero__title">{title}</h1>
-        <div class="post-hero__meta">
-          <span class="post-hero__meta-item">✍ {author}</span>
-          {readingTime && (
-            <>
-              <span class="post-hero__meta-sep">·</span>
-              <span class="post-hero__meta-item">⏱ {readingTime} min de lectura</span>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- Post Hero -->
+ <section class="post-hero">
+ <div class="container">
+ <div class="post-hero__inner">
+ <nav class="post-hero__breadcrumb" aria-label="Breadcrumb">
+ <a href="/">Inicio</a>
+ <span>/</span>
+ <a href="/blog">Blog</a>
+ <span>/</span>
+ <span>{category}</span>
+ </nav>
+ <span class="post-hero__cat" style={`background:${categoryColors[category] || "E05800"}`}>
+ {category}
+ </span>
+ <h1 class="post-hero__title">{title}</h1>
+ <div class="post-hero__meta">
+ <span class="post-hero__meta-item"> {author}</span>
+ {readingTime && (
+ <>
+ <span class="post-hero__meta-sep">·</span>
+ <span class="post-hero__meta-item"> {readingTime} min de lectura</span>
+ </>
+ )}
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <!-- Post Body -->
-  <main class="container" id="contenido-principal">
-    <div class="blog-layout">
+ <!-- Post Body -->
+ <main class="container" id="contenido-principal">
+ <div class="blog-layout">
 
-      <!-- Article -->
-      <div>
+ <!-- Article -->
+ <div>
 
-        <!-- Cover image -->
-        {image && (
-          <div class="post-cover">
-            <img src={image} alt={imageAlt || title} width="960" height="420" loading="eager" decoding="async" />
-          </div>
-        )}
+ <!-- Cover image -->
+ {image && (
+ <div class="post-cover">
+ <img src={image} alt={imageAlt || title} width="960" height="420" loading="eager" decoding="async" />
+ </div>
+ )}
 
-        <!-- Share bar (top) -->
-        <div class="post-share">
-          <span class="post-share__label">Compartir:</span>
-          <a
-            href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + pageUrl)}`}
-            class="post-share__btn post-share__btn--wa"
-            target="_blank" rel="noopener noreferrer"
-          >💬 WhatsApp</a>
-          <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
-            class="post-share__btn post-share__btn--x"
-            target="_blank" rel="noopener noreferrer"
-          >𝕏 Twitter</a>
-          <button
-            class="post-share__btn post-share__btn--copy"
-            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ ¡Copiado!';setTimeout(()=>this.textContent='🔗 Copiar enlace',2000)})"
-          >🔗 Copiar enlace</button>
-        </div>
+ <!-- Share bar (top) -->
+ <div class="post-share">
+ <span class="post-share__label">Compartir:</span>
+ <a
+ href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + pageUrl)}`}
+ class="post-share__btn post-share__btn--wa"
+ target="_blank" rel="noopener noreferrer"
+ > WhatsApp</a>
+ <a
+ href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
+ class="post-share__btn post-share__btn--x"
+ target="_blank" rel="noopener noreferrer"
+ >𝕏 Twitter</a>
+ <button
+ class="post-share__btn post-share__btn--copy"
+ onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent=' ¡Copiado!';setTimeout(()=>this.textContent=' Copiar enlace',2000)})"
+ > Copiar enlace</button>
+ </div>
 
-        <!-- Article content -->
-        <article class="prose" id="article-content">
-          <slot />
-        </article>
+ <!-- Article content -->
+ <article class="prose" id="article-content">
+ <slot />
+ </article>
 
-        <!-- Tags -->
-        {tags.length > 0 && (
-          <div class="post-tags">
-            <span class="post-tags__label">Temas:</span>
-            {tags.map(tag => <span class="post-tags__tag">#{tag}</span>)}
-          </div>
-        )}
+ <!-- Tags -->
+ {tags.length > 0 && (
+ <div class="post-tags">
+ <span class="post-tags__label">Temas:</span>
+ {tags.map(tag => <span class="post-tags__tag">{tag}</span>)}
+ </div>
+ )}
 
-        <!-- Author -->
-        <div class="post-author">
-          <div class="post-author__avatar">C</div>
-          <div class="post-author__info">
-            <h4>{author}</h4>
-            <p>Especialistas en empaques de cartón corrugado para empresas en CDMX y Estado de México. Más de 20 años fabricando soluciones de empaque B2B.</p>
-          </div>
-        </div>
+ <!-- Author -->
+ <div class="post-author">
+ <div class="post-author__avatar">C</div>
+ <div class="post-author__info">
+ <h4>{author}</h4>
+ <p>Especialistas en empaques de cartón corrugado para empresas en CDMX y Estado de México. Más de 20 años fabricando soluciones de empaque B2B.</p>
+ </div>
+ </div>
 
-        <!-- Share bar (bottom) -->
-        <div class="post-share">
-          <span class="post-share__label">¿Te fue útil? Comparte:</span>
-          <a
-            href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + pageUrl)}`}
-            class="post-share__btn post-share__btn--wa"
-            target="_blank" rel="noopener noreferrer"
-          >💬 WhatsApp</a>
-          <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
-            class="post-share__btn post-share__btn--x"
-            target="_blank" rel="noopener noreferrer"
-          >𝕏 Twitter</a>
-          <button
-            class="post-share__btn post-share__btn--copy"
-            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ ¡Copiado!';setTimeout(()=>this.textContent='🔗 Copiar enlace',2000)})"
-          >🔗 Copiar enlace</button>
-        </div>
+ <!-- Share bar (bottom) -->
+ <div class="post-share">
+ <span class="post-share__label">¿Te fue útil? Comparte:</span>
+ <a
+ href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + pageUrl)}`}
+ class="post-share__btn post-share__btn--wa"
+ target="_blank" rel="noopener noreferrer"
+ > WhatsApp</a>
+ <a
+ href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
+ class="post-share__btn post-share__btn--x"
+ target="_blank" rel="noopener noreferrer"
+ >𝕏 Twitter</a>
+ <button
+ class="post-share__btn post-share__btn--copy"
+ onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent=' ¡Copiado!';setTimeout(()=>this.textContent=' Copiar enlace',2000)})"
+ > Copiar enlace</button>
+ </div>
 
-        <!-- Related Posts -->
-        {relatedPosts.length > 0 && (
-          <section class="related-posts">
-            <h2 class="related-posts__title">Artículos relacionados</h2>
-            <div class="related-posts__grid">
-              {relatedPosts.map(post => {
-                const rcs = catSlug(post.category);
-                return (
-                  <a href={`/blog/${post.slug}`} class="blog-card">
-                    <div class="blog-card__img-wrap">
-                      {post.image ? (
-                        <img class="blog-card__img" src={post.image} alt={post.title} width="480" height="270" loading="lazy" />
-                      ) : (
-                        <div class={`blog-card__placeholder blog-card__placeholder--${rcs}`}>CADECA</div>
-                      )}
-                      <span class={`blog-card__cat-badge blog-card__cat-badge--${rcs}`}>{post.category}</span>
-                    </div>
-                    <div class="blog-card__body">
-                      <h3 class="blog-card__title">{post.title}</h3>
-                      <div class="blog-card__footer">
-                        <span>{post.category}</span>
-                        <span class="blog-card__read-more">Leer →</span>
-                      </div>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </section>
-        )}
+ <!-- Related Posts -->
+ {relatedPosts.length > 0 && (
+ <section class="related-posts">
+ <h2 class="related-posts__title">Artículos relacionados</h2>
+ <div class="related-posts__grid">
+ {relatedPosts.map(post => {
+ const rcs = catSlug(post.category);
+ return (
+ <a href={`/blog/${post.slug}`} class="blog-card">
+ <div class="blog-card__img-wrap">
+ {post.image ? (
+ <img class="blog-card__img" src={post.image} alt={post.title} width="480" height="270" loading="lazy" />
+ ) : (
+ <div class={`blog-card__placeholder blog-card__placeholder--${rcs}`}>CADECA</div>
+ )}
+ <span class={`blog-card__cat-badge blog-card__cat-badge--${rcs}`}>{post.category}</span>
+ </div>
+ <div class="blog-card__body">
+ <h3 class="blog-card__title">{post.title}</h3>
+ <div class="blog-card__footer">
+ <span>{post.category}</span>
+ <span class="blog-card__read-more">Leer →</span>
+ </div>
+ </div>
+ </a>
+ );
+ })}
+ </div>
+ </section>
+ )}
 
-      </div>
+ </div>
 
-      <!-- Sidebar -->
-      <aside class="blog-sidebar">
+ <!-- Sidebar -->
+ <aside class="blog-sidebar">
 
-        <!-- TOC -->
-        {tocHeadings.length > 0 && (
-          <div class="toc" id="toc-widget">
-            <div class="toc__header">
-              <div class="toc__icon">📋</div>
-              <h3 class="toc__title">Contenido</h3>
-            </div>
-            <ul class="toc__list" id="toc-list">
-              {tocHeadings.map(h => (
-                <li class={h.depth === 3 ? "toc__h3" : ""}>
-                  <a href={`#${h.slug}`} data-heading={h.slug}>{h.text}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+ <!-- TOC -->
+ {tocHeadings.length > 0 && (
+ <div class="toc" id="toc-widget">
+ <div class="toc__header">
+ <div class="toc__icon"></div>
+ <h3 class="toc__title">Contenido</h3>
+ </div>
+ <ul class="toc__list" id="toc-list">
+ {tocHeadings.map(h => (
+ <li class={h.depth === 3 ? "toc__h3" : ""}>
+ <a href={`${h.slug}`} data-heading={h.slug}>{h.text}</a>
+ </li>
+ ))}
+ </ul>
+ </div>
+ )}
 
-        <!-- CTA WhatsApp -->
-        <div class="sidebar-cta">
-          <span class="sidebar-cta__icon">📦</span>
-          <h3 class="sidebar-cta__title">¿Necesitas estas cajas?</h3>
-          <p class="sidebar-cta__desc">Cotización sin compromiso. Producción en CDMX, entrega en 24–48 hrs.</p>
-          <a href="/cotizar" class="sidebar-cta__btn">Solicitar cotización</a>
-          <a
-            href={`https://wa.me/5255XXXXXXXX?text=${waText}`}
-            class="sidebar-cta__btn sidebar-cta__btn--wa"
-            target="_blank" rel="noopener"
-          >💬 WhatsApp directo</a>
-        </div>
+ <!-- CTA WhatsApp -->
+ <div class="sidebar-cta">
+ <span class="sidebar-cta__icon"></span>
+ <h3 class="sidebar-cta__title">¿Necesitas estas cajas?</h3>
+ <p class="sidebar-cta__desc">Cotización sin compromiso. Producción en CDMX, entrega en 24–48 hrs.</p>
+ <a href="/cotizar" class="sidebar-cta__btn">Solicitar cotización</a>
+ <a
+ href={`https://wa.me/5255XXXXXXXX?text=${waText}`}
+ class="sidebar-cta__btn sidebar-cta__btn--wa"
+ target="_blank" rel="noopener"
+ > WhatsApp directo</a>
+ </div>
 
-        <!-- Categorías -->
-        <div class="blog-sidebar__widget">
-          <div class="blog-sidebar__widget-header">
-            <div class="blog-sidebar__widget-icon">🗂</div>
-            <h3 class="blog-sidebar__widget-title">Categorías</h3>
-          </div>
-          <nav class="sidebar-categories">
-            {CATEGORIES.map(cat => (
-              <a href={`/blog/categoria/${cat.slug}`} class={`sidebar-categories__item${cat.name === category ? " sidebar-categories__item--active" : ""}`}>
-                <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
-                <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
-              </a>
-            ))}
-          </nav>
-        </div>
+ <!-- Categorías -->
+ <div class="blog-sidebar__widget">
+ <div class="blog-sidebar__widget-header">
+ <div class="blog-sidebar__widget-icon"></div>
+ <h3 class="blog-sidebar__widget-title">Categorías</h3>
+ </div>
+ <nav class="sidebar-categories">
+ {CATEGORIES.map(cat => (
+ <a href={`/blog/categoria/${cat.slug}`} class={`sidebar-categories__item${cat.name === category ? " sidebar-categories__item--active" : ""}`}>
+ <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
+ <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
+ </a>
+ ))}
+ </nav>
+ </div>
 
-        <!-- Ver más artículos -->
-        <div class="blog-sidebar__widget">
-          <div class="blog-sidebar__widget-header">
-            <div class="blog-sidebar__widget-icon">📰</div>
-            <h3 class="blog-sidebar__widget-title">Más artículos</h3>
-          </div>
-          <div style="padding: 1rem 1.25rem;">
-            <a href="/blog" style="display:inline-flex;align-items:center;gap:0.4em;font-weight:700;font-size:0.875rem;color:var(--color-primary);text-decoration:none;">
-              Ver todos los artículos →
-            </a>
-          </div>
-        </div>
+ <!-- Ver más artículos -->
+ <div class="blog-sidebar__widget">
+ <div class="blog-sidebar__widget-header">
+ <div class="blog-sidebar__widget-icon"></div>
+ <h3 class="blog-sidebar__widget-title">Más artículos</h3>
+ </div>
+ <div style="padding: 1rem 1.25rem;">
+ <a href="/blog" style="display:inline-flex;align-items:center;gap:0.4em;font-weight:700;font-size:0.875rem;color:var(--color-primary);text-decoration:none;">
+ Ver todos los artículos →
+ </a>
+ </div>
+ </div>
 
-      </aside>
-    </div>
-  </main>
+ </aside>
+ </div>
+ </main>
 
-  <Footer />
-  <WaBubble />
+ <Footer />
+ <WaBubble />
 </BaseLayout>
 
 <!-- Reading progress + TOC Active Heading -->
 <script>
 (function() {
-  // Reading progress — usa transform para no causar reflow
-  const bar = document.querySelector('.reading-progress__bar') as HTMLElement | null;
-  if (bar) {
-    let ticking = false;
-    const update = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const el = document.documentElement;
-          const total = el.scrollHeight - el.clientHeight;
-          const pct = total > 0 ? Math.min((el.scrollTop / total) * 100, 100) : 0;
-          bar.style.transform = `scaleX(${pct / 100})`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  }
+ // Reading progress — usa transform para no causar reflow
+ const bar = document.querySelector('.reading-progress__bar') as HTMLElement | null;
+ if (bar) {
+ let ticking = false;
+ const update = () => {
+ if (!ticking) {
+ requestAnimationFrame(() => {
+ const el = document.documentElement;
+ const total = el.scrollHeight - el.clientHeight;
+ const pct = total > 0 ? Math.min((el.scrollTop / total) * 100, 100) : 0;
+ bar.style.transform = `scaleX(${pct / 100})`;
+ ticking = false;
+ });
+ ticking = true;
+ }
+ };
+ window.addEventListener('scroll', update, { passive: true });
+ update();
+ }
 
-  // TOC active — sin scrollIntoView para evitar scroll loop
-  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('#toc-list a[data-heading]');
-  if (!tocLinks.length) return;
+ // TOC active — sin scrollIntoView para evitar scroll loop
+ const tocLinks = document.querySelectorAll<HTMLAnchorElement>('toc-list a[data-heading]');
+ if (!tocLinks.length) return;
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        tocLinks.forEach(a => a.classList.remove('toc-active'));
-        const active = document.querySelector<HTMLElement>(
-          `#toc-list a[data-heading="${entry.target.id}"]`
-        );
-        if (active) active.classList.add('toc-active');
-        // NO scrollIntoView — causaba scroll loop en mobile
-      }
-    });
-  }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+ const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ tocLinks.forEach(a => a.classList.remove('toc-active'));
+ const active = document.querySelector<HTMLElement>(
+ `toc-list a[data-heading="${entry.target.id}"]`
+ );
+ if (active) active.classList.add('toc-active');
+ // NO scrollIntoView — causaba scroll loop en mobile
+ }
+ });
+ }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
 
-  document.querySelectorAll('#article-content h2[id], #article-content h3[id]').forEach(h => {
-    observer.observe(h);
-  });
+ document.querySelectorAll('article-content h2[id], article-content h3[id]').forEach(h => {
+ observer.observe(h);
+ });
 })();
 </script>

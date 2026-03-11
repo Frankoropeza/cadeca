@@ -1,471 +1,471 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import ProductCard   from "@/components/ProductCard.astro";
+import ProductCard  from "@/components/ProductCard.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
-import ProcessStep   from "@/components/ProcessStep.astro";
-import Testimonial   from "@/components/Testimonial.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import Testimonial  from "@/components/Testimonial.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 
-const title       = "Cajas de Cartón Personalizadas con Logo CDMX | Impresión Full Color | CADECA";
+const title  = "Cajas de Cartón Personalizadas con Logo CDMX | Impresión Full Color | CADECA";
 const description = "Cajas de cartón personalizadas con logo en CDMX. Impresión 1 color, 4 colores y full color CMYK. Desde 100 piezas, diseño sin costo, entrega 3-5 días. Cotiza gratis.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Cajas de Cartón Personalizadas con Logo",
-  "description": "Cajas de cartón personalizadas con logo e impresión en CDMX. 1 color, full color CMYK, acabados mate y brillante. Diseño gratuito, desde 100 piezas.",
-  "brand": { "@type": "Brand", "name": "CADECA" },
-  "manufacturer": { "@type": "Organization", "name": "CADECA" },
-  "url": "https://cajas-de-carton.com/productos/cajas-personalizadas-logo",
-  "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif",
-  "category": "Cajas Personalizadas",
-  "areaServed": ["Ciudad de México", "Estado de México", "México"],
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "lowPrice": "7.00",
-    "highPrice": "55.00",
-    "availability": "https://schema.org/InStock",
-    "seller": { "@type": "Organization", "name": "CADECA" }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "68",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Diana V." },
-      "datePublished": "2025-09-18",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "La presentación de nuestra marca mejoró increíblemente con las cajas impresas de CADECA. El logo quedó nítido y los colores exactos. Nuestros clientes notan la diferencia desde que reciben el paquete."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Alejandro M." },
-      "datePublished": "2025-12-10",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Pedimos cajas full color CMYK y la calidad de impresión superó nuestras expectativas. Los degradados y fotografías se ven perfectos, parece packaging de marca internacional. Totalmente recomendados."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Sofía C." },
-      "datePublished": "2026-02-05",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Nuestros clientes aman la experiencia de unboxing. Desde que cambiamos a cajas personalizadas con CADECA, las reseñas positivas y el contenido en redes aumentaron notablemente. El diseño gratuito fue un gran plus."
-    }
-  ],
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Impresión", "value": "1 a 4 colores + CMYK" },
-    { "@type": "PropertyValue", "name": "Diseño gráfico", "value": "Incluido" },
-    { "@type": "PropertyValue", "name": "Material", "value": "Corrugado/Caple" },
-    { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "100 piezas" },
-    { "@type": "PropertyValue", "name": "Acabados", "value": "Barniz/Laminado" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "Cajas de Cartón Personalizadas con Logo",
+ "description": "Cajas de cartón personalizadas con logo e impresión en CDMX. 1 color, full color CMYK, acabados mate y brillante. Diseño gratuito, desde 100 piezas.",
+ "brand": { "@type": "Brand", "name": "CADECA" },
+ "manufacturer": { "@type": "Organization", "name": "CADECA" },
+ "url": "https://cajas-de-carton.com/productos/cajas-personalizadas-logo",
+ "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif",
+ "category": "Cajas Personalizadas",
+ "areaServed": ["Ciudad de México", "Estado de México", "México"],
+ "offers": {
+ "@type": "AggregateOffer",
+ "priceCurrency": "MXN",
+ "lowPrice": "7.00",
+ "highPrice": "55.00",
+ "availability": "https://schema.org/InStock",
+ "seller": { "@type": "Organization", "name": "CADECA" }
+ },
+ "aggregateRating": {
+ "@type": "AggregateRating",
+ "ratingValue": "5.0",
+ "reviewCount": "68",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "review": [
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Diana V." },
+ "datePublished": "2025-09-18",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+ "reviewBody": "La presentación de nuestra marca mejoró increíblemente con las cajas impresas de CADECA. El logo quedó nítido y los colores exactos. Nuestros clientes notan la diferencia desde que reciben el paquete."
+ },
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Alejandro M." },
+ "datePublished": "2025-12-10",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+ "reviewBody": "Pedimos cajas full color CMYK y la calidad de impresión superó nuestras expectativas. Los degradados y fotografías se ven perfectos, parece packaging de marca internacional. Totalmente recomendados."
+ },
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Sofía C." },
+ "datePublished": "2026-02-05",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+ "reviewBody": "Nuestros clientes aman la experiencia de unboxing. Desde que cambiamos a cajas personalizadas con CADECA, las reseñas positivas y el contenido en redes aumentaron notablemente. El diseño gratuito fue un gran plus."
+ }
+ ],
+ "additionalProperty": [
+ { "@type": "PropertyValue", "name": "Impresión", "value": "1 a 4 colores + CMYK" },
+ { "@type": "PropertyValue", "name": "Diseño gráfico", "value": "Incluido" },
+ { "@type": "PropertyValue", "name": "Material", "value": "Corrugado/Caple" },
+ { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "100 piezas" },
+ { "@type": "PropertyValue", "name": "Acabados", "value": "Barniz/Laminado" }
+ ]
 };
 
 const subcategorias = [
-  {
-    title:   "Impresión 1 Color (Logo Corporativo)",
-    desc:    "La opción más económica para personalizar tu empaque. Tu logo o texto en un solo color Pantone sobre cartón kraft o blanco. Profesional, limpio y rentable.",
-    imgSrc:  "/img/productos/cajas-carton-personalizadas-impresion-logo-1-color-cdmx.avif",
-    imgAlt:  "Cajas de cartón personalizadas con impresión logo 1 color en CDMX — CADECA",
-    href:    "/productos/cajas-personalizadas-logo#1-color",
-    tags: [
-      { label: "Pantone exacto",     href: "/productos/cajas-personalizadas-logo#pantone" },
-      { label: "Kraft o blanco",     href: "/productos/cajas-personalizadas-logo#material" },
-      { label: "Desde 100 pzas",    href: "/productos/cajas-personalizadas-logo#pedido" },
-    ],
-    btnText: "Ver Impresión 1 Color",
-  },
-  {
-    title:   "Full Color CMYK (Impresión Digital)",
-    desc:    "Máxima calidad visual. Impresión digital de alta definición en 4 colores para marcas con packaging llamativo. Fotografías, degradados y diseños complejos sin límite.",
-    imgSrc:  "/img/productos/cajas-carton-personalizadas-full-color-cmyk-impresion-cdmx.avif",
-    imgAlt:  "Cajas de cartón personalizadas full color CMYK impresión digital en CDMX — CADECA",
-    href:    "/productos/cajas-personalizadas-logo#full-color",
-    tags: [
-      { label: "Impresión digital 4K",  href: "/productos/cajas-personalizadas-logo#full-color" },
-      { label: "Fotografías e ilustr.", href: "/productos/cajas-personalizadas-logo#full-color" },
-      { label: "Desde 100 pzas",       href: "/productos/cajas-personalizadas-logo#pedido" },
-    ],
-    btnText: "Ver Full Color CMYK",
-  },
-  {
-    title:   "Acabados Premium (Mate y Brillante)",
-    desc:    "Barniz UV, laminado mate, laminado brillante y soft touch para marcas que buscan un packaging de lujo. El acabado correcto transforma completamente la percepción del producto.",
-    imgSrc:  "/img/productos/cajas-carton-personalizadas-acabado-premium-mate-branding.avif",
-    imgAlt:  "Cajas de cartón personalizadas con acabado premium mate brillante branding — CADECA",
-    href:    "/productos/cajas-personalizadas-logo#acabados",
-    tags: [
-      { label: "Barniz UV",        href: "/productos/cajas-personalizadas-logo#acabados" },
-      { label: "Laminado Mate",    href: "/productos/cajas-personalizadas-logo#acabados" },
-      { label: "Soft Touch",       href: "/productos/cajas-personalizadas-logo#acabados" },
-    ],
-    btnText: "Ver Acabados Premium",
-  },
-  {
-    title:   "Unboxing Experience (Marca Premium)",
-    desc:    "El packaging como herramienta de marketing. Diseño completo de la experiencia de apertura: caja exterior, interior impreso, insertos y tissue paper coordinado con tu marca.",
-    imgSrc:  "/img/productos/cajas-carton-personalizadas-unboxing-experiencia-marca-cdmx.avif",
-    imgAlt:  "Cajas de cartón personalizadas unboxing experience marca premium en CDMX — CADECA",
-    href:    "/productos/cajas-personalizadas-logo#unboxing",
-    tags: [
-      { label: "Interior impreso",    href: "/productos/cajas-personalizadas-logo#unboxing" },
-      { label: "Insertos y tissue",   href: "/productos/cajas-personalizadas-logo#unboxing" },
-      { label: "Diseño completo",     href: "/productos/cajas-personalizadas-logo#unboxing" },
-    ],
-    btnText: "Ver Unboxing Experience",
-  },
+ {
+ title:  "Impresión 1 Color (Logo Corporativo)",
+ desc:  "La opción más económica para personalizar tu empaque. Tu logo o texto en un solo color Pantone sobre cartón kraft o blanco. Profesional, limpio y rentable.",
+ imgSrc:  "/img/productos/cajas-carton-personalizadas-impresion-logo-1-color-cdmx.avif",
+ imgAlt:  "Cajas de cartón personalizadas con impresión logo 1 color en CDMX — CADECA",
+ href:  "/productos/cajas-personalizadas-logo1-color",
+ tags: [
+ { label: "Pantone exacto",  href: "/productos/cajas-personalizadas-logopantone" },
+ { label: "Kraft o blanco",  href: "/productos/cajas-personalizadas-logomaterial" },
+ { label: "Desde 100 pzas",  href: "/productos/cajas-personalizadas-logopedido" },
+ ],
+ btnText: "Ver Impresión 1 Color",
+ },
+ {
+ title:  "Full Color CMYK (Impresión Digital)",
+ desc:  "Máxima calidad visual. Impresión digital de alta definición en 4 colores para marcas con packaging llamativo. Fotografías, degradados y diseños complejos sin límite.",
+ imgSrc:  "/img/productos/cajas-carton-personalizadas-full-color-cmyk-impresion-cdmx.avif",
+ imgAlt:  "Cajas de cartón personalizadas full color CMYK impresión digital en CDMX — CADECA",
+ href:  "/productos/cajas-personalizadas-logofull-color",
+ tags: [
+ { label: "Impresión digital 4K",  href: "/productos/cajas-personalizadas-logofull-color" },
+ { label: "Fotografías e ilustr.", href: "/productos/cajas-personalizadas-logofull-color" },
+ { label: "Desde 100 pzas",  href: "/productos/cajas-personalizadas-logopedido" },
+ ],
+ btnText: "Ver Full Color CMYK",
+ },
+ {
+ title:  "Acabados Premium (Mate y Brillante)",
+ desc:  "Barniz UV, laminado mate, laminado brillante y soft touch para marcas que buscan un packaging de lujo. El acabado correcto transforma completamente la percepción del producto.",
+ imgSrc:  "/img/productos/cajas-carton-personalizadas-acabado-premium-mate-branding.avif",
+ imgAlt:  "Cajas de cartón personalizadas con acabado premium mate brillante branding — CADECA",
+ href:  "/productos/cajas-personalizadas-logoacabados",
+ tags: [
+ { label: "Barniz UV",  href: "/productos/cajas-personalizadas-logoacabados" },
+ { label: "Laminado Mate",  href: "/productos/cajas-personalizadas-logoacabados" },
+ { label: "Soft Touch",  href: "/productos/cajas-personalizadas-logoacabados" },
+ ],
+ btnText: "Ver Acabados Premium",
+ },
+ {
+ title:  "Unboxing Experience (Marca Premium)",
+ desc:  "El packaging como herramienta de marketing. Diseño completo de la experiencia de apertura: caja exterior, interior impreso, insertos y tissue paper coordinado con tu marca.",
+ imgSrc:  "/img/productos/cajas-carton-personalizadas-unboxing-experiencia-marca-cdmx.avif",
+ imgAlt:  "Cajas de cartón personalizadas unboxing experience marca premium en CDMX — CADECA",
+ href:  "/productos/cajas-personalizadas-logounboxing",
+ tags: [
+ { label: "Interior impreso",  href: "/productos/cajas-personalizadas-logounboxing" },
+ { label: "Insertos y tissue",  href: "/productos/cajas-personalizadas-logounboxing" },
+ { label: "Diseño completo",  href: "/productos/cajas-personalizadas-logounboxing" },
+ ],
+ btnText: "Ver Unboxing Experience",
+ },
 ];
 
 const industrias = [
-  {
-    icon:     "✨",
-    title:    "Marcas de Retail y Lujo",
-    desc:     "El packaging es parte del producto para marcas premium. Acabados mate, brillante y soft touch que transmiten calidad antes de abrir la caja. Diseño sin costo incluido.",
-    href:     "/soluciones/retail-marcas",
-    linkText: "Ver solución retail",
-  },
-  {
-    icon:     "💄",
-    title:    "Belleza y Cosmética",
-    desc:     "Cajas personalizadas para cosméticos, perfumes y cuidado personal. Impresión full color con fotografías de producto en alta definición, laminado brillante o mate.",
-    href:     "/productos/cajas-personalizadas-logo#belleza",
-    linkText: "Ver cajas para belleza",
-  },
-  {
-    icon:     "🎁",
-    title:    "Regalos y Temporadas",
-    desc:     "Cajas especiales para Navidad, Día de Madre, San Valentín y Buen Fin. Diseños de temporada listos o personalizados con tus elementos gráficos. Producción express.",
-    href:     "/productos/cajas-personalizadas-logo#temporadas",
-    linkText: "Ver cajas de temporada",
-  },
-  {
-    icon:     "🛒",
-    title:    "E-commerce con Marca",
-    desc:     "Vendedores online que quieren diferenciarse del empaque genérico. El unboxing con marca aumenta reseñas positivas y recompras. Desde 100 piezas, entrega 3-5 días.",
-    href:     "/productos/cajas-para-ecommerce",
-    linkText: "Ver cajas para e-commerce",
-  },
+ {
+ icon:  "",
+ title:  "Marcas de Retail y Lujo",
+ desc:  "El packaging es parte del producto para marcas premium. Acabados mate, brillante y soft touch que transmiten calidad antes de abrir la caja. Diseño sin costo incluido.",
+ href:  "/soluciones/retail-marcas",
+ linkText: "Ver solución retail",
+ },
+ {
+ icon:  "",
+ title:  "Belleza y Cosmética",
+ desc:  "Cajas personalizadas para cosméticos, perfumes y cuidado personal. Impresión full color con fotografías de producto en alta definición, laminado brillante o mate.",
+ href:  "/productos/cajas-personalizadas-logobelleza",
+ linkText: "Ver cajas para belleza",
+ },
+ {
+ icon:  "",
+ title:  "Regalos y Temporadas",
+ desc:  "Cajas especiales para Navidad, Día de Madre, San Valentín y Buen Fin. Diseños de temporada listos o personalizados con tus elementos gráficos. Producción express.",
+ href:  "/productos/cajas-personalizadas-logotemporadas",
+ linkText: "Ver cajas de temporada",
+ },
+ {
+ icon:  "",
+ title:  "E-commerce con Marca",
+ desc:  "Vendedores online que quieren diferenciarse del empaque genérico. El unboxing con marca aumenta reseñas positivas y recompras. Desde 100 piezas, entrega 3-5 días.",
+ href:  "/productos/cajas-para-ecommerce",
+ linkText: "Ver cajas para e-commerce",
+ },
 ];
 
 const pasos = [
-  { num: 1, title: "Envíanos tu diseño",    desc: "Manda tu logo o briefing de marca. Si no tienes diseño, nuestro equipo crea una propuesta gráfica sin costo. Formatos aceptados: AI, PDF, PNG de alta resolución." },
-  { num: 2, title: "Prueba digital gratis", desc: "Generamos una prueba digital de cómo quedará tu caja en 24 horas. Sin costo y sin compromiso. Revisas y apruebas antes de producir." },
-  { num: 3, title: "Confirmas y pagas",     desc: "Una vez aprobado el diseño, confirmas la cantidad y procesamos el pedido. Producción inicia el mismo día del pago." },
-  { num: 4, title: "Entrega en 3-5 días",   desc: "Cajas personalizadas listas y entregadas en tu puerta en 3 a 5 días hábiles. Revisión de calidad incluida antes de enviar." },
+ { num: 1, title: "Envíanos tu diseño",  desc: "Manda tu logo o briefing de marca. Si no tienes diseño, nuestro equipo crea una propuesta gráfica sin costo. Formatos aceptados: AI, PDF, PNG de alta resolución." },
+ { num: 2, title: "Prueba digital gratis", desc: "Generamos una prueba digital de cómo quedará tu caja en 24 horas. Sin costo y sin compromiso. Revisas y apruebas antes de producir." },
+ { num: 3, title: "Confirmas y pagas",  desc: "Una vez aprobado el diseño, confirmas la cantidad y procesamos el pedido. Producción inicia el mismo día del pago." },
+ { num: 4, title: "Entrega en 3-5 días",  desc: "Cajas personalizadas listas y entregadas en tu puerta en 3 a 5 días hábiles. Revisión de calidad incluida antes de enviar." },
 ];
 
 const testimonios = [
-  {
-    initials: "SB",
-    name:     "Sofía B.",
-    role:     "Fundadora — Marca de cosméticos, Polanco CDMX",
-    text:     "Probé 3 proveedores antes de encontrar CADECA. La diferencia es enorme: el diseño que me propusieron superó lo que tenía en mente, el acabado mate quedó perfecto y el proceso fue muy fluido. Mis clientes siempre comentan lo bonita que llega la caja. Son parte de mi marca.",
-  },
-  {
-    initials: "HM",
-    name:     "Héctor M.",
-    role:     "Director — Tienda de regalos empresariales, Santa Fe CDMX",
-    text:     "Hacemos pedidos de cajas personalizadas para empresas corporativas. CADECA cumple con plazos apretados de fin de año y la calidad de impresión es consistente en cada lote. La prueba digital nos ahorra tiempo en aprobaciones. Excelente partner.",
-  },
-  {
-    initials: "LR",
-    name:     "Lorena R.",
-    role:     "Emprendedora — Tienda Shopify moda, Ecatepec",
-    text:     "Empecé con 100 cajas para probar. La calidad de impresión del logo a 1 color quedó mucho mejor de lo esperado. Mis clientes hacen unboxing en redes y siempre mencionan el packaging. Ya voy en el tercer pedido de 500 piezas.",
-  },
+ {
+ initials: "SB",
+ name:  "Sofía B.",
+ role:  "Fundadora — Marca de cosméticos, Polanco CDMX",
+ text:  "Probé 3 proveedores antes de encontrar CADECA. La diferencia es enorme: el diseño que me propusieron superó lo que tenía en mente, el acabado mate quedó perfecto y el proceso fue muy fluido. Mis clientes siempre comentan lo bonita que llega la caja. Son parte de mi marca.",
+ },
+ {
+ initials: "HM",
+ name:  "Héctor M.",
+ role:  "Director — Tienda de regalos empresariales, Santa Fe CDMX",
+ text:  "Hacemos pedidos de cajas personalizadas para empresas corporativas. CADECA cumple con plazos apretados de fin de año y la calidad de impresión es consistente en cada lote. La prueba digital nos ahorra tiempo en aprobaciones. Excelente partner.",
+ },
+ {
+ initials: "LR",
+ name:  "Lorena R.",
+ role:  "Emprendedora — Tienda Shopify moda, Ecatepec",
+ text:  "Empecé con 100 cajas para probar. La calidad de impresión del logo a 1 color quedó mucho mejor de lo esperado. Mis clientes hacen unboxing en redes y siempre mencionan el packaging. Ya voy en el tercer pedido de 500 piezas.",
+ },
 ];
 
 const faqs = [
-  {
-    id: "cp1",
-    question: "¿Cuál es el pedido mínimo para cajas personalizadas con logo?",
-    answer: "El pedido mínimo es <strong>100 piezas</strong> para cualquier tipo de impresión (1 color, 4 colores o full color CMYK). Para acabados premium (barniz UV, laminado mate/brillante) el mínimo puede variar según la complejidad. Consulta disponibilidad por WhatsApp para tu caso específico.",
-  },
-  {
-    id: "cp2",
-    question: "¿Cuánto tiempo tarda producir cajas personalizadas?",
-    answer: "El proceso completo toma <strong>3 a 5 días hábiles</strong> desde la aprobación del diseño: Día 1 — revisión de arte y prueba digital gratuita. Día 2 — aprobación del cliente. Días 3-5 — producción, control de calidad y empaque. Para pedidos urgentes con entrega en 48 hrs consulta disponibilidad.",
-  },
-  {
-    id: "cp3",
-    question: "¿Puedo ver cómo quedará mi caja antes de producir?",
-    answer: "Sí. Generamos una <strong>prueba de diseño digital gratuita</strong> en menos de 24 horas. Verás exactamente cómo quedará tu logo, colores e impresión en la caja antes de aprobar la producción. No se cobra nada por esta prueba y no hay compromiso de compra.",
-  },
-  {
-    id: "cp4",
-    question: "¿Qué formatos de archivo necesito para el diseño?",
-    answer: "Aceptamos archivos en <strong>Adobe Illustrator (.ai), PDF vectorial, EPS y PNG de alta resolución</strong> (mínimo 300 dpi al tamaño real). Si solo tienes un logo en JPG o PNG de baja resolución, podemos vectorizarlo por un costo adicional. Si no tienes diseño, nuestro equipo crea una propuesta gráfica sin costo basado en tu briefing de marca.",
-  },
-  {
-    id: "cp5",
-    question: "¿Las tintas son ecológicas?",
-    answer: "Sí. Toda nuestra línea de impresión usa <strong>tintas base agua</strong> libres de solventes tóxicos. Son ecológicas, no afectan la reciclabilidad del cartón y cumplen con las normativas de la industria alimentaria cuando se aplican en cajas para alimentos. Para marcas con certificación ambiental, también ofrecemos cartón FSC con impresión en tintas vegetales.",
-  },
-  {
-    id: "cp6",
-    question: "¿Puedo combinar impresión personalizada con cajas para e-commerce?",
-    answer: "Absolutamente. Todas nuestras cajas para e-commerce (medidas Mercado Envíos, Amazon MX y paqueterías) pueden personalizarse con logo e impresión. Es la combinación ideal: medidas exactas para tu plataforma + packaging con marca que mejora la experiencia del cliente y aumenta la tasa de recompra.",
-  },
+ {
+ id: "cp1",
+ question: "¿Cuál es el pedido mínimo para cajas personalizadas con logo?",
+ answer: "El pedido mínimo es <strong>100 piezas</strong> para cualquier tipo de impresión (1 color, 4 colores o full color CMYK). Para acabados premium (barniz UV, laminado mate/brillante) el mínimo puede variar según la complejidad. Consulta disponibilidad por WhatsApp para tu caso específico.",
+ },
+ {
+ id: "cp2",
+ question: "¿Cuánto tiempo tarda producir cajas personalizadas?",
+ answer: "El proceso completo toma <strong>3 a 5 días hábiles</strong> desde la aprobación del diseño: Día 1 — revisión de arte y prueba digital gratuita. Día 2 — aprobación del cliente. Días 3-5 — producción, control de calidad y empaque. Para pedidos urgentes con entrega en 48 hrs consulta disponibilidad.",
+ },
+ {
+ id: "cp3",
+ question: "¿Puedo ver cómo quedará mi caja antes de producir?",
+ answer: "Sí. Generamos una <strong>prueba de diseño digital gratuita</strong> en menos de 24 horas. Verás exactamente cómo quedará tu logo, colores e impresión en la caja antes de aprobar la producción. No se cobra nada por esta prueba y no hay compromiso de compra.",
+ },
+ {
+ id: "cp4",
+ question: "¿Qué formatos de archivo necesito para el diseño?",
+ answer: "Aceptamos archivos en <strong>Adobe Illustrator (.ai), PDF vectorial, EPS y PNG de alta resolución</strong> (mínimo 300 dpi al tamaño real). Si solo tienes un logo en JPG o PNG de baja resolución, podemos vectorizarlo por un costo adicional. Si no tienes diseño, nuestro equipo crea una propuesta gráfica sin costo basado en tu briefing de marca.",
+ },
+ {
+ id: "cp5",
+ question: "¿Las tintas son ecológicas?",
+ answer: "Sí. Toda nuestra línea de impresión usa <strong>tintas base agua</strong> libres de solventes tóxicos. Son ecológicas, no afectan la reciclabilidad del cartón y cumplen con las normativas de la industria alimentaria cuando se aplican en cajas para alimentos. Para marcas con certificación ambiental, también ofrecemos cartón FSC con impresión en tintas vegetales.",
+ },
+ {
+ id: "cp6",
+ question: "¿Puedo combinar impresión personalizada con cajas para e-commerce?",
+ answer: "Absolutamente. Todas nuestras cajas para e-commerce (medidas Mercado Envíos, Amazon MX y paqueterías) pueden personalizarse con logo e impresión. Es la combinación ideal: medidas exactas para tu plataforma + packaging con marca que mejora la experiencia del cliente y aumenta la tasa de recompra.",
+ },
 ];
 
 const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Productos", href: "/productos" },
-  { name: "Cajas Personalizadas con Logo" },
+ { name: "Inicio", href: "/" },
+ { name: "Productos", href: "/productos" },
+ { name: "Cajas Personalizadas con Logo" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  schema={productSchema}
-  whatsapp={WHATSAPP}
-  faqItems={faqItems}
-  breadcrumbs={breadcrumbs}
+ title={title}
+ description={description}
+ schema={productSchema}
+ whatsapp={WHATSAPP}
+ faqItems={faqItems}
+ breadcrumbs={breadcrumbs}
 >
 
-  <!-- HERO -->
-    <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/productos">Productos</a></li>
-      <li><span class="current">Cajas Personalizadas con Logo</span></li>
-      </ol>
-    </div>
-  </div>
+ <!-- HERO -->
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/productos">Productos</a></li>
+ <li><span class="current">Cajas Personalizadas con Logo</span></li>
+ </ol>
+ </div>
+ </div>
 
-  
-  <!-- Banner catálogo técnico -->
-  <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
-    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-      <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
-      <a href="/catalogo/cajas-personalizadas-logo" style="background:var(--color-primary);color:#fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
-    </div>
-  </div>
+ 
+ <!-- Banner catálogo técnico -->
+ <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
+ <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+ <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
+ <a href="/catalogo/cajas-personalizadas-logo" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
+ </div>
+ </div>
 
-  <section class="page-hero" aria-labelledby="prod-cp-title">
-    <div class="container">
-      <div class="page-hero__inner">
-        <div class="page-hero__content">
-          <p class="page-hero__badge">Diseño sin costo · Prueba digital gratis · Tintas base agua</p>
-          <h1 id="prod-cp-title" class="page-hero__title">
-            Cajas de Cartón<br><span>Personalizadas con Logo CDMX</span>
-          </h1>
-          <p class="page-hero__desc">
-            Impresión 1 color, 4 colores y full color CMYK. Acabados mate, brillante y soft touch. Diseño gráfico sin costo y prueba digital antes de producir. Desde 100 piezas, entrega en 3-5 días.
-          </p>
-          <div class="page-hero__ctas">
-            <a href="#cotizar"       class="btn btn--primary">Cotizar con Diseño</a>
-            <a href="#subcategorias" class="btn btn--outline">Ver Opciones</a>
-          </div>
-        </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">24 hrs</span>
-            <span class="page-hero__stat-label">Prueba digital gratis</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">3-5 días</span>
-            <span class="page-hero__stat-label">Entrega producción</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">100%</span>
-            <span class="page-hero__stat-label">Tintas base agua</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section class="page-hero" aria-labelledby="prod-cp-title">
+ <div class="container">
+ <div class="page-hero__inner">
+ <div class="page-hero__content">
+ <p class="page-hero__badge">Diseño sin costo · Prueba digital gratis · Tintas base agua</p>
+ <h1 id="prod-cp-title" class="page-hero__title">
+ Cajas de Cartón<br><span>Personalizadas con Logo CDMX</span>
+ </h1>
+ <p class="page-hero__desc">
+ Impresión 1 color, 4 colores y full color CMYK. Acabados mate, brillante y soft touch. Diseño gráfico sin costo y prueba digital antes de producir. Desde 100 piezas, entrega en 3-5 días.
+ </p>
+ <div class="page-hero__ctas">
+ <a href="cotizar"  class="btn btn--primary">Cotizar con Diseño</a>
+ <a href="subcategorias" class="btn btn--outline">Ver Opciones</a>
+ </div>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">24 hrs</span>
+ <span class="page-hero__stat-label">Prueba digital gratis</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">3-5 días</span>
+ <span class="page-hero__stat-label">Entrega producción</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">100%</span>
+ <span class="page-hero__stat-label">Tintas base agua</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <!-- DETALLE DEL PRODUCTO -->
-    <section class="prod-detail" aria-labelledby="detalle-cp-title">
-      <div class="container">
-        <div class="prod-detail__inner">
-          <div class="prod-detail__img-wrap">
-            <img
-              src="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
-              alt="Cajas de cartón personalizadas con logo impresión full color en México — CADECA"
-              class="prod-detail__img"
-              width="900" height="560"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-          <div class="prod-detail__content">
-            <span class="prod-detail__label">Tu marca en cada entrega</span>
-            <h2 id="detalle-cp-title" class="section-header__title" style="margin:0">
-              Impresión Profesional en Cartón Corrugado: 1 Color a Full Color CMYK
-            </h2>
-            <p class="prod-detail__intro">
-              Las cajas personalizadas convierten cada envío en un punto de contacto de marca. En CADECA ofrecemos desde la impresión más sencilla (1 color Pantone) hasta el packaging premium con full color CMYK, barniz UV y laminados. Diseño gráfico gratuito y prueba digital antes de producir — sin compromiso de compra.
-            </p>
-            <div>
-              <p class="prod-detail__specs-title">Opciones de impresión y acabado</p>
-              <div class="prod-detail__specs-grid">
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Impresión</span>
-                  <span class="prod-detail__spec-value">1 col · 4 col · Full Color</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Sistema</span>
-                  <span class="prod-detail__spec-value">Flexografía · Digital CMYK</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Acabados</span>
-                  <span class="prod-detail__spec-value">Mate · Brillante · Soft Touch</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Tintas</span>
-                  <span class="prod-detail__spec-value">Base agua (ecológicas)</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Diseño</span>
-                  <span class="prod-detail__spec-value">Gratuito + prueba digital</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Archivo</span>
-                  <span class="prod-detail__spec-value">AI · PDF · EPS · PNG 300dpi</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Pedido mínimo</span>
-                  <span class="prod-detail__spec-value">100 piezas</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Producción</span>
-                  <span class="prod-detail__spec-value">3 – 5 días hábiles</span>
-                </div>
-              </div>
-            </div>
-            <div class="prod-detail__actions">
-              <a href="#cotizar"                      class="btn btn--primary">Solicitar Diseño Gratis</a>
-              <a href={`https://wa.me/${WHATSAPP}`}
-                 target="_blank" rel="noopener"      class="btn btn--outline">WhatsApp Directo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- DETALLE DEL PRODUCTO -->
+ <section class="prod-detail" aria-labelledby="detalle-cp-title">
+ <div class="container">
+ <div class="prod-detail__inner">
+ <div class="prod-detail__img-wrap">
+ <img
+ src="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
+ alt="Cajas de cartón personalizadas con logo impresión full color en México — CADECA"
+ class="prod-detail__img"
+ width="900" height="560"
+ loading="eager"
+ decoding="async"
+ fetchpriority="high"
+ />
+ </div>
+ <div class="prod-detail__content">
+ <span class="prod-detail__label">Tu marca en cada entrega</span>
+ <h2 id="detalle-cp-title" class="section-header__title" style="margin:0">
+ Impresión Profesional en Cartón Corrugado: 1 Color a Full Color CMYK
+ </h2>
+ <p class="prod-detail__intro">
+ Las cajas personalizadas convierten cada envío en un punto de contacto de marca. En CADECA ofrecemos desde la impresión más sencilla (1 color Pantone) hasta el packaging premium con full color CMYK, barniz UV y laminados. Diseño gráfico gratuito y prueba digital antes de producir — sin compromiso de compra.
+ </p>
+ <div>
+ <p class="prod-detail__specs-title">Opciones de impresión y acabado</p>
+ <div class="prod-detail__specs-grid">
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Impresión</span>
+ <span class="prod-detail__spec-value">1 col · 4 col · Full Color</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Sistema</span>
+ <span class="prod-detail__spec-value">Flexografía · Digital CMYK</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Acabados</span>
+ <span class="prod-detail__spec-value">Mate · Brillante · Soft Touch</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Tintas</span>
+ <span class="prod-detail__spec-value">Base agua (ecológicas)</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Diseño</span>
+ <span class="prod-detail__spec-value">Gratuito + prueba digital</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Archivo</span>
+ <span class="prod-detail__spec-value">AI · PDF · EPS · PNG 300dpi</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Pedido mínimo</span>
+ <span class="prod-detail__spec-value">100 piezas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Producción</span>
+ <span class="prod-detail__spec-value">3 – 5 días hábiles</span>
+ </div>
+ </div>
+ </div>
+ <div class="prod-detail__actions">
+ <a href="cotizar"  class="btn btn--primary">Solicitar Diseño Gratis</a>
+ <a href={`https://wa.me/${WHATSAPP}`}
+ target="_blank" rel="noopener"  class="btn btn--outline">WhatsApp Directo</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- SUBCATEGORÍAS -->
-    <section class="products" id="subcategorias" aria-labelledby="subcats-cp-title">
-      <div class="container">
-        <SectionHeader
-          id="subcats-cp-title"
-          twoCol
-          title="Opciones de Personalización: Elige el Nivel de tu Packaging"
-          subtitle="Desde impresión básica 1 color hasta unboxing experience completo. Todos con diseño gratuito."
-          link={{ text: "Ver catálogo completo", href: "/productos" }}
-        >
-          <p>Cada nivel de personalización tiene un punto de equilibrio entre costo de producción e impacto en la percepción de marca. La impresión a 1 color es suficiente para muchas marcas B2B y mayoristas. El full color CMYK con acabados premium es la inversión correcta para marcas de retail y e-commerce con estrategia de contenido.</p>
-          <p>Nuestro equipo de diseño te ayuda a elegir la opción correcta para tu presupuesto y objetivos de marca — sin costo adicional.</p>
-        </SectionHeader>
-        <div class="products__grid">
-          {subcategorias.map(p => <ProductCard {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- SUBCATEGORÍAS -->
+ <section class="products" id="subcategorias" aria-labelledby="subcats-cp-title">
+ <div class="container">
+ <SectionHeader
+ id="subcats-cp-title"
+ twoCol
+ title="Opciones de Personalización: Elige el Nivel de tu Packaging"
+ subtitle="Desde impresión básica 1 color hasta unboxing experience completo. Todos con diseño gratuito."
+ link={{ text: "Ver catálogo completo", href: "/productos" }}
+ >
+ <p>Cada nivel de personalización tiene un punto de equilibrio entre costo de producción e impacto en la percepción de marca. La impresión a 1 color es suficiente para muchas marcas B2B y mayoristas. El full color CMYK con acabados premium es la inversión correcta para marcas de retail y e-commerce con estrategia de contenido.</p>
+ <p>Nuestro equipo de diseño te ayuda a elegir la opción correcta para tu presupuesto y objetivos de marca — sin costo adicional.</p>
+ </SectionHeader>
+ <div class="products__grid">
+ {subcategorias.map(p => <ProductCard {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- SECTORES -->
-    <section class="industries" aria-labelledby="industrias-cp-title">
-      <div class="container">
-        <SectionHeader
-          id="industrias-cp-title"
-          twoCol
-          title="¿Quién Usa Cajas Personalizadas con Logo?"
-          subtitle="Marcas, retailers, e-commerce y empresas que entienden el packaging como herramienta de marketing"
-        >
-          <p>El packaging personalizado ya no es exclusivo de las grandes marcas. Con pedidos desde 100 piezas y precios competitivos, pequeñas y medianas empresas de CDMX están convirtiendo su empaque en un diferenciador real frente a la competencia.</p>
-          <p>El impacto es medible: marcas que personalizan su packaging reportan mayor tasa de recompra, más contenido generado por usuarios en redes sociales y mejor percepción de valor del producto.</p>
-        </SectionHeader>
-        <div class="industries__grid">
-          {industrias.map(i => <IndustryCard {...i} />)}
-        </div>
-      </div>
-    </section>
+ <!-- SECTORES -->
+ <section class="industries" aria-labelledby="industrias-cp-title">
+ <div class="container">
+ <SectionHeader
+ id="industrias-cp-title"
+ twoCol
+ title="¿Quién Usa Cajas Personalizadas con Logo?"
+ subtitle="Marcas, retailers, e-commerce y empresas que entienden el packaging como herramienta de marketing"
+ >
+ <p>El packaging personalizado ya no es exclusivo de las grandes marcas. Con pedidos desde 100 piezas y precios competitivos, pequeñas y medianas empresas de CDMX están convirtiendo su empaque en un diferenciador real frente a la competencia.</p>
+ <p>El impacto es medible: marcas que personalizan su packaging reportan mayor tasa de recompra, más contenido generado por usuarios en redes sociales y mejor percepción de valor del producto.</p>
+ </SectionHeader>
+ <div class="industries__grid">
+ {industrias.map(i => <IndustryCard {...i} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- PROCESO -->
-    <section class="process" aria-labelledby="proceso-cp-title">
-      <div class="container">
-        <SectionHeader
-          id="proceso-cp-title"
-          title="Proceso de Producción de Cajas Personalizadas"
-          subtitle="Del briefing a la entrega en 3-5 días. Diseño gratuito, prueba digital sin compromiso."
-        />
-        <div class="process__grid">
-          {pasos.map(p => <ProcessStep {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- PROCESO -->
+ <section class="process" aria-labelledby="proceso-cp-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-cp-title"
+ title="Proceso de Producción de Cajas Personalizadas"
+ subtitle="Del briefing a la entrega en 3-5 días. Diseño gratuito, prueba digital sin compromiso."
+ />
+ <div class="process__grid">
+ {pasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="trust" aria-labelledby="test-cp-title">
-      <div class="container">
-        <div class="trust__testimonials-header">
-          <h2 id="test-cp-title" class="trust__testimonials-title">
-            Marcas de CDMX que Elevan su Packaging con CADECA
-          </h2>
-          <p class="trust__testimonials-subtitle">
-            Cosméticos, regalos corporativos y moda online comparten su experiencia
-          </p>
-        </div>
-        <div class="trust__testimonials">
-          {testimonios.map(t => <Testimonial {...t} />)}
-        </div>
-      </div>
-    </section>
+ <!-- TESTIMONIOS -->
+ <section class="trust" aria-labelledby="test-cp-title">
+ <div class="container">
+ <div class="trust__testimonials-header">
+ <h2 id="test-cp-title" class="trust__testimonials-title">
+ Marcas de CDMX que Elevan su Packaging con CADECA
+ </h2>
+ <p class="trust__testimonials-subtitle">
+ Cosméticos, regalos corporativos y moda online comparten su experiencia
+ </p>
+ </div>
+ <div class="trust__testimonials">
+ {testimonios.map(t => <Testimonial {...t} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- SEO CONTENT -->
-    <section class="seo-content" aria-labelledby="seo-cp-title">
-      <div class="container">
-        <h2 id="seo-cp-title" class="seo-content__title">
-          Cajas de Cartón Personalizadas con Logo en CDMX: Packaging que Vende
-        </h2>
-        <p class="seo-content__text">
-          Las <strong>cajas de cartón personalizadas con logo en México</strong> han dejado de ser un lujo exclusivo de las grandes marcas. En CADECA las producimos desde 100 piezas con <strong>diseño gráfico gratuito y prueba digital sin costo</strong> — lo que significa que puedes ver exactamente cómo quedará tu empaque antes de aprobar la producción. Fabricamos en CDMX con entrega en 3 a 5 días hábiles en toda la zona metropolitana, sin intermediarios y con control total de calidad en cada lote.
-        </p>
-        <p class="seo-content__text">
-          Ofrecemos tres niveles de <strong>impresión en cartón corrugado</strong>: impresión a <strong>1 color Pantone</strong> para marcas que buscan limpieza y profesionalismo al menor costo; impresión a <strong>4 colores o full color CMYK</strong> para packaging con fotografías, degradados y diseños complejos; y <strong>acabados premium</strong> (barniz UV, laminado mate, laminado brillante y soft touch) para marcas de lujo que necesitan que el empaque transmita la misma calidad que el producto. Todas nuestras tintas son <strong>base agua y ecológicas</strong>, compatibles con los estándares de sostenibilidad internacionales.
-        </p>
-        <p class="seo-content__text">
-          Para los <strong>vendedores de e-commerce en CDMX</strong>, el packaging personalizado es hoy una herramienta de marketing medible: aumenta las reseñas positivas, incentiva el contenido generado por usuarios en redes sociales y mejora la tasa de recompra. Combinado con nuestras <a href="/productos/cajas-para-ecommerce">cajas de medidas oficiales para Mercado Libre y Amazon</a>, obtienes el empaque ideal: dimensiones correctas para las paqueterías y marca visible en cada entrega. <a href="#cotizar">Solicita tu prueba de diseño</a> hoy — gratuita, en menos de 24 horas y sin compromiso.
-        </p>
-      </div>
-    </section>
+ <!-- SEO CONTENT -->
+ <section class="seo-content" aria-labelledby="seo-cp-title">
+ <div class="container">
+ <h2 id="seo-cp-title" class="seo-content__title">
+ Cajas de Cartón Personalizadas con Logo en CDMX: Packaging que Vende
+ </h2>
+ <p class="seo-content__text">
+ Las <strong>cajas de cartón personalizadas con logo en México</strong> han dejado de ser un lujo exclusivo de las grandes marcas. En CADECA las producimos desde 100 piezas con <strong>diseño gráfico gratuito y prueba digital sin costo</strong> — lo que significa que puedes ver exactamente cómo quedará tu empaque antes de aprobar la producción. Fabricamos en CDMX con entrega en 3 a 5 días hábiles en toda la zona metropolitana, sin intermediarios y con control total de calidad en cada lote.
+ </p>
+ <p class="seo-content__text">
+ Ofrecemos tres niveles de <strong>impresión en cartón corrugado</strong>: impresión a <strong>1 color Pantone</strong> para marcas que buscan limpieza y profesionalismo al menor costo; impresión a <strong>4 colores o full color CMYK</strong> para packaging con fotografías, degradados y diseños complejos; y <strong>acabados premium</strong> (barniz UV, laminado mate, laminado brillante y soft touch) para marcas de lujo que necesitan que el empaque transmita la misma calidad que el producto. Todas nuestras tintas son <strong>base agua y ecológicas</strong>, compatibles con los estándares de sostenibilidad internacionales.
+ </p>
+ <p class="seo-content__text">
+ Para los <strong>vendedores de e-commerce en CDMX</strong>, el packaging personalizado es hoy una herramienta de marketing medible: aumenta las reseñas positivas, incentiva el contenido generado por usuarios en redes sociales y mejora la tasa de recompra. Combinado con nuestras <a href="/productos/cajas-para-ecommerce">cajas de medidas oficiales para Mercado Libre y Amazon</a>, obtienes el empaque ideal: dimensiones correctas para las paqueterías y marca visible en cada entrega. <a href="cotizar">Solicita tu prueba de diseño</a> hoy — gratuita, en menos de 24 horas y sin compromiso.
+ </p>
+ </div>
+ </section>
 
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-cp-title">
-      <div class="container">
-        <SectionHeader
-          id="faq-cp-title"
-          twoCol
-          title="Preguntas Frecuentes: Cajas Personalizadas con Logo"
-          subtitle="Pedido mínimo, tiempos, archivos de diseño, tintas ecológicas y más"
-        >
-          <p>Estas son las preguntas más frecuentes de nuestros clientes antes de su primer pedido de cajas personalizadas. Si tienes dudas adicionales, resuélvelas por WhatsApp con nuestro equipo de diseño.</p>
-          <p>El proceso es sencillo y sin sorpresas: diseño gratuito, prueba digital antes de producir y precio cerrado desde el inicio — sin costos ocultos.</p>
-        </SectionHeader>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <!-- FAQ -->
+ <section class="faq" aria-labelledby="faq-cp-title">
+ <div class="container">
+ <SectionHeader
+ id="faq-cp-title"
+ twoCol
+ title="Preguntas Frecuentes: Cajas Personalizadas con Logo"
+ subtitle="Pedido mínimo, tiempos, archivos de diseño, tintas ecológicas y más"
+ >
+ <p>Estas son las preguntas más frecuentes de nuestros clientes antes de su primer pedido de cajas personalizadas. Si tienes dudas adicionales, resuélvelas por WhatsApp con nuestro equipo de diseño.</p>
+ <p>El proceso es sencillo y sin sorpresas: diseño gratuito, prueba digital antes de producir y precio cerrado desde el inicio — sin costos ocultos.</p>
+ </SectionHeader>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas personalizadas con logo — diseño sin costo" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas personalizadas con logo — diseño sin costo" />
 
 </PageLayout>

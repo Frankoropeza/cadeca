@@ -1,236 +1,236 @@
 ---
-import PageLayout   from "@/layouts/PageLayout.astro";
-import FaqItem      from "@/components/FaqItem.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title   = "Caja Cosmética Premium Barniz UV Soft Touch CDMX | CAD-FC-02 | CADECA";
+const title  = "Caja Cosmética Premium Barniz UV Soft Touch CDMX | CAD-FC-02 | CADECA";
 const description = "Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium. Impresión CMYK + Pantone, certificación FSC. Fabricante directo CDMX — CADECA.";
 const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Labial / Rímel",     lah:"4×4×12",   flauta:"E",ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"green",  label:"Stock" },
-  { nombre:"Sérum / Crema 30ml", lah:"6×6×10",   flauta:"E",ect:"ECT-23",vacío:"0.03 kg",máx:"0.5 kg", disp:"green",  label:"Stock", hl:true },
-  { nombre:"Crema 50-100ml",     lah:"10×8×8",   flauta:"E",ect:"ECT-23",vacío:"0.05 kg",máx:"1 kg",   disp:"green",  label:"Stock", hl:true },
-  { nombre:"Kit / Set 3 pzas",   lah:"22×10×8",  flauta:"E",ect:"ECT-23",vacío:"0.09 kg",máx:"2 kg",   disp:"yellow", label:"48 hrs" },
-  { nombre:"Kit / Set 5 pzas",   lah:"30×15×10", flauta:"E",ect:"ECT-26",vacío:"0.14 kg",máx:"3 kg",   disp:"yellow", label:"48 hrs" },
-  { nombre:"Gift Box Grande",    lah:"35×25×12", flauta:"E",ect:"ECT-26",vacío:"0.22 kg",máx:"4 kg",   disp:"yellow", label:"72 hrs" },
-  { nombre:"A la Medida",        lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
+ { nombre:"Labial / Rímel",  lah:"4×4×12",  flauta:"E",ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"green",  label:"Stock" },
+ { nombre:"Sérum / Crema 30ml", lah:"6×6×10",  flauta:"E",ect:"ECT-23",vacío:"0.03 kg",máx:"0.5 kg", disp:"green",  label:"Stock", hl:true },
+ { nombre:"Crema 50-100ml",  lah:"10×8×8",  flauta:"E",ect:"ECT-23",vacío:"0.05 kg",máx:"1 kg",  disp:"green",  label:"Stock", hl:true },
+ { nombre:"Kit / Set 3 pzas",  lah:"22×10×8",  flauta:"E",ect:"ECT-23",vacío:"0.09 kg",máx:"2 kg",  disp:"yellow", label:"48 hrs" },
+ { nombre:"Kit / Set 5 pzas",  lah:"30×15×10", flauta:"E",ect:"ECT-26",vacío:"0.14 kg",máx:"3 kg",  disp:"yellow", label:"48 hrs" },
+ { nombre:"Gift Box Grande",  lah:"35×25×12", flauta:"E",ect:"ECT-26",vacío:"0.22 kg",máx:"4 kg",  disp:"yellow", label:"72 hrs" },
+ { nombre:"A la Medida",  lah:"Cualquier",flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
 ];
 
 const specs = [
-  ["Código SKU",            "CAD-FC-02"],
-  ["Tipo de pared",         "Simple (micro flauta E — 1.5 mm)"],
-  ["Flauta",                "E (1.5 mm)"],
-  ["Resistencia ECT",       "ECT-23 · ECT-26"],
-  ["Gramaje liner exterior","200 g/m² SBS C1S blanqueado"],
-  ["Gramaje liner interior","150 g/m² kraft blanqueado"],
-  ["Gramaje médium",        "112 g/m² semiquímico"],
-  ["Material",              "SBS C1S + micro flauta E + liner kraft blanqueado"],
-  ["Color exterior",        "Blanco premium (brightness 88+ ISO)"],
-  ["Acabado exterior",      "Barniz UV brillante selectivo + soft touch mate"],
-  ["Impresión",             "Offset CMYK + hasta 2 Pantone · Resolución 175 lpi"],
-  ["Acabados especiales",   "Hot stamping oro/plata · Relieve seco (emboss) · Ventana PET"],
-  ["Peso máx. producto",    "Hasta 4 kg (Gift Box, ECT-26)"],
-  ["Certificación",         "FSC Mix Credit disponible · Tintas base soya"],
-  ["Pedido mínimo",         "300 pzas (producción con acabados)"],
-  ["Tiempo de entrega",     "48-72 hrs stock · 7-10 días especial con acabados"],
-  ["Tolerancia dimensional","± 1.5 mm en corte · ± 0.3 mm en registro de impresión"],
-  ["Resistencia al frote",  "Barniz UV: 50+ ciclos Sutherland (ASTM D5264)"],
+ ["Código SKU",  "CAD-FC-02"],
+ ["Tipo de pared",  "Simple (micro flauta E — 1.5 mm)"],
+ ["Flauta",  "E (1.5 mm)"],
+ ["Resistencia ECT",  "ECT-23 · ECT-26"],
+ ["Gramaje liner exterior","200 g/m² SBS C1S blanqueado"],
+ ["Gramaje liner interior","150 g/m² kraft blanqueado"],
+ ["Gramaje médium",  "112 g/m² semiquímico"],
+ ["Material",  "SBS C1S + micro flauta E + liner kraft blanqueado"],
+ ["Color exterior",  "Blanco premium (brightness 88+ ISO)"],
+ ["Acabado exterior",  "Barniz UV brillante selectivo + soft touch mate"],
+ ["Impresión",  "Offset CMYK + hasta 2 Pantone · Resolución 175 lpi"],
+ ["Acabados especiales",  "Hot stamping oro/plata · Relieve seco (emboss) · Ventana PET"],
+ ["Peso máx. producto",  "Hasta 4 kg (Gift Box, ECT-26)"],
+ ["Certificación",  "FSC Mix Credit disponible · Tintas base soya"],
+ ["Pedido mínimo",  "300 pzas (producción con acabados)"],
+ ["Tiempo de entrega",  "48-72 hrs stock · 7-10 días especial con acabados"],
+ ["Tolerancia dimensional","± 1.5 mm en corte · ± 0.3 mm en registro de impresión"],
+ ["Resistencia al frote",  "Barniz UV: 50+ ciclos Sutherland (ASTM D5264)"],
 ];
 
 const faqs = [
-  {
-    id:"fc02-f1",
-    question:"¿Qué es el acabado soft touch y cómo mejora la experiencia de unboxing?",
-    answer:"El acabado <strong>soft touch</strong> es un barniz mate aterciopelado que se aplica sobre la impresión. Al tacto genera una sensación de suavidad y lujo que eleva la percepción de marca. Combinado con barniz UV brillante selectivo en logotipos o elementos clave, crea un contraste visual y táctil que diferencia tu producto en anaquel y en la experiencia de unboxing.",
-  },
-  {
-    id:"fc02-f2",
-    question:"¿El barniz UV protege contra rayones y humedad?",
-    answer:"Sí. El <strong>barniz UV</strong> crea una capa protectora que resiste rayones superficiales (50+ ciclos Sutherland) y reduce la absorción de humedad. Sin embargo, no es una barrera hermética: para productos que requieren protección contra humedad extrema, recomendamos complementar con film laminado BOPP mate o brillante.",
-  },
-  {
-    id:"fc02-f3",
-    question:"¿Pueden imprimir colores Pantone exactos para mi marca de cosmética?",
-    answer:"Sí, imprimimos en <strong>CMYK + hasta 2 colores Pantone directos</strong> (PMS) con resolución de 175 líneas por pulgada. Esto garantiza fidelidad cromática en tonos corporativos, metálicos y fluorescentes que no se logran solo con CMYK. Incluimos prueba de color digital Epson certificada antes de producción.",
-  },
-  {
-    id:"fc02-f4",
-    question:"¿Ofrecen hot stamping en oro o plata para cajas de cosmética?",
-    answer:"Sí, realizamos <strong>hot stamping</strong> en foil metálico oro, plata, oro rosa, holográfico y colores especiales. El proceso aplica una lámina metálica con presión y calor, creando un efecto brillante que no se logra con tinta. Ideal para logotipos y nombres de producto. Se puede combinar con relieve seco (emboss) para mayor impacto.",
-  },
-  {
-    id:"fc02-f5",
-    question:"¿Las cajas CAD-FC-02 tienen certificación sustentable?",
-    answer:"Sí, ofrecemos certificación <strong>FSC Mix Credit</strong> (Forest Stewardship Council) que garantiza que la fibra proviene de bosques manejados responsablemente. Usamos tintas base soya y barnices libres de solventes tóxicos. Ideal para marcas de cosmética que buscan comunicar compromiso ambiental a su consumidor.",
-  },
-  {
-    id:"fc02-f6",
-    question:"¿Cuál es la diferencia entre caja plegadiza y caja corrugado micro flauta E?",
-    answer:"La <strong>caja plegadiza</strong> es cartón compacto sin flauta (0.3-0.8 mm). La <strong>caja micro flauta E</strong> (1.5 mm) tiene una onda intermedia que aporta mayor protección al impacto y rigidez estructural, manteniendo superficie de impresión premium. Para cosmética con productos de vidrio o fragancias, la micro flauta E ofrece mejor protección que la plegadiza convencional.",
-  },
+ {
+ id:"fc02-f1",
+ question:"¿Qué es el acabado soft touch y cómo mejora la experiencia de unboxing?",
+ answer:"El acabado <strong>soft touch</strong> es un barniz mate aterciopelado que se aplica sobre la impresión. Al tacto genera una sensación de suavidad y lujo que eleva la percepción de marca. Combinado con barniz UV brillante selectivo en logotipos o elementos clave, crea un contraste visual y táctil que diferencia tu producto en anaquel y en la experiencia de unboxing.",
+ },
+ {
+ id:"fc02-f2",
+ question:"¿El barniz UV protege contra rayones y humedad?",
+ answer:"Sí. El <strong>barniz UV</strong> crea una capa protectora que resiste rayones superficiales (50+ ciclos Sutherland) y reduce la absorción de humedad. Sin embargo, no es una barrera hermética: para productos que requieren protección contra humedad extrema, recomendamos complementar con film laminado BOPP mate o brillante.",
+ },
+ {
+ id:"fc02-f3",
+ question:"¿Pueden imprimir colores Pantone exactos para mi marca de cosmética?",
+ answer:"Sí, imprimimos en <strong>CMYK + hasta 2 colores Pantone directos</strong> (PMS) con resolución de 175 líneas por pulgada. Esto garantiza fidelidad cromática en tonos corporativos, metálicos y fluorescentes que no se logran solo con CMYK. Incluimos prueba de color digital Epson certificada antes de producción.",
+ },
+ {
+ id:"fc02-f4",
+ question:"¿Ofrecen hot stamping en oro o plata para cajas de cosmética?",
+ answer:"Sí, realizamos <strong>hot stamping</strong> en foil metálico oro, plata, oro rosa, holográfico y colores especiales. El proceso aplica una lámina metálica con presión y calor, creando un efecto brillante que no se logra con tinta. Ideal para logotipos y nombres de producto. Se puede combinar con relieve seco (emboss) para mayor impacto.",
+ },
+ {
+ id:"fc02-f5",
+ question:"¿Las cajas CAD-FC-02 tienen certificación sustentable?",
+ answer:"Sí, ofrecemos certificación <strong>FSC Mix Credit</strong> (Forest Stewardship Council) que garantiza que la fibra proviene de bosques manejados responsablemente. Usamos tintas base soya y barnices libres de solventes tóxicos. Ideal para marcas de cosmética que buscan comunicar compromiso ambiental a su consumidor.",
+ },
+ {
+ id:"fc02-f6",
+ question:"¿Cuál es la diferencia entre caja plegadiza y caja corrugado micro flauta E?",
+ answer:"La <strong>caja plegadiza</strong> es cartón compacto sin flauta (0.3-0.8 mm). La <strong>caja micro flauta E</strong> (1.5 mm) tiene una onda intermedia que aporta mayor protección al impacto y rigidez estructural, manteniendo superficie de impresión premium. Para cosmética con productos de vidrio o fragancias, la micro flauta E ofrece mejor protección que la plegadiza convencional.",
+ },
 ];
 
 const mainImg = "/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif", alt: "Cosmética premium — principal" },
-  { src: "/img/catalogo/caja-cosmetica-premium-linea-cdmx.avif", alt: "Línea de cosméticos — showcase" },
-  { src: "/img/catalogo/caja-cosmetica-premium-gloss-cdmx.avif", alt: "Barniz UV gloss — detalle" },
-  { src: "/img/catalogo/caja-cosmetica-premium-display-cdmx.avif", alt: "Display cosmético — retail" },
-  { src: "/img/catalogo/caja-cosmetica-premium-interior-cdmx.avif", alt: "Interior liner blanco premium" },
+ { src: "/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif", alt: "Cosmética premium — principal" },
+ { src: "/img/catalogo/caja-cosmetica-premium-linea-cdmx.avif", alt: "Línea de cosméticos — showcase" },
+ { src: "/img/catalogo/caja-cosmetica-premium-gloss-cdmx.avif", alt: "Barniz UV gloss — detalle" },
+ { src: "/img/catalogo/caja-cosmetica-premium-display-cdmx.avif", alt: "Display cosmético — retail" },
+ { src: "/img/catalogo/caja-cosmetica-premium-interior-cdmx.avif", alt: "Interior liner blanco premium" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Cosmética Premium"}]}
-  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
-  product={{name:"Caja Cosmética Premium Barniz UV Soft Touch",sku:"CAD-FC-02",description:"Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif",material:"SBS C1S blanqueado micro flauta E ECT-23 barniz UV soft touch",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"300"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Cosmética Premium"}]}
+ faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+ product={{name:"Caja Cosmética Premium Barniz UV Soft Touch",sku:"CAD-FC-02",description:"Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif",material:"SBS C1S blanqueado micro flauta E ECT-23 barniz UV soft touch",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"300"}}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container"><ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/catalogo">Catálogo</a></li>
-      <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
-      <li><span class="current">Cosmética Premium</span></li>
-    </ol></div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container"><ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+ <li><span class="current">Cosmética Premium</span></li>
+ </ol></div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-fc02-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-FC-02 · Farmacéutica y Cosmética</span>
-      <h1 id="sku-fc02-title" class="cat-page-hero__title">
-        Caja Cosmética Premium<br><span>Barniz UV + Soft Touch — CDMX</span>
-      </h1>
-      <p class="cat-page-hero__desc">
-        Caja corrugado micro flauta E con acabado soft touch mate y barniz UV brillante selectivo. Impresión offset de alta resolución CMYK + Pantone. Ideal para marcas de cosmética, skincare, fragancias y sets de regalo que buscan una experiencia de unboxing premium.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-02</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-26</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>300 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-fc02-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-FC-02 · Farmacéutica y Cosmética</span>
+ <h1 id="sku-fc02-title" class="cat-page-hero__title">
+ Caja Cosmética Premium<br><span>Barniz UV + Soft Touch — CDMX</span>
+ </h1>
+ <p class="cat-page-hero__desc">
+ Caja corrugado micro flauta E con acabado soft touch mate y barniz UV brillante selectivo. Impresión offset de alta resolución CMYK + Pantone. Ideal para marcas de cosmética, skincare, fragancias y sets de regalo que buscan una experiencia de unboxing premium.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-02</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-26</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>300 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <section class="sku-detail" aria-labelledby="detalle-fc02-title">
-      <div class="container">
-        <div class="sku-detail__grid">
+ <section class="sku-detail" aria-labelledby="detalle-fc02-title">
+ <div class="container">
+ <div class="sku-detail__grid">
 
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
 
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-FC-02 · Familia: Farmacéutica y Cosmética</p>
-            <h2 id="detalle-fc02-title" class="sku-detail__title">Cosmética Premium — Barniz UV + Soft Touch</h2>
-            <p class="sku-detail__desc">
-              La caja CAD-FC-02 está diseñada para marcas de cosmética y belleza que requieren empaque premium. Fabricada en cartón SBS C1S blanqueado con micro flauta E de 1.5 mm, ofrece superficie ultra lisa para impresión offset de alta resolución. El acabado combina soft touch mate de fondo con barniz UV brillante selectivo en logotipos y elementos clave, creando un contraste visual y táctil que eleva la percepción de marca desde el primer contacto.
-            </p>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-FC-02 · Familia: Farmacéutica y Cosmética</p>
+ <h2 id="detalle-fc02-title" class="sku-detail__title">Cosmética Premium — Barniz UV + Soft Touch</h2>
+ <p class="sku-detail__desc">
+ La caja CAD-FC-02 está diseñada para marcas de cosmética y belleza que requieren empaque premium. Fabricada en cartón SBS C1S blanqueado con micro flauta E de 1.5 mm, ofrece superficie ultra lisa para impresión offset de alta resolución. El acabado combina soft touch mate de fondo con barniz UV brillante selectivo en logotipos y elementos clave, creando un contraste visual y táctil que eleva la percepción de marca desde el primer contacto.
+ </p>
 
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">ECT-23</span>
-                <span class="sku-detail__strip-label">Resistencia estándar</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">4 kg</span>
-                <span class="sku-detail__strip-label">Peso máx.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">300 pzas</span>
-                <span class="sku-detail__strip-label">Pedido mín.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">48 hrs</span>
-                <span class="sku-detail__strip-label">Entrega CDMX</span>
-              </div>
-            </div>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">ECT-23</span>
+ <span class="sku-detail__strip-label">Resistencia estándar</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">4 kg</span>
+ <span class="sku-detail__strip-label">Peso máx.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">300 pzas</span>
+ <span class="sku-detail__strip-label">Pedido mín.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">48 hrs</span>
+ <span class="sku-detail__strip-label">Entrega CDMX</span>
+ </div>
+ </div>
 
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table">
-              <tbody>
-                {specs.map(([label, val]) => (
-                  <tr><td>{label}</td><td>{val}</td></tr>
-                ))}
-              </tbody>
-            </table>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table">
+ <tbody>
+ {specs.map(([label, val]) => (
+ <tr><td>{label}</td><td>{val}</td></tr>
+ ))}
+ </tbody>
+ </table>
 
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-02 Cosmética Premium`}
-                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-02</a>
-              <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-02 Cosmética Premium`}
+ target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-02</a>
+ <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-fc02-title">
-      <div class="container">
-        <h2 id="sizes-fc02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
-          Medidas Disponibles — CAD-FC-02
-        </h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead>
-              <tr>
-                <th>Tamaño</th>
-                <th>L × A × H (cm)</th>
-                <th>Flauta</th>
-                <th>ECT</th>
-                <th>Peso vacío</th>
-                <th>Peso máx.</th>
-                <th>Disponibilidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td>{m.nombre}</td>
-                  <td><strong>{m.lah}</strong></td>
-                  <td>{m.flauta}</td>
-                  <td>{m.ect}</td>
-                  <td>{m.vacío}</td>
-                  <td><strong>{m.máx}</strong></td>
-                  <td>
-                    <span class={`stock-chip stock-chip--${m.disp}`}>
-                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
-          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Acabados especiales (hot stamping, relieve) pueden agregar 2-3 días adicionales.
-        </p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-fc02-title">
+ <div class="container">
+ <h2 id="sizes-fc02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+ Medidas Disponibles — CAD-FC-02
+ </h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead>
+ <tr>
+ <th>Tamaño</th>
+ <th>L × A × H (cm)</th>
+ <th>Flauta</th>
+ <th>ECT</th>
+ <th>Peso vacío</th>
+ <th>Peso máx.</th>
+ <th>Disponibilidad</th>
+ </tr>
+ </thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td>{m.nombre}</td>
+ <td><strong>{m.lah}</strong></td>
+ <td>{m.flauta}</td>
+ <td>{m.ect}</td>
+ <td>{m.vacío}</td>
+ <td><strong>{m.máx}</strong></td>
+ <td>
+ <span class={`stock-chip stock-chip--${m.disp}`}>
+ {m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}
+ </span>
+ </td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+ Stock permanente ·  Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Acabados especiales (hot stamping, relieve) pueden agregar 2-3 días adicionales.
+ </p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-fc02-title">
-      <div class="container">
-        <h2 id="faq-fc02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
-          Preguntas Técnicas — CAD-FC-02
-        </h2>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <section class="faq" aria-labelledby="faq-fc02-title">
+ <div class="container">
+ <h2 id="faq-fc02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+ Preguntas Técnicas — CAD-FC-02
+ </h2>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-02 — Empaques cosmética premium con entrega en CDMX" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-02 — Empaques cosmética premium con entrega en CDMX" />
 
 </PageLayout>

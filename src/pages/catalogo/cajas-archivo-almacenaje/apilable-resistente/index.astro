@@ -1,239 +1,239 @@
 ---
-import PageLayout   from "@/layouts/PageLayout.astro";
-import FaqItem      from "@/components/FaqItem.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title   = "Caja Apilable Resistente Triple Pared CDMX | CAD-AH-04 | CADECA";
+const title  = "Caja Apilable Resistente Triple Pared CDMX | CAD-AH-04 | CADECA";
 const description = "Ficha técnica caja apilable resistente triple pared BCB/BCF en CDMX. ECT-51 y ECT-71, máxima compresión. 6 medidas disponibles. MOQ 50 pzas, entrega 48-72 hrs. CADECA fabricante.";
 const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Mediana",         lah:"40×30×30",  flauta:"BCB", ect:"ECT-51",vacío:"1.60 kg",máx:"40 kg",  disp:"green",  label:"Stock" },
-  { nombre:"Grande",          lah:"50×40×35",  flauta:"BCB", ect:"ECT-51",vacío:"2.20 kg",máx:"45 kg",  disp:"green",  label:"Stock", hl:true },
-  { nombre:"XL",              lah:"60×50×40",  flauta:"BCB", ect:"ECT-71",vacío:"3.10 kg",máx:"50 kg",  disp:"green",  label:"Stock" },
-  { nombre:"Reforzada Plus",  lah:"70×50×50",  flauta:"BCF", ect:"ECT-71",vacío:"4.20 kg",máx:"50 kg",  disp:"yellow", label:"48 hrs" },
-  { nombre:"Pallet",          lah:"80×60×60",  flauta:"BCF", ect:"ECT-71",vacío:"5.80 kg",máx:"50 kg",  disp:"yellow", label:"3-5 días" },
-  { nombre:"A la Medida",     lah:"Cualquier", flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",      disp:"gray",   label:"3-5 días" },
+ { nombre:"Mediana",  lah:"40×30×30",  flauta:"BCB", ect:"ECT-51",vacío:"1.60 kg",máx:"40 kg",  disp:"green",  label:"Stock" },
+ { nombre:"Grande",  lah:"50×40×35",  flauta:"BCB", ect:"ECT-51",vacío:"2.20 kg",máx:"45 kg",  disp:"green",  label:"Stock", hl:true },
+ { nombre:"XL",  lah:"60×50×40",  flauta:"BCB", ect:"ECT-71",vacío:"3.10 kg",máx:"50 kg",  disp:"green",  label:"Stock" },
+ { nombre:"Reforzada Plus",  lah:"70×50×50",  flauta:"BCF", ect:"ECT-71",vacío:"4.20 kg",máx:"50 kg",  disp:"yellow", label:"48 hrs" },
+ { nombre:"Pallet",  lah:"80×60×60",  flauta:"BCF", ect:"ECT-71",vacío:"5.80 kg",máx:"50 kg",  disp:"yellow", label:"3-5 días" },
+ { nombre:"A la Medida",  lah:"Cualquier", flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",  disp:"gray",  label:"3-5 días" },
 ];
 
 const specs = [
-  ["Código SKU",             "CAD-AH-04"],
-  ["Tipo de caja",           "Triple pared apilable resistente"],
-  ["Construcción",           "Triple pared (3 flautas + 4 liners)"],
-  ["Tipo de flauta",         "BCB (B+C+B = 9.0 mm) / BCF (B+C+F = 10.0 mm)"],
-  ["Resistencia ECT",        "ECT-51 / ECT-71 lb/pulg"],
-  ["Gramaje liner exterior", "205 g/m² kraft virgen"],
-  ["Gramaje liner interior", "205 g/m² kraft virgen"],
-  ["Gramaje liner intermedio","170 g/m² kraft virgen"],
-  ["Gramaje médium",         "180 g/m² (3 capas onduladas)"],
-  ["Material",               "Kraft virgen 100% corrugado triple pared"],
-  ["Color exterior",         "Kraft natural sin recubrimiento"],
-  ["Cierre",                 "Solapas RSC reforzadas con solapa completa"],
-  ["Peso máximo soportado",  "40 – 50 kg según medida y flauta"],
-  ["Apilamiento máximo",     "8-10 niveles cargadas (sobre tarima)"],
-  ["Resistencia a compresión (BCT)", "≥ 650 kgf (ECT-51) · ≥ 900 kgf (ECT-71)"],
-  ["Resistencia al aplastamiento (FCT)", "≥ 14 kgf/cm² (BCB) · ≥ 18 kgf/cm² (BCF)"],
-  ["Espesor total de pared", "9.0 mm (BCB) · 10.0 mm (BCF)"],
-  ["Pedido mínimo",          "50 piezas"],
-  ["Entrega CDMX",           "48-72 hrs stock · 3-5 días especial"],
-  ["Certificación",          "Cumple NOM-EE-148 / TAPPI T-811 / ASTM D642"],
+ ["Código SKU",  "CAD-AH-04"],
+ ["Tipo de caja",  "Triple pared apilable resistente"],
+ ["Construcción",  "Triple pared (3 flautas + 4 liners)"],
+ ["Tipo de flauta",  "BCB (B+C+B = 9.0 mm) / BCF (B+C+F = 10.0 mm)"],
+ ["Resistencia ECT",  "ECT-51 / ECT-71 lb/pulg"],
+ ["Gramaje liner exterior", "205 g/m² kraft virgen"],
+ ["Gramaje liner interior", "205 g/m² kraft virgen"],
+ ["Gramaje liner intermedio","170 g/m² kraft virgen"],
+ ["Gramaje médium",  "180 g/m² (3 capas onduladas)"],
+ ["Material",  "Kraft virgen 100% corrugado triple pared"],
+ ["Color exterior",  "Kraft natural sin recubrimiento"],
+ ["Cierre",  "Solapas RSC reforzadas con solapa completa"],
+ ["Peso máximo soportado",  "40 – 50 kg según medida y flauta"],
+ ["Apilamiento máximo",  "8-10 niveles cargadas (sobre tarima)"],
+ ["Resistencia a compresión (BCT)", "≥ 650 kgf (ECT-51) · ≥ 900 kgf (ECT-71)"],
+ ["Resistencia al aplastamiento (FCT)", "≥ 14 kgf/cm² (BCB) · ≥ 18 kgf/cm² (BCF)"],
+ ["Espesor total de pared", "9.0 mm (BCB) · 10.0 mm (BCF)"],
+ ["Pedido mínimo",  "50 piezas"],
+ ["Entrega CDMX",  "48-72 hrs stock · 3-5 días especial"],
+ ["Certificación",  "Cumple NOM-EE-148 / TAPPI T-811 / ASTM D642"],
 ];
 
 const faqs = [
-  {
-    id:"ah04-f1",
-    question:"¿Cuánto peso soporta la caja triple pared CAD-AH-04 en apilamiento?",
-    answer:"La caja CAD-AH-04 con <strong>flauta BCB y ECT-51</strong> soporta hasta <strong>650 kgf de carga en compresión</strong>, equivalente a 6-8 niveles con carga completa. La versión <strong>BCF con ECT-71</strong> alcanza <strong>900+ kgf</strong>, permitiendo apilar hasta <strong>10 niveles sobre tarima</strong> en condiciones estándar. Para apilamiento dinámico durante transporte, recomendamos reducir a 4-5 niveles por seguridad.",
-  },
-  {
-    id:"ah04-f2",
-    question:"¿Qué diferencia hay entre flauta BCB y BCF en triple pared?",
-    answer:"La flauta <strong>BCB combina B (2.5mm) + C (4.0mm) + B (2.5mm)</strong> para un espesor de 9.0 mm, ofreciendo <strong>excelente rigidez lateral y ECT-51</strong>. La flauta <strong>BCF combina B (2.5mm) + C (4.0mm) + F (0.8mm)</strong> para 10.0 mm de espesor, con <strong>ECT-71 y mayor resistencia al aplastamiento (FCT de 18 kgf/cm²)</strong>. BCF es recomendable para cargas superiores a 45 kg o almacenamiento prolongado mayor a 12 meses.",
-  },
-  {
-    id:"ah04-f3",
-    question:"¿Son adecuadas para almacenamiento a largo plazo en bodega?",
-    answer:"Sí. La construcción triple pared en <strong>kraft virgen 100%</strong> ofrece excelente resistencia a la <strong>deformación por creep (fluencia)</strong> en almacenamiento prolongado. Para periodos superiores a 12 meses, recomendamos ambiente con <strong>humedad relativa menor al 60% y temperatura estable</strong>. En estas condiciones, la caja mantiene más del <strong>80% de su resistencia original</strong> después de 18 meses.",
-  },
-  {
-    id:"ah04-f4",
-    question:"¿Puedo usar estas cajas apilables para exportación?",
-    answer:"Sí. Las cajas triple pared CAD-AH-04 son <strong>aptas para exportación</strong>. El cartón kraft virgen cumple con la <strong>normativa ISPM-15</strong> (no requiere tratamiento fitosanitario por ser material procesado). Son ideales para <strong>contenedores marítimos y transporte terrestre internacional</strong> México-EUA-Canadá dentro del T-MEC. La resistencia ECT-71 garantiza integridad durante los <strong>30-45 días típicos de tránsito marítimo</strong>.",
-  },
-  {
-    id:"ah04-f5",
-    question:"¿Qué pruebas de resistencia se aplican a estas cajas?",
-    answer:"Cada lote se somete a <strong>prueba ECT (Edge Crush Test)</strong> con resultado mínimo de 51 o 71 lb/pulg según modelo, <strong>prueba BCT (Box Compression Test)</strong> con resultado mínimo de 650-900 kgf, y <strong>prueba FCT (Flat Crush Test)</strong> con resultado de 14-18 kgf/cm². Estas pruebas siguen los estándares <strong>TAPPI T-811 y ASTM D642</strong>, garantizando la resistencia para almacenamiento industrial pesado.",
-  },
-  {
-    id:"ah04-f6",
-    question:"¿Ofrecen esquineros o refuerzos adicionales para estas cajas?",
-    answer:"Sí. Ofrecemos <strong>esquineros de cartón prensado en L de 50×50×3 mm</strong> como accesorio complementario para maximizar la resistencia de apilamiento. También fabricamos <strong>divisiones internas y separadores</strong> en cartón corrugado para organizar el contenido. Para cargas extremas superiores a 50 kg, recomendamos combinar la caja con un <strong>pallet de cartón corrugado o tarima de madera</strong> certificada.",
-  },
+ {
+ id:"ah04-f1",
+ question:"¿Cuánto peso soporta la caja triple pared CAD-AH-04 en apilamiento?",
+ answer:"La caja CAD-AH-04 con <strong>flauta BCB y ECT-51</strong> soporta hasta <strong>650 kgf de carga en compresión</strong>, equivalente a 6-8 niveles con carga completa. La versión <strong>BCF con ECT-71</strong> alcanza <strong>900+ kgf</strong>, permitiendo apilar hasta <strong>10 niveles sobre tarima</strong> en condiciones estándar. Para apilamiento dinámico durante transporte, recomendamos reducir a 4-5 niveles por seguridad.",
+ },
+ {
+ id:"ah04-f2",
+ question:"¿Qué diferencia hay entre flauta BCB y BCF en triple pared?",
+ answer:"La flauta <strong>BCB combina B (2.5mm) + C (4.0mm) + B (2.5mm)</strong> para un espesor de 9.0 mm, ofreciendo <strong>excelente rigidez lateral y ECT-51</strong>. La flauta <strong>BCF combina B (2.5mm) + C (4.0mm) + F (0.8mm)</strong> para 10.0 mm de espesor, con <strong>ECT-71 y mayor resistencia al aplastamiento (FCT de 18 kgf/cm²)</strong>. BCF es recomendable para cargas superiores a 45 kg o almacenamiento prolongado mayor a 12 meses.",
+ },
+ {
+ id:"ah04-f3",
+ question:"¿Son adecuadas para almacenamiento a largo plazo en bodega?",
+ answer:"Sí. La construcción triple pared en <strong>kraft virgen 100%</strong> ofrece excelente resistencia a la <strong>deformación por creep (fluencia)</strong> en almacenamiento prolongado. Para periodos superiores a 12 meses, recomendamos ambiente con <strong>humedad relativa menor al 60% y temperatura estable</strong>. En estas condiciones, la caja mantiene más del <strong>80% de su resistencia original</strong> después de 18 meses.",
+ },
+ {
+ id:"ah04-f4",
+ question:"¿Puedo usar estas cajas apilables para exportación?",
+ answer:"Sí. Las cajas triple pared CAD-AH-04 son <strong>aptas para exportación</strong>. El cartón kraft virgen cumple con la <strong>normativa ISPM-15</strong> (no requiere tratamiento fitosanitario por ser material procesado). Son ideales para <strong>contenedores marítimos y transporte terrestre internacional</strong> México-EUA-Canadá dentro del T-MEC. La resistencia ECT-71 garantiza integridad durante los <strong>30-45 días típicos de tránsito marítimo</strong>.",
+ },
+ {
+ id:"ah04-f5",
+ question:"¿Qué pruebas de resistencia se aplican a estas cajas?",
+ answer:"Cada lote se somete a <strong>prueba ECT (Edge Crush Test)</strong> con resultado mínimo de 51 o 71 lb/pulg según modelo, <strong>prueba BCT (Box Compression Test)</strong> con resultado mínimo de 650-900 kgf, y <strong>prueba FCT (Flat Crush Test)</strong> con resultado de 14-18 kgf/cm². Estas pruebas siguen los estándares <strong>TAPPI T-811 y ASTM D642</strong>, garantizando la resistencia para almacenamiento industrial pesado.",
+ },
+ {
+ id:"ah04-f6",
+ question:"¿Ofrecen esquineros o refuerzos adicionales para estas cajas?",
+ answer:"Sí. Ofrecemos <strong>esquineros de cartón prensado en L de 50×50×3 mm</strong> como accesorio complementario para maximizar la resistencia de apilamiento. También fabricamos <strong>divisiones internas y separadores</strong> en cartón corrugado para organizar el contenido. Para cargas extremas superiores a 50 kg, recomendamos combinar la caja con un <strong>pallet de cartón corrugado o tarima de madera</strong> certificada.",
+ },
 ];
 
 const mainImg = "/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif", alt: "Apilable resistente — principal" },
-  { src: "/img/catalogo/caja-apilable-hero-cdmx.avif", alt: "Apilable triple pared — hero" },
-  { src: "/img/catalogo/caja-apilable-stack-5-cdmx.avif", alt: "5 niveles de carga — demostración" },
-  { src: "/img/catalogo/caja-apilable-pallet-cdmx.avif", alt: "Pallet en cámara fría" },
-  { src: "/img/catalogo/caja-apilable-esquina-cdmx.avif", alt: "Esquina reforzada — detalle" },
+ { src: "/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif", alt: "Apilable resistente — principal" },
+ { src: "/img/catalogo/caja-apilable-hero-cdmx.avif", alt: "Apilable triple pared — hero" },
+ { src: "/img/catalogo/caja-apilable-stack-5-cdmx.avif", alt: "5 niveles de carga — demostración" },
+ { src: "/img/catalogo/caja-apilable-pallet-cdmx.avif", alt: "Pallet en cámara fría" },
+ { src: "/img/catalogo/caja-apilable-esquina-cdmx.avif", alt: "Esquina reforzada — detalle" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Apilable Resistente"}]}
-  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
-  product={{name:"Caja Apilable Resistente Triple Pared", sku:"CAD-AH-04", description:"Caja triple pared BCB/BCF con ECT-51 y ECT-71, máxima resistencia al apilamiento — CADECA CDMX", image:"/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif", material:"Cartón kraft virgen corrugado triple pared BCB/BCF", category:"Cajas de Archivo y Almacenaje", moq:"50"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Apilable Resistente"}]}
+ faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+ product={{name:"Caja Apilable Resistente Triple Pared", sku:"CAD-AH-04", description:"Caja triple pared BCB/BCF con ECT-51 y ECT-71, máxima resistencia al apilamiento — CADECA CDMX", image:"/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif", material:"Cartón kraft virgen corrugado triple pared BCB/BCF", category:"Cajas de Archivo y Almacenaje", moq:"50"}}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/catalogo">Catálogo</a></li>
-      <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
-      <li><span class="current">Apilable Resistente</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+ <li><span class="current">Apilable Resistente</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-ah04-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AH-04 · Archivo y Almacenaje</span>
-      <h1 id="sku-ah04-title" class="cat-page-hero__title">
-        Caja Apilable Resistente<br><span>Triple Pared BCB/BCF — CDMX</span>
-      </h1>
-      <p class="cat-page-hero__desc">
-        Caja de máxima resistencia al apilamiento con triple pared BCB y BCF. ECT-51 y ECT-71 para almacenaje prolongado de alto volumen. Kraft virgen 100% con BCT hasta 900+ kgf. Ideal para bodegas industriales, archivos de largo plazo y centros de distribución.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-04</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-51 / ECT-71</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-ah04-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AH-04 · Archivo y Almacenaje</span>
+ <h1 id="sku-ah04-title" class="cat-page-hero__title">
+ Caja Apilable Resistente<br><span>Triple Pared BCB/BCF — CDMX</span>
+ </h1>
+ <p class="cat-page-hero__desc">
+ Caja de máxima resistencia al apilamiento con triple pared BCB y BCF. ECT-51 y ECT-71 para almacenaje prolongado de alto volumen. Kraft virgen 100% con BCT hasta 900+ kgf. Ideal para bodegas industriales, archivos de largo plazo y centros de distribución.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-04</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-51 / ECT-71</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <section class="sku-detail" aria-labelledby="detalle-ah04-title">
-      <div class="container">
-        <div class="sku-detail__grid">
+ <section class="sku-detail" aria-labelledby="detalle-ah04-title">
+ <div class="container">
+ <div class="sku-detail__grid">
 
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
 
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AH-04 · Familia: Archivo y Almacenaje</p>
-            <h2 id="detalle-ah04-title" class="sku-detail__title">Apilable Resistente — Triple Pared BCB/BCF</h2>
-            <p class="sku-detail__desc">
-              Caja de máxima resistencia fabricada en cartón kraft virgen 100% con construcción triple pared. Disponible en flauta BCB (9.0 mm, ECT-51) y BCF (10.0 mm, ECT-71). Cuatro liners de 170-205 g/m² y tres capas de médium ondulado de 180 g/m². Resistencia a compresión BCT de 650 a 900+ kgf. Soporta de 40 a 50 kg de contenido y permite apilamiento de hasta 10 niveles sobre tarima. Disponible desde mediana 40×30×30 cm hasta formato pallet 80×60×60 cm. Fabricación en CDMX.
-            </p>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AH-04 · Familia: Archivo y Almacenaje</p>
+ <h2 id="detalle-ah04-title" class="sku-detail__title">Apilable Resistente — Triple Pared BCB/BCF</h2>
+ <p class="sku-detail__desc">
+ Caja de máxima resistencia fabricada en cartón kraft virgen 100% con construcción triple pared. Disponible en flauta BCB (9.0 mm, ECT-51) y BCF (10.0 mm, ECT-71). Cuatro liners de 170-205 g/m² y tres capas de médium ondulado de 180 g/m². Resistencia a compresión BCT de 650 a 900+ kgf. Soporta de 40 a 50 kg de contenido y permite apilamiento de hasta 10 niveles sobre tarima. Disponible desde mediana 40×30×30 cm hasta formato pallet 80×60×60 cm. Fabricación en CDMX.
+ </p>
 
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">ECT-51/71</span>
-                <span class="sku-detail__strip-label">Resistencia</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">50 kg</span>
-                <span class="sku-detail__strip-label">Peso máx.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">10 niveles</span>
-                <span class="sku-detail__strip-label">Apilamiento</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">48 hrs</span>
-                <span class="sku-detail__strip-label">Entrega CDMX</span>
-              </div>
-            </div>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">ECT-51/71</span>
+ <span class="sku-detail__strip-label">Resistencia</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">50 kg</span>
+ <span class="sku-detail__strip-label">Peso máx.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">10 niveles</span>
+ <span class="sku-detail__strip-label">Apilamiento</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">48 hrs</span>
+ <span class="sku-detail__strip-label">Entrega CDMX</span>
+ </div>
+ </div>
 
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table">
-              <tbody>
-                {specs.map(([label, val]) => (
-                  <tr><td>{label}</td><td>{val}</td></tr>
-                ))}
-              </tbody>
-            </table>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table">
+ <tbody>
+ {specs.map(([label, val]) => (
+ <tr><td>{label}</td><td>{val}</td></tr>
+ ))}
+ </tbody>
+ </table>
 
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-04 Apilable Resistente Triple Pared`}
-                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-04</a>
-              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-04 Apilable Resistente Triple Pared`}
+ target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-04</a>
+ <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-ah04-title">
-      <div class="container">
-        <h2 id="sizes-ah04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
-          Medidas Disponibles — CAD-AH-04
-        </h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead>
-              <tr>
-                <th>Tamaño</th>
-                <th>L × A × H (cm)</th>
-                <th>Flauta</th>
-                <th>ECT</th>
-                <th>Peso vacío</th>
-                <th>Peso máx.</th>
-                <th>Disponibilidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td>{m.nombre}</td>
-                  <td><strong>{m.lah}</strong></td>
-                  <td>{m.flauta}</td>
-                  <td>{m.ect}</td>
-                  <td>{m.vacío}</td>
-                  <td><strong>{m.máx}</strong></td>
-                  <td>
-                    <span class={`stock-chip stock-chip--${m.disp}`}>
-                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
-          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
-        </p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-ah04-title">
+ <div class="container">
+ <h2 id="sizes-ah04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+ Medidas Disponibles — CAD-AH-04
+ </h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead>
+ <tr>
+ <th>Tamaño</th>
+ <th>L × A × H (cm)</th>
+ <th>Flauta</th>
+ <th>ECT</th>
+ <th>Peso vacío</th>
+ <th>Peso máx.</th>
+ <th>Disponibilidad</th>
+ </tr>
+ </thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td>{m.nombre}</td>
+ <td><strong>{m.lah}</strong></td>
+ <td>{m.flauta}</td>
+ <td>{m.ect}</td>
+ <td>{m.vacío}</td>
+ <td><strong>{m.máx}</strong></td>
+ <td>
+ <span class={`stock-chip stock-chip--${m.disp}`}>
+ {m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}
+ </span>
+ </td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+ Stock permanente ·  Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+ </p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-ah04-title">
-      <div class="container">
-        <h2 id="faq-ah04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
-          Preguntas Técnicas — CAD-AH-04
-        </h2>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <section class="faq" aria-labelledby="faq-ah04-title">
+ <div class="container">
+ <h2 id="faq-ah04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+ Preguntas Técnicas — CAD-AH-04
+ </h2>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-04 — Triple Pared Apilable, entrega 48-72 hrs en CDMX" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-04 — Triple Pared Apilable, entrega 48-72 hrs en CDMX" />
 
 </PageLayout>

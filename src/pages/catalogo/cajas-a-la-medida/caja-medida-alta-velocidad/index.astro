@@ -1,125 +1,125 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja a la Medida para Línea Automatizada CDMX | CAD-AM-10 | CADECA";
+const title  = "Caja a la Medida para Línea Automatizada CDMX | CAD-AM-10 | CADECA";
 const description = "Cajas a la medida para líneas de producción automatizadas en CDMX. Tolerancias ±0.5mm, compatibles con brazo robot y empacadoras. ECT-32/44. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU",    "CAD-AM-10"],
-  ["Tipo de pared", "Simple o doble corrugado BC"],
-  ["Flauta",        "C (4mm) o BC (7mm)"],
-  ["Resistencia",   "ECT-32 / ECT-44"],
-  ["Gramaje liner", "127–175 g/m²"],
-  ["Material",      "Kraft virgen precisión"],
-  ["Cierre",        "RSC o auto-erect crash-lock"],
-  ["Pedido mínimo", "500 piezas"],
-  ["Entrega CDMX",  "7–10 días hábiles"],
+ ["Código SKU",  "CAD-AM-10"],
+ ["Tipo de pared", "Simple o doble corrugado BC"],
+ ["Flauta",  "C (4mm) o BC (7mm)"],
+ ["Resistencia",  "ECT-32 / ECT-44"],
+ ["Gramaje liner", "127–175 g/m²"],
+ ["Material",  "Kraft virgen precisión"],
+ ["Cierre",  "RSC o auto-erect crash-lock"],
+ ["Pedido mínimo", "500 piezas"],
+ ["Entrega CDMX",  "7–10 días hábiles"],
 ];
 
 const faqs = [
-  {
-    id:"am10-f1",
-    question:"¿Qué tolerancias dimensionales requiere una línea de empaque automatizada?",
-    answer:"Las empacadoras automáticas y los brazos robóticos de picking requieren tolerancias de ±0.5mm en las tres dimensiones de la caja para funcionar sin detenciones ni ajustes manuales. Una variación mayor causa que el brazo robot no coloque el producto correctamente, que la tapa no cierre bien en la empacadora o que las cajas se atasquen en el conveyor. En CADECA controlamos el proceso de corte y troquelado con maquinaria de precisión para garantizar esa tolerancia en cada lote de producción.",
-  },
-  {
-    id:"am10-f2",
-    question:"¿Qué estilos de caja son compatibles con maquinaria de empaque automática?",
-    answer:"Los estilos más comunes para líneas automáticas son RSC (Regular Slotted Container) para empacadoras lineales que sellan con cinta o hot melt, auto-erect crash-lock para maquinaria de formado tipo pick-and-place, y wrap-around para líneas de alta velocidad >100 cajas/min. En el SKU CAD-AM-10 fabricamos RSC y auto-erect crash-lock. Para wrap-around o estilos especiales contacta a nuestro equipo de ingeniería. Somos compatibles con maquinaria Bosch, IWK, Marchesini, Cama Group y Tetra Pak.",
-  },
-  {
-    id:"am10-f3",
-    question:"¿Pueden enviar muestras antes del pedido de producción para validar en mi línea?",
-    answer:"Sí. Para el SKU CAD-AM-10 producimos entre 10 y 20 muestras de preproducción antes de confirmar el lote de producción. Estas muestras se fabrican con el mismo troquel y materiales del pedido definitivo, lo que garantiza que las dimensiones en producción serán idénticas a las muestras validadas en tu línea. El costo de las muestras se descuenta del pedido de producción. El tiempo de entrega de muestras es de 3 a 5 días hábiles desde la aprobación del diseño CAD.",
-  },
+ {
+ id:"am10-f1",
+ question:"¿Qué tolerancias dimensionales requiere una línea de empaque automatizada?",
+ answer:"Las empacadoras automáticas y los brazos robóticos de picking requieren tolerancias de ±0.5mm en las tres dimensiones de la caja para funcionar sin detenciones ni ajustes manuales. Una variación mayor causa que el brazo robot no coloque el producto correctamente, que la tapa no cierre bien en la empacadora o que las cajas se atasquen en el conveyor. En CADECA controlamos el proceso de corte y troquelado con maquinaria de precisión para garantizar esa tolerancia en cada lote de producción.",
+ },
+ {
+ id:"am10-f2",
+ question:"¿Qué estilos de caja son compatibles con maquinaria de empaque automática?",
+ answer:"Los estilos más comunes para líneas automáticas son RSC (Regular Slotted Container) para empacadoras lineales que sellan con cinta o hot melt, auto-erect crash-lock para maquinaria de formado tipo pick-and-place, y wrap-around para líneas de alta velocidad >100 cajas/min. En el SKU CAD-AM-10 fabricamos RSC y auto-erect crash-lock. Para wrap-around o estilos especiales contacta a nuestro equipo de ingeniería. Somos compatibles con maquinaria Bosch, IWK, Marchesini, Cama Group y Tetra Pak.",
+ },
+ {
+ id:"am10-f3",
+ question:"¿Pueden enviar muestras antes del pedido de producción para validar en mi línea?",
+ answer:"Sí. Para el SKU CAD-AM-10 producimos entre 10 y 20 muestras de preproducción antes de confirmar el lote de producción. Estas muestras se fabrican con el mismo troquel y materiales del pedido definitivo, lo que garantiza que las dimensiones en producción serán idénticas a las muestras validadas en tu línea. El costo de las muestras se descuenta del pedido de producción. El tiempo de entrega de muestras es de 3 a 5 días hábiles desde la aprobación del diseño CAD.",
+ },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-medida-auto-hero-cdmx.avif",               alt: "Caja a la medida para línea automatizada CDMX" },
-  { src: "/img/catalogo/caja-medida-auto-conveyor-cdmx.avif",            alt: "Cajas en conveyor de línea de producción" },
-  { src: "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", alt: "Cajas para alta velocidad de producción CDMX" },
-  { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",          alt: "Corrugado de precisión para maquinaria" },
-  { src: "/img/catalogo/corrugado-triple-pared-capas-cdmx.avif",         alt: "Capas de cartón corrugado alta tolerancia" },
+ { src: "/img/catalogo/caja-medida-auto-hero-cdmx.avif",  alt: "Caja a la medida para línea automatizada CDMX" },
+ { src: "/img/catalogo/caja-medida-auto-conveyor-cdmx.avif",  alt: "Cajas en conveyor de línea de producción" },
+ { src: "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", alt: "Cajas para alta velocidad de producción CDMX" },
+ { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",  alt: "Corrugado de precisión para maquinaria" },
+ { src: "/img/catalogo/corrugado-triple-pared-capas-cdmx.avif",  alt: "Capas de cartón corrugado alta tolerancia" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida"},{name:"Alta Velocidad Automatizada"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja a la Medida para Línea de Producción Automatizada",sku:"CAD-AM-10",description:"Caja a la medida para línea automatizada ±0.5mm en CDMX — CADECA",image:gallery[0].src,material:"Cartón corrugado ECT-32/44 tolerancia ±0.5mm",category:"Cajas a la Medida",moq:"500"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida"},{name:"Alta Velocidad Automatizada"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja a la Medida para Línea de Producción Automatizada",sku:"CAD-AM-10",description:"Caja a la medida para línea automatizada ±0.5mm en CDMX — CADECA",image:gallery[0].src,material:"Cartón corrugado ECT-32/44 tolerancia ±0.5mm",category:"Cajas a la Medida",moq:"500"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
-        <li><span class="current">Alta Velocidad Automatizada</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><span class="current">Alta Velocidad Automatizada</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-am10-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AM-10 · Cajas a la Medida</span>
-      <h1 id="sku-am10-title" class="cat-page-hero__title">Caja a la Medida para <span>Línea Automatizada</span><br>— ±0.5mm CDMX</h1>
-      <p class="cat-page-hero__desc">Tolerancias de precisión ±0.5mm para compatibilidad total con brazo robot, empacadora automática y conveyor. Estilos RSC y auto-erect crash-lock. Muestras de validación previas a producción. La solución para líneas de alto volumen en CDMX.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-10</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32/44</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-am10-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AM-10 · Cajas a la Medida</span>
+ <h1 id="sku-am10-title" class="cat-page-hero__title">Caja a la Medida para <span>Línea Automatizada</span><br>— ±0.5mm CDMX</h1>
+ <p class="cat-page-hero__desc">Tolerancias de precisión ±0.5mm para compatibilidad total con brazo robot, empacadora automática y conveyor. Estilos RSC y auto-erect crash-lock. Muestras de validación previas a producción. La solución para líneas de alto volumen en CDMX.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-10</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32/44</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-am10-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AM-10 · Familia: Cajas a la Medida</p>
-            <h2 id="detalle-am10-title" class="sku-detail__title">Caja a la Medida para Línea de Producción Automatizada</h2>
-            <p class="sku-detail__desc">Cajas de cartón corrugado con tolerancias de corte ±0.5mm diseñadas específicamente para líneas de empaque automatizadas con brazo robot, empacadora rotativa o conveyor de alta velocidad. Disponibles en estilos RSC y auto-erect crash-lock, compatibles con maquinaria Bosch, IWK, Marchesini y similares. ECT-32 para productos ligeros y ECT-44 para cargas hasta 25 kg. CADECA entrega muestras de validación previas a producción en CDMX.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">±0.5mm</span><span class="sku-detail__strip-label">Tolerancia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">RSC/CL</span><span class="sku-detail__strip-label">Estilos</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">500 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7–10 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-10 Caja para Línea Automatizada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-10</a>
-              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-am10-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AM-10 · Familia: Cajas a la Medida</p>
+ <h2 id="detalle-am10-title" class="sku-detail__title">Caja a la Medida para Línea de Producción Automatizada</h2>
+ <p class="sku-detail__desc">Cajas de cartón corrugado con tolerancias de corte ±0.5mm diseñadas específicamente para líneas de empaque automatizadas con brazo robot, empacadora rotativa o conveyor de alta velocidad. Disponibles en estilos RSC y auto-erect crash-lock, compatibles con maquinaria Bosch, IWK, Marchesini y similares. ECT-32 para productos ligeros y ECT-44 para cargas hasta 25 kg. CADECA entrega muestras de validación previas a producción en CDMX.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">±0.5mm</span><span class="sku-detail__strip-label">Tolerancia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">RSC/CL</span><span class="sku-detail__strip-label">Estilos</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">500 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7–10 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-10 Caja para Línea Automatizada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-10</a>
+ <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-am10-title">
-      <div class="container">
-        <h2 id="faq-am10-title" class="sku-faq__title">Preguntas Frecuentes — Caja para Línea Automatizada</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-am10-title">
+ <div class="container">
+ <h2 id="faq-am10-title" class="sku-faq__title">Preguntas Frecuentes — Caja para Línea Automatizada</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Optimiza tu línea de producción — Cotiza Caja Automatizada ±0.5mm" />
+ <LeadCapture whatsapp={WHATSAPP} title="Optimiza tu línea de producción — Cotiza Caja Automatizada ±0.5mm" />
 </PageLayout>

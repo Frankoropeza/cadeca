@@ -1,505 +1,505 @@
 ---
-import PageLayout     from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader  from "@/components/SectionHeader.astro";
-import ProductCard    from "@/components/ProductCard.astro";
-import IndustryCard   from "@/components/IndustryCard.astro";
-import ProcessStep    from "@/components/ProcessStep.astro";
-import Testimonial    from "@/components/Testimonial.astro";
-import FaqItem        from "@/components/FaqItem.astro";
-import LeadCapture    from "@/components/LeadCapture.astro";
+import ProductCard  from "@/components/ProductCard.astro";
+import IndustryCard  from "@/components/IndustryCard.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import Testimonial  from "@/components/Testimonial.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 
-const title       = "Cajas de Cartón Corrugado Estándar CDMX | Simple, Doble y Triple Pared | CADECA";
+const title  = "Cajas de Cartón Corrugado Estándar CDMX | Simple, Doble y Triple Pared | CADECA";
 const description = "Compra cajas de cartón corrugado estándar en CDMX y Estado de México. Simple, doble y triple pared. Sin mínimo, entrega en 24 hrs, precios de mayoreo. Cotiza gratis.";
-const WHATSAPP    = "5255XXXXXXXX"; // ← cambiar
+const WHATSAPP  = "5255XXXXXXXX"; // ← cambiar
 
 // ── Schema Product ─────────────────────────────────────
 const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Cajas de Cartón Corrugado Estándar",
-  "description": "Cajas de cartón corrugado estándar en pared simple, doble y triple. Disponibles en CDMX y Estado de México con entrega en 24-48 hrs. Precios de mayoreo desde 1 pieza.",
-  "brand": { "@type": "Brand", "name": "CADECA" },
-  "manufacturer": { "@type": "Organization", "name": "CADECA" },
-  "url": "https://cajas-de-carton.com/productos/cajas-corrugado-estandar",
-  "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
-  "category": "Cajas de Cartón Corrugado",
-  "areaServed": ["Ciudad de México", "Estado de México"],
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "lowPrice": "3.80",
-    "highPrice": "35.00",
-    "availability": "https://schema.org/InStock",
-    "seller": { "@type": "Organization", "name": "CADECA" }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "87",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Miguel A." },
-      "datePublished": "2025-10-12",
-      "reviewBody": "Llevamos más de un año usando las cajas corrugado estándar de CADECA para nuestras operaciones de almacén. Son confiables, resistentes y siempre llegan a tiempo. Excelente proveedor para operaciones de bodega.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Patricia S." },
-      "datePublished": "2025-12-03",
-      "reviewBody": "La variedad de tamaños disponibles es ideal para nuestro negocio. Pedimos diferentes medidas y todas llegan en tiempo récord. La entrega rápida nos ha sacado de apuros más de una vez.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Roberto D." },
-      "datePublished": "2026-02-18",
-      "reviewBody": "Excelente relación precio-calidad en compras al mayoreo. Las cajas soportan el peso indicado sin problema y el precio por volumen es muy competitivo. Totalmente recomendados para compras al por mayor.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
-  ],
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Paredes", "value": "Simple / Doble / Triple" },
-    { "@type": "PropertyValue", "name": "Flautas", "value": "B / C / BC / ACC" },
-    { "@type": "PropertyValue", "name": "Resistencia", "value": "ECT-23 a ECT-71" },
-    { "@type": "PropertyValue", "name": "Entrega", "value": "24-48 hrs CDMX" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "Cajas de Cartón Corrugado Estándar",
+ "description": "Cajas de cartón corrugado estándar en pared simple, doble y triple. Disponibles en CDMX y Estado de México con entrega en 24-48 hrs. Precios de mayoreo desde 1 pieza.",
+ "brand": { "@type": "Brand", "name": "CADECA" },
+ "manufacturer": { "@type": "Organization", "name": "CADECA" },
+ "url": "https://cajas-de-carton.com/productos/cajas-corrugado-estandar",
+ "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
+ "category": "Cajas de Cartón Corrugado",
+ "areaServed": ["Ciudad de México", "Estado de México"],
+ "offers": {
+ "@type": "AggregateOffer",
+ "priceCurrency": "MXN",
+ "lowPrice": "3.80",
+ "highPrice": "35.00",
+ "availability": "https://schema.org/InStock",
+ "seller": { "@type": "Organization", "name": "CADECA" }
+ },
+ "aggregateRating": {
+ "@type": "AggregateRating",
+ "ratingValue": "4.9",
+ "reviewCount": "87",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "review": [
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Miguel A." },
+ "datePublished": "2025-10-12",
+ "reviewBody": "Llevamos más de un año usando las cajas corrugado estándar de CADECA para nuestras operaciones de almacén. Son confiables, resistentes y siempre llegan a tiempo. Excelente proveedor para operaciones de bodega.",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+ },
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Patricia S." },
+ "datePublished": "2025-12-03",
+ "reviewBody": "La variedad de tamaños disponibles es ideal para nuestro negocio. Pedimos diferentes medidas y todas llegan en tiempo récord. La entrega rápida nos ha sacado de apuros más de una vez.",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+ },
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Roberto D." },
+ "datePublished": "2026-02-18",
+ "reviewBody": "Excelente relación precio-calidad en compras al mayoreo. Las cajas soportan el peso indicado sin problema y el precio por volumen es muy competitivo. Totalmente recomendados para compras al por mayor.",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+ }
+ ],
+ "additionalProperty": [
+ { "@type": "PropertyValue", "name": "Paredes", "value": "Simple / Doble / Triple" },
+ { "@type": "PropertyValue", "name": "Flautas", "value": "B / C / BC / ACC" },
+ { "@type": "PropertyValue", "name": "Resistencia", "value": "ECT-23 a ECT-71" },
+ { "@type": "PropertyValue", "name": "Entrega", "value": "24-48 hrs CDMX" }
+ ]
 };
 
 // ── Subcategorías (ProductCard) ────────────────────────
 const subcategorias = [
-  {
-    title:   "Corrugado Simple (Pared Simple)",
-    desc:    "La caja más económica y versátil. Una sola capa de flauta entre dos liners. Ideal para productos ligeros y envíos de e-commerce hasta 10 kg.",
-    imgSrc:  "/img/productos/cajas-carton-corrugado-simple-pared-cdmx.avif",
-    imgAlt:  "Cajas de cartón corrugado simple pared simple en CDMX — CADECA",
-    href:    "/productos/cajas-corrugado-estandar#simple",
-    tags: [
-      { label: "Flauta B y C",        href: "/productos/cajas-corrugado-estandar#flautas" },
-      { label: "ECT-23 y ECT-32",     href: "/productos/cajas-corrugado-estandar#resistencia" },
-      { label: "Hasta 10 kg",         href: "/productos/cajas-corrugado-estandar#peso" },
-    ],
-    btnText: "Ver Corrugado Simple",
-  },
-  {
-    title:   "Doble Corrugado (Pared Doble)",
-    desc:    "Mayor resistencia para productos de mediano peso. Dos capas de flauta que absorben impactos. Recomendado para electrónica, menaje y distribución industrial.",
-    imgSrc:  "/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif",
-    imgAlt:  "Cajas de cartón doble corrugado resistente pared doble en CDMX — CADECA",
-    href:    "/productos/cajas-doble-corrugado",
-    tags: [
-      { label: "Flauta BC",           href: "/productos/cajas-doble-corrugado#flautas" },
-      { label: "ECT-44",              href: "/productos/cajas-doble-corrugado#resistencia" },
-      { label: "Hasta 25 kg",         href: "/productos/cajas-doble-corrugado#peso" },
-    ],
-    btnText: "Ver Doble Corrugado",
-  },
-  {
-    title:   "Triple Corrugado (Pared Triple)",
-    desc:    "La máxima resistencia en cartón corrugado. Tres capas de flauta para carga pesada, exportación, nearshoring y transporte en condiciones extremas.",
-    imgSrc:  "/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif",
-    imgAlt:  "Cajas de cartón triple corrugado industrial pared triple en CDMX — CADECA",
-    href:    "/productos/cajas-triple-corrugado",
-    tags: [
-      { label: "ECT-51 y ECT-71",     href: "/productos/cajas-triple-corrugado#resistencia" },
-      { label: "+25 kg",              href: "/productos/cajas-triple-corrugado#peso" },
-      { label: "Industria y export.", href: "/productos/cajas-triple-corrugado#usos" },
-    ],
-    btnText: "Ver Triple Corrugado",
-  },
-  {
-    title:   "Cajas para Mudanza",
-    desc:    "Resistentes y con asas reforzadas. Disponibles en tamaño chico, mediano y grande. Sin mínimo, listas en inventario permanente para entrega inmediata.",
-    imgSrc:  "/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif",
-    imgAlt:  "Cajas de cartón para mudanza resistentes con asas en CDMX — CADECA",
-    href:    "/productos/cajas-mudanza",
-    tags: [
-      { label: "Chica · Mediana · Grande", href: "/productos/cajas-mudanza#medidas" },
-      { label: "Asas reforzadas",          href: "/productos/cajas-mudanza#caracteristicas" },
-      { label: "Sin mínimo",              href: "/productos/cajas-mudanza#pedido" },
-    ],
-    btnText: "Ver Cajas Mudanza",
-  },
+ {
+ title:  "Corrugado Simple (Pared Simple)",
+ desc:  "La caja más económica y versátil. Una sola capa de flauta entre dos liners. Ideal para productos ligeros y envíos de e-commerce hasta 10 kg.",
+ imgSrc:  "/img/productos/cajas-carton-corrugado-simple-pared-cdmx.avif",
+ imgAlt:  "Cajas de cartón corrugado simple pared simple en CDMX — CADECA",
+ href:  "/productos/cajas-corrugado-estandarsimple",
+ tags: [
+ { label: "Flauta B y C",  href: "/productos/cajas-corrugado-estandarflautas" },
+ { label: "ECT-23 y ECT-32",  href: "/productos/cajas-corrugado-estandarresistencia" },
+ { label: "Hasta 10 kg",  href: "/productos/cajas-corrugado-estandarpeso" },
+ ],
+ btnText: "Ver Corrugado Simple",
+ },
+ {
+ title:  "Doble Corrugado (Pared Doble)",
+ desc:  "Mayor resistencia para productos de mediano peso. Dos capas de flauta que absorben impactos. Recomendado para electrónica, menaje y distribución industrial.",
+ imgSrc:  "/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif",
+ imgAlt:  "Cajas de cartón doble corrugado resistente pared doble en CDMX — CADECA",
+ href:  "/productos/cajas-doble-corrugado",
+ tags: [
+ { label: "Flauta BC",  href: "/productos/cajas-doble-corrugadoflautas" },
+ { label: "ECT-44",  href: "/productos/cajas-doble-corrugadoresistencia" },
+ { label: "Hasta 25 kg",  href: "/productos/cajas-doble-corrugadopeso" },
+ ],
+ btnText: "Ver Doble Corrugado",
+ },
+ {
+ title:  "Triple Corrugado (Pared Triple)",
+ desc:  "La máxima resistencia en cartón corrugado. Tres capas de flauta para carga pesada, exportación, nearshoring y transporte en condiciones extremas.",
+ imgSrc:  "/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif",
+ imgAlt:  "Cajas de cartón triple corrugado industrial pared triple en CDMX — CADECA",
+ href:  "/productos/cajas-triple-corrugado",
+ tags: [
+ { label: "ECT-51 y ECT-71",  href: "/productos/cajas-triple-corrugadoresistencia" },
+ { label: "+25 kg",  href: "/productos/cajas-triple-corrugadopeso" },
+ { label: "Industria y export.", href: "/productos/cajas-triple-corrugadousos" },
+ ],
+ btnText: "Ver Triple Corrugado",
+ },
+ {
+ title:  "Cajas para Mudanza",
+ desc:  "Resistentes y con asas reforzadas. Disponibles en tamaño chico, mediano y grande. Sin mínimo, listas en inventario permanente para entrega inmediata.",
+ imgSrc:  "/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif",
+ imgAlt:  "Cajas de cartón para mudanza resistentes con asas en CDMX — CADECA",
+ href:  "/productos/cajas-mudanza",
+ tags: [
+ { label: "Chica · Mediana · Grande", href: "/productos/cajas-mudanzamedidas" },
+ { label: "Asas reforzadas",  href: "/productos/cajas-mudanzacaracteristicas" },
+ { label: "Sin mínimo",  href: "/productos/cajas-mudanzapedido" },
+ ],
+ btnText: "Ver Cajas Mudanza",
+ },
 ];
 
 // ── IndustryCards (quién usa este producto) ────────────
 const industrias = [
-  {
-    icon:     "🛒",
-    title:    "Vendedores de E-commerce",
-    desc:     "Medidas compatibles con Mercado Envíos, Amazon MX, DHL y FedEx. El empaque más usado por vendedores de Mercado Libre y Amazon en CDMX. Desde 1 pieza.",
-    href:     "/soluciones/ecommerce",
-    linkText: "Ver solución e-commerce",
-  },
-  {
-    icon:     "🏭",
-    title:    "Industria y Manufactura",
-    desc:     "Triple corrugado con ECT alto para plantas manufactureras en Naucalpan, Tlalnepantla y Cuautitlán. Contratos de suministro mensual disponibles.",
-    href:     "/soluciones/industrial-nearshoring",
-    linkText: "Ver solución industrial",
-  },
-  {
-    icon:     "📦",
-    title:    "Distribuidoras y Almacenes",
-    desc:     "Empaques de alta rotación para centros de distribución. Precios de mayoreo escalonados por volumen. Crédito disponible para clientes frecuentes.",
-    href:     "/zonas-de-servicio",
-    linkText: "Ver zonas de entrega",
-  },
-  {
-    icon:     "🏠",
-    title:    "Mudanzas y Servicios",
-    desc:     "Cajas resistentes con asas para empresas de mudanza y servicios de almacenamiento en CDMX y Estado de México. Inventario siempre disponible.",
-    href:     "/productos/cajas-mudanza",
-    linkText: "Ver cajas para mudanza",
-  },
+ {
+ icon:  "",
+ title:  "Vendedores de E-commerce",
+ desc:  "Medidas compatibles con Mercado Envíos, Amazon MX, DHL y FedEx. El empaque más usado por vendedores de Mercado Libre y Amazon en CDMX. Desde 1 pieza.",
+ href:  "/soluciones/ecommerce",
+ linkText: "Ver solución e-commerce",
+ },
+ {
+ icon:  "",
+ title:  "Industria y Manufactura",
+ desc:  "Triple corrugado con ECT alto para plantas manufactureras en Naucalpan, Tlalnepantla y Cuautitlán. Contratos de suministro mensual disponibles.",
+ href:  "/soluciones/industrial-nearshoring",
+ linkText: "Ver solución industrial",
+ },
+ {
+ icon:  "",
+ title:  "Distribuidoras y Almacenes",
+ desc:  "Empaques de alta rotación para centros de distribución. Precios de mayoreo escalonados por volumen. Crédito disponible para clientes frecuentes.",
+ href:  "/zonas-de-servicio",
+ linkText: "Ver zonas de entrega",
+ },
+ {
+ icon:  "",
+ title:  "Mudanzas y Servicios",
+ desc:  "Cajas resistentes con asas para empresas de mudanza y servicios de almacenamiento en CDMX y Estado de México. Inventario siempre disponible.",
+ href:  "/productos/cajas-mudanza",
+ linkText: "Ver cajas para mudanza",
+ },
 ];
 
 // ── Proceso ────────────────────────────────────────────
 const pasos = [
-  { num: 1, title: "Elige tu medida",    desc: "Selecciona entre nuestras medidas estándar o indícanos tus dimensiones exactas. Para estándar tenemos inventario inmediato." },
-  { num: 2, title: "Cotiza en minutos",  desc: "Escríbenos por WhatsApp o llena el formulario. Respondemos con precio y disponibilidad en menos de 2 horas." },
-  { num: 3, title: "Confirma tu pedido", desc: "Sin complicaciones. Confirmas la cantidad, te enviamos factura y coordinas la entrega a tu dirección." },
-  { num: 4, title: "Entrega en 24 hrs",  desc: "Cajas estándar entregadas a tu puerta en 24-48 hrs en toda la CDMX y Estado de México. Embalaje seguro garantizado." },
+ { num: 1, title: "Elige tu medida",  desc: "Selecciona entre nuestras medidas estándar o indícanos tus dimensiones exactas. Para estándar tenemos inventario inmediato." },
+ { num: 2, title: "Cotiza en minutos",  desc: "Escríbenos por WhatsApp o llena el formulario. Respondemos con precio y disponibilidad en menos de 2 horas." },
+ { num: 3, title: "Confirma tu pedido", desc: "Sin complicaciones. Confirmas la cantidad, te enviamos factura y coordinas la entrega a tu dirección." },
+ { num: 4, title: "Entrega en 24 hrs",  desc: "Cajas estándar entregadas a tu puerta en 24-48 hrs en toda la CDMX y Estado de México. Embalaje seguro garantizado." },
 ];
 
 // ── Testimonios ────────────────────────────────────────
 const testimonios = [
-  {
-    initials: "CR",
-    name:     "Carlos R.",
-    role:     "Vendedor Amazon MX — Iztapalapa, CDMX",
-    text:     "Llevo 2 años comprando cajas corrugado estándar con CADECA. El precio es el mejor del mercado y siempre tienen stock. La entrega al día siguiente nunca ha fallado. Son mi proveedor de cabecera.",
-  },
-  {
-    initials: "MP",
-    name:     "María P.",
-    role:     "Gerente de Logística — Distribuidora, Tlalnepantla",
-    text:     "Compramos triple corrugado en volumen para nuestra distribuidora. CADECA cumple con la resistencia ECT que solicitamos, los tiempos de entrega y la documentación para nuestros clientes corporativos. Excelente proveedor.",
-  },
-  {
-    initials: "JA",
-    name:     "Juan A.",
-    role:     "Propietario — Empresa de Mudanzas, CDMX",
-    text:     "Las cajas para mudanza son perfectas. Resistentes, con buenas asas y a precio justo. Mis clientes siempre quedan satisfechos con la calidad del empaque. Recomendados al 100%.",
-  },
+ {
+ initials: "CR",
+ name:  "Carlos R.",
+ role:  "Vendedor Amazon MX — Iztapalapa, CDMX",
+ text:  "Llevo 2 años comprando cajas corrugado estándar con CADECA. El precio es el mejor del mercado y siempre tienen stock. La entrega al día siguiente nunca ha fallado. Son mi proveedor de cabecera.",
+ },
+ {
+ initials: "MP",
+ name:  "María P.",
+ role:  "Gerente de Logística — Distribuidora, Tlalnepantla",
+ text:  "Compramos triple corrugado en volumen para nuestra distribuidora. CADECA cumple con la resistencia ECT que solicitamos, los tiempos de entrega y la documentación para nuestros clientes corporativos. Excelente proveedor.",
+ },
+ {
+ initials: "JA",
+ name:  "Juan A.",
+ role:  "Propietario — Empresa de Mudanzas, CDMX",
+ text:  "Las cajas para mudanza son perfectas. Resistentes, con buenas asas y a precio justo. Mis clientes siempre quedan satisfechos con la calidad del empaque. Recomendados al 100%.",
+ },
 ];
 
 // ── FAQ ────────────────────────────────────────────────
 const faqs = [
-  {
-    id: "ce1",
-    question: "¿Cuáles son las medidas estándar de cajas de cartón corrugado disponibles?",
-    answer: "Manejamos todas las medidas estándar del mercado (largo × ancho × alto en cm): <strong>Chica:</strong> 30×20×20 · <strong>Mediana:</strong> 40×30×25 · <strong>Grande:</strong> 50×40×30 · <strong>Extra grande:</strong> 60×50×40 · <strong>Doble Extra:</strong> 70×50×50. También tenemos medidas específicas para Mercado Envíos y Amazon MX. Para otras dimensiones fabricamos a la medida sin costo extra.",
-  },
-  {
-    id: "ce2",
-    question: "¿Qué diferencia hay entre la flauta B, C, E y BC?",
-    answer: "Las flautas definen el grosor y rigidez del corrugado: <strong>Flauta E:</strong> 1.5mm, muy delgada, ideal para cajas pequeñas de alta calidad de impresión. <strong>Flauta B:</strong> 3mm, buena resistencia al apilado, para cajas estándar. <strong>Flauta C:</strong> 4mm, máxima resistencia al impacto, para cajas de envío. <strong>Flauta BC:</strong> 7mm doble capa, combina resistencia al apilado y al impacto, recomendada para productos pesados.",
-  },
-  {
-    id: "ce3",
-    question: "¿Tienen cajas de cartón corrugado en stock para entrega inmediata?",
-    answer: "Sí. Mantenemos <strong>inventario permanente</strong> de cajas corrugado estándar en los tamaños más solicitados (chica, mediana, grande y extra grande) en simple, doble y triple pared. Para estos modelos la entrega es de 24 a 48 horas en CDMX y Estado de México, sin necesidad de producción adicional.",
-  },
-  {
-    id: "ce4",
-    question: "¿Cuánto peso soporta una caja de cartón corrugado estándar?",
-    answer: "Depende del tipo de pared: <strong>Simple corrugado:</strong> hasta 10-15 kg según el ECT. <strong>Doble corrugado (BC):</strong> hasta 20-25 kg. <strong>Triple corrugado:</strong> más de 25 kg. Importante: el peso soportado también depende de las condiciones de almacenamiento, temperatura y humedad. Nuestro equipo técnico te ayuda a seleccionar el corrugado adecuado para tu producto.",
-  },
-  {
-    id: "ce5",
-    question: "¿Puedo comprar cajas de cartón corrugado desde una sola pieza?",
-    answer: "Sí. Para cajas corrugado estándar no hay pedido mínimo — puedes comprar desde 1 pieza. Para pedidos más grandes (50+ piezas) accedes a precios de mayoreo. Para pedidos de 500+ piezas tenemos precios especiales por volumen. Contáctanos para obtener la tabla de precios escalonados.",
-  },
-  {
-    id: "ce6",
-    question: "¿Las cajas corrugado estándar sirven para exportación?",
-    answer: "Para exportación recomendamos triple corrugado (ECT-51 o ECT-71) que cumple con los requerimientos de resistencia internacional. También podemos fabricarlas con cartón certificado FSC, requisito de muchos compradores internacionales. Para embarques marítimos o aéreos, nuestro equipo te asesora sobre el tipo de corrugado, flauta y refuerzos necesarios.",
-  },
+ {
+ id: "ce1",
+ question: "¿Cuáles son las medidas estándar de cajas de cartón corrugado disponibles?",
+ answer: "Manejamos todas las medidas estándar del mercado (largo × ancho × alto en cm): <strong>Chica:</strong> 30×20×20 · <strong>Mediana:</strong> 40×30×25 · <strong>Grande:</strong> 50×40×30 · <strong>Extra grande:</strong> 60×50×40 · <strong>Doble Extra:</strong> 70×50×50. También tenemos medidas específicas para Mercado Envíos y Amazon MX. Para otras dimensiones fabricamos a la medida sin costo extra.",
+ },
+ {
+ id: "ce2",
+ question: "¿Qué diferencia hay entre la flauta B, C, E y BC?",
+ answer: "Las flautas definen el grosor y rigidez del corrugado: <strong>Flauta E:</strong> 1.5mm, muy delgada, ideal para cajas pequeñas de alta calidad de impresión. <strong>Flauta B:</strong> 3mm, buena resistencia al apilado, para cajas estándar. <strong>Flauta C:</strong> 4mm, máxima resistencia al impacto, para cajas de envío. <strong>Flauta BC:</strong> 7mm doble capa, combina resistencia al apilado y al impacto, recomendada para productos pesados.",
+ },
+ {
+ id: "ce3",
+ question: "¿Tienen cajas de cartón corrugado en stock para entrega inmediata?",
+ answer: "Sí. Mantenemos <strong>inventario permanente</strong> de cajas corrugado estándar en los tamaños más solicitados (chica, mediana, grande y extra grande) en simple, doble y triple pared. Para estos modelos la entrega es de 24 a 48 horas en CDMX y Estado de México, sin necesidad de producción adicional.",
+ },
+ {
+ id: "ce4",
+ question: "¿Cuánto peso soporta una caja de cartón corrugado estándar?",
+ answer: "Depende del tipo de pared: <strong>Simple corrugado:</strong> hasta 10-15 kg según el ECT. <strong>Doble corrugado (BC):</strong> hasta 20-25 kg. <strong>Triple corrugado:</strong> más de 25 kg. Importante: el peso soportado también depende de las condiciones de almacenamiento, temperatura y humedad. Nuestro equipo técnico te ayuda a seleccionar el corrugado adecuado para tu producto.",
+ },
+ {
+ id: "ce5",
+ question: "¿Puedo comprar cajas de cartón corrugado desde una sola pieza?",
+ answer: "Sí. Para cajas corrugado estándar no hay pedido mínimo — puedes comprar desde 1 pieza. Para pedidos más grandes (50+ piezas) accedes a precios de mayoreo. Para pedidos de 500+ piezas tenemos precios especiales por volumen. Contáctanos para obtener la tabla de precios escalonados.",
+ },
+ {
+ id: "ce6",
+ question: "¿Las cajas corrugado estándar sirven para exportación?",
+ answer: "Para exportación recomendamos triple corrugado (ECT-51 o ECT-71) que cumple con los requerimientos de resistencia internacional. También podemos fabricarlas con cartón certificado FSC, requisito de muchos compradores internacionales. Para embarques marítimos o aéreos, nuestro equipo te asesora sobre el tipo de corrugado, flauta y refuerzos necesarios.",
+ },
 ];
 
 const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Productos", href: "/productos" },
-  { name: "Cajas Corrugado Estándar" },
+ { name: "Inicio", href: "/" },
+ { name: "Productos", href: "/productos" },
+ { name: "Cajas Corrugado Estándar" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  schema={productSchema}
-  faqItems={faqItems}
-  breadcrumbs={breadcrumbs}
-  whatsapp={WHATSAPP}
+ title={title}
+ description={description}
+ schema={productSchema}
+ faqItems={faqItems}
+ breadcrumbs={breadcrumbs}
+ whatsapp={WHATSAPP}
 >
 
-  <!-- ══════════════════════════════════════
-       HERO
-  ══════════════════════════════════════ -->
-    <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/productos">Productos</a></li>
-      <li><span class="current">Cajas Corrugado Estándar</span></li>
-      </ol>
-    </div>
-  </div>
+ <!-- ══════════════════════════════════════
+ HERO
+ ══════════════════════════════════════ -->
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/productos">Productos</a></li>
+ <li><span class="current">Cajas Corrugado Estándar</span></li>
+ </ol>
+ </div>
+ </div>
 
-  
-  <!-- Banner catálogo técnico -->
-  <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
-    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-      <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
-      <a href="/catalogo/cajas-corrugado-estandar" style="background:var(--color-primary);color:#fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
-    </div>
-  </div>
+ 
+ <!-- Banner catálogo técnico -->
+ <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
+ <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+ <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
+ <a href="/catalogo/cajas-corrugado-estandar" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
+ </div>
+ </div>
 
-  <section class="page-hero" aria-labelledby="prod-title">
-    <div class="container">
-      <div class="page-hero__inner">
+ <section class="page-hero" aria-labelledby="prod-title">
+ <div class="container">
+ <div class="page-hero__inner">
 
-        <div class="page-hero__content">
-          <!-- Breadcrumb -->
+ <div class="page-hero__content">
+ <!-- Breadcrumb -->
 
-          <p class="page-hero__badge">Sin mínimo · Entrega 24-48 hrs · FSC disponible</p>
-          <h1 id="prod-title" class="page-hero__title">
-            Cajas de Cartón<br><span>Corrugado Estándar CDMX</span>
-          </h1>
-          <p class="page-hero__desc">
-            Simple, doble y triple pared disponibles en inventario permanente. La solución de empaque más versátil y económica en la Ciudad de México y Estado de México. Sin pedido mínimo.
-          </p>
-          <div class="page-hero__ctas">
-            <a href="#cotizar" class="btn btn--primary">Cotizar Ahora</a>
-            <a href="#subcategorias" class="btn btn--outline">Ver Tipos</a>
-          </div>
-        </div>
+ <p class="page-hero__badge">Sin mínimo · Entrega 24-48 hrs · FSC disponible</p>
+ <h1 id="prod-title" class="page-hero__title">
+ Cajas de Cartón<br><span>Corrugado Estándar CDMX</span>
+ </h1>
+ <p class="page-hero__desc">
+ Simple, doble y triple pared disponibles en inventario permanente. La solución de empaque más versátil y económica en la Ciudad de México y Estado de México. Sin pedido mínimo.
+ </p>
+ <div class="page-hero__ctas">
+ <a href="cotizar" class="btn btn--primary">Cotizar Ahora</a>
+ <a href="subcategorias" class="btn btn--outline">Ver Tipos</a>
+ </div>
+ </div>
 <div class="page-hero__stat">
-            <span class="page-hero__stat-value">24 hrs</span>
-            <span class="page-hero__stat-label">Entrega en CDMX</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">ECT-71</span>
-            <span class="page-hero__stat-label">Resistencia máxima</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">FSC</span>
-            <span class="page-hero__stat-label">Cartón certificado</span>
-          </div>
-        </div>
+ <span class="page-hero__stat-value">24 hrs</span>
+ <span class="page-hero__stat-label">Entrega en CDMX</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">ECT-71</span>
+ <span class="page-hero__stat-label">Resistencia máxima</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">FSC</span>
+ <span class="page-hero__stat-label">Cartón certificado</span>
+ </div>
+ </div>
 
-      </div>
-    </div>
-  </section>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <!-- ══════════════════════════════════════
-         DETALLE DEL PRODUCTO
-    ══════════════════════════════════════ -->
-    <section class="prod-detail" aria-labelledby="detalle-title">
-      <div class="container">
-        <div class="prod-detail__inner">
+ <!-- ══════════════════════════════════════
+ DETALLE DEL PRODUCTO
+ ══════════════════════════════════════ -->
+ <section class="prod-detail" aria-labelledby="detalle-title">
+ <div class="container">
+ <div class="prod-detail__inner">
 
-          <!-- Imagen principal -->
-          <div class="prod-detail__img-wrap">
-            <img
-              src="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
-              alt="Cajas de cartón corrugado estándar en CDMX — simple, doble y triple pared — CADECA"
-              class="prod-detail__img"
-              width="900" height="560"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
+ <!-- Imagen principal -->
+ <div class="prod-detail__img-wrap">
+ <img
+ src="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
+ alt="Cajas de cartón corrugado estándar en CDMX — simple, doble y triple pared — CADECA"
+ class="prod-detail__img"
+ width="900" height="560"
+ loading="eager"
+ decoding="async"
+ fetchpriority="high"
+ />
+ </div>
 
-          <!-- Especificaciones -->
-          <div class="prod-detail__content">
-            <span class="prod-detail__label">Especificaciones Técnicas</span>
-            <h2 id="detalle-title" class="section-header__title" style="margin:0">
-              Cajas Corrugado Estándar: Simple, Doble y Triple Pared
-            </h2>
-            <p class="prod-detail__intro">
-              Las cajas de cartón corrugado estándar son la solución de empaque más utilizada en México. Su estructura de papel kraft y flauta de papel reciclado ofrece la combinación perfecta de resistencia, ligereza y precio. Disponibles en tres tipos de pared según el peso y condiciones de tu producto.
-            </p>
+ <!-- Especificaciones -->
+ <div class="prod-detail__content">
+ <span class="prod-detail__label">Especificaciones Técnicas</span>
+ <h2 id="detalle-title" class="section-header__title" style="margin:0">
+ Cajas Corrugado Estándar: Simple, Doble y Triple Pared
+ </h2>
+ <p class="prod-detail__intro">
+ Las cajas de cartón corrugado estándar son la solución de empaque más utilizada en México. Su estructura de papel kraft y flauta de papel reciclado ofrece la combinación perfecta de resistencia, ligereza y precio. Disponibles en tres tipos de pared según el peso y condiciones de tu producto.
+ </p>
 
-            <div>
-              <p class="prod-detail__specs-title">Especificaciones generales</p>
-              <div class="prod-detail__specs-grid">
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Tipos de pared</span>
-                  <span class="prod-detail__spec-value">Simple · Doble · Triple</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Flautas disponibles</span>
-                  <span class="prod-detail__spec-value">B · C · E · BC</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Resistencia ECT</span>
-                  <span class="prod-detail__spec-value">ECT-23 a ECT-71</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Gramaje liner</span>
-                  <span class="prod-detail__spec-value">115 – 200 g/m²</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Material</span>
-                  <span class="prod-detail__spec-value">Kraft · Test · Reciclado</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Certificación</span>
-                  <span class="prod-detail__spec-value">FSC bajo pedido</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Pedido mínimo</span>
-                  <span class="prod-detail__spec-value">Sin mínimo (desde 1 pza)</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Entrega CDMX</span>
-                  <span class="prod-detail__spec-value">24 – 48 horas</span>
-                </div>
-              </div>
-            </div>
+ <div>
+ <p class="prod-detail__specs-title">Especificaciones generales</p>
+ <div class="prod-detail__specs-grid">
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Tipos de pared</span>
+ <span class="prod-detail__spec-value">Simple · Doble · Triple</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Flautas disponibles</span>
+ <span class="prod-detail__spec-value">B · C · E · BC</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Resistencia ECT</span>
+ <span class="prod-detail__spec-value">ECT-23 a ECT-71</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Gramaje liner</span>
+ <span class="prod-detail__spec-value">115 – 200 g/m²</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Material</span>
+ <span class="prod-detail__spec-value">Kraft · Test · Reciclado</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Certificación</span>
+ <span class="prod-detail__spec-value">FSC bajo pedido</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Pedido mínimo</span>
+ <span class="prod-detail__spec-value">Sin mínimo (desde 1 pza)</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Entrega CDMX</span>
+ <span class="prod-detail__spec-value">24 – 48 horas</span>
+ </div>
+ </div>
+ </div>
 
-            <div class="prod-detail__actions">
-              <a href="#cotizar"                        class="btn btn--primary">Solicitar Cotización</a>
-              <a href={`https://wa.me/${WHATSAPP}`}
-                 target="_blank" rel="noopener"        class="btn btn--outline">WhatsApp Directo</a>
-            </div>
+ <div class="prod-detail__actions">
+ <a href="cotizar"  class="btn btn--primary">Solicitar Cotización</a>
+ <a href={`https://wa.me/${WHATSAPP}`}
+ target="_blank" rel="noopener"  class="btn btn--outline">WhatsApp Directo</a>
+ </div>
 
-          </div>
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- ══════════════════════════════════════
-         SUBCATEGORÍAS
-    ══════════════════════════════════════ -->
-    <section class="products" id="subcategorias" aria-labelledby="subcats-title">
-      <div class="container">
-        <SectionHeader
-          id="subcats-title"
-          twoCol
-          title="Tipos de Cajas Corrugado: Elige la Resistencia que Necesitas"
-          subtitle="Simple, doble, triple pared y cajas para mudanza. Inventario permanente con entrega en 24-48 hrs en CDMX."
-          link={{ text: "Ver catálogo completo", href: "/productos" }}
-        >
-          <p>La elección del tipo de corrugado depende del peso de tu producto, las condiciones de almacenamiento y el número de apilados durante el transporte. El corrugado incorrecto puede resultar en cajas rotas y productos dañados — o en sobrecostos por usar un empaque más resistente del necesario.</p>
-          <p>Nuestro equipo técnico te ayuda a seleccionar el tipo de corrugado, flauta y ECT correcto para tu caso específico, sin costo y sin compromiso de compra.</p>
-        </SectionHeader>
+ <!-- ══════════════════════════════════════
+ SUBCATEGORÍAS
+ ══════════════════════════════════════ -->
+ <section class="products" id="subcategorias" aria-labelledby="subcats-title">
+ <div class="container">
+ <SectionHeader
+ id="subcats-title"
+ twoCol
+ title="Tipos de Cajas Corrugado: Elige la Resistencia que Necesitas"
+ subtitle="Simple, doble, triple pared y cajas para mudanza. Inventario permanente con entrega en 24-48 hrs en CDMX."
+ link={{ text: "Ver catálogo completo", href: "/productos" }}
+ >
+ <p>La elección del tipo de corrugado depende del peso de tu producto, las condiciones de almacenamiento y el número de apilados durante el transporte. El corrugado incorrecto puede resultar en cajas rotas y productos dañados — o en sobrecostos por usar un empaque más resistente del necesario.</p>
+ <p>Nuestro equipo técnico te ayuda a seleccionar el tipo de corrugado, flauta y ECT correcto para tu caso específico, sin costo y sin compromiso de compra.</p>
+ </SectionHeader>
 
-        <div class="products__grid">
-          {subcategorias.map(p => <ProductCard {...p} />)}
-        </div>
-      </div>
-    </section>
+ <div class="products__grid">
+ {subcategorias.map(p => <ProductCard {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- ══════════════════════════════════════
-         QUIÉN USA ESTE PRODUCTO
-    ══════════════════════════════════════ -->
-    <section class="industries" aria-labelledby="industrias-title">
-      <div class="container">
-        <SectionHeader
-          id="industrias-title"
-          twoCol
-          title="¿Quién Usa Cajas de Cartón Corrugado Estándar?"
-          subtitle="Sectores y casos de uso más frecuentes en la zona metropolitana"
-        >
-          <p>Las cajas de cartón corrugado estándar son el empaque más versátil del mercado. Las usan desde vendedores individuales de Mercado Libre hasta plantas manufactureras con requerimientos de nearshoring.</p>
-          <p>En CADECA atendemos a todos los sectores con el mismo nivel de servicio: inventario disponible, entrega puntual y asesoría técnica incluida en cada pedido.</p>
-        </SectionHeader>
+ <!-- ══════════════════════════════════════
+ QUIÉN USA ESTE PRODUCTO
+ ══════════════════════════════════════ -->
+ <section class="industries" aria-labelledby="industrias-title">
+ <div class="container">
+ <SectionHeader
+ id="industrias-title"
+ twoCol
+ title="¿Quién Usa Cajas de Cartón Corrugado Estándar?"
+ subtitle="Sectores y casos de uso más frecuentes en la zona metropolitana"
+ >
+ <p>Las cajas de cartón corrugado estándar son el empaque más versátil del mercado. Las usan desde vendedores individuales de Mercado Libre hasta plantas manufactureras con requerimientos de nearshoring.</p>
+ <p>En CADECA atendemos a todos los sectores con el mismo nivel de servicio: inventario disponible, entrega puntual y asesoría técnica incluida en cada pedido.</p>
+ </SectionHeader>
 
-        <div class="industries__grid">
-          {industrias.map(i => <IndustryCard {...i} />)}
-        </div>
-      </div>
-    </section>
+ <div class="industries__grid">
+ {industrias.map(i => <IndustryCard {...i} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- ══════════════════════════════════════
-         PROCESO DE COMPRA
-    ══════════════════════════════════════ -->
-    <section class="process" aria-labelledby="proceso-title">
-      <div class="container">
-        <SectionHeader
-          id="proceso-title"
-          title="Cómo Comprar Cajas de Cartón Corrugado en CADECA"
-          subtitle="4 pasos simples, desde la cotización hasta la entrega a tu puerta"
-        />
-        <div class="process__grid">
-          {pasos.map(p => <ProcessStep {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- ══════════════════════════════════════
+ PROCESO DE COMPRA
+ ══════════════════════════════════════ -->
+ <section class="process" aria-labelledby="proceso-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-title"
+ title="Cómo Comprar Cajas de Cartón Corrugado en CADECA"
+ subtitle="4 pasos simples, desde la cotización hasta la entrega a tu puerta"
+ />
+ <div class="process__grid">
+ {pasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- ══════════════════════════════════════
-         TESTIMONIOS
-    ══════════════════════════════════════ -->
-    <section class="trust" aria-labelledby="testimonios-title">
-      <div class="container">
-        <div class="trust__testimonials-header">
-          <h2 class="trust__testimonials-title" id="testimonios-title">
-            Clientes que Confían en Nuestras Cajas de Cartón Corrugado
-          </h2>
-          <p class="trust__testimonials-subtitle">
-            Vendedores online, distribuidoras e industria del área metropolitana avalan nuestra calidad y servicio
-          </p>
-        </div>
-        <div class="trust__testimonials">
-          {testimonios.map(t => <Testimonial {...t} />)}
-        </div>
-      </div>
-    </section>
+ <!-- ══════════════════════════════════════
+ TESTIMONIOS
+ ══════════════════════════════════════ -->
+ <section class="trust" aria-labelledby="testimonios-title">
+ <div class="container">
+ <div class="trust__testimonials-header">
+ <h2 class="trust__testimonials-title" id="testimonios-title">
+ Clientes que Confían en Nuestras Cajas de Cartón Corrugado
+ </h2>
+ <p class="trust__testimonials-subtitle">
+ Vendedores online, distribuidoras e industria del área metropolitana avalan nuestra calidad y servicio
+ </p>
+ </div>
+ <div class="trust__testimonials">
+ {testimonios.map(t => <Testimonial {...t} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- ══════════════════════════════════════
-         SEO CONTENT
-    ══════════════════════════════════════ -->
-    <section class="seo-content" aria-labelledby="seo-title">
-      <div class="container">
-        <h2 id="seo-title" class="seo-content__title">
-          Cajas de Cartón Corrugado en CDMX y Estado de México: Todo lo que Necesitas Saber
-        </h2>
-        <p class="seo-content__text">
-          Las <strong>cajas de cartón corrugado estándar</strong> son el tipo de empaque más utilizado en México por su relación ideal entre resistencia, peso y costo. En CADECA fabricamos cajas corrugadas en tres tipos de pared — simple, doble y triple — con flautas B, C, E y BC según los requerimientos técnicos de cada aplicación. Nuestro inventario permanente en la Ciudad de México garantiza disponibilidad inmediata de los modelos más solicitados, con <strong>entrega en 24 a 48 horas</strong> en toda la zona metropolitana.
-        </p>
-        <p class="seo-content__text">
-          Para los <strong>vendedores de Mercado Libre y Amazon MX en CDMX</strong>, las cajas de corrugado simple y doble pared son el estándar de la industria: ligeras para reducir el costo de envío, suficientemente resistentes para proteger el producto en tránsito con las paqueterías más usadas. Manejamos todas las medidas compatibles con Mercado Envíos, DHL, FedEx, Estafeta y J&T, sin pedido mínimo. Para la <strong>industria manufacturera y proyectos de nearshoring</strong> en Naucalpan, Tlalnepantla y Cuautitlán Izcalli, el triple corrugado con ECT-51 o ECT-71 es la solución correcta: soporta más de 25 kg, resiste condiciones extremas de transporte y cumple los estándares internacionales requeridos por corporativos extranjeros.
-        </p>
-        <p class="seo-content__text">
-          Como <strong>fabricante de cajas de cartón corrugado en CDMX</strong>, CADECA produce directamente sin intermediarios, lo que se traduce en precios más bajos, control total de calidad y tiempos de entrega garantizados. Todo nuestro cartón está disponible con <strong>certificación FSC</strong> bajo pedido, ideal para marcas con compromisos de sostenibilidad o que exportan a mercados que exigen trazabilidad de materiales. <a href="#cotizar">Solicita tu cotización</a> ahora — sin mínimo, sin compromiso y con respuesta en menos de 2 horas.
-        </p>
-      </div>
-    </section>
+ <!-- ══════════════════════════════════════
+ SEO CONTENT
+ ══════════════════════════════════════ -->
+ <section class="seo-content" aria-labelledby="seo-title">
+ <div class="container">
+ <h2 id="seo-title" class="seo-content__title">
+ Cajas de Cartón Corrugado en CDMX y Estado de México: Todo lo que Necesitas Saber
+ </h2>
+ <p class="seo-content__text">
+ Las <strong>cajas de cartón corrugado estándar</strong> son el tipo de empaque más utilizado en México por su relación ideal entre resistencia, peso y costo. En CADECA fabricamos cajas corrugadas en tres tipos de pared — simple, doble y triple — con flautas B, C, E y BC según los requerimientos técnicos de cada aplicación. Nuestro inventario permanente en la Ciudad de México garantiza disponibilidad inmediata de los modelos más solicitados, con <strong>entrega en 24 a 48 horas</strong> en toda la zona metropolitana.
+ </p>
+ <p class="seo-content__text">
+ Para los <strong>vendedores de Mercado Libre y Amazon MX en CDMX</strong>, las cajas de corrugado simple y doble pared son el estándar de la industria: ligeras para reducir el costo de envío, suficientemente resistentes para proteger el producto en tránsito con las paqueterías más usadas. Manejamos todas las medidas compatibles con Mercado Envíos, DHL, FedEx, Estafeta y J&T, sin pedido mínimo. Para la <strong>industria manufacturera y proyectos de nearshoring</strong> en Naucalpan, Tlalnepantla y Cuautitlán Izcalli, el triple corrugado con ECT-51 o ECT-71 es la solución correcta: soporta más de 25 kg, resiste condiciones extremas de transporte y cumple los estándares internacionales requeridos por corporativos extranjeros.
+ </p>
+ <p class="seo-content__text">
+ Como <strong>fabricante de cajas de cartón corrugado en CDMX</strong>, CADECA produce directamente sin intermediarios, lo que se traduce en precios más bajos, control total de calidad y tiempos de entrega garantizados. Todo nuestro cartón está disponible con <strong>certificación FSC</strong> bajo pedido, ideal para marcas con compromisos de sostenibilidad o que exportan a mercados que exigen trazabilidad de materiales. <a href="cotizar">Solicita tu cotización</a> ahora — sin mínimo, sin compromiso y con respuesta en menos de 2 horas.
+ </p>
+ </div>
+ </section>
 
-    <!-- ══════════════════════════════════════
-         FAQ
-    ══════════════════════════════════════ -->
-    <section class="faq" aria-labelledby="faq-title">
-      <div class="container">
-        <SectionHeader
-          id="faq-title"
-          twoCol
-          title="Preguntas Frecuentes: Cajas de Cartón Corrugado Estándar"
-          subtitle="Todo sobre medidas, tipos de pared, resistencia ECT, flautas y pedidos"
-        >
-          <p>La selección correcta de cartón corrugado evita sobrecostos y daños al producto. Estas son las dudas más frecuentes de nuestros clientes antes de hacer su primer pedido.</p>
-          <p>¿Tienes una consulta técnica específica? Nuestro equipo la resuelve por WhatsApp en tiempo real, sin costo y sin compromiso de compra.</p>
-        </SectionHeader>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <!-- ══════════════════════════════════════
+ FAQ
+ ══════════════════════════════════════ -->
+ <section class="faq" aria-labelledby="faq-title">
+ <div class="container">
+ <SectionHeader
+ id="faq-title"
+ twoCol
+ title="Preguntas Frecuentes: Cajas de Cartón Corrugado Estándar"
+ subtitle="Todo sobre medidas, tipos de pared, resistencia ECT, flautas y pedidos"
+ >
+ <p>La selección correcta de cartón corrugado evita sobrecostos y daños al producto. Estas son las dudas más frecuentes de nuestros clientes antes de hacer su primer pedido.</p>
+ <p>¿Tienes una consulta técnica específica? Nuestro equipo la resuelve por WhatsApp en tiempo real, sin costo y sin compromiso de compra.</p>
+ </SectionHeader>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas de cartón corrugado en minutos" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas de cartón corrugado en minutos" />
 
 </PageLayout>

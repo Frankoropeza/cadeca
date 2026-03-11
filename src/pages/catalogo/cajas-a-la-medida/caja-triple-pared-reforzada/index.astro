@@ -1,125 +1,125 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Triple Pared Extra Reforzada CDMX | ECT-71 | CAD-AM-11 | CADECA";
+const title  = "Caja Triple Pared Extra Reforzada CDMX | ECT-71 | CAD-AM-11 | CADECA";
 const description = "Caja triple pared extra reforzada ECT-71 en CDMX. Juntas grapadas, refuerzo de esquinas, para cargas mayores a 80 kg. MOQ 10 pzas. CADECA fabricante directo.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU",    "CAD-AM-11"],
-  ["Tipo de pared", "Triple corrugado BCB extra reforzado"],
-  ["Flauta",        "BCB (12mm)"],
-  ["Resistencia",   "ECT-71 máximo"],
-  ["Gramaje liner", "200–250 g/m²"],
-  ["Material",      "Kraft virgen alta densidad"],
-  ["Cierre",        "Solapas grapadas + esquineros integrados"],
-  ["Pedido mínimo", "10 piezas"],
-  ["Entrega CDMX",  "5–7 días hábiles"],
+ ["Código SKU",  "CAD-AM-11"],
+ ["Tipo de pared", "Triple corrugado BCB extra reforzado"],
+ ["Flauta",  "BCB (12mm)"],
+ ["Resistencia",  "ECT-71 máximo"],
+ ["Gramaje liner", "200–250 g/m²"],
+ ["Material",  "Kraft virgen alta densidad"],
+ ["Cierre",  "Solapas grapadas + esquineros integrados"],
+ ["Pedido mínimo", "10 piezas"],
+ ["Entrega CDMX",  "5–7 días hábiles"],
 ];
 
 const faqs = [
-  {
-    id:"am11-f1",
-    question:"¿Qué diferencia hay entre triple pared estándar y triple pared extra reforzada?",
-    answer:"La triple pared estándar (ECT-61) usa liners de 175 g/m² y adhesivo convencional en las juntas. La versión extra reforzada (ECT-71) emplea liners de 200 a 250 g/m² de kraft virgen alta densidad, juntas laterales grapadas con grapa metálica galvanizada y esquineros de cartón prensado integrados en las cuatro aristas verticales. Esta combinación incrementa la resistencia a la compresión vertical (BCT) hasta un 40% más que el triple corrugado estándar, permitiendo apilar cargas de más de 80 kg en múltiples niveles sin deformación.",
-  },
-  {
-    id:"am11-f2",
-    question:"¿Las juntas grapadas afectan la reciclabilidad de la caja?",
-    answer:"Las grapas metálicas se separan durante el proceso de reciclaje del cartón mediante pulpeado y filtración magnética, de forma similar a como se separan los clips de papel en el reciclaje de papel. La caja sigue siendo 100% reciclable. En el proceso industrial de reciclaje, la pulpa pasa por un magneto que captura todas las grapas antes de que la fibra se reforme en papel nuevo. No es necesario retirar las grapas manualmente antes de reciclar. CADECA usa grapas galvanizadas que no se oxidan durante el transporte o almacenamiento.",
-  },
-  {
-    id:"am11-f3",
-    question:"¿Hasta cuántos niveles puedo apilar cajas triple pared extra reforzada en tarima?",
-    answer:"El número de niveles depende del peso del producto, las dimensiones de la caja y la humedad ambiental del almacén. Como referencia general: productos de 80 kg pueden apilarse 3 niveles, productos de 50 kg hasta 4 niveles, y productos de 30 kg hasta 5 niveles en condiciones normales de bodega (20-25°C, 50-60% HR). Para almacenes con alta humedad (>70% HR) la capacidad de apilamiento se reduce un 25%. Nuestros ingenieros calculan el BCT estimado para tu aplicación específica sin costo.",
-  },
+ {
+ id:"am11-f1",
+ question:"¿Qué diferencia hay entre triple pared estándar y triple pared extra reforzada?",
+ answer:"La triple pared estándar (ECT-61) usa liners de 175 g/m² y adhesivo convencional en las juntas. La versión extra reforzada (ECT-71) emplea liners de 200 a 250 g/m² de kraft virgen alta densidad, juntas laterales grapadas con grapa metálica galvanizada y esquineros de cartón prensado integrados en las cuatro aristas verticales. Esta combinación incrementa la resistencia a la compresión vertical (BCT) hasta un 40% más que el triple corrugado estándar, permitiendo apilar cargas de más de 80 kg en múltiples niveles sin deformación.",
+ },
+ {
+ id:"am11-f2",
+ question:"¿Las juntas grapadas afectan la reciclabilidad de la caja?",
+ answer:"Las grapas metálicas se separan durante el proceso de reciclaje del cartón mediante pulpeado y filtración magnética, de forma similar a como se separan los clips de papel en el reciclaje de papel. La caja sigue siendo 100% reciclable. En el proceso industrial de reciclaje, la pulpa pasa por un magneto que captura todas las grapas antes de que la fibra se reforme en papel nuevo. No es necesario retirar las grapas manualmente antes de reciclar. CADECA usa grapas galvanizadas que no se oxidan durante el transporte o almacenamiento.",
+ },
+ {
+ id:"am11-f3",
+ question:"¿Hasta cuántos niveles puedo apilar cajas triple pared extra reforzada en tarima?",
+ answer:"El número de niveles depende del peso del producto, las dimensiones de la caja y la humedad ambiental del almacén. Como referencia general: productos de 80 kg pueden apilarse 3 niveles, productos de 50 kg hasta 4 niveles, y productos de 30 kg hasta 5 niveles en condiciones normales de bodega (20-25°C, 50-60% HR). Para almacenes con alta humedad (>70% HR) la capacidad de apilamiento se reduce un 25%. Nuestros ingenieros calculan el BCT estimado para tu aplicación específica sin costo.",
+ },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",            alt: "Caja triple pared extra reforzada ECT-71 CDMX" },
-  { src: "/img/catalogo/corrugado-triple-pared-capas-cdmx.avif",           alt: "Capas de triple corrugado BCB reforzado" },
-  { src: "/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif",alt: "Caja triple pared para maquinaria pesada" },
-  { src: "/img/catalogo/caja-medida-industrial-hero-cdmx.avif",            alt: "Caja industrial triple pared CDMX" },
-  { src: "/img/catalogo/caja-medida-industrial-carga-cdmx.avif",           alt: "Carga pesada en caja triple pared reforzada" },
+ { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",  alt: "Caja triple pared extra reforzada ECT-71 CDMX" },
+ { src: "/img/catalogo/corrugado-triple-pared-capas-cdmx.avif",  alt: "Capas de triple corrugado BCB reforzado" },
+ { src: "/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif",alt: "Caja triple pared para maquinaria pesada" },
+ { src: "/img/catalogo/caja-medida-industrial-hero-cdmx.avif",  alt: "Caja industrial triple pared CDMX" },
+ { src: "/img/catalogo/caja-medida-industrial-carga-cdmx.avif",  alt: "Carga pesada en caja triple pared reforzada" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida"},{name:"Triple Pared Extra Reforzada"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja Triple Pared Extra Reforzada",sku:"CAD-AM-11",description:"Caja triple pared extra reforzada ECT-71 en CDMX — CADECA",image:gallery[0].src,material:"Triple corrugado BCB ECT-71 juntas grapadas",category:"Cajas a la Medida",moq:"10"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida"},{name:"Triple Pared Extra Reforzada"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja Triple Pared Extra Reforzada",sku:"CAD-AM-11",description:"Caja triple pared extra reforzada ECT-71 en CDMX — CADECA",image:gallery[0].src,material:"Triple corrugado BCB ECT-71 juntas grapadas",category:"Cajas a la Medida",moq:"10"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
-        <li><span class="current">Triple Pared Extra Reforzada</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><span class="current">Triple Pared Extra Reforzada</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-am11-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AM-11 · Cajas a la Medida</span>
-      <h1 id="sku-am11-title" class="cat-page-hero__title">Caja <span>Triple Pared Extra Reforzada</span><br>— ECT-71 CDMX</h1>
-      <p class="cat-page-hero__desc">La caja más resistente de nuestro catálogo. ECT-71 máximo con juntas grapadas, esquineros integrados y liner kraft virgen de 200-250 g/m². Para cargas superiores a 80 kg con apilamiento en múltiples niveles. MOQ desde 10 piezas.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-11</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-71</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>10 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-am11-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AM-11 · Cajas a la Medida</span>
+ <h1 id="sku-am11-title" class="cat-page-hero__title">Caja <span>Triple Pared Extra Reforzada</span><br>— ECT-71 CDMX</h1>
+ <p class="cat-page-hero__desc">La caja más resistente de nuestro catálogo. ECT-71 máximo con juntas grapadas, esquineros integrados y liner kraft virgen de 200-250 g/m². Para cargas superiores a 80 kg con apilamiento en múltiples niveles. MOQ desde 10 piezas.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-11</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-71</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>10 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-am11-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AM-11 · Familia: Cajas a la Medida</p>
-            <h2 id="detalle-am11-title" class="sku-detail__title">Caja Triple Pared Extra Reforzada</h2>
-            <p class="sku-detail__desc">Caja de triple corrugado BCB con ECT-71, el nivel máximo de resistencia en cartón corrugado. Fabricada con liner kraft virgen de 200 a 250 g/m², juntas laterales fijadas con grapa metálica galvanizada y esquineros de cartón prensado integrados en las cuatro aristas verticales. Diseñada para cargas superiores a 80 kg que requieren apilamiento en tarima de múltiples niveles. Sustituto directo de madera sin necesidad de certificación NIMF-15 para exportación. CADECA fabrica desde 10 piezas con diseño CAD gratuito en CDMX.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Resistencia máx.</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">>80 kg</span><span class="sku-detail__strip-label">Carga</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">10 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5–7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-11 Caja Triple Pared Extra Reforzada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-11</a>
-              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-am11-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AM-11 · Familia: Cajas a la Medida</p>
+ <h2 id="detalle-am11-title" class="sku-detail__title">Caja Triple Pared Extra Reforzada</h2>
+ <p class="sku-detail__desc">Caja de triple corrugado BCB con ECT-71, el nivel máximo de resistencia en cartón corrugado. Fabricada con liner kraft virgen de 200 a 250 g/m², juntas laterales fijadas con grapa metálica galvanizada y esquineros de cartón prensado integrados en las cuatro aristas verticales. Diseñada para cargas superiores a 80 kg que requieren apilamiento en tarima de múltiples niveles. Sustituto directo de madera sin necesidad de certificación NIMF-15 para exportación. CADECA fabrica desde 10 piezas con diseño CAD gratuito en CDMX.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Resistencia máx.</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">>80 kg</span><span class="sku-detail__strip-label">Carga</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">10 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5–7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-11 Caja Triple Pared Extra Reforzada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-11</a>
+ <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-am11-title">
-      <div class="container">
-        <h2 id="faq-am11-title" class="sku-faq__title">Preguntas Frecuentes — Caja Triple Pared Extra Reforzada</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-am11-title">
+ <div class="container">
+ <h2 id="faq-am11-title" class="sku-faq__title">Preguntas Frecuentes — Caja Triple Pared Extra Reforzada</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Máxima resistencia ECT-71 — Cotiza tu Caja Triple Pared Reforzada" />
+ <LeadCapture whatsapp={WHATSAPP} title="Máxima resistencia ECT-71 — Cotiza tu Caja Triple Pared Reforzada" />
 </PageLayout>

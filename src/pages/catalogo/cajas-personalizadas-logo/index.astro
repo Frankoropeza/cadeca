@@ -1,299 +1,299 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
-import PageHero      from "@/components/PageHero.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero  from "@/components/PageHero.astro";
 
-const title       = "Catálogo Cajas Personalizadas con Logo CDMX | Impresión 1 Color a Full Color | CADECA";
+const title  = "Catálogo Cajas Personalizadas con Logo CDMX | Impresión 1 Color a Full Color | CADECA";
 const description = "Catálogo cajas de cartón personalizadas con logo en CDMX. Impresión flexo 1 color, 2 colores, full color CMYK y acabados especiales. Desde 100 piezas. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const productos = [
-  {
-    code:       "CAD-PL-01",
-    badge:      "Más económico",
-    badgeColor: "orange",
-    featured:   true,
-    title:      "Caja con Logo 1 Color Flexo",
-    desc:       "Impresión flexo 1 tinta pantone sobre kraft marrón o blanco. La opción más económica para personalizar tu empaque. Ideal para logos simples y marcas en inicio.",
-    imgSrc:     "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif",
-    imgAlt:     "Cajas cartón personalizadas 1 color logo en CDMX — CADECA CAD-PL-01",
-    href:       "/catalogo/cajas-personalizadas-logo/1-color",
-    specs: [
-      { label: "Impresión",  value: "Flexo 1 tinta" },
-      { label: "ECT",        value: "ECT-32" },
-      { label: "MOQ",        value: "100 piezas" },
-      { label: "Entrega",    value: "5-7 días" },
-    ],
-    moq: "100 pzas",
-  },
-  {
-    code:       "CAD-PL-02",
-    badge:      "2 tintas",
-    badgeColor: "blue",
-    featured:   false,
-    title:      "Caja con Logo 2 Colores",
-    desc:       "Impresión flexo 2 tintas pantone independientes. Logo + texto en colores distintos o 2 colores de marca. El balance ideal entre costo y presencia visual.",
-    imgSrc:     "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif",
-    imgAlt:     "Cajas cartón personalizadas 2 colores en CDMX — CADECA CAD-PL-02",
-    href:       "/catalogo/cajas-personalizadas-logo/2-colores",
-    specs: [
-      { label: "Impresión",  value: "Flexo 2 tintas" },
-      { label: "ECT",        value: "ECT-32" },
-      { label: "MOQ",        value: "100 piezas" },
-      { label: "Entrega",    value: "5-7 días" },
-    ],
-    moq: "100 pzas",
-  },
-  {
-    code:       "CAD-PL-03",
-    badge:      "Full color",
-    badgeColor: "blue",
-    featured:   false,
-    title:      "Caja Full Color CMYK",
-    desc:       "Impresión offset o digital CMYK de alta resolución sobre papel coated blanco. Fotografías, degradados y diseños complejos sin límite de colores.",
-    imgSrc:     "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
-    imgAlt:     "Cajas cartón personalizadas full color CMYK en CDMX — CADECA CAD-PL-03",
-    href:       "/catalogo/cajas-personalizadas-logo/full-color",
-    specs: [
-      { label: "Impresión",  value: "Offset CMYK / Digital" },
-      { label: "Resolución", value: "200 lpi / 720 dpi" },
-      { label: "MOQ",        value: "200 piezas" },
-      { label: "Entrega",    value: "7-10 días" },
-    ],
-    moq: "200 pzas",
-  },
-  {
-    code:       "CAD-PL-04",
-    badge:      "Premium",
-    badgeColor: "blue",
-    featured:   false,
-    title:      "Acabados Especiales Barniz UV",
-    desc:       "Barniz UV spot y total, laminado mate y brillante, troquelado y relieve seco. Para cosméticos, lujo y packaging premium con alto valor percibido.",
-    imgSrc:     "/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif",
-    imgAlt:     "Cajas cartón personalizadas acabados especiales barniz UV — CADECA CAD-PL-04",
-    href:       "/catalogo/cajas-personalizadas-logo/acabados-especiales",
-    specs: [
-      { label: "Acabados",       value: "UV · Laminado · Relieve" },
-      { label: "Impresión base", value: "Offset CMYK" },
-      { label: "MOQ",            value: "500 piezas" },
-      { label: "Entrega",        value: "10-15 días" },
-    ],
-    moq: "500 pzas",
-  },
-  {
-    code:       "CAD-PL-05",
-    badge:      "Sin mínimos altos",
-    badgeColor: "green",
-    featured:   false,
-    title:      "Pequeña Empresa desde 100 pzas",
-    desc:       "Cajas personalizadas para PyMEs y emprendedores desde 100 piezas. Diseño incluido sin costo, asesoría de selección gratis. La entrada más accesible a la personalización.",
-    imgSrc:     "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif",
-    imgAlt:     "Cajas cartón personalizadas pequeñas empresas 100 piezas — CADECA CAD-PL-05",
-    href:       "/catalogo/cajas-personalizadas-logo/pequena-empresa",
-    specs: [
-      { label: "Diseño",     value: "Incluido sin costo" },
-      { label: "Impresión",  value: "Flexo 1-2 colores" },
-      { label: "MOQ",        value: "100 piezas" },
-      { label: "Entrega",    value: "5-7 días" },
-    ],
-    moq: "100 pzas",
-  },
+ {
+ code:  "CAD-PL-01",
+ badge:  "Más económico",
+ badgeColor: "orange",
+ featured:  true,
+ title:  "Caja con Logo 1 Color Flexo",
+ desc:  "Impresión flexo 1 tinta pantone sobre kraft marrón o blanco. La opción más económica para personalizar tu empaque. Ideal para logos simples y marcas en inicio.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif",
+ imgAlt:  "Cajas cartón personalizadas 1 color logo en CDMX — CADECA CAD-PL-01",
+ href:  "/catalogo/cajas-personalizadas-logo/1-color",
+ specs: [
+ { label: "Impresión",  value: "Flexo 1 tinta" },
+ { label: "ECT",  value: "ECT-32" },
+ { label: "MOQ",  value: "100 piezas" },
+ { label: "Entrega",  value: "5-7 días" },
+ ],
+ moq: "100 pzas",
+ },
+ {
+ code:  "CAD-PL-02",
+ badge:  "2 tintas",
+ badgeColor: "blue",
+ featured:  false,
+ title:  "Caja con Logo 2 Colores",
+ desc:  "Impresión flexo 2 tintas pantone independientes. Logo + texto en colores distintos o 2 colores de marca. El balance ideal entre costo y presencia visual.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif",
+ imgAlt:  "Cajas cartón personalizadas 2 colores en CDMX — CADECA CAD-PL-02",
+ href:  "/catalogo/cajas-personalizadas-logo/2-colores",
+ specs: [
+ { label: "Impresión",  value: "Flexo 2 tintas" },
+ { label: "ECT",  value: "ECT-32" },
+ { label: "MOQ",  value: "100 piezas" },
+ { label: "Entrega",  value: "5-7 días" },
+ ],
+ moq: "100 pzas",
+ },
+ {
+ code:  "CAD-PL-03",
+ badge:  "Full color",
+ badgeColor: "blue",
+ featured:  false,
+ title:  "Caja Full Color CMYK",
+ desc:  "Impresión offset o digital CMYK de alta resolución sobre papel coated blanco. Fotografías, degradados y diseños complejos sin límite de colores.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif",
+ imgAlt:  "Cajas cartón personalizadas full color CMYK en CDMX — CADECA CAD-PL-03",
+ href:  "/catalogo/cajas-personalizadas-logo/full-color",
+ specs: [
+ { label: "Impresión",  value: "Offset CMYK / Digital" },
+ { label: "Resolución", value: "200 lpi / 720 dpi" },
+ { label: "MOQ",  value: "200 piezas" },
+ { label: "Entrega",  value: "7-10 días" },
+ ],
+ moq: "200 pzas",
+ },
+ {
+ code:  "CAD-PL-04",
+ badge:  "Premium",
+ badgeColor: "blue",
+ featured:  false,
+ title:  "Acabados Especiales Barniz UV",
+ desc:  "Barniz UV spot y total, laminado mate y brillante, troquelado y relieve seco. Para cosméticos, lujo y packaging premium con alto valor percibido.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif",
+ imgAlt:  "Cajas cartón personalizadas acabados especiales barniz UV — CADECA CAD-PL-04",
+ href:  "/catalogo/cajas-personalizadas-logo/acabados-especiales",
+ specs: [
+ { label: "Acabados",  value: "UV · Laminado · Relieve" },
+ { label: "Impresión base", value: "Offset CMYK" },
+ { label: "MOQ",  value: "500 piezas" },
+ { label: "Entrega",  value: "10-15 días" },
+ ],
+ moq: "500 pzas",
+ },
+ {
+ code:  "CAD-PL-05",
+ badge:  "Sin mínimos altos",
+ badgeColor: "green",
+ featured:  false,
+ title:  "Pequeña Empresa desde 100 pzas",
+ desc:  "Cajas personalizadas para PyMEs y emprendedores desde 100 piezas. Diseño incluido sin costo, asesoría de selección gratis. La entrada más accesible a la personalización.",
+ imgSrc:  "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif",
+ imgAlt:  "Cajas cartón personalizadas pequeñas empresas 100 piezas — CADECA CAD-PL-05",
+ href:  "/catalogo/cajas-personalizadas-logo/pequena-empresa",
+ specs: [
+ { label: "Diseño",  value: "Incluido sin costo" },
+ { label: "Impresión",  value: "Flexo 1-2 colores" },
+ { label: "MOQ",  value: "100 piezas" },
+ { label: "Entrega",  value: "5-7 días" },
+ ],
+ moq: "100 pzas",
+ },
 
-  {
-    code: "CAD-PL-06", badge: "Barniz UV", badgeColor: "orange", featured: false,
-    title: "Caja Personalizada Barniz UV Total",
-    desc: "Acabado gloss de alto brillo, impresión full color CMYK. Ideal para cosmética, perfumería y marcas premium. Realza colores y protege la impresión. Desde 300 pzas.",
-    imgSrc: "/img/catalogo/caja-acabados-gloss-cdmx.avif",
-    imgAlt: "Caja personalizada barniz UV total gloss CDMX — CADECA CAD-PL-06",
-    href: "/catalogo/cajas-personalizadas-logo/barniz-uv-total",
-    specs: [
-      { label: "Acabado",  value: "Barniz UV Total gloss" },
-      { label: "Impresión",value: "Full color CMYK" },
-      { label: "Liner",    value: "Blanco o Kraft" },
-      { label: "Entrega",  value: "7–10 días" },
-    ],
-    moq: "300 pzas",
-  },
-  {
-    code: "CAD-PL-07", badge: "Soft Touch", badgeColor: "blue", featured: false,
-    title: "Caja Personalizada Laminado Mate Soft Touch",
-    desc: "Textura aterciopelada al tacto que comunica lujo. Laminado BOPP mate, impresión CMYK. Para marcas DTC, moda y cosmética premium. Más resistente que barniz UV.",
-    imgSrc: "/img/catalogo/caja-acabados-softtouch-cdmx.avif",
-    imgAlt: "Caja personalizada laminado mate soft touch premium — CADECA CAD-PL-07",
-    href: "/catalogo/cajas-personalizadas-logo/laminado-mate",
-    specs: [
-      { label: "Acabado",  value: "BOPP mate soft touch" },
-      { label: "Impresión",value: "Full color CMYK" },
-      { label: "Uso",      value: "Lujo · DTC · Cosmética" },
-      { label: "Entrega",  value: "8–12 días" },
-    ],
-    moq: "300 pzas",
-  },
-  {
-    code: "CAD-PL-08", badge: "PDQ", badgeColor: "green", featured: false,
-    title: "Caja Display PDQ para Punto de Venta",
-    desc: "Caja de envío que se convierte en exhibidor en tienda. Sin necesidad de armar. Impresión full color, estructura autoportante para góndolas y mostradores. Desde 200 pzas.",
-    imgSrc: "/img/catalogo/caja-retail-pdv-hero-cdmx.avif",
-    imgAlt: "Caja display PDQ punto de venta CDMX — CADECA CAD-PL-08",
-    href: "/catalogo/cajas-personalizadas-logo/display-punto-venta",
-    specs: [
-      { label: "Tipo",     value: "Display PDQ autoportante" },
-      { label: "Impresión",value: "Full color CMYK 4 colores" },
-      { label: "Liner",    value: "Blanco alta blancura" },
-      { label: "Entrega",  value: "7–10 días" },
-    ],
-    moq: "200 pzas",
-  },
-  {
-    code: "CAD-PL-09", badge: "Interior", badgeColor: "orange", featured: false,
-    title: "Caja con Impresión Interior Sorpresa",
-    desc: "Exterior kraft o con logo + interior full color. Crea el efecto sorpresa al abrir que genera contenido viral de unboxing en TikTok e Instagram. Desde 300 pzas.",
-    imgSrc: "/img/catalogo/caja-cmyk-unboxing-cdmx.avif",
-    imgAlt: "Caja impresión interior unboxing premium CDMX — CADECA CAD-PL-09",
-    href: "/catalogo/cajas-personalizadas-logo/impresion-interior",
-    specs: [
-      { label: "Exterior",  value: "Kraft o logo 1–2 colores" },
-      { label: "Interior",  value: "Full color CMYK" },
-      { label: "Unboxing",  value: "Diseñado para redes" },
-      { label: "Entrega",   value: "8–12 días" },
-    ],
-    moq: "300 pzas",
-  },
-  {
-    code: "CAD-PL-10", badge: "MOQ 100", badgeColor: "blue", featured: false,
-    title: "Caja Personalizada para Startups — MOQ 100",
-    desc: "El MOQ más bajo del mercado: 100 piezas. Para marcas emergentes y startups. Diseño gratuito, turnaround 5–7 días. Impresión 1–2 colores en kraft o blanco.",
-    imgSrc: "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif",
-    imgAlt: "Caja personalizada startup MOQ 100 piezas — CADECA CAD-PL-10",
-    href: "/catalogo/cajas-personalizadas-logo/startup-marca-emergente",
-    specs: [
-      { label: "MOQ",      value: "100 piezas (mínimo)" },
-      { label: "Impresión",value: "1–2 colores" },
-      { label: "Diseño",   value: "Gratuito" },
-      { label: "Entrega",  value: "5–7 días" },
-    ],
-    moq: "100 pzas",
-  },
-  {
-    code: "CAD-PL-11", badge: "Eco FSC", badgeColor: "green", featured: false,
-    title: "Caja Kraft Ecológico con Logo — FSC Reciclado",
-    desc: "Papel reciclado postconsumer certificado FSC. Sin recargo vs kraft convencional. Tintas water-based. Para marcas con valores sustentables. Desde 200 pzas.",
-    imgSrc: "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif",
-    imgAlt: "Caja kraft ecológico logo FSC reciclado CDMX — CADECA CAD-PL-11",
-    href: "/catalogo/cajas-personalizadas-logo/kraft-ecologico-logo",
-    specs: [
-      { label: "Material", value: "Kraft reciclado FSC" },
-      { label: "Tintas",   value: "Water-based sin metales" },
-      { label: "Precio",   value: "Igual a kraft estándar" },
-      { label: "Entrega",  value: "5–7 días" },
-    ],
-    moq: "200 pzas",
-  },
+ {
+ code: "CAD-PL-06", badge: "Barniz UV", badgeColor: "orange", featured: false,
+ title: "Caja Personalizada Barniz UV Total",
+ desc: "Acabado gloss de alto brillo, impresión full color CMYK. Ideal para cosmética, perfumería y marcas premium. Realza colores y protege la impresión. Desde 300 pzas.",
+ imgSrc: "/img/catalogo/caja-acabados-gloss-cdmx.avif",
+ imgAlt: "Caja personalizada barniz UV total gloss CDMX — CADECA CAD-PL-06",
+ href: "/catalogo/cajas-personalizadas-logo/barniz-uv-total",
+ specs: [
+ { label: "Acabado",  value: "Barniz UV Total gloss" },
+ { label: "Impresión",value: "Full color CMYK" },
+ { label: "Liner",  value: "Blanco o Kraft" },
+ { label: "Entrega",  value: "7–10 días" },
+ ],
+ moq: "300 pzas",
+ },
+ {
+ code: "CAD-PL-07", badge: "Soft Touch", badgeColor: "blue", featured: false,
+ title: "Caja Personalizada Laminado Mate Soft Touch",
+ desc: "Textura aterciopelada al tacto que comunica lujo. Laminado BOPP mate, impresión CMYK. Para marcas DTC, moda y cosmética premium. Más resistente que barniz UV.",
+ imgSrc: "/img/catalogo/caja-acabados-softtouch-cdmx.avif",
+ imgAlt: "Caja personalizada laminado mate soft touch premium — CADECA CAD-PL-07",
+ href: "/catalogo/cajas-personalizadas-logo/laminado-mate",
+ specs: [
+ { label: "Acabado",  value: "BOPP mate soft touch" },
+ { label: "Impresión",value: "Full color CMYK" },
+ { label: "Uso",  value: "Lujo · DTC · Cosmética" },
+ { label: "Entrega",  value: "8–12 días" },
+ ],
+ moq: "300 pzas",
+ },
+ {
+ code: "CAD-PL-08", badge: "PDQ", badgeColor: "green", featured: false,
+ title: "Caja Display PDQ para Punto de Venta",
+ desc: "Caja de envío que se convierte en exhibidor en tienda. Sin necesidad de armar. Impresión full color, estructura autoportante para góndolas y mostradores. Desde 200 pzas.",
+ imgSrc: "/img/catalogo/caja-retail-pdv-hero-cdmx.avif",
+ imgAlt: "Caja display PDQ punto de venta CDMX — CADECA CAD-PL-08",
+ href: "/catalogo/cajas-personalizadas-logo/display-punto-venta",
+ specs: [
+ { label: "Tipo",  value: "Display PDQ autoportante" },
+ { label: "Impresión",value: "Full color CMYK 4 colores" },
+ { label: "Liner",  value: "Blanco alta blancura" },
+ { label: "Entrega",  value: "7–10 días" },
+ ],
+ moq: "200 pzas",
+ },
+ {
+ code: "CAD-PL-09", badge: "Interior", badgeColor: "orange", featured: false,
+ title: "Caja con Impresión Interior Sorpresa",
+ desc: "Exterior kraft o con logo + interior full color. Crea el efecto sorpresa al abrir que genera contenido viral de unboxing en TikTok e Instagram. Desde 300 pzas.",
+ imgSrc: "/img/catalogo/caja-cmyk-unboxing-cdmx.avif",
+ imgAlt: "Caja impresión interior unboxing premium CDMX — CADECA CAD-PL-09",
+ href: "/catalogo/cajas-personalizadas-logo/impresion-interior",
+ specs: [
+ { label: "Exterior",  value: "Kraft o logo 1–2 colores" },
+ { label: "Interior",  value: "Full color CMYK" },
+ { label: "Unboxing",  value: "Diseñado para redes" },
+ { label: "Entrega",  value: "8–12 días" },
+ ],
+ moq: "300 pzas",
+ },
+ {
+ code: "CAD-PL-10", badge: "MOQ 100", badgeColor: "blue", featured: false,
+ title: "Caja Personalizada para Startups — MOQ 100",
+ desc: "El MOQ más bajo del mercado: 100 piezas. Para marcas emergentes y startups. Diseño gratuito, turnaround 5–7 días. Impresión 1–2 colores en kraft o blanco.",
+ imgSrc: "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif",
+ imgAlt: "Caja personalizada startup MOQ 100 piezas — CADECA CAD-PL-10",
+ href: "/catalogo/cajas-personalizadas-logo/startup-marca-emergente",
+ specs: [
+ { label: "MOQ",  value: "100 piezas (mínimo)" },
+ { label: "Impresión",value: "1–2 colores" },
+ { label: "Diseño",  value: "Gratuito" },
+ { label: "Entrega",  value: "5–7 días" },
+ ],
+ moq: "100 pzas",
+ },
+ {
+ code: "CAD-PL-11", badge: "Eco FSC", badgeColor: "green", featured: false,
+ title: "Caja Kraft Ecológico con Logo — FSC Reciclado",
+ desc: "Papel reciclado postconsumer certificado FSC. Sin recargo vs kraft convencional. Tintas water-based. Para marcas con valores sustentables. Desde 200 pzas.",
+ imgSrc: "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif",
+ imgAlt: "Caja kraft ecológico logo FSC reciclado CDMX — CADECA CAD-PL-11",
+ href: "/catalogo/cajas-personalizadas-logo/kraft-ecologico-logo",
+ specs: [
+ { label: "Material", value: "Kraft reciclado FSC" },
+ { label: "Tintas",  value: "Water-based sin metales" },
+ { label: "Precio",  value: "Igual a kraft estándar" },
+ { label: "Entrega",  value: "5–7 días" },
+ ],
+ moq: "200 pzas",
+ },
 ];
 ---
 
 <PageLayout
-  ogImage="/img/categorias/cajas-personalizadas-logo-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}
-  pageType="category"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo"}]}>
+ ogImage="/img/categorias/cajas-personalizadas-logo-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}
+ pageType="category"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo"}]}>
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><span class="current">Cajas Personalizadas con Logo</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><span class="current">Cajas Personalizadas con Logo</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <PageHero
-    eyebrow="Categoría 03 · 5 Productos"
-    titleHtml={true}
-    title="Cajas <span>Personalizadas con Logo</span>"
-    desc="Impresión 1 color, 4 colores y full color CMYK. Acabados mate, brillante y soft touch. Diseño gráfico gratuito y prueba digital sin costo. Desde 100 piezas."
-    desc2="Tu marca en cada caja. Impresión flexográfica y digital de hasta 4 colores sobre corrugado kraft o blanco. Diseño gratis, muestra sin costo y entregas desde 300 piezas en 5–7 días hábiles.||Clientes como tiendas de retail, marcas DTC y empresas de suscripción usan nuestras cajas personalizadas para reforzar su identidad de marca. Ofrecemos asesoría de diseño estructural y gráfico para maximizar el impacto visual sin comprometer la resistencia del empaque."
-    chips={[
-      { label: "5 Productos" },
-      { label: "Desde 100 pzas" },
-      { label: "3–5 días hábiles" },
-      { label: "Diseño gratis" },
-    ]}
-    ctas={[
-      { href: "/cotizar", label: "Solicitar diseño gratis", variant: "primary" },
-      { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
-    ]}
-  />
+ <PageHero
+ eyebrow="Categoría 03 · 5 Productos"
+ titleHtml={true}
+ title="Cajas <span>Personalizadas con Logo</span>"
+ desc="Impresión 1 color, 4 colores y full color CMYK. Acabados mate, brillante y soft touch. Diseño gráfico gratuito y prueba digital sin costo. Desde 100 piezas."
+ desc2="Tu marca en cada caja. Impresión flexográfica y digital de hasta 4 colores sobre corrugado kraft o blanco. Diseño gratis, muestra sin costo y entregas desde 300 piezas en 5–7 días hábiles.||Clientes como tiendas de retail, marcas DTC y empresas de suscripción usan nuestras cajas personalizadas para reforzar su identidad de marca. Ofrecemos asesoría de diseño estructural y gráfico para maximizar el impacto visual sin comprometer la resistencia del empaque."
+ chips={[
+ { label: "5 Productos" },
+ { label: "Desde 100 pzas" },
+ { label: "3–5 días hábiles" },
+ { label: "Diseño gratis" },
+ ]}
+ ctas={[
+ { href: "/cotizar", label: "Solicitar diseño gratis", variant: "primary" },
+ { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
-    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-pl-title">
-      <div class="container">
-        <SectionHeader
-          id="prods-pl-title"
-          twoCol
-          title="5 Productos — Cajas Personalizadas con Logo"
-          subtitle="Selecciona el tipo de impresión para ver la ficha técnica completa con acabados, resolución y condiciones de pedido."
-          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
-        >
-          <p>Desde tu logo en 1 color hasta packaging premium con barniz UV y laminado. Cada nivel de personalización tiene su ficha técnica con especificaciones exactas de impresión, resolución y acabado.</p>
-        </SectionHeader>
-        <div class="sku-grid">
-          {productos.map(p => (
-            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
-              <div class="sku-card__img-wrap">
-                <img src={p.imgSrc} alt={p.imgAlt}
-                  class="sku-card__img" width="640" height="480"
-                  loading="lazy" decoding="async" />
-                <span class="sku-card__code">{p.code}</span>
-                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
-              </div>
-              <div class="sku-card__body">
-                <h2 class="sku-card__name">{p.title}</h2>
-                <p class="sku-card__desc">{p.desc}</p>
-                <div class="sku-card__specs">
-                  {p.specs.map(s => (
-                    <div>
-                      <span class="sku-card__spec-label">{s.label}</span>
-                      <span class="sku-card__spec-value">{s.value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div class="sku-card__footer">
-                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
-                  <span class="sku-card__moq">MOQ: {p.moq}</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  </main>
+ <main id="contenido-principal" role="main">
+ <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-pl-title">
+ <div class="container">
+ <SectionHeader
+ id="prods-pl-title"
+ twoCol
+ title="5 Productos — Cajas Personalizadas con Logo"
+ subtitle="Selecciona el tipo de impresión para ver la ficha técnica completa con acabados, resolución y condiciones de pedido."
+ link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+ >
+ <p>Desde tu logo en 1 color hasta packaging premium con barniz UV y laminado. Cada nivel de personalización tiene su ficha técnica con especificaciones exactas de impresión, resolución y acabado.</p>
+ </SectionHeader>
+ <div class="sku-grid">
+ {productos.map(p => (
+ <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+ <div class="sku-card__img-wrap">
+ <img src={p.imgSrc} alt={p.imgAlt}
+ class="sku-card__img" width="640" height="480"
+ loading="lazy" decoding="async" />
+ <span class="sku-card__code">{p.code}</span>
+ <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
+ </div>
+ <div class="sku-card__body">
+ <h2 class="sku-card__name">{p.title}</h2>
+ <p class="sku-card__desc">{p.desc}</p>
+ <div class="sku-card__specs">
+ {p.specs.map(s => (
+ <div>
+ <span class="sku-card__spec-label">{s.label}</span>
+ <span class="sku-card__spec-value">{s.value}</span>
+ </div>
+ ))}
+ </div>
+ <div class="sku-card__footer">
+ <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+ <span class="sku-card__moq">MOQ: {p.moq}</span>
+ </div>
+ </div>
+ </article>
+ ))}
+ </div>
+ </div>
+ </section>
+ </main>
 
 
-  <!-- Del Blog CADECA -->
-  <section class="cat-blog-links">
-    <div class="container">
-      <h2 class="cat-blog-links__title">📚 Del Blog CADECA</h2>
-      <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
-      <div class="cat-blog-links__grid">
-        <a href="/blog/cajas-carton-personalizadas-branding-marca" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Cajas personalizadas y branding</span>
-        </a>
-        <a href="/blog/unboxing-experience-cajas-personalizadas-ventas" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Unboxing experience que aumenta ventas</span>
-        </a>
-        <a href="/blog/cajas-personalizadas-pymes-cuando-conviene" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>¿Cuándo convienen las cajas personalizadas?</span>
-        </a>
-      </div>
-      <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
-    </div>
-  </section>
+ <!-- Del Blog CADECA -->
+ <section class="cat-blog-links">
+ <div class="container">
+ <h2 class="cat-blog-links__title"> Del Blog CADECA</h2>
+ <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
+ <div class="cat-blog-links__grid">
+ <a href="/blog/cajas-carton-personalizadas-branding-marca" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Cajas personalizadas y branding</span>
+ </a>
+ <a href="/blog/unboxing-experience-cajas-personalizadas-ventas" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Unboxing experience que aumenta ventas</span>
+ </a>
+ <a href="/blog/cajas-personalizadas-pymes-cuando-conviene" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>¿Cuándo convienen las cajas personalizadas?</span>
+ </a>
+ </div>
+ <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
+ </div>
+ </section>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Qué tipo de impresión necesitas? Te asesoramos gratis en menos de 1 hora" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Qué tipo de impresión necesitas? Te asesoramos gratis en menos de 1 hora" />
 </PageLayout>

@@ -1,259 +1,259 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
-import PageHero      from "@/components/PageHero.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero  from "@/components/PageHero.astro";
 
-const title       = "Cajas de Archivo y Almacenaje CDMX | 5 Productos | CADECA";
+const title  = "Cajas de Archivo y Almacenaje CDMX | 5 Productos | CADECA";
 const description = "Cajas de cartón para archivo muerto, almacén industrial y almacenaje en CDMX. Tamaño oficio, carta, apilables y mudanza. Fichas técnicas, medidas y precios mayoreo.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const productos = [
-  {
-    code:    "CAD-AH-01",
-    badge:   "Más vendida",
-    badgeColor: "orange",
-    featured: true,
-    title:   "Archivo Muerto Tamaño Oficio",
-    desc:    "Caja estándar para archivo muerto tamaño oficio. Flauta C, ECT-32. Tapa integrada o separada. La solución más usada en oficinas, despachos y archivos corporativos en CDMX. Sin pedido mínimo.",
-    imgSrc:  "/img/catalogo/caja-archivo-muerto-oficio-corporativo-cdmx.avif",
-    imgAlt:  "Caja archivo muerto tamaño oficio cartón corrugado CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",
-    specs: [
-      { label: "Tamaño",     value: "Oficio (legal)" },
-      { label: "ECT",        value: "ECT-32" },
-      { label: "Flauta",     value: "C (4mm)" },
-      { label: "Peso máx.",  value: "Hasta 20 kg" },
-    ],
-    moq: "Sin mínimo",
-  },
-  {
-    code:    "CAD-AH-02",
-    badge:   "Industrial",
-    badgeColor: "red",
-    featured: false,
-    title:   "Almacén Industrial — Doble Pared",
-    desc:    "Caja de almacén industrial doble pared BC. ECT-44 y ECT-51 para almacenaje pesado en racks, bodegas y centros de distribución. Resistencia superior al apilamiento prolongado.",
-    imgSrc:  "/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif",
-    imgAlt:  "Caja almacén industrial doble pared corrugado CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/almacen-industrial",
-    specs: [
-      { label: "Pared",      value: "Doble (BC)" },
-      { label: "ECT",        value: "ECT-44 / ECT-51" },
-      { label: "Flauta",     value: "BC" },
-      { label: "Peso máx.",  value: "Hasta 35 kg" },
-    ],
-    moq: "50 pzas",
-  },
-  {
-    code:    "CAD-AH-03",
-    badge:   "Oficina",
-    badgeColor: "blue",
-    featured: false,
-    title:   "Documentos Tamaño Carta",
-    desc:    "Caja para documentos tamaño carta. Flauta B/C, ECT-32. Compacta y ligera para oficinas con espacio limitado. Tapa integrada con ranuras de identificación. Sin mínimo, stock permanente.",
-    imgSrc:  "/img/catalogo/caja-documentos-carta-despacho-cdmx.avif",
-    imgAlt:  "Caja documentos tamaño carta cartón corrugado CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/documentos-carta",
-    specs: [
-      { label: "Tamaño",     value: "Carta (letter)" },
-      { label: "ECT",        value: "ECT-32" },
-      { label: "Flauta",     value: "B / C" },
-      { label: "Peso máx.",  value: "Hasta 15 kg" },
-    ],
-    moq: "Sin mínimo",
-  },
-  {
-    code:    "CAD-AH-04",
-    badge:   "Resistente",
-    badgeColor: "red",
-    featured: false,
-    title:   "Apilable Resistente — Triple Pared",
-    desc:    "Caja apilable de triple pared BCB/BCF. ECT-51 y ECT-71 para almacenaje prolongado con máxima resistencia a la compresión. Ideal para bodegas industriales y archivos de largo plazo.",
-    imgSrc:  "/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif",
-    imgAlt:  "Caja apilable resistente triple pared corrugado CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/apilable-resistente",
-    specs: [
-      { label: "Pared",      value: "Triple (BCB/BCF)" },
-      { label: "ECT",        value: "ECT-51 / ECT-71" },
-      { label: "Flauta",     value: "BCB · BCF" },
-      { label: "Peso máx.",  value: "+40 kg" },
-    ],
-    moq: "50 pzas",
-  },
-  {
-    code:    "CAD-AH-05",
-    badge:   "Con asas",
-    badgeColor: "green",
-    featured: false,
-    title:   "Mudanza y Archivo — Con Asas",
-    desc:    "Caja doble uso para mudanza y archivo con asas troqueladas. Doble pared BC, ECT-44. Diseño ergonómico para manejo manual frecuente. Sin mínimo, stock permanente en CDMX.",
-    imgSrc:  "/img/catalogo/caja-mudanza-archivo-corporativo-cdmx.avif",
-    imgAlt:  "Caja mudanza y archivo con asas cartón corrugado CDMX — CADECA",
-    href:    "/catalogo/cajas-archivo-almacenaje/mudanza-archivo",
-    specs: [
-      { label: "Pared",      value: "Doble (BC) + Asas" },
-      { label: "ECT",        value: "ECT-44" },
-      { label: "Flauta",     value: "BC" },
-      { label: "Peso máx.",  value: "Hasta 25 kg" },
-    ],
-    moq: "Sin mínimo",
-  },
+ {
+ code:  "CAD-AH-01",
+ badge:  "Más vendida",
+ badgeColor: "orange",
+ featured: true,
+ title:  "Archivo Muerto Tamaño Oficio",
+ desc:  "Caja estándar para archivo muerto tamaño oficio. Flauta C, ECT-32. Tapa integrada o separada. La solución más usada en oficinas, despachos y archivos corporativos en CDMX. Sin pedido mínimo.",
+ imgSrc:  "/img/catalogo/caja-archivo-muerto-oficio-corporativo-cdmx.avif",
+ imgAlt:  "Caja archivo muerto tamaño oficio cartón corrugado CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",
+ specs: [
+ { label: "Tamaño",  value: "Oficio (legal)" },
+ { label: "ECT",  value: "ECT-32" },
+ { label: "Flauta",  value: "C (4mm)" },
+ { label: "Peso máx.",  value: "Hasta 20 kg" },
+ ],
+ moq: "Sin mínimo",
+ },
+ {
+ code:  "CAD-AH-02",
+ badge:  "Industrial",
+ badgeColor: "red",
+ featured: false,
+ title:  "Almacén Industrial — Doble Pared",
+ desc:  "Caja de almacén industrial doble pared BC. ECT-44 y ECT-51 para almacenaje pesado en racks, bodegas y centros de distribución. Resistencia superior al apilamiento prolongado.",
+ imgSrc:  "/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif",
+ imgAlt:  "Caja almacén industrial doble pared corrugado CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/almacen-industrial",
+ specs: [
+ { label: "Pared",  value: "Doble (BC)" },
+ { label: "ECT",  value: "ECT-44 / ECT-51" },
+ { label: "Flauta",  value: "BC" },
+ { label: "Peso máx.",  value: "Hasta 35 kg" },
+ ],
+ moq: "50 pzas",
+ },
+ {
+ code:  "CAD-AH-03",
+ badge:  "Oficina",
+ badgeColor: "blue",
+ featured: false,
+ title:  "Documentos Tamaño Carta",
+ desc:  "Caja para documentos tamaño carta. Flauta B/C, ECT-32. Compacta y ligera para oficinas con espacio limitado. Tapa integrada con ranuras de identificación. Sin mínimo, stock permanente.",
+ imgSrc:  "/img/catalogo/caja-documentos-carta-despacho-cdmx.avif",
+ imgAlt:  "Caja documentos tamaño carta cartón corrugado CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/documentos-carta",
+ specs: [
+ { label: "Tamaño",  value: "Carta (letter)" },
+ { label: "ECT",  value: "ECT-32" },
+ { label: "Flauta",  value: "B / C" },
+ { label: "Peso máx.",  value: "Hasta 15 kg" },
+ ],
+ moq: "Sin mínimo",
+ },
+ {
+ code:  "CAD-AH-04",
+ badge:  "Resistente",
+ badgeColor: "red",
+ featured: false,
+ title:  "Apilable Resistente — Triple Pared",
+ desc:  "Caja apilable de triple pared BCB/BCF. ECT-51 y ECT-71 para almacenaje prolongado con máxima resistencia a la compresión. Ideal para bodegas industriales y archivos de largo plazo.",
+ imgSrc:  "/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif",
+ imgAlt:  "Caja apilable resistente triple pared corrugado CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/apilable-resistente",
+ specs: [
+ { label: "Pared",  value: "Triple (BCB/BCF)" },
+ { label: "ECT",  value: "ECT-51 / ECT-71" },
+ { label: "Flauta",  value: "BCB · BCF" },
+ { label: "Peso máx.",  value: "+40 kg" },
+ ],
+ moq: "50 pzas",
+ },
+ {
+ code:  "CAD-AH-05",
+ badge:  "Con asas",
+ badgeColor: "green",
+ featured: false,
+ title:  "Mudanza y Archivo — Con Asas",
+ desc:  "Caja doble uso para mudanza y archivo con asas troqueladas. Doble pared BC, ECT-44. Diseño ergonómico para manejo manual frecuente. Sin mínimo, stock permanente en CDMX.",
+ imgSrc:  "/img/catalogo/caja-mudanza-archivo-corporativo-cdmx.avif",
+ imgAlt:  "Caja mudanza y archivo con asas cartón corrugado CDMX — CADECA",
+ href:  "/catalogo/cajas-archivo-almacenaje/mudanza-archivo",
+ specs: [
+ { label: "Pared",  value: "Doble (BC) + Asas" },
+ { label: "ECT",  value: "ECT-44" },
+ { label: "Flauta",  value: "BC" },
+ { label: "Peso máx.",  value: "Hasta 25 kg" },
+ ],
+ moq: "Sin mínimo",
+ },
 
-  {
-    code: "CAD-AH-06", badge: "Legal", badgeColor: "blue", featured: false,
-    title: "Caja de Archivo Legal y Notaría",
-    desc: "Tamaño oficio+extra para expedientes legales y notariales. Tapa y base independientes, área de etiquetado completa. Resistente al peso de expedientes. CDMX.",
-    imgSrc: "/img/catalogo/caja-archivo-oficio-hero-cdmx.avif",
-    imgAlt: "Caja archivo legal notaría CDMX — CADECA CAD-AH-06",
-    href: "/catalogo/cajas-archivo-almacenaje/caja-archivo-legal",
-    specs: [{ label:"Tamaño",value:"Oficio+"},{label:"Tapa",value:"Independiente"},{label:"NOM-004",value:"Compatible"},{label:"MOQ",value:"50 pzas"}],
-    moq: "50 pzas",
-  },
-  {
-    code: "CAD-AH-07", badge: "BPM", badgeColor: "orange", featured: false,
-    title: "Caja de Almacenaje para Farmacia y Hospital",
-    desc: "Liner blanco BPM compatible COFEPRIS. Apilable en racks selectivos farmacéuticos. Etiquetado frontal y lateral visible. Para farmacias y hospitales en CDMX.",
-    imgSrc: "/img/catalogo/caja-documentos-carta-hero-cdmx.avif",
-    imgAlt: "Caja almacenaje farmacia hospital BPM CDMX — CADECA CAD-AH-07",
-    href: "/catalogo/cajas-archivo-almacenaje/almacen-farmacia-hospital",
-    specs: [{ label:"BPM",value:"COFEPRIS"},{label:"Liner",value:"Blanco"},{label:"Racks",value:"Selectivos"},{label:"MOQ",value:"100 pzas"}],
-    moq: "100 pzas",
-  },
-  {
-    code: "CAD-AH-08", badge: "Mudanza", badgeColor: "green", featured: false,
-    title: "Caja de Mudanza Residencial Reforzada",
-    desc: "4 tamaños: chica, mediana, grande y extra. Doble corrugado ECT-44 con manijas reforzadas. MOQ mínimo de solo 20 piezas. Entrega 24 hrs en CDMX.",
-    imgSrc: "/img/catalogo/caja-mudanza-corporativa-hero-cdmx.avif",
-    imgAlt: "Caja mudanza residencial reforzada CDMX — CADECA CAD-AH-08",
-    href: "/catalogo/cajas-archivo-almacenaje/mudanza-residencial-reforzada",
-    specs: [{ label:"ECT-44",value:"Reforzada"},{label:"Tamaños",value:"4 en stock"},{label:"Manijas",value:"Reforzadas"},{label:"MOQ",value:"20 pzas"}],
-    moq: "20 pzas",
-  },
-  {
-    code: "CAD-AH-09", badge: "Fulfillment", badgeColor: "blue", featured: false,
-    title: "Caja de Almacenaje para E-commerce y Fulfillment",
-    desc: "Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible racks shelving 60 cm. Para bodegas PIMSA y centros de fulfillment en CDMX y EDOMEX.",
-    imgSrc: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif",
-    imgAlt: "Caja almacenaje e-commerce fulfillment CDMX — CADECA CAD-AH-09",
-    href: "/catalogo/cajas-archivo-almacenaje/almacen-ecommerce-fulfillment",
-    specs: [{ label:"Apilado",value:"1.5m"},{label:"Shelving",value:"60cm"},{label:"Etiquetado",value:"Frontal+lateral"},{label:"MOQ",value:"100 pzas"}],
-    moq: "100 pzas",
-  },
-  {
-    code: "CAD-AH-10", badge: "Digital", badgeColor: "green", featured: false,
-    title: "Caja de Archivo para Transición Digital",
-    desc: "Diseñada para proyectos de digitalización masiva: etiquetado completo (caja/área/estado/responsable), compatible con carros de archivo. Tamaños oficio y carta.",
-    imgSrc: "/img/catalogo/caja-archivo-oficio-interior-cdmx.avif",
-    imgAlt: "Caja archivo transición digital digitalización CDMX — CADECA CAD-AH-10",
-    href: "/catalogo/cajas-archivo-almacenaje/archivo-transicion-digital",
-    specs: [{ label:"Etiquetado",value:"Completo"},{label:"Compatibilidad",value:"Carros archivo"},{label:"Tamaños",value:"Oficio y carta"},{label:"MOQ",value:"50 pzas"}],
-    moq: "50 pzas",
-  },
+ {
+ code: "CAD-AH-06", badge: "Legal", badgeColor: "blue", featured: false,
+ title: "Caja de Archivo Legal y Notaría",
+ desc: "Tamaño oficio+extra para expedientes legales y notariales. Tapa y base independientes, área de etiquetado completa. Resistente al peso de expedientes. CDMX.",
+ imgSrc: "/img/catalogo/caja-archivo-oficio-hero-cdmx.avif",
+ imgAlt: "Caja archivo legal notaría CDMX — CADECA CAD-AH-06",
+ href: "/catalogo/cajas-archivo-almacenaje/caja-archivo-legal",
+ specs: [{ label:"Tamaño",value:"Oficio+"},{label:"Tapa",value:"Independiente"},{label:"NOM-004",value:"Compatible"},{label:"MOQ",value:"50 pzas"}],
+ moq: "50 pzas",
+ },
+ {
+ code: "CAD-AH-07", badge: "BPM", badgeColor: "orange", featured: false,
+ title: "Caja de Almacenaje para Farmacia y Hospital",
+ desc: "Liner blanco BPM compatible COFEPRIS. Apilable en racks selectivos farmacéuticos. Etiquetado frontal y lateral visible. Para farmacias y hospitales en CDMX.",
+ imgSrc: "/img/catalogo/caja-documentos-carta-hero-cdmx.avif",
+ imgAlt: "Caja almacenaje farmacia hospital BPM CDMX — CADECA CAD-AH-07",
+ href: "/catalogo/cajas-archivo-almacenaje/almacen-farmacia-hospital",
+ specs: [{ label:"BPM",value:"COFEPRIS"},{label:"Liner",value:"Blanco"},{label:"Racks",value:"Selectivos"},{label:"MOQ",value:"100 pzas"}],
+ moq: "100 pzas",
+ },
+ {
+ code: "CAD-AH-08", badge: "Mudanza", badgeColor: "green", featured: false,
+ title: "Caja de Mudanza Residencial Reforzada",
+ desc: "4 tamaños: chica, mediana, grande y extra. Doble corrugado ECT-44 con manijas reforzadas. MOQ mínimo de solo 20 piezas. Entrega 24 hrs en CDMX.",
+ imgSrc: "/img/catalogo/caja-mudanza-corporativa-hero-cdmx.avif",
+ imgAlt: "Caja mudanza residencial reforzada CDMX — CADECA CAD-AH-08",
+ href: "/catalogo/cajas-archivo-almacenaje/mudanza-residencial-reforzada",
+ specs: [{ label:"ECT-44",value:"Reforzada"},{label:"Tamaños",value:"4 en stock"},{label:"Manijas",value:"Reforzadas"},{label:"MOQ",value:"20 pzas"}],
+ moq: "20 pzas",
+ },
+ {
+ code: "CAD-AH-09", badge: "Fulfillment", badgeColor: "blue", featured: false,
+ title: "Caja de Almacenaje para E-commerce y Fulfillment",
+ desc: "Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible racks shelving 60 cm. Para bodegas PIMSA y centros de fulfillment en CDMX y EDOMEX.",
+ imgSrc: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif",
+ imgAlt: "Caja almacenaje e-commerce fulfillment CDMX — CADECA CAD-AH-09",
+ href: "/catalogo/cajas-archivo-almacenaje/almacen-ecommerce-fulfillment",
+ specs: [{ label:"Apilado",value:"1.5m"},{label:"Shelving",value:"60cm"},{label:"Etiquetado",value:"Frontal+lateral"},{label:"MOQ",value:"100 pzas"}],
+ moq: "100 pzas",
+ },
+ {
+ code: "CAD-AH-10", badge: "Digital", badgeColor: "green", featured: false,
+ title: "Caja de Archivo para Transición Digital",
+ desc: "Diseñada para proyectos de digitalización masiva: etiquetado completo (caja/área/estado/responsable), compatible con carros de archivo. Tamaños oficio y carta.",
+ imgSrc: "/img/catalogo/caja-archivo-oficio-interior-cdmx.avif",
+ imgAlt: "Caja archivo transición digital digitalización CDMX — CADECA CAD-AH-10",
+ href: "/catalogo/cajas-archivo-almacenaje/archivo-transicion-digital",
+ specs: [{ label:"Etiquetado",value:"Completo"},{label:"Compatibilidad",value:"Carros archivo"},{label:"Tamaños",value:"Oficio y carta"},{label:"MOQ",value:"50 pzas"}],
+ moq: "50 pzas",
+ },
 ];
 ---
 
 <PageLayout
-  ogImage="/img/categorias/cajas-archivo-almacenaje-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}>
+ ogImage="/img/categorias/cajas-archivo-almacenaje-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}>
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/catalogo">Catálogo</a></li>
-      <li><span class="current">Archivo y Almacenaje</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><span class="current">Archivo y Almacenaje</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <PageHero
-    eyebrow="Categoría 09 · 5 Productos"
-    titleHtml={true}
-    title="Cajas de <span>Archivo y Almacenaje</span>"
-    desc="Archivo muerto oficio y carta, almacén industrial, cajas apilables triple pared y mudanza con asas. Soluciones de almacenamiento a largo plazo con máxima resistencia."
-    desc2="Cajas de archivo y almacenaje para despachos, corporativos, notarías y hospitales. Diseño apilable hasta 1.5 metros, tapa separada, área de etiquetado frontal y lateral para gestión documental conforme a la NOM-004.||Suministramos a más de 200 corporativos en CDMX con entregas recurrentes mensuales. Ofrecemos kit completo de mudanza corporativa: caja de archivo, caja estándar, divisores y materiales de relleno con entrega en piso en 24–48 horas."
-    chips={[
-      { label: "5 Productos" },
-      { label: "Triple pared disponible" },
-      { label: "Archivo muerto" },
-      { label: "Apilamiento BCT certificado" },
-    ]}
-    ctas={[
-      { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
-      { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
-    ]}
-  />
+ <PageHero
+ eyebrow="Categoría 09 · 5 Productos"
+ titleHtml={true}
+ title="Cajas de <span>Archivo y Almacenaje</span>"
+ desc="Archivo muerto oficio y carta, almacén industrial, cajas apilables triple pared y mudanza con asas. Soluciones de almacenamiento a largo plazo con máxima resistencia."
+ desc2="Cajas de archivo y almacenaje para despachos, corporativos, notarías y hospitales. Diseño apilable hasta 1.5 metros, tapa separada, área de etiquetado frontal y lateral para gestión documental conforme a la NOM-004.||Suministramos a más de 200 corporativos en CDMX con entregas recurrentes mensuales. Ofrecemos kit completo de mudanza corporativa: caja de archivo, caja estándar, divisores y materiales de relleno con entrega en piso en 24–48 horas."
+ chips={[
+ { label: "5 Productos" },
+ { label: "Triple pared disponible" },
+ { label: "Archivo muerto" },
+ { label: "Apilamiento BCT certificado" },
+ ]}
+ ctas={[
+ { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+ { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
+ ]}
+ />
 
-  <main id="contenido-principal" role="main">
-    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-ah-title">
-      <div class="container">
-        <SectionHeader
-          id="prods-ah-title"
-          twoCol
-          title="5 Productos — Archivo y Almacenaje"
-          subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones ECT y condiciones de pedido."
-          link={{ text: "← Volver al catálogo", href: "/catalogo" }}
-        >
-          <p>Cada producto tiene su propia ficha técnica con tabla de medidas disponibles, especificaciones de material, resistencia ECT, flauta, gramaje, peso máximo y condiciones de pedido. Haz clic en cualquier producto para ver todos los detalles.</p>
-        </SectionHeader>
+ <main id="contenido-principal" role="main">
+ <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-ah-title">
+ <div class="container">
+ <SectionHeader
+ id="prods-ah-title"
+ twoCol
+ title="5 Productos — Archivo y Almacenaje"
+ subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones ECT y condiciones de pedido."
+ link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+ >
+ <p>Cada producto tiene su propia ficha técnica con tabla de medidas disponibles, especificaciones de material, resistencia ECT, flauta, gramaje, peso máximo y condiciones de pedido. Haz clic en cualquier producto para ver todos los detalles.</p>
+ </SectionHeader>
 
-        <div class="sku-grid">
-          {productos.map(p => (
-            <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
-              <div class="sku-card__img-wrap">
-                <img src={p.imgSrc} alt={p.imgAlt}
-                  class="sku-card__img" width="640" height="480"
-                  loading="lazy" decoding="async" />
-                <span class="sku-card__code">{p.code}</span>
-                <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
-              </div>
-              <div class="sku-card__body">
-                <h2 class="sku-card__name">{p.title}</h2>
-                <p class="sku-card__desc">{p.desc}</p>
-                <div class="sku-card__specs">
-                  {p.specs.map(s => (
-                    <div>
-                      <span class="sku-card__spec-label">{s.label}</span>
-                      <span class="sku-card__spec-value">{s.value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div class="sku-card__footer">
-                  <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
-                  <span class="sku-card__moq">MOQ: {p.moq}</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  </main>
+ <div class="sku-grid">
+ {productos.map(p => (
+ <article class={`sku-card${p.featured ? " sku-card--featured" : ""}`}>
+ <div class="sku-card__img-wrap">
+ <img src={p.imgSrc} alt={p.imgAlt}
+ class="sku-card__img" width="640" height="480"
+ loading="lazy" decoding="async" />
+ <span class="sku-card__code">{p.code}</span>
+ <span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span>
+ </div>
+ <div class="sku-card__body">
+ <h2 class="sku-card__name">{p.title}</h2>
+ <p class="sku-card__desc">{p.desc}</p>
+ <div class="sku-card__specs">
+ {p.specs.map(s => (
+ <div>
+ <span class="sku-card__spec-label">{s.label}</span>
+ <span class="sku-card__spec-value">{s.value}</span>
+ </div>
+ ))}
+ </div>
+ <div class="sku-card__footer">
+ <a href={p.href} class="btn btn--primary">Ver ficha técnica</a>
+ <span class="sku-card__moq">MOQ: {p.moq}</span>
+ </div>
+ </div>
+ </article>
+ ))}
+ </div>
+ </div>
+ </section>
+ </main>
 
 
-  <!-- Del Blog CADECA -->
-  <section class="cat-blog-links">
-    <div class="container">
-      <h2 class="cat-blog-links__title">📚 Del Blog CADECA</h2>
-      <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
-      <div class="cat-blog-links__grid">
-        <a href="/blog/almacenar-cajas-carton-bodega-correctamente" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Cómo almacenar cajas correctamente</span>
-        </a>
-        <a href="/blog/gestion-inventario-empaques-stock-reorden" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Gestión de inventario de empaques</span>
-        </a>
-        <a href="/blog/cajas-corrugado-industrial-especificaciones-ect-bct-mexico" class="cat-blog-links__item">
-          <span class="cat-blog-links__arrow">→</span>
-          <span>Especificaciones para almacén industrial</span>
-        </a>
-      </div>
-      <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
-    </div>
-  </section>
+ <!-- Del Blog CADECA -->
+ <section class="cat-blog-links">
+ <div class="container">
+ <h2 class="cat-blog-links__title"> Del Blog CADECA</h2>
+ <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
+ <div class="cat-blog-links__grid">
+ <a href="/blog/almacenar-cajas-carton-bodega-correctamente" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Cómo almacenar cajas correctamente</span>
+ </a>
+ <a href="/blog/gestion-inventario-empaques-stock-reorden" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Gestión de inventario de empaques</span>
+ </a>
+ <a href="/blog/cajas-corrugado-industrial-especificaciones-ect-bct-mexico" class="cat-blog-links__item">
+ <span class="cat-blog-links__arrow">→</span>
+ <span>Especificaciones para almacén industrial</span>
+ </a>
+ </div>
+ <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
+ </div>
+ </section>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas cajas de archivo o almacenaje? Nuestro asesor responde en menos de 2 horas" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas cajas de archivo o almacenaje? Nuestro asesor responde en menos de 2 horas" />
 
 </PageLayout>

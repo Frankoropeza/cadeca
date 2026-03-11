@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Láminas Corrugado Exportación Contenedor CDMX | Triple pared | CAD-LA-07 | CADECA";
+const title  = "Láminas Corrugado Exportación Contenedor CDMX | Triple pared | CAD-LA-07 | CADECA";
 const description = "Láminas de cartón corrugado para exportación y contenedores en CDMX. Triple pared ECT-71, dimensiones 20 y 40 pies. Protección para carga internacional. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-LA-07"],
-  ["Resistencia", "ECT-71 triple pared"],
-  ["Flauta", "BCB triple pared"],
-  ["Dimensiones", "Para contenedor 20' y 40'"],
-  ["Certificación", "ISTA-1A disponible"],
-  ["Humedad", "Recubrimiento antihumedad opcional"],
-  ["Presentación", "Palé enzunchado"],
-  ["Pedido mínimo", "100 láminas"],
-  ["Entrega CDMX", "24–48 hrs / embarque"],
+ ["Código SKU", "CAD-LA-07"],
+ ["Resistencia", "ECT-71 triple pared"],
+ ["Flauta", "BCB triple pared"],
+ ["Dimensiones", "Para contenedor 20' y 40'"],
+ ["Certificación", "ISTA-1A disponible"],
+ ["Humedad", "Recubrimiento antihumedad opcional"],
+ ["Presentación", "Palé enzunchado"],
+ ["Pedido mínimo", "100 láminas"],
+ ["Entrega CDMX", "24–48 hrs / embarque"],
 ];
 
 const faqs = [
-  { id:"cad-la-07-f1", question:"¿Cuáles son las dimensiones exactas para contenedor de 20' y 40'?", answer:"Interior contenedor 20': 5.898 × 2.352 × 2.393 m. Interior 40': 12.032 × 2.352 × 2.393 m. Cortamos láminas para cubrir las paredes laterales, piso y techo según el plan de carga. Podemos hacer el cálculo de cuántas láminas necesitas y en qué dimensiones si nos proporcionas el tipo de carga y el plano del contenedor." },
-  { id:"cad-la-07-f2", question:"¿El corrugado protege contra la humedad en carga marítima?", answer:"El corrugado estándar absorbe humedad y pierde resistencia en ambientes marítimos. Para exportación marítima, recomendamos la opción de recubrimiento antihumedad (WAX o polietileno) que agrega una barrera que prolonga la vida útil de las láminas durante travesías de hasta 30 días. Especifica la opción antihumedad al cotizar." },
-  { id:"cad-la-07-f3", question:"¿Ofrecen certificación ISTA para el embarque?", answer:"Sí. Podemos emitir documentación técnica de especificaciones ECT, gramaje y dimensiones para incluir en el expediente de exportación. Para certificación ISTA completa (que involucra pruebas de vibración y caída en laboratorio acreditado), referimos a laboratorios especializados en CDMX." },
+ { id:"cad-la-07-f1", question:"¿Cuáles son las dimensiones exactas para contenedor de 20' y 40'?", answer:"Interior contenedor 20': 5.898 × 2.352 × 2.393 m. Interior 40': 12.032 × 2.352 × 2.393 m. Cortamos láminas para cubrir las paredes laterales, piso y techo según el plan de carga. Podemos hacer el cálculo de cuántas láminas necesitas y en qué dimensiones si nos proporcionas el tipo de carga y el plano del contenedor." },
+ { id:"cad-la-07-f2", question:"¿El corrugado protege contra la humedad en carga marítima?", answer:"El corrugado estándar absorbe humedad y pierde resistencia en ambientes marítimos. Para exportación marítima, recomendamos la opción de recubrimiento antihumedad (WAX o polietileno) que agrega una barrera que prolonga la vida útil de las láminas durante travesías de hasta 30 días. Especifica la opción antihumedad al cotizar." },
+ { id:"cad-la-07-f3", question:"¿Ofrecen certificación ISTA para el embarque?", answer:"Sí. Podemos emitir documentación técnica de especificaciones ECT, gramaje y dimensiones para incluir en el expediente de exportación. Para certificación ISTA completa (que involucra pruebas de vibración y caída en laboratorio acreditado), referimos a laboratorios especializados en CDMX." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/lamina-export-hero-cdmx.avif", alt: "Láminas corrugado exportación contenedor CDMX" },
-  { src: "/img/catalogo/lamina-export-container-cdmx.avif", alt: "Láminas en contenedor exportación" },
-  { src: "/img/catalogo/lamina-export-flete-cdmx.avif", alt: "Flete exportación corrugado" },
-  { src: "/img/catalogo/lamina-export-proteccion-cdmx.avif", alt: "Protección carga exportación" },
-  { src: "/img/catalogo/lamina-triple-pallet-cdmx.avif", alt: "Láminas triple pared pallet" },
+ { src: "/img/catalogo/lamina-export-hero-cdmx.avif", alt: "Láminas corrugado exportación contenedor CDMX" },
+ { src: "/img/catalogo/lamina-export-container-cdmx.avif", alt: "Láminas en contenedor exportación" },
+ { src: "/img/catalogo/lamina-export-flete-cdmx.avif", alt: "Flete exportación corrugado" },
+ { src: "/img/catalogo/lamina-export-proteccion-cdmx.avif", alt: "Protección carga exportación" },
+ { src: "/img/catalogo/lamina-triple-pallet-cdmx.avif", alt: "Láminas triple pared pallet" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Exportación y Contenedor"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Láminas Corrugado para Exportación y Contenedor",sku:"CAD-LA-07",description:"Láminas triple pared para protección de carga en contenedores 20' y 40'. Dimensiones optimizadas para el interior de contenedor, ECT-71, aptas para carga marítima y aérea.",image:gallery[0].src,material:"CAD-LA-07",category:"Láminas de Cartón Corrugado",moq:"100 láminas"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Exportación y Contenedor"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Láminas Corrugado para Exportación y Contenedor",sku:"CAD-LA-07",description:"Láminas triple pared para protección de carga en contenedores 20' y 40'. Dimensiones optimizadas para el interior de contenedor, ECT-71, aptas para carga marítima y aérea.",image:gallery[0].src,material:"CAD-LA-07",category:"Láminas de Cartón Corrugado",moq:"100 láminas"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
-        <li><span class="current">Láminas Corrugado para Exportación y Contenedor</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+ <li><span class="current">Láminas Corrugado para Exportación y Contenedor</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadla07-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-LA-07 · Láminas de Cartón Corrugado</span>
-      <h1 id="sku-cadla07-title" class="cat-page-hero__title">Láminas Corrugado para <span>Exportación</span> y Contenedor CDMX</h1>
-      <p class="cat-page-hero__desc">Láminas triple pared para protección de carga en contenedores 20' y 40'. Dimensiones optimizadas para el interior de contenedor, ECT-71, aptas para carga marítima y aérea.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-07</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>100 láminas</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadla07-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-LA-07 · Láminas de Cartón Corrugado</span>
+ <h1 id="sku-cadla07-title" class="cat-page-hero__title">Láminas Corrugado para <span>Exportación</span> y Contenedor CDMX</h1>
+ <p class="cat-page-hero__desc">Láminas triple pared para protección de carga en contenedores 20' y 40'. Dimensiones optimizadas para el interior de contenedor, ECT-71, aptas para carga marítima y aérea.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-07</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>100 láminas</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadla07-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-LA-07 · Familia: Láminas de Cartón Corrugado</p>
-            <h2 id="detalle-cadla07-title" class="sku-detail__title">Láminas Corrugado para Exportación y Contenedor</h2>
-            <p class="sku-detail__desc">La exportación de mercancías en contenedor requiere láminas de corrugado que cubran las paredes del contenedor, protejan la carga de los golpes y la humedad del océano, y que al mismo tiempo no sumen demasiado peso al embarque. CAD-LA-07 usa triple pared ECT-71 en dimensiones calculadas para el interior de contenedores estándar de 20' y 40'. Certificación ISTA disponible para cargamentos con requerimientos de aseguramiento de calidad exportación.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Triple pared</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Cont. 20'/40'</span><span class="sku-detail__strip-label">Dimensiones</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ISTA</span><span class="sku-detail__strip-label">Certificación</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-07 Láminas Corrugado para Exportación y Contenedor`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-07</a>
-              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadla07-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-LA-07 · Familia: Láminas de Cartón Corrugado</p>
+ <h2 id="detalle-cadla07-title" class="sku-detail__title">Láminas Corrugado para Exportación y Contenedor</h2>
+ <p class="sku-detail__desc">La exportación de mercancías en contenedor requiere láminas de corrugado que cubran las paredes del contenedor, protejan la carga de los golpes y la humedad del océano, y que al mismo tiempo no sumen demasiado peso al embarque. CAD-LA-07 usa triple pared ECT-71 en dimensiones calculadas para el interior de contenedores estándar de 20' y 40'. Certificación ISTA disponible para cargamentos con requerimientos de aseguramiento de calidad exportación.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Triple pared</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Cont. 20'/40'</span><span class="sku-detail__strip-label">Dimensiones</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ISTA</span><span class="sku-detail__strip-label">Certificación</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-07 Láminas Corrugado para Exportación y Contenedor`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-07</a>
+ <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadla07-title">
-      <div class="container">
-        <h2 id="faq-cadla07-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado para Exportación y Contenedor</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadla07-title">
+ <div class="container">
+ <h2 id="faq-cadla07-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado para Exportación y Contenedor</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Exportas mercancías en contenedor? Cotiza las láminas de protección adecuadas para tu carga" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Exportas mercancías en contenedor? Cotiza las láminas de protección adecuadas para tu carga" />
 </PageLayout>

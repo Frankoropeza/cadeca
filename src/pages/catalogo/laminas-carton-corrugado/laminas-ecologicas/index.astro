@@ -1,166 +1,166 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Láminas Cartón Reciclado FSC CDMX | ECT-32/44 Sustentable | CAD-LC-05 | CADECA";
+const title  = "Láminas Cartón Reciclado FSC CDMX | ECT-32/44 Sustentable | CAD-LC-05 | CADECA";
 const description = "Láminas cartón corrugado reciclado certificado FSC en CDMX. Mismas specs técnicas que virgen. ECT-32/44, desde 50 piezas, entrega 3-5 días. Para marcas sustentables. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"60×40 cm",         flauta:"Simple C",ect:"ECT-32",peso:"0.09 kg/ud",disp:"green",  label:"Stock",   hl:false },
-  { talla:"80×60 cm",         flauta:"Simple C",ect:"ECT-32",peso:"0.16 kg/ud",disp:"green",  label:"Stock",   hl:false },
-  { talla:"100×80 cm",        flauta:"Simple C",ect:"ECT-32",peso:"0.26 kg/ud",disp:"yellow", label:"3-5 días",hl:true  },
-  { talla:"120×100 cm",       flauta:"Simple C",ect:"ECT-32",peso:"0.39 kg/ud",disp:"yellow", label:"3-5 días",hl:true  },
-  { talla:"120×240 cm",       flauta:"Doble BC", ect:"ECT-44",peso:"0.94 kg/ud",disp:"yellow", label:"3-5 días",hl:false },
-  { talla:"Medida personalizada",flauta:"A elegir",ect:"A elegir",peso:"—",    disp:"gray",   label:"Consultar",hl:false},
+ { talla:"60×40 cm",  flauta:"Simple C",ect:"ECT-32",peso:"0.09 kg/ud",disp:"green",  label:"Stock",  hl:false },
+ { talla:"80×60 cm",  flauta:"Simple C",ect:"ECT-32",peso:"0.16 kg/ud",disp:"green",  label:"Stock",  hl:false },
+ { talla:"100×80 cm",  flauta:"Simple C",ect:"ECT-32",peso:"0.26 kg/ud",disp:"yellow", label:"3-5 días",hl:true  },
+ { talla:"120×100 cm",  flauta:"Simple C",ect:"ECT-32",peso:"0.39 kg/ud",disp:"yellow", label:"3-5 días",hl:true  },
+ { talla:"120×240 cm",  flauta:"Doble BC", ect:"ECT-44",peso:"0.94 kg/ud",disp:"yellow", label:"3-5 días",hl:false },
+ { talla:"Medida personalizada",flauta:"A elegir",ect:"A elegir",peso:"—",  disp:"gray",  label:"Consultar",hl:false},
 ];
 
 const specs = [
-  ["Código SKU",          "CAD-LC-05"],
-  ["Certificación",       "FSC — Forest Stewardship Council"],
-  ["Material",            "Fibra reciclada 100% post-consumo certificada"],
-  ["ECT disponible",      "ECT-32 (simple) o ECT-44 (doble)"],
-  ["Diferencia vs virgen","Mismas especificaciones técnicas"],
-  ["Color liner",         "Kraft gris-marrón — diferente a kraft virgen marrón oscuro"],
-  ["Certificado",         "FSC Chain of Custody disponible para tu marca"],
-  ["Flauta",              "C simple (4mm) o BC doble (7mm)"],
-  ["Medida máxima",       "120 × 240 cm (simple) · 120 × 200 cm (doble)"],
-  ["Corte a medida",      "Sí — tolerancia ±2mm"],
-  ["Costo",               "Similar o menor al virgen en el mismo ECT"],
-  ["Pedido mínimo",       "50 piezas"],
-  ["Tiempo de entrega",   "3-5 días hábiles"],
+ ["Código SKU",  "CAD-LC-05"],
+ ["Certificación",  "FSC — Forest Stewardship Council"],
+ ["Material",  "Fibra reciclada 100% post-consumo certificada"],
+ ["ECT disponible",  "ECT-32 (simple) o ECT-44 (doble)"],
+ ["Diferencia vs virgen","Mismas especificaciones técnicas"],
+ ["Color liner",  "Kraft gris-marrón — diferente a kraft virgen marrón oscuro"],
+ ["Certificado",  "FSC Chain of Custody disponible para tu marca"],
+ ["Flauta",  "C simple (4mm) o BC doble (7mm)"],
+ ["Medida máxima",  "120 × 240 cm (simple) · 120 × 200 cm (doble)"],
+ ["Corte a medida",  "Sí — tolerancia ±2mm"],
+ ["Costo",  "Similar o menor al virgen en el mismo ECT"],
+ ["Pedido mínimo",  "50 piezas"],
+ ["Tiempo de entrega",  "3-5 días hábiles"],
 ];
 
 const faqs = [
-  {
-    id:"lc05-f1",
-    question:"¿Qué certifica exactamente la etiqueta FSC en el cartón corrugado?",
-    answer:"La certificación FSC (Forest Stewardship Council) para papel y cartón reciclado certifica la cadena de custodia del material: que la fibra reciclada fue recolectada, procesada y transformada bajo estándares verificados de trazabilidad, sin mezcla con materiales prohibidos como madera de tala ilegal o zonas de alto valor de conservación. El certificado FSC Recycled garantiza al comprador que el material cumple los estándares ambientales más exigentes del mercado y le permite usar el logo FSC en su packaging con la licencia correspondiente, lo cual es fundamental para reportes de sustentabilidad ESG.",
-  },
-  {
-    id:"lc05-f2",
-    question:"¿El cartón reciclado FSC tiene menor resistencia que el cartón virgen?",
-    answer:"En especificaciones modernas la diferencia de resistencia es mínima: 5-8% menos en BCT (Box Compression Test) a igual ECT. Los procesos de producción de papel reciclado han mejorado tanto que el ECT-44 reciclado y el ECT-44 virgen tienen comportamientos prácticamente idénticos en condiciones normales de temperatura y humedad. La diferencia visible es el color: el liner reciclado tiene un tono gris-marrón característico versus el marrón oscuro del kraft virgen. Para aplicaciones donde el color exterior no importa — uso industrial, embalaje secundario, almacenamiento interno — el reciclado FSC es equivalente al virgen a igual o menor costo, con la ventaja adicional del certificado para reportes ESG.",
-  },
+ {
+ id:"lc05-f1",
+ question:"¿Qué certifica exactamente la etiqueta FSC en el cartón corrugado?",
+ answer:"La certificación FSC (Forest Stewardship Council) para papel y cartón reciclado certifica la cadena de custodia del material: que la fibra reciclada fue recolectada, procesada y transformada bajo estándares verificados de trazabilidad, sin mezcla con materiales prohibidos como madera de tala ilegal o zonas de alto valor de conservación. El certificado FSC Recycled garantiza al comprador que el material cumple los estándares ambientales más exigentes del mercado y le permite usar el logo FSC en su packaging con la licencia correspondiente, lo cual es fundamental para reportes de sustentabilidad ESG.",
+ },
+ {
+ id:"lc05-f2",
+ question:"¿El cartón reciclado FSC tiene menor resistencia que el cartón virgen?",
+ answer:"En especificaciones modernas la diferencia de resistencia es mínima: 5-8% menos en BCT (Box Compression Test) a igual ECT. Los procesos de producción de papel reciclado han mejorado tanto que el ECT-44 reciclado y el ECT-44 virgen tienen comportamientos prácticamente idénticos en condiciones normales de temperatura y humedad. La diferencia visible es el color: el liner reciclado tiene un tono gris-marrón característico versus el marrón oscuro del kraft virgen. Para aplicaciones donde el color exterior no importa — uso industrial, embalaje secundario, almacenamiento interno — el reciclado FSC es equivalente al virgen a igual o menor costo, con la ventaja adicional del certificado para reportes ESG.",
+ },
 ];
 
 const mainImg = "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif", alt: "Láminas ecológicas — principal" },
-  { src: "/img/catalogo/lamina-medida-hero-cdmx.avif", alt: "Lámina medida — hero" },
-  { src: "/img/catalogo/lamina-medida-corte-cdmx.avif", alt: "Corte a medida" },
-  { src: "/img/catalogo/lamina-medida-tallas-cdmx.avif", alt: "Tallas disponibles" },
-  { src: "/img/catalogo/lamina-medida-borde-cdmx.avif", alt: "Borde de corte limpio" },
+ { src: "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif", alt: "Láminas ecológicas — principal" },
+ { src: "/img/catalogo/lamina-medida-hero-cdmx.avif", alt: "Lámina medida — hero" },
+ { src: "/img/catalogo/lamina-medida-corte-cdmx.avif", alt: "Corte a medida" },
+ { src: "/img/catalogo/lamina-medida-tallas-cdmx.avif", alt: "Tallas disponibles" },
+ { src: "/img/catalogo/lamina-medida-borde-cdmx.avif", alt: "Borde de corte limpio" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[
-    {name:"Inicio", href:"/"},
-    {name:"Catálogo", href:"/catalogo"},
-    {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"},
-    {name:"Láminas Ecológicas FSC"}
-  ]}
-  faqItems={faqs}
-  product={{
-    name:"Láminas Cartón Corrugado Reciclado Certificado FSC",
-    sku:"CAD-LC-05",
-    description:"Láminas cartón corrugado reciclado certificado FSC CDMX — mismas specs técnicas que virgen",
-    image:"/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif",
-    material:"Láminas cartón corrugado fibra reciclada certificada FSC ECT-32/44",
-    category:"Láminas de Cartón Corrugado",
-    moq:"50"
-  }}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[
+ {name:"Inicio", href:"/"},
+ {name:"Catálogo", href:"/catalogo"},
+ {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"},
+ {name:"Láminas Ecológicas FSC"}
+ ]}
+ faqItems={faqs}
+ product={{
+ name:"Láminas Cartón Corrugado Reciclado Certificado FSC",
+ sku:"CAD-LC-05",
+ description:"Láminas cartón corrugado reciclado certificado FSC CDMX — mismas specs técnicas que virgen",
+ image:"/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif",
+ material:"Láminas cartón corrugado fibra reciclada certificada FSC ECT-32/44",
+ category:"Láminas de Cartón Corrugado",
+ moq:"50"
+ }}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
-        <li><span class="current">Láminas Ecológicas FSC</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+ <li><span class="current">Láminas Ecológicas FSC</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-lc05-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-LC-05 · Láminas Cartón Corrugado</span>
-      <h1 id="sku-lc05-title" class="cat-page-hero__title">Láminas Cartón <span>Reciclado FSC</span><br>— Sustentable CDMX</h1>
-      <p class="cat-page-hero__desc">Fibra reciclada certificada FSC. Mismas especificaciones técnicas que el kraft virgen. ECT-32 y ECT-44. Desde 50 piezas, entrega 3-5 días.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-05</strong></div>
-        <div class="cat-page-hero__strip-item">Cert.: <strong>FSC Recycled</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-lc05-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-LC-05 · Láminas Cartón Corrugado</span>
+ <h1 id="sku-lc05-title" class="cat-page-hero__title">Láminas Cartón <span>Reciclado FSC</span><br>— Sustentable CDMX</h1>
+ <p class="cat-page-hero__desc">Fibra reciclada certificada FSC. Mismas especificaciones técnicas que el kraft virgen. ECT-32 y ECT-44. Desde 50 piezas, entrega 3-5 días.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-05</strong></div>
+ <div class="cat-page-hero__strip-item">Cert.: <strong>FSC Recycled</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-lc05-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-LC-05 · Familia: Láminas de Cartón Corrugado</p>
-            <h2 id="detalle-lc05-title" class="sku-detail__title">Láminas Cartón Corrugado Reciclado FSC</h2>
-            <p class="sku-detail__desc">Láminas fabricadas con fibra reciclada 100% post-consumo certificada por FSC (Forest Stewardship Council). Ofrecen las mismas especificaciones técnicas que el kraft virgen en ECT-32 y ECT-44, con la diferencia de que permiten a tu marca usar el logo FSC certificado en tu packaging — fundamental para políticas de sustentabilidad ESG y clientes internacionales con exigencias ambientales.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Certificado</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100%</span><span class="sku-detail__strip-label">Fibra reciclada</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Producción</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-05 Láminas Recicladas FSC`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-05</a>
-              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-lc05-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-LC-05 · Familia: Láminas de Cartón Corrugado</p>
+ <h2 id="detalle-lc05-title" class="sku-detail__title">Láminas Cartón Corrugado Reciclado FSC</h2>
+ <p class="sku-detail__desc">Láminas fabricadas con fibra reciclada 100% post-consumo certificada por FSC (Forest Stewardship Council). Ofrecen las mismas especificaciones técnicas que el kraft virgen en ECT-32 y ECT-44, con la diferencia de que permiten a tu marca usar el logo FSC certificado en tu packaging — fundamental para políticas de sustentabilidad ESG y clientes internacionales con exigencias ambientales.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Certificado</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100%</span><span class="sku-detail__strip-label">Fibra reciclada</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Producción</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-05 Láminas Recicladas FSC`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-05</a>
+ <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-lc05-title">
-      <div class="container">
-        <h2 id="sizes-lc05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-LC-05</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Medida (cm)</th><th>Flauta</th><th>ECT</th><th>Peso/unidad</th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.peso}</td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">✓ Stock permanente · ⏱ Producción 3-5 días · ○ Consultar</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-lc05-title">
+ <div class="container">
+ <h2 id="sizes-lc05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-LC-05</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Medida (cm)</th><th>Flauta</th><th>ECT</th><th>Peso/unidad</th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.peso}</td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Stock permanente ·  Producción 3-5 días · ○ Consultar</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-lc05-title">
-      <div class="container">
-        <h2 id="faq-lc05-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-05</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
+ <section class="faq" aria-labelledby="faq-lc05-title">
+ <div class="container">
+ <h2 id="faq-lc05-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-05</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-05 — Láminas recicladas FSC, misma resistencia, mayor sustentabilidad" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-05 — Láminas recicladas FSC, misma resistencia, mayor sustentabilidad" />
 </PageLayout>

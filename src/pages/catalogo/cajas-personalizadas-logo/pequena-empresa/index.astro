@@ -1,150 +1,150 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Cajas Personalizadas Pequeña Empresa CDMX | Desde 100 Pzas | CAD-PL-05 | CADECA";
+const title  = "Cajas Personalizadas Pequeña Empresa CDMX | Desde 100 Pzas | CAD-PL-05 | CADECA";
 const description = "Cajas de cartón personalizadas para pequeñas empresas en CDMX. Desde 100 piezas, diseño incluido sin costo, 1-2 colores, entrega 5-7 días. Fabricante directo. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"XS", ml:"20×15×10 cm", real:"20×15×10", flauta:"C",ect:"ECT-32",vacío:"0.18 kg",máx:"5 kg", disp:"yellow", label:"5-7 días", hl:false },
-  { talla:"S", ml:"28×22×12 cm", real:"28×22×12", flauta:"C",ect:"ECT-32",vacío:"0.28 kg",máx:"8 kg", disp:"yellow", label:"5-7 días", hl:true },
-  { talla:"M", ml:"38×30×18 cm", real:"38×30×18", flauta:"C",ect:"ECT-32",vacío:"0.45 kg",máx:"12 kg", disp:"yellow", label:"5-7 días", hl:true },
-  { talla:"L", ml:"50×38×25 cm", real:"50×38×25", flauta:"C",ect:"ECT-32",vacío:"0.70 kg",máx:"18 kg", disp:"yellow", label:"5-7 días", hl:false },
-  { talla:"A la Medida", ml:"Personalizada", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+ { talla:"XS", ml:"20×15×10 cm", real:"20×15×10", flauta:"C",ect:"ECT-32",vacío:"0.18 kg",máx:"5 kg", disp:"yellow", label:"5-7 días", hl:false },
+ { talla:"S", ml:"28×22×12 cm", real:"28×22×12", flauta:"C",ect:"ECT-32",vacío:"0.28 kg",máx:"8 kg", disp:"yellow", label:"5-7 días", hl:true },
+ { talla:"M", ml:"38×30×18 cm", real:"38×30×18", flauta:"C",ect:"ECT-32",vacío:"0.45 kg",máx:"12 kg", disp:"yellow", label:"5-7 días", hl:true },
+ { talla:"L", ml:"50×38×25 cm", real:"50×38×25", flauta:"C",ect:"ECT-32",vacío:"0.70 kg",máx:"18 kg", disp:"yellow", label:"5-7 días", hl:false },
+ { talla:"A la Medida", ml:"Personalizada", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
 ];
 
 const specs = [
-  ["Código SKU", "CAD-PL-05"],
-  ["Diseñado para", "PYME · Emprendedores · Inicio de marca"],
-  ["Tipo impresión", "Flexo 1 o 2 colores"],
-  ["Diseño incluido", "Sí — sin costo en 1 revisión"],
-  ["Asesoría de selección", "Gratis — recomendamos medida ideal"],
-  ["Resistencia ECT", "ECT-32 estándar"],
-  ["Tipo de pared", "Simple corrugado flauta C"],
-  ["Ajuste de medida", "Sin costo en primera orden"],
-  ["Pago", "50% anticipo · 50% contra entrega"],
-  ["Pedido mínimo", "100 piezas"],
-  ["Entrega CDMX", "5-7 días hábiles"],
-  ["Colores disponibles", "Kraft marrón · Kraft blanco"],
+ ["Código SKU", "CAD-PL-05"],
+ ["Diseñado para", "PYME · Emprendedores · Inicio de marca"],
+ ["Tipo impresión", "Flexo 1 o 2 colores"],
+ ["Diseño incluido", "Sí — sin costo en 1 revisión"],
+ ["Asesoría de selección", "Gratis — recomendamos medida ideal"],
+ ["Resistencia ECT", "ECT-32 estándar"],
+ ["Tipo de pared", "Simple corrugado flauta C"],
+ ["Ajuste de medida", "Sin costo en primera orden"],
+ ["Pago", "50% anticipo · 50% contra entrega"],
+ ["Pedido mínimo", "100 piezas"],
+ ["Entrega CDMX", "5-7 días hábiles"],
+ ["Colores disponibles", "Kraft marrón · Kraft blanco"],
 ];
 
 const faqs = [
-  {
-    id:"pl05-f1",
-    question:"¿Qué necesito para empezar mi primera orden de cajas personalizadas?",
-    answer:"Solo necesitas: tu logotipo en formato vectorizado (AI, EPS o PDF), la medida aproximada de tu producto (largo, ancho, alto), la cantidad que necesitas (mínimo 100 piezas), y el color o colores de tu marca (código Pantone si lo tienes, o una referencia visual). Si no tienes el logo vectorizado, nuestro equipo lo vectoriza sin costo en 24 horas. Si no estás seguro de la medida, te la calculamos gratis. El proceso desde primer contacto hasta entrega toma 5-7 días hábiles.",
-  },
-  {
-    id:"pl05-f2",
-    question:"¿Puedo cambiar el diseño de mis cajas en el siguiente pedido?",
-    answer:"Sí. Cada pedido puede tener un diseño diferente. El costo de cambio de diseño (nuevas placas de impresión) se aplica solo cuando cambia el arte o los colores; si solo cambias la cantidad sin cambiar el diseño, no hay costo adicional de fotopolímero. Recomendamos estandarizar el diseño en los primeros 2-3 pedidos para maximizar la inversión en placas (que se amortizan en 3-4 reórdenes del mismo diseño).",
-  },
+ {
+ id:"pl05-f1",
+ question:"¿Qué necesito para empezar mi primera orden de cajas personalizadas?",
+ answer:"Solo necesitas: tu logotipo en formato vectorizado (AI, EPS o PDF), la medida aproximada de tu producto (largo, ancho, alto), la cantidad que necesitas (mínimo 100 piezas), y el color o colores de tu marca (código Pantone si lo tienes, o una referencia visual). Si no tienes el logo vectorizado, nuestro equipo lo vectoriza sin costo en 24 horas. Si no estás seguro de la medida, te la calculamos gratis. El proceso desde primer contacto hasta entrega toma 5-7 días hábiles.",
+ },
+ {
+ id:"pl05-f2",
+ question:"¿Puedo cambiar el diseño de mis cajas en el siguiente pedido?",
+ answer:"Sí. Cada pedido puede tener un diseño diferente. El costo de cambio de diseño (nuevas placas de impresión) se aplica solo cuando cambia el arte o los colores; si solo cambias la cantidad sin cambiar el diseño, no hay costo adicional de fotopolímero. Recomendamos estandarizar el diseño en los primeros 2-3 pedidos para maximizar la inversión en placas (que se amortizan en 3-4 reórdenes del mismo diseño).",
+ },
 ];
 
 const mainImg = "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif";
 const gallery = [
-  { src: "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif", alt: "Cajas PyME — principal" },
-  { src: "/img/catalogo/caja-pyme-hero-cdmx.avif", alt: "Cajas PyME — hero" },
-  { src: "/img/catalogo/caja-pyme-despacho-cdmx.avif", alt: "Cajas PyME — despacho" },
-  { src: "/img/catalogo/caja-pyme-stack-cdmx.avif", alt: "Cajas PyME — apiladas" },
-  { src: "/img/catalogo/caja-pyme-uso-cdmx.avif", alt: "Caja PyME — en uso real" },
+ { src: "/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif", alt: "Cajas PyME — principal" },
+ { src: "/img/catalogo/caja-pyme-hero-cdmx.avif", alt: "Cajas PyME — hero" },
+ { src: "/img/catalogo/caja-pyme-despacho-cdmx.avif", alt: "Cajas PyME — despacho" },
+ { src: "/img/catalogo/caja-pyme-stack-cdmx.avif", alt: "Cajas PyME — apiladas" },
+ { src: "/img/catalogo/caja-pyme-uso-cdmx.avif", alt: "Caja PyME — en uso real" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo"}, {name:"Pequeña Empresa"}]}
-  faqItems={[{question:"¿Qué necesito para empezar mi primera orden de cajas personalizadas?", answer:"Solo necesitas: tu logotipo en formato vectorizado (AI, EPS o PDF), la medida aproximada de tu producto (largo, ancho, alto), la cantidad que necesitas (mínimo 100 piezas), y el color o colores de tu marca (código Pantone si lo tienes, o una referencia visual). Si no tienes el logo vectorizado, nuestro equipo lo vectoriza sin costo en 24 horas. Si no estás seguro de la medida, te la calculamos gratis. El proceso desde primer contacto hasta entrega toma 5-7 días hábiles."}, {question:"¿Puedo cambiar el diseño de mis cajas en el siguiente pedido?", answer:"Sí. Cada pedido puede tener un diseño diferente. El costo de cambio de diseño (nuevas placas de impresión) se aplica solo cuando cambia el arte o los colores; si solo cambias la cantidad sin cambiar el diseño, no hay costo adicional de fotopolímero. Recomendamos estandarizar el diseño en los primeros 2-3 pedidos para maximizar la inversión en placas (que se amortizan en 3-4 reórdenes del mismo diseño)."}]}
-  product={{name:"Cajas Cartón Personalizadas Pequeña Empresa", sku:"CAD-PL-05", description:"Cajas Cartón Personalizadas Pequeña Empresa en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif", material:"Cartón corrugado simple ECT-32 impresión flexo 1-2 colores para PyME", category:"Cajas de Cartón Personalizadas con Logo", moq:"100"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo"}, {name:"Pequeña Empresa"}]}
+ faqItems={[{question:"¿Qué necesito para empezar mi primera orden de cajas personalizadas?", answer:"Solo necesitas: tu logotipo en formato vectorizado (AI, EPS o PDF), la medida aproximada de tu producto (largo, ancho, alto), la cantidad que necesitas (mínimo 100 piezas), y el color o colores de tu marca (código Pantone si lo tienes, o una referencia visual). Si no tienes el logo vectorizado, nuestro equipo lo vectoriza sin costo en 24 horas. Si no estás seguro de la medida, te la calculamos gratis. El proceso desde primer contacto hasta entrega toma 5-7 días hábiles."}, {question:"¿Puedo cambiar el diseño de mis cajas en el siguiente pedido?", answer:"Sí. Cada pedido puede tener un diseño diferente. El costo de cambio de diseño (nuevas placas de impresión) se aplica solo cuando cambia el arte o los colores; si solo cambias la cantidad sin cambiar el diseño, no hay costo adicional de fotopolímero. Recomendamos estandarizar el diseño en los primeros 2-3 pedidos para maximizar la inversión en placas (que se amortizan en 3-4 reórdenes del mismo diseño)."}]}
+ product={{name:"Cajas Cartón Personalizadas Pequeña Empresa", sku:"CAD-PL-05", description:"Cajas Cartón Personalizadas Pequeña Empresa en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif", material:"Cartón corrugado simple ECT-32 impresión flexo 1-2 colores para PyME", category:"Cajas de Cartón Personalizadas con Logo", moq:"100"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-personalizadas-logo">Personalizadas con Logo</a></li>
-        <li><span class="current">Pequeña Empresa</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo">Personalizadas con Logo</a></li>
+ <li><span class="current">Pequeña Empresa</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-pl05-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-PL-05 · Personalizadas con Logo</span>
-      <h1 id="sku-pl05-title" class="cat-page-hero__title">Cajas Personalizadas <span>Pequeña Empresa</span><br>— Desde 100 Piezas CDMX</h1>
-      <p class="cat-page-hero__desc">Cajas personalizadas para PyMEs y emprendedores desde 100 piezas. Diseño incluido sin costo, asesoría de selección gratis, 1-2 colores flexo. La entrada más accesible a la personalización profesional.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-05</strong></div>
-        <div class="cat-page-hero__strip-item">Diseño: <strong>Incluido gratis</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-pl05-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-PL-05 · Personalizadas con Logo</span>
+ <h1 id="sku-pl05-title" class="cat-page-hero__title">Cajas Personalizadas <span>Pequeña Empresa</span><br>— Desde 100 Piezas CDMX</h1>
+ <p class="cat-page-hero__desc">Cajas personalizadas para PyMEs y emprendedores desde 100 piezas. Diseño incluido sin costo, asesoría de selección gratis, 1-2 colores flexo. La entrada más accesible a la personalización profesional.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-05</strong></div>
+ <div class="cat-page-hero__strip-item">Diseño: <strong>Incluido gratis</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-pl05-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-PL-05 · Familia: Personalizadas con Logo</p>
-            <h2 id="detalle-pl05-title" class="sku-detail__title">Cajas Personalizadas — Pequeña Empresa desde 100 Pzas</h2>
-            <p class="sku-detail__desc">Programa especial para PyMEs y emprendedores que quieren personalizar su empaque desde la primera orden. Diseño vectorizado incluido sin costo, asesoría de selección de medida gratis, impresión flexo 1 o 2 colores sobre kraft marrón o blanco. Pago flexible: 50% anticipo y 50% contra entrega.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">1-2 colores</span><span class="sku-detail__strip-label">Impresión</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Incluido</span><span class="sku-detail__strip-label">Diseño</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-05 Cajas Pequeña Empresa`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-05</a>
-              <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-pl05-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-PL-05 · Familia: Personalizadas con Logo</p>
+ <h2 id="detalle-pl05-title" class="sku-detail__title">Cajas Personalizadas — Pequeña Empresa desde 100 Pzas</h2>
+ <p class="sku-detail__desc">Programa especial para PyMEs y emprendedores que quieren personalizar su empaque desde la primera orden. Diseño vectorizado incluido sin costo, asesoría de selección de medida gratis, impresión flexo 1 o 2 colores sobre kraft marrón o blanco. Pago flexible: 50% anticipo y 50% contra entrega.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">1-2 colores</span><span class="sku-detail__strip-label">Impresión</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Incluido</span><span class="sku-detail__strip-label">Diseño</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-05 Cajas Pequeña Empresa`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-05</a>
+ <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-pl05-title">
-      <div class="container">
-        <h2 id="sizes-pl05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-PL-05</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
-                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Fabricamos cualquier medida personalizada desde 100 piezas. ⏱ Producción bajo pedido.</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-pl05-title">
+ <div class="container">
+ <h2 id="sizes-pl05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas Disponibles — CAD-PL-05</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+ <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Medidas estándar disponibles. Fabricamos cualquier medida personalizada desde 100 piezas.  Producción bajo pedido.</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-pl05-title">
-      <div class="container">
-        <h2 id="faq-pl05-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-PL-05</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-PL-05 — Desde 100 piezas con diseño incluido" />
+ <section class="faq" aria-labelledby="faq-pl05-title">
+ <div class="container">
+ <h2 id="faq-pl05-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-PL-05</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-PL-05 — Desde 100 piezas con diseño incluido" />
 </PageLayout>

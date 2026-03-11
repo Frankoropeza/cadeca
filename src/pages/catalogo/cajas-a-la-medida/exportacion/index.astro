@@ -1,150 +1,150 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Cajas Exportación IATA ISTA CDMX | ECT-51/61 | CAD-AM-02 | CADECA";
+const title  = "Cajas Exportación IATA ISTA CDMX | ECT-51/61 | CAD-AM-02 | CADECA";
 const description = "Cajas a la medida para exportación en CDMX. Certificación ISTA 2A/3A, normas IATA para aéreo, ECT-51 mínimo. Desde 25 piezas, entrega 5-7 días. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"S 5-15kg",     ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-51",vacío:"varía",máx:"15 kg",  disp:"yellow", label:"5-7 días",  hl:false },
-  { talla:"M 15-30kg",    ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-51",vacío:"varía",máx:"30 kg",  disp:"yellow", label:"5-7 días",  hl:true  },
-  { talla:"L 30-50kg",    ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"50 kg",  disp:"yellow", label:"5-7 días",  hl:true  },
-  { talla:"XL >50kg",     ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"+50 kg", disp:"gray",   label:"7-10 días", hl:false },
-  { talla:"A la medida",  ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+ { talla:"S 5-15kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-51",vacío:"varía",máx:"15 kg",  disp:"yellow", label:"5-7 días",  hl:false },
+ { talla:"M 15-30kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-51",vacío:"varía",máx:"30 kg",  disp:"yellow", label:"5-7 días",  hl:true  },
+ { talla:"L 30-50kg",  ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"50 kg",  disp:"yellow", label:"5-7 días",  hl:true  },
+ { talla:"XL >50kg",  ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"+50 kg", disp:"gray",  label:"7-10 días", hl:false },
+ { talla:"A la medida",  ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
 ];
 
 const specs = [
-  ["Código SKU",          "CAD-AM-02"],
-  ["Tipo",                "A la medida para exportación"],
-  ["Certificación",       "ISTA 2A/3A disponible"],
-  ["Norma aérea",         "IATA — ECT-51 mínimo"],
-  ["Norma marítima",      "ECT-61, triple corrugado BCB"],
-  ["Pruebas",             "Compresión · Vibración · Caída libre · Humedad"],
-  ["Esquineros",          "Incluidos en diseño de exportación"],
-  ["Flejado",             "Compatible con fleje plástico y metálico"],
-  ["Marcado",             "Certificación ISTA impresa o etiqueta"],
-  ["Pedido mínimo",       "25 piezas"],
-  ["Entrega CDMX",        "5-7 días hábiles"],
-  ["Asesoría",            "Gratis — selección norma según destino"],
+ ["Código SKU",  "CAD-AM-02"],
+ ["Tipo",  "A la medida para exportación"],
+ ["Certificación",  "ISTA 2A/3A disponible"],
+ ["Norma aérea",  "IATA — ECT-51 mínimo"],
+ ["Norma marítima",  "ECT-61, triple corrugado BCB"],
+ ["Pruebas",  "Compresión · Vibración · Caída libre · Humedad"],
+ ["Esquineros",  "Incluidos en diseño de exportación"],
+ ["Flejado",  "Compatible con fleje plástico y metálico"],
+ ["Marcado",  "Certificación ISTA impresa o etiqueta"],
+ ["Pedido mínimo",  "25 piezas"],
+ ["Entrega CDMX",  "5-7 días hábiles"],
+ ["Asesoría",  "Gratis — selección norma según destino"],
 ];
 
 const faqs = [
-  {
-    id:"am02-f1",
-    question:"¿Qué normas aplican para exportar productos en caja de cartón?",
-    answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA fabricamos cumpliendo estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal.",
-  },
-  {
-    id:"am02-f2",
-    question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?",
-    answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino.",
-  },
+ {
+ id:"am02-f1",
+ question:"¿Qué normas aplican para exportar productos en caja de cartón?",
+ answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA fabricamos cumpliendo estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal.",
+ },
+ {
+ id:"am02-f2",
+ question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?",
+ answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino.",
+ },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", alt: "Caja medida exportación — principal" },
-  { src: "/img/catalogo/caja-medida-export-hero-cdmx.avif", alt: "Exportación — hero" },
-  { src: "/img/catalogo/caja-medida-export-ventilacion-cdmx.avif", alt: "Caja exportación — ventilación" },
-  { src: "/img/catalogo/caja-medida-export-container-cdmx.avif", alt: "Cajas — en contenedor" },
-  { src: "/img/catalogo/caja-medida-export-refuerzo-cdmx.avif", alt: "Caja exportación — refuerzo" },
+ { src: "/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", alt: "Caja medida exportación — principal" },
+ { src: "/img/catalogo/caja-medida-export-hero-cdmx.avif", alt: "Exportación — hero" },
+ { src: "/img/catalogo/caja-medida-export-ventilacion-cdmx.avif", alt: "Caja exportación — ventilación" },
+ { src: "/img/catalogo/caja-medida-export-container-cdmx.avif", alt: "Cajas — en contenedor" },
+ { src: "/img/catalogo/caja-medida-export-refuerzo-cdmx.avif", alt: "Caja exportación — refuerzo" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Exportación IATA"}]}
-  faqItems={[{question:"¿Qué normas aplican para exportar productos en caja de cartón?", answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA fabricamos cumpliendo estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal."}, {question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?", answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino."}]}
-  product={{name:"Caja a la Medida para Exportación IATA ISTA", sku:"CAD-AM-02", description:"Caja a la Medida para Exportación IATA ISTA en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", material:"Cartón doble o triple corrugado certificado ISTA para exportación", category:"Cajas a la Medida", moq:"25"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Exportación IATA"}]}
+ faqItems={[{question:"¿Qué normas aplican para exportar productos en caja de cartón?", answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA fabricamos cumpliendo estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal."}, {question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?", answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino."}]}
+ product={{name:"Caja a la Medida para Exportación IATA ISTA", sku:"CAD-AM-02", description:"Caja a la Medida para Exportación IATA ISTA en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", material:"Cartón doble o triple corrugado certificado ISTA para exportación", category:"Cajas a la Medida", moq:"25"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
-        <li><span class="current">Exportación IATA</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><span class="current">Exportación IATA</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-am02-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AM-02 · Cajas a la Medida</span>
-      <h1 id="sku-am02-title" class="cat-page-hero__title">Caja para <span>Exportación IATA / ISTA</span><br>— ECT-51/61 CDMX</h1>
-      <p class="cat-page-hero__desc">Cajas a la medida para exportación con certificación ISTA 2A/3A y normas IATA. ECT-51 mínimo para aéreo, ECT-61 triple para marítimo. Asesoría gratis de normas por país destino.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-02</strong></div>
-        <div class="cat-page-hero__strip-item">Certificación: <strong>ISTA 2A/3A</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-am02-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AM-02 · Cajas a la Medida</span>
+ <h1 id="sku-am02-title" class="cat-page-hero__title">Caja para <span>Exportación IATA / ISTA</span><br>— ECT-51/61 CDMX</h1>
+ <p class="cat-page-hero__desc">Cajas a la medida para exportación con certificación ISTA 2A/3A y normas IATA. ECT-51 mínimo para aéreo, ECT-61 triple para marítimo. Asesoría gratis de normas por país destino.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-02</strong></div>
+ <div class="cat-page-hero__strip-item">Certificación: <strong>ISTA 2A/3A</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-am02-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AM-02 · Familia: Cajas a la Medida</p>
-            <h2 id="detalle-am02-title" class="sku-detail__title">Caja para Exportación — IATA / ISTA Certificada</h2>
-            <p class="sku-detail__desc">Cajas fabricadas conforme normas ISTA 2A/3A (transporte terrestre y aéreo) e IATA (carga aérea internacional). Doble corrugado ECT-51 para envíos aéreos; triple corrugado BCB ECT-61 para envíos marítimos. Esquineros incluidos en diseño de exportación. Sin NIMF 15 — ventaja del cartón vs madera.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ISTA 2A/3A</span><span class="sku-detail__strip-label">Certificación</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-51/61</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-02 Caja Exportación IATA ISTA`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-02</a>
-              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-am02-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AM-02 · Familia: Cajas a la Medida</p>
+ <h2 id="detalle-am02-title" class="sku-detail__title">Caja para Exportación — IATA / ISTA Certificada</h2>
+ <p class="sku-detail__desc">Cajas fabricadas conforme normas ISTA 2A/3A (transporte terrestre y aéreo) e IATA (carga aérea internacional). Doble corrugado ECT-51 para envíos aéreos; triple corrugado BCB ECT-61 para envíos marítimos. Esquineros incluidos en diseño de exportación. Sin NIMF 15 — ventaja del cartón vs madera.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ISTA 2A/3A</span><span class="sku-detail__strip-label">Certificación</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-51/61</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5-7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-02 Caja Exportación IATA ISTA`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-02</a>
+ <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-am02-title">
-      <div class="container">
-        <h2 id="sizes-am02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas — CAD-AM-02</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
-                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs. ⏱ Producción bajo pedido.</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-am02-title">
+ <div class="container">
+ <h2 id="sizes-am02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas — CAD-AM-02</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+ <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs.  Producción bajo pedido.</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-am02-title">
-      <div class="container">
-        <h2 id="faq-am02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AM-02</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-02 — Exportación certificada ISTA, entrega 5-7 días" />
+ <section class="faq" aria-labelledby="faq-am02-title">
+ <div class="container">
+ <h2 id="faq-am02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AM-02</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-02 — Exportación certificada ISTA, entrega 5-7 días" />
 </PageLayout>

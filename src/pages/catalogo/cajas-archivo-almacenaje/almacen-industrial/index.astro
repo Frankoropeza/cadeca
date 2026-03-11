@@ -1,239 +1,239 @@
 ---
-import PageLayout   from "@/layouts/PageLayout.astro";
-import FaqItem      from "@/components/FaqItem.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title   = "Caja Almacén Industrial Doble Pared CDMX | CAD-AH-02 | CADECA";
+const title  = "Caja Almacén Industrial Doble Pared CDMX | CAD-AH-02 | CADECA";
 const description = "Ficha técnica caja almacén industrial doble pared BC en CDMX. ECT-44 y ECT-51, de 40×30×30 hasta formato pallet. 6 medidas disponibles. Entrega 48-72 hrs. CADECA fabricante.";
 const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
-  { nombre:"Mediana",     lah:"40×30×30",   flauta:"BC", ect:"ECT-44",vacío:"0.95 kg",máx:"25 kg", disp:"green",  label:"Stock" },
-  { nombre:"Grande",      lah:"50×40×35",   flauta:"BC", ect:"ECT-44",vacío:"1.40 kg",máx:"30 kg", disp:"green",  label:"Stock", hl:true },
-  { nombre:"XL",          lah:"60×40×40",   flauta:"BC", ect:"ECT-51",vacío:"1.85 kg",máx:"35 kg", disp:"green",  label:"Stock" },
-  { nombre:"XXL",         lah:"80×60×50",   flauta:"BC", ect:"ECT-51",vacío:"2.90 kg",máx:"35 kg", disp:"yellow", label:"48 hrs" },
-  { nombre:"Pallet",      lah:"120×100×60", flauta:"BC", ect:"ECT-51",vacío:"5.20 kg",máx:"35 kg", disp:"yellow", label:"3-5 días" },
-  { nombre:"A la Medida", lah:"Cualquier",  flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",    disp:"gray",   label:"3-5 días" },
+ { nombre:"Mediana",  lah:"40×30×30",  flauta:"BC", ect:"ECT-44",vacío:"0.95 kg",máx:"25 kg", disp:"green",  label:"Stock" },
+ { nombre:"Grande",  lah:"50×40×35",  flauta:"BC", ect:"ECT-44",vacío:"1.40 kg",máx:"30 kg", disp:"green",  label:"Stock", hl:true },
+ { nombre:"XL",  lah:"60×40×40",  flauta:"BC", ect:"ECT-51",vacío:"1.85 kg",máx:"35 kg", disp:"green",  label:"Stock" },
+ { nombre:"XXL",  lah:"80×60×50",  flauta:"BC", ect:"ECT-51",vacío:"2.90 kg",máx:"35 kg", disp:"yellow", label:"48 hrs" },
+ { nombre:"Pallet",  lah:"120×100×60", flauta:"BC", ect:"ECT-51",vacío:"5.20 kg",máx:"35 kg", disp:"yellow", label:"3-5 días" },
+ { nombre:"A la Medida", lah:"Cualquier",  flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",  disp:"gray",  label:"3-5 días" },
 ];
 
 const specs = [
-  ["Código SKU",             "CAD-AH-02"],
-  ["Tipo de caja",           "Almacén industrial heavy-duty"],
-  ["Construcción",           "Doble pared (2 flautas + 3 liners)"],
-  ["Tipo de flauta",         "BC (B 2.5 mm + C 4.0 mm = 6.5 mm)"],
-  ["Resistencia ECT",        "ECT-44 / ECT-51 lb/pulg"],
-  ["Gramaje liner exterior", "205 g/m² kraft virgen"],
-  ["Gramaje liner interior", "170 g/m² kraft virgen"],
-  ["Gramaje liner intermedio","150 g/m²"],
-  ["Gramaje médium",         "150 g/m² (doble capa BC)"],
-  ["Material",               "Kraft virgen corrugado doble pared"],
-  ["Color exterior",         "Kraft natural sin recubrimiento"],
-  ["Cierre",                 "Solapas superiores e inferiores RSC"],
-  ["Refuerzos",              "Esquineros integrados opcionales"],
-  ["Peso máximo soportado",  "25 – 35 kg según modelo y ECT"],
-  ["Apilamiento máximo",     "8 niveles cargadas (sobre tarima)"],
-  ["Resistencia a compresión (BCT)", "≥ 450 kgf (ECT-44) · ≥ 650 kgf (ECT-51)"],
-  ["Compatibilidad racks",   "Medidas estándar para racks selectivos"],
-  ["Pedido mínimo",          "50 piezas"],
-  ["Entrega CDMX",           "48 – 72 horas hábiles"],
-  ["Certificación",          "Cumple NOM-EE-148 / TAPPI T-811"],
+ ["Código SKU",  "CAD-AH-02"],
+ ["Tipo de caja",  "Almacén industrial heavy-duty"],
+ ["Construcción",  "Doble pared (2 flautas + 3 liners)"],
+ ["Tipo de flauta",  "BC (B 2.5 mm + C 4.0 mm = 6.5 mm)"],
+ ["Resistencia ECT",  "ECT-44 / ECT-51 lb/pulg"],
+ ["Gramaje liner exterior", "205 g/m² kraft virgen"],
+ ["Gramaje liner interior", "170 g/m² kraft virgen"],
+ ["Gramaje liner intermedio","150 g/m²"],
+ ["Gramaje médium",  "150 g/m² (doble capa BC)"],
+ ["Material",  "Kraft virgen corrugado doble pared"],
+ ["Color exterior",  "Kraft natural sin recubrimiento"],
+ ["Cierre",  "Solapas superiores e inferiores RSC"],
+ ["Refuerzos",  "Esquineros integrados opcionales"],
+ ["Peso máximo soportado",  "25 – 35 kg según modelo y ECT"],
+ ["Apilamiento máximo",  "8 niveles cargadas (sobre tarima)"],
+ ["Resistencia a compresión (BCT)", "≥ 450 kgf (ECT-44) · ≥ 650 kgf (ECT-51)"],
+ ["Compatibilidad racks",  "Medidas estándar para racks selectivos"],
+ ["Pedido mínimo",  "50 piezas"],
+ ["Entrega CDMX",  "48 – 72 horas hábiles"],
+ ["Certificación",  "Cumple NOM-EE-148 / TAPPI T-811"],
 ];
 
 const faqs = [
-  {
-    id:"ah02-f1",
-    question:"¿Qué diferencia hay entre ECT-44 y ECT-51 en la caja de almacén industrial?",
-    answer:"<strong>ECT-44</strong> es la resistencia estándar para doble pared BC, adecuada para contenidos hasta <strong>25-30 kg</strong> y apilamiento de 5-6 niveles. <strong>ECT-51</strong> utiliza gramajes de médium y liner superiores, soportando hasta <strong>35 kg por caja</strong> y permitiendo apilamiento de hasta <strong>8 niveles en tarima</strong>. Para almacenaje prolongado mayor a 6 meses o ambientes con humedad superior al 60%, recomendamos ECT-51.",
-  },
-  {
-    id:"ah02-f2",
-    question:"¿Las cajas de almacén industrial son compatibles con racks selectivos?",
-    answer:"Sí. Las medidas <strong>Mediana (40×30×30 cm) y Grande (50×40×35 cm)</strong> están diseñadas para ajustarse a racks selectivos estándar con travesaños de 2.44 m. La medida <strong>Pallet (120×100×60 cm)</strong> se acomoda directamente sobre tarimas estándar de 1.20 × 1.00 m. Todas las medidas permiten <strong>optimizar el volumen cúbico</strong> del rack al máximo.",
-  },
-  {
-    id:"ah02-f3",
-    question:"¿Cuánto peso soportan las cajas de almacén industrial CAD-AH-02?",
-    answer:"La versión <strong>ECT-44</strong> soporta hasta <strong>30 kg de contenido</strong> con una resistencia a compresión BCT de <strong>450 kgf</strong>. La versión <strong>ECT-51</strong> soporta hasta <strong>35 kg</strong> con BCT de <strong>650 kgf</strong>, permitiendo apilamiento de 8 niveles completos sobre tarima. Estos valores aplican bajo condiciones estándar de 20°C y 50% de humedad relativa.",
-  },
-  {
-    id:"ah02-f4",
-    question:"¿Cómo protejo las cajas de la humedad en bodega o almacén?",
-    answer:"Para ambientes con <strong>humedad relativa superior al 60%</strong>, recomendamos solicitar <strong>tratamiento hidrorrepelente</strong> en el liner exterior. Además, almacene las cajas sobre <strong>tarimas plásticas elevadas mínimo 10 cm del piso</strong> y mantenga ventilación cruzada en la bodega. Para zonas costeras o bodegas sin climatización, considere también el uso de <strong>deshumidificadores industriales</strong> para mantener la HR por debajo del 65%.",
-  },
-  {
-    id:"ah02-f5",
-    question:"¿Puedo solicitar impresión o identificación en la caja de almacén?",
-    answer:"Sí. Ofrecemos <strong>impresión flexográfica de hasta 3 tintas</strong> directamente sobre el cartón kraft. Esto permite incluir <strong>logotipo, código de barras, número de lote y datos de manejo</strong> (flechas de orientación, símbolo frágil, límite de apilamiento). La impresión tiene un costo adicional y aplica para pedidos desde <strong>100 piezas</strong>. También fabricamos con <strong>áreas en blanco preimpresas</strong> para escritura manual.",
-  },
-  {
-    id:"ah02-f6",
-    question:"¿Cuál es el tiempo de producción para la medida Pallet y medidas especiales?",
-    answer:"Las medidas <strong>Mediana, Grande y XL en stock</strong> se entregan en <strong>48 a 72 horas hábiles</strong>. La medida <strong>XXL</strong> requiere <strong>48 horas de producción</strong>. La medida <strong>Pallet (120×100×60 cm)</strong> y medidas a la medida se fabrican en <strong>3 a 5 días hábiles</strong> después de aprobar el plano técnico. Para pedidos mayores a 500 piezas, consulte tiempos especiales por WhatsApp.",
-  },
+ {
+ id:"ah02-f1",
+ question:"¿Qué diferencia hay entre ECT-44 y ECT-51 en la caja de almacén industrial?",
+ answer:"<strong>ECT-44</strong> es la resistencia estándar para doble pared BC, adecuada para contenidos hasta <strong>25-30 kg</strong> y apilamiento de 5-6 niveles. <strong>ECT-51</strong> utiliza gramajes de médium y liner superiores, soportando hasta <strong>35 kg por caja</strong> y permitiendo apilamiento de hasta <strong>8 niveles en tarima</strong>. Para almacenaje prolongado mayor a 6 meses o ambientes con humedad superior al 60%, recomendamos ECT-51.",
+ },
+ {
+ id:"ah02-f2",
+ question:"¿Las cajas de almacén industrial son compatibles con racks selectivos?",
+ answer:"Sí. Las medidas <strong>Mediana (40×30×30 cm) y Grande (50×40×35 cm)</strong> están diseñadas para ajustarse a racks selectivos estándar con travesaños de 2.44 m. La medida <strong>Pallet (120×100×60 cm)</strong> se acomoda directamente sobre tarimas estándar de 1.20 × 1.00 m. Todas las medidas permiten <strong>optimizar el volumen cúbico</strong> del rack al máximo.",
+ },
+ {
+ id:"ah02-f3",
+ question:"¿Cuánto peso soportan las cajas de almacén industrial CAD-AH-02?",
+ answer:"La versión <strong>ECT-44</strong> soporta hasta <strong>30 kg de contenido</strong> con una resistencia a compresión BCT de <strong>450 kgf</strong>. La versión <strong>ECT-51</strong> soporta hasta <strong>35 kg</strong> con BCT de <strong>650 kgf</strong>, permitiendo apilamiento de 8 niveles completos sobre tarima. Estos valores aplican bajo condiciones estándar de 20°C y 50% de humedad relativa.",
+ },
+ {
+ id:"ah02-f4",
+ question:"¿Cómo protejo las cajas de la humedad en bodega o almacén?",
+ answer:"Para ambientes con <strong>humedad relativa superior al 60%</strong>, recomendamos solicitar <strong>tratamiento hidrorrepelente</strong> en el liner exterior. Además, almacene las cajas sobre <strong>tarimas plásticas elevadas mínimo 10 cm del piso</strong> y mantenga ventilación cruzada en la bodega. Para zonas costeras o bodegas sin climatización, considere también el uso de <strong>deshumidificadores industriales</strong> para mantener la HR por debajo del 65%.",
+ },
+ {
+ id:"ah02-f5",
+ question:"¿Puedo solicitar impresión o identificación en la caja de almacén?",
+ answer:"Sí. Ofrecemos <strong>impresión flexográfica de hasta 3 tintas</strong> directamente sobre el cartón kraft. Esto permite incluir <strong>logotipo, código de barras, número de lote y datos de manejo</strong> (flechas de orientación, símbolo frágil, límite de apilamiento). La impresión tiene un costo adicional y aplica para pedidos desde <strong>100 piezas</strong>. También fabricamos con <strong>áreas en blanco preimpresas</strong> para escritura manual.",
+ },
+ {
+ id:"ah02-f6",
+ question:"¿Cuál es el tiempo de producción para la medida Pallet y medidas especiales?",
+ answer:"Las medidas <strong>Mediana, Grande y XL en stock</strong> se entregan en <strong>48 a 72 horas hábiles</strong>. La medida <strong>XXL</strong> requiere <strong>48 horas de producción</strong>. La medida <strong>Pallet (120×100×60 cm)</strong> y medidas a la medida se fabrican en <strong>3 a 5 días hábiles</strong> después de aprobar el plano técnico. Para pedidos mayores a 500 piezas, consulte tiempos especiales por WhatsApp.",
+ },
 ];
 
 const mainImg = "/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif", alt: "Almacén industrial — principal" },
-  { src: "/img/catalogo/caja-almacen-industrial-hero-cdmx.avif", alt: "Almacén industrial — hero" },
-  { src: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif", alt: "Racks industriales 6 alturas" },
-  { src: "/img/catalogo/caja-almacen-industrial-pasillos-cdmx.avif", alt: "Pasillos de almacén" },
-  { src: "/img/catalogo/caja-almacen-industrial-capas-cdmx.avif", alt: "Triple pared EB — capas" },
+ { src: "/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif", alt: "Almacén industrial — principal" },
+ { src: "/img/catalogo/caja-almacen-industrial-hero-cdmx.avif", alt: "Almacén industrial — hero" },
+ { src: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif", alt: "Racks industriales 6 alturas" },
+ { src: "/img/catalogo/caja-almacen-industrial-pasillos-cdmx.avif", alt: "Pasillos de almacén" },
+ { src: "/img/catalogo/caja-almacen-industrial-capas-cdmx.avif", alt: "Triple pared EB — capas" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Almacén Industrial"}]}
-  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
-  product={{name:"Caja Almacén Industrial Doble Pared", sku:"CAD-AH-02", description:"Caja de almacén industrial doble pared BC, ECT-44 y ECT-51, para racks y tarimas — CADECA CDMX", image:"/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif", material:"Cartón kraft virgen corrugado doble pared BC", category:"Cajas de Archivo y Almacenaje", moq:"50"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Almacén Industrial"}]}
+ faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
+ product={{name:"Caja Almacén Industrial Doble Pared", sku:"CAD-AH-02", description:"Caja de almacén industrial doble pared BC, ECT-44 y ECT-51, para racks y tarimas — CADECA CDMX", image:"/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif", material:"Cartón kraft virgen corrugado doble pared BC", category:"Cajas de Archivo y Almacenaje", moq:"50"}}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/catalogo">Catálogo</a></li>
-      <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
-      <li><span class="current">Almacén Industrial</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+ <li><span class="current">Almacén Industrial</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-ah02-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AH-02 · Archivo y Almacenaje</span>
-      <h1 id="sku-ah02-title" class="cat-page-hero__title">
-        Caja Almacén Industrial<br><span>Doble Pared BC — CDMX</span>
-      </h1>
-      <p class="cat-page-hero__desc">
-        Caja de cartón corrugado doble pared BC para almacenamiento industrial. ECT-44 y ECT-51 para bodegas, racks selectivos y centros de distribución. Resistencia superior al apilamiento prolongado con entrega en 48-72 hrs en CDMX.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-02</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-51</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-ah02-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AH-02 · Archivo y Almacenaje</span>
+ <h1 id="sku-ah02-title" class="cat-page-hero__title">
+ Caja Almacén Industrial<br><span>Doble Pared BC — CDMX</span>
+ </h1>
+ <p class="cat-page-hero__desc">
+ Caja de cartón corrugado doble pared BC para almacenamiento industrial. ECT-44 y ECT-51 para bodegas, racks selectivos y centros de distribución. Resistencia superior al apilamiento prolongado con entrega en 48-72 hrs en CDMX.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-02</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-51</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <section class="sku-detail" aria-labelledby="detalle-ah02-title">
-      <div class="container">
-        <div class="sku-detail__grid">
+ <section class="sku-detail" aria-labelledby="detalle-ah02-title">
+ <div class="container">
+ <div class="sku-detail__grid">
 
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
 
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AH-02 · Familia: Archivo y Almacenaje</p>
-            <h2 id="detalle-ah02-title" class="sku-detail__title">Almacén Industrial — Doble Pared BC</h2>
-            <p class="sku-detail__desc">
-              Caja industrial fabricada en cartón kraft virgen corrugado de doble pared con flauta BC (6.5 mm de espesor). Resistencia ECT-44 y ECT-51, soporta de 25 a 35 kg de contenido. Diseñada para almacenamiento en racks selectivos, tarimas estándar y centros de distribución. Apilable hasta 8 niveles con carga completa sobre tarima. Disponible desde tamaño mediano 40×30×30 cm hasta formato pallet 120×100×60 cm. Fabricación en CDMX con entrega de 48 a 72 horas hábiles.
-            </p>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AH-02 · Familia: Archivo y Almacenaje</p>
+ <h2 id="detalle-ah02-title" class="sku-detail__title">Almacén Industrial — Doble Pared BC</h2>
+ <p class="sku-detail__desc">
+ Caja industrial fabricada en cartón kraft virgen corrugado de doble pared con flauta BC (6.5 mm de espesor). Resistencia ECT-44 y ECT-51, soporta de 25 a 35 kg de contenido. Diseñada para almacenamiento en racks selectivos, tarimas estándar y centros de distribución. Apilable hasta 8 niveles con carga completa sobre tarima. Disponible desde tamaño mediano 40×30×30 cm hasta formato pallet 120×100×60 cm. Fabricación en CDMX con entrega de 48 a 72 horas hábiles.
+ </p>
 
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">ECT-44/51</span>
-                <span class="sku-detail__strip-label">Resistencia</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">35 kg</span>
-                <span class="sku-detail__strip-label">Peso máx.</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">8 niveles</span>
-                <span class="sku-detail__strip-label">Apilamiento</span>
-              </div>
-              <div class="sku-detail__strip-item">
-                <span class="sku-detail__strip-value">48 hrs</span>
-                <span class="sku-detail__strip-label">Entrega CDMX</span>
-              </div>
-            </div>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">ECT-44/51</span>
+ <span class="sku-detail__strip-label">Resistencia</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">35 kg</span>
+ <span class="sku-detail__strip-label">Peso máx.</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">8 niveles</span>
+ <span class="sku-detail__strip-label">Apilamiento</span>
+ </div>
+ <div class="sku-detail__strip-item">
+ <span class="sku-detail__strip-value">48 hrs</span>
+ <span class="sku-detail__strip-label">Entrega CDMX</span>
+ </div>
+ </div>
 
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table">
-              <tbody>
-                {specs.map(([label, val]) => (
-                  <tr><td>{label}</td><td>{val}</td></tr>
-                ))}
-              </tbody>
-            </table>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table">
+ <tbody>
+ {specs.map(([label, val]) => (
+ <tr><td>{label}</td><td>{val}</td></tr>
+ ))}
+ </tbody>
+ </table>
 
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-02 Almacén Industrial Doble Pared`}
-                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-02</a>
-              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-02 Almacén Industrial Doble Pared`}
+ target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-02</a>
+ <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-ah02-title">
-      <div class="container">
-        <h2 id="sizes-ah02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
-          Medidas Disponibles — CAD-AH-02
-        </h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead>
-              <tr>
-                <th>Tamaño</th>
-                <th>L × A × H (cm)</th>
-                <th>Flauta</th>
-                <th>ECT</th>
-                <th>Peso vacío</th>
-                <th>Peso máx.</th>
-                <th>Disponibilidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td>{m.nombre}</td>
-                  <td><strong>{m.lah}</strong></td>
-                  <td>{m.flauta}</td>
-                  <td>{m.ect}</td>
-                  <td>{m.vacío}</td>
-                  <td><strong>{m.máx}</strong></td>
-                  <td>
-                    <span class={`stock-chip stock-chip--${m.disp}`}>
-                      {m.disp==="green"?"✓":m.disp==="yellow"?"⏱":"○"} {m.label}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
-          ✓ Stock permanente · ⏱ Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
-        </p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-ah02-title">
+ <div class="container">
+ <h2 id="sizes-ah02-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">
+ Medidas Disponibles — CAD-AH-02
+ </h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead>
+ <tr>
+ <th>Tamaño</th>
+ <th>L × A × H (cm)</th>
+ <th>Flauta</th>
+ <th>ECT</th>
+ <th>Peso vacío</th>
+ <th>Peso máx.</th>
+ <th>Disponibilidad</th>
+ </tr>
+ </thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td>{m.nombre}</td>
+ <td><strong>{m.lah}</strong></td>
+ <td>{m.flauta}</td>
+ <td>{m.ect}</td>
+ <td>{m.vacío}</td>
+ <td><strong>{m.máx}</strong></td>
+ <td>
+ <span class={`stock-chip stock-chip--${m.disp}`}>
+ {m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}
+ </span>
+ </td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
+ Stock permanente ·  Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+ </p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-ah02-title">
-      <div class="container">
-        <h2 id="faq-ah02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
-          Preguntas Técnicas — CAD-AH-02
-        </h2>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <section class="faq" aria-labelledby="faq-ah02-title">
+ <div class="container">
+ <h2 id="faq-ah02-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">
+ Preguntas Técnicas — CAD-AH-02
+ </h2>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-02 — Almacén Industrial, entrega 48-72 hrs en CDMX" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-02 — Almacén Industrial, entrega 48-72 hrs en CDMX" />
 
 </PageLayout>

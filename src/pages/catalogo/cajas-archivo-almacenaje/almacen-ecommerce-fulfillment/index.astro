@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Almacenaje E-commerce Fulfillment CDMX | Apilable | CAD-AH-09 | CADECA";
+const title  = "Caja Almacenaje E-commerce Fulfillment CDMX | Apilable | CAD-AH-09 | CADECA";
 const description = "Caja de almacenaje para e-commerce y fulfillment en CDMX. Apilable 1.5 m, etiquetado lateral y frontal, compatible con shelving. MOQ 100 pzas. Entrega 24 hrs. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-AH-09"],
-  ["Apilado", "Hasta 1.5 m sin deformación"],
-  ["Etiquetado", "Frontal + lateral"],
-  ["Compatible", "Racks shelving 60 cm"],
-  ["Resistencia", "ECT-32"],
-  ["Medidas", "3 estándar fulfillment"],
-  ["Material", "Kraft virgen / reciclado"],
-  ["Pedido mínimo", "100 piezas"],
-  ["Entrega CDMX", "24 hrs"],
+ ["Código SKU", "CAD-AH-09"],
+ ["Apilado", "Hasta 1.5 m sin deformación"],
+ ["Etiquetado", "Frontal + lateral"],
+ ["Compatible", "Racks shelving 60 cm"],
+ ["Resistencia", "ECT-32"],
+ ["Medidas", "3 estándar fulfillment"],
+ ["Material", "Kraft virgen / reciclado"],
+ ["Pedido mínimo", "100 piezas"],
+ ["Entrega CDMX", "24 hrs"],
 ];
 
 const faqs = [
-  { id:"cad-ah-09-f1", question:"¿Las cajas tienen zona de etiquetado preimpresa?", answer:"Sí. CAD-AH-09 tiene un rectángulo blanco preimpreso en el frente y lateral (8×5 cm) que facilita el pegado de etiquetas de identificación de SKU, producto y cantidad. También pueden pedirse con serigrafía personalizada para incluir el nombre de tu empresa o sistema de colores por categoría de producto." },
-  { id:"cad-ah-09-f2", question:"¿Son compatibles con pistolas de código de barras y lectores RFID?", answer:"Las etiquetas de papel de código de barras adhieren perfectamente al liner kraft de la caja. Para lectores RFID, la caja de cartón no interfiere con las señales de radio frecuencia, a diferencia de cajas metálicas. Si necesitas que la caja facilite el conteo automático de inventario con RFID, podemos integrar etiquetas RFID en la caja durante la fabricación bajo pedido especial." },
-  { id:"cad-ah-09-f3", question:"¿Cuántos productos caben en cada medida?", answer:"Depende del producto. Las 3 medidas estándar de CAD-AH-09 están diseñadas para: (1) unidades pequeñas de hasta 500 g como cosméticos y suplementos, (2) unidades medianas de 500 g a 2 kg como ropa y accesorios, y (3) unidades grandes hasta 5 kg. Compártenos el producto y hacemos el cálculo de densidad de almacenaje para optimizar tu layout de bodega." },
+ { id:"cad-ah-09-f1", question:"¿Las cajas tienen zona de etiquetado preimpresa?", answer:"Sí. CAD-AH-09 tiene un rectángulo blanco preimpreso en el frente y lateral (8×5 cm) que facilita el pegado de etiquetas de identificación de SKU, producto y cantidad. También pueden pedirse con serigrafía personalizada para incluir el nombre de tu empresa o sistema de colores por categoría de producto." },
+ { id:"cad-ah-09-f2", question:"¿Son compatibles con pistolas de código de barras y lectores RFID?", answer:"Las etiquetas de papel de código de barras adhieren perfectamente al liner kraft de la caja. Para lectores RFID, la caja de cartón no interfiere con las señales de radio frecuencia, a diferencia de cajas metálicas. Si necesitas que la caja facilite el conteo automático de inventario con RFID, podemos integrar etiquetas RFID en la caja durante la fabricación bajo pedido especial." },
+ { id:"cad-ah-09-f3", question:"¿Cuántos productos caben en cada medida?", answer:"Depende del producto. Las 3 medidas estándar de CAD-AH-09 están diseñadas para: (1) unidades pequeñas de hasta 500 g como cosméticos y suplementos, (2) unidades medianas de 500 g a 2 kg como ropa y accesorios, y (3) unidades grandes hasta 5 kg. Compártenos el producto y hacemos el cálculo de densidad de almacenaje para optimizar tu layout de bodega." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-almacen-industrial-hero-cdmx.avif", alt: "Caja almacenaje e-commerce fulfillment CDMX" },
-  { src: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif", alt: "Rack fulfillment almacenaje" },
-  { src: "/img/catalogo/caja-almacen-industrial-pasillos-cdmx.avif", alt: "Pasillos fulfillment" },
-  { src: "/img/catalogo/caja-apilable-stack-5-cdmx.avif", alt: "Apilado 1.5m cajas" },
-  { src: "/img/catalogo/caja-almacen-industrial-capas-cdmx.avif", alt: "Capas almacenaje ecommerce" },
+ { src: "/img/catalogo/caja-almacen-industrial-hero-cdmx.avif", alt: "Caja almacenaje e-commerce fulfillment CDMX" },
+ { src: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif", alt: "Rack fulfillment almacenaje" },
+ { src: "/img/catalogo/caja-almacen-industrial-pasillos-cdmx.avif", alt: "Pasillos fulfillment" },
+ { src: "/img/catalogo/caja-apilable-stack-5-cdmx.avif", alt: "Apilado 1.5m cajas" },
+ { src: "/img/catalogo/caja-almacen-industrial-capas-cdmx.avif", alt: "Capas almacenaje ecommerce" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas de Archivo y Almacenaje",href:"/catalogo/cajas-archivo-almacenaje"},{name:"Caja de Almacenaje para E-commerce y Fulfillment"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja de Almacenaje para E-commerce y Fulfillment",sku:"CAD-AH-09",description:"Caja de almacenaje para bodegas de e-commerce y centros de fulfillment. Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible con racks de shelving estándar.",image:gallery[0].src,material:"CAD-AH-09",category:"Cajas de Archivo y Almacenaje",moq:"100 piezas"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas de Archivo y Almacenaje",href:"/catalogo/cajas-archivo-almacenaje"},{name:"Caja de Almacenaje para E-commerce y Fulfillment"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja de Almacenaje para E-commerce y Fulfillment",sku:"CAD-AH-09",description:"Caja de almacenaje para bodegas de e-commerce y centros de fulfillment. Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible con racks de shelving estándar.",image:gallery[0].src,material:"CAD-AH-09",category:"Cajas de Archivo y Almacenaje",moq:"100 piezas"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-archivo-almacenaje">Cajas de Archivo y Almacenaje</a></li>
-        <li><span class="current">Caja de Almacenaje para E-commerce y Fulfillment</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-archivo-almacenaje">Cajas de Archivo y Almacenaje</a></li>
+ <li><span class="current">Caja de Almacenaje para E-commerce y Fulfillment</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadah09-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AH-09 · Cajas de Archivo y Almacenaje</span>
-      <h1 id="sku-cadah09-title" class="cat-page-hero__title">Caja de Almacenaje para <span>E-commerce</span> y Fulfillment CDMX</h1>
-      <p class="cat-page-hero__desc">Caja de almacenaje para bodegas de e-commerce y centros de fulfillment. Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible con racks de shelving estándar.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-09</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadah09-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AH-09 · Cajas de Archivo y Almacenaje</span>
+ <h1 id="sku-cadah09-title" class="cat-page-hero__title">Caja de Almacenaje para <span>E-commerce</span> y Fulfillment CDMX</h1>
+ <p class="cat-page-hero__desc">Caja de almacenaje para bodegas de e-commerce y centros de fulfillment. Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible con racks de shelving estándar.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-09</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadah09-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AH-09 · Familia: Cajas de Archivo y Almacenaje</p>
-            <h2 id="detalle-cadah09-title" class="sku-detail__title">Caja de Almacenaje para E-commerce y Fulfillment</h2>
-            <p class="sku-detail__desc">Los centros de fulfillment y las bodegas de e-commerce necesitan una caja de almacenaje que maximice el uso del espacio vertical, sea fácil de identificar en rack y soporte el manejo intensivo diario de pickers. CAD-AH-09 es apilable hasta 1.5 metros, tiene zona de etiquetado frontal y lateral preimpresa para SKU/producto y cantidad, y es compatible con los racks de shelving de 60 cm de profundidad más comunes en bodegas PIMSA y Cuajimalpa.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">1.5m</span><span class="sku-detail__strip-label">Apilado</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Shelving</span><span class="sku-detail__strip-label">Compatible</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-09 Caja de Almacenaje para E-commerce y Fulfillment`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-09</a>
-              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadah09-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AH-09 · Familia: Cajas de Archivo y Almacenaje</p>
+ <h2 id="detalle-cadah09-title" class="sku-detail__title">Caja de Almacenaje para E-commerce y Fulfillment</h2>
+ <p class="sku-detail__desc">Los centros de fulfillment y las bodegas de e-commerce necesitan una caja de almacenaje que maximice el uso del espacio vertical, sea fácil de identificar en rack y soporte el manejo intensivo diario de pickers. CAD-AH-09 es apilable hasta 1.5 metros, tiene zona de etiquetado frontal y lateral preimpresa para SKU/producto y cantidad, y es compatible con los racks de shelving de 60 cm de profundidad más comunes en bodegas PIMSA y Cuajimalpa.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">1.5m</span><span class="sku-detail__strip-label">Apilado</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Shelving</span><span class="sku-detail__strip-label">Compatible</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-09 Caja de Almacenaje para E-commerce y Fulfillment`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-09</a>
+ <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadah09-title">
-      <div class="container">
-        <h2 id="faq-cadah09-title" class="sku-faq__title">Preguntas Frecuentes — Caja de Almacenaje para E-commerce y Fulfillment</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadah09-title">
+ <div class="container">
+ <h2 id="faq-cadah09-title" class="sku-faq__title">Preguntas Frecuentes — Caja de Almacenaje para E-commerce y Fulfillment</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Tienes bodega de e-commerce? Cotiza las cajas de almacenaje que maximizan tu espacio vertical" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Tienes bodega de e-commerce? Cotiza las cajas de almacenaje que maximizan tu espacio vertical" />
 </PageLayout>

@@ -1,150 +1,150 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Cajas Automáticas Alta Velocidad CDMX | ±0.5mm Tolerancia | CAD-AM-05 | CADECA";
+const title  = "Cajas Automáticas Alta Velocidad CDMX | ±0.5mm Tolerancia | CAD-AM-05 | CADECA";
 const description = "Cajas para líneas de empaque automáticas en CDMX. Tolerancias ±0.5mm, RSC y auto-erect, compatibles con Bosch, IWK, Marchesini. Desde 500 pzas. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"XS línea rápida", ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"varía",máx:"5 kg",  disp:"yellow", label:"7-10 días",  hl:false },
-  { talla:"S 5-10kg",        ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"varía",máx:"10 kg", disp:"yellow", label:"7-10 días",  hl:true  },
-  { talla:"M 10-20kg",       ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"20 kg", disp:"yellow", label:"7-10 días",  hl:true  },
-  { talla:"L 20-30kg",       ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"30 kg", disp:"gray",   label:"10-15 días", hl:false },
-  { talla:"A la medida",     ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+ { talla:"XS línea rápida", ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"varía",máx:"5 kg",  disp:"yellow", label:"7-10 días",  hl:false },
+ { talla:"S 5-10kg",  ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"varía",máx:"10 kg", disp:"yellow", label:"7-10 días",  hl:true  },
+ { talla:"M 10-20kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"20 kg", disp:"yellow", label:"7-10 días",  hl:true  },
+ { talla:"L 20-30kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"30 kg", disp:"gray",  label:"10-15 días", hl:false },
+ { talla:"A la medida",  ml:"Personalizada", real:"A definir", flauta:"—",ect:"—",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
 ];
 
 const specs = [
-  ["Código SKU",              "CAD-AM-05"],
-  ["Tipo",                    "A la medida para línea automática"],
-  ["Tolerancia dimensional",  "±0.5mm en todos los ejes"],
-  ["Estilo RSC",              "Regular Slotted Container"],
-  ["Estilo auto-erect",       "Crash-lock disponible"],
-  ["Compatibilidad",          "Bosch · IWK · Marchesini · Romaco y más"],
-  ["Tipo de pared",           "Simple ECT-32 o Doble ECT-44"],
-  ["Rigidez torsional",       "Verificada en muestra de preproducción"],
-  ["Muestra preproducción",   "5 piezas gratis antes del pedido"],
-  ["Pedido mínimo",           "500 piezas"],
-  ["Entrega CDMX",            "7-10 días hábiles"],
-  ["Velocidad de línea",      "Verificado hasta 150 cajas/min con ajuste de máquina"],
+ ["Código SKU",  "CAD-AM-05"],
+ ["Tipo",  "A la medida para línea automática"],
+ ["Tolerancia dimensional",  "±0.5mm en todos los ejes"],
+ ["Estilo RSC",  "Regular Slotted Container"],
+ ["Estilo auto-erect",  "Crash-lock disponible"],
+ ["Compatibilidad",  "Bosch · IWK · Marchesini · Romaco y más"],
+ ["Tipo de pared",  "Simple ECT-32 o Doble ECT-44"],
+ ["Rigidez torsional",  "Verificada en muestra de preproducción"],
+ ["Muestra preproducción",  "5 piezas gratis antes del pedido"],
+ ["Pedido mínimo",  "500 piezas"],
+ ["Entrega CDMX",  "7-10 días hábiles"],
+ ["Velocidad de línea",  "Verificado hasta 150 cajas/min con ajuste de máquina"],
 ];
 
 const faqs = [
-  {
-    id:"am05-f1",
-    question:"¿Qué tolerancias dimensionales necesita una línea de empaque automática?",
-    answer:"Las líneas automáticas modernas (Bosch, IWK, Marchesini, Romaco) operan con tolerancias de ±0.5mm a ±1mm en largo, ancho y alto de la caja. Una variación mayor causa atascamientos, mal sellado del flap, paros no programados y cajas dañadas. Las cajas estándar de fábrica tienen tolerancias de ±2-3mm, lo que es insuficiente para velocidades de 80+ cajas por minuto. Nuestro CAD-AM-05 se fabrica con control de tolerancias ±0.5mm y se entrega con muestra de preproducción para validar en tu línea antes del pedido completo.",
-  },
-  {
-    id:"am05-f2",
-    question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?",
-    answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos.",
-  },
+ {
+ id:"am05-f1",
+ question:"¿Qué tolerancias dimensionales necesita una línea de empaque automática?",
+ answer:"Las líneas automáticas modernas (Bosch, IWK, Marchesini, Romaco) operan con tolerancias de ±0.5mm a ±1mm en largo, ancho y alto de la caja. Una variación mayor causa atascamientos, mal sellado del flap, paros no programados y cajas dañadas. Las cajas estándar de fábrica tienen tolerancias de ±2-3mm, lo que es insuficiente para velocidades de 80+ cajas por minuto. Nuestro CAD-AM-05 se fabrica con control de tolerancias ±0.5mm y se entrega con muestra de preproducción para validar en tu línea antes del pedido completo.",
+ },
+ {
+ id:"am05-f2",
+ question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?",
+ answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos.",
+ },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", alt: "Caja medida automática — principal" },
-  { src: "/img/catalogo/caja-medida-auto-hero-cdmx.avif", alt: "Línea automática — hero" },
-  { src: "/img/catalogo/caja-medida-auto-conveyor-cdmx.avif", alt: "Conveyor automático" },
-  { src: "/img/catalogo/caja-medida-auto-calidad-cdmx.avif", alt: "Control de calidad automático" },
-  { src: "/img/catalogo/caja-medida-auto-tolerancia-cdmx.avif", alt: "Tolerancia ±1mm en producción" },
+ { src: "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", alt: "Caja medida automática — principal" },
+ { src: "/img/catalogo/caja-medida-auto-hero-cdmx.avif", alt: "Línea automática — hero" },
+ { src: "/img/catalogo/caja-medida-auto-conveyor-cdmx.avif", alt: "Conveyor automático" },
+ { src: "/img/catalogo/caja-medida-auto-calidad-cdmx.avif", alt: "Control de calidad automático" },
+ { src: "/img/catalogo/caja-medida-auto-tolerancia-cdmx.avif", alt: "Tolerancia ±1mm en producción" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Automática Alta Velocidad"}]}
-  faqItems={[{question:"¿Qué tolerancias dimensionales necesita una línea de empaque automática?", answer:"Las líneas automáticas modernas (Bosch, IWK, Marchesini, Romaco) operan con tolerancias de ±0.5mm a ±1mm en largo, ancho y alto de la caja. Una variación mayor causa atascamientos, mal sellado del flap, paros no programados y cajas dañadas. Las cajas estándar de fábrica tienen tolerancias de ±2-3mm, lo que es insuficiente para velocidades de 80+ cajas por minuto. Nuestro CAD-AM-05 se fabrica con control de tolerancias ±0.5mm y se entrega con muestra de preproducción para validar en tu línea antes del pedido completo."}, {question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?", answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos."}]}
-  product={{name:"Caja Automática Alta Velocidad Línea de Empaque", sku:"CAD-AM-05", description:"Caja Automática Alta Velocidad Línea de Empaque en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", material:"Cartón corrugado tolerancia ±0.5mm para líneas automáticas de empaque", category:"Cajas a la Medida", moq:"500"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Automática Alta Velocidad"}]}
+ faqItems={[{question:"¿Qué tolerancias dimensionales necesita una línea de empaque automática?", answer:"Las líneas automáticas modernas (Bosch, IWK, Marchesini, Romaco) operan con tolerancias de ±0.5mm a ±1mm en largo, ancho y alto de la caja. Una variación mayor causa atascamientos, mal sellado del flap, paros no programados y cajas dañadas. Las cajas estándar de fábrica tienen tolerancias de ±2-3mm, lo que es insuficiente para velocidades de 80+ cajas por minuto. Nuestro CAD-AM-05 se fabrica con control de tolerancias ±0.5mm y se entrega con muestra de preproducción para validar en tu línea antes del pedido completo."}, {question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?", answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos."}]}
+ product={{name:"Caja Automática Alta Velocidad Línea de Empaque", sku:"CAD-AM-05", description:"Caja Automática Alta Velocidad Línea de Empaque en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", material:"Cartón corrugado tolerancia ±0.5mm para líneas automáticas de empaque", category:"Cajas a la Medida", moq:"500"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
-        <li><span class="current">Automática Alta Velocidad</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><span class="current">Automática Alta Velocidad</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-am05-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-AM-05 · Cajas a la Medida</span>
-      <h1 id="sku-am05-title" class="cat-page-hero__title">Caja <span>Automática Alta Velocidad</span><br>— ±0.5mm Tolerancia CDMX</h1>
-      <p class="cat-page-hero__desc">Cajas para líneas de empaque automáticas con tolerancias ±0.5mm en todos los ejes. RSC y auto-erect crash-lock. Compatibles con Bosch, IWK, Marchesini y Romaco. Muestra de preproducción gratis.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-05</strong></div>
-        <div class="cat-page-hero__strip-item">Tolerancia: <strong>±0.5mm</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>7-10 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-am05-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-AM-05 · Cajas a la Medida</span>
+ <h1 id="sku-am05-title" class="cat-page-hero__title">Caja <span>Automática Alta Velocidad</span><br>— ±0.5mm Tolerancia CDMX</h1>
+ <p class="cat-page-hero__desc">Cajas para líneas de empaque automáticas con tolerancias ±0.5mm en todos los ejes. RSC y auto-erect crash-lock. Compatibles con Bosch, IWK, Marchesini y Romaco. Muestra de preproducción gratis.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-05</strong></div>
+ <div class="cat-page-hero__strip-item">Tolerancia: <strong>±0.5mm</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>7-10 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-am05-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-AM-05 · Familia: Cajas a la Medida</p>
-            <h2 id="detalle-am05-title" class="sku-detail__title">Caja Automática — Alta Velocidad ±0.5mm</h2>
-            <p class="sku-detail__desc">Cajas fabricadas con control de tolerancias ±0.5mm para líneas de empaque automáticas de alta velocidad. Estilo RSC o auto-erect crash-lock según requerimiento. Verificado hasta 150 cajas/min con ajuste de máquina. 5 piezas de muestra gratis antes del pedido para validar en tu línea.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">±0.5mm</span><span class="sku-detail__strip-label">Tolerancia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">RSC / Auto-erect</span><span class="sku-detail__strip-label">Estilo</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">500 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7-10 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-05 Caja Automática Alta Velocidad`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-05</a>
-              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-am05-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-AM-05 · Familia: Cajas a la Medida</p>
+ <h2 id="detalle-am05-title" class="sku-detail__title">Caja Automática — Alta Velocidad ±0.5mm</h2>
+ <p class="sku-detail__desc">Cajas fabricadas con control de tolerancias ±0.5mm para líneas de empaque automáticas de alta velocidad. Estilo RSC o auto-erect crash-lock según requerimiento. Verificado hasta 150 cajas/min con ajuste de máquina. 5 piezas de muestra gratis antes del pedido para validar en tu línea.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">±0.5mm</span><span class="sku-detail__strip-label">Tolerancia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">RSC / Auto-erect</span><span class="sku-detail__strip-label">Estilo</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">500 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7-10 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-05 Caja Automática Alta Velocidad`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-05</a>
+ <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-am05-title">
-      <div class="container">
-        <h2 id="sizes-am05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas — CAD-AM-05</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
-                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs. ⏱ Producción bajo pedido.</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-am05-title">
+ <div class="container">
+ <h2 id="sizes-am05-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas — CAD-AM-05</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Talla</th><th>Medida (cm)</th><th>Medida real caja</th><th>Flauta</th><th>ECT</th><th>Peso vacío</th><th>Peso máx.</th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+ <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs.  Producción bajo pedido.</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-am05-title">
-      <div class="container">
-        <h2 id="faq-am05-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AM-05</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-05 — Tolerancia ±0.5mm, muestra gratis" />
+ <section class="faq" aria-labelledby="faq-am05-title">
+ <div class="container">
+ <h2 id="faq-am05-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-AM-05</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-05 — Tolerancia ±0.5mm, muestra gratis" />
 </PageLayout>

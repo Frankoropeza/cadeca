@@ -1,42 +1,42 @@
 ---
 // IndustryCard.astro — Sector card con imagen placeholder, diseño homologado con ProductCard
 export interface Props {
-  img:      string;
-  imgAlt:   string;
-  tag:      string;
-  title:    string;
-  desc:     string;
-  href:     string;
-  linkText?: string;
+ img:  string;
+ imgAlt:  string;
+ tag:  string;
+ title:  string;
+ desc:  string;
+ href:  string;
+ linkText?: string;
 }
 
 const {
-  img,
-  imgAlt,
-  tag,
-  title,
-  desc,
-  href,
-  linkText = "Ver soluciones",
+ img,
+ imgAlt,
+ tag,
+ title,
+ desc,
+ href,
+ linkText = "Ver soluciones",
 } = Astro.props;
 ---
 
 <a href={href} class="ind-card">
-  <div class="ind-card__img-wrap">
-    <img
-      src={img}
-      alt={imgAlt}
-      class="ind-card__img"
-      loading="lazy"
-      decoding="async"
-      width="600"
-      height="360"
-    />
-    <span class="ind-card__tag">{tag}</span>
-  </div>
-  <div class="ind-card__body">
-    <h3 class="ind-card__title">{title}</h3>
-    <p class="ind-card__desc">{desc}</p>
-    <span class="ind-card__cta">{linkText} →</span>
-  </div>
+ <div class="ind-card__img-wrap">
+ <img
+ src={img}
+ alt={imgAlt}
+ class="ind-card__img"
+ loading="lazy"
+ decoding="async"
+ width="600"
+ height="360"
+ />
+ <span class="ind-card__tag">{tag}</span>
+ </div>
+ <div class="ind-card__body">
+ <h3 class="ind-card__title">{title}</h3>
+ <p class="ind-card__desc">{desc}</p>
+ <span class="ind-card__cta">{linkText} →</span>
+ </div>
 </a>

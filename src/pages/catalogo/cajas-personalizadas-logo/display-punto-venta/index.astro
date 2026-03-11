@@ -1,113 +1,113 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Display PDQ Punto de Venta CDMX | 4 colores | CAD-PL-08 | CADECA";
+const title  = "Caja Display PDQ Punto de Venta CDMX | 4 colores | CAD-PL-08 | CADECA";
 const description = "Caja display PDQ personalizada para punto de venta en CDMX. Impresión 4 colores, estructura autoportante, resistente al manejo en tienda. MOQ 200 pzas. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU", "CAD-PL-08"],
-  ["Tipo", "Display PDQ autoportante"],
-  ["Impresión", "Full color CMYK 4 colores"],
-  ["Liner", "Blanco alta blancura"],
-  ["Estructura", "Autoportante en PDV"],
-  ["Cierre", "Tapa removible exposición"],
-  ["Resistencia", "ECT-32"],
-  ["Pedido mínimo", "200 piezas"],
-  ["Entrega", "7–10 días hábiles"],
+ ["Código SKU", "CAD-PL-08"],
+ ["Tipo", "Display PDQ autoportante"],
+ ["Impresión", "Full color CMYK 4 colores"],
+ ["Liner", "Blanco alta blancura"],
+ ["Estructura", "Autoportante en PDV"],
+ ["Cierre", "Tapa removible exposición"],
+ ["Resistencia", "ECT-32"],
+ ["Pedido mínimo", "200 piezas"],
+ ["Entrega", "7–10 días hábiles"],
 ];
 
 const faqs = [
-  { id:"cad-pl-08-f1", question:"¿Qué es exactamente una caja PDQ?", answer:"PDQ significa Pre-Designed Quantity o también se usa como Acrónimo de Pretty Darn Quick. Es una caja de envío diseñada para que en el punto de venta solo se retire la tapa superior y quede como exhibidor. Ahorra tiempo al personal de tienda, reduce el riesgo de daño al producto durante el acomodo y garantiza una presentación de marca consistente en todas las tiendas." },
-  { id:"cad-pl-08-f2", question:"¿Para qué categorías de productos funciona mejor el PDQ?", answer:"El PDQ es ideal para productos de consumo masivo: cosméticos, suplementos, dulces y botanas, artículos de temporada, productos de higiene personal y electrónicos de accesorios. En general, cualquier producto de entre 50 g y 2 kg que se venda en unidades individuales en tienda de autoservicio o farmacia." },
-  { id:"cad-pl-08-f3", question:"¿Puedo diseñar el PDQ con mi identidad de marca completa?", answer:"Sí. El PDQ tiene 5 caras imprimibles: frente, lados, fondo y tapa. El área de impresión es amplia y permite desplegar toda tu identidad de marca: logo, colores corporativos, slogan, información del producto y código de barras. El diseño es gratuito con tu logo en vectores." },
+ { id:"cad-pl-08-f1", question:"¿Qué es exactamente una caja PDQ?", answer:"PDQ significa Pre-Designed Quantity o también se usa como Acrónimo de Pretty Darn Quick. Es una caja de envío diseñada para que en el punto de venta solo se retire la tapa superior y quede como exhibidor. Ahorra tiempo al personal de tienda, reduce el riesgo de daño al producto durante el acomodo y garantiza una presentación de marca consistente en todas las tiendas." },
+ { id:"cad-pl-08-f2", question:"¿Para qué categorías de productos funciona mejor el PDQ?", answer:"El PDQ es ideal para productos de consumo masivo: cosméticos, suplementos, dulces y botanas, artículos de temporada, productos de higiene personal y electrónicos de accesorios. En general, cualquier producto de entre 50 g y 2 kg que se venda en unidades individuales en tienda de autoservicio o farmacia." },
+ { id:"cad-pl-08-f3", question:"¿Puedo diseñar el PDQ con mi identidad de marca completa?", answer:"Sí. El PDQ tiene 5 caras imprimibles: frente, lados, fondo y tapa. El área de impresión es amplia y permite desplegar toda tu identidad de marca: logo, colores corporativos, slogan, información del producto y código de barras. El diseño es gratuito con tu logo en vectores." },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/caja-retail-pdv-hero-cdmx.avif", alt: "Caja display PDQ punto de venta CDMX" },
-  { src: "/img/catalogo/caja-retail-pdv-display-cdmx.avif", alt: "Display PDQ en tienda" },
-  { src: "/img/catalogo/caja-retail-pdv-flatpack-cdmx.avif", alt: "PDQ flatpack almacén" },
-  { src: "/img/catalogo/caja-retail-pdv-floorstand-cdmx.avif", alt: "PDQ floorstand exhibidor" },
-  { src: "/img/catalogo/caja-retail-punto-venta-pdv-cdmx.avif", alt: "Punto de venta PDQ personalizado" },
+ { src: "/img/catalogo/caja-retail-pdv-hero-cdmx.avif", alt: "Caja display PDQ punto de venta CDMX" },
+ { src: "/img/catalogo/caja-retail-pdv-display-cdmx.avif", alt: "Display PDQ en tienda" },
+ { src: "/img/catalogo/caja-retail-pdv-flatpack-cdmx.avif", alt: "PDQ flatpack almacén" },
+ { src: "/img/catalogo/caja-retail-pdv-floorstand-cdmx.avif", alt: "PDQ floorstand exhibidor" },
+ { src: "/img/catalogo/caja-retail-punto-venta-pdv-cdmx.avif", alt: "Punto de venta PDQ personalizado" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo"},{name:"Caja Display para Punto de Venta PDQ"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja Display para Punto de Venta PDQ",sku:"CAD-PL-08",description:"Caja tipo display PDQ para punto de venta: exhibe y vende al mismo tiempo. Impresión full color, estructura autoportante, compatible con mostradores y góndolas. Desde 200 piezas.",image:gallery[0].src,material:"CAD-PL-08",category:"Cajas Personalizadas con Logo",moq:"200 piezas"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo"},{name:"Caja Display para Punto de Venta PDQ"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja Display para Punto de Venta PDQ",sku:"CAD-PL-08",description:"Caja tipo display PDQ para punto de venta: exhibe y vende al mismo tiempo. Impresión full color, estructura autoportante, compatible con mostradores y góndolas. Desde 200 piezas.",image:gallery[0].src,material:"CAD-PL-08",category:"Cajas Personalizadas con Logo",moq:"200 piezas"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-personalizadas-logo">Cajas Personalizadas con Logo</a></li>
-        <li><span class="current">Caja Display para Punto de Venta PDQ</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo">Cajas Personalizadas con Logo</a></li>
+ <li><span class="current">Caja Display para Punto de Venta PDQ</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cadpl08-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-PL-08 · Cajas Personalizadas con Logo</span>
-      <h1 id="sku-cadpl08-title" class="cat-page-hero__title">Caja <span>Display PDQ</span> para Punto de Venta CDMX</h1>
-      <p class="cat-page-hero__desc">Caja tipo display PDQ para punto de venta: exhibe y vende al mismo tiempo. Impresión full color, estructura autoportante, compatible con mostradores y góndolas. Desde 200 piezas.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-08</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>200 piezas</strong></div>
-        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cadpl08-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-PL-08 · Cajas Personalizadas con Logo</span>
+ <h1 id="sku-cadpl08-title" class="cat-page-hero__title">Caja <span>Display PDQ</span> para Punto de Venta CDMX</h1>
+ <p class="cat-page-hero__desc">Caja tipo display PDQ para punto de venta: exhibe y vende al mismo tiempo. Impresión full color, estructura autoportante, compatible con mostradores y góndolas. Desde 200 piezas.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-08</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>200 piezas</strong></div>
+ <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cadpl08-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-PL-08 · Familia: Cajas Personalizadas con Logo</p>
-            <h2 id="detalle-cadpl08-title" class="sku-detail__title">Caja Display para Punto de Venta PDQ</h2>
-            <p class="sku-detail__desc">La caja PDQ (Pre-Designed Quantity) es un empaque de envío que se convierte en exhibidor en el punto de venta sin necesidad de abrir o desarmar la caja. Solo retiras la tapa y el producto queda expuesto en un exhibidor limpio con tu gráfica. CAD-PL-08 está diseñada específicamente para tiendas de conveniencia, farmacias y supermercados donde el manejo es intensivo y la presencia de marca en góndola es clave. Impresión full color, liner blanco de alta blancura.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">PDQ</span><span class="sku-detail__strip-label">Tipo display</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 colores</span><span class="sku-detail__strip-label">Impresión</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7–10 días</span><span class="sku-detail__strip-label">Entrega</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-08 Caja Display para Punto de Venta PDQ`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-08</a>
-              <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cadpl08-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-PL-08 · Familia: Cajas Personalizadas con Logo</p>
+ <h2 id="detalle-cadpl08-title" class="sku-detail__title">Caja Display para Punto de Venta PDQ</h2>
+ <p class="sku-detail__desc">La caja PDQ (Pre-Designed Quantity) es un empaque de envío que se convierte en exhibidor en el punto de venta sin necesidad de abrir o desarmar la caja. Solo retiras la tapa y el producto queda expuesto en un exhibidor limpio con tu gráfica. CAD-PL-08 está diseñada específicamente para tiendas de conveniencia, farmacias y supermercados donde el manejo es intensivo y la presencia de marca en góndola es clave. Impresión full color, liner blanco de alta blancura.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">PDQ</span><span class="sku-detail__strip-label">Tipo display</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 colores</span><span class="sku-detail__strip-label">Impresión</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">7–10 días</span><span class="sku-detail__strip-label">Entrega</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-08 Caja Display para Punto de Venta PDQ`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-08</a>
+ <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cadpl08-title">
-      <div class="container">
-        <h2 id="faq-cadpl08-title" class="sku-faq__title">Preguntas Frecuentes — Caja Display para Punto de Venta PDQ</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cadpl08-title">
+ <div class="container">
+ <h2 id="faq-cadpl08-title" class="sku-faq__title">Preguntas Frecuentes — Caja Display para Punto de Venta PDQ</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="¿Vendes en tiendas? El PDQ de CADECA te da presencia de marca en el punto de venta desde el primer día" />
+ <LeadCapture whatsapp={WHATSAPP} title="¿Vendes en tiendas? El PDQ de CADECA te da presencia de marca en el punto de venta desde el primer día" />
 </PageLayout>

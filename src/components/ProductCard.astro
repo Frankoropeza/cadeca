@@ -1,54 +1,54 @@
 ---
 // ProductCard.astro — Tarjeta de producto
 export interface Tag {
-  label: string;
-  href:  string;
+ label: string;
+ href:  string;
 }
 
 export interface Props {
-  title:   string;
-  desc:    string;
-  imgSrc:  string;
-  imgAlt:  string;
-  href:    string;
-  tags?:   Tag[];
-  btnText?: string;
+ title:  string;
+ desc:  string;
+ imgSrc:  string;
+ imgAlt:  string;
+ href:  string;
+ tags?:  Tag[];
+ btnText?: string;
 }
 
 const {
-  title,
-  desc,
-  imgSrc,
-  imgAlt,
-  href,
-  tags    = [],
-  btnText = title,
+ title,
+ desc,
+ imgSrc,
+ imgAlt,
+ href,
+ tags  = [],
+ btnText = title,
 } = Astro.props;
 ---
 
 <article class="product-card">
-  <div class="product-card__img-wrap">
-    <img
-      src={imgSrc}
-      alt={imgAlt}
-      class="product-card__img"
-      loading="lazy"
-      decoding="async"
-      width="900"
-      height="560"
-      fetchpriority="low"
-    />
-  </div>
-  <div class="product-card__body">
-    <h3 class="product-card__title">{title}</h3>
-    <p class="product-card__desc">{desc}</p>
-    {tags.length > 0 && (
-      <div class="product-card__tags">
-        {tags.map(tag => (
-          <a href={tag.href} class="product-card__tag">{tag.label}</a>
-        ))}
-      </div>
-    )}
-    <a href={href} class="product-card__btn">{btnText}</a>
-  </div>
+ <div class="product-card__img-wrap">
+ <img
+ src={imgSrc}
+ alt={imgAlt}
+ class="product-card__img"
+ loading="lazy"
+ decoding="async"
+ width="900"
+ height="560"
+ fetchpriority="low"
+ />
+ </div>
+ <div class="product-card__body">
+ <h3 class="product-card__title">{title}</h3>
+ <p class="product-card__desc">{desc}</p>
+ {tags.length > 0 && (
+ <div class="product-card__tags">
+ {tags.map(tag => (
+ <a href={tag.href} class="product-card__tag">{tag.label}</a>
+ ))}
+ </div>
+ )}
+ <a href={href} class="product-card__btn">{btnText}</a>
+ </div>
 </article>

@@ -1,49 +1,49 @@
 ---
 // Topbar.astro — Barra superior de contacto
 export interface Props {
-  phone?:     string;
-  whatsapp?:  string;
-  schedule?:  string;
-  ctaText?:   string;
-  ctaHref?:   string;
-  tagline?:   string;
+ phone?:  string;
+ whatsapp?:  string;
+ schedule?:  string;
+ ctaText?:  string;
+ ctaHref?:  string;
+ tagline?:  string;
 }
 
 const {
-  phone    = "55 XXXX-XXXX",
-  whatsapp = "5255XXXXXXXX",
-  schedule = "Lun-Vie 8:00 - 18:00 · Sáb 9:00 - 14:00",
-  ctaText  = "Cotizar ahora",
-  ctaHref  = "#cotizar",
-  tagline  = "Entrega en 24-48 hrs · CDMX y Estado de México",
+ phone  = "55 XXXX-XXXX",
+ whatsapp = "5255XXXXXXXX",
+ schedule = "Lun-Vie 8:00 - 18:00 · Sáb 9:00 - 14:00",
+ ctaText  = "Cotizar ahora",
+ ctaHref  = "cotizar",
+ tagline  = "Entrega en 24-48 hrs · CDMX y Estado de México",
 } = Astro.props;
 ---
 
 <div class="topbar" role="complementary" aria-label="Información de contacto">
-  <div class="container">
+ <div class="container">
 
-    <!-- Mobile -->
-    <div class="topbar__mobile-info">
-      <a href={`tel:+${whatsapp}`}>Tel: {phone}</a>
-      <span class="topbar__separator">|</span>
-      <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">WhatsApp</a>
-    </div>
+ <!-- Mobile -->
+ <div class="topbar__mobile-info">
+ <a href={`tel:+${whatsapp}`}>Tel: {phone}</a>
+ <span class="topbar__separator">|</span>
+ <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">WhatsApp</a>
+ </div>
 
-    <!-- Desktop -->
-    <div class="topbar__left">
-      <span class="topbar__label">Cajas de Cartón CDMX</span>
-      <span class="topbar__separator">|</span>
-      <a href={`tel:+${whatsapp}`}>Tel: {phone}</a>
-      <span class="topbar__separator">|</span>
-      <span>{schedule}</span>
-      <span class="topbar__separator">|</span>
-      <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">WhatsApp: {phone}</a>
-    </div>
+ <!-- Desktop -->
+ <div class="topbar__left">
+ <span class="topbar__label">Cajas de Cartón CDMX</span>
+ <span class="topbar__separator">|</span>
+ <a href={`tel:+${whatsapp}`}>Tel: {phone}</a>
+ <span class="topbar__separator">|</span>
+ <span>{schedule}</span>
+ <span class="topbar__separator">|</span>
+ <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">WhatsApp: {phone}</a>
+ </div>
 
-    <div class="topbar__right">
-      <span>{tagline}</span>
-      <a href={ctaHref} class="topbar__cta">{ctaText}</a>
-    </div>
+ <div class="topbar__right">
+ <span>{tagline}</span>
+ <a href={ctaHref} class="topbar__cta">{ctaText}</a>
+ </div>
 
-  </div>
+ </div>
 </div>

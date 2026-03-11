@@ -1,470 +1,470 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import ProductCard   from "@/components/ProductCard.astro";
+import ProductCard  from "@/components/ProductCard.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
-import ProcessStep   from "@/components/ProcessStep.astro";
-import Testimonial   from "@/components/Testimonial.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import Testimonial  from "@/components/Testimonial.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 
-const title       = "Cajas de Cartón para E-commerce CDMX | Mercado Libre, Amazon, DHL, FedEx | CADECA";
+const title  = "Cajas de Cartón para E-commerce CDMX | Mercado Libre, Amazon, DHL, FedEx | CADECA";
 const description = "Cajas de cartón para e-commerce en CDMX. Medidas compatibles con Mercado Envíos, Amazon MX, DHL y FedEx. Desde 50 piezas, entrega 24 hrs. Cotiza gratis.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Cajas de Cartón para E-commerce",
-  "description": "Cajas de cartón corrugado para vendedores de Mercado Libre, Amazon MX, Shopify y paqueterías DHL, FedEx, Estafeta. Entrega 24 hrs en CDMX y Estado de México.",
-  "brand": { "@type": "Brand", "name": "CADECA" },
-  "manufacturer": { "@type": "Organization", "name": "CADECA" },
-  "url": "https://cajas-de-carton.com/productos/cajas-para-ecommerce",
-  "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
-  "category": "Cajas para E-commerce",
-  "areaServed": ["Ciudad de México", "Estado de México"],
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "lowPrice": "4.50",
-    "highPrice": "28.00",
-    "availability": "https://schema.org/InStock",
-    "seller": { "@type": "Organization", "name": "CADECA" }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "124",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Andrea M." },
-      "datePublished": "2025-11-20",
-      "reviewBody": "Excelente calidad en las cajas para mis envíos de Mercado Libre. Llegan bien protegidos todos los productos y nunca he tenido una queja de mis compradores por empaque dañado.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Carlos R." },
-      "datePublished": "2025-09-15",
-      "reviewBody": "Mis cajas cumplen al 100% con los requisitos de Amazon FBA. Nunca me han rechazado un envío al centro de distribución desde que compro con CADECA. Resistencia ECT-44 garantizada.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Luisa G." },
-      "datePublished": "2026-01-08",
-      "reviewBody": "Entrega rapidísima, al día siguiente ya tenía mis cajas en la bodega. Los precios son muy competitivos y la calidad del cartón es superior a otros proveedores que he probado.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
-  ],
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "MOQ", "value": "50 piezas" },
-    { "@type": "PropertyValue", "name": "Entrega", "value": "24 hrs CDMX" },
-    { "@type": "PropertyValue", "name": "Material", "value": "Corrugado B/C/BC" },
-    { "@type": "PropertyValue", "name": "Resistencia", "value": "ECT-23 a ECT-44" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "Cajas de Cartón para E-commerce",
+ "description": "Cajas de cartón corrugado para vendedores de Mercado Libre, Amazon MX, Shopify y paqueterías DHL, FedEx, Estafeta. Entrega 24 hrs en CDMX y Estado de México.",
+ "brand": { "@type": "Brand", "name": "CADECA" },
+ "manufacturer": { "@type": "Organization", "name": "CADECA" },
+ "url": "https://cajas-de-carton.com/productos/cajas-para-ecommerce",
+ "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
+ "category": "Cajas para E-commerce",
+ "areaServed": ["Ciudad de México", "Estado de México"],
+ "offers": {
+ "@type": "AggregateOffer",
+ "priceCurrency": "MXN",
+ "lowPrice": "4.50",
+ "highPrice": "28.00",
+ "availability": "https://schema.org/InStock",
+ "seller": { "@type": "Organization", "name": "CADECA" }
+ },
+ "aggregateRating": {
+ "@type": "AggregateRating",
+ "ratingValue": "4.9",
+ "reviewCount": "124",
+ "bestRating": "5",
+ "worstRating": "1"
+ },
+ "review": [
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Andrea M." },
+ "datePublished": "2025-11-20",
+ "reviewBody": "Excelente calidad en las cajas para mis envíos de Mercado Libre. Llegan bien protegidos todos los productos y nunca he tenido una queja de mis compradores por empaque dañado.",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+ },
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Carlos R." },
+ "datePublished": "2025-09-15",
+ "reviewBody": "Mis cajas cumplen al 100% con los requisitos de Amazon FBA. Nunca me han rechazado un envío al centro de distribución desde que compro con CADECA. Resistencia ECT-44 garantizada.",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+ },
+ {
+ "@type": "Review",
+ "author": { "@type": "Person", "name": "Luisa G." },
+ "datePublished": "2026-01-08",
+ "reviewBody": "Entrega rapidísima, al día siguiente ya tenía mis cajas en la bodega. Los precios son muy competitivos y la calidad del cartón es superior a otros proveedores que he probado.",
+ "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+ }
+ ],
+ "additionalProperty": [
+ { "@type": "PropertyValue", "name": "MOQ", "value": "50 piezas" },
+ { "@type": "PropertyValue", "name": "Entrega", "value": "24 hrs CDMX" },
+ { "@type": "PropertyValue", "name": "Material", "value": "Corrugado B/C/BC" },
+ { "@type": "PropertyValue", "name": "Resistencia", "value": "ECT-23 a ECT-44" }
+ ]
 };
 
 const subcategorias = [
-  {
-    title:   "Cajas Mercado Envíos (ML)",
-    desc:    "Todas las medidas oficiales de Mercado Envíos. Chica, mediana, grande y extra grande. Resistencia doble pared para sobrevivir el manejo de las paqueterías asociadas.",
-    imgSrc:  "/img/productos/cajas-carton-mercado-libre-mercado-envios-cdmx.avif",
-    imgAlt:  "Cajas de cartón para Mercado Libre y Mercado Envíos en CDMX — CADECA",
-    href:    "/productos/cajas-para-ecommerce#mercado-libre",
-    tags: [
-      { label: "Chica · Med · Grande · XL", href: "/productos/cajas-para-ecommerce#medidas-ml" },
-      { label: "Doble corrugado",            href: "/productos/cajas-doble-corrugado" },
-      { label: "Desde 50 pzas",             href: "/productos/cajas-para-ecommerce#pedido" },
-    ],
-    btnText: "Ver Medidas ML",
-  },
-  {
-    title:   "Cajas Amazon MX (FBA y FBM)",
-    desc:    "Medidas aprobadas por Amazon Seller Central México. Cumplen con los requerimientos de integridad estructural para FBA (envío al centro de distribución) y FBM.",
-    imgSrc:  "/img/productos/cajas-carton-amazon-fba-fbm-mexico-cdmx.avif",
-    imgAlt:  "Cajas de cartón para Amazon FBA y FBM en México y CDMX — CADECA",
-    href:    "/productos/cajas-para-ecommerce#amazon",
-    tags: [
-      { label: "Certificadas Amazon",  href: "/productos/cajas-para-ecommerce#amazon" },
-      { label: "FBA · FBM",            href: "/productos/cajas-para-ecommerce#amazon" },
-      { label: "ECT-44 requerido",     href: "/productos/cajas-doble-corrugado#ect" },
-    ],
-    btnText: "Ver Medidas Amazon",
-  },
-  {
-    title:   "Cajas para Paqueterías",
-    desc:    "Compatibles con DHL, FedEx, Estafeta, J&T y 99Minutos. Medidas que maximizan el espacio de entrega y minimizan el costo de envío por peso volumétrico.",
-    imgSrc:  "/img/productos/cajas-carton-paqueterias-dhl-fedex-estafeta-cdmx.avif",
-    imgAlt:  "Cajas de cartón para paqueterías DHL FedEx Estafeta en CDMX — CADECA",
-    href:    "/productos/cajas-para-ecommerce#paqueterias",
-    tags: [
-      { label: "DHL · FedEx · Estafeta",  href: "/productos/cajas-para-ecommerce#paqueterias" },
-      { label: "J&T · 99Minutos",         href: "/productos/cajas-para-ecommerce#paqueterias" },
-      { label: "Peso volumétrico optim.", href: "/productos/cajas-para-ecommerce#volumetrico" },
-    ],
-    btnText: "Ver Medidas Paqueterías",
-  },
-  {
-    title:   "Cajas Tienda Online (Shopify / TiendaNube)",
-    desc:    "Para vendedores con tienda propia que manejan sus propios envíos. Diseño neutro listo para personalizar con tu logo o ribbon adhesivo sin inversión en impresión.",
-    imgSrc:  "/img/productos/cajas-carton-ecommerce-tiendanube-shopify-mexico.avif",
-    imgAlt:  "Cajas de cartón para tienda online Shopify y TiendaNube en México — CADECA",
-    href:    "/productos/cajas-para-ecommerce#tienda-propia",
-    tags: [
-      { label: "Shopify · TiendaNube",    href: "/productos/cajas-para-ecommerce#tienda-propia" },
-      { label: "Neutras + personalizadas",href: "/productos/cajas-personalizadas-logo" },
-      { label: "Desde 50 pzas",          href: "/productos/cajas-para-ecommerce#pedido" },
-    ],
-    btnText: "Ver Cajas Tienda Propia",
-  },
+ {
+ title:  "Cajas Mercado Envíos (ML)",
+ desc:  "Todas las medidas oficiales de Mercado Envíos. Chica, mediana, grande y extra grande. Resistencia doble pared para sobrevivir el manejo de las paqueterías asociadas.",
+ imgSrc:  "/img/productos/cajas-carton-mercado-libre-mercado-envios-cdmx.avif",
+ imgAlt:  "Cajas de cartón para Mercado Libre y Mercado Envíos en CDMX — CADECA",
+ href:  "/productos/cajas-para-ecommercemercado-libre",
+ tags: [
+ { label: "Chica · Med · Grande · XL", href: "/productos/cajas-para-ecommercemedidas-ml" },
+ { label: "Doble corrugado",  href: "/productos/cajas-doble-corrugado" },
+ { label: "Desde 50 pzas",  href: "/productos/cajas-para-ecommercepedido" },
+ ],
+ btnText: "Ver Medidas ML",
+ },
+ {
+ title:  "Cajas Amazon MX (FBA y FBM)",
+ desc:  "Medidas aprobadas por Amazon Seller Central México. Cumplen con los requerimientos de integridad estructural para FBA (envío al centro de distribución) y FBM.",
+ imgSrc:  "/img/productos/cajas-carton-amazon-fba-fbm-mexico-cdmx.avif",
+ imgAlt:  "Cajas de cartón para Amazon FBA y FBM en México y CDMX — CADECA",
+ href:  "/productos/cajas-para-ecommerceamazon",
+ tags: [
+ { label: "Certificadas Amazon",  href: "/productos/cajas-para-ecommerceamazon" },
+ { label: "FBA · FBM",  href: "/productos/cajas-para-ecommerceamazon" },
+ { label: "ECT-44 requerido",  href: "/productos/cajas-doble-corrugadoect" },
+ ],
+ btnText: "Ver Medidas Amazon",
+ },
+ {
+ title:  "Cajas para Paqueterías",
+ desc:  "Compatibles con DHL, FedEx, Estafeta, J&T y 99Minutos. Medidas que maximizan el espacio de entrega y minimizan el costo de envío por peso volumétrico.",
+ imgSrc:  "/img/productos/cajas-carton-paqueterias-dhl-fedex-estafeta-cdmx.avif",
+ imgAlt:  "Cajas de cartón para paqueterías DHL FedEx Estafeta en CDMX — CADECA",
+ href:  "/productos/cajas-para-ecommercepaqueterias",
+ tags: [
+ { label: "DHL · FedEx · Estafeta",  href: "/productos/cajas-para-ecommercepaqueterias" },
+ { label: "J&T · 99Minutos",  href: "/productos/cajas-para-ecommercepaqueterias" },
+ { label: "Peso volumétrico optim.", href: "/productos/cajas-para-ecommercevolumetrico" },
+ ],
+ btnText: "Ver Medidas Paqueterías",
+ },
+ {
+ title:  "Cajas Tienda Online (Shopify / TiendaNube)",
+ desc:  "Para vendedores con tienda propia que manejan sus propios envíos. Diseño neutro listo para personalizar con tu logo o ribbon adhesivo sin inversión en impresión.",
+ imgSrc:  "/img/productos/cajas-carton-ecommerce-tiendanube-shopify-mexico.avif",
+ imgAlt:  "Cajas de cartón para tienda online Shopify y TiendaNube en México — CADECA",
+ href:  "/productos/cajas-para-ecommercetienda-propia",
+ tags: [
+ { label: "Shopify · TiendaNube",  href: "/productos/cajas-para-ecommercetienda-propia" },
+ { label: "Neutras + personalizadas",href: "/productos/cajas-personalizadas-logo" },
+ { label: "Desde 50 pzas",  href: "/productos/cajas-para-ecommercepedido" },
+ ],
+ btnText: "Ver Cajas Tienda Propia",
+ },
 ];
 
 const industrias = [
-  {
-    icon:     "🛒",
-    title:    "Vendedores Mercado Libre",
-    desc:     "La paquetería más grande de México requiere medidas exactas para evitar cobros extra. Nuestras cajas son compatibles con todas las categorías de Mercado Envíos.",
-    href:     "/soluciones/ecommerce",
-    linkText: "Ver solución ML",
-  },
-  {
-    icon:     "📦",
-    title:    "Sellers Amazon México",
-    desc:     "Los centros de distribución de Amazon rechazan cajas que no cumplen especificaciones. Nuestras cajas cumplen ECT-44 mínimo y medidas aprobadas para FBA.",
-    href:     "/soluciones/ecommerce",
-    linkText: "Ver solución Amazon",
-  },
-  {
-    icon:     "👗",
-    title:    "Moda y Accesorios",
-    desc:     "Cajas ligeras para ropa, calzado y accesorios. El corrugado simple reduce el costo de envío sin sacrificar protección. Disponibles desde talla chica hasta XL.",
-    href:     "/productos/cajas-para-ecommerce#moda",
-    linkText: "Ver cajas para moda",
-  },
-  {
-    icon:     "💄",
-    title:    "Belleza y Cuidado Personal",
-    desc:     "Cajas compactas para cosméticos, suplementos y productos de bienestar. Doble pared para proteger frascos de vidrio y envases delicados durante el transporte.",
-    href:     "/productos/cajas-para-ecommerce#belleza",
-    linkText: "Ver cajas para belleza",
-  },
+ {
+ icon:  "",
+ title:  "Vendedores Mercado Libre",
+ desc:  "La paquetería más grande de México requiere medidas exactas para evitar cobros extra. Nuestras cajas son compatibles con todas las categorías de Mercado Envíos.",
+ href:  "/soluciones/ecommerce",
+ linkText: "Ver solución ML",
+ },
+ {
+ icon:  "",
+ title:  "Sellers Amazon México",
+ desc:  "Los centros de distribución de Amazon rechazan cajas que no cumplen especificaciones. Nuestras cajas cumplen ECT-44 mínimo y medidas aprobadas para FBA.",
+ href:  "/soluciones/ecommerce",
+ linkText: "Ver solución Amazon",
+ },
+ {
+ icon:  "",
+ title:  "Moda y Accesorios",
+ desc:  "Cajas ligeras para ropa, calzado y accesorios. El corrugado simple reduce el costo de envío sin sacrificar protección. Disponibles desde talla chica hasta XL.",
+ href:  "/productos/cajas-para-ecommercemoda",
+ linkText: "Ver cajas para moda",
+ },
+ {
+ icon:  "",
+ title:  "Belleza y Cuidado Personal",
+ desc:  "Cajas compactas para cosméticos, suplementos y productos de bienestar. Doble pared para proteger frascos de vidrio y envases delicados durante el transporte.",
+ href:  "/productos/cajas-para-ecommercebelleza",
+ linkText: "Ver cajas para belleza",
+ },
 ];
 
 const pasos = [
-  { num: 1, title: "Dinos en qué vendes",   desc: "Mercado Libre, Amazon, tienda propia o paquetería de tu elección. Con eso seleccionamos las medidas y el tipo de corrugado correcto." },
-  { num: 2, title: "Cotiza en 2 horas",     desc: "Enviamos precio, disponibilidad y medidas recomendadas por WhatsApp. Para pedidos urgentes respondemos antes de 1 hora." },
-  { num: 3, title: "Pedido desde 50 pzas",  desc: "Sin mínimos exagerados. Para vendedores que están comenzando o escalando. Precios de mayoreo desde 200 piezas." },
-  { num: 4, title: "Entrega en tu almacén", desc: "24 horas en CDMX y área metropolitana. Coordinamos la entrega en el horario que más te convenga, directo a tu bodega o domicilio." },
+ { num: 1, title: "Dinos en qué vendes",  desc: "Mercado Libre, Amazon, tienda propia o paquetería de tu elección. Con eso seleccionamos las medidas y el tipo de corrugado correcto." },
+ { num: 2, title: "Cotiza en 2 horas",  desc: "Enviamos precio, disponibilidad y medidas recomendadas por WhatsApp. Para pedidos urgentes respondemos antes de 1 hora." },
+ { num: 3, title: "Pedido desde 50 pzas",  desc: "Sin mínimos exagerados. Para vendedores que están comenzando o escalando. Precios de mayoreo desde 200 piezas." },
+ { num: 4, title: "Entrega en tu almacén", desc: "24 horas en CDMX y área metropolitana. Coordinamos la entrega en el horario que más te convenga, directo a tu bodega o domicilio." },
 ];
 
 const testimonios = [
-  {
-    initials: "AG",
-    name:     "Adriana G.",
-    role:     "Vendedora Nivel Platinum ML — Cuauhtémoc, CDMX",
-    text:     "Llevo 3 años comprando mis cajas con CADECA. Tienen todas las medidas de Mercado Envíos y siempre hay stock. Nunca me han fallado en temporada alta: Buen Fin, Hot Sale, Navidad. Son los mejores.",
-  },
-  {
-    initials: "RM",
-    name:     "Ricardo M.",
-    role:     "Seller Amazon FBA México — Tlalpan, CDMX",
-    text:     "Amazon rechazó mis primeras cajas de otro proveedor por resistencia insuficiente. Con CADECA nunca he tenido problemas: ECT-44 garantizado y medidas exactas para el almacén de Amazon. 100% recomendados.",
-  },
-  {
-    initials: "VL",
-    name:     "Valeria L.",
-    role:     "Emprendedora Shopify — Ecatepec, Estado de México",
-    text:     "Empecé comprando 50 cajas y ahora compro 500 cada mes. El precio es muy justo, la calidad es consistente y la entrega siempre llega al día siguiente. Mi negocio creció con CADECA.",
-  },
+ {
+ initials: "AG",
+ name:  "Adriana G.",
+ role:  "Vendedora Nivel Platinum ML — Cuauhtémoc, CDMX",
+ text:  "Llevo 3 años comprando mis cajas con CADECA. Tienen todas las medidas de Mercado Envíos y siempre hay stock. Nunca me han fallado en temporada alta: Buen Fin, Hot Sale, Navidad. Son los mejores.",
+ },
+ {
+ initials: "RM",
+ name:  "Ricardo M.",
+ role:  "Seller Amazon FBA México — Tlalpan, CDMX",
+ text:  "Amazon rechazó mis primeras cajas de otro proveedor por resistencia insuficiente. Con CADECA nunca he tenido problemas: ECT-44 garantizado y medidas exactas para el almacén de Amazon. 100% recomendados.",
+ },
+ {
+ initials: "VL",
+ name:  "Valeria L.",
+ role:  "Emprendedora Shopify — Ecatepec, Estado de México",
+ text:  "Empecé comprando 50 cajas y ahora compro 500 cada mes. El precio es muy justo, la calidad es consistente y la entrega siempre llega al día siguiente. Mi negocio creció con CADECA.",
+ },
 ];
 
 const faqs = [
-  {
-    id: "ec1",
-    question: "¿Cuáles son las medidas de cajas para Mercado Envíos?",
-    answer: "Las medidas oficiales de Mercado Envíos (largo × ancho × alto en cm) son: <strong>Chica:</strong> 21×29×9 · <strong>Mediana:</strong> 27×32×18 · <strong>Grande:</strong> 32×42×30 · <strong>Extra grande:</strong> 40×50×40. Manejamos stock permanente de todas estas medidas en corrugado doble pared, listas para entrega en 24 hrs en CDMX.",
-  },
-  {
-    id: "ec2",
-    question: "¿Qué tipo de caja necesito para enviar por Amazon FBA?",
-    answer: "Amazon exige para FBA: <strong>Corrugado doble pared</strong> mínimo (ECT-44 o superior), sin grapas expuestas, sin ventanas de acetato y medidas que no excedan 63.5cm en ningún lado. Nuestras cajas para Amazon FBA cumplen todos estos requisitos. Para productos pesados (+15 kg) recomendamos triple corrugado según las guías de Amazon Seller Central México.",
-  },
-  {
-    id: "ec3",
-    question: "¿Cuál es el pedido mínimo de cajas para e-commerce?",
-    answer: "El pedido mínimo es <strong>50 piezas</strong> para cajas de e-commerce. Para pedidos de 200+ piezas aplican precios de mayoreo. Para 500+ piezas tenemos precios especiales por volumen. Consulta nuestra tabla de precios escalonados por WhatsApp — sin compromiso de compra.",
-  },
-  {
-    id: "ec4",
-    question: "¿Cómo reduzco el costo de envío con el peso volumétrico?",
-    answer: "Las paqueterías cobran por el mayor entre peso real y peso volumétrico (largo × ancho × alto ÷ 5000). La clave es elegir cajas que se ajusten exactamente al producto sin exceso de espacio. Nuestros asesores calculan gratuitamente cuál medida de caja minimiza tu peso volumétrico según las dimensiones de tu producto, ahorrándote hasta un 30% en costos de envío.",
-  },
-  {
-    id: "ec5",
-    question: "¿Puedo personalizar las cajas de e-commerce con mi logo?",
-    answer: "Sí. Todas las cajas para e-commerce pueden personalizarse con impresión de 1 a 4 colores o full color digital desde 100 piezas, con diseño gratuito incluido. También tenemos la opción intermedia: cajas neutras + ribbon o cinta adhesiva impresa con tu logo, disponible desde pedidos más pequeños. Consulta nuestra <a href='/productos/cajas-personalizadas-logo'>línea de cajas personalizadas</a>.",
-  },
-  {
-    id: "ec6",
-    question: "¿Tienen cajas para e-commerce en stock para entrega inmediata?",
-    answer: "Sí. Las medidas más populares (Chica, Mediana y Grande) están en inventario permanente para entrega en 24 hrs en CDMX y municipios del Estado de México. Para medidas Extra Grande o pedidos superiores a 1,000 piezas se requieren 48-72 hrs adicionales. Verifica disponibilidad por WhatsApp antes de confirmar tu pedido.",
-  },
+ {
+ id: "ec1",
+ question: "¿Cuáles son las medidas de cajas para Mercado Envíos?",
+ answer: "Las medidas oficiales de Mercado Envíos (largo × ancho × alto en cm) son: <strong>Chica:</strong> 21×29×9 · <strong>Mediana:</strong> 27×32×18 · <strong>Grande:</strong> 32×42×30 · <strong>Extra grande:</strong> 40×50×40. Manejamos stock permanente de todas estas medidas en corrugado doble pared, listas para entrega en 24 hrs en CDMX.",
+ },
+ {
+ id: "ec2",
+ question: "¿Qué tipo de caja necesito para enviar por Amazon FBA?",
+ answer: "Amazon exige para FBA: <strong>Corrugado doble pared</strong> mínimo (ECT-44 o superior), sin grapas expuestas, sin ventanas de acetato y medidas que no excedan 63.5cm en ningún lado. Nuestras cajas para Amazon FBA cumplen todos estos requisitos. Para productos pesados (+15 kg) recomendamos triple corrugado según las guías de Amazon Seller Central México.",
+ },
+ {
+ id: "ec3",
+ question: "¿Cuál es el pedido mínimo de cajas para e-commerce?",
+ answer: "El pedido mínimo es <strong>50 piezas</strong> para cajas de e-commerce. Para pedidos de 200+ piezas aplican precios de mayoreo. Para 500+ piezas tenemos precios especiales por volumen. Consulta nuestra tabla de precios escalonados por WhatsApp — sin compromiso de compra.",
+ },
+ {
+ id: "ec4",
+ question: "¿Cómo reduzco el costo de envío con el peso volumétrico?",
+ answer: "Las paqueterías cobran por el mayor entre peso real y peso volumétrico (largo × ancho × alto ÷ 5000). La clave es elegir cajas que se ajusten exactamente al producto sin exceso de espacio. Nuestros asesores calculan gratuitamente cuál medida de caja minimiza tu peso volumétrico según las dimensiones de tu producto, ahorrándote hasta un 30% en costos de envío.",
+ },
+ {
+ id: "ec5",
+ question: "¿Puedo personalizar las cajas de e-commerce con mi logo?",
+ answer: "Sí. Todas las cajas para e-commerce pueden personalizarse con impresión de 1 a 4 colores o full color digital desde 100 piezas, con diseño gratuito incluido. También tenemos la opción intermedia: cajas neutras + ribbon o cinta adhesiva impresa con tu logo, disponible desde pedidos más pequeños. Consulta nuestra <a href='/productos/cajas-personalizadas-logo'>línea de cajas personalizadas</a>.",
+ },
+ {
+ id: "ec6",
+ question: "¿Tienen cajas para e-commerce en stock para entrega inmediata?",
+ answer: "Sí. Las medidas más populares (Chica, Mediana y Grande) están en inventario permanente para entrega en 24 hrs en CDMX y municipios del Estado de México. Para medidas Extra Grande o pedidos superiores a 1,000 piezas se requieren 48-72 hrs adicionales. Verifica disponibilidad por WhatsApp antes de confirmar tu pedido.",
+ },
 ];
 
 const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
 const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Productos", href: "/productos" },
-  { name: "Cajas para E-commerce" },
+ { name: "Inicio", href: "/" },
+ { name: "Productos", href: "/productos" },
+ { name: "Cajas para E-commerce" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  schema={productSchema}
-  faqItems={faqItems}
-  breadcrumbs={breadcrumbs}
-  whatsapp={WHATSAPP}
+ title={title}
+ description={description}
+ schema={productSchema}
+ faqItems={faqItems}
+ breadcrumbs={breadcrumbs}
+ whatsapp={WHATSAPP}
 >
 
-  <!-- HERO -->
-    <!-- Breadcrumb -->
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/productos">Productos</a></li>
-      <li><span class="current">Cajas para E-commerce</span></li>
-      </ol>
-    </div>
-  </div>
+ <!-- HERO -->
+ <!-- Breadcrumb -->
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/productos">Productos</a></li>
+ <li><span class="current">Cajas para E-commerce</span></li>
+ </ol>
+ </div>
+ </div>
 
-  
-  <!-- Banner catálogo técnico -->
-  <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
-    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-      <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
-      <a href="/catalogo/cajas-para-ecommerce" style="background:var(--color-primary);color:#fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
-    </div>
-  </div>
+ 
+ <!-- Banner catálogo técnico -->
+ <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
+ <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+ <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
+ <a href="/catalogo/cajas-para-ecommerce" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
+ </div>
+ </div>
 
-  <section class="page-hero" aria-labelledby="prod-eco-title">
-    <div class="container">
-      <div class="page-hero__inner">
-        <div class="page-hero__content">
-          <p class="page-hero__badge">Mercado Libre · Amazon MX · DHL · FedEx · Estafeta</p>
-          <h1 id="prod-eco-title" class="page-hero__title">
-            Cajas de Cartón para<br><span>E-commerce en CDMX</span>
-          </h1>
-          <p class="page-hero__desc">
-            Medidas compatibles con todas las plataformas y paqueterías líderes. Stock permanente, entrega en 24 hrs en CDMX y Estado de México. Desde 50 piezas, precios de mayoreo desde 200.
-          </p>
-          <div class="page-hero__ctas">
-            <a href="#cotizar"       class="btn btn--primary">Cotizar Ahora</a>
-            <a href="#subcategorias" class="btn btn--outline">Ver Medidas</a>
-          </div>
-        </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">24 hrs</span>
-            <span class="page-hero__stat-label">Entrega CDMX</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">ECT-44</span>
-            <span class="page-hero__stat-label">Resistencia Amazon</span>
-          </div>
-          <div class="page-hero__stat">
-            <span class="page-hero__stat-value">5+</span>
-            <span class="page-hero__stat-label">Paqueterías compat.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section class="page-hero" aria-labelledby="prod-eco-title">
+ <div class="container">
+ <div class="page-hero__inner">
+ <div class="page-hero__content">
+ <p class="page-hero__badge">Mercado Libre · Amazon MX · DHL · FedEx · Estafeta</p>
+ <h1 id="prod-eco-title" class="page-hero__title">
+ Cajas de Cartón para<br><span>E-commerce en CDMX</span>
+ </h1>
+ <p class="page-hero__desc">
+ Medidas compatibles con todas las plataformas y paqueterías líderes. Stock permanente, entrega en 24 hrs en CDMX y Estado de México. Desde 50 piezas, precios de mayoreo desde 200.
+ </p>
+ <div class="page-hero__ctas">
+ <a href="cotizar"  class="btn btn--primary">Cotizar Ahora</a>
+ <a href="subcategorias" class="btn btn--outline">Ver Medidas</a>
+ </div>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">24 hrs</span>
+ <span class="page-hero__stat-label">Entrega CDMX</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">ECT-44</span>
+ <span class="page-hero__stat-label">Resistencia Amazon</span>
+ </div>
+ <div class="page-hero__stat">
+ <span class="page-hero__stat-value">5+</span>
+ <span class="page-hero__stat-label">Paqueterías compat.</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
+ <main id="contenido-principal" role="main">
 
-    <!-- DETALLE DEL PRODUCTO -->
-    <section class="prod-detail" aria-labelledby="detalle-eco-title">
-      <div class="container">
-        <div class="prod-detail__inner">
-          <div class="prod-detail__img-wrap">
-            <img
-              src="/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif"
-              alt="Cajas de cartón para e-commerce Mercado Libre y Amazon MX en CDMX — CADECA"
-              class="prod-detail__img"
-              width="900" height="560"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-          <div class="prod-detail__content">
-            <span class="prod-detail__label">El empaque del vendedor online exitoso</span>
-            <h2 id="detalle-eco-title" class="section-header__title" style="margin:0">
-              Cajas para E-commerce: Compatibles con Todas las Plataformas y Paqueterías
-            </h2>
-            <p class="prod-detail__intro">
-              Las cajas de cartón para e-commerce en CDMX deben cumplir dos condiciones críticas: medidas exactas según la plataforma de venta y resistencia suficiente para proteger el producto durante todo el trayecto. En CADECA tenemos ambas: stock permanente de medidas oficiales y corrugado doble pared que cumple los estándares de Mercado Libre, Amazon y todas las paqueterías líderes.
-            </p>
-            <div>
-              <p class="prod-detail__specs-title">Especificaciones técnicas</p>
-              <div class="prod-detail__specs-grid">
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Tipo de pared</span>
-                  <span class="prod-detail__spec-value">Doble corrugado (BC)</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Resistencia ECT</span>
-                  <span class="prod-detail__spec-value">ECT-44 (estándar)</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Medidas disponibles</span>
-                  <span class="prod-detail__spec-value">Chica · Med · Grande · XL</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Compatibilidad</span>
-                  <span class="prod-detail__spec-value">ML · Amazon · DHL · FedEx</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Material</span>
-                  <span class="prod-detail__spec-value">Kraft / Test · FSC disponible</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Personalización</span>
-                  <span class="prod-detail__spec-value">Logo desde 100 pzas</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Pedido mínimo</span>
-                  <span class="prod-detail__spec-value">50 piezas</span>
-                </div>
-                <div class="prod-detail__spec">
-                  <span class="prod-detail__spec-label">Entrega CDMX</span>
-                  <span class="prod-detail__spec-value">24 horas (stock)</span>
-                </div>
-              </div>
-            </div>
-            <div class="prod-detail__actions">
-              <a href="#cotizar"                      class="btn btn--primary">Solicitar Cotización</a>
-              <a href={`https://wa.me/${WHATSAPP}`}
-                 target="_blank" rel="noopener"      class="btn btn--outline">WhatsApp Directo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- DETALLE DEL PRODUCTO -->
+ <section class="prod-detail" aria-labelledby="detalle-eco-title">
+ <div class="container">
+ <div class="prod-detail__inner">
+ <div class="prod-detail__img-wrap">
+ <img
+ src="/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif"
+ alt="Cajas de cartón para e-commerce Mercado Libre y Amazon MX en CDMX — CADECA"
+ class="prod-detail__img"
+ width="900" height="560"
+ loading="eager"
+ decoding="async"
+ fetchpriority="high"
+ />
+ </div>
+ <div class="prod-detail__content">
+ <span class="prod-detail__label">El empaque del vendedor online exitoso</span>
+ <h2 id="detalle-eco-title" class="section-header__title" style="margin:0">
+ Cajas para E-commerce: Compatibles con Todas las Plataformas y Paqueterías
+ </h2>
+ <p class="prod-detail__intro">
+ Las cajas de cartón para e-commerce en CDMX deben cumplir dos condiciones críticas: medidas exactas según la plataforma de venta y resistencia suficiente para proteger el producto durante todo el trayecto. En CADECA tenemos ambas: stock permanente de medidas oficiales y corrugado doble pared que cumple los estándares de Mercado Libre, Amazon y todas las paqueterías líderes.
+ </p>
+ <div>
+ <p class="prod-detail__specs-title">Especificaciones técnicas</p>
+ <div class="prod-detail__specs-grid">
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Tipo de pared</span>
+ <span class="prod-detail__spec-value">Doble corrugado (BC)</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Resistencia ECT</span>
+ <span class="prod-detail__spec-value">ECT-44 (estándar)</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Medidas disponibles</span>
+ <span class="prod-detail__spec-value">Chica · Med · Grande · XL</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Compatibilidad</span>
+ <span class="prod-detail__spec-value">ML · Amazon · DHL · FedEx</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Material</span>
+ <span class="prod-detail__spec-value">Kraft / Test · FSC disponible</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Personalización</span>
+ <span class="prod-detail__spec-value">Logo desde 100 pzas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Pedido mínimo</span>
+ <span class="prod-detail__spec-value">50 piezas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Entrega CDMX</span>
+ <span class="prod-detail__spec-value">24 horas (stock)</span>
+ </div>
+ </div>
+ </div>
+ <div class="prod-detail__actions">
+ <a href="cotizar"  class="btn btn--primary">Solicitar Cotización</a>
+ <a href={`https://wa.me/${WHATSAPP}`}
+ target="_blank" rel="noopener"  class="btn btn--outline">WhatsApp Directo</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- SUBCATEGORÍAS -->
-    <section class="products" id="subcategorias" aria-labelledby="subcats-eco-title">
-      <div class="container">
-        <SectionHeader
-          id="subcats-eco-title"
-          twoCol
-          title="Cajas para Cada Plataforma y Paquetería"
-          subtitle="Mercado Libre, Amazon MX, DHL, FedEx, Estafeta, J&T y más. Medidas exactas certificadas para cada canal de venta."
-          link={{ text: "Ver catálogo completo", href: "/productos" }}
-        >
-          <p>Cada plataforma y paquetería tiene requerimientos específicos de medidas y resistencia. Usar la caja incorrecta puede resultar en cargos extra, rechazos en centros de distribución o productos dañados. En CADECA te asesoramos para usar la medida exacta que reduce costos y evita problemas.</p>
-          <p>Manejamos inventario permanente de todas las medidas estándar de Mercado Envíos y Amazon MX. Para otras plataformas fabricamos medidas personalizadas desde 50 piezas en 3-5 días hábiles.</p>
-        </SectionHeader>
-        <div class="products__grid">
-          {subcategorias.map(p => <ProductCard {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- SUBCATEGORÍAS -->
+ <section class="products" id="subcategorias" aria-labelledby="subcats-eco-title">
+ <div class="container">
+ <SectionHeader
+ id="subcats-eco-title"
+ twoCol
+ title="Cajas para Cada Plataforma y Paquetería"
+ subtitle="Mercado Libre, Amazon MX, DHL, FedEx, Estafeta, J&T y más. Medidas exactas certificadas para cada canal de venta."
+ link={{ text: "Ver catálogo completo", href: "/productos" }}
+ >
+ <p>Cada plataforma y paquetería tiene requerimientos específicos de medidas y resistencia. Usar la caja incorrecta puede resultar en cargos extra, rechazos en centros de distribución o productos dañados. En CADECA te asesoramos para usar la medida exacta que reduce costos y evita problemas.</p>
+ <p>Manejamos inventario permanente de todas las medidas estándar de Mercado Envíos y Amazon MX. Para otras plataformas fabricamos medidas personalizadas desde 50 piezas en 3-5 días hábiles.</p>
+ </SectionHeader>
+ <div class="products__grid">
+ {subcategorias.map(p => <ProductCard {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- QUIÉN USA ESTE PRODUCTO -->
-    <section class="industries" aria-labelledby="industrias-eco-title">
-      <div class="container">
-        <SectionHeader
-          id="industrias-eco-title"
-          twoCol
-          title="¿Quién Compra Cajas de E-commerce en CADECA?"
-          subtitle="Desde vendedores individuales hasta grandes marcas de la zona metropolitana"
-        >
-          <p>El e-commerce en México creció un 23% en 2025 y la CDMX concentra el mayor volumen de vendedores activos del país. Nuestras cajas para e-commerce están optimizadas para los flujos operativos de vendedores en todos los niveles: desde quien empezó hace 3 meses hasta el que ya tiene su propio almacén.</p>
-          <p>Todos tienen acceso al mismo inventario, asesoría técnica gratuita y precios de mayoreo escalonados por volumen.</p>
-        </SectionHeader>
-        <div class="industries__grid">
-          {industrias.map(i => <IndustryCard {...i} />)}
-        </div>
-      </div>
-    </section>
+ <!-- QUIÉN USA ESTE PRODUCTO -->
+ <section class="industries" aria-labelledby="industrias-eco-title">
+ <div class="container">
+ <SectionHeader
+ id="industrias-eco-title"
+ twoCol
+ title="¿Quién Compra Cajas de E-commerce en CADECA?"
+ subtitle="Desde vendedores individuales hasta grandes marcas de la zona metropolitana"
+ >
+ <p>El e-commerce en México creció un 23% en 2025 y la CDMX concentra el mayor volumen de vendedores activos del país. Nuestras cajas para e-commerce están optimizadas para los flujos operativos de vendedores en todos los niveles: desde quien empezó hace 3 meses hasta el que ya tiene su propio almacén.</p>
+ <p>Todos tienen acceso al mismo inventario, asesoría técnica gratuita y precios de mayoreo escalonados por volumen.</p>
+ </SectionHeader>
+ <div class="industries__grid">
+ {industrias.map(i => <IndustryCard {...i} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- PROCESO -->
-    <section class="process" aria-labelledby="proceso-eco-title">
-      <div class="container">
-        <SectionHeader
-          id="proceso-eco-title"
-          title="Cómo Pedir tus Cajas para E-commerce"
-          subtitle="Simple, rápido y sin complicaciones — igual que deberían ser tus envíos"
-        />
-        <div class="process__grid">
-          {pasos.map(p => <ProcessStep {...p} />)}
-        </div>
-      </div>
-    </section>
+ <!-- PROCESO -->
+ <section class="process" aria-labelledby="proceso-eco-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-eco-title"
+ title="Cómo Pedir tus Cajas para E-commerce"
+ subtitle="Simple, rápido y sin complicaciones — igual que deberían ser tus envíos"
+ />
+ <div class="process__grid">
+ {pasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="trust" aria-labelledby="test-eco-title">
-      <div class="container">
-        <div class="trust__testimonials-header">
-          <h2 id="test-eco-title" class="trust__testimonials-title">
-            Vendedores Online de CDMX que Confían en CADECA
-          </h2>
-          <p class="trust__testimonials-subtitle">
-            Sellers de Mercado Libre, Amazon y tiendas propias comparten su experiencia
-          </p>
-        </div>
-        <div class="trust__testimonials">
-          {testimonios.map(t => <Testimonial {...t} />)}
-        </div>
-      </div>
-    </section>
+ <!-- TESTIMONIOS -->
+ <section class="trust" aria-labelledby="test-eco-title">
+ <div class="container">
+ <div class="trust__testimonials-header">
+ <h2 id="test-eco-title" class="trust__testimonials-title">
+ Vendedores Online de CDMX que Confían en CADECA
+ </h2>
+ <p class="trust__testimonials-subtitle">
+ Sellers de Mercado Libre, Amazon y tiendas propias comparten su experiencia
+ </p>
+ </div>
+ <div class="trust__testimonials">
+ {testimonios.map(t => <Testimonial {...t} />)}
+ </div>
+ </div>
+ </section>
 
-    <!-- SEO CONTENT -->
-    <section class="seo-content" aria-labelledby="seo-eco-title">
-      <div class="container">
-        <h2 id="seo-eco-title" class="seo-content__title">
-          Cajas de Cartón para E-commerce en CDMX: La Guía Definitiva para Vendedores Online
-        </h2>
-        <p class="seo-content__text">
-          En el e-commerce mexicano, el empaque no es un detalle — es parte del producto. Una caja que no cumple las medidas de <strong>Mercado Envíos</strong> genera cobros adicionales que erosionan el margen. Una caja con resistencia insuficiente para <strong>Amazon FBA</strong> resulta en rechazo del inventario en el centro de distribución. En CADECA hemos eliminado estos problemas: todas nuestras cajas para e-commerce están dimensionadas y probadas para las plataformas y paqueterías líderes en México, con stock permanente en CDMX.
-        </p>
-        <p class="seo-content__text">
-          Para los <strong>vendedores de Mercado Libre en CDMX</strong>, nuestras cajas cubren todas las categorías de Mercado Envíos (Chica, Mediana, Grande y Extra Grande) en corrugado doble pared para máxima protección durante el manejo de las paqueterías. Para los <strong>sellers de Amazon México</strong> (FBA y FBM), cumplimos el estándar ECT-44 mínimo requerido por Amazon Seller Central y las medidas aceptadas por los centros de distribución en Cuautitlán y Tepotzotlán. Entrega garantizada en <strong>24 horas en toda la CDMX y municipios conurbados del Estado de México</strong>.
-        </p>
-        <p class="seo-content__text">
-          Si tienes tu propia tienda en Shopify, TiendaNube o vendes por Instagram y TikTok, nuestras cajas neutras para e-commerce son el punto de partida perfecto. Cuando tu volumen justifique la inversión, puedes agregar tu logo con nuestra <a href="/productos/cajas-personalizadas-logo">línea de cajas personalizadas</a> desde 100 piezas. El proceso de <strong>cotización es gratuito y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con tus medidas de producto y te decimos exactamente qué caja necesitas y a qué precio.
-        </p>
-      </div>
-    </section>
+ <!-- SEO CONTENT -->
+ <section class="seo-content" aria-labelledby="seo-eco-title">
+ <div class="container">
+ <h2 id="seo-eco-title" class="seo-content__title">
+ Cajas de Cartón para E-commerce en CDMX: La Guía Definitiva para Vendedores Online
+ </h2>
+ <p class="seo-content__text">
+ En el e-commerce mexicano, el empaque no es un detalle — es parte del producto. Una caja que no cumple las medidas de <strong>Mercado Envíos</strong> genera cobros adicionales que erosionan el margen. Una caja con resistencia insuficiente para <strong>Amazon FBA</strong> resulta en rechazo del inventario en el centro de distribución. En CADECA hemos eliminado estos problemas: todas nuestras cajas para e-commerce están dimensionadas y probadas para las plataformas y paqueterías líderes en México, con stock permanente en CDMX.
+ </p>
+ <p class="seo-content__text">
+ Para los <strong>vendedores de Mercado Libre en CDMX</strong>, nuestras cajas cubren todas las categorías de Mercado Envíos (Chica, Mediana, Grande y Extra Grande) en corrugado doble pared para máxima protección durante el manejo de las paqueterías. Para los <strong>sellers de Amazon México</strong> (FBA y FBM), cumplimos el estándar ECT-44 mínimo requerido por Amazon Seller Central y las medidas aceptadas por los centros de distribución en Cuautitlán y Tepotzotlán. Entrega garantizada en <strong>24 horas en toda la CDMX y municipios conurbados del Estado de México</strong>.
+ </p>
+ <p class="seo-content__text">
+ Si tienes tu propia tienda en Shopify, TiendaNube o vendes por Instagram y TikTok, nuestras cajas neutras para e-commerce son el punto de partida perfecto. Cuando tu volumen justifique la inversión, puedes agregar tu logo con nuestra <a href="/productos/cajas-personalizadas-logo">línea de cajas personalizadas</a> desde 100 piezas. El proceso de <strong>cotización es gratuito y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con tus medidas de producto y te decimos exactamente qué caja necesitas y a qué precio.
+ </p>
+ </div>
+ </section>
 
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-eco-title">
-      <div class="container">
-        <SectionHeader
-          id="faq-eco-title"
-          twoCol
-          title="Preguntas Frecuentes: Cajas para E-commerce"
-          subtitle="Todo sobre medidas, paqueterías, Amazon FBA, Mercado Envíos y pedidos mínimos"
-        >
-          <p>Las dudas más frecuentes de los vendedores online antes de hacer su primer pedido con CADECA. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
-          <p>Respondemos consultas técnicas sobre medidas, peso volumétrico, resistencia ECT y compatibilidad con paqueterías en menos de 1 hora, sin costo y sin compromiso de compra.</p>
-        </SectionHeader>
-        <div class="faq__list">
-          {faqs.map(f => <FaqItem {...f} />)}
-        </div>
-      </div>
-    </section>
+ <!-- FAQ -->
+ <section class="faq" aria-labelledby="faq-eco-title">
+ <div class="container">
+ <SectionHeader
+ id="faq-eco-title"
+ twoCol
+ title="Preguntas Frecuentes: Cajas para E-commerce"
+ subtitle="Todo sobre medidas, paqueterías, Amazon FBA, Mercado Envíos y pedidos mínimos"
+ >
+ <p>Las dudas más frecuentes de los vendedores online antes de hacer su primer pedido con CADECA. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
+ <p>Respondemos consultas técnicas sobre medidas, peso volumétrico, resistencia ECT y compatibilidad con paqueterías en menos de 1 hora, sin costo y sin compromiso de compra.</p>
+ </SectionHeader>
+ <div class="faq__list">
+ {faqs.map(f => <FaqItem {...f} />)}
+ </div>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas para e-commerce en minutos" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas para e-commerce en minutos" />
 
 </PageLayout>

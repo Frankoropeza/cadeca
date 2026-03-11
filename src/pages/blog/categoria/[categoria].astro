@@ -1,94 +1,94 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
-import BlogCard   from "@/components/BlogCard.astro";
+import BlogCard  from "@/components/BlogCard.astro";
 import "@/styles/blog.css";
 import { getCollection } from "astro:content";
 
 const categoryMap: Record<string, string> = {
-  "guias": "Guías",
-  "e-commerce": "E-commerce",
-  "industria": "Industria",
-  "sostenibilidad": "Sostenibilidad",
-  "consejos": "Consejos",
+ "guias": "Guías",
+ "e-commerce": "E-commerce",
+ "industria": "Industria",
+ "sostenibilidad": "Sostenibilidad",
+ "consejos": "Consejos",
 };
 
 export async function getStaticPaths() {
-  const slugs = ["guias", "e-commerce", "industria", "sostenibilidad", "consejos"];
-  return slugs.map(slug => ({ params: { categoria: slug } }));
+ const slugs = ["guias", "e-commerce", "industria", "sostenibilidad", "consejos"];
+ return slugs.map(slug => ({ params: { categoria: slug } }));
 }
 
 const { categoria } = Astro.params;
 const categoryName = categoryMap[categoria!] || categoria;
 
 const allPosts = (await getCollection("blog"))
-  .filter(p => p.data.category === categoryName)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+ .filter(p => p.data.category === categoryName)
+ .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const categories = ["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos"] as const;
 
 const SITE = "https://cajas-de-carton.com";
 
 const schemaCollection = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": `${categoryName} — Blog CADECA`,
-  "description": `Artículos sobre ${categoryName?.toLowerCase()} en el blog de CADECA.`,
-  "url": `${SITE}/blog/categoria/${categoria}`,
-  "publisher": { "@type": "Organization", "name": "CADECA" },
+ "@context": "https://schema.org",
+ "@type": "CollectionPage",
+ "name": `${categoryName} — Blog CADECA`,
+ "description": `Artículos sobre ${categoryName?.toLowerCase()} en el blog de CADECA.`,
+ "url": `${SITE}/blog/categoria/${categoria}`,
+ "publisher": { "@type": "Organization", "name": "CADECA" },
 };
 ---
 
 <PageLayout
-  title={`${categoryName} — Blog CADECA | Cajas de Cartón CDMX`}
-  description={`Artículos sobre ${categoryName?.toLowerCase()} — guías, consejos y tendencias de empaques de cartón corrugado para tu negocio.`}
-  schema={schemaCollection}
-  breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Blog", href: "/blog" }, { name: categoryName! }]}
+ title={`${categoryName} — Blog CADECA | Cajas de Cartón CDMX`}
+ description={`Artículos sobre ${categoryName?.toLowerCase()} — guías, consejos y tendencias de empaques de cartón corrugado para tu negocio.`}
+ schema={schemaCollection}
+ breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Blog", href: "/blog" }, { name: categoryName! }]}
 >
-  <main id="contenido-principal">
+ <main id="contenido-principal">
 
-    <!-- Hero -->
-    <section class="category-hero">
-      <div class="container">
-        <p class="category-hero__label">Categoría</p>
-        <h1 class="category-hero__title">{categoryName}</h1>
-      </div>
-    </section>
+ <!-- Hero -->
+ <section class="category-hero">
+ <div class="container">
+ <p class="category-hero__label">Categoría</p>
+ <h1 class="category-hero__title">{categoryName}</h1>
+ </div>
+ </section>
 
-    <!-- Category Filter -->
-    <div class="container" style="padding-top: var(--spacing-xl);">
-      <div class="blog-categories">
-        <a href="/blog" class="blog-categories__link">Todos</a>
-        {categories.map(cat => {
-          const catSlug = cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
-          const isActive = catSlug === categoria;
-          return <a href={`/blog/categoria/${catSlug}`} class={`blog-categories__link ${isActive ? "blog-categories__link--active" : ""}`}>{cat}</a>;
-        })}
-      </div>
-    </div>
+ <!-- Category Filter -->
+ <div class="container" style="padding-top: var(--spacing-xl);">
+ <div class="blog-categories">
+ <a href="/blog" class="blog-categories__link">Todos</a>
+ {categories.map(cat => {
+ const catSlug = cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
+ const isActive = catSlug === categoria;
+ return <a href={`/blog/categoria/${catSlug}`} class={`blog-categories__link ${isActive ? "blog-categories__link--active" : ""}`}>{cat}</a>;
+ })}
+ </div>
+ </div>
 
-    <div class="container" style="padding-bottom: var(--spacing-3xl);">
-      {allPosts.length > 0 ? (
-        <div class="blog-grid">
-          {allPosts.map(post => (
-            <BlogCard
-              title={post.data.title}
-              slug={post.slug}
-              description={post.data.description}
-              pubDate={post.data.pubDate}
-              category={post.data.category}
-              readingTime={post.data.readingTime}
-              image={post.data.image}
-              imageAlt={post.data.imageAlt}
-            />
-          ))}
-        </div>
-      ) : (
-        <div style="text-align: center; padding: var(--spacing-3xl) 0;">
-          <p style="font-size: var(--font-size-lg); color: var(--color-text-light);">Aún no hay artículos en esta categoría.</p>
-          <a href="/blog" class="btn btn--primary" style="margin-top: var(--spacing-lg);">Ver todos los artículos</a>
-        </div>
-      )}
-    </div>
+ <div class="container" style="padding-bottom: var(--spacing-3xl);">
+ {allPosts.length > 0 ? (
+ <div class="blog-grid">
+ {allPosts.map(post => (
+ <BlogCard
+ title={post.data.title}
+ slug={post.slug}
+ description={post.data.description}
+ pubDate={post.data.pubDate}
+ category={post.data.category}
+ readingTime={post.data.readingTime}
+ image={post.data.image}
+ imageAlt={post.data.imageAlt}
+ />
+ ))}
+ </div>
+ ) : (
+ <div style="text-align: center; padding: var(--spacing-3xl) 0;">
+ <p style="font-size: var(--font-size-lg); color: var(--color-text-light);">Aún no hay artículos en esta categoría.</p>
+ <a href="/blog" class="btn btn--primary" style="margin-top: var(--spacing-lg);">Ver todos los artículos</a>
+ </div>
+ )}
+ </div>
 
-  </main>
+ </main>
 </PageLayout>

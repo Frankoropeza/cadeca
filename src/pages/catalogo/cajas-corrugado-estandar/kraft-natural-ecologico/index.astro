@@ -1,131 +1,131 @@
 ---
-import PageLayout    from "@/layouts/PageLayout.astro";
-import FaqItem       from "@/components/FaqItem.astro";
-import LeadCapture   from "@/components/LeadCapture.astro";
+import PageLayout  from "@/layouts/PageLayout.astro";
+import FaqItem  from "@/components/FaqItem.astro";
+import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Caja Corrugado Kraft Natural Ecológico FSC CDMX | CAD-CS-06 | CADECA";
+const title  = "Caja Corrugado Kraft Natural Ecológico FSC CDMX | CAD-CS-06 | CADECA";
 const description = "Caja corrugado kraft natural ecológico en CDMX. Papel FSC reciclado postconsumer 150g/m², ECT-32, pared simple. Ideal para e-commerce eco-friendly. Desde 50 pzas. CADECA.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
-  ["Código SKU",    "CAD-CS-06"],
-  ["Tipo de pared", "Simple"],
-  ["Flauta",        "C (4mm)"],
-  ["Resistencia",   "ECT-32"],
-  ["Gramaje liner", "150 g/m² reciclado PCR"],
-  ["Material",      "Kraft natural FSC / PCR postconsumer"],
-  ["Cierre",        "4 solapas autoblocante"],
-  ["Certificación", "FSC · Carbono neutro disponible"],
-  ["Pedido mínimo", "50 piezas"],
-  ["Entrega CDMX",  "24–48 hrs"],
+ ["Código SKU",  "CAD-CS-06"],
+ ["Tipo de pared", "Simple"],
+ ["Flauta",  "C (4mm)"],
+ ["Resistencia",  "ECT-32"],
+ ["Gramaje liner", "150 g/m² reciclado PCR"],
+ ["Material",  "Kraft natural FSC / PCR postconsumer"],
+ ["Cierre",  "4 solapas autoblocante"],
+ ["Certificación", "FSC · Carbono neutro disponible"],
+ ["Pedido mínimo", "50 piezas"],
+ ["Entrega CDMX",  "24–48 hrs"],
 ];
 
 const faqs = [
-  {
-    id: "cs06-f1",
-    question: "¿Qué significa que la caja sea FSC y PCR?",
-    answer: "FSC (Forest Stewardship Council) certifica que el papel proviene de bosques gestionados de forma responsable. PCR (Post-Consumer Recycled) indica que el material fue recuperado de residuos domésticos o industriales posconsumo, cerrando el ciclo del reciclaje. Nuestro CAD-CS-06 combina ambas certificaciones: liner 150 g/m² con mínimo 70% de fibra reciclada PCR. Esto reduce hasta 40% las emisiones de CO₂ respecto a una caja kraft virgen equivalente, sin sacrificar resistencia ECT-32.",
-  },
-  {
-    id: "cs06-f2",
-    question: "¿La caja kraft ecológica resiste igual que una kraft virgen?",
-    answer: "En condiciones de almacenamiento estándar (temperatura <25°C, humedad relativa <65%), el CAD-CS-06 alcanza ECT-32, idéntico al corrugado simple virgen equivalente. La diferencia aparece en ambientes de alta humedad: el papel reciclado absorbe más humedad y puede perder entre 10-15% de resistencia extra frente al virgen. Para almacenes sin control de humedad o envíos en temporada de lluvias, recomendamos solicitar tratamiento anti-humedad o escalar a pared doble.",
-  },
-  {
-    id: "cs06-f3",
-    question: "¿Puedo imprimir mi logo en la caja kraft ecológica?",
-    answer: "Sí. El liner 150 g/m² PCR tiene una superficie natural marrón oscuro que acepta perfectamente la impresión flexográfica en 1 o 2 colores. El tono kraft natural refuerza la comunicación ecológica de tu marca. Para logos con colores claros (blanco, amarillo) sobre fondo oscuro, recomendamos usar tinta blanca como base. La impresión con logo está disponible desde 100 piezas con un costo de setup único de plancha. Turnaround: 5-7 días hábiles.",
-  },
+ {
+ id: "cs06-f1",
+ question: "¿Qué significa que la caja sea FSC y PCR?",
+ answer: "FSC (Forest Stewardship Council) certifica que el papel proviene de bosques gestionados de forma responsable. PCR (Post-Consumer Recycled) indica que el material fue recuperado de residuos domésticos o industriales posconsumo, cerrando el ciclo del reciclaje. Nuestro CAD-CS-06 combina ambas certificaciones: liner 150 g/m² con mínimo 70% de fibra reciclada PCR. Esto reduce hasta 40% las emisiones de CO₂ respecto a una caja kraft virgen equivalente, sin sacrificar resistencia ECT-32.",
+ },
+ {
+ id: "cs06-f2",
+ question: "¿La caja kraft ecológica resiste igual que una kraft virgen?",
+ answer: "En condiciones de almacenamiento estándar (temperatura <25°C, humedad relativa <65%), el CAD-CS-06 alcanza ECT-32, idéntico al corrugado simple virgen equivalente. La diferencia aparece en ambientes de alta humedad: el papel reciclado absorbe más humedad y puede perder entre 10-15% de resistencia extra frente al virgen. Para almacenes sin control de humedad o envíos en temporada de lluvias, recomendamos solicitar tratamiento anti-humedad o escalar a pared doble.",
+ },
+ {
+ id: "cs06-f3",
+ question: "¿Puedo imprimir mi logo en la caja kraft ecológica?",
+ answer: "Sí. El liner 150 g/m² PCR tiene una superficie natural marrón oscuro que acepta perfectamente la impresión flexográfica en 1 o 2 colores. El tono kraft natural refuerza la comunicación ecológica de tu marca. Para logos con colores claros (blanco, amarillo) sobre fondo oscuro, recomendamos usar tinta blanca como base. La impresión con logo está disponible desde 100 piezas con un costo de setup único de plancha. Turnaround: 5-7 días hábiles.",
+ },
 ];
 
 const gallery = [
-  { src: "/img/catalogo/corrugado-simple-angulo-45-cdmx.avif",        alt: "Caja corrugado kraft ecológico FSC — vista 45°" },
-  { src: "/img/catalogo/corrugado-simple-detalle-flauta-cdmx.avif",   alt: "Detalle flauta C corrugado kraft natural PCR" },
-  { src: "/img/catalogo/corrugado-simple-pared-apilado-cdmx.avif",    alt: "Cajas corrugado kraft ecológico apiladas CDMX" },
-  { src: "/img/catalogo/corrugado-simple-uso-envio-cdmx.avif",        alt: "Caja kraft ecológica en uso real de envío" },
-  { src: "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif",  alt: "Caja corrugado kraft resistente para e-commerce eco" },
+ { src: "/img/catalogo/corrugado-simple-angulo-45-cdmx.avif",  alt: "Caja corrugado kraft ecológico FSC — vista 45°" },
+ { src: "/img/catalogo/corrugado-simple-detalle-flauta-cdmx.avif",  alt: "Detalle flauta C corrugado kraft natural PCR" },
+ { src: "/img/catalogo/corrugado-simple-pared-apilado-cdmx.avif",  alt: "Cajas corrugado kraft ecológico apiladas CDMX" },
+ { src: "/img/catalogo/corrugado-simple-uso-envio-cdmx.avif",  alt: "Caja kraft ecológica en uso real de envío" },
+ { src: "/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif",  alt: "Caja corrugado kraft resistente para e-commerce eco" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Kraft Natural Ecológico"}]}
-  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
-  product={{name:"Caja Corrugado Kraft Natural Ecológico",sku:"CAD-CS-06",description:"Caja corrugado kraft FSC reciclado ECT-32 en CDMX — CADECA",image:gallery[0].src,material:"Kraft FSC / PCR postconsumer 150g/m²",category:"Cajas Corrugado Estándar",moq:"50"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Kraft Natural Ecológico"}]}
+ faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ product={{name:"Caja Corrugado Kraft Natural Ecológico",sku:"CAD-CS-06",description:"Caja corrugado kraft FSC reciclado ECT-32 en CDMX — CADECA",image:gallery[0].src,material:"Kraft FSC / PCR postconsumer 150g/m²",category:"Cajas Corrugado Estándar",moq:"50"}}
 >
 
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
-        <li><span class="current">Kraft Natural Ecológico</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+ <li><span class="current">Kraft Natural Ecológico</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-cs06-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-CS-06 · Corrugado Estándar</span>
-      <h1 id="sku-cs06-title" class="cat-page-hero__title">Caja Corrugado <span>Kraft Natural Ecológico</span></h1>
-      <p class="cat-page-hero__desc">
-        Papel FSC certificado y fibra reciclada postconsumer (PCR) al 70%. ECT-32 con huella de carbono reducida hasta 40% versus kraft virgen. Ideal para marcas eco-friendly con envíos en CDMX. Desde 50 piezas con entrega en 24–48 hrs.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-06</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-cs06-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-CS-06 · Corrugado Estándar</span>
+ <h1 id="sku-cs06-title" class="cat-page-hero__title">Caja Corrugado <span>Kraft Natural Ecológico</span></h1>
+ <p class="cat-page-hero__desc">
+ Papel FSC certificado y fibra reciclada postconsumer (PCR) al 70%. ECT-32 con huella de carbono reducida hasta 40% versus kraft virgen. Ideal para marcas eco-friendly con envíos en CDMX. Desde 50 piezas con entrega en 24–48 hrs.
+ </p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-06</strong></div>
+ <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-cs06-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-CS-06 · Familia: Corrugado Estándar</p>
-            <h2 id="detalle-cs06-title" class="sku-detail__title">Caja Corrugado Kraft Natural Ecológico</h2>
-            <p class="sku-detail__desc">
-              La caja corrugado kraft ecológico CAD-CS-06 combina certificación FSC con fibra reciclada postconsumer (PCR) para ofrecer resistencia ECT-32 con el menor impacto ambiental posible. Fabricada en CDMX con liner 150 g/m², es la elección preferida de marcas de e-commerce sostenible, cosméticos naturales y alimentos orgánicos que buscan coherencia entre su producto y su empaque.
-            </p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC · PCR</span><span class="sku-detail__strip-label">Certificación</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-06 Caja Corrugado Kraft Natural Ecológico`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-06</a>
-              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-cs06-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-CS-06 · Familia: Corrugado Estándar</p>
+ <h2 id="detalle-cs06-title" class="sku-detail__title">Caja Corrugado Kraft Natural Ecológico</h2>
+ <p class="sku-detail__desc">
+ La caja corrugado kraft ecológico CAD-CS-06 combina certificación FSC con fibra reciclada postconsumer (PCR) para ofrecer resistencia ECT-32 con el menor impacto ambiental posible. Fabricada en CDMX con liner 150 g/m², es la elección preferida de marcas de e-commerce sostenible, cosméticos naturales y alimentos orgánicos que buscan coherencia entre su producto y su empaque.
+ </p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC · PCR</span><span class="sku-detail__strip-label">Certificación</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-06 Caja Corrugado Kraft Natural Ecológico`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-06</a>
+ <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-faq" aria-labelledby="faq-cs06-title">
-      <div class="container">
-        <h2 id="faq-cs06-title" class="sku-faq__title">Preguntas Frecuentes — Kraft Natural Ecológico</h2>
-        <div class="sku-faq__list">
-          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="sku-faq" aria-labelledby="faq-cs06-title">
+ <div class="container">
+ <h2 id="faq-cs06-title" class="sku-faq__title">Preguntas Frecuentes — Kraft Natural Ecológico</h2>
+ <div class="sku-faq__list">
+ {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+ </div>
+ </div>
+ </section>
+ </main>
 
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tu Caja Ecológica FSC — Entrega 24 hrs en CDMX" />
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza tu Caja Ecológica FSC — Entrega 24 hrs en CDMX" />
 </PageLayout>

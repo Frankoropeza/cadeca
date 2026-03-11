@@ -1,151 +1,151 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem     from "@/components/FaqItem.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
-const title       = "Separadores Cartón Corrugado CDMX | Divisiones a la Medida | CAD-LC-04 | CADECA";
+const title  = "Separadores Cartón Corrugado CDMX | Divisiones a la Medida | CAD-LC-04 | CADECA";
 const description = "Separadores cartón corrugado CDMX. Flauta B o E, diseño por caja, precio mínimo. Desde 200 pzas, 3-5 días. CADECA fabricante.";
-const WHATSAPP    = "5255XXXXXXXX";
+const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
-  { talla:"4 div. (1×4)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.04 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
-  { talla:"6 div. (2×3)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.06 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
-  { talla:"9 div. (3×3)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.09 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
-  { talla:"12 div. (3×4)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.12 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
-  { talla:"16 div. (4×4)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.15 kg/ud",máx:"—", disp:"gray", label:"5-7 días", hl:false },
-  { talla:"Diseño personalizado", ml:"A definir", real:"A definir", flauta:"B/E",ect:"ECT-26",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
+ { talla:"4 div. (1×4)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.04 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
+ { talla:"6 div. (2×3)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.06 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
+ { talla:"9 div. (3×3)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.09 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:true },
+ { talla:"12 div. (3×4)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.12 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
+ { talla:"16 div. (4×4)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.15 kg/ud",máx:"—", disp:"gray", label:"5-7 días", hl:false },
+ { talla:"Diseño personalizado", ml:"A definir", real:"A definir", flauta:"B/E",ect:"ECT-26",vacío:"—",máx:"—", disp:"gray", label:"Consultar", hl:false },
 ];
 
 const specs = [
-  ["Código SKU", "CAD-LC-04"],
-  ["Tipo", "Separadores ranurados"],
-  ["Flauta", "B 3 mm o E 1.5 mm"],
-  ["ECT", "ECT-26"],
-  ["Diseño", "A la medida"],
-  ["Ensamblaje", "Ranurado sin pegamento"],
-  ["Objetivo", "Separar unidades prevenir golpes"],
-  ["Aplicaciones", "Botellas · Frascos · Velas · Electrónica"],
-  ["CAD", "Gratis 24 hrs"],
-  ["Precio/ud", "El más bajo"],
-  ["MOQ", "200 pzas"],
-  ["Entrega", "3-5 días hábiles"],
+ ["Código SKU", "CAD-LC-04"],
+ ["Tipo", "Separadores ranurados"],
+ ["Flauta", "B 3 mm o E 1.5 mm"],
+ ["ECT", "ECT-26"],
+ ["Diseño", "A la medida"],
+ ["Ensamblaje", "Ranurado sin pegamento"],
+ ["Objetivo", "Separar unidades prevenir golpes"],
+ ["Aplicaciones", "Botellas · Frascos · Velas · Electrónica"],
+ ["CAD", "Gratis 24 hrs"],
+ ["Precio/ud", "El más bajo"],
+ ["MOQ", "200 pzas"],
+ ["Entrega", "3-5 días hábiles"],
 ];
 
 const faqs = [
-  {
-    id:"lc04-f1",
-    question:"¿Cómo diseñan el separador exacto para mi caja?",
-    answer:"Compártenos dimensiones interiores de tu caja y número de unidades a separar. Calculamos grosor óptimo de ranura para que entre justo. CAD en 24 horas para aprobación, muestra en 24-48 horas. El separador correcto hace que las unidades no se toquen ni roten, eliminando daño por vibración en tránsito.",
-  },
-  {
-    id:"lc04-f2",
-    question:"¿Cuántas divisiones tienen sentido económicamente?",
-    answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador.",
-  },
+ {
+ id:"lc04-f1",
+ question:"¿Cómo diseñan el separador exacto para mi caja?",
+ answer:"Compártenos dimensiones interiores de tu caja y número de unidades a separar. Calculamos grosor óptimo de ranura para que entre justo. CAD en 24 horas para aprobación, muestra en 24-48 horas. El separador correcto hace que las unidades no se toquen ni roten, eliminando daño por vibración en tránsito.",
+ },
+ {
+ id:"lc04-f2",
+ question:"¿Cuántas divisiones tienen sentido económicamente?",
+ answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador.",
+ },
 ];
 
 const mainImg = "/img/catalogo/separadores-carton-corrugado-cdmx.avif";
 const gallery = [
-  { src: "/img/catalogo/separadores-carton-corrugado-cdmx.avif", alt: "Separadores corrugado — principal" },
-  { src: "/img/catalogo/lamina-export-hero-cdmx.avif", alt: "Separadores — hero" },
-  { src: "/img/catalogo/lamina-export-flete-cdmx.avif", alt: "Empaque para flete" },
-  { src: "/img/catalogo/lamina-export-container-cdmx.avif", alt: "En contenedor" },
-  { src: "/img/catalogo/lamina-export-proteccion-cdmx.avif", alt: "Protección para exportación" },
+ { src: "/img/catalogo/separadores-carton-corrugado-cdmx.avif", alt: "Separadores corrugado — principal" },
+ { src: "/img/catalogo/lamina-export-hero-cdmx.avif", alt: "Separadores — hero" },
+ { src: "/img/catalogo/lamina-export-flete-cdmx.avif", alt: "Empaque para flete" },
+ { src: "/img/catalogo/lamina-export-container-cdmx.avif", alt: "En contenedor" },
+ { src: "/img/catalogo/lamina-export-proteccion-cdmx.avif", alt: "Protección para exportación" },
 ];
 ---
 
 <PageLayout
-  title={title}
-  description={description}
-  whatsapp={WHATSAPP}
-  pageType="product"
-  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Separadores y Divisiones"}]}
-  faqItems={[{question:"¿Cómo diseñan el separador exacto para mi caja?", answer:"Compártenos dimensiones interiores de tu caja y número de unidades a separar. Calculamos grosor óptimo de ranura para que entre justo. CAD en 24 horas para aprobación, muestra en 24-48 horas. El separador correcto hace que las unidades no se toquen ni roten, eliminando daño por vibración en tránsito."}, {question:"¿Cuántas divisiones tienen sentido económicamente?", answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador."}]}
-  product={{name:"Separadores Cartón Corrugado Divisiones a la Medida", sku:"CAD-LC-04", description:"Separadores Cartón Corrugado Divisiones a la Medida en CDMX — fabricante directo CADECA", image:"/img/catalogo/separadores-carton-corrugado-cdmx.avif", material:"Separadores cartón corrugado flauta B o E ranurados a la medida", category:"Láminas de Cartón Corrugado", moq:"200"}}
+ title={title}
+ description={description}
+ whatsapp={WHATSAPP}
+ pageType="product"
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Separadores y Divisiones"}]}
+ faqItems={[{question:"¿Cómo diseñan el separador exacto para mi caja?", answer:"Compártenos dimensiones interiores de tu caja y número de unidades a separar. Calculamos grosor óptimo de ranura para que entre justo. CAD en 24 horas para aprobación, muestra en 24-48 horas. El separador correcto hace que las unidades no se toquen ni roten, eliminando daño por vibración en tránsito."}, {question:"¿Cuántas divisiones tienen sentido económicamente?", answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador."}]}
+ product={{name:"Separadores Cartón Corrugado Divisiones a la Medida", sku:"CAD-LC-04", description:"Separadores Cartón Corrugado Divisiones a la Medida en CDMX — fabricante directo CADECA", image:"/img/catalogo/separadores-carton-corrugado-cdmx.avif", material:"Separadores cartón corrugado flauta B o E ranurados a la medida", category:"Láminas de Cartón Corrugado", moq:"200"}}
 >
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
-    <div class="container">
-      <ol>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
-        <li><span class="current">Separadores y Divisiones</span></li>
-      </ol>
-    </div>
-  </div>
+ <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+ <div class="container">
+ <ol>
+ <li><a href="/">Inicio</a></li>
+ <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+ <li><span class="current">Separadores y Divisiones</span></li>
+ </ol>
+ </div>
+ </div>
 
-  <section class="cat-page-hero" aria-labelledby="sku-lc04-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">SKU CAD-LC-04 · Láminas de Cartón Corrugado</span>
-      <h1 id="sku-lc04-title" class="cat-page-hero__title">Separadores Cartón <span>Divisiones a la Medida</span><br>— Precio Mínimo CDMX</h1>
-      <p class="cat-page-hero__desc">Separadores ranurados sin pegamento en flauta B (3 mm) o E (1.5 mm). Diseño CAD gratis en 24 horas. El precio más bajo por unidad del catálogo. Para botellas, frascos, velas y electrónica.</p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-04</strong></div>
-        <div class="cat-page-hero__strip-item">Diseño: <strong>CAD gratis 24 hrs</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
-      </div>
-    </div>
-  </section>
+ <section class="cat-page-hero" aria-labelledby="sku-lc04-title">
+ <div class="container">
+ <span class="cat-page-hero__eyebrow">SKU CAD-LC-04 · Láminas de Cartón Corrugado</span>
+ <h1 id="sku-lc04-title" class="cat-page-hero__title">Separadores Cartón <span>Divisiones a la Medida</span><br>— Precio Mínimo CDMX</h1>
+ <p class="cat-page-hero__desc">Separadores ranurados sin pegamento en flauta B (3 mm) o E (1.5 mm). Diseño CAD gratis en 24 horas. El precio más bajo por unidad del catálogo. Para botellas, frascos, velas y electrónica.</p>
+ <div class="cat-page-hero__strip">
+ <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-04</strong></div>
+ <div class="cat-page-hero__strip-item">Diseño: <strong>CAD gratis 24 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
+ </div>
+ </div>
+ </section>
 
-  <main id="contenido-principal" role="main">
-    <section class="sku-detail" aria-labelledby="detalle-lc04-title">
-      <div class="container">
-        <div class="sku-detail__grid">
-          <div class="sku-detail__img-col">
-            <ProductGallery images={gallery} />
-          </div>
-          <div class="sku-detail__content">
-            <p class="sku-detail__code">CAD-LC-04 · Familia: Láminas de Cartón Corrugado</p>
-            <h2 id="detalle-lc04-title" class="sku-detail__title">Separadores Cartón — Divisiones a la Medida</h2>
-            <p class="sku-detail__desc">Separadores ranurados a la medida de tu caja. Flauta B (3 mm) para mayor rigidez o E (1.5 mm) para espacios reducidos. Ensamblaje sin pegamento. Diseño CAD gratis en 24 horas, muestra en 24-48 horas. Previenen golpes entre unidades en tránsito.</p>
-            <div class="sku-detail__strip">
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">B o E</span><span class="sku-detail__strip-label">Flauta</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-26</span><span class="sku-detail__strip-label">Resistencia</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
-              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
-            </div>
-            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
-            <table class="sku-detail__specs-table"><tbody>
-              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
-            </tbody></table>
-            <div class="sku-detail__actions">
-              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-04 Separadores Divisiones a la Medida`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-04</a>
-              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main id="contenido-principal" role="main">
+ <section class="sku-detail" aria-labelledby="detalle-lc04-title">
+ <div class="container">
+ <div class="sku-detail__grid">
+ <div class="sku-detail__img-col">
+ <ProductGallery images={gallery} />
+ </div>
+ <div class="sku-detail__content">
+ <p class="sku-detail__code">CAD-LC-04 · Familia: Láminas de Cartón Corrugado</p>
+ <h2 id="detalle-lc04-title" class="sku-detail__title">Separadores Cartón — Divisiones a la Medida</h2>
+ <p class="sku-detail__desc">Separadores ranurados a la medida de tu caja. Flauta B (3 mm) para mayor rigidez o E (1.5 mm) para espacios reducidos. Ensamblaje sin pegamento. Diseño CAD gratis en 24 horas, muestra en 24-48 horas. Previenen golpes entre unidades en tránsito.</p>
+ <div class="sku-detail__strip">
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">B o E</span><span class="sku-detail__strip-label">Flauta</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-26</span><span class="sku-detail__strip-label">Resistencia</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ </div>
+ <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+ <table class="sku-detail__specs-table"><tbody>
+ {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+ </tbody></table>
+ <div class="sku-detail__actions">
+ <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-04 Separadores Divisiones a la Medida`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-04</a>
+ <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="sku-sizes" aria-labelledby="sizes-lc04-title">
-      <div class="container">
-        <h2 id="sizes-lc04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Configuraciones Disponibles — CAD-LC-04</h2>
-        <div class="catalog-sizes-table-wrap">
-          <table class="catalog-sizes-table">
-            <thead><tr><th>Divisiones</th><th>Dimensión</th><th>Medida real</th><th>Flauta</th><th>ECT</th><th>Peso/ud</th><th></th><th>Disponibilidad</th></tr></thead>
-            <tbody>
-              {medidas.map(m => (
-                <tr class={m.hl ? "highlight" : ""}>
-                  <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
-                  <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td></td>
-                  <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"✓":"⏱"} {m.label}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las configuraciones son a la medida de tu caja. Diseño CAD gratis. ⏱ Producción bajo pedido.</p>
-      </div>
-    </section>
+ <section class="sku-sizes" aria-labelledby="sizes-lc04-title">
+ <div class="container">
+ <h2 id="sizes-lc04-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Configuraciones Disponibles — CAD-LC-04</h2>
+ <div class="catalog-sizes-table-wrap">
+ <table class="catalog-sizes-table">
+ <thead><tr><th>Divisiones</th><th>Dimensión</th><th>Medida real</th><th>Flauta</th><th>ECT</th><th>Peso/ud</th><th></th><th>Disponibilidad</th></tr></thead>
+ <tbody>
+ {medidas.map(m => (
+ <tr class={m.hl ? "highlight" : ""}>
+ <td><strong>{m.talla}</strong></td><td>{m.ml}</td><td>{m.real}</td>
+ <td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las configuraciones son a la medida de tu caja. Diseño CAD gratis.  Producción bajo pedido.</p>
+ </div>
+ </section>
 
-    <section class="faq" aria-labelledby="faq-lc04-title">
-      <div class="container">
-        <h2 id="faq-lc04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-04</h2>
-        <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
-  </main>
-  <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-04 — Separadores desde 200 piezas, diseño CAD gratis" />
+ <section class="faq" aria-labelledby="faq-lc04-title">
+ <div class="container">
+ <h2 id="faq-lc04-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-LC-04</h2>
+ <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
+ </div>
+ </section>
+ </main>
+ <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-04 — Separadores desde 200 piezas, diseño CAD gratis" />
 </PageLayout>

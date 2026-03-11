@@ -1,86 +1,86 @@
 ---
 // LeadCapture.astro — Sección de captura de leads / cotización
 export interface Props {
-  whatsapp?: string;
-  title?:    string;
+ whatsapp?: string;
+ title?:  string;
 }
 
 const {
-  whatsapp = "5255XXXXXXXX",
-  title    = "Cotiza tus cajas de cartón en minutos",
+ whatsapp = "5255XXXXXXXX",
+ title  = "Cotiza tus cajas de cartón en minutos",
 } = Astro.props;
 ---
 
 <section class="lead-capture" id="cotizar" aria-labelledby="cotizar-title">
-  <div class="container">
+ <div class="container">
 
-    <h2 id="cotizar-title" class="lead-capture__title">{title}</h2>
+ <h2 id="cotizar-title" class="lead-capture__title">{title}</h2>
 
-    <div class="lead-capture__bullets">
-      <span class="lead-capture__bullet">Respuesta en menos de 2 horas</span>
-      <span class="lead-capture__bullet">Asesoría técnica sin costo</span>
-      <span class="lead-capture__bullet">Precios de mayoreo desde 1 pieza</span>
-      <span class="lead-capture__bullet">Entrega 24-48 hrs en CDMX</span>
-    </div>
+ <div class="lead-capture__bullets">
+ <span class="lead-capture__bullet">Respuesta en menos de 2 horas</span>
+ <span class="lead-capture__bullet">Asesoría técnica sin costo</span>
+ <span class="lead-capture__bullet">Precios de mayoreo desde 1 pieza</span>
+ <span class="lead-capture__bullet">Entrega 24-48 hrs en CDMX</span>
+ </div>
 
-    <form class="lead-capture__form" id="cotizar-form" aria-label="Formulario de cotización">
-      <input
-        type="text" class="lead-capture__input"
-        name="nombre" placeholder="Nombre completo"
-        required aria-label="Nombre completo" autocomplete="name"
-      />
-      <input
-        type="text" class="lead-capture__input"
-        name="contacto" placeholder="Teléfono o Email"
-        required aria-label="Teléfono o correo electrónico"
-      />
-      <select class="lead-capture__select" name="tipo" required aria-label="Tipo de caja">
-        <option value="" disabled selected>Tipo de caja</option>
-        <option value="Cajas corrugado estándar">Cajas corrugado estándar</option>
-        <option value="Cajas a la medida">Cajas a la medida</option>
-        <option value="Cajas personalizadas con logo">Cajas personalizadas con logo</option>
-        <option value="Cajas para e-commerce">Cajas para e-commerce</option>
-        <option value="Cajas para alimentos">Cajas para alimentos</option>
-        <option value="Láminas de cartón corrugado">Láminas de cartón corrugado</option>
-        <option value="Varios tipos">Varios tipos (especificar)</option>
-      </select>
-      <select class="lead-capture__select" name="cantidad" required aria-label="Cantidad aproximada">
-        <option value="" disabled selected>Cantidad aproximada</option>
-        <option value="Menos de 50 piezas">Menos de 50 piezas</option>
-        <option value="50 - 200 piezas">50 – 200 piezas</option>
-        <option value="200 - 1,000 piezas">200 – 1,000 piezas</option>
-        <option value="1,000 - 5,000 piezas">1,000 – 5,000 piezas</option>
-        <option value="Más de 5,000 piezas">Más de 5,000 piezas</option>
-      </select>
-      <button type="submit" class="lead-capture__submit">
-        Enviar Cotización por WhatsApp
-      </button>
-    </form>
+ <form class="lead-capture__form" id="cotizar-form" aria-label="Formulario de cotización">
+ <input
+ type="text" class="lead-capture__input"
+ name="nombre" placeholder="Nombre completo"
+ required aria-label="Nombre completo" autocomplete="name"
+ />
+ <input
+ type="text" class="lead-capture__input"
+ name="contacto" placeholder="Teléfono o Email"
+ required aria-label="Teléfono o correo electrónico"
+ />
+ <select class="lead-capture__select" name="tipo" required aria-label="Tipo de caja">
+ <option value="" disabled selected>Tipo de caja</option>
+ <option value="Cajas corrugado estándar">Cajas corrugado estándar</option>
+ <option value="Cajas a la medida">Cajas a la medida</option>
+ <option value="Cajas personalizadas con logo">Cajas personalizadas con logo</option>
+ <option value="Cajas para e-commerce">Cajas para e-commerce</option>
+ <option value="Cajas para alimentos">Cajas para alimentos</option>
+ <option value="Láminas de cartón corrugado">Láminas de cartón corrugado</option>
+ <option value="Varios tipos">Varios tipos (especificar)</option>
+ </select>
+ <select class="lead-capture__select" name="cantidad" required aria-label="Cantidad aproximada">
+ <option value="" disabled selected>Cantidad aproximada</option>
+ <option value="Menos de 50 piezas">Menos de 50 piezas</option>
+ <option value="50 - 200 piezas">50 – 200 piezas</option>
+ <option value="200 - 1,000 piezas">200 – 1,000 piezas</option>
+ <option value="1,000 - 5,000 piezas">1,000 – 5,000 piezas</option>
+ <option value="Más de 5,000 piezas">Más de 5,000 piezas</option>
+ </select>
+ <button type="submit" class="lead-capture__submit">
+ Enviar Cotización por WhatsApp
+ </button>
+ </form>
 
-    <p class="lead-capture__trust">Sin compromiso · Asesoría personalizada · Respondemos al instante</p>
-    <p class="lead-capture__alt">
-      También escríbenos directo:
-      <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">
-        WhatsApp directo
-      </a>
-      ·
-      <a href="/contacto">Ver todos los canales de contacto</a>
-    </p>
+ <p class="lead-capture__trust">Sin compromiso · Asesoría personalizada · Respondemos al instante</p>
+ <p class="lead-capture__alt">
+ También escríbenos directo:
+ <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">
+ WhatsApp directo
+ </a>
+ ·
+ <a href="/contacto">Ver todos los canales de contacto</a>
+ </p>
 
-  </div>
+ </div>
 </section>
 
 <script define:vars={{ whatsapp }}>
-  document.getElementById("cotizar-form")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const form     = e.target;
-    const nombre   = form.querySelector('[name="nombre"]')?.value.trim();
-    const contacto = form.querySelector('[name="contacto"]')?.value.trim();
-    const tipo     = form.querySelector('[name="tipo"]')?.value;
-    const cantidad = form.querySelector('[name="cantidad"]')?.value;
-    const msg = encodeURIComponent(
-      `Hola CADECA, soy ${nombre}.\nNecesito cotizar: ${tipo}\nCantidad aproximada: ${cantidad}\nContacto: ${contacto}`
-    );
-    window.open(`https://wa.me/${whatsapp}?text=${msg}`, "_blank");
-  });
+ document.getElementById("cotizar-form")?.addEventListener("submit", (e) => {
+ e.preventDefault();
+ const form  = e.target;
+ const nombre  = form.querySelector('[name="nombre"]')?.value.trim();
+ const contacto = form.querySelector('[name="contacto"]')?.value.trim();
+ const tipo  = form.querySelector('[name="tipo"]')?.value;
+ const cantidad = form.querySelector('[name="cantidad"]')?.value;
+ const msg = encodeURIComponent(
+ `Hola CADECA, soy ${nombre}.\nNecesito cotizar: ${tipo}\nCantidad aproximada: ${cantidad}\nContacto: ${contacto}`
+ );
+ window.open(`https://wa.me/${whatsapp}?text=${msg}`, "_blank");
+ });
 </script>
