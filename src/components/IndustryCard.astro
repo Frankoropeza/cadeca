@@ -1,32 +1,42 @@
 ---
-// IndustryCard.astro — Tarjeta de sector/industria compacta 4 columnas
+// IndustryCard.astro — Sector card con imagen placeholder, diseño homologado con ProductCard
 export interface Props {
-  icon:      string;
-  tag:       string;
-  title:     string;
-  desc:      string;
-  href:      string;
+  img:      string;
+  imgAlt:   string;
+  tag:      string;
+  title:    string;
+  desc:     string;
+  href:     string;
   linkText?: string;
-  accent?:   string;
 }
 
 const {
-  icon,
+  img,
+  imgAlt,
   tag,
   title,
   desc,
   href,
   linkText = "Ver soluciones",
-  accent = "#E05800",
 } = Astro.props;
 ---
 
-<a href={href} class="ind-card" style={`--ind-accent: ${accent}`}>
-  <div class="ind-card__top">
-    <span class="ind-card__icon" aria-hidden="true">{icon}</span>
+<a href={href} class="ind-card">
+  <div class="ind-card__img-wrap">
+    <img
+      src={img}
+      alt={imgAlt}
+      class="ind-card__img"
+      loading="lazy"
+      decoding="async"
+      width="600"
+      height="360"
+    />
     <span class="ind-card__tag">{tag}</span>
   </div>
-  <h3 class="ind-card__title">{title}</h3>
-  <p class="ind-card__desc">{desc}</p>
-  <span class="ind-card__cta">{linkText} →</span>
+  <div class="ind-card__body">
+    <h3 class="ind-card__title">{title}</h3>
+    <p class="ind-card__desc">{desc}</p>
+    <span class="ind-card__cta">{linkText} →</span>
+  </div>
 </a>
