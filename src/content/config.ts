@@ -8,7 +8,7 @@ const blog = defineCollection({
     pubDate: z.date(),
     updatedDate: z.date().optional(),
     author: z.string().default("Equipo CADECA"),
-    category: z.enum(["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos", "Técnico", "Marketing"]),
+    category: z.enum(["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos", "Técnico", "Marketing", "Zonas"]),
     tags: z.array(z.string()),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
