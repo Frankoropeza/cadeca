@@ -1,7 +1,7 @@
 ---
-// PageHero.astro — Hero homologado para todas las páginas interiores
-// Fondo: var(--color-secondary) con gradiente y patrón sutil
-// Estructura: eyebrow → h1 → párrafo 1 → párrafo 2 (opcional) → chips/stats (opcional) → CTAs (opcional)
+// PageHero.astro — Hero 2 columnas homologado
+// Izquierda: eyebrow + H1 + desc + desc2 + CTAs
+// Derecha: chips (como cards) + stats + features list
 
 export interface Chip {
   label: string;
@@ -19,16 +19,15 @@ export interface StatItem {
 }
 
 export interface Props {
-  eyebrow?:   string;          // Texto pequeño arriba del h1 (ej: "Fabricante directo · CDMX")
-  title:      string;          // Texto del H1 — puede incluir <span> para colorear parte
-  titleHtml?: boolean;         // Si true, renderiza title como HTML (para spans)
-  desc:       string;          // Párrafo 1 — descripción principal
-  desc2?:     string;          // Párrafo 2 — contexto adicional
-  chips?:     Chip[];          // Chips informativos opcionales (MOQ, entrega, etc.)
-  stats?:     StatItem[];      // Stats horizontales opcionales
-  ctas?:      Cta[];           // Botones de acción opcionales
-  centered?:  boolean;         // true = centrado, false = left-aligned (default: false)
-  size?:      "normal" | "lg"; // lg = hero más grande (default: normal)
+  eyebrow?:   string;
+  title:      string;
+  titleHtml?: boolean;
+  desc:       string;
+  desc2?:     string;
+  chips?:     Chip[];
+  stats?:     StatItem[];
+  ctas?:      Cta[];
+  size?:      "normal" | "lg";
 }
 
 const {
@@ -40,49 +39,63 @@ const {
   chips,
   stats,
   ctas,
-  centered = false,
   size = "normal",
 } = Astro.props;
+
+const hasRight = (chips && chips.length > 0) || (stats && stats.length > 0);
 ---
 
-<section class={`page-hero-std${centered ? " page-hero-std--centered" : ""}${size === "lg" ? " page-hero-std--lg" : ""}`}>
+<section class={`page-hero-std${size === "lg" ? " page-hero-std--lg" : ""}`}>
   <div class="container">
-    <div class="page-hero-std__inner">
-      {eyebrow && <span class="page-hero-std__eyebrow">{eyebrow}</span>}
+    <div class={`page-hero-std__grid${hasRight ? "" : " page-hero-std__grid--full"}`}>
 
-      {titleHtml
-        ? <h1 class="page-hero-std__title" set:html={title} />
-        : <h1 class="page-hero-std__title">{title}</h1>
-      }
+      <!-- Columna izquierda: contenido principal -->
+      <div class="page-hero-std__left">
+        {eyebrow && <span class="page-hero-std__eyebrow">{eyebrow}</span>}
 
-      <p class="page-hero-std__desc">{desc}</p>
+        {titleHtml
+          ? <h1 class="page-hero-std__title" set:html={title} />
+          : <h1 class="page-hero-std__title">{title}</h1>
+        }
 
-      {desc2 && <p class="page-hero-std__desc page-hero-std__desc--2">{desc2}</p>}
+        <p class="page-hero-std__desc">{desc}</p>
+        {desc2 && <p class="page-hero-std__desc page-hero-std__desc--2">{desc2}</p>}
 
-      {chips && chips.length > 0 && (
-        <div class="page-hero-std__chips">
-          {chips.map(c => <span class="page-hero-std__chip">{c.label}</span>)}
-        </div>
-      )}
+        {ctas && ctas.length > 0 && (
+          <div class="page-hero-std__ctas">
+            {ctas.map(c => (
+              <a href={c.href} class={`btn btn--${c.variant}`}>{c.label}</a>
+            ))}
+          </div>
+        )}
+      </div>
 
-      {stats && stats.length > 0 && (
-        <div class="page-hero-std__stats">
-          {stats.map(s => (
-            <div class="page-hero-std__stat">
-              <span class="page-hero-std__stat-value">{s.value}</span>
-              <span class="page-hero-std__stat-label">{s.label}</span>
+      <!-- Columna derecha: chips como cards + stats -->
+      {hasRight && (
+        <div class="page-hero-std__right">
+          {chips && chips.length > 0 && (
+            <div class="page-hero-std__feature-cards">
+              {chips.map(c => (
+                <div class="page-hero-std__feature-card">
+                  <span class="page-hero-std__feature-dot"></span>
+                  <span class="page-hero-std__feature-text">{c.label}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
+          {stats && stats.length > 0 && (
+            <div class="page-hero-std__stats-grid">
+              {stats.map(s => (
+                <div class="page-hero-std__stat">
+                  <span class="page-hero-std__stat-value">{s.value}</span>
+                  <span class="page-hero-std__stat-label">{s.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
-      {ctas && ctas.length > 0 && (
-        <div class="page-hero-std__ctas">
-          {ctas.map(c => (
-            <a href={c.href} class={`btn btn--${c.variant}`}>{c.label}</a>
-          ))}
-        </div>
-      )}
     </div>
   </div>
 </section>
