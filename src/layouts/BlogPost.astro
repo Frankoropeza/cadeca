@@ -127,14 +127,6 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
         <h1 class="post-hero__title">{title}</h1>
         <div class="post-hero__meta">
           <span class="post-hero__meta-item">✍ {author}</span>
-          <span class="post-hero__meta-sep">·</span>
-          <span class="post-hero__meta-item">📅 {formatDate(pubDate)}</span>
-          {updatedDate && (
-            <>
-              <span class="post-hero__meta-sep">·</span>
-              <span class="post-hero__meta-item">🔄 Act. {formatDate(updatedDate)}</span>
-            </>
-          )}
           {readingTime && (
             <>
               <span class="post-hero__meta-sep">·</span>
@@ -240,7 +232,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
                     <div class="blog-card__body">
                       <h3 class="blog-card__title">{post.title}</h3>
                       <div class="blog-card__footer">
-                        <span>{formatDate(post.pubDate)}</span>
+                        <span>{post.category}</span>
                         <span class="blog-card__read-more">Leer →</span>
                       </div>
                     </div>

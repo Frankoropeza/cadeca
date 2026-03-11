@@ -131,12 +131,8 @@ function formatDate(d: Date) {
             <h2 class="blog-featured-hero__title">{featuredPost.data.title}</h2>
             <p class="blog-featured-hero__desc">{featuredPost.data.description}</p>
             <div class="blog-featured-hero__meta">
-              <span>📅 {formatDate(featuredPost.data.pubDate)}</span>
               {featuredPost.data.readingTime && (
-                <>
-                  <span class="blog-featured-hero__meta-sep">·</span>
-                  <span>⏱ {featuredPost.data.readingTime} min</span>
-                </>
+                <span>⏱ {featuredPost.data.readingTime} min de lectura</span>
               )}
             </div>
             <span class="blog-featured-hero__read">Leer artículo</span>
@@ -176,7 +172,7 @@ function formatDate(d: Date) {
                   <h3 class="blog-card__title">{post.data.title}</h3>
                   <p class="blog-card__desc">{post.data.description}</p>
                   <div class="blog-card__footer">
-                    <span>{formatDate(post.data.pubDate)}</span>
+                    <span>{post.data.category}</span>
                     <span class="blog-card__read-more">
                       {post.data.readingTime ? `${post.data.readingTime} min →` : "Leer →"}
                     </span>
@@ -243,7 +239,7 @@ function formatDate(d: Date) {
                 </div>
                 <div>
                   <div class="sidebar-recent__title">{post.data.title}</div>
-                  <div class="sidebar-recent__date">{formatDate(post.data.pubDate)}</div>
+                  <div class="sidebar-recent__date">{post.data.category}</div>
                 </div>
               </a>
             ))}
