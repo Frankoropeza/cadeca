@@ -318,36 +318,45 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
 <!-- Reading progress + TOC Active Heading -->
 <script>
 (function() {
-  // Reading progress bar
+  // Reading progress — usa transform para no causar reflow
   const bar = document.querySelector('.reading-progress__bar') as HTMLElement | null;
   if (bar) {
+    let ticking = false;
     const update = () => {
-      const el = document.documentElement;
-      const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
-      bar.style.width = Math.min(pct, 100) + '%';
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const el = document.documentElement;
+          const total = el.scrollHeight - el.clientHeight;
+          const pct = total > 0 ? Math.min((el.scrollTop / total) * 100, 100) : 0;
+          bar.style.transform = `scaleX(${pct / 100})`;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', update, { passive: true });
     update();
   }
 
-  const tocLinks = document.querySelectorAll('#toc-list a[data-heading]');
+  // TOC active — sin scrollIntoView para evitar scroll loop
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('#toc-list a[data-heading]');
   if (!tocLinks.length) return;
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         tocLinks.forEach(a => a.classList.remove('toc-active'));
-        const active = document.querySelector(`#toc-list a[data-heading="${entry.target.id}"]`);
-        if (active) {
-          active.classList.add('toc-active');
-          active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-        }
+        const active = document.querySelector<HTMLElement>(
+          `#toc-list a[data-heading="${entry.target.id}"]`
+        );
+        if (active) active.classList.add('toc-active');
+        // NO scrollIntoView — causaba scroll loop en mobile
       }
     });
-  }, { rootMargin: '-10% 0px -70% 0px' });
+  }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
 
-  document.querySelectorAll('#article-content h2, #article-content h3').forEach(h => {
-    if (h.id) observer.observe(h);
+  document.querySelectorAll('#article-content h2[id], #article-content h3[id]').forEach(h => {
+    observer.observe(h);
   });
 })();
 </script>
