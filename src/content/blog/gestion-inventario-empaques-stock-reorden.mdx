@@ -1,0 +1,227 @@
+---
+title: "Gestión de Inventario de Empaques: Stock Mínimo, Punto de Reorden y Cómo Nunca Quedarte sin Cajas"
+description: "Guía práctica de gestión de inventario de empaques para empresas en México: cómo calcular stock mínimo, punto de reorden, stock de seguridad y evitar quiebres de empaque en CDMX."
+pubDate: 2025-08-01
+author: "CADECA — Especialistas en Empaques"
+category: "Consejos"
+tags: ["gestión inventario empaques", "stock mínimo cajas cartón", "punto de reorden empaques", "inventario cajas CDMX", "control inventario empaque", "gestión stock empaques México", "cajas sin quiebre stock", "empaque bodega CDMX", "reorden cartón corrugado", "abasto empaques empresa"]
+readingTime: 8
+featured: false
+image: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif"
+imageAlt: "Gestión de inventario de empaques: stock mínimo y punto de reorden para empresas en México"
+---
+
+Quedarse sin cajas de cartón en plena temporada de despacho es uno de los problemas más costosos y frustrantes que enfrenta el equipo de operaciones. No se puede fabricar ni enviar, se pierde tiempo buscando soluciones de emergencia, los pedidos se retrasan y el proveedor urgente cobra 25-40% más que el precio normal.
+
+Y lo peor: es completamente prevenible. Con un sistema sencillo de gestión de inventario de empaques, puedes eliminar prácticamente todos los quiebres de stock de cajas. Esta guía te enseña cómo.
+
+## Los tres números que necesitas conocer
+
+La gestión de inventario de empaques se reduce a calcular correctamente tres números:
+
+1. **Consumo promedio diario (CPD):** Cuántas cajas usas en un día normal
+2. **Lead time del proveedor:** Cuántos días tarda tu proveedor en entregarte desde que haces el pedido
+3. **Variabilidad de ambos:** Cuánto pueden fluctuar el consumo y el tiempo de entrega
+
+Con estos tres números puedes calcular el punto de reorden y el stock de seguridad.
+
+## Cómo calcular el consumo promedio diario
+
+```
+Consumo Promedio Diario (CPD) = Total cajas consumidas en período / Días del período
+
+Ejemplo:
+- Cajas consumidas en agosto (mes anterior): 4,800 cajas
+- Días hábiles en agosto: 22 días
+- CPD = 4,800 / 22 = 218 cajas/día hábil
+
+Para mayor precisión, usa el promedio de los últimos 3 meses:
+Agosto: 218 cajas/día
+Septiembre: 241 cajas/día
+Octubre: 275 cajas/día
+CPD promedio = (218 + 241 + 275) / 3 = 245 cajas/día
+```
+
+**Importante:** Si tu negocio tiene estacionalidad, calcula el CPD del período que estás planeando, no de un período que no es representativo.
+
+## Cómo determinar el lead time de tu proveedor
+
+El lead time es el tiempo entre que haces el pedido y que recibes la mercancía en tu bodega. Incluye:
+- Tiempo de confirmación del pedido (horas a 1 día)
+- Tiempo de producción (si las cajas no están en stock) o preparación (si están en stock)
+- Tiempo de entrega y transporte
+
+**Cómo medirlo:** Registra las últimas 5-10 órdenes con tu proveedor actual: fecha del pedido y fecha de recepción efectiva. El promedio es tu lead time histórico.
+
+**No uses el tiempo que el proveedor promete: usa el tiempo real historico.**
+
+```
+Lead time promedio (LT):
+Pedido 1: 3 días
+Pedido 2: 4 días
+Pedido 3: 3 días
+Pedido 4: 5 días (hubo retraso)
+Pedido 5: 3 días
+
+LT promedio = (3+4+3+5+3) / 5 = 3.6 días
+LT máximo observado = 5 días (para calcular stock de seguridad)
+```
+
+## Cálculo del punto de reorden (ROP)
+
+El punto de reorden es el nivel de inventario que, cuando lo alcanzas, debes hacer un nuevo pedido.
+
+```
+Punto de Reorden (ROP) = CPD × LT promedio + Stock de Seguridad
+
+Donde:
+- CPD = Consumo Promedio Diario
+- LT promedio = Lead Time promedio en días
+- Stock de Seguridad = amortiguador para variabilidad
+
+Para nuestro ejemplo:
+CPD = 245 cajas/día
+LT promedio = 3.6 días
+Stock de seguridad = 490 cajas (calculado abajo)
+
+ROP = 245 × 3.6 + 490 = 882 + 490 = 1,372 cajas
+
+Interpretación: Cuando tu inventario llegue a 1,372 cajas, haz el pedido.
+```
+
+## Cálculo del stock de seguridad
+
+El stock de seguridad es el colchón que te protege cuando el consumo es mayor al promedio O el proveedor tarda más de lo habitual.
+
+```
+Stock de Seguridad (SS) = Factor de servicio × √(LT × σ_demanda² + CPD² × σ_LT²)
+
+Versión simplificada para la mayoría de empresas:
+SS = CPD × (LT máximo - LT promedio) + LT promedio × (Consumo máximo diario - CPD)
+
+Para nuestro ejemplo:
+LT máximo = 5 días, LT promedio = 3.6 días
+Consumo máximo diario (semana pico) = 380 cajas
+CPD = 245 cajas
+
+SS = 245 × (5 - 3.6) + 3.6 × (380 - 245)
+SS = 245 × 1.4 + 3.6 × 135
+SS = 343 + 486
+SS = 829 cajas (redondeado a 830)
+```
+
+Para empresas sin datos históricos detallados, una regla práctica conservadora es:
+
+```
+Stock de Seguridad simplificado = CPD × LT promedio × 0.5
+
+Para nuestro ejemplo:
+SS = 245 × 3.6 × 0.5 = 441 cajas
+```
+
+Esta versión simplificada es menos precisa pero mucho más fácil de calcular y es suficiente para comenzar.
+
+## Nivel de inventario máximo: evitar el exceso
+
+El inventario de empaques también tiene un máximo recomendado. Mantener un exceso grande de cajas tiene costos:
+- Espacio de bodega ocupado (costo de oportunidad o renta)
+- Riesgo de deterioro del cartón si se almacena largo tiempo
+- Capital inmovilizado
+
+```
+Inventario Máximo = Stock de pedido (cantidad por orden) + Stock de Seguridad
+
+Para calcular la cantidad óptima por orden (EOQ — Economic Order Quantity):
+EOQ = √(2 × Demanda anual × Costo por orden / Costo de mantenimiento)
+
+Versión práctica:
+- Demanda anual: CPD × 250 días = 245 × 250 = 61,250 cajas/año
+- Costo por orden: $500-800 MXN (tiempo de gestión, flete mínimo)
+- Costo de mantenimiento: 20-25% del valor de inventario por año
+
+EOQ ≈ √(2 × 61,250 × 650 / (12 × 0.22)) = √(79,625,000 / 2.64) ≈ √30,160,985 ≈ 5,492 cajas
+
+Ajustado a la práctica: pedidos de 5,000-6,000 cajas cada 20-25 días.
+```
+
+## Sistema de monitoreo: herramientas para implementar
+
+### Hoja de control de inventario (para volúmenes menores a 5,000 cajas/mes)
+
+Una hoja de Excel o Google Sheets con estas columnas es suficiente para empezar:
+
+| Fecha | Talla | Entrada (pedido recibido) | Salida (usadas) | Stock actual | Acción |
+|---|---|---|---|---|---|
+| 01/ago | Caja M | 2,000 | — | 2,000 | — |
+| 02/ago | Caja M | — | 210 | 1,790 | — |
+| 03/ago | Caja M | — | 245 | 1,545 | — |
+| ... | ... | ... | ... | ... | ... |
+| 08/ago | Caja M | — | 260 | 1,372 | ¡HACER PEDIDO! |
+
+Con una sola revisión diaria de 5 minutos, este sistema previene el 95% de los quiebres de stock.
+
+### WMS (Warehouse Management System) para volúmenes mayores
+
+Para empresas con más de 10,000 cajas/mes o múltiples tallas y ubicaciones, un WMS (incluso básico) automatiza el monitoreo:
+- Shopify, WooCommerce o TiendaNube con plugin de inventario
+- Odoo Community (gratuito, incluye módulo de inventario)
+- Zoho Inventory (desde $500 MXN/mes)
+- SAP Business One para empresas más grandes
+
+Cualquiera de estos puede configurarse con alertas automáticas cuando el inventario de empaques baja del punto de reorden.
+
+## Gestión por ubicación física: el FIFO del cartón en bodega
+
+El cartón corrugado puede almacenarse por meses, pero hay un orden correcto para usarlo:
+
+**FIFO — First In, First Out:** El cartón más antiguo se usa primero. Esto previene que algunas cajas queden al fondo de la pila durante meses, degradando su resistencia.
+
+**Señalización visual:** Marca el cartón al recibirlo con la fecha. Una etiqueta de color por semana o mes hace fácil identificar qué usar primero.
+
+**Rotación física:** Al recibir un pedido nuevo, mueve el stock anterior al frente. Esta práctica toma tiempo pero previene deterioro.
+
+## Manejo de múltiples tallas: la matriz de inventario
+
+Si manejas 3 o más tallas de caja, cada una necesita su propio cálculo de CPD, lead time y stock de seguridad. La matriz se ve así:
+
+| Talla | CPD | Lead Time | ROP | SS | Pedido sugerido |
+|---|---|---|---|---|---|
+| XS (20x15x10) | 45/día | 3 días | 180 | 90 | 600 |
+| S (30x20x15) | 120/día | 3.6 días | 680 | 360 | 1,800 |
+| M (40x30x20) | 65/día | 4 días | 480 | 195 | 1,000 |
+| L (50x40x25) | 15/día | 5 días | 165 | 75 | 400 |
+
+Con esta matriz actualizada mensualmente, el comprador sabe exactamente cuándo y cuánto pedir de cada talla.
+
+## Qué hacer cuando el stock llega al mínimo de emergencia
+
+Si por alguna razón (compra tardía, proveedor con retraso, demanda inesperada) tu stock llega a cero o menos del stock de seguridad, el protocolo de emergencia es:
+
+1. **Contacta a tu proveedor inmediatamente** con la cantidad urgente y máxima flexibilidad de medidas
+2. **Acepta medidas aproximadas** si las exactas no están disponibles (una caja 5 mm más grande no es ideal, pero despacha el pedido)
+3. **Documenta la incidencia** para ajustar el stock de seguridad hacia arriba en el próximo cálculo
+4. **Comunica a operaciones** el problema antes de que cause retrasos en despacho
+
+En CADECA mantenemos stock de cajas estándar para entrega en 24-48 horas en CDMX para exactamente este tipo de emergencias.
+
+## FAQ: Gestión de inventario de empaques
+
+**¿Con qué frecuencia debo revisar mi inventario de cajas?**
+Diariamente para registrar el consumo real. El punto de reorden debería revisarse semanalmente durante período normal, y diariamente en temporada alta.
+
+**¿Qué hago si mi consumo es muy variable de un día a otro?**
+En ese caso, usa el promedio de la semana como unidad de planeación en lugar del día. El consumo semanal promedio es más estable y facilita el cálculo.
+
+**¿CADECA puede hacer entregas programadas semanales a mi bodega?**
+Sí, para clientes con consumo regular ofrecemos entregas programadas con fecha y horario definidos. Esto simplifica mucho la gestión de inventario porque convierte el lead time en un valor fijo y predecible.
+
+**¿Cuánto tiempo puede almacenarse el cartón corrugado sin deteriorarse?**
+Con almacenamiento correcto (sobre tarimas, alejado de muros, humedad menor a 70%, temperatura menor a 35°C), el cartón corrugado mantiene sus propiedades por 6-12 meses. Más de 12 meses puede haber degradación perceptible.
+
+---
+
+## Nunca te quedes sin cajas con CADECA
+
+Somos fabricantes directos con stock de cajas estándar para entrega express y capacidad de producción para pedidos programados regulares. Podemos ayudarte a diseñar tu sistema de reorden para que el quiebre de stock sea historia.
+
+[Cotiza tu suministro regular de cajas](/cotizar) o [contáctanos para hablar de entregas programadas](/contacto).
