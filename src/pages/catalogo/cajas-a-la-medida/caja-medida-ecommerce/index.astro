@@ -1,0 +1,125 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja a la Medida para E-commerce CDMX | CAD-AM-07 | CADECA";
+const description = "Cajas a la medida para ecommerce en CDMX. Optimizadas para peso volumétrico, reducen costo de envío. ECT-32/44, MOQ 50 pzas. Paqueterías DHL, FedEx, Estafeta. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-AM-07"],
+  ["Tipo de pared", "Simple o doble corrugado BC"],
+  ["Flauta",        "C (4mm) o BC (7mm)"],
+  ["Resistencia",   "ECT-32 / ECT-44"],
+  ["Gramaje liner", "127–150 g/m²"],
+  ["Material",      "Kraft natural o blanco"],
+  ["Cierre",        "4 solapas RSC autoblocante"],
+  ["Pedido mínimo", "50 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id:"am07-f1",
+    question:"¿Cómo reduce el costo de envío una caja a la medida para ecommerce?",
+    answer:"Las paqueterías cobran el mayor entre peso real y peso volumétrico. El peso volumétrico se calcula como (largo × ancho × alto) / 5000. Si tu caja tiene 10 cm de espacio libre en cada dimensión, estás pagando por aire. Una caja exacta al producto elimina ese espacio muerto y reduce el peso volumétrico hasta un 40%, lo que puede significar ahorros de 20 a 50 pesos por envío. En volúmenes de 1,000 envíos mensuales el ahorro supera los 30,000 pesos al mes.",
+  },
+  {
+    id:"am07-f2",
+    question:"¿Son compatibles estas cajas con las guías de DHL, FedEx, Estafeta y Mercado Envíos?",
+    answer:"Sí. Fabricamos las cajas con las dimensiones exactas que defines para cumplir con los rangos de cada paquetería. DHL, FedEx y Estafeta aceptan cualquier medida dentro de sus límites de dimensión y peso. Mercado Envíos tiene reglas de peso volumétrico específicas y podemos optimizar la caja para cada rango tarifario. Te recomendamos compartir tu producto y la guía de tu paquetería preferida; nuestros asesores calculan la medida óptima sin costo.",
+  },
+  {
+    id:"am07-f3",
+    question:"¿Puedo imprimir mi logo en la caja de ecommerce a medida desde 50 piezas?",
+    answer:"Sí, ofrecemos impresión flexográfica en 1 a 2 colores desde 50 piezas. Para impresión digital full color el MOQ es de 100 piezas. La impresión puede ir en el exterior, interior o en la tapa. Si buscas una presentación premium con cinta de colores, stickers o papel tissue personalizado, podemos integrar el kit completo de unboxing. Contacta a nuestros asesores por WhatsApp para recibir muestras de acabados disponibles antes de tu pedido.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/caja-medida-ecom-hero-cdmx.avif",       alt: "Caja a la medida para ecommerce CDMX" },
+  { src: "/img/catalogo/caja-medida-ecom-bodega-cdmx.avif",     alt: "Cajas ecommerce en bodega CDMX" },
+  { src: "/img/catalogo/caja-medida-ecom-comparacion-cdmx.avif",alt: "Comparación caja estándar vs medida ecommerce" },
+  { src: "/img/catalogo/caja-medida-ecom-eficiencia-cdmx.avif", alt: "Eficiencia de empaque ecommerce CDMX" },
+  { src: "/img/catalogo/caja-medida-estandar-hero-cdmx.avif",   alt: "Caja a la medida para envíos CDMX" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida"},{name:"E-commerce"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja a la Medida para E-commerce",sku:"CAD-AM-07",description:"Caja a la medida optimizada para ecommerce y paqueterías en CDMX — CADECA",image:gallery[0].src,material:"Cartón corrugado ECT-32/44 optimizado peso volumétrico",category:"Cajas a la Medida",moq:"50"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+        <li><span class="current">E-commerce</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-am07-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AM-07 · Cajas a la Medida</span>
+      <h1 id="sku-am07-title" class="cat-page-hero__title">Caja a la Medida para <span>E-commerce</span><br>— CDMX</h1>
+      <p class="cat-page-hero__desc">Cajas optimizadas para peso volumétrico que reducen hasta 40% el costo de tus envíos. Medidas exactas al producto, compatibles con DHL, FedEx, Estafeta y Mercado Envíos. Diseño CAD gratuito y MOQ desde 50 piezas.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-07</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32/44</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-am07-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AM-07 · Familia: Cajas a la Medida</p>
+            <h2 id="detalle-am07-title" class="sku-detail__title">Caja a la Medida para E-commerce</h2>
+            <p class="sku-detail__desc">Cajas de cartón corrugado fabricadas con las dimensiones exactas de tu producto para optimizar el peso volumétrico y reducir el costo de envío en paqueterías. Corrugado simple ECT-32 para productos ligeros o doble BC ECT-44 para mayor protección en tránsito. Compatibles con todos los operadores logísticos en México: DHL, FedEx, Estafeta, Redpack y Mercado Envíos. CADECA fabrica desde 50 piezas con diseño CAD gratuito en 24 horas y entrega en CDMX.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32/44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">-40% envío</span><span class="sku-detail__strip-label">Ahorro flete</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-07 Caja a la Medida para E-commerce`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-07</a>
+              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-am07-title">
+      <div class="container">
+        <h2 id="faq-am07-title" class="sku-faq__title">Preguntas Frecuentes — Caja a la Medida para E-commerce</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Optimiza tus costos de envío — Cotiza tu Caja E-commerce a la Medida" />
+</PageLayout>

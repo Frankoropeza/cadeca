@@ -1,0 +1,132 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja para Laboratorio Clínico y Diagnóstico CDMX | CAD-FC-06 | CADECA";
+const description = "Caja corrugado blanco ECT-44 para laboratorio clínico y kits diagnóstico en CDMX. Sin olor, compatible BPM COFEPRIS, para reactivos y muestras. Fabricante directo CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-FC-06"],
+  ["Tipo de pared", "Doble corrugado BC"],
+  ["Flauta",        "BC (7mm)"],
+  ["Resistencia",   "ECT-44"],
+  ["Gramaje liner", "150 g/m²"],
+  ["Material",      "Corrugado blanco blanqueado sin cloro elemental"],
+  ["Cierre",        "4 solapas autoblocante"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id: "fc06-f1",
+    question: "¿Por qué es importante usar corrugado blanco sin olor en laboratorios clínicos?",
+    answer: "Los reactivos y kits diagnóstico son extremadamente sensibles a contaminantes volátiles. El corrugado blanco blanqueado sin cloro elemental (ECF) que usamos en CAD-FC-06 elimina los VOCs y olores que podrían interferir con la integridad de las muestras. Además, cumple con las Buenas Prácticas de Manufactura (BPM) de COFEPRIS para almacenamiento de insumos para diagnóstico, asegurando trazabilidad y control de calidad en cada lote.",
+  },
+  {
+    id: "fc06-f2",
+    question: "¿La caja CAD-FC-06 es compatible con cadena de frío para reactivos?",
+    answer: "La caja CAD-FC-06 en su versión estándar es compatible con almacenamiento a temperatura ambiente y refrigerada (2–8°C). Para transporte con cadena de frío activa, recomendamos combinarla con insert de EPS o gel pack interior. El corrugado doble pared BC ofrece aislamiento térmico pasivo de hasta 4 horas adicionales respecto a una caja simple, ideal para transporte de reactivos sensibles entre laboratorios y puntos de toma de muestras en CDMX.",
+  },
+  {
+    id: "fc06-f3",
+    question: "¿Pueden imprimir etiquetas de biorriesgo y trazabilidad GS1 en la caja?",
+    answer: "Sí. Imprimimos en flexografía 1–4 colores con tintas base agua aprobadas para uso médico. Incluimos símbolos de biorriesgo, código de barras GS1-128, código QR con URL de ficha de seguridad, y cualquier dato requerido por COFEPRIS o la NOM-087 para residuos peligrosos biológico-infecciosos. El área de impresión de la caja doble pared BC permite textos legibles de 6pt y códigos escaneables en línea de recepción de laboratorio.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/corrugado-doble-pared-hero-cdmx.avif",              alt: "Caja laboratorio clínico corrugado doble pared — CAD-FC-06" },
+  { src: "/img/catalogo/caja-blister-farmaceutica-corrugado-cdmx.avif",      alt: "Corrugado blanco ECT-44 para diagnóstico CDMX" },
+  { src: "/img/catalogo/caja-blister-farmaceutica-almacen-cdmx.avif",        alt: "Almacén de laboratorio con cajas corrugado blanco" },
+  { src: "/img/catalogo/caja-distribuidora-farmacia-rack-cdmx.avif",         alt: "Rack selectivo con cajas de laboratorio clínico" },
+  { src: "/img/catalogo/caja-linea-produccion-calidad-cdmx.avif",            alt: "Control de calidad en línea de producción farmacéutica" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Laboratorio Clínico"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja para Laboratorio Clínico y Diagnóstico",sku:"CAD-FC-06",description:"Caja corrugado blanco ECT-44 para reactivos y kits diagnóstico — compatible BPM COFEPRIS",image:gallery[0].src,material:"Corrugado blanco BCF ECT-44 sin olor",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"100"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+      <li><span class="current">Laboratorio Clínico</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-fc06-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-FC-06 · Farmacéutica y Cosmética</span>
+      <h1 id="sku-fc06-title" class="cat-page-hero__title">
+        Caja para <span>Laboratorio Clínico</span> y Diagnóstico
+      </h1>
+      <p class="cat-page-hero__desc">
+        Corrugado blanco ECT-44 sin olor, compatible con BPM COFEPRIS, diseñado para reactivos, kits diagnóstico y muestras clínicas. Doble pared BC con alta resistencia al apilado en rack selectivo. Entrega en CDMX en 24–48 horas.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-06</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-fc06-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-FC-06 · Familia: Farmacéutica y Cosmética</p>
+            <h2 id="detalle-fc06-title" class="sku-detail__title">Caja Laboratorio Clínico y Diagnóstico</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-FC-06 está fabricada en corrugado blanco doble pared BC ECT-44, blanqueado sin cloro elemental y libre de VOCs. Cumple con las Buenas Prácticas de Manufactura (BPM) de COFEPRIS para almacenamiento y distribución de reactivos clínicos, kits de diagnóstico y muestras biológicas. Apilable en racks selectivos para laboratorios en CDMX y zona metropolitana, con impresión de trazabilidad GS1 disponible.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Sin olor</span><span class="sku-detail__strip-label">Libre de VOCs</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">Pedido mín.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-06 Caja Laboratorio Clínico`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-06</a>
+              <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-fc06-title">
+      <div class="container">
+        <h2 id="faq-fc06-title" class="sku-faq__title">Preguntas Frecuentes — Laboratorio Clínico</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza cajas para laboratorio clínico — Entrega 24 hrs en CDMX, compatible BPM COFEPRIS" />
+
+</PageLayout>

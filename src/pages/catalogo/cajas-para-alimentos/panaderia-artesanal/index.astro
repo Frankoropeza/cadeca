@@ -1,0 +1,113 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja Panadería Repostería Artesanal CDMX | Food-grade | CAD-AL-06 | CADECA";
+const description = "Caja para panadería y repostería artesanal en CDMX. Kraft food-grade sin tintas tóxicas, ventilación natural. MOQ 100 pzas. Entrega 24 hrs. CADECA fabricante directo.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU", "CAD-AL-06"],
+  ["Certificación", "Food-grade NOM-051"],
+  ["Material", "Kraft virgen sin blanqueante"],
+  ["Tintas", "Water-based sin tolueno"],
+  ["Ventilación", "Perforaciones naturales"],
+  ["Sellado", "Solapas autoblocante"],
+  ["Medidas", "3 estándar panadería"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega CDMX", "24 hrs en stock"],
+];
+
+const faqs = [
+  { id:"cad-al-06-f1", question:"¿Las tintas del kraft son seguras para contacto con alimentos?", answer:"CAD-AL-06 usa kraft virgen sin tintas exteriores o con tintas water-based libres de tolueno y metales pesados. El interior de la caja es kraft natural sin impresión. Cumple con los requerimientos de la NOM-051 para materiales en contacto con alimentos no húmedos. Para productos que generan humedad (como pasteles con betún), recomendamos añadir papel encerado interior." },
+  { id:"cad-al-06-f2", question:"¿Las perforaciones de ventilación no dejan entrar insectos?", answer:"Las perforaciones son pequeñas (2-3 mm) y funcionan como reguladores de humedad sin permitir el ingreso de insectos en condiciones normales de despacho. Para almacenamiento prolongado en bodega, recomendamos sellar las cajas con cinta de papel. Para punto de venta abierto, las perforaciones son adecuadas." },
+  { id:"cad-al-06-f3", question:"¿Puedo personalizar la caja con el logo de mi panadería?", answer:"Sí. Desde 200 piezas podemos agregar tu logo en 1 color al exterior de la caja. Para panaderías artesanales que quieren mantener la estética natural, el sello de 1 color en kraft queda muy bien. También ofrecemos stickers personalizados que aplicamos en la fábrica si el tiraje es menor a 200 piezas." },
+];
+
+const gallery = [
+  { src: "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif", alt: "Caja panadería repostería artesanal CDMX" },
+  { src: "/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif", alt: "Empaques food-grade panadería" },
+  { src: "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif", alt: "Caja alimentos certificada" },
+  { src: "/img/catalogo/corrugado-doble-pared-hero-cdmx.avif", alt: "Corrugado para alimentos" },
+  { src: "/img/catalogo/cajas-carton-corrugado-simple-pared-cdmx.avif", alt: "Cartón corrugado simple panadería" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas para Alimentos",href:"/catalogo/cajas-para-alimentos"},{name:"Caja para Panadería y Repostería Artesanal"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja para Panadería y Repostería Artesanal",sku:"CAD-AL-06",description:"Caja kraft food-grade para pan artesanal, galletas, brownies y repostería. Sin tintas tóxicas, con ventilación natural para conservar crujiente. Desde 100 piezas en CDMX.",image:gallery[0].src,material:"CAD-AL-06",category:"Cajas para Alimentos",moq:"100 piezas"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-para-alimentos">Cajas para Alimentos</a></li>
+        <li><span class="current">Caja para Panadería y Repostería Artesanal</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-cadal06-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AL-06 · Cajas para Alimentos</span>
+      <h1 id="sku-cadal06-title" class="cat-page-hero__title">Caja para <span>Panadería</span> y Repostería Artesanal CDMX</h1>
+      <p class="cat-page-hero__desc">Caja kraft food-grade para pan artesanal, galletas, brownies y repostería. Sin tintas tóxicas, con ventilación natural para conservar crujiente. Desde 100 piezas en CDMX.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-06</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
+        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-cadal06-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AL-06 · Familia: Cajas para Alimentos</p>
+            <h2 id="detalle-cadal06-title" class="sku-detail__title">Caja para Panadería y Repostería Artesanal</h2>
+            <p class="sku-detail__desc">La panadería artesanal necesita un empaque que cuide el producto desde dos ángulos: que no contamine y que no aprisione la humedad que arruina el crujiente. CAD-AL-06 usa kraft virgen food-grade sin tintas ni barnices tóxicos, con perforaciones de ventilación natural estratégicamente ubicadas que permiten la circulación de aire sin exponer el producto. Compatible con productos de 200 g hasta 1.5 kg. Desde 100 piezas sin diseño o personalizadas desde 200.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Food-grade</span><span class="sku-detail__strip-label">NOM-051</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Ventilación</span><span class="sku-detail__strip-label">Natural</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AL-06 Caja para Panadería y Repostería Artesanal`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AL-06</a>
+              <a href="/catalogo/cajas-para-alimentos" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-cadal06-title">
+      <div class="container">
+        <h2 id="faq-cadal06-title" class="sku-faq__title">Preguntas Frecuentes — Caja para Panadería y Repostería Artesanal</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Tienes una panadería o cafetería? Cotiza tu caja food-grade con ventilación natural en 1 hora" />
+</PageLayout>

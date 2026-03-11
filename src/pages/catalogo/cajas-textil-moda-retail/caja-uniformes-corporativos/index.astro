@@ -1,0 +1,132 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja para Uniformes y Ropa Corporativa CDMX | CAD-TX-06 | CADECA";
+const description = "Caja de cartón para uniformes y ropa corporativa en CDMX. Kraft o blanco, medidas para uniformes doblados o colgados, pedidos masivos. Fabricante directo CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-TX-06"],
+  ["Tipo de pared", "Simple (flauta B/C)"],
+  ["Flauta",        "B (3mm) / C (4mm)"],
+  ["Resistencia",   "ECT-32"],
+  ["Gramaje liner", "127–150 g/m²"],
+  ["Material",      "Kraft virgen o corrugado blanco"],
+  ["Cierre",        "4 solapas estándar RSC"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id: "tx06-f1",
+    question: "¿Qué medidas recomiendan para cajas de uniformes corporativos?",
+    answer: "Para uniformes doblados (camisas, playeras polo, pantalones) recomendamos 40×30×15 cm en flauta C ECT-32, que permite apilar 5–8 prendas por caja. Para uniformes colgados en percha, ofrecemos cajas alargadas de 60×50×25 cm con barra interna de cartón. Ambas medidas están en stock permanente en CDMX. También fabricamos medidas especiales desde 100 pzas para empresas con tallas o kits de uniforme específicos.",
+  },
+  {
+    id: "tx06-f2",
+    question: "¿Pueden imprimir el logo corporativo de mi empresa en las cajas de uniformes?",
+    answer: "Sí. Ofrecemos impresión flexográfica en 1–4 colores sobre kraft natural o corrugado blanco. Para empresas con imagen corporativa estricta, también disponemos de impresión full color CMYK con barniz mate. El logo, nombre de empresa y datos de contacto pueden ir en todas las caras de la caja. Desde 200 piezas con entrega en 5 días hábiles para cajas impresas en CDMX y zona metropolitana.",
+  },
+  {
+    id: "tx06-f3",
+    question: "¿Ofrecen precios especiales para pedidos recurrentes de uniformes corporativos?",
+    answer: "Sí, manejamos programa de suministro recurrente para empresas con pedidos mensuales o trimestrales de cajas de uniformes. Esto incluye precio preferencial por volumen anual, almacenamiento de planchas en nuestro almacén CDMX sin costo hasta por 30 días, y entrega programada según tu calendario de distribución de uniformes. Contacta a nuestro equipo comercial para una cotización personalizada.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/caja-ropa-prendas-hero-cdmx.avif",       alt: "Caja para uniformes corporativos corrugado — CAD-TX-06" },
+  { src: "/img/catalogo/caja-ropa-prendas-interior-cdmx.avif",   alt: "Interior de caja para uniformes doblados CDMX" },
+  { src: "/img/catalogo/caja-ropa-prendas-stack-cdmx.avif",      alt: "Apilado de cajas de ropa corporativa en almacén" },
+  { src: "/img/catalogo/caja-ropa-prendas-despacho-cdmx.avif",   alt: "Despacho de cajas de uniformes corporativos" },
+  { src: "/img/catalogo/caja-ropa-prendas-envio-moda-cdmx.avif", alt: "Envío de uniformes en caja corrugado kraft" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Uniformes Corporativos"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja para Uniformes y Ropa Corporativa",sku:"CAD-TX-06",description:"Caja kraft o blanco para uniformes corporativos — pedidos masivos con entrega CDMX",image:gallery[0].src,material:"Kraft virgen o blanco flauta B/C ECT-32",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+      <li><span class="current">Uniformes Corporativos</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-tx06-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-TX-06 · Textil, Moda y Retail</span>
+      <h1 id="sku-tx06-title" class="cat-page-hero__title">
+        Caja para <span>Uniformes y Ropa Corporativa</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Caja corrugado kraft o blanco diseñada para uniformes empresariales. Medidas para uniformes doblados o colgados, ideal para empresas con pedidos masivos y distribución recurrente. Entrega en CDMX en 24–48 horas.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-06</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-tx06-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-TX-06 · Familia: Textil, Moda y Retail</p>
+            <h2 id="detalle-tx06-title" class="sku-detail__title">Caja Uniformes y Ropa Corporativa</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-TX-06 está diseñada específicamente para empresas que distribuyen uniformes a sus colaboradores. Disponible en kraft natural o corrugado blanco, con medidas optimizadas para uniformes doblados (40×30×15 cm) o colgados en percha (60×50×25 cm). Flauta B/C ECT-32 con resistencia suficiente para apilado en almacén y transporte por paquetería. Impresión de logo corporativo disponible desde 200 pzas en CDMX.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Kraft/Blanco</span><span class="sku-detail__strip-label">Material</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">Pedido mín.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-06 Caja Uniformes Corporativos`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-06</a>
+              <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-tx06-title">
+      <div class="container">
+        <h2 id="faq-tx06-title" class="sku-faq__title">Preguntas Frecuentes — Uniformes Corporativos</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza cajas para uniformes corporativos — Precios especiales por volumen en CDMX" />
+
+</PageLayout>

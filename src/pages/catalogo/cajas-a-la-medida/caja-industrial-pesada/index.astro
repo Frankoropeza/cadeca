@@ -1,0 +1,125 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja Industrial Carga Pesada a la Medida CDMX | CAD-AM-09 | CADECA";
+const description = "Cajas industriales para carga pesada hasta 150 kg en CDMX. Triple pared ECT-71, para maquinaria, motores y autopartes. MOQ 10 pzas. CADECA fabricante directo.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-AM-09"],
+  ["Tipo de pared", "Triple corrugado BCB reforzado"],
+  ["Flauta",        "BCB (12mm)"],
+  ["Resistencia",   "ECT-71"],
+  ["Gramaje liner", "200–250 g/m²"],
+  ["Material",      "Kraft virgen alta densidad"],
+  ["Cierre",        "Solapas grapadas + refuerzo angular"],
+  ["Pedido mínimo", "10 piezas"],
+  ["Entrega CDMX",  "5–7 días hábiles"],
+];
+
+const faqs = [
+  {
+    id:"am09-f1",
+    question:"¿Qué carga máxima soporta una caja triple corrugado BCB ECT-71?",
+    answer:"Una caja triple corrugado BCB con ECT-71 puede contener productos de hasta 150 kg en condiciones normales de manejo. Sin embargo, la resistencia real depende también del diseño de la caja: las dimensiones, la relación entre largo y ancho, el apilamiento y el tiempo en bodega afectan el BCT (Box Compression Test). Para cargas entre 80 y 150 kg recomendamos agregar esquineros de cartón o madera que incrementan la resistencia al aplastamiento vertical hasta un 80% adicional. En CADECA realizamos el cálculo BCT estimado gratis para confirmar el diseño óptimo.",
+  },
+  {
+    id:"am09-f2",
+    question:"¿Se pueden grapar las juntas para mayor seguridad en cajas de carga pesada?",
+    answer:"Sí. En el SKU CAD-AM-09 las solapas se pueden fijar con grapa metálica galvanizada en lugar de adhesivo, lo que incrementa la resistencia de unión de las juntas laterales. Esto es especialmente recomendable cuando la caja viajará en camión por carreteras largas con vibración, cuando el producto tiene ángulos o salientes que puedan presionar las paredes internas, o cuando la caja estará en entornos de alta humedad donde el adhesivo puede debilitarse. El grapado está disponible sin costo adicional en pedidos de 10 piezas o más.",
+  },
+  {
+    id:"am09-f3",
+    question:"¿Para qué industrias fabrican cajas de carga pesada a la medida?",
+    answer:"Fabricamos cajas industriales de carga pesada para los sectores automotriz (motores, transmisiones, diferenciales), maquinaria industrial (prensas, bombas, motoreductores), electrodomésticos de línea blanca (refrigeradores, lavadoras), equipo médico (tomógrafos, mesas quirúrgicas), energía (transformadores, paneles solares) y manufactura metalmecánica. Cada aplicación tiene requerimientos específicos de dimensión y resistencia que evaluamos con nuestros ingenieros de empaque sin costo. Contáctanos por WhatsApp con las medidas y peso de tu producto.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/caja-medida-industrial-hero-cdmx.avif",   alt: "Caja industrial carga pesada a la medida CDMX" },
+  { src: "/img/catalogo/caja-medida-industrial-rack-cdmx.avif",   alt: "Cajas industriales pesadas en rack bodega" },
+  { src: "/img/catalogo/caja-medida-industrial-carga-cdmx.avif",  alt: "Carga pesada en caja industrial corrugado" },
+  { src: "/img/catalogo/caja-medida-industrial-detalle-cdmx.avif",alt: "Detalle esquina caja industrial pesada" },
+  { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",   alt: "Triple corrugado BCB ECT-71 para carga pesada" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida"},{name:"Industrial Carga Pesada"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja Industrial Carga Pesada a la Medida",sku:"CAD-AM-09",description:"Caja industrial para carga pesada hasta 150 kg en CDMX — CADECA",image:gallery[0].src,material:"Triple corrugado BCB ECT-71 kraft virgen alta densidad",category:"Cajas a la Medida",moq:"10"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+        <li><span class="current">Industrial Carga Pesada</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-am09-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AM-09 · Cajas a la Medida</span>
+      <h1 id="sku-am09-title" class="cat-page-hero__title">Caja Industrial <span>Carga Pesada</span> a la Medida<br>— ECT-71 CDMX</h1>
+      <p class="cat-page-hero__desc">Triple corrugado BCB ECT-71 para maquinaria, motores, autopartes y equipo pesado hasta 150 kg. Juntas grapadas, refuerzo de ángulos y diseño CAD gratuito. La caja industrial más resistente del mercado, fabricada a tu medida exacta.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-09</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-71</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>10 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-am09-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AM-09 · Familia: Cajas a la Medida</p>
+            <h2 id="detalle-am09-title" class="sku-detail__title">Caja Industrial Carga Pesada a la Medida</h2>
+            <p class="sku-detail__desc">Cajas de triple corrugado BCB con ECT-71, el estándar más alto de resistencia para carga pesada hasta 150 kg. Fabricadas a la medida exacta de tu maquinaria, motor o equipo industrial. Liner kraft virgen de 200 a 250 g/m², juntas grapadas con grapa metálica galvanizada y refuerzo angular de esquinas incluido. Diseño CAD gratuito en 24 horas con cálculo BCT estimado. CADECA entrega en CDMX y toda la República Mexicana.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Resistencia máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">150 kg</span><span class="sku-detail__strip-label">Carga máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">10 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5–7 días</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-09 Caja Industrial Carga Pesada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-09</a>
+              <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-am09-title">
+      <div class="container">
+        <h2 id="faq-am09-title" class="sku-faq__title">Preguntas Frecuentes — Caja Industrial Carga Pesada</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Protege tu maquinaria — Cotiza Caja Industrial Carga Pesada ECT-71" />
+</PageLayout>

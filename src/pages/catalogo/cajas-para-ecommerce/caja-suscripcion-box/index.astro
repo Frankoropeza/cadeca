@@ -1,0 +1,113 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja Suscripción Box Kits Regalo CDMX | Personalizable | CAD-EC-11 | CADECA";
+const description = "Caja para suscripción box y kits de regalo en CDMX. Personalizable con logo, interior liso o impreso. Resistente y presentable. MOQ 100 pzas. Entrega 5–7 días. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU", "CAD-EC-11"],
+  ["Tipo", "Doble corrugado BC"],
+  ["Resistencia", "ECT-32"],
+  ["Interior", "Liso para tissue/divisores"],
+  ["Exterior", "Kraft o blanco personalizable"],
+  ["Branding", "1–4 colores desde 100 pzas"],
+  ["Diseño CAD", "Gratuito"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega", "5–7 días con logo / 24 hrs neutra"],
+];
+
+const faqs = [
+  { id:"cad-ec-11-f1", question:"¿Puedo agregar divisores interiores para organizar los productos?", answer:"Sí. Fabricamos divisores de cartón corrugado a la medida que se insertan en la caja para separar y proteger cada producto individual del box. Los divisores se incluyen como accesorio separado o como parte de un kit completo. Consulta disponibilidad y precio con tu cotización de caja." },
+  { id:"cad-ec-11-f2", question:"¿Cada mes puedo pedir la misma caja con diferente diseño?", answer:"Sí. Guardamos tu troquel (plano de corte) sin costo para que puedas reordenar la misma caja con diseños gráficos distintos cada mes o temporada. Solo cambias el arte de impresión, no la estructura. El tiempo de reproducción con nuevo arte es de 5 a 7 días hábiles." },
+  { id:"cad-ec-11-f3", question:"¿La caja resiste el apilado en bodega?", answer:"Sí. El doble corrugado ECT-32 soporta hasta 8 cajas apiladas en condiciones normales de bodega (humedad y temperatura ambiente controladas). Para bodegas con humedad alta, recomendamos agregar un recubrimiento antihumedad en el exterior a un costo adicional mínimo." },
+];
+
+const gallery = [
+  { src: "/img/catalogo/caja-shopify-unboxing-cdmx.avif", alt: "Caja suscripción box unboxing CDMX" },
+  { src: "/img/catalogo/caja-shopify-moda-cdmx.avif", alt: "Gift box moda suscripción" },
+  { src: "/img/catalogo/caja-cmyk-unboxing-cdmx.avif", alt: "Unboxing caja personalizada" },
+  { src: "/img/catalogo/caja-2colores-retail-cdmx.avif", alt: "Suscripción box personalizado" },
+  { src: "/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif", alt: "Caja suscripción 2 colores" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas para E-commerce",href:"/catalogo/cajas-para-ecommerce"},{name:"Caja para Suscripción Box y Kits de Regalo"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja para Suscripción Box y Kits de Regalo",sku:"CAD-EC-11",description:"Caja específica para modelos de suscripción mensual y gift boxes. Estructura robusta, interior liso para tissue o divisores, personalizable con logo desde 100 piezas en CDMX.",image:gallery[0].src,material:"CAD-EC-11",category:"Cajas para E-commerce",moq:"100 piezas"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-para-ecommerce">Cajas para E-commerce</a></li>
+        <li><span class="current">Caja para Suscripción Box y Kits de Regalo</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-cadec11-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-EC-11 · Cajas para E-commerce</span>
+      <h1 id="sku-cadec11-title" class="cat-page-hero__title">Caja para <span>Suscripción Box</span> y Kits de Regalo CDMX</h1>
+      <p class="cat-page-hero__desc">Caja específica para modelos de suscripción mensual y gift boxes. Estructura robusta, interior liso para tissue o divisores, personalizable con logo desde 100 piezas en CDMX.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-11</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
+        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-cadec11-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-EC-11 · Familia: Cajas para E-commerce</p>
+            <h2 id="detalle-cadec11-title" class="sku-detail__title">Caja para Suscripción Box y Kits de Regalo</h2>
+            <p class="sku-detail__desc">Los negocios de suscripción y gift boxes necesitan una caja que luzca premium al abrirse, que proteja múltiples productos de distintos tamaños y que sea reproducible mes a mes con consistencia. CAD-EC-11 tiene estructura de doble pared ECT-32, interior liso compatible con papel tissue, divisores de cartón y tarjetas personalizadas. Exterior personalizable con logo de 1 a 4 colores desde 100 piezas. Diseño CAD gratuito y muestra física antes de producción.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Logo</span><span class="sku-detail__strip-label">Desde 100 pzas</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Divisores</span><span class="sku-detail__strip-label">Disponibles</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Diseño CAD</span><span class="sku-detail__strip-label">Gratis</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-EC-11 Caja para Suscripción Box y Kits de Regalo`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-EC-11</a>
+              <a href="/catalogo/cajas-para-ecommerce" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-cadec11-title">
+      <div class="container">
+        <h2 id="faq-cadec11-title" class="sku-faq__title">Preguntas Frecuentes — Caja para Suscripción Box y Kits de Regalo</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Lanzas un subscription box? Te ayudamos a diseñar el empaque perfecto para tu marca" />
+</PageLayout>

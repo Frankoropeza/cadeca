@@ -1,0 +1,132 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja de Archivo Legal y Notaría CDMX | CAD-AH-06 | CADECA";
+const description = "Caja de archivo legal para notarías y despachos jurídicos en CDMX. Tamaño oficio + extra, tapa y base independientes, área de etiquetado. Fabricante directo CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-AH-06"],
+  ["Tipo de pared", "Doble corrugado BC"],
+  ["Flauta",        "BC (7mm)"],
+  ["Resistencia",   "ECT-44"],
+  ["Gramaje liner", "150 g/m²"],
+  ["Material",      "Kraft virgen reciclado reforzado"],
+  ["Cierre",        "Tapa y base independientes"],
+  ["Pedido mínimo", "50 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id: "ah06-f1",
+    question: "¿Qué tamaño tiene la caja de archivo legal CAD-AH-06?",
+    answer: "La caja CAD-AH-06 tiene dimensiones interiores de 42×35×28 cm, diseñada específicamente para expedientes tamaño oficio y extra oficio que se manejan en notarías, juzgados y despachos jurídicos. La profundidad de 28 cm permite almacenar expedientes gruesos de hasta 2,000 hojas con carpetas legajas. La tapa separada facilita la consulta frecuente sin desarmar el archivo. Área de etiquetado frontal y lateral de 15×10 cm para clasificación por número de escritura o expediente.",
+  },
+  {
+    id: "ah06-f2",
+    question: "¿La caja resiste el peso de expedientes legales pesados?",
+    answer: "Sí. La doble pared BC ECT-44 de la CAD-AH-06 soporta hasta 25 kg de contenido — suficiente para un expediente legal completo con anexos, copias certificadas y documentos notariales. La caja soporta apilamiento de hasta 5 unidades cargadas (125 kg total) sin deformación por al menos 12 meses en condiciones de archivo estándar (20°C, 50% HR). Refuerzos internos en las esquinas distribuyen el peso uniformemente.",
+  },
+  {
+    id: "ah06-f3",
+    question: "¿Cumplen con la normativa de conservación documental para archivo legal?",
+    answer: "La caja CAD-AH-06 está fabricada con cartón kraft virgen de pH neutro que previene la acidificación y deterioro de documentos a largo plazo. Es compatible con las recomendaciones del AGN (Archivo General de la Nación) para conservación documental y con los lineamientos de la Ley General de Archivos para la gestión del ciclo de vida documental. El material libre de ácidos y lignina protege expedientes notariales con resguardo obligatorio de 5 a 25 años.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/caja-archivo-oficio-hero-cdmx.avif",              alt: "Caja archivo legal notaría tamaño oficio — CAD-AH-06" },
+  { src: "/img/catalogo/caja-archivo-oficio-interior-cdmx.avif",           alt: "Interior caja archivo legal con expedientes" },
+  { src: "/img/catalogo/caja-archivo-oficio-sala-cdmx.avif",               alt: "Sala de archivo legal con cajas CADECA" },
+  { src: "/img/catalogo/caja-archivo-oficio-despacho-cdmx.avif",           alt: "Despacho jurídico con cajas de archivo legal" },
+  { src: "/img/catalogo/caja-archivo-muerto-oficio-corporativo-cdmx.avif", alt: "Archivo corporativo con cajas tamaño oficio legal" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Archivo y Almacenaje",href:"/catalogo/cajas-archivo-almacenaje"},{name:"Archivo Legal"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja de Archivo Legal y Notaría",sku:"CAD-AH-06",description:"Caja doble pared ECT-44 para archivo legal — tapa y base independientes, área de etiquetado",image:gallery[0].src,material:"Kraft virgen BC ECT-44 reforzado",category:"Cajas de Archivo y Almacenaje",moq:"50"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+      <li><span class="current">Archivo Legal</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-ah06-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-AH-06 · Archivo y Almacenaje</span>
+      <h1 id="sku-ah06-title" class="cat-page-hero__title">
+        Caja de <span>Archivo Legal</span> y Notaría
+      </h1>
+      <p class="cat-page-hero__desc">
+        Caja de archivo tamaño oficio + extra para notarías, juzgados y despachos jurídicos. Doble pared ECT-44 resistente al peso de expedientes. Tapa y base independientes con área de etiquetado para clasificación. Entrega en CDMX en 24–48 horas.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-06</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-ah06-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-AH-06 · Familia: Archivo y Almacenaje</p>
+            <h2 id="detalle-ah06-title" class="sku-detail__title">Caja Archivo Legal — Notaría y Juzgados</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-AH-06 está diseñada para el archivo legal de largo plazo en notarías, juzgados y despachos jurídicos de CDMX. Tamaño oficio + extra (42×35×28 cm) en doble pared BC ECT-44 con kraft virgen de pH neutro que preserva documentos hasta 25 años. Tapa y base independientes para consulta frecuente, área de etiquetado frontal y lateral de 15×10 cm, y refuerzos en esquinas para apilamiento seguro hasta 5 niveles.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">Pedido mín.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-06 Caja Archivo Legal Notaría`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-06</a>
+              <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-ah06-title">
+      <div class="container">
+        <h2 id="faq-ah06-title" class="sku-faq__title">Preguntas Frecuentes — Archivo Legal y Notaría</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza cajas de archivo legal para tu notaría — Sin mínimo, entrega 24 hrs CDMX" />
+
+</PageLayout>

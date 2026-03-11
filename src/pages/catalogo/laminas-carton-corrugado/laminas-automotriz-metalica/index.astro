@@ -1,0 +1,113 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Láminas Corrugado Industria Automotriz Interleaving CDMX | CAD-LA-10 | CADECA";
+const description = "Láminas corrugado para industria automotriz en CDMX. Triple pared interleaving entre piezas metálicas, protección anticorrosión con papel VCI. MOQ 100 pzas. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU", "CAD-LA-10"],
+  ["Pared", "Triple corrugado ECT-71"],
+  ["Aplicación", "Interleaving piezas metálicas"],
+  ["Anticorrosión", "VCI integrado opcional"],
+  ["Compatibilidad", "Racks Tier 1/Tier 2"],
+  ["Material", "Kraft virgen industrial"],
+  ["Certificación", "Especificación cliente opcional"],
+  ["Pedido mínimo", "100 láminas"],
+  ["Entrega CDMX", "24–48 hrs"],
+];
+
+const faqs = [
+  { id:"cad-la-10-f1", question:"¿Qué es el papel VCI y cómo funciona?", answer:"VCI (Volatile Corrosion Inhibitor) es un compuesto que se libera en forma de vapor desde el papel y forma una película molecular invisible sobre las superficies metálicas que bloquea la oxidación. Es invisible, no deja residuo en la pieza y no requiere desengrase posterior antes del ensamble. Se activa con el calor del ambiente y una vez que se abre el empaque, la protección se disipa en horas." },
+  { id:"cad-la-10-f2", question:"¿Pueden producir según especificaciones técnicas de una armadora?", answer:"Sí. Varios de nuestros clientes son proveedores Tier 1 con especificaciones técnicas de empaque dictadas por las armadoras (FORD, GM, Stellantis, etc.). Podemos revisar la especificación y confirmar si nuestro corrugado cumple los requerimientos. En caso de necesitar ajustes de gramaje o dimensiones, los producimos según plano." },
+  { id:"cad-la-10-f3", question:"¿Las láminas son compatibles con líneas de producción automatizadas?", answer:"Las láminas CAD-LA-10 pueden cortarse a medida exacta para alimentación manual en línea. Para integración en líneas automatizadas con pick-and-place o brazo robot, necesitamos conocer las dimensiones de los recipientes y la tolerancia dimensional requerida por el equipo." },
+];
+
+const gallery = [
+  { src: "/img/catalogo/lamina-triple-hero-cdmx.avif", alt: "Láminas corrugado industria automotriz CDMX" },
+  { src: "/img/catalogo/lamina-triple-grosor-cdmx.avif", alt: "Grosor triple pared automotriz" },
+  { src: "/img/catalogo/lamina-triple-capas-cdmx.avif", alt: "Capas triple corrugado" },
+  { src: "/img/catalogo/lamina-triple-pallet-cdmx.avif", alt: "Pallet láminas triple industria" },
+  { src: "/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif", alt: "Triple pared industrial automotriz" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Industria Automotriz"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Láminas Corrugado para Industria Automotriz",sku:"CAD-LA-10",description:"Láminas triple pared para interleaving entre piezas metálicas de automóviles. Con opción de papel VCI anticorrosión. Para proveedores Tier 1 y Tier 2 de la industria automotriz.",image:gallery[0].src,material:"CAD-LA-10",category:"Láminas de Cartón Corrugado",moq:"100 láminas"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+        <li><span class="current">Láminas Corrugado para Industria Automotriz</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-cadla10-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-LA-10 · Láminas de Cartón Corrugado</span>
+      <h1 id="sku-cadla10-title" class="cat-page-hero__title">Láminas Corrugado para <span>Industria Automotriz</span> CDMX</h1>
+      <p class="cat-page-hero__desc">Láminas triple pared para interleaving entre piezas metálicas de automóviles. Con opción de papel VCI anticorrosión. Para proveedores Tier 1 y Tier 2 de la industria automotriz.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-10</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 láminas</strong></div>
+        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-cadla10-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-LA-10 · Familia: Láminas de Cartón Corrugado</p>
+            <h2 id="detalle-cadla10-title" class="sku-detail__title">Láminas Corrugado para Industria Automotriz</h2>
+            <p class="sku-detail__desc">Los proveedores de la industria automotriz (Tier 1 y Tier 2) necesitan láminas de corrugado para interleaving entre piezas metálicas estampadas, ensambladas o maquinadas que eviten el roce y la corrosión durante el almacenaje y el transporte en racks de producción. CAD-LA-10 usa triple pared ECT-71 con opción de papel VCI (Volatile Corrosion Inhibitor) integrado para protección anticorrosión en piezas de acero y aluminio. Compatible con racks de producción estándar de la industria.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-71</span><span class="sku-detail__strip-label">Triple pared</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">VCI</span><span class="sku-detail__strip-label">Anticorrosión op.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Tier 1/2</span><span class="sku-detail__strip-label">Compatible</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-10 Láminas Corrugado para Industria Automotriz`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-10</a>
+              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-cadla10-title">
+      <div class="container">
+        <h2 id="faq-cadla10-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado para Industria Automotriz</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Eres proveedor automotriz? Cotiza las láminas de interleaving con especificación técnica incluida" />
+</PageLayout>

@@ -1,0 +1,131 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja Corrugado Blanco Liner Premium CDMX | CAD-CS-07 | CADECA";
+const description = "Caja corrugado blanco liner interior y exterior en CDMX. ECT-32 doble pared, ideal para retail y unboxing premium. Impresión nítida 4 colores. Desde 100 pzas. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-CS-07"],
+  ["Tipo de pared", "Doble corrugado BC"],
+  ["Flauta",        "BC (7mm)"],
+  ["Resistencia",   "ECT-32"],
+  ["Gramaje liner", "150 g/m² blanco coated"],
+  ["Material",      "White liner interior y exterior"],
+  ["Cierre",        "4 solapas autoblocante"],
+  ["Impresión",     "Offset / Flexo 1–4 colores"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id: "cs07-f1",
+    question: "¿En qué se diferencia la caja corrugado blanco de la kraft?",
+    answer: "La caja corrugado blanco utiliza un liner de papel coated blanco tanto en el exterior como en el interior. Esto ofrece tres ventajas principales: (1) superficie de impresión de mayor calidad para colores más vivos y resolución nítida, (2) presentación interior limpia y profesional al abrir la caja, y (3) valor percibido más alto para productos de retail. En términos de resistencia, ambas variantes alcanzan ECT-32 en doble pared, sin diferencia estructural relevante.",
+  },
+  {
+    id: "cs07-f2",
+    question: "¿Cuántos colores puedo imprimir en la caja blanca?",
+    answer: "El liner blanco coated acepta impresión flexográfica de 1 a 4 colores con alta fidelidad de color, reproduciendo correctamente paletas Pantone y CMYK. Para diseños con fotografías, degradados o más de 4 colores, recomendamos impresión offset o digital sobre papel coated. La superficie blanca elimina la interferencia del fondo kraft marrón, lo que significa colores más precisos desde el primer color. Disponible con acabado gloss o mate.",
+  },
+  {
+    id: "cs07-f3",
+    question: "¿Es la caja corrugado blanco adecuada para envíos en paquetería?",
+    answer: "Sí. La caja blanca doble corrugado BC ECT-32 cumple todos los requisitos de resistencia para paqueterías como DHL, FedEx, Estafeta y J&T para envíos hasta 20 kg. El liner blanco exterior no afecta la resistencia estructural. Sin embargo, si el packaging tiene información de marca e imagen de producto en el exterior, considera que el liner blanco quedará expuesto durante el tránsito y podría mostrar marcas de roce. Para envíos donde la presentación exterior importa, recomendamos incluir funda o bolsa de polietileno.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/corrugado-doble-pared-hero-cdmx.avif",     alt: "Caja corrugado blanco liner doble pared — vista principal" },
+  { src: "/img/catalogo/corrugado-doble-pared-frontal-cdmx.avif",  alt: "Caja corrugado blanco frontal CDMX" },
+  { src: "/img/catalogo/corrugado-doble-pared-apilado-cdmx.avif",  alt: "Cajas corrugado blanco apiladas CDMX" },
+  { src: "/img/catalogo/corrugado-simple-detalle-flauta-cdmx.avif",alt: "Detalle flauta BC corrugado blanco" },
+  { src: "/img/catalogo/corrugado-simple-uso-envio-cdmx.avif",     alt: "Caja corrugado blanco en uso real envío" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Corrugado Blanco"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja Corrugado Blanco Liner",sku:"CAD-CS-07",description:"Caja corrugado blanco liner ECT-32 doble pared CDMX — CADECA",image:gallery[0].src,material:"White liner coated 150g/m² doble corrugado BC",category:"Cajas Corrugado Estándar",moq:"100"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+        <li><span class="current">Corrugado Blanco</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-cs07-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-CS-07 · Corrugado Estándar</span>
+      <h1 id="sku-cs07-title" class="cat-page-hero__title">Caja Corrugado <span>Blanco Liner Premium</span></h1>
+      <p class="cat-page-hero__desc">
+        Liner blanco coated interior y exterior. La opción ideal para retail, unboxing premium y marcas que necesitan impresión de alta fidelidad de color. ECT-32 doble pared BC, entrega en 24–48 hrs en CDMX desde 100 piezas.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-07</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-cs07-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-CS-07 · Familia: Corrugado Estándar</p>
+            <h2 id="detalle-cs07-title" class="sku-detail__title">Caja Corrugado Blanco Liner</h2>
+            <p class="sku-detail__desc">
+              El CAD-CS-07 es la caja corrugado blanco liner de mayor demanda en CDMX para marcas que requieren presentación premium sin llegar a empaque de lujo. Liner coated blanco 150 g/m² interior y exterior sobre estructura doble corrugado BC, con ECT-32 y capacidad de carga hasta 20 kg. Apta para impresión flexo 1-4 colores con fidelidad de color superior al kraft tradicional.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">20 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 col.</span><span class="sku-detail__strip-label">Impresión</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-07 Caja Corrugado Blanco Liner`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-07</a>
+              <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-cs07-title">
+      <div class="container">
+        <h2 id="faq-cs07-title" class="sku-faq__title">Preguntas Frecuentes — Corrugado Blanco Liner</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tu Caja Corrugado Blanco — Impresión Premium en CDMX" />
+</PageLayout>

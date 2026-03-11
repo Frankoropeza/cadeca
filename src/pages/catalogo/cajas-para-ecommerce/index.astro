@@ -4,7 +4,7 @@ import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture   from "@/components/LeadCapture.astro";
 import PageHero      from "@/components/PageHero.astro";
 
-const title       = "Catálogo Cajas para E-commerce CDMX | 5 Productos | Mercado Libre, Amazon | CADECA";
+const title       = "Catálogo Cajas para E-commerce CDMX | 11 Productos | Mercado Libre, Amazon, Shopify | CADECA";
 const description = "Catálogo cajas de cartón para e-commerce en CDMX. Mercado Envíos, Amazon FBA, DHL, FedEx, Estafeta, Shopify y medidas personalizadas. Fichas técnicas con specs y medidas. CADECA.";
 const WHATSAPP    = "5255XXXXXXXX";
 
@@ -98,6 +98,97 @@ const productos = [
       { label: "MOQ",          value: "50 piezas" },
     ],
     moq: "50 pzas",
+  },
+
+  {
+    code: "CAD-EC-06", badge: "Universal", badgeColor: "green", featured: false,
+    title: "Caja de Envío Online Universal",
+    desc: "Compatible con DHL, FedEx, Estafeta, J&T y 99Minutos. Doble corrugado ECT-32, 5 medidas en stock permanente CDMX. Ideal para multi-paquetería.",
+    imgSrc: "/img/catalogo/caja-envio-online-hero-cdmx.avif",
+    imgAlt: "Caja envío online universal multi-paquetería CDMX — CADECA CAD-EC-06",
+    href: "/catalogo/cajas-para-ecommerce/caja-envio-online",
+    specs: [
+      { label: "Paqueterías", value: "DHL · FedEx · J&T · 99Min" },
+      { label: "ECT",         value: "ECT-32 (doble BC)" },
+      { label: "Medidas",     value: "5 estándar e-commerce" },
+      { label: "Stock",       value: "Permanente CDMX" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code: "CAD-EC-07", badge: "PyME", badgeColor: "orange", featured: false,
+    title: "Caja para PyME con Tienda Online",
+    desc: "Sin mínimo alto — MOQ 50 pzas. Entrega 24 hrs CDMX. Compatible con Shopify, TiendaNube y ventas en local. Para negocios que empiezan o tienen volumen moderado.",
+    imgSrc: "/img/catalogo/caja-pyme-hero-cdmx.avif",
+    imgAlt: "Caja para PyME con tienda online CDMX — CADECA CAD-EC-07",
+    href: "/catalogo/cajas-para-ecommerce/caja-pyme-ecommerce",
+    specs: [
+      { label: "MOQ",         value: "50 piezas" },
+      { label: "ECT",         value: "ECT-32" },
+      { label: "Medidas",     value: "4 estándar PyME" },
+      { label: "Entrega",     value: "24 hrs CDMX" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code: "CAD-EC-08", badge: "DTC", badgeColor: "blue", featured: false,
+    title: "Caja para Marcas DTC / Shopify / TikTok Shop",
+    desc: "Branding opcional desde 100 pzas. Medidas optimizadas para peso volumétrico mínimo. Diseño gratuito con logo vectorial. Turnaround 5–7 días CDMX.",
+    imgSrc: "/img/catalogo/caja-shopify-hero-cdmx.avif",
+    imgAlt: "Caja para marcas DTC Shopify TikTok Shop CDMX — CADECA CAD-EC-08",
+    href: "/catalogo/cajas-para-ecommerce/caja-shopify-dtc",
+    specs: [
+      { label: "Branding",    value: "Desde 100 pzas" },
+      { label: "ECT",         value: "ECT-32" },
+      { label: "Peso vol.",   value: "Optimizado" },
+      { label: "Diseño",      value: "Gratuito" },
+    ],
+    moq: "50 pzas neutra",
+  },
+  {
+    code: "CAD-EC-09", badge: "Gran formato", badgeColor: "blue", featured: false,
+    title: "Caja Gran Formato — Electrodomésticos y Blancos",
+    desc: "Doble corrugado ECT-44 para electrodomésticos, televisores y línea blanca. Medidas XL y XXL. Compatible con Amazon grande, Walmart y PIMSA. Stock CDMX.",
+    imgSrc: "/img/catalogo/caja-almacen-industrial-hero-cdmx.avif",
+    imgAlt: "Caja gran formato electrodomésticos línea blanca CDMX — CADECA CAD-EC-09",
+    href: "/catalogo/cajas-para-ecommerce/caja-gran-formato",
+    specs: [
+      { label: "ECT",         value: "ECT-44" },
+      { label: "Medidas",     value: "XL y XXL" },
+      { label: "Compatible",  value: "Amazon · Walmart" },
+      { label: "Carga",       value: "Hasta 25 kg" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code: "CAD-EC-10", badge: "Económica", badgeColor: "green", featured: false,
+    title: "Caja para Paquetería Económica — J&T, 99Min, Sendex",
+    desc: "Optimizada para minimizar el peso volumétrico en J&T, 99Minutos y Sendex. Ahorra hasta 30% en costo de flete. ECT-32, 3 medidas en stock CDMX.",
+    imgSrc: "/img/catalogo/caja-paqueteria-hero-cdmx.avif",
+    imgAlt: "Caja paquetería económica J&T 99Minutos CDMX — CADECA CAD-EC-10",
+    href: "/catalogo/cajas-para-ecommerce/caja-paqueteria-economica",
+    specs: [
+      { label: "Paqueterías", value: "J&T · 99Min · Sendex" },
+      { label: "ECT",         value: "ECT-32" },
+      { label: "Ahorro",      value: "Hasta 30% flete" },
+      { label: "Medidas",     value: "3 optimizadas" },
+    ],
+    moq: "50 pzas",
+  },
+  {
+    code: "CAD-EC-11", badge: "Suscripción", badgeColor: "orange", featured: false,
+    title: "Caja para Suscripción Box y Kits de Regalo",
+    desc: "Estructura robusta para múltiples productos, interior liso para tissue o divisores. Personalizable con logo 1–4 colores desde 100 pzas. Diseño CAD gratuito.",
+    imgSrc: "/img/catalogo/caja-shopify-unboxing-cdmx.avif",
+    imgAlt: "Caja suscripción box kits de regalo CDMX — CADECA CAD-EC-11",
+    href: "/catalogo/cajas-para-ecommerce/caja-suscripcion-box",
+    specs: [
+      { label: "Interior",    value: "Liso para tissue/divisores" },
+      { label: "Branding",    value: "1–4 colores desde 100 pzas" },
+      { label: "Diseño CAD",  value: "Gratuito" },
+      { label: "Entrega",     value: "24 hrs neutra / 5–7 c/logo" },
+    ],
+    moq: "100 pzas",
   },
 ];
 ---

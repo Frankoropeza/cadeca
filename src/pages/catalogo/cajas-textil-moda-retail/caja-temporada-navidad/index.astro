@@ -1,0 +1,132 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja Temporada y Canastas Navideñas CDMX | CAD-TX-08 | CADECA";
+const description = "Caja para temporada navideña y canastas regalo en CDMX. Diseño festivo o neutro, kraft o blanco, resistente al apilado, ideal para gift sets. Fabricante directo CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-TX-08"],
+  ["Tipo de pared", "Simple / Doble corrugado (B/C · BC)"],
+  ["Flauta",        "B (3mm) / C (4mm) / BC (7mm)"],
+  ["Resistencia",   "ECT-32 / ECT-44"],
+  ["Gramaje liner", "127–150 g/m²"],
+  ["Material",      "Kraft virgen o corrugado blanco"],
+  ["Cierre",        "4 solapas o tapa separada con ventana"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id: "tx08-f1",
+    question: "¿Con cuánta anticipación debo pedir cajas para temporada navideña?",
+    answer: "Recomendamos realizar el pedido de cajas navideñas con 4–6 semanas de anticipación para temporada alta (octubre–diciembre). Las cajas sin impresión o con impresión 1 color tienen entrega estándar de 24–48 hrs en CDMX. Las cajas con diseño festivo full color, barniz UV o acabados especiales requieren 5–7 días de producción. Para pedidos de más de 1,000 pzas en temporada navideña, ofrecemos precio preferencial y almacenamiento sin costo hasta por 30 días.",
+  },
+  {
+    id: "tx08-f2",
+    question: "¿Qué medidas recomiendan para canastas navideñas corporativas?",
+    answer: "Para canastas navideñas corporativas ofrecemos tres medidas populares: Chica (30×20×15 cm) para gift sets de 3–5 productos, Mediana (40×30×20 cm) para canastas de 6–10 productos con botella de vino, y Grande (50×35×25 cm) para canastas premium con múltiples artículos gourmet. Todas disponibles en kraft con lazo o blanco con diseño festivo personalizado. También fabricamos medidas especiales desde 100 pzas.",
+  },
+  {
+    id: "tx08-f3",
+    question: "¿Pueden hacer cajas con diseño festivo diferente cada año?",
+    answer: "Sí. Cada temporada actualizamos nuestra colección de diseños festivos estándar que incluimos sin costo adicional en pedidos de 500+ pzas. Si prefieres un diseño exclusivo con la identidad de tu marca, nuestro equipo de diseño crea el arte sin costo y lo preparamos para impresión flexo full color. El cliché de impresión se conserva para reutilizar en temporadas futuras, reduciendo el costo de repetición hasta un 30%.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/caja-retail-pdv-display-cdmx.avif",       alt: "Caja temporada navideña display punto de venta — CAD-TX-08" },
+  { src: "/img/catalogo/caja-retail-pdv-hero-cdmx.avif",          alt: "Caja para canastas navideñas corrugado CDMX" },
+  { src: "/img/catalogo/caja-retail-pdv-flatpack-cdmx.avif",      alt: "Cajas navideñas flat pack para armado rápido" },
+  { src: "/img/catalogo/caja-retail-pdv-floorstand-cdmx.avif",    alt: "Floor stand con cajas de temporada navideña" },
+  { src: "/img/catalogo/caja-retail-punto-venta-pdv-cdmx.avif",   alt: "Punto de venta con cajas de gift set navideño" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Temporada Navideña"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja para Temporada y Canastas Navideñas",sku:"CAD-TX-08",description:"Caja para canastas navideñas y gift sets — diseño festivo o neutro, kraft o blanco",image:gallery[0].src,material:"Kraft o corrugado blanco B/C ECT-32",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+      <li><span class="current">Temporada Navideña</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-tx08-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-TX-08 · Textil, Moda y Retail</span>
+      <h1 id="sku-tx08-title" class="cat-page-hero__title">
+        Caja para <span>Temporada y Canastas Navideñas</span>
+      </h1>
+      <p class="cat-page-hero__desc">
+        Cajas para canastas navideñas corporativas y gift sets de temporada. Diseño festivo o neutro en kraft natural o corrugado blanco. Resistente al apilado y transporte. Entrega en CDMX en 24–48 horas con precios especiales por volumen.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-08</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-tx08-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-TX-08 · Familia: Textil, Moda y Retail</p>
+            <h2 id="detalle-tx08-title" class="sku-detail__title">Caja Temporada Navideña y Gift Sets</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-TX-08 es nuestra solución de empaque para canastas navideñas, gift sets corporativos y cajas de temporada festiva. Disponible en tres medidas estándar (chica, mediana y grande) en kraft natural o corrugado blanco con opciones de impresión festiva full color. Flauta B/C ECT-32 con capacidad de apilado seguro hasta 1 metro. Ideal para empresas que preparan canastas navideñas, tiendas departamentales y marcas de moda con colecciones de temporada en CDMX.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3 medidas</span><span class="sku-detail__strip-label">Ch · Med · Gde</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Full color</span><span class="sku-detail__strip-label">Diseño festivo</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">Pedido mín.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-08 Caja Temporada Navideña`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-08</a>
+              <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-tx08-title">
+      <div class="container">
+        <h2 id="faq-tx08-title" class="sku-faq__title">Preguntas Frecuentes — Temporada Navideña</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Prepara tus canastas navideñas con tiempo — Cotiza CAD-TX-08 con precio por volumen" />
+
+</PageLayout>

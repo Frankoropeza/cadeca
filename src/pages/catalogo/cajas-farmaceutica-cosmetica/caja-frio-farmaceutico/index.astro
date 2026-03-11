@@ -1,0 +1,132 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja Cadena de Frío Farmacéutico CDMX | CAD-FC-08 | CADECA";
+const description = "Caja para cadena de frío farmacéutico en CDMX. Barrera EPS + corrugado, mantiene temperatura 2–8°C hasta 24 hrs para insulina, vacunas y biológicos. CADECA fabricante directo.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-FC-08"],
+  ["Tipo de pared", "Doble corrugado BC + barrera EPS"],
+  ["Flauta",        "BC (7mm)"],
+  ["Resistencia",   "ECT-44"],
+  ["Gramaje liner", "150 g/m²"],
+  ["Material",      "Corrugado blanco + EPS (poliestireno expandido)"],
+  ["Cierre",        "4 solapas selladas con cinta de seguridad"],
+  ["Pedido mínimo", "50 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id: "fc08-f1",
+    question: "¿Cuánto tiempo mantiene la temperatura entre 2–8°C la caja CAD-FC-08?",
+    answer: "La caja CAD-FC-08 con insert EPS de 25mm mantiene la temperatura entre 2–8°C durante 18–24 horas en condiciones ambientales de hasta 30°C, con gel packs precargados a -18°C. Para rutas de distribución nocturnas o de largo recorrido recomendamos la versión con EPS de 40mm que extiende la autonomía hasta 36 horas. Realizamos pruebas de qualificación térmica bajo protocolo ASTM D3103 para cada configuración.",
+  },
+  {
+    id: "fc08-f2",
+    question: "¿La caja es compatible con los requerimientos de COFEPRIS para transporte de biológicos?",
+    answer: "Sí. La caja CAD-FC-08 cumple con los lineamientos de la NOM-059 (medicamentos) y las guías de COFEPRIS para distribución de biológicos y vacunas. Cada caja incluye ranuras para data logger de temperatura, área de sellado con cinta de seguridad evidente, y campo de trazabilidad para número de lote, fecha y responsable de la cadena de custodia. Disponemos de documentación técnica completa para su validación ante autoridades sanitarias.",
+  },
+  {
+    id: "fc08-f3",
+    question: "¿Puedo pedir las cajas con o sin insert EPS?",
+    answer: "Sí, ofrecemos la caja CAD-FC-08 en tres configuraciones: solo caja corrugado doble pared (para almacenamiento en cuarto frío), caja + insert EPS estándar (25mm, temperatura hasta 24 hrs), y kit completo con caja + EPS + gel packs certificados. El pedido mínimo aplica para cualquier configuración. También fabricamos inserts EPS a la medida para cajas existentes si ya cuentas con caja exterior y solo necesitas la barrera térmica interior.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/corrugado-doble-pared-hero-cdmx.avif",           alt: "Caja cadena de frío farmacéutico corrugado doble pared — CAD-FC-08" },
+  { src: "/img/catalogo/corrugado-triple-pared-hero-cdmx.avif",          alt: "Variante triple pared para cadena de frío extendida" },
+  { src: "/img/catalogo/caja-distribuidora-farmacia-pallet-cdmx.avif",   alt: "Pallet con cajas de cadena frío para distribución farmacéutica" },
+  { src: "/img/catalogo/caja-distribuidora-farmacia-rack-cdmx.avif",     alt: "Rack de almacenamiento en cámara fría con cajas CADECA" },
+  { src: "/img/catalogo/caja-blister-farmaceutica-almacen-cdmx.avif",    alt: "Almacén farmacéutico con cajas para cadena de frío" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Cadena de Frío Farmacéutico"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja para Cadena de Frío Farmacéutico",sku:"CAD-FC-08",description:"Caja cadena de frío con barrera EPS + corrugado — mantiene 2–8°C hasta 24 hrs",image:gallery[0].src,material:"Corrugado blanco BC ECT-44 + barrera EPS",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"50"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+      <li><span class="current">Cadena de Frío Farmacéutico</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-fc08-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-FC-08 · Farmacéutica y Cosmética</span>
+      <h1 id="sku-fc08-title" class="cat-page-hero__title">
+        Caja <span>Cadena de Frío Farmacéutico</span> — 2–8°C hasta 24 hrs
+      </h1>
+      <p class="cat-page-hero__desc">
+        Sistema de empaque térmico para insulina, vacunas y biológicos. Barrera EPS interior + corrugado blanco doble pared ECT-44. Mantiene temperatura 2–8°C hasta 24 horas en distribución urbana. Compatible con NOM-059 y lineamientos COFEPRIS.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-08</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-fc08-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-FC-08 · Familia: Farmacéutica y Cosmética</p>
+            <h2 id="detalle-fc08-title" class="sku-detail__title">Caja Cadena de Frío para Insulina y Vacunas</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-FC-08 combina corrugado blanco doble pared BC ECT-44 con una barrera interior de EPS (poliestireno expandido) que garantiza el mantenimiento de temperatura 2–8°C durante 18–24 horas. Diseñada para la distribución de insulina, vacunas, biológicos y reactivos termosensibles en CDMX y zona metropolitana. Incluye ranura para data logger de temperatura y área de sellado evidente para trazabilidad sanitaria.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">2–8°C</span><span class="sku-detail__strip-label">Temperatura</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Autonomía térmica</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">Pedido mín.</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-08 Caja Cadena de Frío Farmacéutico`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-08</a>
+              <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-fc08-title">
+      <div class="container">
+        <h2 id="faq-fc08-title" class="sku-faq__title">Preguntas Frecuentes — Cadena de Frío Farmacéutico</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Cotiza tu caja de cadena de frío farmacéutico — Asesoría técnica sin costo en CDMX" />
+
+</PageLayout>

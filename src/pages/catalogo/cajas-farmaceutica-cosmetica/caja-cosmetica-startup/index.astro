@@ -1,0 +1,132 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Caja para Marca de Cosmética Emergente CDMX | CAD-FC-07 | CADECA";
+const description = "Caja para startup y marca cosmética emergente en CDMX. MOQ desde 100 pzas, kraft o blanco, personalización gráfica opcional, unboxing premium. Fabricante directo CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU",    "CAD-FC-07"],
+  ["Tipo de pared", "Simple (flauta E)"],
+  ["Flauta",        "E (1.5mm)"],
+  ["Resistencia",   "ECT-23"],
+  ["Gramaje liner", "127–150 g/m²"],
+  ["Material",      "Kraft virgen o corrugado blanco blanqueado"],
+  ["Cierre",        "4 solapas pegadas o troqueladas"],
+  ["Pedido mínimo", "100 piezas"],
+  ["Entrega CDMX",  "24–48 hrs"],
+];
+
+const faqs = [
+  {
+    id: "fc07-f1",
+    question: "¿Qué opciones de personalización hay disponibles desde 100 piezas?",
+    answer: "Desde 100 piezas ofrecemos impresión flexográfica en 1 o 2 colores sobre kraft natural o corrugado blanco. Esto incluye logo, slogan, instrucciones de uso y cualquier dato regulatorio necesario para cosméticos según NOM-141. Para tiradas mayores a 500 piezas habilitamos impresión full color CMYK con barniz mate o UV selectivo para un acabado premium que refuerza la identidad de tu marca emergente en CDMX.",
+  },
+  {
+    id: "fc07-f2",
+    question: "¿Cómo diseñar una experiencia de unboxing memorable para mi marca cosmética?",
+    answer: "El unboxing comienza con la caja exterior: flauta E micro con superficie de alta calidad de impresión, cierre autoblocante y posible ventana de acetato para mostrar el producto. Interiormente podemos agregar insert troquelado de cartón kraft que sujete el producto y una tarjeta de presentación. Este kit completo está disponible desde 200 piezas en CDMX. Un buen unboxing genera contenido espontáneo en redes sociales, amplificando el alcance de marcas cosméticas emergentes.",
+  },
+  {
+    id: "fc07-f3",
+    question: "¿La caja cumple con las normas de etiquetado para cosméticos en México?",
+    answer: "Sí. La NOM-141-SSA1 establece que el empaque de cosméticos debe incluir nombre del producto, ingredientes (INCI), instrucciones de uso, precauciones, nombre del responsable y número de lote. Diseñamos el área de impresión de la caja CAD-FC-07 con zonas reservadas para todos estos datos, garantizando legibilidad de 6pt en corrugado flauta E. También podemos incluir código QR para información adicional en línea.",
+  },
+];
+
+const gallery = [
+  { src: "/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif",  alt: "Caja cosmética startup con barniz UV — CAD-FC-07" },
+  { src: "/img/catalogo/caja-cosmetica-premium-display-cdmx.avif",    alt: "Display de caja cosmética emergente CDMX" },
+  { src: "/img/catalogo/caja-cosmetica-premium-gloss-cdmx.avif",      alt: "Acabado gloss en caja cosmética premium" },
+  { src: "/img/catalogo/caja-cosmetica-premium-interior-cdmx.avif",   alt: "Interior de caja cosmética con insert troquelado" },
+  { src: "/img/catalogo/caja-cosmetica-premium-linea-cdmx.avif",      alt: "Línea de cajas cosméticas personalizadas CDMX" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Cosmética Startup"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Caja para Marca de Cosmética Emergente",sku:"CAD-FC-07",description:"Caja flauta E para startup cosmética — MOQ 100 pzas, kraft o blanco, unboxing premium",image:gallery[0].src,material:"Kraft virgen o corrugado blanco flauta E ECT-23",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"100"}}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container"><ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/catalogo">Catálogo</a></li>
+      <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+      <li><span class="current">Cosmética Startup</span></li>
+    </ol></div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-fc07-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-FC-07 · Farmacéutica y Cosmética</span>
+      <h1 id="sku-fc07-title" class="cat-page-hero__title">
+        Caja para <span>Marca Cosmética Emergente</span> — MOQ 100 pzas
+      </h1>
+      <p class="cat-page-hero__desc">
+        La solución ideal para startups y marcas cosméticas en crecimiento. Pedido mínimo desde 100 piezas en kraft natural o corrugado blanco, con personalización gráfica opcional y experiencia de unboxing premium. Entrega en CDMX en 24–48 horas.
+      </p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-07</strong></div>
+        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-fc07-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-FC-07 · Familia: Farmacéutica y Cosmética</p>
+            <h2 id="detalle-fc07-title" class="sku-detail__title">Caja Cosmética para Startup y Marca Emergente</h2>
+            <p class="sku-detail__desc">
+              La caja CAD-FC-07 está diseñada para marcas cosméticas que arrancan o escalan sin la restricción de grandes volúmenes. Flauta E micro de 1.5mm en kraft natural o corrugado blanco, con superficie lista para impresión flexo 1–4 colores o digital. Compatible con NOM-141 para etiquetado de cosméticos. Ideal para skincare, maquillaje, perfumería y suplementos de belleza que buscan presencia premium desde el primer lote en CDMX.
+            </p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ mínimo</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Kraft/Blanco</span><span class="sku-detail__strip-label">Material</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flexo 1–4</span><span class="sku-detail__strip-label">Impresión</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-07 Caja Cosmética Startup`}
+                 target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-07</a>
+              <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-fc07-title">
+      <div class="container">
+        <h2 id="faq-fc07-title" class="sku-faq__title">Preguntas Frecuentes — Cosmética Startup</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="Lanza tu marca cosmética con la caja correcta — MOQ 100 pzas, entrega CDMX 24 hrs" />
+
+</PageLayout>

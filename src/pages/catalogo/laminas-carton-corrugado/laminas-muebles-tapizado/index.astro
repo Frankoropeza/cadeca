@@ -1,0 +1,113 @@
+---
+import PageLayout    from "@/layouts/PageLayout.astro";
+import FaqItem       from "@/components/FaqItem.astro";
+import LeadCapture   from "@/components/LeadCapture.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+
+const title       = "Láminas Corrugado Muebles Tapizado Carpintería CDMX | CAD-LA-08 | CADECA";
+const description = "Láminas de cartón corrugado para mueblería y tapizado en CDMX. Simple pared flexible, corte limpio, para carpinterías y tapicerías. MOQ 50 pzas. Entrega 24 hrs. CADECA.";
+const WHATSAPP    = "5255XXXXXXXX";
+
+const specs = [
+  ["Código SKU", "CAD-LA-08"],
+  ["Pared", "Simple flauta B (3mm) o C (4mm)"],
+  ["Flexibilidad", "Alta — apta para curvas"],
+  ["Corte", "Limpio con cutter / sierra"],
+  ["Acabados", "No raya superficies"],
+  ["Uso", "Protección transporte muebles"],
+  ["Material", "Kraft virgen / reciclado"],
+  ["Pedido mínimo", "50 láminas"],
+  ["Entrega CDMX", "24 hrs en stock"],
+];
+
+const faqs = [
+  { id:"cad-la-08-f1", question:"¿La lámina raya la madera laqueada o el tapiz?", answer:"No. La flauta B y C de CAD-LA-08 tiene una superficie de kraft suave que no raya acabados de madera laqueada, barnizada o tapiz de tela. Para acabados extremadamente delicados (lacado piano o cuero de lujo), recomendamos interponer papel tissue o plástico protector entre la lámina y la superficie." },
+  { id:"cad-la-08-f2", question:"¿En qué medidas estándar están disponibles?", answer:"Manejamos palés de 1.22 × 2.44 m (formato completo) y mitades de 1.22 × 1.22 m como medidas de stock. Para medidas específicas usamos el servicio CAD-LA-06 de corte a medida. Para talleres que necesitan muchas piezas del mismo tamaño, el corte a medida desde palé completo es más económico." },
+  { id:"cad-la-08-f3", question:"¿Puedo pedir láminas por pieza o solo en paquetes de palé?", answer:"Puedes pedir desde 50 láminas sueltas. Para cantidades pequeñas, las láminas vienen en paquetes de 25 o 50 unidades. Para palés completos (250-300 láminas según espesor), el precio baja significativamente y la entrega en palé es más práctica para talleres con montacargas." },
+];
+
+const gallery = [
+  { src: "/img/catalogo/lamina-simple-hero-cdmx.avif", alt: "Láminas corrugado muebles tapizado CDMX" },
+  { src: "/img/catalogo/lamina-simple-corte-cdmx.avif", alt: "Corte lámina simple pared" },
+  { src: "/img/catalogo/lamina-simple-pallet-cdmx.avif", alt: "Pallet láminas simple pared" },
+  { src: "/img/catalogo/lamina-simple-topview-cdmx.avif", alt: "Vista superior láminas" },
+  { src: "/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif", alt: "Láminas corrugado simple pared" },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  whatsapp={WHATSAPP}
+  pageType="product"
+  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Muebles y Tapizado"}]}
+  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+  product={{name:"Láminas Corrugado para Muebles y Tapizado",sku:"CAD-LA-08",description:"Láminas corrugado simple pared para mueblería, tapicería y carpintería en CDMX. Flexible, de corte limpio, protege acabados durante transporte y almacenaje.",image:gallery[0].src,material:"CAD-LA-08",category:"Láminas de Cartón Corrugado",moq:"50 láminas"}}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catálogo</a></li>
+        <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+        <li><span class="current">Láminas Corrugado para Muebles y Tapizado</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="cat-page-hero" aria-labelledby="sku-cadla08-title">
+    <div class="container">
+      <span class="cat-page-hero__eyebrow">SKU CAD-LA-08 · Láminas de Cartón Corrugado</span>
+      <h1 id="sku-cadla08-title" class="cat-page-hero__title">Láminas Corrugado para <span>Muebles</span> y Tapizado CDMX</h1>
+      <p class="cat-page-hero__desc">Láminas corrugado simple pared para mueblería, tapicería y carpintería en CDMX. Flexible, de corte limpio, protege acabados durante transporte y almacenaje.</p>
+      <div class="cat-page-hero__strip">
+        <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-08</strong></div>
+        <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+        <div class="cat-page-hero__strip-item">MOQ: <strong>50 láminas</strong></div>
+        <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby="detalle-cadla08-title">
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={gallery} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">CAD-LA-08 · Familia: Láminas de Cartón Corrugado</p>
+            <h2 id="detalle-cadla08-title" class="sku-detail__title">Láminas Corrugado para Muebles y Tapizado</h2>
+            <p class="sku-detail__desc">La industria del mueble y el tapizado necesita láminas de corrugado que sean lo suficientemente flexibles para envolver curvas, de fácil corte con cutter o sierra circular, y que no rayen los acabados de madera o tela. CAD-LA-08 usa simple pared flauta B o C que equilibra flexibilidad y amortiguación. Ampliamente usada por carpinterías de CDMX para proteger superficies terminadas durante el transporte a domicilio y por tapicerías para separadores entre piezas en taller.</p>
+            <div class="sku-detail__strip">
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flauta B/C</span><span class="sku-detail__strip-label">Simple pared</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Flexible</span><span class="sku-detail__strip-label">Sin rayar</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 lám.</span><span class="sku-detail__strip-label">MOQ</span></div>
+              <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Stock CDMX</span></div>
+            </div>
+            <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
+            <table class="sku-detail__specs-table"><tbody>
+              {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
+            </tbody></table>
+            <div class="sku-detail__actions">
+              <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-08 Láminas Corrugado para Muebles y Tapizado`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-08</a>
+              <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-faq" aria-labelledby="faq-cadla08-title">
+      <div class="container">
+        <h2 id="faq-cadla08-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado para Muebles y Tapizado</h2>
+        <div class="sku-faq__list">
+          {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture whatsapp={WHATSAPP} title="¿Tienes carpintería o tapicería? Cotiza las láminas perfectas para proteger tus muebles en tránsito" />
+</PageLayout>
