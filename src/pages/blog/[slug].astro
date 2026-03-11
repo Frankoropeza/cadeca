@@ -20,10 +20,11 @@ const relatedPosts = allPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 2)
   .map(p => ({
-    slug: p.slug,
-    title: p.data.title,
+    slug:     p.slug,
+    title:    p.data.title,
     category: p.data.category,
-    pubDate: p.data.pubDate,
+    pubDate:  p.data.pubDate,
+    image:    p.data.image,
   }));
 ---
 

@@ -7,68 +7,62 @@ import WaBubble   from "@/components/WaBubble.astro";
 import "@/styles/blog.css";
 
 export interface Props {
-  title:       string;
-  description: string;
-  pubDate:     Date;
+  title:        string;
+  description:  string;
+  pubDate:      Date;
   updatedDate?: Date;
-  author:      string;
-  category:    string;
-  tags:        string[];
-  image?:      string;
-  imageAlt?:   string;
+  author:       string;
+  category:     string;
+  tags:         string[];
+  image?:       string;
+  imageAlt?:    string;
   readingTime?: number;
-  headings:    { depth: number; slug: string; text: string }[];
-  slug:        string;
-  relatedPosts?: { slug: string; title: string; category: string; pubDate: Date }[];
+  headings:     { depth: number; slug: string; text: string }[];
+  slug:         string;
+  relatedPosts?: { slug: string; title: string; category: string; pubDate: Date; image?: string }[];
 }
 
 const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  author,
-  category,
-  tags,
-  image,
-  imageAlt,
-  readingTime,
-  headings,
-  slug,
-  relatedPosts = [],
+  title, description, pubDate, updatedDate,
+  author, category, tags, image, imageAlt,
+  readingTime, headings, slug, relatedPosts = [],
 } = Astro.props;
 
 const SITE = "https://cajas-de-carton.com";
+const pageUrl = `${SITE}/blog/${slug}`;
 
-const categorySlug = category.toLowerCase()
-  .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-  .replace(/\s+/g, "-");
+function catSlug(name: string) {
+  return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
+}
+function formatDate(d: Date) {
+  return d.toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" });
+}
 
-const formattedDate = pubDate.toLocaleDateString("es-MX", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-});
-
-const updatedFormatted = updatedDate?.toLocaleDateString("es-MX", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-});
+const cs = catSlug(category);
 
 const categoryColors: Record<string, string> = {
-  "E-commerce": "#E05800",
-  "Guías": "#1C2B4A",
-  "Industria": "#0066CC",
+  "E-commerce":     "#E05800",
+  "Guías":          "#1C2B4A",
+  "Industria":      "#0066CC",
   "Sostenibilidad": "#2E7D32",
-  "Consejos": "#6A1B9A",
+  "Consejos":       "#6A1B9A",
 };
+
+const CATEGORIES = [
+  { name: "Guías",          slug: "guias",          color: "#1C2B4A", icon: "📚" },
+  { name: "E-commerce",     slug: "e-commerce",     color: "#E05800", icon: "🛒" },
+  { name: "Industria",      slug: "industria",      color: "#0066CC", icon: "🏭" },
+  { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32", icon: "♻️" },
+  { name: "Consejos",       slug: "consejos",       color: "#6A1B9A", icon: "💡" },
+];
 
 const breadcrumbs = [
   { name: "Inicio", href: "/" },
-  { name: "Blog", href: "/blog" },
+  { name: "Blog",   href: "/blog" },
   { name: title },
 ];
+
+const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
 const schemaArticle = {
   "@context": "https://schema.org",
@@ -83,7 +77,7 @@ const schemaArticle = {
   },
   "datePublished": pubDate.toISOString(),
   ...(updatedDate ? { "dateModified": updatedDate.toISOString() } : {}),
-  "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE}/blog/${slug}` },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
   ...(image ? { "image": `${SITE}${image}` } : {}),
 };
 
@@ -98,7 +92,7 @@ const schemaBreadcrumb = {
   })),
 };
 
-const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y me interesa cotizar cajas.`);
 ---
 
 <BaseLayout
@@ -112,39 +106,42 @@ const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
   <Header currentPath={Astro.url.pathname} />
 
   <!-- Reading Progress -->
-  <div class="reading-progress">
+  <div class="reading-progress" aria-hidden="true">
     <div class="reading-progress__bar"></div>
   </div>
 
   <!-- Post Hero -->
   <section class="post-hero">
     <div class="container">
-      <nav class="post-hero__breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Inicio</a> <span>/</span>
-        <a href="/blog">Blog</a> <span>/</span>
-        <span>{title}</span>
-      </nav>
-      <span class="post-hero__category" style={`background: ${categoryColors[category] || "#E05800"}`}>
-        {category}
-      </span>
-      <h1 class="post-hero__title">{title}</h1>
-      <div class="post-hero__meta">
-        <span class="post-hero__meta-item">
-          ✍ {author}
+      <div class="post-hero__inner">
+        <nav class="post-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Inicio</a>
+          <span>/</span>
+          <a href="/blog">Blog</a>
+          <span>/</span>
+          <span>{category}</span>
+        </nav>
+        <span class="post-hero__cat" style={`background:${categoryColors[category] || "#E05800"}`}>
+          {category}
         </span>
-        <span class="post-hero__meta-item">
-          📅 {formattedDate}
-        </span>
-        {updatedFormatted && (
-          <span class="post-hero__meta-item">
-            (Actualizado: {updatedFormatted})
-          </span>
-        )}
-        {readingTime && (
-          <span class="post-hero__meta-item">
-            ⏱ {readingTime} min de lectura
-          </span>
-        )}
+        <h1 class="post-hero__title">{title}</h1>
+        <div class="post-hero__meta">
+          <span class="post-hero__meta-item">✍ {author}</span>
+          <span class="post-hero__meta-sep">·</span>
+          <span class="post-hero__meta-item">📅 {formatDate(pubDate)}</span>
+          {updatedDate && (
+            <>
+              <span class="post-hero__meta-sep">·</span>
+              <span class="post-hero__meta-item">🔄 Act. {formatDate(updatedDate)}</span>
+            </>
+          )}
+          {readingTime && (
+            <>
+              <span class="post-hero__meta-sep">·</span>
+              <span class="post-hero__meta-item">⏱ {readingTime} min de lectura</span>
+            </>
+          )}
+        </div>
       </div>
     </div>
   </section>
@@ -152,34 +149,75 @@ const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
   <!-- Post Body -->
   <main class="container" id="contenido-principal">
     <div class="blog-layout">
-      <!-- Content -->
+
+      <!-- Article -->
       <div>
-        <article class="prose">
+
+        <!-- Cover image -->
+        {image && (
+          <div class="post-cover">
+            <img src={image} alt={imageAlt || title} width="960" height="420" loading="eager" decoding="async" />
+          </div>
+        )}
+
+        <!-- Share bar (top) -->
+        <div class="post-share">
+          <span class="post-share__label">Compartir:</span>
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + pageUrl)}`}
+            class="post-share__btn post-share__btn--wa"
+            target="_blank" rel="noopener noreferrer"
+          >💬 WhatsApp</a>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
+            class="post-share__btn post-share__btn--x"
+            target="_blank" rel="noopener noreferrer"
+          >𝕏 Twitter</a>
+          <button
+            class="post-share__btn post-share__btn--copy"
+            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ ¡Copiado!';setTimeout(()=>this.textContent='🔗 Copiar enlace',2000)})"
+          >🔗 Copiar enlace</button>
+        </div>
+
+        <!-- Article content -->
+        <article class="prose" id="article-content">
           <slot />
         </article>
 
         <!-- Tags -->
-        <div class="post-tags">
-          {tags.map(tag => (
-            <span class="post-tags__tag">#{tag}</span>
-          ))}
-        </div>
-
-        <!-- Share -->
-        <div class="post-share">
-          <span class="post-share__label">Compartir:</span>
-          <button class="post-share__btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='¡Copiado!')">
-            Copiar enlace
-          </button>
-        </div>
+        {tags.length > 0 && (
+          <div class="post-tags">
+            <span class="post-tags__label">Temas:</span>
+            {tags.map(tag => <span class="post-tags__tag">#{tag}</span>)}
+          </div>
+        )}
 
         <!-- Author -->
         <div class="post-author">
           <div class="post-author__avatar">C</div>
           <div class="post-author__info">
             <h4>{author}</h4>
-            <p>Especialistas en empaques de cartón corrugado para empresas en CDMX y Estado de México.</p>
+            <p>Especialistas en empaques de cartón corrugado para empresas en CDMX y Estado de México. Más de 20 años fabricando soluciones de empaque B2B.</p>
           </div>
+        </div>
+
+        <!-- Share bar (bottom) -->
+        <div class="post-share">
+          <span class="post-share__label">¿Te fue útil? Comparte:</span>
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + pageUrl)}`}
+            class="post-share__btn post-share__btn--wa"
+            target="_blank" rel="noopener noreferrer"
+          >💬 WhatsApp</a>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
+            class="post-share__btn post-share__btn--x"
+            target="_blank" rel="noopener noreferrer"
+          >𝕏 Twitter</a>
+          <button
+            class="post-share__btn post-share__btn--copy"
+            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ ¡Copiado!';setTimeout(()=>this.textContent='🔗 Copiar enlace',2000)})"
+          >🔗 Copiar enlace</button>
         </div>
 
         <!-- Related Posts -->
@@ -187,34 +225,48 @@ const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
           <section class="related-posts">
             <h2 class="related-posts__title">Artículos relacionados</h2>
             <div class="related-posts__grid">
-              {relatedPosts.map(post => (
-                <a href={`/blog/${post.slug}`} style="text-decoration:none;">
-                  <div class="blog-card">
-                    <div class={`blog-card__placeholder blog-card__placeholder--${post.category.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-")}`}>
-                      CADECA
+              {relatedPosts.map(post => {
+                const rcs = catSlug(post.category);
+                return (
+                  <a href={`/blog/${post.slug}`} class="blog-card">
+                    <div class="blog-card__img-wrap">
+                      {post.image ? (
+                        <img class="blog-card__img" src={post.image} alt={post.title} width="480" height="270" loading="lazy" />
+                      ) : (
+                        <div class={`blog-card__placeholder blog-card__placeholder--${rcs}`}>CADECA</div>
+                      )}
+                      <span class={`blog-card__cat-badge blog-card__cat-badge--${rcs}`}>{post.category}</span>
                     </div>
                     <div class="blog-card__body">
-                      <span class={`blog-card__category blog-card__category--${post.category.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-")}`}>{post.category}</span>
-                      <h3 class="blog-card__title" style="margin-top: 0.5rem;">{post.title}</h3>
+                      <h3 class="blog-card__title">{post.title}</h3>
+                      <div class="blog-card__footer">
+                        <span>{formatDate(post.pubDate)}</span>
+                        <span class="blog-card__read-more">Leer →</span>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              ))}
+                  </a>
+                );
+              })}
             </div>
           </section>
         )}
+
       </div>
 
       <!-- Sidebar -->
       <aside class="blog-sidebar">
+
         <!-- TOC -->
         {tocHeadings.length > 0 && (
-          <div class="toc">
-            <h3 class="toc__title">Contenido</h3>
-            <ul class="toc__list">
+          <div class="toc" id="toc-widget">
+            <div class="toc__header">
+              <div class="toc__icon">📋</div>
+              <h3 class="toc__title">Contenido</h3>
+            </div>
+            <ul class="toc__list" id="toc-list">
               {tocHeadings.map(h => (
                 <li class={h.depth === 3 ? "toc__h3" : ""}>
-                  <a href={`#${h.slug}`}>{h.text}</a>
+                  <a href={`#${h.slug}`} data-heading={h.slug}>{h.text}</a>
                 </li>
               ))}
             </ul>
@@ -222,13 +274,47 @@ const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
         )}
 
         <!-- CTA WhatsApp -->
-        <div class="blog-sidebar__cta">
-          <h3>¿Necesitas cotizar?</h3>
-          <p>Respuesta en menos de 2 horas. Sin compromiso.</p>
-          <a href="https://wa.me/5255XXXXXXXX?text=Hola%20CADECA%2C%20vi%20su%20blog%20y%20me%20interesa%20cotizar%20cajas." class="btn" target="_blank" rel="noopener">
-            WhatsApp directo
-          </a>
+        <div class="sidebar-cta">
+          <span class="sidebar-cta__icon">📦</span>
+          <h3 class="sidebar-cta__title">¿Necesitas estas cajas?</h3>
+          <p class="sidebar-cta__desc">Cotización sin compromiso. Producción en CDMX, entrega en 24–48 hrs.</p>
+          <a href="/cotizar" class="sidebar-cta__btn">Solicitar cotización</a>
+          <a
+            href={`https://wa.me/5255XXXXXXXX?text=${waText}`}
+            class="sidebar-cta__btn sidebar-cta__btn--wa"
+            target="_blank" rel="noopener"
+          >💬 WhatsApp directo</a>
         </div>
+
+        <!-- Categorías -->
+        <div class="blog-sidebar__widget">
+          <div class="blog-sidebar__widget-header">
+            <div class="blog-sidebar__widget-icon">🗂</div>
+            <h3 class="blog-sidebar__widget-title">Categorías</h3>
+          </div>
+          <nav class="sidebar-categories">
+            {CATEGORIES.map(cat => (
+              <a href={`/blog/categoria/${cat.slug}`} class={`sidebar-categories__item${cat.name === category ? " sidebar-categories__item--active" : ""}`}>
+                <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
+                <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <!-- Ver más artículos -->
+        <div class="blog-sidebar__widget">
+          <div class="blog-sidebar__widget-header">
+            <div class="blog-sidebar__widget-icon">📰</div>
+            <h3 class="blog-sidebar__widget-title">Más artículos</h3>
+          </div>
+          <div style="padding: 1rem 1.25rem;">
+            <a href="/blog" style="display:inline-flex;align-items:center;gap:0.4em;font-weight:700;font-size:0.875rem;color:var(--color-primary);text-decoration:none;">
+              Ver todos los artículos →
+            </a>
+          </div>
+        </div>
+
       </aside>
     </div>
   </main>
@@ -236,3 +322,28 @@ const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
   <Footer />
   <WaBubble />
 </BaseLayout>
+
+<!-- TOC Active Heading (IntersectionObserver) -->
+<script>
+(function() {
+  const tocLinks = document.querySelectorAll('#toc-list a[data-heading]');
+  if (!tocLinks.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(a => a.classList.remove('toc-active'));
+        const active = document.querySelector(`#toc-list a[data-heading="${entry.target.id}"]`);
+        if (active) {
+          active.classList.add('toc-active');
+          active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }
+    });
+  }, { rootMargin: '-10% 0px -70% 0px' });
+
+  document.querySelectorAll('#article-content h2, #article-content h3').forEach(h => {
+    if (h.id) observer.observe(h);
+  });
+})();
+</script>
