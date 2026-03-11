@@ -161,39 +161,3 @@ const canales = [
 
 </PageLayout>
 
-<style>
-
-/* Canales */
-.contact-canales { padding: var(--spacing-3xl) 0; }
-.contact-canales__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
-.contact-canal { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl); text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--spacing-sm); transition: box-shadow var(--transition-fast); }
-.contact-canal:hover { box-shadow: var(--shadow-md); }
-.contact-canal--destaca { border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(224,88,0,0.15); }
-.contact-canal__icono { font-size: 2.5rem; }
-.contact-canal__titulo { font-size: var(--font-size-lg); font-weight: 700; color: var(--color-secondary); }
-.contact-canal__desc { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: 1.6; flex: 1; }
-
-/* Horario */
-.contact-horario { background: var(--color-accent); padding: var(--spacing-3xl) 0; }
-.contact-horario__inner { max-width: 640px; }
-.contact-horario__title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-lg); }
-.contact-horario__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
-.contact-horario__item { background: var(--color-white); border-radius: var(--radius-md); padding: var(--spacing-md); text-align: center; }
-.contact-horario__dia { display: block; font-size: var(--font-size-sm); font-weight: 600; color: var(--color-secondary); margin-bottom: 0.25rem; }
-.contact-horario__hora { display: block; font-size: var(--font-size-md); font-weight: 800; color: var(--color-primary); }
-.contact-horario__nota { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: 1.6; }
-
-/* Ubicación */
-.contact-ubicacion { padding: var(--spacing-3xl) 0; }
-.contact-ubicacion__title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-xl); }
-.contact-ubicacion__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: start; }
-.contact-ubicacion__grid h3 { font-size: var(--font-size-md); font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-xs); }
-.contact-ubicacion__grid ul { padding-left: 1.2rem; color: var(--color-text-light); line-height: 2; font-size: var(--font-size-sm); }
-.contact-ubicacion__grid p { color: var(--color-text-light); font-size: var(--font-size-sm); line-height: 1.7; }
-
-@media (max-width: 768px) {
-  .contact-canales__grid { grid-template-columns: 1fr; }
-  .contact-horario__grid { grid-template-columns: 1fr; }
-  .contact-ubicacion__grid { grid-template-columns: 1fr; }
-}
-</style>
