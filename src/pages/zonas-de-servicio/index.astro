@@ -3,6 +3,7 @@ import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import FaqItem       from "@/components/FaqItem.astro";
 import LeadCapture   from "@/components/LeadCapture.astro";
+import PageHero      from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 
@@ -85,38 +86,23 @@ const schemaServiceArea = {
     </div>
   </div>
 
-  <section class="zonas-hero" aria-labelledby="zonas-title">
-    <div class="container">
-      <div class="zonas-hero__inner">
-        <div class="zonas-hero__content">
-          <span class="zonas-hero__eyebrow">CDMX · Estado de México · ZMVM</span>
-          <h1 id="zonas-title" class="zonas-hero__title">
-            Entregamos en Toda la <span>Zona Metropolitana</span>
-          </h1>
-          <p class="zonas-hero__desc">
-            Stock permanente en CDMX con entrega express en 24 horas. Cubrimos las 16 alcaldías de CDMX y los principales municipios del Estado de México. Fabricante directo — sin intermediarios.
-          </p>
-          <div class="zonas-hero__chips">
-            <span class="zona-chip zona-chip--green">✓ CDMX 24 hrs</span>
-            <span class="zona-chip zona-chip--green">✓ Naucalpan 24 hrs</span>
-            <span class="zona-chip zona-chip--blue">✓ Ecatepec 24-48 hrs</span>
-            <span class="zona-chip zona-chip--blue">✓ Toluca 48 hrs</span>
-            <span class="zona-chip zona-chip--blue">✓ Interior República</span>
-          </div>
-          <div class="zonas-hero__actions">
-            <a href={`https://wa.me/${WHATSAPP}?text=Hola CADECA, quiero verificar si hacen entregas en mi zona`} target="_blank" rel="noopener" class="btn btn--primary btn--lg">Verificar mi zona por WhatsApp</a>
-            <a href="/cotizar" class="btn btn--outline-white btn--lg">Cotizar ahora</a>
-          </div>
-        </div>
-        <div class="zonas-hero__stats">
-          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">16</span><span class="zonas-hero__stat-label">Alcaldías CDMX</span></div>
-          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">50+</span><span class="zonas-hero__stat-label">Municipios Edomex</span></div>
-          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">24 hrs</span><span class="zonas-hero__stat-label">Entrega express</span></div>
-          <div class="zonas-hero__stat"><span class="zonas-hero__stat-num">0</span><span class="zonas-hero__stat-label">Intermediarios</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="CDMX · Estado de México · ZMVM completa"
+    titleHtml={true}
+    title="Entrega de Cajas de Cartón en <span>Toda la ZMVM</span>"
+    desc="Cobertura completa en las 16 alcaldías de CDMX y los principales municipios del Estado de México. Entrega express en 24 horas para productos en stock."
+    desc2="Flota propia de reparto en zona metropolitana. Sin costos de envío en pedidos superiores al mínimo. Coordina la recolección directa en planta o recibe en tu negocio, bodega o planta industrial."
+    chips={[
+      { label: "16 alcaldías CDMX" },
+      { label: "6 municipios EDOMEX" },
+      { label: "Entrega 24–48 hrs" },
+      { label: "Recolección en planta disponible" },
+    ]}
+    ctas={[
+      { href: "/cotizar", label: "Cotizar con entrega", variant: "primary" },
+      { href: "/catalogo/", label: "Ver catálogo", variant: "outline" },
+    ]}
+  />
 
   <main id="contenido-principal" role="main">
 
@@ -397,26 +383,7 @@ const schemaServiceArea = {
 </PageLayout>
 
 <style>
-/* ── Hero ── */
-.zonas-hero {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #1a3560 100%);
-  padding: var(--spacing-3xl) 0;
-  overflow: hidden;
-}
-.zonas-hero__inner { display: grid; grid-template-columns: 1fr auto; gap: var(--spacing-3xl); align-items: center; }
-.zonas-hero__eyebrow { font-size: var(--font-size-xs); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm); }
-.zonas-hero__title { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--color-white); line-height: 1.15; margin-bottom: var(--spacing-md); }
-.zonas-hero__title span { color: var(--color-primary); }
-.zonas-hero__desc { font-size: var(--font-size-lg); color: rgba(255,255,255,0.8); max-width: 600px; line-height: 1.7; margin-bottom: var(--spacing-lg); }
-.zonas-hero__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--spacing-xl); }
-.zonas-hero__actions { display: flex; gap: var(--spacing-md); flex-wrap: wrap; }
-.btn--outline-white { border: 2px solid rgba(255,255,255,0.4); color: var(--color-white); background: transparent; }
-.btn--outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--color-white); }
-
-.zonas-hero__stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); }
-.zonas-hero__stat { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-lg); padding: var(--spacing-lg); text-align: center; }
-.zonas-hero__stat-num { display: block; font-size: 2rem; font-weight: 800; color: var(--color-primary); line-height: 1; }
-.zonas-hero__stat-label { display: block; font-size: var(--font-size-xs); color: rgba(255,255,255,0.7); margin-top: 0.3rem; }
+/* ── Hero → reemplazado por PageHero.astro ── */
 
 /* ── Chips ── */
 .zona-chip { display: inline-flex; align-items: center; gap: 0.3rem; font-size: var(--font-size-xs); font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 100px; }

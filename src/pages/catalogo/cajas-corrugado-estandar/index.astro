@@ -2,6 +2,7 @@
 import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture   from "@/components/LeadCapture.astro";
+import PageHero      from "@/components/PageHero.astro";
 
 const title       = "Catálogo Cajas Corrugado Estándar CDMX | 5 Productos | CADECA";
 const description = "Catálogo de cajas de cartón corrugado estándar en CDMX. Corrugado simple, doble, triple, mudanza y flauta E. Fichas técnicas con medidas, ECT y precios mayoreo.";
@@ -116,23 +117,23 @@ const productos = [
     </div>
   </div>
 
-  <section class="cat-page-hero" aria-labelledby="cat-cs-hub-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">📦 Categoría 01 · 5 productos</span>
-      <h1 id="cat-cs-hub-title" class="cat-page-hero__title">
-        Cajas Corrugado <span>Estándar</span>
-      </h1>
-      <p class="cat-page-hero__desc">
-        Simple, doble, triple pared y mudanza. La línea de mayor rotación con inventario permanente en CDMX. Sin pedido mínimo en modelos estándar, entrega en 24-48 hrs.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">Productos: <strong>5</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ desde: <strong>Sin mínimo</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega CDMX: <strong>24-48 hrs</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 a ECT-71</strong></div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Categoría 01 · 5 Productos en stock"
+    titleHtml={true}
+    title="Cajas de <span>Corrugado Estándar</span> CDMX"
+    desc="Simple, doble y triple pared. La línea de mayor disponibilidad con inventario permanente en CDMX. ECT-23 hasta ECT-71 en flautas B, C, E y BC."
+    desc2="Entrega en 24 horas en toda la ZMVM. Sin pedido mínimo en medidas estándar. Asesoría técnica incluida para seleccionar el gramaje y resistencia correctos para tu producto."
+    chips={[
+      { label: "5 Productos" },
+      { label: "Sin mínimo" },
+      { label: "Entrega 24–48 hrs" },
+      { label: "ECT-23 a ECT-71" },
+    ]}
+    ctas={[
+      { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+      { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
+    ]}
+  />
 
   <main id="contenido-principal" role="main">
     <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-cs-title">

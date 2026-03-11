@@ -2,6 +2,7 @@
 import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture   from "@/components/LeadCapture.astro";
+import PageHero      from "@/components/PageHero.astro";
 
 const title       = "Catálogo Completo de Cajas de Cartón B2B CDMX | 9 Categorías | CADECA";
 const description = "Catálogo B2B de cajas de cartón corrugado CADECA. 9 categorías, 45 productos. Corrugado, e-commerce, farmacéutica, textil, archivo, alimentos y personalizadas. CDMX.";
@@ -183,30 +184,23 @@ const categorias = [
 <PageLayout title={title} description={description} schema={schema} whatsapp={WHATSAPP}>
 
   <!-- HERO -->
-  <section class="catalog-hero" aria-labelledby="cat-hub-title">
-    <div class="container">
-      <div class="catalog-hero__inner">
-        <span class="catalog-hero__eyebrow">📋 Catálogo 2025 – 2026</span>
-        <h1 id="cat-hub-title" class="catalog-hero__title">
-          Catálogo <span>CADECA</span><br>Cajas de Cartón Corrugado
-        </h1>
-        <p class="catalog-hero__subtitle">
-          9 categorías · 45 productos · Fichas técnicas con especificaciones, medidas y precios mayoreo. Fabricante directo en CDMX y Estado de México — sin intermediarios.
-        </p>
-        <div class="catalog-hero__meta">
-          <div class="catalog-hero__meta-item"><span>Categorías:</span><strong>9</strong></div>
-          <div class="catalog-hero__meta-item"><span>Productos:</span><strong>45 SKUs</strong></div>
-          <div class="catalog-hero__meta-item"><span>Stock inmediato:</span><strong>+30 modelos</strong></div>
-          <div class="catalog-hero__meta-item"><span>Zona:</span><strong>CDMX · Edo. México</strong></div>
-        </div>
-        <div class="catalog-hero__ctas">
-          <a href="#categorias"                      class="btn btn--primary">Explorar Catálogo</a>
-          <a href={`https://wa.me/${WHATSAPP}`}
-             target="_blank" rel="noopener"         class="btn btn--outline">Asesoría WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Catálogo 2025–2026 · Fabricante Directo"
+    titleHtml={true}
+    title="Catálogo de <span>Cajas de Cartón</span> CADECA"
+    desc="9 categorías, 45 productos con ficha técnica completa. Corrugado estándar, e-commerce, alimentos, personalizado, farmacéutico, textil, archivo y láminas. Stock inmediato en CDMX."
+    desc2="Cada producto incluye especificaciones ECT, gramaje, tipo de flauta, medidas internas/externas, MOQ y tiempo de entrega. Consulta técnica sin costo con nuestros ingenieros de empaque."
+    chips={[
+      { label: "9 Categorías" },
+      { label: "45 SKUs" },
+      { label: "+30 en stock inmediato" },
+      { label: "Entrega 24–48 hrs CDMX" },
+    ]}
+    ctas={[
+      { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
+      { href: `https://wa.me/${WHATSAPP}`, label: "WhatsApp directo", variant: "outline" },
+    ]}
+  />
 
   <!-- NAV -->
   <nav class="catalog-nav" aria-label="Categorías del catálogo">

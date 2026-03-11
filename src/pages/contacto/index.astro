@@ -1,6 +1,7 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import PageHero   from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 const TEL      = "55 XXXX-XXXX";
@@ -62,13 +63,16 @@ const canales = [
     </div>
   </div>
 
-  <section class="contact-hero" aria-labelledby="contact-title">
-    <div class="container">
-      <span class="contact-hero__eyebrow">Respuesta en menos de 1 hora</span>
-      <h1 id="contact-title" class="contact-hero__title">Habla Directo con el <span>Fabricante</span></h1>
-      <p class="contact-hero__desc">Sin intermediarios, sin call centers. Nuestros asesores técnicos atienden directo y conocen el corrugado de adentro hacia afuera.</p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Respuesta garantizada en menos de 1 hora"
+    titleHtml={true}
+    title="Habla Directo con el <span>Fabricante</span>"
+    desc="Sin intermediarios, sin call centers. Nuestros asesores técnicos atienden directo y conocen el corrugado de adentro hacia afuera."
+    desc2="Precio, disponibilidad y tiempo de entrega en un solo mensaje. Atendemos de lunes a sábado de 8:00 a 18:00 hrs. Para emergencias, WhatsApp disponible 7 días."
+    ctas={[
+      { href: `https://wa.me/${WHATSAPP}`, label: "Escribir por WhatsApp", variant: "primary" },
+    ]}
+  />
 
   <main id="contenido-principal" role="main">
 
@@ -152,16 +156,6 @@ const canales = [
 </PageLayout>
 
 <style>
-.contact-hero {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #2d4a7a 100%);
-  padding: var(--spacing-3xl) 0;
-  text-align: center;
-  color: var(--color-white);
-}
-.contact-hero__eyebrow { font-size: var(--font-size-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm); }
-.contact-hero__title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--color-white); margin-bottom: var(--spacing-md); }
-.contact-hero__title span { color: var(--color-primary); }
-.contact-hero__desc { font-size: var(--font-size-lg); color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto; line-height: 1.7; }
 
 /* Canales */
 .contact-canales { padding: var(--spacing-3xl) 0; }

@@ -2,6 +2,7 @@
 import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture   from "@/components/LeadCapture.astro";
+import PageHero      from "@/components/PageHero.astro";
 
 const title       = "Cajas para Industria Farmacéutica y Cosmética CDMX | 5 Productos | CADECA";
 const description = "Cajas de cartón para farmacéutica y cosmética en CDMX. Blíster, cosmética premium, distribuidora, suplementos y línea de producción. Fichas técnicas con medidas y especificaciones.";
@@ -114,23 +115,23 @@ const productos = [
     </div>
   </div>
 
-  <section class="cat-page-hero" aria-labelledby="cat-fc-hub-title">
-    <div class="container">
-      <span class="cat-page-hero__eyebrow">💊 Categoría 07 · 5 productos</span>
-      <h1 id="cat-fc-hub-title" class="cat-page-hero__title">
-        Cajas para Industria <span>Farmacéutica y Cosmética</span>
-      </h1>
-      <p class="cat-page-hero__desc">
-        Empaques corrugado para la industria farmacéutica, cosmética y de suplementos. Cumplimiento NOM-072, NOM-051, acabados premium y compatibilidad con líneas de empaque automatizadas.
-      </p>
-      <div class="cat-page-hero__strip">
-        <div class="cat-page-hero__strip-item">Productos: <strong>5</strong></div>
-        <div class="cat-page-hero__strip-item">MOQ desde: <strong>100 pzas</strong></div>
-        <div class="cat-page-hero__strip-item">Entrega CDMX: <strong>3-5 días</strong></div>
-        <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 a ECT-44</strong></div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Categoría 07 · 5 Productos"
+    titleHtml={true}
+    title="Cajas <span>Farmacéuticas y Cosméticas</span>"
+    desc="Empaques para blíster, cosmética premium, distribución farmacéutica, suplementos y líneas automatizadas. Cumplimiento NOM-072, acabados soft touch y barniz UV."
+    desc2="Documentación técnica completa para auditorías GMP y COFEPRIS. Materiales trazables con ficha de seguridad. Compatible con líneas de empaque automatizadas de alta velocidad."
+    chips={[
+      { label: "5 Productos" },
+      { label: "NOM-072 · GMP" },
+      { label: "Documentación completa" },
+      { label: "Soft touch · UV" },
+    ]}
+    ctas={[
+      { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+      { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
+    ]}
+  />
 
   <main id="contenido-principal" role="main">
     <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="prods-fc-title">

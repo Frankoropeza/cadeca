@@ -4,6 +4,7 @@ import SectionHeader     from "@/components/SectionHeader.astro";
 import ProductCardFull   from "@/components/ProductCardFull.astro";
 import FaqItem           from "@/components/FaqItem.astro";
 import LeadCapture       from "@/components/LeadCapture.astro";
+import PageHero          from "@/components/PageHero.astro";
 
 const title       = "Catálogo de Cajas de Cartón CDMX | Corrugado, Personalizadas y Más | CADECA";
 const description = "Catálogo completo de cajas de cartón en CDMX y Estado de México. Corrugado estándar, a la medida, personalizadas con logo, para e-commerce, alimentos y más. Cotiza en minutos.";
@@ -301,55 +302,24 @@ const faqs = [
   <!-- ══════════════════════════════════════
        HERO
   ══════════════════════════════════════ -->
-  <section class="prod-hero" aria-labelledby="prod-hero-title">
-    <div class="container">
-      <div class="prod-hero__inner">
-
-        <div class="prod-hero__content">
-          <!-- Breadcrumb -->
-          <nav class="breadcrumb" aria-label="Ruta de navegación">
-            <ol class="breadcrumb__list">
-              <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Inicio</a></li>
-              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Productos</li>
-            </ol>
-          </nav>
-
-          <p class="prod-hero__badge">Fabricante directo · Sin intermediarios</p>
-          <h1 id="prod-hero-title" class="prod-hero__title">
-            Catálogo de <span>Cajas de Cartón</span><br>CDMX y Estado de México
-          </h1>
-          <p class="prod-hero__desc">
-            Corrugado estándar, a la medida, personalizadas, e-commerce, alimentos, textil y moda, farmacéutica, archivo y ecológicas FSC. Asesoría técnica gratuita y cotización en menos de 2 horas.
-          </p>
-          <div class="prod-hero__ctas">
-            <a href="#catalogo" class="btn btn--primary">Ver catálogo completo</a>
-            <a href="#cotizar"  class="btn btn--outline">Solicitar cotización</a>
-          </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="prod-hero__stats">
-          <div class="prod-hero__stat">
-            <span class="prod-hero__stat-num">9</span>
-            <span class="prod-hero__stat-label">Líneas de producto</span>
-          </div>
-          <div class="prod-hero__stat">
-            <span class="prod-hero__stat-num">+50</span>
-            <span class="prod-hero__stat-label">Medidas en stock</span>
-          </div>
-          <div class="prod-hero__stat">
-            <span class="prod-hero__stat-num">24 h</span>
-            <span class="prod-hero__stat-label">Entrega estándar</span>
-          </div>
-          <div class="prod-hero__stat">
-            <span class="prod-hero__stat-num">FSC</span>
-            <span class="prod-hero__stat-label">Cartón certificado</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Fabricante directo · Sin intermediarios · CDMX"
+    titleHtml={true}
+    title="Cajas de Cartón <span>para tu Negocio</span>"
+    desc="El catálogo de soluciones de empaque más completo de CDMX. Corrugado estándar, e-commerce, personalizadas, a la medida, alimentos y más. Stock inmediato en las medidas más vendidas."
+    desc2="Asesoría técnica gratuita con ingenieros de empaque. Cotización en menos de 1 hora. Factura electrónica y documentación para proveedor calificado incluida en todos los pedidos."
+    stats={[
+      { value: "9", label: "líneas de producto" },
+      { value: "45", label: "SKUs disponibles" },
+      { value: "24h", label: "entrega CDMX" },
+      { value: "0", label: "intermediarios" },
+    ]}
+    ctas={[
+      { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
+      { href: "/catalogo/", label: "Ver catálogo técnico", variant: "outline" },
+    ]}
+    size="lg"
+  />
 
   <!-- ══════════════════════════════════════
        BARRA FILTROS
@@ -583,97 +553,7 @@ const faqs = [
 </PageLayout>
 
 <style>
-/* ── Hero ───────────────────────────────────── */
-.prod-hero {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
-  padding: var(--spacing-3xl) 0 var(--spacing-2xl);
-  color: #fff;
-}
-.prod-hero__inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2xl);
-}
-@media (min-width: 1024px) {
-  .prod-hero__inner {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--spacing-3xl);
-  }
-}
-
-/* Breadcrumb */
-.breadcrumb { margin-bottom: var(--spacing-sm); }
-.breadcrumb__list { display: flex; align-items: center; gap: 0.5rem; list-style: none; padding: 0; margin: 0; }
-.breadcrumb__item { font-size: var(--font-size-xs); color: rgba(255,255,255,0.5); }
-.breadcrumb__item::after { content: "/"; margin-left: 0.5rem; }
-.breadcrumb__item:last-child::after { display: none; }
-.breadcrumb__link { color: rgba(255,255,255,0.65); transition: color var(--transition-fast); }
-.breadcrumb__link:hover { color: var(--color-primary-light); }
-.breadcrumb__item--active { color: rgba(255,255,255,0.9); }
-
-.prod-hero__badge {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(224,88,0,0.2);
-  color: var(--color-primary-light);
-  border: 1px solid rgba(224,88,0,0.4);
-  padding: 0.3rem 1rem;
-  border-radius: 50px;
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: var(--spacing-md);
-}
-.prod-hero__title {
-  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-  font-weight: 800;
-  line-height: var(--line-height-tight);
-  color: #fff;
-  margin-bottom: var(--spacing-md);
-}
-.prod-hero__title span { color: var(--color-primary-light); }
-.prod-hero__desc {
-  font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.8);
-  line-height: var(--line-height-relaxed);
-  max-width: 620px;
-  margin-bottom: var(--spacing-xl);
-}
-.prod-hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-.prod-hero__ctas .btn--outline { border-color: rgba(255,255,255,0.4); color: #fff; }
-.prod-hero__ctas .btn--outline:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
-
-/* Stats */
-.prod-hero__stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  flex-shrink: 0;
-}
-@media (min-width: 640px)  { .prod-hero__stats { grid-template-columns: repeat(4, 1fr); } }
-@media (min-width: 1024px) { .prod-hero__stats { grid-template-columns: repeat(2, 1fr); min-width: 270px; } }
-
-.prod-hero__stat {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  text-align: center;
-  transition: background var(--transition-fast);
-}
-.prod-hero__stat:hover { background: rgba(255,255,255,0.14); }
-.prod-hero__stat-num {
-  display: block;
-  font-size: var(--font-size-2xl);
-  font-weight: 800;
-  color: var(--color-primary-light);
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-.prod-hero__stat-label { font-size: var(--font-size-xs); color: rgba(255,255,255,0.6); line-height: 1.4; }
+/* ── Hero → reemplazado por PageHero.astro ── */
 
 /* ── Cat Bar ──────────────────────────────── */
 .cat-bar {

@@ -20,68 +20,7 @@
   will-change: transform;
 }
 
-/* ─── Blog Hero ─────────────────────────────────────────────────────────── */
-.blog-hero {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #253a5e 100%);
-  color: #fff;
-  padding: var(--spacing-3xl) 0 var(--spacing-2xl);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.blog-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-.blog-hero__inner { position: relative; z-index: 1; }
-.blog-hero__badge {
-  display: inline-block;
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.3em 1em;
-  border-radius: 99px;
-  margin-bottom: var(--spacing-md);
-}
-.blog-hero__title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  margin: 0 0 var(--spacing-sm);
-  color: #fff;
-  line-height: 1.1;
-}
-.blog-hero__title span { color: var(--color-primary); }
-.blog-hero__subtitle {
-  font-size: var(--font-size-lg);
-  opacity: 0.85;
-  margin: 0 auto var(--spacing-xl);
-  max-width: 640px;
-  font-weight: 400;
-}
-.blog-hero__stats {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-2xl);
-  flex-wrap: wrap;
-}
-.blog-hero__stat strong {
-  display: block;
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  line-height: 1;
-}
-.blog-hero__stat span {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-top: 0.25rem;
-  display: block;
-}
+/* ─── Blog Hero → reemplazado por PageHero.astro ─── */
 
 /* ─── Category Filter Bar ───────────────────────────────────────────────── */
 .blog-filter-bar {
@@ -1020,18 +959,7 @@
   }
 }
 
-/* Blog hero: más compacto */
-@media (max-width: 639px) {
-  .blog-hero {
-    padding: var(--spacing-xl) 0 var(--spacing-lg);
-  }
-  .blog-hero__stats {
-    gap: var(--spacing-lg);
-  }
-  .blog-hero__stat strong {
-    font-size: 1.5rem;
-  }
-}
+/* Blog hero: estilos móvil → migrados a PageHero.astro */
 
 /* Blog layout: sidebar DESPUÉS del contenido en mobile */
 @media (max-width: 1023px) {

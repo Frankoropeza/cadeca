@@ -1,5 +1,6 @@
 ---
 import PageLayout   from "@/layouts/PageLayout.astro";
+import PageHero     from "@/components/PageHero.astro";
 import "@/styles/blog.css";
 import { getCollection } from "astro:content";
 
@@ -58,29 +59,17 @@ function formatDate(d: Date) {
 >
 
   <!-- Hero -->
-  <section class="blog-hero">
-    <div class="container">
-      <div class="blog-hero__inner">
-        <span class="blog-hero__badge">Centro de Conocimiento</span>
-        <h1 class="blog-hero__title">Blog <span>CADECA</span></h1>
-        <p class="blog-hero__subtitle">Guías, consejos y tendencias sobre empaques de cartón corrugado para hacer crecer tu negocio</p>
-        <div class="blog-hero__stats">
-          <div class="blog-hero__stat">
-            <strong>{allPosts.length}</strong>
-            <span>Artículos</span>
-          </div>
-          <div class="blog-hero__stat">
-            <strong>{CATEGORIES.length}</strong>
-            <span>Categorías</span>
-          </div>
-          <div class="blog-hero__stat">
-            <strong>100%</strong>
-            <span>Gratuito</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Centro de Conocimiento · Empaque Corrugado"
+    titleHtml={true}
+    title="Blog <span>CADECA</span>"
+    desc="Guías, consejos y tendencias sobre empaques de cartón corrugado para hacer crecer tu negocio."
+    stats={[
+      { value: String(allPosts.length), label: "Artículos" },
+      { value: String(CATEGORIES.length), label: "Categorías" },
+      { value: "100%", label: "Gratuito" },
+    ]}
+  />
 
   <!-- Filter Bar -->
   <div class="blog-filter-bar">

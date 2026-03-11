@@ -2,6 +2,7 @@
 import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture   from "@/components/LeadCapture.astro";
+import PageHero      from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 
@@ -54,25 +55,23 @@ const breadcrumbs = [
     </div>
   </div>
 
-  <section class="page-hero page-hero--nosotros" aria-labelledby="nosotros-title">
-    <div class="container">
-      <div class="page-hero__inner">
-        <div class="page-hero__content">
-          <span class="page-hero__eyebrow">Fabricante directo · CDMX</span>
-          <h1 id="nosotros-title" class="page-hero__title">
-            Somos CADECA — <span>Cajas de Cartón</span> que Protegen lo que Construiste
-          </h1>
-          <p class="page-hero__desc">
-            Fabricamos cajas de cartón corrugado en CDMX desde hace más de 20 años. Directo de planta, sin intermediarios, con la especificación técnica que tu producto necesita y la entrega que tu negocio exige.
-          </p>
-          <div class="page-hero__actions">
-            <a href={`https://wa.me/${WHATSAPP}?text=Hola CADECA, quiero conocer más sobre sus servicios`} target="_blank" rel="noopener" class="btn btn--primary btn--lg">Hablar con un asesor</a>
-            <a href="/catalogo" class="btn btn--outline btn--lg">Ver catálogo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Fabricante directo · CDMX desde 2008"
+    titleHtml={true}
+    title="El Fabricante de Cajas de Cartón <span>Más Confiable</span> de CDMX"
+    desc="Producción propia sin intermediarios. Más de 15 años fabricando cajas de cartón corrugado para las empresas más exigentes de la Zona Metropolitana del Valle de México."
+    desc2="De PyMEs en Mercado Libre a plantas de nearshoring con auditorías internacionales. CADECA tiene el producto, la tecnología y el equipo humano para ser tu proveedor a largo plazo."
+    stats={[
+      { value: "15+", label: "años de experiencia" },
+      { value: "500+", label: "clientes activos" },
+      { value: "24 hrs", label: "entrega CDMX" },
+      { value: "45", label: "SKUs en catálogo" },
+    ]}
+    ctas={[
+      { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
+      { href: "/catalogo/", label: "Ver catálogo", variant: "outline" },
+    ]}
+  />
 
   <main id="contenido-principal" role="main">
 
@@ -213,16 +212,6 @@ const breadcrumbs = [
 </PageLayout>
 
 <style>
-.page-hero--nosotros {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #2d4a7a 100%);
-  padding: var(--spacing-3xl) 0;
-  color: var(--color-white);
-}
-.page-hero__eyebrow { font-size: var(--font-size-sm); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm); }
-.page-hero__title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: var(--spacing-md); color: var(--color-white); }
-.page-hero__title span { color: var(--color-primary); }
-.page-hero__desc { font-size: var(--font-size-lg); color: rgba(255,255,255,0.85); max-width: 640px; margin-bottom: var(--spacing-xl); line-height: 1.7; }
-.page-hero__actions { display: flex; gap: var(--spacing-md); flex-wrap: wrap; }
 
 /* Stats */
 .about-stats { background: var(--color-white); padding: var(--spacing-xl) 0; border-bottom: 1px solid var(--color-border); }

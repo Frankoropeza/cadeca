@@ -1,6 +1,7 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import FaqItem    from "@/components/FaqItem.astro";
+import PageHero   from "@/components/PageHero.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 
@@ -38,13 +39,16 @@ const faqs = [
     </div>
   </div>
 
-  <section class="cotizar-hero" aria-labelledby="cotizar-title">
-    <div class="container">
-      <span class="cotizar-hero__eyebrow">Respuesta garantizada en menos de 1 hora</span>
-      <h1 id="cotizar-title" class="cotizar-hero__title">Cotiza tus Cajas de <span>Cartón en CDMX</span></h1>
-      <p class="cotizar-hero__desc">Completa el formulario o escríbenos por WhatsApp. Sin rodeos: precio, disponibilidad y tiempo de entrega en un solo mensaje.</p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Respuesta garantizada en menos de 1 hora"
+    titleHtml={true}
+    title="Cotiza tus Cajas de <span>Cartón en CDMX</span>"
+    desc="Completa el formulario o escríbenos por WhatsApp. Sin rodeos: precio, disponibilidad y tiempo de entrega en un solo mensaje."
+    desc2="Enviamos cotización detallada con precio unitario, precio por volumen, tiempo de producción y condiciones de entrega. Sin letra pequeña, sin sorpresas."
+    ctas={[
+      { href: `https://wa.me/${WHATSAPP}`, label: "WhatsApp directo", variant: "primary" },
+    ]}
+  />
 
   <main id="contenido-principal" role="main">
 
@@ -212,16 +216,6 @@ const faqs = [
 </script>
 
 <style>
-.cotizar-hero {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #2d4a7a 100%);
-  padding: var(--spacing-3xl) 0;
-  color: var(--color-white);
-  text-align: center;
-}
-.cotizar-hero__eyebrow { font-size: var(--font-size-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm); }
-.cotizar-hero__title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--color-white); margin-bottom: var(--spacing-md); }
-.cotizar-hero__title span { color: var(--color-primary); }
-.cotizar-hero__desc { font-size: var(--font-size-lg); color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto; line-height: 1.7; }
 
 .cotizar-form-section { padding: var(--spacing-3xl) 0; }
 .cotizar-layout { display: grid; grid-template-columns: 1fr 340px; gap: var(--spacing-3xl); align-items: start; }

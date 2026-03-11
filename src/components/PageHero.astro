@@ -1,0 +1,88 @@
+---
+// PageHero.astro — Hero homologado para todas las páginas interiores
+// Fondo: var(--color-secondary) con gradiente y patrón sutil
+// Estructura: eyebrow → h1 → párrafo 1 → párrafo 2 (opcional) → chips/stats (opcional) → CTAs (opcional)
+
+export interface Chip {
+  label: string;
+}
+
+export interface Cta {
+  href:    string;
+  label:   string;
+  variant: "primary" | "outline" | "white";
+}
+
+export interface StatItem {
+  value: string;
+  label: string;
+}
+
+export interface Props {
+  eyebrow?:   string;          // Texto pequeño arriba del h1 (ej: "Fabricante directo · CDMX")
+  title:      string;          // Texto del H1 — puede incluir <span> para colorear parte
+  titleHtml?: boolean;         // Si true, renderiza title como HTML (para spans)
+  desc:       string;          // Párrafo 1 — descripción principal
+  desc2?:     string;          // Párrafo 2 — contexto adicional
+  chips?:     Chip[];          // Chips informativos opcionales (MOQ, entrega, etc.)
+  stats?:     StatItem[];      // Stats horizontales opcionales
+  ctas?:      Cta[];           // Botones de acción opcionales
+  centered?:  boolean;         // true = centrado, false = left-aligned (default: false)
+  size?:      "normal" | "lg"; // lg = hero más grande (default: normal)
+}
+
+const {
+  eyebrow,
+  title,
+  titleHtml = false,
+  desc,
+  desc2,
+  chips,
+  stats,
+  ctas,
+  centered = false,
+  size = "normal",
+} = Astro.props;
+---
+
+<section class={`page-hero-std${centered ? " page-hero-std--centered" : ""}${size === "lg" ? " page-hero-std--lg" : ""}`}>
+  <div class="container">
+    <div class="page-hero-std__inner">
+      {eyebrow && <span class="page-hero-std__eyebrow">{eyebrow}</span>}
+
+      {titleHtml
+        ? <h1 class="page-hero-std__title" set:html={title} />
+        : <h1 class="page-hero-std__title">{title}</h1>
+      }
+
+      <p class="page-hero-std__desc">{desc}</p>
+
+      {desc2 && <p class="page-hero-std__desc page-hero-std__desc--2">{desc2}</p>}
+
+      {chips && chips.length > 0 && (
+        <div class="page-hero-std__chips">
+          {chips.map(c => <span class="page-hero-std__chip">{c.label}</span>)}
+        </div>
+      )}
+
+      {stats && stats.length > 0 && (
+        <div class="page-hero-std__stats">
+          {stats.map(s => (
+            <div class="page-hero-std__stat">
+              <span class="page-hero-std__stat-value">{s.value}</span>
+              <span class="page-hero-std__stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {ctas && ctas.length > 0 && (
+        <div class="page-hero-std__ctas">
+          {ctas.map(c => (
+            <a href={c.href} class={`btn btn--${c.variant}`}>{c.label}</a>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
