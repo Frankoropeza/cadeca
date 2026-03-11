@@ -1,22 +1,11 @@
 ---
-// PageHero.astro — Hero 2 columnas homologado
-// Izquierda: eyebrow + H1 + desc + desc2 + CTAs
-// Derecha: chips (como cards) + stats + features list
+// PageHero.astro — Hero homologado, misma estructura que hero del index
+// Izquierda: eyebrow → H1 → desc → CTAs → chips/stats (métricas horizontales)
+// Derecha: desc2 en caja estilizada (igual que hero__right del index)
 
-export interface Chip {
-  label: string;
-}
-
-export interface Cta {
-  href:    string;
-  label:   string;
-  variant: "primary" | "outline" | "white";
-}
-
-export interface StatItem {
-  value: string;
-  label: string;
-}
+export interface Chip  { label: string; }
+export interface Cta   { href: string; label: string; variant: "primary" | "outline" | "white"; }
+export interface StatItem { value: string; label: string; }
 
 export interface Props {
   eyebrow?:   string;
@@ -42,14 +31,19 @@ const {
   size = "normal",
 } = Astro.props;
 
-const hasRight = (chips && chips.length > 0) || (stats && stats.length > 0);
+// Métricas: primero stats, si no hay stats usa chips
+const metrics = (stats && stats.length > 0)
+  ? stats.map(s => ({ value: s.value, label: s.label }))
+  : (chips && chips.length > 0)
+    ? chips.map(c => ({ value: c.label, label: "" }))
+    : [];
 ---
 
 <section class={`page-hero-std${size === "lg" ? " page-hero-std--lg" : ""}`}>
   <div class="container">
-    <div class={`page-hero-std__grid${hasRight ? "" : " page-hero-std__grid--full"}`}>
+    <div class={`page-hero-std__inner${desc2 ? "" : " page-hero-std__inner--solo"}`}>
 
-      <!-- Columna izquierda: contenido principal -->
+      <!-- COLUMNA IZQUIERDA -->
       <div class="page-hero-std__left">
         {eyebrow && <span class="page-hero-std__eyebrow">{eyebrow}</span>}
 
@@ -59,7 +53,6 @@ const hasRight = (chips && chips.length > 0) || (stats && stats.length > 0);
         }
 
         <p class="page-hero-std__desc">{desc}</p>
-        {desc2 && <p class="page-hero-std__desc page-hero-std__desc--2">{desc2}</p>}
 
         {ctas && ctas.length > 0 && (
           <div class="page-hero-std__ctas">
@@ -68,31 +61,25 @@ const hasRight = (chips && chips.length > 0) || (stats && stats.length > 0);
             ))}
           </div>
         )}
+
+        {metrics.length > 0 && (
+          <div class="page-hero-std__metrics">
+            {metrics.map(m => (
+              <div class="page-hero-std__metric">
+                <span class="page-hero-std__metric-value">{m.value}</span>
+                {m.label && <span class="page-hero-std__metric-label">{m.label}</span>}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
-      <!-- Columna derecha: chips como cards + stats -->
-      {hasRight && (
+      <!-- COLUMNA DERECHA — solo si hay desc2 -->
+      {desc2 && (
         <div class="page-hero-std__right">
-          {chips && chips.length > 0 && (
-            <div class="page-hero-std__feature-cards">
-              {chips.map(c => (
-                <div class="page-hero-std__feature-card">
-                  <span class="page-hero-std__feature-dot"></span>
-                  <span class="page-hero-std__feature-text">{c.label}</span>
-                </div>
-              ))}
-            </div>
-          )}
-          {stats && stats.length > 0 && (
-            <div class="page-hero-std__stats-grid">
-              {stats.map(s => (
-                <div class="page-hero-std__stat">
-                  <span class="page-hero-std__stat-value">{s.value}</span>
-                  <span class="page-hero-std__stat-label">{s.label}</span>
-                </div>
-              ))}
-            </div>
-          )}
+          {desc2.split("||").map(para => (
+            <p set:html={para.trim()} />
+          ))}
         </div>
       )}
 
