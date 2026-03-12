@@ -1,0 +1,229 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const WHATSAPP = "5255XXXXXXXX";
+const SITE     = "https://cajas-de-carton.com";
+
+const title       = "Impresión y Cajas Personalizadas con Logo — CADECA Fabricante Directo CDMX";
+const description = "Imprimimos tu logo, colores corporativos y diseño en las cajas de cartón. Desde una sola tinta hasta impresión full color. Cajas que comunican tu marca desde el";
+const canonical   = SITE + "/servicios/impresion-cajas-personalizadas";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Impresión y Cajas Personalizadas con Logo",
+    "description": description,
+    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "areaServed": "Ciudad de México y Zona Metropolitana",
+    "url": canonical
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    { "@type": "Question", "name": "¿Qué formatos de archivo necesitan para el logo?", "acceptedAnswer": { "@type": "Answer", "text": "Preferimos archivos vectoriales (AI, EPS, PDF en curvas). También aceptamos PNG de alta resolución (300 dpi mínimo). Si solo tienes JPG, igual podemos trabajar con él." } },
+    { "@type": "Question", "name": "¿Cuánto cuesta la impresión personalizada?", "acceptedAnswer": { "@type": "Answer", "text": "El precio incluye la caja más la impresión. Depende del número de tintas, el tipo de cartón y la cantidad. Cotización en menos de 2 horas con diseño digital incluido." } },
+    { "@type": "Question", "name": "¿Pueden hacer cajas premium para gifts corporativos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, fabricamos cajas de presentación con impresión full color, acabados premium (barniz, soft touch) y estructuras especiales para regalos corporativos y unboxing de lujo." } },
+    { "@type": "Question", "name": "¿Es posible hacer una prueba física antes del pedido grande?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, hacemos prototipos físicos para pedidos de producción superiores a 1,000 piezas. Para pedidos menores, la prueba digital es suficiente." } }
+    ]
+  }
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  schema={schema}
+  canonical={canonical}
+  breadcrumbs={[
+    { name: "Inicio",    href: "/" },
+    { name: "Servicios", href: "/servicios" },
+    { name: "Impresión y Cajas Personalizadas con Logo" },
+  ]}
+  whatsapp={WHATSAPP}
+>
+
+  <section class="svc-page__hero">
+    <div class="svc-page__hero-inner container">
+      <div class="svc-page__hero-emoji">🎨</div>
+      <h1 class="svc-page__hero-title">Impresión y Cajas Personalizadas con Logo</h1>
+      <p class="svc-page__hero-tagline">Logo, colores y diseño de marca en tus cajas — desde 200 piezas</p>
+      <p class="svc-page__hero-desc">Imprimimos tu logo, colores corporativos y diseño en las cajas de cartón. Desde una sola tinta hasta impresión full color. Cajas que comunican tu marca desde el primer contacto visual con tu cliente.</p>
+      <div class="svc-page__hero-ctas">
+        <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
+        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Impresión+y+Cajas+Personalizadas+con+Logo"}
+           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-page__section">
+    <div class="container">
+      <SectionHeader title="Beneficios del servicio" subtitle="Por qué elegir CADECA para impresión y cajas personalizadas con logo" />
+      <ul class="svc-page__beneficios">
+              <li><span>✓</span> Prueba de diseño digital gratuita antes de producir</li>
+              <li><span>✓</span> Impresión en 1, 2 o 4 colores (full color disponible)</li>
+              <li><span>✓</span> Acabados premium: barniz brillante, mate, soft touch, plastificado</li>
+              <li><span>✓</span> Desde 200 piezas sin mínimos industriales</li>
+              <li><span>✓</span> Tiempo de producción: 5-7 días hábiles</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="svc-page__section svc-page__section--alt">
+    <div class="container">
+      <SectionHeader title="Cómo funciona" subtitle="Proceso simple, sin burocracia, con respuesta rápida" />
+      <div class="svc-page__pasos">
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">1</div>
+            <div>
+              <strong>Diseño</strong>
+              <p>Nos envías tu logo en alta resolución. Te generamos prueba de diseño sobre la caja en menos de 24 hrs.</p>
+            </div>
+          </div>
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">2</div>
+            <div>
+              <strong>Aprobación</strong>
+              <p>Revisas el diseño digital. Si quieres ajustes, los hacemos sin costo adicional hasta quedar perfecto.</p>
+            </div>
+          </div>
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">3</div>
+            <div>
+              <strong>Producción</strong>
+              <p>Aprobado el diseño, iniciamos producción. 5-7 días hábiles según cantidad y acabado.</p>
+            </div>
+          </div>
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">4</div>
+            <div>
+              <strong>Entrega</strong>
+              <p>Cajas embaladas y listas para usar. Entrega en CDMX y ZMVM con flota propia.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-page__section">
+    <div class="container">
+      <SectionHeader title="Preguntas frecuentes" subtitle={"Todo sobre " + "impresión y cajas personalizadas con logo"} />
+      <div class="svc-page__faq">
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿Qué formatos de archivo necesitan para el logo?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>Preferimos archivos vectoriales (AI, EPS, PDF en curvas). También aceptamos PNG de alta resolución (300 dpi mínimo). Si solo tienes JPG, igual podemos trabajar con él.</p>
+            </div>
+          </div>
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿Cuánto cuesta la impresión personalizada?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>El precio incluye la caja más la impresión. Depende del número de tintas, el tipo de cartón y la cantidad. Cotización en menos de 2 horas con diseño digital incluido.</p>
+            </div>
+          </div>
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿Pueden hacer cajas premium para gifts corporativos?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>Sí, fabricamos cajas de presentación con impresión full color, acabados premium (barniz, soft touch) y estructuras especiales para regalos corporativos y unboxing de lujo.</p>
+            </div>
+          </div>
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿Es posible hacer una prueba física antes del pedido grande?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>Sí, hacemos prototipos físicos para pedidos de producción superiores a 1,000 piezas. Para pedidos menores, la prueba digital es suficiente.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-page__section svc-page__section--alt">
+    <div class="container">
+      <SectionHeader title="Productos relacionados" subtitle="Explora el catálogo de CADECA" />
+      <div class="svc-page__productos">
+        <a href="/catalogo/cajas-personalizadas-con-logo" class="svc-page__prod-card">
+          <strong>Cajas Personalizadas</strong>
+          <span>Ver catálogo completo</span>
+        </a>
+        <a href="/catalogo/cajas-para-ecommerce" class="svc-page__prod-card">
+          <strong>Cajas E-commerce</strong>
+          <span>Con impresión disponible</span>
+        </a>
+        <a href="/cotizar" class="svc-page__prod-card">
+          <strong>Cotizar ahora</strong>
+          <span>Diseño incluido gratis</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <LeadCapture
+    titulo="¿Listo para comenzar con impresión y cajas personalizadas con logo?"
+    subtitulo="Cotización sin compromiso en menos de 2 horas. Fabricante directo, los mejores precios de CDMX."
+    whatsapp={WHATSAPP}
+  />
+
+</PageLayout>
+
+<style>
+.svc-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); text-align: center; }
+.svc-page__hero-inner { max-width: 720px; margin: 0 auto; padding: 0 var(--space-5); }
+.svc-page__hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
+.svc-page__hero-title { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: var(--space-3); }
+.svc-page__hero-tagline { font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4); }
+.svc-page__hero-desc { color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-8); }
+.svc-page__hero-ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+.svc-page__section { padding: var(--space-16) 0; }
+.svc-page__section--alt { background: var(--color-surface); }
+.svc-page__beneficios { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-3); margin-top: var(--space-8); }
+.svc-page__beneficios li { display: flex; gap: var(--space-3); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
+.svc-page__beneficios span { color: var(--color-primary); font-weight: 900; flex-shrink: 0; }
+.svc-page__pasos { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-8); max-width: 680px; margin-left: auto; margin-right: auto; }
+.svc-page__paso { display: flex; gap: var(--space-5); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+.svc-page__paso-num { width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: var(--text-lg); flex-shrink: 0; }
+.svc-page__paso strong { display: block; color: var(--color-secondary); font-size: var(--text-base); margin-bottom: var(--space-1); }
+.svc-page__paso p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
+.svc-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
+.svc-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+.svc-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
+.svc-page__faq-q:hover { color: var(--color-primary); }
+.svc-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
+.svc-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
+.svc-page__faq-item.is-open .svc-page__faq-a { display: block; }
+.svc-page__faq-item.is-open .svc-page__faq-q svg { transform: rotate(180deg); }
+.svc-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
+.svc-page__prod-card { display: flex; flex-direction: column; gap: var(--space-1); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-5); text-decoration: none; color: var(--color-text); }
+.svc-page__prod-card:hover { border-color: var(--color-primary); }
+.svc-page__prod-card strong { color: var(--color-secondary); font-size: var(--text-sm); }
+.svc-page__prod-card span { font-size: var(--text-xs); color: var(--color-text-muted); }
+@media (max-width: 640px) {
+  .svc-page__hero-ctas { flex-direction: column; }
+  .svc-page__beneficios { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.querySelectorAll('.svc-page__faq-q').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.closest('.svc-page__faq-item');
+    item.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
+  });
+});
+</script>

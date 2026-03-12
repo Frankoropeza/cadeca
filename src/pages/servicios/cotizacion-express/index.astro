@@ -1,0 +1,229 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const WHATSAPP = "5255XXXXXXXX";
+const SITE     = "https://cajas-de-carton.com";
+
+const title       = "Cotización Exprés en Menos de 2 Horas — CADECA Fabricante Directo CDMX";
+const description = "Enviamos cotización completa con precio unitario, precio total, tiempo de entrega, especificaciones técnicas del cartón y opciones de personalización. Sin esper";
+const canonical   = SITE + "/servicios/cotizacion-express";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Cotización Exprés en Menos de 2 Horas",
+    "description": description,
+    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "areaServed": "Ciudad de México y Zona Metropolitana",
+    "url": canonical
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    { "@type": "Question", "name": "¿Qué información necesitan para cotizar?", "acceptedAnswer": { "@type": "Answer", "text": "Lo básico: tipo de caja (estándar, medida, personalizada), medidas internas o descripción del producto a contener, y cantidad aproximada. Con eso podemos cotizar." } },
+    { "@type": "Question", "name": "¿La cotización tiene algún costo?", "acceptedAnswer": { "@type": "Answer", "text": "No, la cotización es completamente gratuita y sin ningún compromiso de compra." } },
+    { "@type": "Question", "name": "¿Cuánto tiempo es válida la cotización?", "acceptedAnswer": { "@type": "Answer", "text": "La cotización tiene una vigencia de 15 días hábiles. Después puede haber variaciones por fluctuación de materia prima." } },
+    { "@type": "Question", "name": "¿Pueden cotizar varias opciones al mismo tiempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos incluir en una misma cotización diferentes tipos de cartón, diferentes medidas o diferentes cantidades para que compares y elijas la que mejor se adapte." } }
+    ]
+  }
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  schema={schema}
+  canonical={canonical}
+  breadcrumbs={[
+    { name: "Inicio",    href: "/" },
+    { name: "Servicios", href: "/servicios" },
+    { name: "Cotización Exprés en Menos de 2 Horas" },
+  ]}
+  whatsapp={WHATSAPP}
+>
+
+  <section class="svc-page__hero">
+    <div class="svc-page__hero-inner container">
+      <div class="svc-page__hero-emoji">⚡</div>
+      <h1 class="svc-page__hero-title">Cotización Exprés en Menos de 2 Horas</h1>
+      <p class="svc-page__hero-tagline">Precio, tiempo y especificaciones técnicas en menos de 2 horas hábiles</p>
+      <p class="svc-page__hero-desc">Enviamos cotización completa con precio unitario, precio total, tiempo de entrega, especificaciones técnicas del cartón y opciones de personalización. Sin esperar días, sin formularios complejos. Solo cuéntanos qué necesitas.</p>
+      <div class="svc-page__hero-ctas">
+        <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
+        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Cotización+Exprés+en+Menos+de+2+Horas"}
+           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-page__section">
+    <div class="container">
+      <SectionHeader title="Beneficios del servicio" subtitle="Por qué elegir CADECA para cotización exprés en menos de 2 horas" />
+      <ul class="svc-page__beneficios">
+              <li><span>✓</span> Respuesta en menos de 2 horas hábiles (lunes a viernes)</li>
+              <li><span>✓</span> Cotización detallada con especificaciones técnicas del material</li>
+              <li><span>✓</span> Opciones de cantidad con precio escalonado (100, 500, 1000+ piezas)</li>
+              <li><span>✓</span> Comparativa de materiales cuando hay más de una opción viable</li>
+              <li><span>✓</span> Sin compromiso de compra — cotización sin presión</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="svc-page__section svc-page__section--alt">
+    <div class="container">
+      <SectionHeader title="Cómo funciona" subtitle="Proceso simple, sin burocracia, con respuesta rápida" />
+      <div class="svc-page__pasos">
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">1</div>
+            <div>
+              <strong>Nos contactas</strong>
+              <p>WhatsApp, email o formulario. Solo necesitamos: tipo de caja, medidas aproximadas (o producto a contener) y cantidad.</p>
+            </div>
+          </div>
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">2</div>
+            <div>
+              <strong>Analizamos</strong>
+              <p>Nuestro equipo técnico y comercial evalúa tu solicitud y prepara la cotización más competitiva.</p>
+            </div>
+          </div>
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">3</div>
+            <div>
+              <strong>Recibes cotización</strong>
+              <p>En menos de 2 horas te enviamos cotización con precio, specs técnicas y tiempo de entrega.</p>
+            </div>
+          </div>
+          <div class="svc-page__paso">
+            <div class="svc-page__paso-num">4</div>
+            <div>
+              <strong>Confirmas o ajustas</strong>
+              <p>Si tienes dudas o quieres ajustar medidas, cantidad o tipo de caja, respondemos de inmediato.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-page__section">
+    <div class="container">
+      <SectionHeader title="Preguntas frecuentes" subtitle={"Todo sobre " + "cotización exprés en menos de 2 horas"} />
+      <div class="svc-page__faq">
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿Qué información necesitan para cotizar?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>Lo básico: tipo de caja (estándar, medida, personalizada), medidas internas o descripción del producto a contener, y cantidad aproximada. Con eso podemos cotizar.</p>
+            </div>
+          </div>
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿La cotización tiene algún costo?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>No, la cotización es completamente gratuita y sin ningún compromiso de compra.</p>
+            </div>
+          </div>
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿Cuánto tiempo es válida la cotización?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>La cotización tiene una vigencia de 15 días hábiles. Después puede haber variaciones por fluctuación de materia prima.</p>
+            </div>
+          </div>
+          <div class="svc-page__faq-item">
+            <button class="svc-page__faq-q" aria-expanded="false">
+              <span>¿Pueden cotizar varias opciones al mismo tiempo?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="svc-page__faq-a">
+              <p>Sí, podemos incluir en una misma cotización diferentes tipos de cartón, diferentes medidas o diferentes cantidades para que compares y elijas la que mejor se adapte.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-page__section svc-page__section--alt">
+    <div class="container">
+      <SectionHeader title="Productos relacionados" subtitle="Explora el catálogo de CADECA" />
+      <div class="svc-page__productos">
+        <a href="/cotizar" class="svc-page__prod-card">
+          <strong>Solicitar cotización</strong>
+          <span>Respuesta en 2 hrs</span>
+        </a>
+        <a href="/catalogo" class="svc-page__prod-card">
+          <strong>Ver catálogo</strong>
+          <span>Precios desde stock</span>
+        </a>
+        <a href="/contacto" class="svc-page__prod-card">
+          <strong>Contactar asesor</strong>
+          <span>WhatsApp disponible</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <LeadCapture
+    titulo="¿Listo para comenzar con cotización exprés en menos de 2 horas?"
+    subtitulo="Cotización sin compromiso en menos de 2 horas. Fabricante directo, los mejores precios de CDMX."
+    whatsapp={WHATSAPP}
+  />
+
+</PageLayout>
+
+<style>
+.svc-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); text-align: center; }
+.svc-page__hero-inner { max-width: 720px; margin: 0 auto; padding: 0 var(--space-5); }
+.svc-page__hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
+.svc-page__hero-title { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: var(--space-3); }
+.svc-page__hero-tagline { font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4); }
+.svc-page__hero-desc { color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-8); }
+.svc-page__hero-ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+.svc-page__section { padding: var(--space-16) 0; }
+.svc-page__section--alt { background: var(--color-surface); }
+.svc-page__beneficios { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-3); margin-top: var(--space-8); }
+.svc-page__beneficios li { display: flex; gap: var(--space-3); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
+.svc-page__beneficios span { color: var(--color-primary); font-weight: 900; flex-shrink: 0; }
+.svc-page__pasos { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-8); max-width: 680px; margin-left: auto; margin-right: auto; }
+.svc-page__paso { display: flex; gap: var(--space-5); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+.svc-page__paso-num { width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: var(--text-lg); flex-shrink: 0; }
+.svc-page__paso strong { display: block; color: var(--color-secondary); font-size: var(--text-base); margin-bottom: var(--space-1); }
+.svc-page__paso p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
+.svc-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
+.svc-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+.svc-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
+.svc-page__faq-q:hover { color: var(--color-primary); }
+.svc-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
+.svc-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
+.svc-page__faq-item.is-open .svc-page__faq-a { display: block; }
+.svc-page__faq-item.is-open .svc-page__faq-q svg { transform: rotate(180deg); }
+.svc-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
+.svc-page__prod-card { display: flex; flex-direction: column; gap: var(--space-1); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-5); text-decoration: none; color: var(--color-text); }
+.svc-page__prod-card:hover { border-color: var(--color-primary); }
+.svc-page__prod-card strong { color: var(--color-secondary); font-size: var(--text-sm); }
+.svc-page__prod-card span { font-size: var(--text-xs); color: var(--color-text-muted); }
+@media (max-width: 640px) {
+  .svc-page__hero-ctas { flex-direction: column; }
+  .svc-page__beneficios { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.querySelectorAll('.svc-page__faq-q').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.closest('.svc-page__faq-item');
+    item.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
+  });
+});
+</script>
