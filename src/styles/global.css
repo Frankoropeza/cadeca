@@ -3157,8 +3157,12 @@ pre, code {
 .zona-card__header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
 .zona-card__nombre { font-size: var(--font-size-md); font-weight: 700; color: var(--color-secondary); line-height: 1.3; }
 .zona-card__alcaldias { font-size: var(--font-size-xs); color: var(--color-text-light); margin-bottom: var(--spacing-md); line-height: 1.5; }
-.zona-card__cta { font-size: var(--font-size-xs); font-weight: 700; color: var(--color-primary); text-decoration: none; }
-.zona-card__cta:hover { color: var(--color-secondary); text-decoration: underline; }
+.zona-card__actions { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-top: var(--spacing-sm); }
+.zona-card__cta { font-size: var(--font-size-xs); font-weight: 700; text-decoration: none; padding: 0.3rem 0.75rem; border-radius: var(--radius-md); }
+.zona-card__cta--primary { background: var(--color-primary); color: #fff; }
+.zona-card__cta--primary:hover { background: #c04e00; }
+.zona-card__cta--wa { background: #25d366; color: #fff; }
+.zona-card__cta--wa:hover { background: #1da851; }
 
 /* ── Proceso ── */
 .zonas-proceso { padding: var(--spacing-3xl) 0; }

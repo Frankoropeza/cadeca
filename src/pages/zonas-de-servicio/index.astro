@@ -35,23 +35,23 @@ const faqs = [
 ];
 
 const zonasCDMX = [
- { nombre: "Vallejo / Azcapotzalco",  alcaldias: ["Azcapotzalco","Gustavo A. Madero"],  entrega: "24 hrs",  clase: "zona--destacada" },
- { nombre: "Iztapalapa",  alcaldias: ["Iztapalapa","Iztacalco"],  entrega: "24 hrs",  clase: "" },
- { nombre: "Venustiano Carranza / Centro",alcaldias: ["Venustiano Carranza","Cuauhtémoc"],  entrega: "24 hrs",  clase: "" },
- { nombre: "Coyoacán / Benito Juárez",  alcaldias: ["Coyoacán","Benito Juárez","Álvaro Obregón"],  entrega: "24 hrs",  clase: "" },
- { nombre: "Tlalpan / Xochimilco",  alcaldias: ["Tlalpan","Xochimilco","Milpa Alta"],  entrega: "24-48 hrs",clase:"" },
- { nombre: "Miguel Hidalgo / Cuajimalpa", alcaldias: ["Miguel Hidalgo","Cuajimalpa"],  entrega: "24 hrs",  clase: "" },
- { nombre: "Tláhuac / Milpa Alta",  alcaldias: ["Tláhuac","Milpa Alta"],  entrega: "48 hrs",  clase: "" },
+ { nombre: "Vallejo / Azcapotzalco",    slug: "vallejo-azcapotzalco",         alcaldias: ["Azcapotzalco","Gustavo A. Madero"],             entrega: "24 hrs",    clase: "zona--destacada" },
+ { nombre: "Iztapalapa",                slug: "iztapalapa",                   alcaldias: ["Iztapalapa","Iztacalco"],                       entrega: "24 hrs",    clase: "" },
+ { nombre: "Venustiano Carranza / Centro", slug: "venustiano-carranza-centro", alcaldias: ["Venustiano Carranza","Cuauhtémoc"],             entrega: "24 hrs",    clase: "" },
+ { nombre: "Coyoacán / Benito Juárez",  slug: "coyoacan-benito-juarez",       alcaldias: ["Coyoacán","Benito Juárez","Álvaro Obregón"],    entrega: "24 hrs",    clase: "" },
+ { nombre: "Tlalpan / Xochimilco",      slug: "tlalpan-xochimilco",           alcaldias: ["Tlalpan","Xochimilco","Milpa Alta"],            entrega: "24-48 hrs", clase: "" },
+ { nombre: "Miguel Hidalgo / Cuajimalpa", slug: "miguel-hidalgo-cuajimalpa",  alcaldias: ["Miguel Hidalgo","Cuajimalpa"],                  entrega: "24 hrs",    clase: "" },
+ { nombre: "Tláhuac / Milpa Alta",      slug: "tlahuac-milpa-alta",           alcaldias: ["Tláhuac","Milpa Alta"],                         entrega: "48 hrs",    clase: "" },
 ];
 
 const zonasEdomex = [
- { nombre: "Naucalpan / Tlalnepantla",  municipios: ["Naucalpan de Juárez","Tlalnepantla de Baz"], entrega: "24 hrs",  clase: "zona--destacada" },
- { nombre: "Ecatepec",  municipios: ["Ecatepec de Morelos"],  entrega: "24-48 hrs",clase:"zona--destacada" },
- { nombre: "Toluca / Lerma / Zinacantepec",municipios:["Toluca","Lerma","Zinacantepec","Metepec"],  entrega: "48 hrs",  clase: "" },
- { nombre: "Cuautitlán Izcalli / Tultitlán",municipios:["Cuautitlán Izcalli","Tultitlán"],  entrega: "24-48 hrs",clase:"" },
- { nombre: "Texcoco / Chimalhuacán",  municipios: ["Texcoco","Chimalhuacán","Los Reyes La Paz"],  entrega: "48 hrs",  clase: "" },
- { nombre: "Chalco / Ixtapaluca",  municipios: ["Chalco","Ixtapaluca","Valle de Chalco"],  entrega: "48 hrs",  clase: "" },
- { nombre: "Atizapán / Nicolás Romero",  municipios: ["Atizapán de Zaragoza","Nicolás Romero"],  entrega: "48 hrs",  clase: "" },
+ { nombre: "Naucalpan / Tlalnepantla",        slug: "naucalpan-tlalnepantla",  municipios: ["Naucalpan de Juárez","Tlalnepantla de Baz"],         entrega: "24 hrs",    clase: "zona--destacada" },
+ { nombre: "Ecatepec",                        slug: "ecatepec",                municipios: ["Ecatepec de Morelos"],                               entrega: "24-48 hrs", clase: "zona--destacada" },
+ { nombre: "Toluca / Lerma / Zinacantepec",   slug: "toluca",                  municipios: ["Toluca","Lerma","Zinacantepec","Metepec"],            entrega: "48 hrs",    clase: "" },
+ { nombre: "Cuautitlán Izcalli / Tultitlán",  slug: "cuautitlan-izcalli",      municipios: ["Cuautitlán Izcalli","Tultitlán"],                    entrega: "24-48 hrs", clase: "" },
+ { nombre: "Texcoco / Chimalhuacán",          slug: "texcoco-chimalhuacan",    municipios: ["Texcoco","Chimalhuacán","Los Reyes La Paz"],          entrega: "48 hrs",    clase: "" },
+ { nombre: "Chalco / Ixtapaluca",             slug: "chalco-ixtapaluca",       municipios: ["Chalco","Ixtapaluca","Valle de Chalco"],              entrega: "48 hrs",    clase: "" },
+ { nombre: "Atizapán / Nicolás Romero",       slug: "atizapan-nicolas-romero", municipios: ["Atizapán de Zaragoza","Nicolás Romero"],             entrega: "48 hrs",    clase: "" },
 ];
 
 const schemaServiceArea = {
@@ -124,9 +124,14 @@ const schemaServiceArea = {
  </span>
  </div>
  <p class="zona-card__alcaldias">{z.alcaldias.join(" · ")}</p>
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
- Cotizar para {z.nombre.split("/")[0].trim()} →
- </a>
+ <div class="zona-card__actions">
+   <a href={`/zonas-de-servicio/${z.slug}`} class="zona-card__cta zona-card__cta--primary">
+     Ver cobertura →
+   </a>
+   <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta zona-card__cta--wa">
+     💬 Cotizar
+   </a>
+ </div>
  </div>
  ))}
  </div>
@@ -151,9 +156,14 @@ const schemaServiceArea = {
  </span>
  </div>
  <p class="zona-card__alcaldias">{z.municipios.join(" · ")}</p>
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta">
- Cotizar para {z.nombre.split("/")[0].trim()} →
- </a>
+ <div class="zona-card__actions">
+   <a href={`/zonas-de-servicio/${z.slug}`} class="zona-card__cta zona-card__cta--primary">
+     Ver cobertura →
+   </a>
+   <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón para entregas en ${z.nombre}`} target="_blank" rel="noopener" class="zona-card__cta zona-card__cta--wa">
+     💬 Cotizar
+   </a>
+ </div>
  </div>
  ))}
  </div>
