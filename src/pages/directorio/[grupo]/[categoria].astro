@@ -1,6 +1,8 @@
 ---
-import PageLayout from "@/layouts/PageLayout.astro";
-import { grupos, categorias, getGrupo, getCategoriasByGrupo, getCategoria } from "@/data/directorio";
+import PageLayout    from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import ProductCard   from "@/components/ProductCard.astro";
+import { categorias, getGrupo, getCategoriasByGrupo, getCategoria } from "@/data/directorio";
 
 export async function getStaticPaths() {
   return categorias.map(c => ({
@@ -29,6 +31,25 @@ const schema = {
   "url": `${SITE}/directorio/${grupoId}/${catId}`,
   "publisher": { "@type": "Organization", "name": "CADECA", "url": SITE },
 };
+
+// SVG placeholder por empresa con iniciales + color del grupo
+const empresasConData = catData.empresas.map(emp => {
+  const initials = emp.nombre
+    .split(/\s+/)
+    .slice(0, 2)
+    .map(w => w[0])
+    .join("")
+    .toUpperCase();
+  const svgRaw = `<svg xmlns='http://www.w3.org/2000/svg' width='900' height='560'><rect width='900' height='560' fill='${grupoData.color}'/><rect width='900' height='560' fill='url(%23p)' opacity='.15'/><defs><pattern id='p' width='40' height='40' patternUnits='userSpaceOnUse'><circle cx='20' cy='20' r='1' fill='white'/></pattern></defs><text x='50%' y='42%' dominant-baseline='middle' text-anchor='middle' fill='rgba(255,255,255,0.18)' font-size='180' font-family='sans-serif' font-weight='900'>${initials}</text><text x='50%' y='72%' dominant-baseline='middle' text-anchor='middle' fill='rgba(255,255,255,0.65)' font-size='26' font-family='sans-serif' font-weight='700'>${emp.nombre}</text></svg>`;
+  const imgSrc = `data:image/svg+xml,${encodeURIComponent(svgRaw)}`;
+
+  const tags = [
+    { label: emp.giro,   href: `/directorio/${grupoId}/${catId}` },
+    { label: emp.ciudad, href: `/directorio/${grupoId}/${catId}` },
+  ];
+
+  return { ...emp, imgSrc, tags };
+});
 ---
 
 <PageLayout
@@ -36,9 +57,9 @@ const schema = {
   description={description}
   schema={schema}
   breadcrumbs={[
-    { name: "Inicio",           href: "/" },
-    { name: "Directorio",       href: "/directorio" },
-    { name: grupoData.nombre,   href: `/directorio/${grupoId}` },
+    { name: "Inicio",         href: "/" },
+    { name: "Directorio",     href: "/directorio" },
+    { name: grupoData.nombre, href: `/directorio/${grupoId}` },
     { name: catData.titulo },
   ]}
   whatsapp={WHATSAPP}
@@ -76,29 +97,35 @@ const schema = {
     </div>
   </div>
 
-  <!-- Listado de empresas -->
+  <!-- Separador -->
+  <div class="dir-sep" aria-hidden="true" style={`background: linear-gradient(90deg, ${grupoData.color} 0%, ${grupoData.color}99 100%)`}></div>
+
+  <!-- Empresas + Sidebar -->
   <div class="dir-empresas-body">
     <div class="container">
-
       <div class="dir-empresas-layout">
 
-        <!-- Empresas -->
-        <div class="dir-empresas-main">
-          <div class="dir-empresas-grid">
-            {catData.empresas.map(emp => (
-              <article class="dir-emp-card">
-                <div class="dir-emp-card__header">
-                  <div class="dir-emp-card__avatar" aria-hidden="true">
-                    {emp.nombre.slice(0, 2).toUpperCase()}
-                  </div>
-                  <div>
-                    <h2 class="dir-emp-card__name">{emp.nombre}</h2>
-                    <p class="dir-emp-card__ciudad">{emp.ciudad}</p>
-                  </div>
-                </div>
-                <p class="dir-emp-card__giro">{emp.giro}</p>
-                <p class="dir-emp-card__desc">{emp.desc}</p>
-              </article>
+        <!-- Columna principal -->
+        <div>
+          <SectionHeader
+            title={`${catData.empresas.length} empresas en ${catData.titulo}`}
+            twoCol
+          >
+            <p>{catData.desc}</p>
+            <p>¿Tu empresa debería aparecer aquí? <a href="/contacto" style="color:var(--color-primary);font-weight:700;">Regístrala gratis →</a></p>
+          </SectionHeader>
+
+          <div class="products__grid dir-emp-grid">
+            {empresasConData.map(emp => (
+              <ProductCard
+                title={emp.nombre}
+                desc={emp.desc}
+                imgSrc={emp.imgSrc}
+                imgAlt={`${emp.nombre} — ${catData.titulo} CDMX`}
+                href="/contacto"
+                tags={emp.tags}
+                btnText="Solicitar información"
+              />
             ))}
           </div>
         </div>
@@ -111,14 +138,14 @@ const schema = {
             <p class="dir-sidebar-cta__label">Fabricante directo CDMX</p>
             <h3 class="dir-sidebar-cta__title">¿Necesitas cajas de cartón?</h3>
             <p class="dir-sidebar-cta__desc">Cotización sin compromiso. Entrega en 24 hrs en CDMX y Edomex.</p>
-            <a href="/cotizar" class="btn btn--primary" style="width:100%;text-align:center">Solicitar cotización</a>
+            <a href="/cotizar" class="btn btn--primary" style="width:100%;text-align:center;display:flex;justify-content:center">Solicitar cotización</a>
             <a href={`https://wa.me/${WHATSAPP}`} class="dir-sidebar-cta__wa" target="_blank" rel="noopener">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               WhatsApp directo
             </a>
           </div>
 
-          <!-- Otras categorías del mismo grupo -->
+          <!-- Otras categorías -->
           {otrasCAts.length > 0 && (
             <div class="dir-sidebar-widget">
               <h3 class="dir-sidebar-widget__title">Otras categorías en {grupoData.nombre}</h3>
@@ -133,7 +160,6 @@ const schema = {
             </div>
           )}
 
-          <!-- Ir al directorio -->
           <a href="/directorio" class="dir-sidebar-all">
             Ver todos los grupos del directorio
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -141,14 +167,13 @@ const schema = {
 
         </aside>
       </div>
-
     </div>
   </div>
 
 </PageLayout>
 
 <style>
-/* Hero de categoría */
+/* Hero */
 .dir-cat-hero {
   background: var(--color-secondary);
   padding: var(--spacing-2xl) 0 var(--spacing-3xl);
@@ -203,7 +228,6 @@ const schema = {
   height: 100px;
   border-radius: 50%;
   border: 3px solid var(--accent, var(--color-primary));
-  gap: 0;
 }
 .dir-cat-hero__badge-num {
   font-size: 2.2rem;
@@ -216,83 +240,31 @@ const schema = {
   color: rgba(255,255,255,0.6);
 }
 
-/* Body layout */
+/* Separador */
+.dir-sep { height: 4px; }
+
+/* Body */
 .dir-empresas-body {
-  padding: var(--spacing-3xl) 0 var(--spacing-4xl);
+  padding: var(--spacing-4xl) 0 var(--spacing-4xl);
+  background: var(--color-accent);
 }
 .dir-empresas-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-2xl);
 }
-@media (min-width: 1024px) {
-  .dir-empresas-layout {
-    grid-template-columns: 1fr 280px;
-    align-items: start;
-  }
+@media (min-width: 1280px) {
+  .dir-empresas-layout { grid-template-columns: 1fr 280px; align-items: start; }
 }
 
-/* Grid de empresas */
-.dir-empresas-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-md);
+/* Grid de empresas — 3 columnas (2 cuando hay sidebar activo) */
+.dir-emp-grid {
+  margin-bottom: 0;
 }
-@media (min-width: 640px) { .dir-empresas-grid { grid-template-columns: repeat(2, 1fr); } }
-
-/* Tarjeta empresa */
-.dir-emp-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  padding: var(--spacing-lg);
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-.dir-emp-card__header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: 0.25rem;
-}
-.dir-emp-card__avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--border-radius-sm);
-  background: var(--color-secondary);
-  color: #fff;
-  font-size: var(--font-size-xs);
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  letter-spacing: 0.03em;
-}
-.dir-emp-card__name {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  color: var(--color-secondary);
-  line-height: 1.3;
-}
-.dir-emp-card__ciudad {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-light);
-  margin-top: 0.1rem;
-}
-.dir-emp-card__giro {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.dir-emp-card__desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.55;
-}
+@media (min-width: 640px)  { .dir-emp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .dir-emp-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1280px) { .dir-emp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1440px) { .dir-emp-grid { grid-template-columns: repeat(3, 1fr); } }
 
 /* Sidebar */
 .dir-empresas-sidebar {
@@ -364,12 +336,9 @@ const schema = {
   color: var(--color-text-light);
   margin-bottom: var(--spacing-md);
 }
-
-/* Cats sidebar */
 .dir-sidebar-cats {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 .dir-sidebar-cats__link {
   display: flex;
@@ -393,7 +362,7 @@ const schema = {
   border-radius: 999px;
 }
 
-/* Ver todos link */
+/* Ver todos */
 .dir-sidebar-all {
   display: flex;
   align-items: center;
