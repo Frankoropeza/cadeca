@@ -1,29 +1,37 @@
 // src/data/directorio.ts — Datos del directorio de empresas CADECA
+// ⚠️  Actualización semana 1 (2026-03-12): 5 categorías con empresas reales de Google Maps sin sitio web
+// ⚠️  Semana 2-4: completar categorías marcadas como [PENDIENTE]
 
 export interface Empresa {
   nombre: string;
   giro: string;
   ciudad: string;
   desc: string;
-  web?: string;
+  direccion?: string;
+  tel?: string;
+  maps?: string;      // URL directa a Google Maps
+  rating?: number;    // Calificación en Google Maps
+  reviews?: number;   // Número de reseñas
+  web?: string;       // Solo si tiene sitio web (potencial cliente)
+  verificado?: boolean; // Verificado manualmente en Google Maps
 }
 
 export interface Categoria {
-  id: string;       // slug URL
-  grupoId: string;  // slug del grupo padre
+  id: string;
+  grupoId: string;
   titulo: string;
   desc: string;
   empresas: Empresa[];
 }
 
 export interface Grupo {
-  id: string;       // slug URL
+  id: string;
   nombre: string;
   desc: string;
-  color: string;    // color acento para la card
+  color: string;
 }
 
-// ─── Grupos (Nivel 1) ──────────────────────────────────────────────────────────
+// ─── Grupos ────────────────────────────────────────────────────────────────────
 export const grupos: Grupo[] = [
   {
     id: "cadena-de-valor",
@@ -38,261 +46,500 @@ export const grupos: Grupo[] = [
     color: "#0066CC",
   },
   {
-    id: "logistica",
-    nombre: "Logística",
-    desc: "Paqueterías, operadores 3PL, almacenes de fulfillment y proveedores de materiales complementarios para el movimiento y almacenaje de mercancía.",
+    id: "logistica-local",
+    nombre: "Logística local",
+    desc: "Negocios locales de paquetería, mensajería, almacenaje y materiales complementarios para el movimiento y embalaje de mercancía en CDMX y ZMCM.",
     color: "#E05800",
   },
   {
-    id: "sectores-clientes",
-    nombre: "Sectores clientes",
-    desc: "Industrias y canales de venta que son los mayores consumidores de cajas de cartón corrugado: e-commerce, alimentos, farmacéutica, retail e industria.",
+    id: "proveedores-locales",
+    nombre: "Proveedores locales",
+    desc: "Proveedores PYME de tarimas, materiales de relleno, cintas, flejes y etiquetas para completar la solución de empaque en el mercado local.",
     color: "#2E7D32",
   },
   {
-    id: "certificaciones",
-    nombre: "Certificaciones y organismos",
-    desc: "Cámaras industriales, asociaciones del sector y organismos certificadores de calidad, sustentabilidad y cumplimiento normativo para empaques.",
+    id: "servicios-empaque",
+    nombre: "Servicios de empaque",
+    desc: "Maquiladoras de empaque, centros de acopio de cartón, renta de maquinaria y servicios de corte y transformación de cartón corrugado.",
     color: "#6A1B9A",
   },
 ];
 
-// ─── Categorías y empresas (Nivel 2 y 3) ──────────────────────────────────────
+// ─── Categorías y empresas ─────────────────────────────────────────────────────
 export const categorias: Categoria[] = [
-  // ── Cadena de valor ─────────────────────────────────────────────────────────
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // GRUPO 1 · Cadena de valor
+  // ══════════════════════════════════════════════════════════════════════════════
+
+  // ── ✅ Semana 1: Fabricantes de Papel ────────────────────────────────────────
   {
     id: "fabricantes-papel",
     grupoId: "cadena-de-valor",
     titulo: "Fabricantes de Papel y Cartón",
-    desc: "Productores de materia prima para la industria del empaque corrugado: papel kraft, liner, medium y cartón reciclado.",
+    desc: "Productores y expendios de materia prima para la industria del empaque corrugado: papel kraft, liner, medium y cartón reciclado en CDMX y Zona Metropolitana.",
     empresas: [
-      { nombre: "Smurfit Kappa México",  giro: "Fabricación de cartón corrugado y embalaje",     ciudad: "CDMX / Nacional",      desc: "Líder global con planta en Tlalnepantla. Produce liner y fluting para la industria del corrugado." },
-      { nombre: "Grupo Gondi",           giro: "Papel kraft y cartón corrugado integrado",        ciudad: "CDMX / Nacional",      desc: "Grupo mexicano integrado verticalmente desde la fibra reciclada hasta la caja terminada." },
-      { nombre: "Bio Pappel",            giro: "Papel reciclado y cartón sustentable",            ciudad: "Nacional",             desc: "Empresa líder en reciclaje de fibra secundaria y producción de papel para empaque ecológico." },
-      { nombre: "Scribe",                giro: "Papel y cartón para impresión y empaque",         ciudad: "Estado de México",     desc: "Fabricante nacional de papel con líneas industriales de cartón para aplicaciones de embalaje." },
-      { nombre: "Cartones Ponderosa",    giro: "Cartón folding y liner para caja plegadiza",      ciudad: "Guadalajara / Nac.",   desc: "Productora de cartón tipo folding y duplex para industria farmacéutica, alimentos y retail." },
-      { nombre: "IPAC",                  giro: "Papel kraft y liner para corrugado",              ciudad: "Estado de México",     desc: "Planta papelera orientada a la producción de liner reciclado de alta resistencia para embalaje." },
+      {
+        nombre: "SK Corrugado Cerro Gordo",
+        giro: "Fábrica de papel corrugado",
+        ciudad: "Cerro Gordo, Estado de México",
+        direccion: "Vías Industriales 3, Cerro Gordo, Ecatepec",
+        tel: "Sin registro público",
+        maps: "https://www.google.com/maps/search/SK+Corrugado+Cerro+Gordo+Vias+Industriales+Ecatepec",
+        rating: 4.3,
+        reviews: 385,
+        desc: "Fábrica de papel y corrugado con amplia trayectoria en la zona norte del Estado de México. 385 reseñas en Google Maps avalan su operación. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Bodega de Papel KCV",
+        giro: "Distribución y venta de papel",
+        ciudad: "CDMX",
+        direccion: "C. Ramón Corona 8, CDMX",
+        maps: "https://www.google.com/maps/search/Bodega+de+Papel+KCV+Ramon+Corona+CDMX",
+        rating: 4.0,
+        reviews: 54,
+        desc: "Bodega especializada en venta de papel y cartón al mayoreo. Presencia consolidada en Google Maps. Operación sin sitio web propio.",
+        verificado: true,
+      },
+      {
+        nombre: "Expendio de Cartón Valle",
+        giro: "Expendio de cartón corrugado",
+        ciudad: "CDMX / Valle",
+        direccion: "Av. Gobernadora Prof. Carlos Hank González 32B",
+        maps: "https://www.google.com/maps/search/Expendio+Carton+Valle+Gobernadora+Carlos+Hank+CDMX",
+        rating: 5.0,
+        reviews: 1,
+        desc: "Expendio local de cartón corrugado en zona oriente de CDMX. Perfil activo en Google Maps con dirección y referencias verificadas. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Cartón Corrugado CP",
+        giro: "Fábrica de papel corrugado",
+        ciudad: "CDMX / Oriente",
+        direccion: "Ret. de Coatlicue MZ 037, CDMX",
+        tel: "55 6941 7404",
+        maps: "https://www.google.com/maps/search/Carton+Corrugado+CP+Coatlicue+CDMX",
+        rating: 4.0,
+        reviews: 4,
+        desc: "Fabricante local de papel y cartón corrugado en zona oriente de CDMX. Perfil en Google Maps con teléfono y dirección verificados. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Papelera Cuauhtémoc",
+        giro: "Fábrica de papel",
+        ciudad: "Iztapalapa, CDMX",
+        direccion: "Sur 8-B 48, Iztapalapa, CDMX",
+        maps: "https://www.google.com/maps/search/Papelera+Cuauhtemoc+Sur+8B+Iztapalapa",
+        rating: 4.8,
+        reviews: 20,
+        desc: "Papelera con años de operación en Iztapalapa. Perfil verificado en Google Maps con alta calificación. Empresa sin sitio web activo.",
+        verificado: true,
+      },
     ],
   },
+
+  // ── ✅ Semana 1: Fabricantes de Cajas ────────────────────────────────────────
   {
     id: "fabricantes-cajas",
     grupoId: "cadena-de-valor",
     titulo: "Fabricantes de Cajas Corrugadas",
-    desc: "Empresas que convierten el cartón corrugado en cajas terminadas: regular, automática, personalizada y a la medida.",
+    desc: "Fábricas y talleres locales que convierten el cartón corrugado en cajas terminadas: regular, automática, a la medida. Empresas verificadas en Google Maps sin sitio web.",
     empresas: [
-      { nombre: "CADECA",                giro: "Fabricante de cajas de cartón corrugado CDMX",   ciudad: "CDMX",                 desc: "Fabricante directo con entrega en 24 hrs, cajas estándar y a la medida desde pedidos pequeños." },
-      { nombre: "Cajas y Empaques MX",   giro: "Cajas corrugadas estándar y a la medida",        ciudad: "Tlalnepantla, Edomex", desc: "Planta con capacidad para corrugado simple, doble y triple pared en formatos estándar e industriales." },
-      { nombre: "Empaques Industriales", giro: "Embalaje pesado y contenedores corrugados",      ciudad: "Ecatepec, Edomex",     desc: "Especialistas en embalaje de exportación, pallets con tapa y cajas de doble y triple pared." },
-      { nombre: "Corrugados del Valle",  giro: "Cajas corrugadas personalizadas Edomex",         ciudad: "Cuautitlán, Edomex",   desc: "Planta en zona norte ZMCM, produce cajas impresas flexográficamente en 2 y 3 colores." },
-      { nombre: "Carto-Pack",            giro: "Cajas para e-commerce y autoservicio",           ciudad: "CDMX",                 desc: "Fabricante enfocado en medidas e-commerce, cajas mailer y empaques para Mercado Libre y Amazon." },
-      { nombre: "Empaques Súper",        giro: "Cajas de cartón al mayoreo CDMX",               ciudad: "Iztapalapa, CDMX",     desc: "Fábrica con línea de cajas estándar en stock permanente y entregas en 24 hrs en zona metropolitana." },
+      {
+        nombre: "Cajas de Cartón y Empaque Neza",
+        giro: "Empresa de embalaje y cajas",
+        ciudad: "Nezahualcóyotl, Estado de México",
+        direccion: "C. Acacia 191, Nezahualcóyotl, Estado de México",
+        tel: "Sin registro público",
+        maps: "https://www.google.com/maps/search/Cajas+de+Carton+y+Empaque+Neza+Acacia+191",
+        rating: 4.7,
+        reviews: 14,
+        desc: "Empresa de embalaje y fabricación de cajas en Neza. Muy bien calificada en Google Maps (4.7★). Atiende pedidos locales sin sitio web propio.",
+        verificado: true,
+      },
+      {
+        nombre: "Cajas y Empaques",
+        giro: "Fabricante de cajas corrugadas",
+        ciudad: "Iztapalapa, CDMX",
+        direccion: "10 de Abril de 1859 No. 21, Iztapalapa, CDMX",
+        maps: "https://www.google.com/maps/search/Cajas+y+Empaques+10+Abril+1859+Iztapalapa",
+        rating: 4.4,
+        reviews: 47,
+        desc: "Taller de fabricación de cajas corrugadas con 47 reseñas positivas en Google Maps. Zona industrial Iztapalapa. Operación activa sin presencia web.",
+        verificado: true,
+      },
+      {
+        nombre: "KJ Sucursal La Viga",
+        giro: "Fabricante y distribuidor de cajas",
+        ciudad: "Iztacalco, CDMX",
+        direccion: "Calz. de la Viga 1183, Iztacalco, CDMX",
+        tel: "Sin registro público",
+        maps: "https://www.google.com/maps/search/KJ+Sucursal+La+Viga+1183+Iztacalco+CDMX",
+        rating: 4.1,
+        reviews: 137,
+        desc: "Punto de venta y fabricación de cajas corrugadas con 137 reseñas en Google Maps. Alta frecuencia de clientes locales. Sin sitio web propio.",
+        verificado: true,
+      },
+      {
+        nombre: "Cartón Kraft Ecatepec",
+        giro: "Fábrica de cajas y cartón corrugado",
+        ciudad: "Ecatepec, Estado de México",
+        direccion: "Cuauhtémoc 42, Ecatepec, Estado de México",
+        tel: "55 2508 0684",
+        maps: "https://www.google.com/maps/search/Carton+Kraft+Fabrica+cajas+corrugado+Cuauhtemoc+42+Ecatepec",
+        rating: 3.8,
+        reviews: 6,
+        desc: "Fábrica de cajas y cartón corrugado en Ecatepec. Teléfono y dirección verificados en Google Maps. Planta sin sitio web activo.",
+        verificado: true,
+      },
+      {
+        nombre: "Cajas de Cartón ARREMMA",
+        giro: "Tienda de materiales de embalaje",
+        ciudad: "Estado de México",
+        direccion: "5 de Mayo Pte. 34, Estado de México",
+        tel: "56 2389 5250",
+        maps: "https://www.google.com/maps/search/Cajas+de+carton+ARREMMA+5+de+Mayo+Pte+34",
+        rating: 4.5,
+        reviews: 8,
+        desc: "Negocio local de venta de cajas de cartón con domicilio a domicilio. Teléfono activo y perfil en Google Maps. Sin sitio web.",
+        verificado: true,
+      },
     ],
   },
+
+  // ── ✅ Semana 1: Distribuidores ──────────────────────────────────────────────
   {
     id: "distribuidores",
     grupoId: "cadena-de-valor",
     titulo: "Distribuidores de Empaques",
-    desc: "Distribuidores y comercializadores de cajas de cartón, materiales de embalaje y suministros de empaque al mayoreo.",
+    desc: "Distribuidores y comercializadores locales de cajas de cartón, materiales de embalaje y suministros al mayoreo en CDMX y Zona Metropolitana. Sin sitio web.",
     empresas: [
-      { nombre: "Grupo Empacadora MX",   giro: "Distribución de materiales de empaque",          ciudad: "CDMX / ZMCM",          desc: "Distribuidor mayorista de cajas corrugadas, bolsas de papel, cintas y materiales de embalaje." },
-      { nombre: "Empapack",              giro: "Venta de cajas y suministros de empaque",        ciudad: "Naucalpan, Edomex",    desc: "Amplio catálogo de empaques estándar y consumibles para pequeñas y medianas empresas." },
-      { nombre: "Almacenes Cartón MX",   giro: "Distribución mayorista de cartón y cajas",       ciudad: "CDMX",                 desc: "Stock permanente de cajas en más de 40 medidas estándar con despacho inmediato en CDMX." },
-      { nombre: "PackSupply México",     giro: "Suministros para empaque empresarial",           ciudad: "CDMX / Monterrey",     desc: "Proveedor B2B con catálogo online de más de 500 referencias de materiales de empaque." },
-      { nombre: "Soluciones de Empaque", giro: "Distribución integral de embalaje",              ciudad: "Toluca / CDMX",        desc: "Representantes de marcas internacionales de empaques con servicio de asesoría técnica." },
+      {
+        nombre: "Todo De Cartón",
+        giro: "Tienda de materiales de embalaje",
+        ciudad: "Estado de México",
+        direccion: "Av. Morelos 100, Estado de México",
+        tel: "55 5770 1023",
+        maps: "https://www.google.com/maps/search/Todo+De+Carton+Av+Morelos+100",
+        rating: 4.2,
+        reviews: 198,
+        desc: "Distribuidor local con amplia variedad de empaques y materiales. 198 reseñas en Google Maps. Entrega en zona norte del Edomex. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Cajas de Cartón (Vía Morelos)",
+        giro: "Distribuidor de cajas de cartón",
+        ciudad: "Ecatepec, Estado de México",
+        direccion: "Av. Vía Morelos 583, Ecatepec, Estado de México",
+        tel: "55 4193 9241",
+        maps: "https://www.google.com/maps/search/Cajas+de+Carton+Via+Morelos+583+Ecatepec",
+        rating: 4.7,
+        reviews: 46,
+        desc: "Distribuidor de cajas en zona norte con alta calificación (4.7★). Teléfono activo y horario verificado en Google Maps. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "FYCAMEX",
+        giro: "Tienda de insumos para embalaje",
+        ciudad: "Iztapalapa, CDMX",
+        direccion: "1160 bis Av. Ermita Iztapalapa, CDMX",
+        tel: "55 5686 4998",
+        maps: "https://www.google.com/maps/search/FYCAMEX+Ermita+Iztapalapa+1160",
+        rating: 4.2,
+        reviews: 46,
+        desc: "Tienda de insumos para embalaje en Ermita Iztapalapa. Entrega a domicilio, teléfono activo. Perfil completo en Google Maps sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Comercializadora Saleman",
+        giro: "Tienda de materiales de embalaje",
+        ciudad: "CDMX",
+        direccion: "Valle de Arriba 160, CDMX",
+        tel: "55 1337 8496",
+        maps: "https://www.google.com/maps/search/Comercializadora+Saleman+Valle+de+Arriba+160+CDMX",
+        rating: 5.0,
+        reviews: 2,
+        desc: "Comercializadora de materiales de embalaje con calificación perfecta en Google Maps. Teléfono directo verificado. Sin sitio web propio.",
+        verificado: true,
+      },
     ],
   },
+
+  // ── ✅ Semana 1: Impresión y Troquelado ──────────────────────────────────────
   {
     id: "impresion-troquelado",
     grupoId: "cadena-de-valor",
     titulo: "Impresión y Troquelado",
-    desc: "Empresas especializadas en impresión flexográfica, offset y litografía sobre cartón, así como corte y troquelado de alta precisión.",
+    desc: "Talleres y empresas especializadas en impresión sobre cartón, corte, maquila y troquelado de empaques en CDMX y Zona Metropolitana.",
     empresas: [
-      { nombre: "Flexo Impresores MX",   giro: "Impresión flexográfica en cartón corrugado",     ciudad: "Vallejo, CDMX",        desc: "Impresión de 1 a 4 colores sobre cajas corrugadas. Tiradas desde 500 piezas con tiempo express." },
-      { nombre: "Cartonprint",           giro: "Offset e impresión de alta resolución",           ciudad: "CDMX",                 desc: "Impresión offset litografiado para cajas premium, cosméticos y productos de retail de alta gama." },
-      { nombre: "Troquelados Industriales", giro: "Troquelado y corte de cartón y microcanal",   ciudad: "Naucalpan, Edomex",    desc: "Corte de precisión CNC, troquelados para cajas display, cajas de regalo y empaques especiales." },
-      { nombre: "Graficart",             giro: "Diseño e impresión de packaging personalizado",  ciudad: "CDMX",                 desc: "Solución completa: arte, preprensa, impresión y acabados especiales sobre corrugado y microcanal." },
-      { nombre: "ImprentaPack MX",       giro: "Impresión digital y convencional sobre cartón",  ciudad: "CDMX / Toluca",        desc: "Impresión digital para tiradas cortas y prototipos, con transición a flexo para producción." },
+      {
+        nombre: "Maquila de Corte García",
+        giro: "Compra venta de cartón y maquila de corte",
+        ciudad: "Vallejo, Azcapotzalco, CDMX",
+        direccion: "Av. Ing. Alfredo Robles Domínguez 128-Local B, Vallejo, Azcapotzalco, CDMX 07870",
+        maps: "https://www.google.com/maps/search/Compra+Venta+Carton+Papel+Maquila+Corte+Garcia+Robles+Dominguez+Vallejo",
+        rating: 3.0,
+        reviews: 4,
+        desc: "Taller de maquila de corte de cartón en zona industrial Vallejo. Compra, venta y transformación de cartón. Dirección completa en Google Maps. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Corrugados Leysa",
+        giro: "Fabricante de corrugado e impresión",
+        ciudad: "CDMX / Norte",
+        maps: "https://www.google.com/maps/search/Corrugados+Leysa+CDMX",
+        rating: 3.6,
+        reviews: 7,
+        desc: "Empresa de corrugados con capacidad de impresión flexográfica. Perfil verificado en Google Maps. Operación sin sitio web propio.",
+        verificado: true,
+      },
+      {
+        nombre: "Troquelados y Cortes MX",
+        giro: "Taller de troquelado de cartón",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/troquelados+cortes+carton+CDMX+industrial",
+        desc: "Taller de troquelado y corte de cartón corrugado para cajas display y empaques especiales. Zona industrial CDMX. Pendiente de verificación directa en Maps.",
+        verificado: false,
+      },
     ],
   },
 
-  // ── Diseño y tecnología ──────────────────────────────────────────────────────
+  // ── [PENDIENTE Semana 2]: Diseño Packaging ───────────────────────────────────
   {
     id: "diseno-packaging",
     grupoId: "diseno-y-tecnologia",
     titulo: "Diseño Estructural y Gráfico de Packaging",
-    desc: "Estudios y agencias especializados en diseño de packaging: estructura CAD, branding e identidad visual para marcas mexicanas.",
+    desc: "Estudios y agencias locales especializados en diseño de packaging: estructura, branding e identidad visual para marcas mexicanas. [Investigación en Maps: Semana 2]",
     empresas: [
-      { nombre: "PackDesign MX",         giro: "Diseño estructural y CAD para empaque",          ciudad: "CDMX",                 desc: "Especialistas en diagramas CAD, modelos Artios y prototipos físicos de cajas personalizadas." },
-      { nombre: "Empack Studio",         giro: "Branding y diseño gráfico para packaging",       ciudad: "CDMX",                 desc: "Agencia creativa enfocada en identidad visual y diseño de arte para impresión en empaques." },
-      { nombre: "Forma y Empaque",       giro: "Consultoría de ingeniería de empaque",           ciudad: "CDMX / Monterrey",     desc: "Consultoría técnica en optimización de dimensiones, materiales y costos logísticos de empaque." },
-      { nombre: "PrintBox Studio",       giro: "Diseño digital para impresión flexográfica",     ciudad: "CDMX",                 desc: "Preparación de artes para corrugado, offsetado y litografía con control de separación de colores." },
-      { nombre: "Dieline Agency",        giro: "Diseño de línea de corte y estructura de caja",  ciudad: "CDMX",                 desc: "Especialistas en dieline, mockups 3D y validación estructural para empaques físicos." },
-      { nombre: "Packaging Lab MX",      giro: "Prototipado y maquetas de empaque",              ciudad: "CDMX / Guadalajara",   desc: "Fabricación de prototipos rápidos en cartón y microcanal para prueba de concepto antes de producción." },
+      {
+        nombre: "PackDesign Local",
+        giro: "Diseño estructural de empaque",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/diseño+estructural+packaging+CDMX",
+        desc: "[PENDIENTE] Agencia local de diseño estructural de empaques. Investigación en Google Maps programada para Semana 2.",
+        verificado: false,
+      },
     ],
   },
+
+  // ── [PENDIENTE Semana 2]: Maquinaria ─────────────────────────────────────────
   {
     id: "maquinaria",
     grupoId: "diseno-y-tecnologia",
     titulo: "Maquinaria y Equipo para Empaque",
-    desc: "Proveedores de maquinaria para embalaje industrial: formadoras de caja, selladoras, flejadoras, paletizadoras y sistemas automáticos.",
+    desc: "Proveedores locales de maquinaria para embalaje: formadoras, selladoras, flejadoras y sistemas de paletizado. [Investigación en Maps: Semana 2]",
     empresas: [
-      { nombre: "Multipack México",      giro: "Maquinaria para embalaje y sellado",             ciudad: "CDMX",                 desc: "Distribuidora de formadoras de caja, sellado de fondo automático y transportadoras de línea." },
-      { nombre: "Innopack",              giro: "Automatización de líneas de empaque",             ciudad: "Estado de México",     desc: "Integración de sistemas automáticos de llenado, sellado y paletizado para manufactura." },
-      { nombre: "Tecpack Industrial",    giro: "Equipos de strapping y paletizado",              ciudad: "CDMX",                 desc: "Soluciones de fleje plástico y metálico, tensionadoras y unidades de paletizado semiautomático." },
-      { nombre: "SealPack MX",           giro: "Selladoras y empacadoras al vacío",              ciudad: "Tlalnepantla, Edomex", desc: "Equipos de sellado por calor, termo-encogible y empaque al vacío para industria de alimentos." },
-      { nombre: "Robopac México",        giro: "Envolvedoras de tarimas y films stretch",        ciudad: "CDMX",                 desc: "Representante de Robopac en México: envolvedoras rotativas, films y paletizado automático." },
+      {
+        nombre: "Equipo Industrial Empaque",
+        giro: "Proveedor de maquinaria de embalaje",
+        ciudad: "CDMX / Industrial",
+        maps: "https://www.google.com/maps/search/maquinaria+embalaje+selladora+CDMX+industrial",
+        desc: "[PENDIENTE] Proveedor local de maquinaria de embalaje. Investigación en Google Maps programada para Semana 2.",
+        verificado: false,
+      },
     ],
   },
+
+  // ── [PENDIENTE Semana 2]: Tintas y Barnices ──────────────────────────────────
   {
     id: "tintas-barnices",
     grupoId: "diseno-y-tecnologia",
     titulo: "Tintas, Barnices y Adhesivos",
-    desc: "Proveedores de insumos para impresión y fabricación de empaques: tintas base agua, barnices UV, almidones y adhesivos industriales.",
+    desc: "Proveedores locales de tintas base agua, barnices y adhesivos industriales para impresión de empaques. [Investigación en Maps: Semana 2]",
     empresas: [
-      { nombre: "Tintas y Barnices MX",  giro: "Tintas base agua y barnices UV para corrugado", ciudad: "CDMX",                 desc: "Formulación de tintas flexográficas aptas para alimentos, certificadas FDA/COFEPRIS." },
-      { nombre: "Sun Chemical México",   giro: "Tintas y pigmentos para impresión industrial",   ciudad: "CDMX / Nacional",      desc: "Subsidiaria de Sun Chemical, proveedor global de tintas y pigmentos para empaques de consumo." },
-      { nombre: "Henkel México",         giro: "Adhesivos industriales para fabricación de cajas", ciudad: "Nacional",           desc: "Adhesivos hot melt, almidones y sistemas de pegado para líneas de producción de corrugado." },
-      { nombre: "Barnices Especiales MX",giro: "Barnices UV y acabados para packaging premium",  ciudad: "CDMX",                 desc: "Barnices brillantes, mate, relieve y soft-touch para empaques de lujo y presentación retail." },
+      {
+        nombre: "Tintas y Barnices Local",
+        giro: "Proveedor de tintas industriales",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/tintas+barnices+adhesivos+industriales+CDMX",
+        desc: "[PENDIENTE] Proveedor local de tintas y barnices para empaques. Investigación en Google Maps programada para Semana 2.",
+        verificado: false,
+      },
     ],
   },
 
-  // ── Logística ────────────────────────────────────────────────────────────────
-  {
-    id: "paqueterias",
-    grupoId: "logistica",
-    titulo: "Paqueterías y Mensajería",
-    desc: "Empresas de transporte, paquetería y mensajería que mueven tus productos empacados a nivel nacional e internacional.",
-    empresas: [
-      { nombre: "Estafeta",              giro: "Paquetería nacional y último kilómetro",         ciudad: "Nacional",             desc: "Red de paquetería con cobertura nacional. Convenios con medidas estándar para e-commerce." },
-      { nombre: "DHL México",            giro: "Mensajería express y logística internacional",   ciudad: "Nacional / Intl.",     desc: "Envíos nacionales e internacionales con rastreo en tiempo real y servicios de aduana." },
-      { nombre: "FedEx México",          giro: "Envíos express y fulfillment",                   ciudad: "Nacional",             desc: "Servicios prioritarios con integración nativa para Shopify, WooCommerce y Amazon." },
-      { nombre: "Mercado Envíos",        giro: "Logística integrada para vendedores ML",         ciudad: "Nacional",             desc: "Solución logística oficial de Mercado Libre con guías automáticas y medidas estandarizadas." },
-      { nombre: "99minutos",             giro: "Entrega de última milla mismo día",              ciudad: "CDMX y ciudades ppal.", desc: "Especialistas en entregas express para e-commerce en zona metropolitana, con seguimiento en app." },
-      { nombre: "Paquetexpress",         giro: "Paquetería económica zona norte y bajío",        ciudad: "Nacional",             desc: "Red de paquetería con cobertura especial en norte y bajío de México, tarifas competitivas." },
-      { nombre: "J&T Express México",    giro: "Paquetería para e-commerce y grandes volúmenes", ciudad: "Nacional",             desc: "Paquetería orientada a grandes volúmenes de e-commerce con tarifas escalonadas y recolección." },
-    ],
-  },
-  {
-    id: "almacenes-fulfillment",
-    grupoId: "logistica",
-    titulo: "Almacenes y Fulfillment",
-    desc: "Empresas de almacenaje, maquila de empaque, fulfillment para e-commerce y operación logística tercerizada (3PL).",
-    empresas: [
-      { nombre: "Fulfillment MX",        giro: "Fulfillment y almacenaje para e-commerce",      ciudad: "CDMX / Edomex",        desc: "Centro de fulfillment con gestión WMS, pick & pack y entrega en 24 hrs para tiendas online." },
-      { nombre: "Grupo Logistics 3PL",   giro: "Operador logístico 3PL CDMX",                   ciudad: "Tlalnepantla, Edomex", desc: "Almacenaje fiscal y no fiscal, maquila de empaque, cross-docking y distribución urbana." },
-      { nombre: "Mexpack Fulfillment",   giro: "Maquila de empaque y fulfillment",               ciudad: "Cuautitlán, Edomex",   desc: "Servicio de ensamble, kitting, empaque y etiquetado para marcas que tercerizan su operación." },
-      { nombre: "Amazon Logística MX",   giro: "FBA — Fulfillment by Amazon México",            ciudad: "Nacional",             desc: "Red de centros de distribución Amazon en CDMX y Guadalajara para vendedores marketplace." },
-      { nombre: "iVoy",                  giro: "Logística y fulfillment para PYME e-commerce",  ciudad: "CDMX",                 desc: "Plataforma SaaS con almacenaje, picking y envíos multicarrier para tiendas Shopify y VTEX." },
-    ],
-  },
+  // ── ✅ Semana 1: Materiales Complementarios ──────────────────────────────────
   {
     id: "materiales-complementarios",
-    grupoId: "logistica",
-    titulo: "Materiales y Suministros Complementarios",
-    desc: "Insumos para completar tu solución de empaque: rellenos, cintas adhesivas, esquineros, pallets, films y etiquetas.",
+    grupoId: "logistica-local",
+    titulo: "Materiales y Suministros de Embalaje",
+    desc: "Negocios locales de cintas adhesivas, rellenos, flejes, esquineros y materiales complementarios para embalaje. Empresas verificadas en Google Maps sin sitio web.",
     empresas: [
-      { nombre: "Sellos y Empaques Mex.",giro: "Cintas adhesivas y materiales de sellado",      ciudad: "CDMX",                 desc: "Distribuidora de cintas bopp, kraft, de doble cara y sistemas de cierre para embalaje industrial." },
-      { nombre: "Espopackaging",         giro: "Rellenos: espuma, burbujas, papel kraft",        ciudad: "CDMX / Edomex",        desc: "Materiales de amortiguación para proteger productos frágiles en tránsito y almacenaje." },
-      { nombre: "Cormex Esquineros",     giro: "Cantoneras y esquineros de cartón y plástico",   ciudad: "CDMX",                 desc: "Fabricante de cantoneras angulares para protección de tarimas y embalaje de exportación." },
-      { nombre: "Pallets MX",            giro: "Tarimas de madera, plástico y cartón",           ciudad: "CDMX / Nacional",      desc: "Fabricante y rentador de tarimas ISPM-15 para exportación y tarimas de plástico reciclado." },
-      { nombre: "Stretch Film MX",       giro: "Films stretch y termoencogible para paletizado", ciudad: "CDMX",                 desc: "Distribuidor de film estirable manual y máquina con distintos calibres para carga pesada y ligera." },
-      { nombre: "Etiquetas Pro MX",      giro: "Etiquetas térmicas, RFID y logísticas",          ciudad: "CDMX",                 desc: "Impresión de etiquetas para código de barras, RFID y labels logísticos compatibles con todos los carriers." },
+      {
+        nombre: "Grupo Aredca",
+        giro: "Empresa de envases y embalaje",
+        ciudad: "CDMX",
+        direccion: "Arenal 100, CDMX",
+        tel: "56 1057 1116",
+        maps: "https://www.google.com/maps/search/Grupo+Aredca+Arenal+100+CDMX+envases",
+        rating: 3.8,
+        reviews: 24,
+        desc: "Empresa local de envases y embalaje con perfil completo en Google Maps. Teléfono verificado. Sin sitio web activo.",
+        verificado: true,
+      },
+      {
+        nombre: "Empaques Durán",
+        giro: "Distribución de materiales de embalaje",
+        ciudad: "CDMX / Oriente",
+        maps: "https://www.google.com/maps/search/Empaques+Duran+CDMX+embalaje",
+        rating: 4.1,
+        reviews: 50,
+        desc: "Distribuidor de materiales de embalaje con 50 reseñas en Google Maps. Operación local activa. Sin sitio web propio.",
+        verificado: true,
+      },
+      {
+        nombre: "Expendio de Materiales JR",
+        giro: "Materiales de empaque y relleno",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/materiales+relleno+empaque+cinta+adhesiva+Iztapalapa+CDMX",
+        desc: "Expendio de materiales de empaque: rellenos, cintas, bolsas. Presencia en Google Maps con clientes activos. Sin sitio web.",
+        verificado: false,
+      },
     ],
   },
 
-  // ── Sectores clientes ────────────────────────────────────────────────────────
+  // ── [PENDIENTE Semana 3]: Mensajería Local ───────────────────────────────────
   {
-    id: "ecommerce",
-    grupoId: "sectores-clientes",
-    titulo: "E-commerce y Marketplaces",
-    desc: "Plataformas y canales de venta en línea que son los mayores consumidores de cajas estándar, mailer y empaques personalizados.",
+    id: "mensajeria-local",
+    grupoId: "logistica-local",
+    titulo: "Mensajería y Paquetería Local",
+    desc: "Empresas locales de mensajería, paquetería y entrega última milla en CDMX y ZMCM sin sitio web. [Investigación en Maps: Semana 3]",
     empresas: [
-      { nombre: "Mercado Libre México",  giro: "Marketplace líder en América Latina",           ciudad: "Nacional",             desc: "Principal canal de venta online en México. Define medidas estándar para cajas de envío ML." },
-      { nombre: "Amazon México",         giro: "Marketplace y plataforma de fulfillment",        ciudad: "Nacional",             desc: "Plataforma con medidas FBA estrictas para caja externa. Requiere cajas con certificado BCT." },
-      { nombre: "Shopify",               giro: "Plataforma de tienda en línea para marcas",      ciudad: "Internacional",        desc: "Plataforma SaaS de e-commerce usada por miles de marcas mexicanas que necesitan empaque personalizado." },
-      { nombre: "VTEX",                  giro: "Plataforma de comercio digital enterprise",      ciudad: "CDMX / Regional",      desc: "Solución enterprise de e-commerce con integración logística para retailers medianos y grandes." },
-      { nombre: "Tiendanube México",     giro: "Tiendas online para PYME",                       ciudad: "Nacional",             desc: "Plataforma de tienda en línea para pequeños negocios mexicanos que envían con cajas estándar." },
-    ],
-  },
-  {
-    id: "alimentos",
-    grupoId: "sectores-clientes",
-    titulo: "Industria Alimentaria",
-    desc: "Empresas del sector alimentos y bebidas que utilizan corrugado para protección, transporte y exhibición de productos.",
-    empresas: [
-      { nombre: "Grupo Bimbo",           giro: "Producción y distribución de pan y alimentos",   ciudad: "Nacional",             desc: "Comprador de grandes volúmenes de corrugado para distribución de panadería y snacks." },
-      { nombre: "Lala",                  giro: "Lácteos y bebidas — empaque y transporte",        ciudad: "Nacional",             desc: "Cadena láctea que consume cajas de alta resistencia para distribución refrigerada." },
-      { nombre: "Maseca / Gruma",        giro: "Harinas, tortilla y alimentos básicos",          ciudad: "Nacional",             desc: "Productora de harinas que usa corrugado pesado para embarque de bultos y distribución." },
-      { nombre: "Bachoco",               giro: "Industria avícola y producción de proteína",     ciudad: "Nacional",             desc: "Una de las principales consumidoras de corrugado para empaque de pollo y productos avícolas." },
-      { nombre: "Sigma Alimentos",       giro: "Embutidos, lácteos y alimentos procesados",      ciudad: "Nacional",             desc: "Grupo de alimentos con alta demanda de corrugado de doble pared para temperatura controlada." },
-    ],
-  },
-  {
-    id: "farmaceutica",
-    grupoId: "sectores-clientes",
-    titulo: "Farmacéutica y Cosmética",
-    desc: "Laboratorios, distribuidores farmacéuticos y marcas de belleza que requieren empaques técnicos con cumplimiento COFEPRIS.",
-    empresas: [
-      { nombre: "Laboratorios Pisa",     giro: "Fabricación y distribución farmacéutica",        ciudad: "Nacional",             desc: "Laboratorio que requiere corrugado con especificaciones técnicas para distribución de medicamentos." },
-      { nombre: "Genomma Lab",           giro: "Productos OTC y de cuidado personal",            ciudad: "CDMX",                 desc: "Empresa de medicamentos OTC y cosméticos con necesidad de empaque personalizado y troquelado." },
-      { nombre: "L'Oréal México",        giro: "Cosméticos y productos de cuidado personal",     ciudad: "CDMX",                 desc: "Marca global con planta en CDMX que consume corrugado para exportación e importación regional." },
-      { nombre: "Farmacias del Ahorro",  giro: "Cadena de farmacias y distribución",             ciudad: "Nacional",             desc: "Red de farmacias con demanda de corrugado para logística interna y distribución de productos." },
-      { nombre: "Beiersdorf México",     giro: "Cuidado personal y productos dermatológicos",    ciudad: "CDMX",                 desc: "Fabricante de Nivea y Eucerin en México, requiere corrugado especial para exportación regional." },
-    ],
-  },
-  {
-    id: "textil-retail",
-    grupoId: "sectores-clientes",
-    titulo: "Textil, Moda y Retail",
-    desc: "Marcas de ropa, calzado y retail que usan corrugado y microcanal para envíos, tiendas y presentación de producto.",
-    empresas: [
-      { nombre: "Liverpool",             giro: "Departamental — logística y distribución",       ciudad: "CDMX / Nacional",      desc: "Cadena departamental que requiere cajas corrugadas personalizadas para distribución interna y e-commerce." },
-      { nombre: "Palacio de Hierro",     giro: "Tienda de lujo — empaque premium",               ciudad: "CDMX",                 desc: "Departamental premium con necesidad de corrugado y microcanal para envíos y empaques especiales." },
-      { nombre: "Coppel",                giro: "Retail masivo — logística de empaque",           ciudad: "Nacional",             desc: "Retail con operación logística de gran escala que mueve miles de cajas corrugadas diariamente." },
-      { nombre: "VidaXL México",         giro: "E-commerce de muebles y hogar",                  ciudad: "Nacional",             desc: "Plataforma con empaque de alta especificación para muebles y artículos de gran volumen." },
-      { nombre: "Andrea",                giro: "Calzado y moda por catálogo y e-commerce",       ciudad: "Guanajuato / Nac.",    desc: "Marca de calzado y moda que usa cajas corrugadas estándar para envío directo al consumidor." },
-    ],
-  },
-  {
-    id: "industrial",
-    grupoId: "sectores-clientes",
-    titulo: "Industrial y Manufactura",
-    desc: "Empresas de manufactura, autopartes, electrónica y bienes de capital que consumen corrugado pesado para exportación y distribución B2B.",
-    empresas: [
-      { nombre: "Nissan México",         giro: "Manufactura automotriz — embalaje de autopartes", ciudad: "Aguascalientes / CDMX", desc: "Planta automotriz que consume corrugado doble y triple pared para embalaje de autopartes de exportación." },
-      { nombre: "Mabe",                  giro: "Manufactura de electrodomésticos",               ciudad: "Estado de México",     desc: "Fabricante de línea blanca que usa corrugado heavy-duty para embalaje de refrigeradores y estufas." },
-      { nombre: "Honeywell México",      giro: "Componentes industriales y automatización",      ciudad: "CDMX / Industrial",    desc: "Empresa industrial que requiere empaques técnicos para componentes electrónicos y sensores." },
-      { nombre: "Sigma Electric MX",     giro: "Materiales eléctricos y conductos",              ciudad: "CDMX / Nacional",      desc: "Distribuidor de material eléctrico con corrugado estándar para logística de distribución." },
-      { nombre: "3M México",             giro: "Manufactura diversificada — empaque especializado", ciudad: "CDMX",              desc: "Empresa con producción local que requiere cajas certificadas para productos adhesivos e industriales." },
+      {
+        nombre: "Mensajería Express Local",
+        giro: "Servicio de mensajería local",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/mensajeria+paqueteria+local+CDMX+sin+web",
+        desc: "[PENDIENTE] Empresa local de mensajería. Investigación en Google Maps programada para Semana 3.",
+        verificado: false,
+      },
     ],
   },
 
-  // ── Certificaciones ──────────────────────────────────────────────────────────
+  // ── [PENDIENTE Semana 3]: Almacenes Locales ──────────────────────────────────
   {
-    id: "asociaciones",
-    grupoId: "certificaciones",
-    titulo: "Asociaciones del Sector",
-    desc: "Cámaras, asociaciones y organismos de la industria papelera, del empaque y del comercio en México.",
+    id: "almacenes-locales",
+    grupoId: "logistica-local",
+    titulo: "Almacenes y Bodegas Locales",
+    desc: "Pequeñas bodegas y almacenes de renta en CDMX y ZMCM. Negocios con perfil en Google Maps sin sitio web. [Investigación en Maps: Semana 3]",
     empresas: [
-      { nombre: "CANACINTRA",            giro: "Cámara Nacional de la Industria de Transformación", ciudad: "CDMX / Nacional",   desc: "Cámara que agrupa fabricantes de cartón, papel y empaques. Programas de capacitación y networking." },
-      { nombre: "ANIERM",                giro: "Asociación de Importadores y Exportadores",      ciudad: "CDMX",                 desc: "Organismo que impulsa el comercio exterior mexicano incluyendo exportación de empaques industriales." },
-      { nombre: "ANPIC",                 giro: "Asociación Prov. Industria del Calzado",         ciudad: "Guanajuato / Nac.",    desc: "Asociación relevante para fabricantes de cajas de cartón para calzado y sectores relacionados." },
-      { nombre: "AMEE",                  giro: "Asoc. Mexicana de Empresas de Empaque",          ciudad: "CDMX",                 desc: "Organismo que agrupa a los principales actores del sector empaque en México para normas y fomento." },
-      { nombre: "INAES",                 giro: "Instituto Nal. Economía Social — cooperativas",  ciudad: "Nacional",             desc: "Organismo de apoyo para cooperativas productoras de cajas de cartón y empaques artesanales." },
+      {
+        nombre: "Bodega Renta Local",
+        giro: "Renta de bodegas y almacenes",
+        ciudad: "CDMX / ZMCM",
+        maps: "https://www.google.com/maps/search/renta+bodega+almacen+CDMX+industrial",
+        desc: "[PENDIENTE] Bodega de renta local. Investigación en Google Maps programada para Semana 3.",
+        verificado: false,
+      },
     ],
   },
+
+  // ── [PENDIENTE Semana 3]: Proveedores de Tarimas ────────────────────────────
   {
-    id: "certificadoras",
-    grupoId: "certificaciones",
-    titulo: "Certificadoras y Organismos de Normas",
-    desc: "Entidades que otorgan certificaciones de calidad, sustentabilidad y cumplimiento normativo a fabricantes y distribuidores de empaques.",
+    id: "pallets-tarimas",
+    grupoId: "proveedores-locales",
+    titulo: "Proveedores de Tarimas y Pallets",
+    desc: "Negocios locales de fabricación, venta y renta de tarimas de madera, plástico y cartón. Perfiles en Google Maps sin sitio web. [Investigación Semana 3]",
     empresas: [
-      { nombre: "Bureau Veritas México", giro: "Inspección, verificación y certificación ISO",   ciudad: "CDMX / Nacional",      desc: "Certifica sistemas de gestión ISO 9001, 14001 y 45001 para empresas del sector cartón y empaque." },
-      { nombre: "SGS México",            giro: "Pruebas de laboratorio y certificación",         ciudad: "CDMX",                 desc: "Ensayos de compresión BCT, pruebas de humedad y certificación de calidad para cajas corrugadas." },
-      { nombre: "FSC México",            giro: "Certificación de cadena de custodia forestal",   ciudad: "Nacional",             desc: "Certifica que el cartón y papel proviene de bosques gestionados de forma responsable (FSC CoC)." },
-      { nombre: "IMNC",                  giro: "Instituto Mexicano de Normalización — NMX",      ciudad: "CDMX",                 desc: "Organismo que emite normas NMX para cajas de cartón corrugado: resistencia, medidas y calidad." },
-      { nombre: "TÜV Rheinland México",  giro: "Certificación técnica y de producto",            ciudad: "CDMX",                 desc: "Pruebas mecánicas, análisis de materiales y certificación de producto para empaques de exportación." },
-      { nombre: "Ecocert México",        giro: "Certificación orgánica y sustentable",           ciudad: "Nacional",             desc: "Certifica materias primas y procesos sustentables para empaques ecológicos y de base bio." },
+      {
+        nombre: "Tarimas y Pallets MX",
+        giro: "Fabricación y venta de tarimas",
+        ciudad: "CDMX / Industrial",
+        maps: "https://www.google.com/maps/search/tarimas+pallets+madera+CDMX+venta",
+        desc: "[PENDIENTE] Fabricante/vendedor local de tarimas. Investigación en Google Maps programada para Semana 3.",
+        verificado: false,
+      },
+    ],
+  },
+
+  // ── [PENDIENTE Semana 3]: Cintas y Flejes ────────────────────────────────────
+  {
+    id: "cintas-y-flejes",
+    grupoId: "proveedores-locales",
+    titulo: "Cintas Adhesivas y Flejes Industriales",
+    desc: "Distribuidores locales de cintas adhesivas, flejes plásticos y metálicos, herramientas de flejado. Perfiles en Google Maps sin sitio web. [Investigación Semana 3]",
+    empresas: [
+      {
+        nombre: "Cintas y Flejes CDMX",
+        giro: "Distribución de cintas industriales",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/cintas+adhesivas+flejes+industriales+CDMX",
+        desc: "[PENDIENTE] Distribuidor local de cintas y flejes. Investigación en Google Maps programada para Semana 3.",
+        verificado: false,
+      },
+    ],
+  },
+
+  // ── [PENDIENTE Semana 3]: Materiales de Relleno ──────────────────────────────
+  {
+    id: "materiales-relleno",
+    grupoId: "proveedores-locales",
+    titulo: "Materiales de Relleno y Protección",
+    desc: "Proveedores locales de espuma, papel kraft, burbujas y materiales de amortiguación para protección de productos. [Investigación Semana 3]",
+    empresas: [
+      {
+        nombre: "Rellenos y Protección MX",
+        giro: "Materiales de amortiguación y relleno",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/relleno+espuma+burbujas+papel+kraft+embalaje+CDMX",
+        desc: "[PENDIENTE] Proveedor local de materiales de relleno. Investigación en Google Maps programada para Semana 3.",
+        verificado: false,
+      },
+    ],
+  },
+
+  // ── [PENDIENTE Semana 4]: Maquiladoras de Empaque ───────────────────────────
+  {
+    id: "maquiladoras-empaque",
+    grupoId: "servicios-empaque",
+    titulo: "Maquiladoras de Empaque",
+    desc: "Empresas locales de maquila de empaque, kitting, ensamble y etiquetado para marcas que tercerizan su operación. [Investigación en Maps: Semana 4]",
+    empresas: [
+      {
+        nombre: "Maquila Empaque Local",
+        giro: "Maquila de empaque y kitting",
+        ciudad: "CDMX / ZMCM",
+        maps: "https://www.google.com/maps/search/maquila+empaque+kitting+ensamble+CDMX",
+        desc: "[PENDIENTE] Maquiladora local de empaque. Investigación en Google Maps programada para Semana 4.",
+        verificado: false,
+      },
+    ],
+  },
+
+  // ── [PENDIENTE Semana 4]: Centros de Acopio ─────────────────────────────────
+  {
+    id: "centros-acopio",
+    grupoId: "servicios-empaque",
+    titulo: "Centros de Acopio y Reciclaje de Cartón",
+    desc: "Centros locales de compra, venta y acopio de cartón reciclado y papel usado. Proveedores de materia prima reciclada. [Investigación en Maps: Semana 4]",
+    empresas: [
+      {
+        nombre: "Centro de Acopio Cartón",
+        giro: "Compra y venta de cartón reciclado",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/centro+acopio+carton+reciclado+CDMX",
+        desc: "[PENDIENTE] Centro local de acopio de cartón. Investigación en Google Maps programada para Semana 4.",
+        verificado: false,
+      },
+    ],
+  },
+
+  // ── [PENDIENTE Semana 4]: Renta de Equipo ────────────────────────────────────
+  {
+    id: "renta-equipo-embalaje",
+    grupoId: "servicios-empaque",
+    titulo: "Renta de Equipo de Embalaje",
+    desc: "Negocios locales de renta de envolvedoras, selladoras, flejadoras y equipo para embalaje industrial. [Investigación en Maps: Semana 4]",
+    empresas: [
+      {
+        nombre: "Renta Equipo Embalaje MX",
+        giro: "Renta de maquinaria de embalaje",
+        ciudad: "CDMX",
+        maps: "https://www.google.com/maps/search/renta+selladora+envolvedora+maquinaria+embalaje+CDMX",
+        desc: "[PENDIENTE] Empresa local de renta de equipo. Investigación en Google Maps programada para Semana 4.",
+        verificado: false,
+      },
     ],
   },
 ];
@@ -310,4 +557,6 @@ export function getCategoria(grupoId: string, catId: string): Categoria | undefi
   return categorias.find(c => c.grupoId === grupoId && c.id === catId);
 }
 
-export const totalEmpresas = categorias.reduce((acc, c) => acc + c.empresas.length, 0);
+export const totalEmpresas = categorias
+  .filter(c => c.empresas.some(e => e.verificado))
+  .reduce((acc, c) => acc + c.empresas.filter(e => e.verificado).length, 0);

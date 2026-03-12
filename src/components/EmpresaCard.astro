@@ -1,0 +1,111 @@
+---
+// EmpresaCard.astro — Usa las clases sku-card del global.css (sin CSS propio)
+export interface Props {
+  nombre:      string;
+  giro:        string;
+  ciudad:      string;
+  desc:        string;
+  direccion?:  string;
+  tel?:        string;
+  maps?:       string;
+  rating?:     number;
+  reviews?:    number;
+  web?:        string;
+  verificado?: boolean;
+  accentColor?: string;
+}
+
+const {
+  nombre,
+  giro,
+  ciudad,
+  desc,
+  direccion,
+  tel,
+  maps,
+  rating,
+  reviews,
+  verificado = false,
+  accentColor = "#1C2B4A",
+} = Astro.props;
+
+const initials = nombre
+  .split(/\s+/)
+  .slice(0, 2)
+  .map(w => w[0])
+  .join("")
+  .toUpperCase();
+
+const ratingLabel = rating ? `${rating.toFixed(1)} ★` : null;
+const reviewsLabel = reviews ? `${reviews} reseñas` : null;
+---
+
+<article class="sku-card">
+
+  <!-- Imagen / Avatar con iniciales -->
+  <div class="sku-card__img-wrap">
+    <div class="sku-card__img" style={`background:${accentColor};display:flex;align-items:center;justify-content:center;`}>
+      <span style="font-size:2.5rem;font-weight:900;color:rgba(255,255,255,0.25);letter-spacing:-0.02em;">{initials}</span>
+    </div>
+
+    <!-- Badge superior izquierdo: rating o "Maps" -->
+    {ratingLabel
+      ? <span class="sku-card__code">{ratingLabel}</span>
+      : <span class="sku-card__code">Maps</span>
+    }
+
+    <!-- Badge superior derecho: verificado o sin web -->
+    {verificado
+      ? <span class="sku-card__badge sku-card__badge--green">Sin web ✓</span>
+      : <span class="sku-card__badge sku-card__badge--blue">Pendiente</span>
+    }
+  </div>
+
+  <!-- Cuerpo -->
+  <div class="sku-card__body">
+    <h3 class="sku-card__name">{nombre}</h3>
+    <p class="sku-card__desc">{desc}</p>
+
+    <!-- Specs: giro / ciudad / reseñas / tel -->
+    <div class="sku-card__specs">
+      <div>
+        <span class="sku-card__spec-label">Giro</span>
+        <span class="sku-card__spec-value">{giro}</span>
+      </div>
+      <div>
+        <span class="sku-card__spec-label">Ciudad</span>
+        <span class="sku-card__spec-value">{ciudad}</span>
+      </div>
+      {reviewsLabel && (
+        <div>
+          <span class="sku-card__spec-label">Reseñas</span>
+          <span class="sku-card__spec-value">{reviewsLabel}</span>
+        </div>
+      )}
+      {tel && (
+        <div>
+          <span class="sku-card__spec-label">Teléfono</span>
+          <span class="sku-card__spec-value">{tel}</span>
+        </div>
+      )}
+      {direccion && !tel && (
+        <div style="grid-column:1/-1">
+          <span class="sku-card__spec-label">Dirección</span>
+          <span class="sku-card__spec-value">{direccion}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- Footer: botón Maps -->
+    <div class="sku-card__footer">
+      {maps
+        ? <a href={maps} class="btn btn--primary" target="_blank" rel="noopener">Ver en Google Maps</a>
+        : <a href="/contacto" class="btn btn--primary">Solicitar info</a>
+      }
+      {tel && (
+        <span class="sku-card__moq">{tel}</span>
+      )}
+    </div>
+  </div>
+
+</article>
