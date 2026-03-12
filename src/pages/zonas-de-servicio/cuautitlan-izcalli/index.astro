@@ -1,0 +1,221 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+
+const WHATSAPP = "5255XXXXXXXX";
+const SITE     = "https://cajas-de-carton.com";
+
+const title       = "Cajas de Cartón Cuautitlán Izcalli / Tultitlán — Entrega 24-48 hrs · Fabricante Directo | CADECA";
+const description = "Cajas de cartón corrugado con entrega en 24-48 hrs en Cuautitlán Izcalli / Tultitlán. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
+const canonical   = SITE + "/zonas-de-servicio/cuautitlan-izcalli";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CADECA — Cajas de Cartón Cuautitlán Izcalli / Tultitlán",
+    "description": description,
+    "url": canonical,
+    "areaServed": ["Cuautitlán Izcalli, Tultitlán"],
+    "address": { "@type": "PostalAddress", "addressRegion": "Estado de México", "addressCountry": "MX" },
+    "priceRange": "$$"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    { "@type": "Question", "name": "¿Entregan en el Parque Industrial Cuamatla?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, hacemos entregas regulares en Cuamatla y demás parques industriales. Tiempo: 24-48 hrs para stock, 3-5 días para producción." } },
+    { "@type": "Question", "name": "¿Tienen cajas para distribuidoras y centros logísticos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, trabajamos con operadores logísticos que requieren grandes volúmenes de cajas estandarizadas. Podemos cotizar contrato mensual de suministro." } },
+    { "@type": "Question", "name": "¿Hacen entregas en Tultitlán?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, cubrimos todo Tultitlán incluyendo San Pablo de las Salinas, Buenavista y zonas industriales. Tiempo 24-48 hrs." } }
+    ]
+  }
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  schema={schema}
+  canonical={canonical}
+  breadcrumbs={[
+    { name: "Inicio",            href: "/" },
+    { name: "Zonas de Servicio", href: "/zonas-de-servicio" },
+    { name: "Cuautitlán Izcalli / Tultitlán" },
+  ]}
+  whatsapp={WHATSAPP}
+>
+
+  <section class="zona-page__hero">
+    <div class="zona-page__hero-inner container">
+      <div class="zona-page__hero-badge">📦 Municipios: Cuautitlán Izcalli, Tultitlán</div>
+      <h1 class="zona-page__hero-title">
+        Cajas de Cartón en<br/><span class="zona-page__hero-hl">Cuautitlán Izcalli / Tultitlán</span>
+      </h1>
+      <p class="zona-page__hero-sub">Corredor industrial norte del Estado de México con alta concentración de fábricas, centros de distribución y naves logísticas.</p>
+      <div class="zona-page__hero-meta">
+        <span class="zona-page__meta-pill">⚡ Entrega 24-48 hrs</span>
+        <span class="zona-page__meta-pill">🏭 Fabricante directo</span>
+        <span class="zona-page__meta-pill">📋 Cotización gratuita</span>
+      </div>
+      <div class="zona-page__hero-ctas">
+        <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
+        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Cuautitlán%20Izcalli%20%2F%20Tultitlán"}
+           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="zona-page__section">
+    <div class="container">
+      <SectionHeader title={"¿Por qué elegir CADECA en Cuautitlán Izcalli / Tultitlán?"} subtitle="Fabricante directo con entrega propia — sin intermediarios, sin costos ocultos" />
+      <ul class="zona-page__ventajas">
+                <li class="zona-page__ventaja">
+                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
+                  Corredor industrial de alta densidad
+                </li>
+                <li class="zona-page__ventaja">
+                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
+                  Entrega en 24-48 hrs
+                </li>
+                <li class="zona-page__ventaja">
+                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
+                  Cajas para grandes centros de distribución
+                </li>
+                <li class="zona-page__ventaja">
+                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
+                  Precios por volumen competitivos
+                </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="zona-page__section zona-page__section--alt">
+    <div class="container">
+      <SectionHeader title={"Industrias que atendemos en Cuautitlán Izcalli / Tultitlán}"} subtitle="Cajas de cartón corrugado para todos los sectores productivos de la zona" />
+      <ul class="zona-page__industrias">
+                <li>Automotriz (NISSAN)</li>
+                <li>Manufactura de consumo</li>
+                <li>Centros de distribución</li>
+                <li>Logística e-commerce</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="zona-page__section">
+    <div class="container">
+      <SectionHeader title={"Productos más solicitados en Cuautitlán Izcalli / Tultitlán}"} subtitle="Cajas en stock con entrega express" />
+      <div class="zona-page__productos">
+        <a href="/catalogo/cajas-corrugado-estandar" class="zona-page__prod-card">
+          <span class="zona-page__prod-icon">📦</span>
+          <strong>Corrugado Estándar</strong>
+          <span>Entrega 24-48 hrs</span>
+        </a>
+        <a href="/catalogo/cajas-a-la-medida" class="zona-page__prod-card">
+          <span class="zona-page__prod-icon">📐</span>
+          <strong>Cajas a la Medida</strong>
+          <span>Producción en 3-5 días</span>
+        </a>
+        <a href="/catalogo/cajas-ecommerce-mercado-libre" class="zona-page__prod-card">
+          <span class="zona-page__prod-icon">🛒</span>
+          <strong>Cajas E-commerce</strong>
+          <span>Mercado Libre y Amazon FBA</span>
+        </a>
+        <a href="/catalogo/cajas-personalizadas-con-logo" class="zona-page__prod-card">
+          <span class="zona-page__prod-icon">🎨</span>
+          <strong>Cajas Personalizadas</strong>
+          <span>Con logo e impresión</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="zona-page__section zona-page__section--alt">
+    <div class="container">
+      <SectionHeader title={"Preguntas frecuentes — Cuautitlán Izcalli / Tultitlán}"} subtitle="Todo sobre nuestro servicio en tu zona" />
+      <div class="zona-page__faq">
+          <div class="zona-page__faq-item">
+            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-cuautitlan-izcalli-0">
+              <span>¿Entregan en el Parque Industrial Cuamatla?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="zona-page__faq-a" id="faq-cuautitlan-izcalli-0">
+              <p>Sí, hacemos entregas regulares en Cuamatla y demás parques industriales. Tiempo: 24-48 hrs para stock, 3-5 días para producción.</p>
+            </div>
+          </div>
+          <div class="zona-page__faq-item">
+            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-cuautitlan-izcalli-1">
+              <span>¿Tienen cajas para distribuidoras y centros logísticos?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="zona-page__faq-a" id="faq-cuautitlan-izcalli-1">
+              <p>Sí, trabajamos con operadores logísticos que requieren grandes volúmenes de cajas estandarizadas. Podemos cotizar contrato mensual de suministro.</p>
+            </div>
+          </div>
+          <div class="zona-page__faq-item">
+            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-cuautitlan-izcalli-2">
+              <span>¿Hacen entregas en Tultitlán?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="zona-page__faq-a" id="faq-cuautitlan-izcalli-2">
+              <p>Sí, cubrimos todo Tultitlán incluyendo San Pablo de las Salinas, Buenavista y zonas industriales. Tiempo 24-48 hrs.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <LeadCapture
+    titulo={"¿Listo para cotizar cajas en Cuautitlán Izcalli / Tultitlán?"}
+    subtitulo="Cotización sin compromiso en menos de 24 horas. Fabricante directo, los mejores precios."
+    whatsapp={WHATSAPP}
+  />
+
+</PageLayout>
+
+<style>
+.zona-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); text-align: center; }
+.zona-page__hero-inner { max-width: 760px; margin: 0 auto; padding: 0 var(--space-5); }
+.zona-page__hero-badge { display: inline-block; background: rgba(224,88,0,0.15); border: 1px solid rgba(224,88,0,0.3); color: #ff8c42; padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-4); }
+.zona-page__hero-title { font-size: clamp(2rem,5vw,3rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: var(--space-4); }
+.zona-page__hero-hl { color: var(--color-primary); }
+.zona-page__hero-sub { font-size: var(--text-lg); color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-6); }
+.zona-page__hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-bottom: var(--space-8); }
+.zona-page__meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500; }
+.zona-page__hero-ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+.zona-page__section { padding: var(--space-16) 0; }
+.zona-page__section--alt { background: var(--color-surface); }
+.zona-page__ventajas { list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-4); margin-top: var(--space-8); padding: 0; }
+.zona-page__ventaja { display: flex; align-items: flex-start; gap: var(--space-3); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
+.zona-page__check { color: var(--color-primary); font-weight: 900; font-size: 1.1rem; flex-shrink: 0; }
+.zona-page__industrias { list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: var(--space-3); margin-top: var(--space-8); padding: 0; }
+.zona-page__industrias li { background: #fff; border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-weight: 600; font-size: var(--text-sm); }
+.zona-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
+.zona-page__prod-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-2); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); text-decoration: none; color: var(--color-text); }
+.zona-page__prod-card:hover { border-color: var(--color-primary); }
+.zona-page__prod-icon { font-size: 2rem; }
+.zona-page__prod-card strong { font-size: var(--text-base); color: var(--color-secondary); }
+.zona-page__prod-card span { font-size: var(--text-sm); color: var(--color-text-muted); }
+.zona-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
+.zona-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+.zona-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
+.zona-page__faq-q:hover { color: var(--color-primary); }
+.zona-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
+.zona-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
+.zona-page__faq-item.is-open .zona-page__faq-a { display: block; }
+.zona-page__faq-item.is-open .zona-page__faq-q svg { transform: rotate(180deg); }
+@media (max-width: 640px) {
+  .zona-page__hero-ctas { flex-direction: column; }
+  .zona-page__ventajas { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.querySelectorAll('.zona-page__faq-q').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.closest('.zona-page__faq-item');
+    item.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
+  });
+});
+</script>
