@@ -1,0 +1,415 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { grupos, categorias, getGrupo, getCategoriasByGrupo, getCategoria } from "@/data/directorio";
+
+export async function getStaticPaths() {
+  return categorias.map(c => ({
+    params: { grupo: c.grupoId, categoria: c.id },
+  }));
+}
+
+const { grupo: grupoId, categoria: catId } = Astro.params;
+const grupoData = getGrupo(grupoId);
+const catData   = getCategoria(grupoId, catId);
+const otrasCAts = getCategoriasByGrupo(grupoId).filter(c => c.id !== catId);
+
+if (!grupoData || !catData) return Astro.redirect("/directorio");
+
+const WHATSAPP = "5255XXXXXXXX";
+const SITE     = "https://cajas-de-carton.com";
+
+const title       = `${catData.titulo} — Directorio ${grupoData.nombre} CDMX | CADECA`;
+const description = `${catData.empresas.length} empresas de ${catData.titulo.toLowerCase()} en el directorio de empaques y cartón corrugado de CADECA. Fabricantes, proveedores y servicios en CDMX y Zona Metropolitana.`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `${catData.titulo} — Directorio CADECA`,
+  "description": description,
+  "url": `${SITE}/directorio/${grupoId}/${catId}`,
+  "publisher": { "@type": "Organization", "name": "CADECA", "url": SITE },
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Inicio",           href: "/" },
+    { name: "Directorio",       href: "/directorio" },
+    { name: grupoData.nombre,   href: `/directorio/${grupoId}` },
+    { name: catData.titulo },
+  ]}
+  whatsapp={WHATSAPP}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/directorio">Directorio</a></li>
+        <li><a href={`/directorio/${grupoId}`}>{grupoData.nombre}</a></li>
+        <li><span class="current">{catData.titulo}</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Hero de categoría -->
+  <div class="dir-cat-hero" style={`--accent:${grupoData.color}`}>
+    <div class="container">
+      <a href={`/directorio/${grupoId}`} class="dir-cat-hero__back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        {grupoData.nombre}
+      </a>
+      <div class="dir-cat-hero__inner">
+        <div class="dir-cat-hero__content">
+          <p class="dir-cat-hero__grupo">{grupoData.nombre}</p>
+          <h1 class="dir-cat-hero__title">{catData.titulo}</h1>
+          <p class="dir-cat-hero__desc">{catData.desc}</p>
+        </div>
+        <div class="dir-cat-hero__badge">
+          <span class="dir-cat-hero__badge-num">{catData.empresas.length}</span>
+          <span class="dir-cat-hero__badge-label">empresas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listado de empresas -->
+  <div class="dir-empresas-body">
+    <div class="container">
+
+      <div class="dir-empresas-layout">
+
+        <!-- Empresas -->
+        <div class="dir-empresas-main">
+          <div class="dir-empresas-grid">
+            {catData.empresas.map(emp => (
+              <article class="dir-emp-card">
+                <div class="dir-emp-card__header">
+                  <div class="dir-emp-card__avatar" aria-hidden="true">
+                    {emp.nombre.slice(0, 2).toUpperCase()}
+                  </div>
+                  <div>
+                    <h2 class="dir-emp-card__name">{emp.nombre}</h2>
+                    <p class="dir-emp-card__ciudad">{emp.ciudad}</p>
+                  </div>
+                </div>
+                <p class="dir-emp-card__giro">{emp.giro}</p>
+                <p class="dir-emp-card__desc">{emp.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="dir-empresas-sidebar">
+
+          <!-- CTA CADECA -->
+          <div class="dir-sidebar-cta" style={`--accent:${grupoData.color}`}>
+            <p class="dir-sidebar-cta__label">Fabricante directo CDMX</p>
+            <h3 class="dir-sidebar-cta__title">¿Necesitas cajas de cartón?</h3>
+            <p class="dir-sidebar-cta__desc">Cotización sin compromiso. Entrega en 24 hrs en CDMX y Edomex.</p>
+            <a href="/cotizar" class="btn btn--primary" style="width:100%;text-align:center">Solicitar cotización</a>
+            <a href={`https://wa.me/${WHATSAPP}`} class="dir-sidebar-cta__wa" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp directo
+            </a>
+          </div>
+
+          <!-- Otras categorías del mismo grupo -->
+          {otrasCAts.length > 0 && (
+            <div class="dir-sidebar-widget">
+              <h3 class="dir-sidebar-widget__title">Otras categorías en {grupoData.nombre}</h3>
+              <nav class="dir-sidebar-cats">
+                {otrasCAts.map(c => (
+                  <a href={`/directorio/${grupoId}/${c.id}`} class="dir-sidebar-cats__link">
+                    {c.titulo}
+                    <span class="dir-sidebar-cats__count">{c.empresas.length}</span>
+                  </a>
+                ))}
+              </nav>
+            </div>
+          )}
+
+          <!-- Ir al directorio -->
+          <a href="/directorio" class="dir-sidebar-all">
+            Ver todos los grupos del directorio
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+        </aside>
+      </div>
+
+    </div>
+  </div>
+
+</PageLayout>
+
+<style>
+/* Hero de categoría */
+.dir-cat-hero {
+  background: var(--color-secondary);
+  padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+}
+.dir-cat-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  margin-bottom: var(--spacing-lg);
+  transition: color var(--transition-fast);
+}
+.dir-cat-hero__back:hover { color: #fff; }
+.dir-cat-hero__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+.dir-cat-hero__grupo {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent, var(--color-primary));
+  margin-bottom: 0.4rem;
+}
+.dir-cat-hero__title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+.dir-cat-hero__desc {
+  font-size: var(--font-size-base);
+  color: rgba(255,255,255,0.7);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+.dir-cat-hero__badge {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--accent, var(--color-primary));
+  gap: 0;
+}
+.dir-cat-hero__badge-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.dir-cat-hero__badge-label {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.6);
+}
+
+/* Body layout */
+.dir-empresas-body {
+  padding: var(--spacing-3xl) 0 var(--spacing-4xl);
+}
+.dir-empresas-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+}
+@media (min-width: 1024px) {
+  .dir-empresas-layout {
+    grid-template-columns: 1fr 280px;
+    align-items: start;
+  }
+}
+
+/* Grid de empresas */
+.dir-empresas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+@media (min-width: 640px) { .dir-empresas-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Tarjeta empresa */
+.dir-emp-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.dir-emp-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: 0.25rem;
+}
+.dir-emp-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-sm);
+  background: var(--color-secondary);
+  color: #fff;
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+.dir-emp-card__name {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.3;
+}
+.dir-emp-card__ciudad {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  margin-top: 0.1rem;
+}
+.dir-emp-card__giro {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.dir-emp-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: 1.55;
+}
+
+/* Sidebar */
+.dir-empresas-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* CTA sidebar */
+.dir-sidebar-cta {
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--accent, var(--color-primary));
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.dir-sidebar-cta__label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent, var(--color-primary));
+}
+.dir-sidebar-cta__title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+}
+.dir-sidebar-cta__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-xs);
+}
+.dir-sidebar-cta__wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: #25D366;
+  text-decoration: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.dir-sidebar-cta__wa:hover {
+  background: #f0fdf4;
+  border-color: #25D366;
+}
+
+/* Sidebar widget */
+.dir-sidebar-widget {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  background: #fff;
+}
+.dir-sidebar-widget__title {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Cats sidebar */
+.dir-sidebar-cats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.dir-sidebar-cats__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.dir-sidebar-cats__link:last-child { border-bottom: none; }
+.dir-sidebar-cats__link:hover { color: var(--color-primary); }
+.dir-sidebar-cats__count {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-light);
+  background: var(--color-accent);
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+}
+
+/* Ver todos link */
+.dir-sidebar-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+.dir-sidebar-all:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+</style>

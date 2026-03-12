@@ -1,12 +1,15 @@
 ---
-import PageLayout from "@/layouts/PageLayout.astro";
-import PageHero  from "@/components/PageHero.astro";
+import PageLayout    from "@/layouts/PageLayout.astro";
+import PageHero      from "@/components/PageHero.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import ProductCard   from "@/components/ProductCard.astro";
+import { grupos, categorias, totalEmpresas } from "@/data/directorio";
 
 const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Directorio de Empresas — Empaques y Cartón Corrugado CDMX | CADECA";
-const description = "Directorio de proveedores, fabricantes, diseñadores y servicios relacionados con empaques y cartón corrugado en CDMX y Zona Metropolitana. Encuentra proveedores confiables del sector.";
+const description = "Directorio de fabricantes, distribuidores, diseñadores, paqueterías y proveedores del sector de empaques y cartón corrugado en CDMX. Más de 100 empresas verificadas.";
 
 const schema = {
   "@context": "https://schema.org",
@@ -17,89 +20,31 @@ const schema = {
   "publisher": { "@type": "Organization", "name": "CADECA", "url": SITE },
 };
 
-const breadcrumbs = [
-  { name: "Inicio", href: "/" },
-  { name: "Directorio" },
-];
+// Preparar datos con SVG placeholder y tags de categorías
+const gruposConData = grupos.map((g, i) => {
+  const num  = String(i + 1).padStart(2, "0");
+  const cats = categorias.filter(c => c.grupoId === g.id);
+  const empCount = cats.reduce((acc, c) => acc + c.empresas.length, 0);
 
-// ─── Categorías del directorio ────────────────────────────────────────────────
-const categorias = [
-  {
-    id: "fabricantes",
-    titulo: "Fabricantes de Cartón y Papel",
-    desc: "Productores de materia prima para la industria del empaque corrugado en México.",
-    empresas: [
-      { nombre: "Smurfit Kappa México", giro: "Fabricante de cartón corrugado y embalaje", ciudad: "CDMX / Nacional", web: "#", desc: "Líder global en soluciones de empaque de papel con amplia presencia en México." },
-      { nombre: "Grupo Gondi", giro: "Producción de papel kraft y cartón corrugado", ciudad: "CDMX / Nacional", web: "#", desc: "Grupo mexicano integrado verticalmente en la cadena de valor del papel y cartón." },
-      { nombre: "Scribe", giro: "Papel y cartón para impresión y empaque", ciudad: "Estado de México", web: "#", desc: "Fabricante nacional de papel con líneas de cartón para aplicaciones industriales." },
-      { nombre: "Bio Pappel", giro: "Papel reciclado y cartón sustentable", ciudad: "Nacional", web: "#", desc: "Empresa líder en reciclaje de fibra de papel y fabricación de cartón ecológico." },
-    ],
-  },
-  {
-    id: "disenio",
-    titulo: "Diseño Estructural y Gráfico de Empaque",
-    desc: "Estudios y agencias especializados en diseño de packaging para marcas mexicanas.",
-    empresas: [
-      { nombre: "PackDesign MX", giro: "Diseño estructural y CAD para empaque", ciudad: "CDMX", web: "#", desc: "Especialistas en diagramas CAD, troqueladoras y prototipos de cajas personalizadas." },
-      { nombre: "Empack Studio", giro: "Branding y diseño gráfico para packaging", ciudad: "CDMX", web: "#", desc: "Agencia creativa enfocada en identidad visual y diseño de impresión para empaques." },
-      { nombre: "Forma y Empaque", giro: "Consultoría de ingeniería de empaque", ciudad: "CDMX / Monterrey", web: "#", desc: "Consultoría técnica en optimización de dimensiones, materiales y costos logísticos." },
-      { nombre: "PrintBox Studio", giro: "Diseño digital para impresión flexográfica y offset", ciudad: "CDMX", web: "#", desc: "Preparación de artes para impresión en corrugado, offsetado y litografía." },
-    ],
-  },
-  {
-    id: "logistica",
-    titulo: "Logística y Paquetería",
-    desc: "Empresas de transporte, almacén y última milla que mueven tus productos empacados.",
-    empresas: [
-      { nombre: "Estafeta", giro: "Paquetería nacional y último kilómetro", ciudad: "Nacional", web: "#", desc: "Red de paquetería con cobertura nacional, compatible con medidas estándar e-commerce." },
-      { nombre: "DHL México", giro: "Mensajería express y logística internacional", ciudad: "Nacional / Internacional", web: "#", desc: "Soluciones de envío nacional e internacional con rastreo en tiempo real." },
-      { nombre: "FedEx México", giro: "Envíos express y servicios de fulfillment", ciudad: "Nacional", web: "#", desc: "Servicios de envío prioritario con integración para tiendas Shopify y Amazon." },
-      { nombre: "Mercado Envíos", giro: "Logística integrada para vendedores Mercado Libre", ciudad: "Nacional", web: "#", desc: "Solución logística oficial de Mercado Libre con medidas de caja estandarizadas." },
-      { nombre: "99minutos", giro: "Entrega de última milla mismo día / siguiente día", ciudad: "CDMX y principales ciudades", web: "#", desc: "Especialistas en entregas rápidas para e-commerce en zona metropolitana." },
-    ],
-  },
-  {
-    id: "maquinaria",
-    titulo: "Maquinaria y Equipo para Empaque",
-    desc: "Proveedores de equipos de embalaje, sellado, paletizado y automatización.",
-    empresas: [
-      { nombre: "Multipack México", giro: "Maquinaria para embalaje y sellado", ciudad: "CDMX", web: "#", desc: "Distribuidora de equipos de envoltura, fleje, termoencogible y formación de cajas." },
-      { nombre: "Innopack", giro: "Automatización de líneas de empaque", ciudad: "Estado de México", web: "#", desc: "Integración de sistemas automáticos de llenado, sellado y paletizado para industria." },
-      { nombre: "Tecpack Industrial", giro: "Equipos de strapping y paletizado", ciudad: "CDMX", web: "#", desc: "Soluciones de flejes plástico y metálico, selladoras y carretillas de empaque." },
-    ],
-  },
-  {
-    id: "materiales",
-    titulo: "Materiales y Suministros Complementarios",
-    desc: "Insumos para completar tu solución de empaque: rellenos, cintas, esquineros y más.",
-    empresas: [
-      { nombre: "Sellos y Empaques Mexicanos", giro: "Cintas adhesivas y materiales de sellado", ciudad: "CDMX", web: "#", desc: "Distribuidora de cintas bopp, kraft, de doble cara y sistemas de cierre para cajas." },
-      { nombre: "Espopackaging", giro: "Rellenos de protección: espuma, burbujas, kraft", ciudad: "CDMX / Edomex", web: "#", desc: "Materiales de amortiguación interior para proteger productos frágiles en tránsito." },
-      { nombre: "Cormex Esquineros", giro: "Cantoneras y esquineros de cartón y plástico", ciudad: "CDMX", web: "#", desc: "Fabricante de cantoneras angulares para protección de tarimas y embalaje industrial." },
-      { nombre: "Tintas y Barnices MX", giro: "Tintas base agua y barnices UV para impresión en cartón", ciudad: "CDMX", web: "#", desc: "Proveedor de tintas flexográficas certificadas y barnices acabados especiales para corrugado." },
-    ],
-  },
-  {
-    id: "asociaciones",
-    titulo: "Asociaciones y Organismos del Sector",
-    desc: "Cámaras, asociaciones y organismos de la industria papelera y de empaque en México.",
-    empresas: [
-      { nombre: "ANIERM", giro: "Asociación Nacional de Importadores y Exportadores", ciudad: "CDMX", web: "#", desc: "Organismo que impulsa el comercio exterior mexicano, incluyendo el sector de empaques." },
-      { nombre: "CANACINTRA", giro: "Cámara Nacional de la Industria de Transformación", ciudad: "CDMX / Nacional", web: "#", desc: "Cámara industrial que agrupa a fabricantes de cartón, papel y empaques de México." },
-      { nombre: "ANPIC", giro: "Asociación Nacional de Proveedores de la Industria del Calzado", ciudad: "Guanajuato / Nacional", web: "#", desc: "Asociación relevante para fabricantes de cajas de cartón para calzado y retail." },
-      { nombre: "ProMéxico / ProBosque FSC", giro: "Certificación de cadena de custodia FSC", ciudad: "Nacional", web: "#", desc: "Organismo de certificación FSC para materiales de empaque con origen forestal sustentable." },
-    ],
-  },
-];
+  // SVG placeholder con el color del grupo
+  const svgRaw = `<svg xmlns='http://www.w3.org/2000/svg' width='900' height='560'><rect width='900' height='560' fill='${g.color}'/><rect width='900' height='560' fill='url(%23p)' opacity='.18'/><defs><pattern id='p' width='40' height='40' patternUnits='userSpaceOnUse'><circle cx='20' cy='20' r='1' fill='white'/></pattern></defs><text x='50%' y='46%' dominant-baseline='middle' text-anchor='middle' fill='rgba(255,255,255,0.10)' font-size='200' font-family='sans-serif' font-weight='900'>${num}</text><text x='50%' y='72%' dominant-baseline='middle' text-anchor='middle' fill='rgba(255,255,255,0.55)' font-size='28' font-family='sans-serif' font-weight='700'>${g.nombre}</text></svg>`;
+  const imgSrc = `data:image/svg+xml,${encodeURIComponent(svgRaw)}`;
 
-const totalEmpresas = categorias.reduce((acc, c) => acc + c.empresas.length, 0);
+  // Tags = primeras 4 categorías del grupo
+  const tags = cats.slice(0, 4).map(c => ({
+    label: c.titulo,
+    href:  `/directorio/${g.id}/${c.id}`,
+  }));
+
+  return { ...g, catCount: cats.length, empCount, imgSrc, tags };
+});
 ---
 
 <PageLayout
   title={title}
   description={description}
   schema={schema}
-  breadcrumbs={breadcrumbs}
+  breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Directorio" }]}
   whatsapp={WHATSAPP}
 >
 
@@ -116,51 +61,43 @@ const totalEmpresas = categorias.reduce((acc, c) => acc + c.empresas.length, 0);
     eyebrow="Ecosistema de Empaque · CDMX y Zona Metropolitana"
     titleHtml={true}
     title="Directorio de <span>Empresas del Sector</span>"
-    desc={`Encuentra ${totalEmpresas} empresas relacionadas con empaques, cartón corrugado y logística en México. Fabricantes, diseñadores, transportistas y proveedores de insumos en un solo lugar.`}
-    desc2="Este directorio reúne a los principales actores del ecosistema de empaque en México: desde productores de materia prima hasta agencias de diseño y empresas de logística. Una guía de referencia para compradores, vendedores y profesionales del sector.||¿Tu empresa trabaja con cartón corrugado o empaques? Contáctanos para aparecer en este directorio. La presencia es gratuita para empresas verificadas del sector."
+    desc={`Más de ${totalEmpresas} empresas organizadas en 5 grupos y 17 categorías. Encuentra fabricantes, diseñadores, paqueterías, clientes industriales y organismos del ecosistema de empaque en México.`}
+    desc2="Este directorio reúne a los principales actores del ecosistema de empaque en México: desde productores de materia prima hasta organismos certificadores y los mayores clientes industriales del corrugado.||Navega por grupos temáticos para encontrar exactamente el tipo de empresa que buscas. Presencia gratuita para empresas verificadas del sector."
     ctas={[
-      { href: "/contacto", label: "Agregar mi empresa", variant: "primary" },
-      { href: "/catalogo", label: "Ver catálogo CADECA", variant: "outline" },
+      { href: "/contacto", label: "Registrar mi empresa", variant: "primary" },
+      { href: "/catalogo", label: "Ver catálogo CADECA",  variant: "outline" },
     ]}
   />
 
-  <!-- Índice de categorías -->
-  <nav class="dir-nav" aria-label="Categorías del directorio">
+  <!-- Separador visual -->
+  <div class="dir-index-sep" aria-hidden="true"></div>
+
+  <!-- Cuerpo -->
+  <div class="dir-index-body">
     <div class="container">
-      <div class="dir-nav__inner">
-        {categorias.map(cat => (
-          <a href={`#${cat.id}`} class="dir-nav__link">{cat.titulo}</a>
+
+      <SectionHeader
+        title={`Directorio · ${grupos.length} grupos · ${totalEmpresas} empresas`}
+        twoCol
+        link={{ text: "Registrar mi empresa", href: "/contacto" }}
+      >
+        <p>Este directorio reúne a los principales actores del ecosistema de empaque en México: fabricantes de materia prima, conversores, agencias de diseño, paqueterías y organismos certificadores.</p>
+        <p>Selecciona un grupo para explorar sus categorías. ¿Tu empresa no aparece? <a href="/contacto" style="color:var(--color-primary);font-weight:700;">Regístrala gratis →</a></p>
+      </SectionHeader>
+
+      <div class="products__grid dir-grupos-grid">
+        {gruposConData.map(g => (
+          <ProductCard
+            title={g.nombre}
+            desc={`${g.catCount} categorías · ${g.empCount} empresas — ${g.desc.slice(0, 90)}…`}
+            imgSrc={g.imgSrc}
+            imgAlt={`Grupo ${g.nombre} — Directorio de empaques CADECA`}
+            href={`/directorio/${g.id}`}
+            tags={g.tags}
+            btnText="Ver categorías"
+          />
         ))}
       </div>
-    </div>
-  </nav>
-
-  <!-- Listado -->
-  <div class="dir-body">
-    <div class="container">
-
-      {categorias.map(cat => (
-        <section class="dir-section" id={cat.id} aria-labelledby={`title-${cat.id}`}>
-          <div class="dir-section__header">
-            <h2 class="dir-section__title" id={`title-${cat.id}`}>{cat.titulo}</h2>
-            <p class="dir-section__desc">{cat.desc}</p>
-          </div>
-          <div class="dir-grid">
-            {cat.empresas.map(emp => (
-              <article class="dir-card">
-                <div class="dir-card__body">
-                  <h3 class="dir-card__name">{emp.nombre}</h3>
-                  <p class="dir-card__giro">{emp.giro}</p>
-                  <p class="dir-card__desc">{emp.desc}</p>
-                </div>
-                <div class="dir-card__footer">
-                  <span class="dir-card__ciudad">{emp.ciudad}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      ))}
 
       <!-- CTA registrar empresa -->
       <div class="dir-cta">
@@ -178,111 +115,20 @@ const totalEmpresas = categorias.reduce((acc, c) => acc + c.empresas.length, 0);
 </PageLayout>
 
 <style>
-/* Nav categorías */
-.dir-nav {
+/* Separador entre hero y cuerpo */
+.dir-index-sep {
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #C44D00 100%);
+}
+
+.dir-index-body {
+  padding: var(--spacing-4xl) 0 var(--spacing-4xl);
   background: var(--color-accent);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 72px;
-  z-index: 100;
-}
-.dir-nav__inner {
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.dir-nav__inner::-webkit-scrollbar { display: none; }
-.dir-nav__link {
-  padding: 0.75rem 1.1rem;
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--color-text-light);
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: all var(--transition-fast);
-  text-decoration: none;
-}
-.dir-nav__link:hover {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
 }
 
-/* Body */
-.dir-body { padding: var(--spacing-3xl) 0; }
-
-/* Section */
-.dir-section { margin-bottom: var(--spacing-3xl); }
-.dir-section__header { margin-bottom: var(--spacing-xl); }
-.dir-section__title {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 800;
-  color: var(--color-secondary);
-  margin-bottom: 0.4rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 2px solid var(--color-primary);
-  display: inline-block;
-}
-.dir-section__desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  margin-top: 0.5rem;
-}
-
-/* Grid */
-.dir-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-md);
-}
-@media (min-width: 640px)  { .dir-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .dir-grid { grid-template-columns: repeat(3, 1fr); } }
-
-/* Card */
-.dir-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  padding: var(--spacing-lg);
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
-}
-.dir-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  border-color: var(--color-primary);
-}
-.dir-card__body { flex: 1; }
-.dir-card__name {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  color: var(--color-secondary);
-  margin-bottom: 0.25rem;
-}
-.dir-card__giro {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.5rem;
-}
-.dir-card__desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.55;
-}
-.dir-card__footer {
-  border-top: 1px solid var(--color-border);
-  padding-top: var(--spacing-sm);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dir-card__ciudad {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-light);
+/* El grid usa products__grid de global.css — solo ajustamos el tope */
+.dir-grupos-grid {
+  margin-bottom: var(--spacing-4xl);
 }
 
 /* CTA final */
@@ -291,7 +137,6 @@ const totalEmpresas = categorias.reduce((acc, c) => acc + c.empresas.length, 0);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-3xl) var(--spacing-2xl);
   text-align: center;
-  margin-top: var(--spacing-3xl);
 }
 .dir-cta__title {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);

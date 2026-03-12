@@ -1,0 +1,240 @@
+---
+import PageLayout   from "@/layouts/PageLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import ProductCard   from "@/components/ProductCard.astro";
+import { grupos, getGrupo, getCategoriasByGrupo } from "@/data/directorio";
+
+export async function getStaticPaths() {
+  return grupos.map(g => ({ params: { grupo: g.id } }));
+}
+
+const { grupo: grupoId } = Astro.params;
+const grupoData = getGrupo(grupoId);
+const cats      = getCategoriasByGrupo(grupoId);
+
+if (!grupoData) return Astro.redirect("/directorio");
+
+const WHATSAPP = "5255XXXXXXXX";
+
+const totalEmpresas = cats.reduce((acc, c) => acc + c.empresas.length, 0);
+const title         = `${grupoData.nombre} — Directorio de Empaques CDMX | CADECA`;
+const description   = `${cats.length} categorías y ${totalEmpresas} empresas de ${grupoData.nombre.toLowerCase()} en el directorio de empaques y cartón corrugado de CADECA.`;
+
+// SVG placeholder por categoría (color del grupo + número + nombre)
+const catsConData = cats.map((cat, i) => {
+  const num = String(i + 1).padStart(2, "0");
+  const svgRaw = `<svg xmlns='http://www.w3.org/2000/svg' width='900' height='560'><rect width='900' height='560' fill='${grupoData.color}'/><rect width='900' height='560' fill='url(%23p)' opacity='.18'/><defs><pattern id='p' width='40' height='40' patternUnits='userSpaceOnUse'><circle cx='20' cy='20' r='1' fill='white'/></pattern></defs><text x='50%' y='44%' dominant-baseline='middle' text-anchor='middle' fill='rgba(255,255,255,0.10)' font-size='200' font-family='sans-serif' font-weight='900'>${num}</text><text x='50%' y='72%' dominant-baseline='middle' text-anchor='middle' fill='rgba(255,255,255,0.55)' font-size='24' font-family='sans-serif' font-weight='700'>${cat.titulo}</text></svg>`;
+  const imgSrc = `data:image/svg+xml,${encodeURIComponent(svgRaw)}`;
+
+  // Tags = primeras 4 empresas de la categoría
+  const tags = cat.empresas.slice(0, 4).map(e => ({
+    label: e.nombre,
+    href:  `/directorio/${grupoId}/${cat.id}`,
+  }));
+
+  return { ...cat, imgSrc, tags };
+});
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: "Inicio",     href: "/" },
+    { name: "Directorio", href: "/directorio" },
+    { name: grupoData.nombre },
+  ]}
+  whatsapp={WHATSAPP}
+>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/directorio">Directorio</a></li>
+        <li><span class="current">{grupoData.nombre}</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Hero de grupo -->
+  <div class="dir-grupo-hero">
+    <div class="container">
+      <div class="dir-grupo-hero__inner">
+        <div>
+          <a href="/directorio" class="dir-grupo-hero__back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Todos los grupos
+          </a>
+          <h1 class="dir-grupo-hero__title">{grupoData.nombre}</h1>
+          <p class="dir-grupo-hero__desc">{grupoData.desc}</p>
+        </div>
+        <div class="dir-grupo-hero__stats">
+          <div class="dir-grupo-hero__stat">
+            <span class="dir-grupo-hero__stat-val">{cats.length}</span>
+            <span class="dir-grupo-hero__stat-label">Categorías</span>
+          </div>
+          <div class="dir-grupo-hero__stat">
+            <span class="dir-grupo-hero__stat-val">{totalEmpresas}</span>
+            <span class="dir-grupo-hero__stat-label">Empresas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Separador visual -->
+  <div class="dir-sep" aria-hidden="true" style={`background: linear-gradient(90deg, ${grupoData.color} 0%, ${grupoData.color}BB 100%)`}></div>
+
+  <!-- Categorías -->
+  <div class="dir-grupo-body">
+    <div class="container">
+
+      <SectionHeader
+        title={`${grupoData.nombre} · ${cats.length} categorías · ${totalEmpresas} empresas`}
+        twoCol
+      >
+        <p>{grupoData.desc}</p>
+        <p>Selecciona una categoría para ver el listado de empresas. <a href="/directorio" style="color:var(--color-primary);font-weight:700;">Ver todos los grupos →</a></p>
+      </SectionHeader>
+
+      <div class="products__grid dir-cats-grid">
+        {catsConData.map(cat => (
+          <ProductCard
+            title={cat.titulo}
+            desc={`${cat.empresas.length} empresas — ${cat.desc.slice(0, 90)}…`}
+            imgSrc={cat.imgSrc}
+            imgAlt={`Categoría ${cat.titulo} — Directorio CADECA`}
+            href={`/directorio/${grupoId}/${cat.id}`}
+            tags={cat.tags}
+            btnText="Ver empresas"
+          />
+        ))}
+      </div>
+
+      <!-- Nav otros grupos -->
+      <div class="dir-otros-grupos">
+        <h3 class="dir-otros-grupos__title">Otros grupos del directorio</h3>
+        <div class="dir-otros-grupos__list">
+          {grupos.filter(g => g.id !== grupoId).map(g => (
+            <a href={`/directorio/${g.id}`} class="dir-otros-grupos__link">{g.nombre}</a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</PageLayout>
+
+<style>
+/* Hero de grupo */
+.dir-grupo-hero {
+  background: var(--color-secondary);
+  padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+}
+.dir-grupo-hero__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+.dir-grupo-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  margin-bottom: var(--spacing-md);
+  transition: color var(--transition-fast);
+}
+.dir-grupo-hero__back:hover { color: #fff; }
+.dir-grupo-hero__title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+.dir-grupo-hero__desc {
+  font-size: var(--font-size-base);
+  color: rgba(255,255,255,0.7);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+.dir-grupo-hero__stats {
+  display: flex;
+  gap: var(--spacing-xl);
+  flex-shrink: 0;
+}
+.dir-grupo-hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.dir-grupo-hero__stat-val {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.dir-grupo-hero__stat-label {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Separador */
+.dir-sep {
+  height: 4px;
+}
+
+/* Body */
+.dir-grupo-body {
+  padding: var(--spacing-4xl) 0 var(--spacing-4xl);
+  background: var(--color-accent);
+}
+
+.dir-cats-grid {
+  margin-bottom: var(--spacing-4xl);
+}
+
+/* Otros grupos */
+.dir-otros-grupos {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-2xl);
+  background: transparent;
+}
+.dir-otros-grupos__title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--spacing-md);
+}
+.dir-otros-grupos__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+.dir-otros-grupos__link {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+.dir-otros-grupos__link:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+</style>
