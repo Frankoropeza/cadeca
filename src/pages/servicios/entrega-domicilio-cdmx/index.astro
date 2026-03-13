@@ -7,15 +7,15 @@ import ProductCard from "@/components/ProductCard.astro";
 const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Entrega de Cajas a Domicilio en CDMX — CADECA Fabricante Directo CDMX";
-const description = "Contamos con flota propia de reparto para entregas en toda la Ciudad de México, Estado de México y zona metropolitana. Sin tercerizados, sin sorpresas. Coordina";
+const title       = "Entrega de Cajas de Cartón a Domicilio CDMX — 24 hrs · CADECA Fabricante Directo";
+const description = "Entregamos cajas de cartón corrugado a domicilio en CDMX y Estado de México en 24-48 hrs. Flota propia, rutas diarias, sin costo de flete en pedidos mínimos.";
 const canonical   = SITE + "/servicios/entrega-domicilio-cdmx";
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Entrega de Cajas a Domicilio en CDMX",
+    "name": "Entrega de Cajas de Cartón a Domicilio en CDMX",
     "description": description,
     "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
@@ -25,10 +25,10 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-    { "@type": "Question", "name": "¿Cuánto cuesta el envío?", "acceptedAnswer": { "@type": "Answer", "text": "Sin costo para pedidos de 200 piezas o más en CDMX y municipios conurbados del Estado de México. Para pedidos menores o zonas alejadas cotizamos el flete." } },
-    { "@type": "Question", "name": "¿Pueden entregar el mismo día?", "acceptedAnswer": { "@type": "Answer", "text": "Para pedidos en stock realizados antes de las 2 PM, podemos coordinar entrega el mismo día en CDMX con costo adicional de urgencia. Consulta disponibilidad." } },
-    { "@type": "Question", "name": "¿Entregan en horario nocturno o fin de semana?", "acceptedAnswer": { "@type": "Answer", "text": "Las entregas habituales son de lunes a viernes de 9 AM a 6 PM. Para sábados o entregas fuera de horario, consulta disponibilidad con tu asesor." } },
-    { "@type": "Question", "name": "¿Qué pasa si no hay nadie para recibir el pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Coordinamos previamente el punto de recepción. Si nadie puede recibir, reprogramamos sin costo adicional para la misma semana." } }
+    { "@type": "Question", "name": "¿Cuánto cuesta el flete?", "acceptedAnswer": { "@type": "Answer", "text": "Sin costo en pedidos que cumplan el mínimo de entrega. Contáctanos para conocer el mínimo según tu zona." } },
+    { "@type": "Question", "name": "¿Cubren toda la CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, las 16 alcaldías de CDMX más los principales municipios del Estado de México." } },
+    { "@type": "Question", "name": "¿Puedo programar la entrega para un horario específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos el horario con 24 hrs de anticipación según disponibilidad de rutas." } },
+    { "@type": "Question", "name": "¿Entregan en planta con acceso restringido?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos con tu equipo de recepción para cumplir con los requisitos de acceso." } }
     ]
   }
 ];
@@ -42,127 +42,189 @@ const schema = [
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
     { name: "Servicios", href: "/servicios" },
-    { name: "Entrega de Cajas a Domicilio en CDMX" },
+    { name: "Entrega de Cajas de Cartón a Domicilio en CDMX" },
   ]}
   whatsapp={WHATSAPP}
 >
 
-  <section class="svc-page__hero">
-    <div class="svc-page__hero-inner container">
-      <div class="svc-page__hero-col1">
-      <div class="svc-page__hero-emoji">🚚</div>
-      <h1 class="svc-page__hero-title">Entrega de Cajas a Domicilio en CDMX</h1>
-      <p class="svc-page__hero-tagline">Flota propia en CDMX y ZMVM — entrega en 24 hrs para stock</p>
-      <p class="svc-page__hero-desc">Contamos con flota propia de reparto para entregas en toda la Ciudad de México, Estado de México y zona metropolitana. Sin tercerizados, sin sorpresas. Coordinamos la entrega directamente con tu equipo.</p>
-      <div class="svc-page__hero-ctas">
-        <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Entrega+de+Cajas+a+Domicilio+en+CDMX"}
-           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
+  {/* ════════ HERO ════════ */}
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__left">
+          <p class="hero__badge">Servicio · Entrega 24-48 hrs · Flota Propia</p>
+          <h1 class="hero__title"><span>Entrega de Cajas de Cartón a Domicilio en CDMX</span></h1>
+          <p class="hero__intro">Flota propia con rutas diarias en toda la CDMX y Zona Metropolitana. Entregamos en tu planta, bodega o domicilio en 24-48 horas sin costo de flete en pedidos calificados.</p>
+          <div class="hero__ctas">
+            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Entrega+a+Domicilio+en+CDMX"}
+               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
           </div>
-      <div class="svc-page__hero-col2">
-        <p>CADECA ofrece <strong>entrega de cajas de cartón a domicilio en CDMX y Estado de México</strong> con flota propia y rutas cubiertas diariamente. Entregamos en 24-48 horas en toda la Zona Metropolitana: Naucalpan, Tlalnepantla, Ecatepec, Toluca, Iztapalapa, Coyoacán y las 16 alcaldías de la capital.</p>
-        <p>Sin costo de flete en pedidos superiores a nuestro mínimo de entrega. Seguimiento de tu pedido en tiempo real, confirmación de entrega y horarios flexibles para bodegas y plantas industriales. <strong>Fabricante directo con entrega directa</strong> — eliminamos intermediarios y reducimos tu costo total. Cotiza hoy.</p>
+          <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-value">24 hrs</span>
+            <span class="hero__metric-label">Entrega exprés</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">Sin costo</span>
+            <span class="hero__metric-label">Flete pedidos calif.</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">16</span>
+            <span class="hero__metric-label">Alcaldías cubiertas</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">2 hrs</span>
+            <span class="hero__metric-label">Cotización</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <p>CADECA ofrece <strong>entrega de cajas de cartón a domicilio en CDMX y Estado de México</strong> con flota propia y rutas cubiertas diariamente. Entregamos en 24-48 horas en toda la Zona Metropolitana: Naucalpan, Tlalnepantla, Ecatepec, Toluca, Iztapalapa, Coyoacán y las 16 alcaldías.</p>
+          <p>Sin costo de flete en pedidos superiores al mínimo establecido. Seguimiento de tu pedido en tiempo real, confirmación de entrega y horarios flexibles para bodegas y plantas industriales. <strong>Fabricante directo con entrega directa</strong> — sin intermediarios.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="svc-page__section">
+  {/* ════════ BENEFICIOS ════════ */}
+  <section class="page-section">
     <div class="container">
-      <SectionHeader title="Beneficios del servicio" subtitle="Por qué elegir CADECA para entrega de cajas a domicilio en cdmx" />
-      <ul class="svc-page__beneficios">
-              <li><span>✓</span> Flota propia — no dependemos de paqueterías para zona metropolitana</li>
-              <li><span>✓</span> Entrega en 24 hrs para productos en stock (pedidos antes de las 2 PM)</li>
-              <li><span>✓</span> Entrega en muelles industriales, bodegas y domicilios</li>
-              <li><span>✓</span> Coordinación por WhatsApp con el conductor el día de entrega</li>
-              <li><span>✓</span> Sin costo de flete en pedidos de 200 piezas o más en ZMVM</li>
+      <SectionHeader
+        title="Beneficios del servicio"
+        subtitle={"Por qué elegir CADECA para entrega de cajas de cartón a domicilio en cdmx"}
+      />
+      <ul class="feature-grid">
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Flota propia — sin tercerizar la logística</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>24-48 horas en CDMX y Estado de México</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Sin costo de flete en pedidos calificados</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Horarios flexibles para bodegas y plantas industriales</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Seguimiento en tiempo real de tu pedido</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Confirmación de entrega con evidencia fotográfica</span>
+          </li>
       </ul>
     </div>
   </section>
 
-  <section class="svc-page__section svc-page__section--alt">
+  {/* ════════ PROCESO ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title="Cómo funciona" subtitle="Proceso simple, sin burocracia, con respuesta rápida" />
-      <div class="svc-page__pasos">
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">1</div>
-            <div>
-              <strong>Pedido confirmado</strong>
-              <p>Confirmas tu pedido y nos proporcionas la dirección de entrega. Te asignamos fecha y ventana horaria.</p>
+      <SectionHeader
+        title="¿Cómo funciona?"
+        subtitle="Proceso simple, sin burocracia, con respuesta rápida"
+      />
+      <div class="process-grid">
+          <div class="process-step">
+            <div class="process-step__num">1</div>
+            <p class="process-step__title">Pedido</p>
+            <p class="process-step__desc">Haces tu pedido por WhatsApp, teléfono o formulario. Confirmas dirección y horario.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">2</div>
+            <p class="process-step__title">Fabricación</p>
+            <p class="process-step__desc">Tu pedido entra a producción o se despacha de stock. Recibes confirmación de fecha.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">3</div>
+            <p class="process-step__title">Carga</p>
+            <p class="process-step__desc">El día de entrega cargamos tu pedido en nuestra flota y te enviamos ETA.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">4</div>
+            <p class="process-step__title">Entrega</p>
+            <p class="process-step__desc">Entregamos en tu domicilio. Firmamos remisión y te enviamos confirmación con foto.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ════════ FAQ ════════ */}
+  <section class="page-section">
+    <div class="container">
+      <SectionHeader
+        title="Preguntas frecuentes"
+        subtitle={"Todo sobre entrega de cajas de cartón a domicilio en cdmx"}
+      />
+      <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-entrega-domicilio-cdmx-0">
+              <span>¿Cuánto cuesta el flete?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-entrega-domicilio-cdmx-0">
+              <p>Sin costo en pedidos que cumplan el mínimo de entrega. Contáctanos para conocer el mínimo según tu zona.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">2</div>
-            <div>
-              <strong>Preparación</strong>
-              <p>Preparamos y embalamos tu pedido. Para stock: mismo día. Para producción: según tiempo acordado.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-entrega-domicilio-cdmx-1">
+              <span>¿Cubren toda la CDMX?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-entrega-domicilio-cdmx-1">
+              <p>Sí, las 16 alcaldías de CDMX más los principales municipios del Estado de México.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">3</div>
-            <div>
-              <strong>Despacho</strong>
-              <p>El día de entrega te notificamos por WhatsApp cuando el conductor sale con tu pedido.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-entrega-domicilio-cdmx-2">
+              <span>¿Puedo programar la entrega para un horario específico?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-entrega-domicilio-cdmx-2">
+              <p>Sí, coordinamos el horario con 24 hrs de anticipación según disponibilidad de rutas.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">4</div>
-            <div>
-              <strong>Entrega</strong>
-              <p>Recepción en tu dirección con remisión. Factura electrónica por email el mismo día.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-entrega-domicilio-cdmx-3">
+              <span>¿Entregan en planta con acceso restringido?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-entrega-domicilio-cdmx-3">
+              <p>Sí, coordinamos con tu equipo de recepción para cumplir con los requisitos de acceso.</p>
             </div>
           </div>
       </div>
     </div>
   </section>
 
-  <section class="svc-page__section">
+  {/* ════════ PRODUCTOS RELACIONADOS ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title="Preguntas frecuentes" subtitle={"Todo sobre " + "entrega de cajas a domicilio en cdmx"} />
-      <div class="svc-page__faq">
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Cuánto cuesta el envío?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Sin costo para pedidos de 200 piezas o más en CDMX y municipios conurbados del Estado de México. Para pedidos menores o zonas alejadas cotizamos el flete.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Pueden entregar el mismo día?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Para pedidos en stock realizados antes de las 2 PM, podemos coordinar entrega el mismo día en CDMX con costo adicional de urgencia. Consulta disponibilidad.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Entregan en horario nocturno o fin de semana?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Las entregas habituales son de lunes a viernes de 9 AM a 6 PM. Para sábados o entregas fuera de horario, consulta disponibilidad con tu asesor.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Qué pasa si no hay nadie para recibir el pedido?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Coordinamos previamente el punto de recepción. Si nadie puede recibir, reprogramamos sin costo adicional para la misma semana.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="svc-page__section svc-page__section--alt">
-    <div class="container">
-      <SectionHeader title="Productos relacionados" subtitle="Explora el catálogo de CADECA" />
+      <SectionHeader
+        title="Productos relacionados"
+        subtitle="Explora el catálogo de CADECA"
+      />
       <div class="products__grid svc-products-grid">
           <ProductCard
             title="Corrugado Estándar"
@@ -182,66 +244,131 @@ const schema = [
           />
           <ProductCard
             title="Cajas E-commerce"
-            desc="Entrega para fulfillment"
+            desc="Para fulfillment y envíos"
             imgSrc="/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif"
             imgAlt="Cajas E-commerce — CADECA"
             href="/catalogo/cajas-ecommerce-mercado-libre"
             btnText="Ver producto"
           />
-        </div>
+      </div>
     </div>
   </section>
 
   <LeadCapture
-    titulo="¿Listo para comenzar con entrega de cajas a domicilio en cdmx?"
-    subtitulo="Cotización sin compromiso en menos de 2 horas. Fabricante directo, los mejores precios de CDMX."
+    titulo="Programa tu entrega de cajas a domicilio"
+    subtitulo="24-48 hrs en CDMX · Flota propia · Sin costo de flete en pedidos calificados"
     whatsapp={WHATSAPP}
   />
 
 </PageLayout>
 
 <style>
-.svc-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); }
-.svc-page__hero-inner { max-width: var(--container-max,1400px); margin: 0 auto; padding: 0 var(--space-5); display:grid; grid-template-columns:1fr; gap:var(--space-10); }
-.svc-page__hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
-.svc-page__hero-title { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: var(--space-3); }
-.svc-page__hero-tagline { font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4); }
-.svc-page__hero-desc { color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-8); }
-.svc-page__hero-ctas { display: flex; gap: var(--space-4); flex-wrap: wrap; }
-@media(min-width:1024px){ .svc-page__hero-inner{grid-template-columns:1fr 1fr;align-items:start;} }
-.svc-page__hero-col2{display:flex;flex-direction:column;gap:var(--space-6);}
-.svc-page__hero-col2 p{font-size:var(--text-sm,0.9rem);color:rgba(255,255,255,0.78);line-height:1.75;}
-.svc-page__hero-col2 p strong{color:#fff;font-weight:700;}
-.svc-page__hero-col2 p+p{padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1);margin-top:var(--space-5);}
-.svc-page__section { padding: var(--space-16) 0; }
-.svc-page__section--alt { background: var(--color-surface); }
-.svc-page__beneficios { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-3); margin-top: var(--space-8); }
-.svc-page__beneficios li { display: flex; gap: var(--space-3); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
-.svc-page__beneficios span { color: var(--color-primary); font-weight: 900; flex-shrink: 0; }
-.svc-page__pasos { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-8); max-width: 680px; margin-left: auto; margin-right: auto; }
-.svc-page__paso { display: flex; gap: var(--space-5); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
-.svc-page__paso-num { width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: var(--text-lg); flex-shrink: 0; }
-.svc-page__paso strong { display: block; color: var(--color-secondary); font-size: var(--text-base); margin-bottom: var(--space-1); }
-.svc-page__paso p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.svc-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
-.svc-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
-.svc-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
-.svc-page__faq-q:hover { color: var(--color-primary); }
-.svc-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
-.svc-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.svc-page__faq-item.is-open .svc-page__faq-a { display: block; }
-.svc-page__faq-item.is-open .svc-page__faq-q svg { transform: rotate(180deg); }
-.svc-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
-@media (max-width: 640px) {
-  .svc-page__hero-ctas { flex-direction: column; }
-  .svc-page__beneficios { grid-template-columns: 1fr; }
+.page-section { padding: var(--spacing-3xl) 0; }
+.page-section--alt { background: var(--color-surface, #f8f9fb); }
+
+/* Feature grid */
+.feature-grid {
+  list-style: none; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
 }
+.feature-item {
+  display: flex; align-items: flex-start; gap: var(--spacing-sm);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  font-weight: 500;
+}
+.feature-item__icon {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(224,88,0,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+
+/* Process steps */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+.process-step {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  position: relative;
+}
+.process-step__num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+.process-step__title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+.process-step__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* FAQ */
+.faq-list {
+  display: flex; flex-direction: column; gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.faq-item__btn {
+  width: 100%; text-align: left;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: none; border: none; cursor: pointer;
+  font-weight: 600; font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+.faq-item__btn:hover { color: var(--color-primary); }
+.faq-item__btn svg { flex-shrink: 0; }
+.faq-item__ans {
+  display: none;
+  padding: 0 var(--spacing-xl) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+.faq-item__ans p { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: var(--line-height-relaxed); margin: var(--spacing-md) 0 0; }
+.faq-item.is-open .faq-item__ans { display: block; }
+.faq-item.is-open .faq-item__btn svg { transform: rotate(180deg); }
+
+/* Products grid: 3 cols en servicios */
+@media(min-width:768px){ .svc-products-grid{ grid-template-columns: repeat(3,1fr); } }
 </style>
 
 <script>
-document.querySelectorAll('.svc-page__faq-q').forEach(function(btn) {
+document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    var item = btn.closest('.svc-page__faq-item');
+    var item = btn.closest('.faq-item');
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });

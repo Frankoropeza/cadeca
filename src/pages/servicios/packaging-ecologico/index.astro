@@ -7,15 +7,15 @@ import ProductCard from "@/components/ProductCard.astro";
 const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Packaging Ecológico y Sustentable — CADECA Fabricante Directo CDMX";
-const description = "Ofrecemos cajas de cartón corrugado fabricadas con papel reciclado certificado FSC y materiales de fuentes sostenibles. Para empresas que quieren reducir su hue";
+const title       = "Packaging Ecológico Cartón Reciclado FSC CDMX — CADECA Fabricante Directo";
+const description = "Packaging ecológico de cartón corrugado reciclado con certificación FSC en CDMX. Tintas base agua, diseño sustentable. Para marcas con compromiso ambiental.";
 const canonical   = SITE + "/servicios/packaging-ecologico";
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Packaging Ecológico y Sustentable",
+    "name": "Packaging Ecológico de Cartón Reciclado FSC",
     "description": description,
     "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
@@ -25,10 +25,10 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-    { "@type": "Question", "name": "¿El cartón reciclado es igual de resistente?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, el cartón reciclado de calidad tiene la misma resistencia que el virgen para la mayoría de los usos. Para aplicaciones de alta exigencia (exportación pesada) evaluamos caso por caso." } },
-    { "@type": "Question", "name": "¿Cuánto más cuesta el packaging ecológico?", "acceptedAnswer": { "@type": "Answer", "text": "En general el precio es similar al cartón convencional. En algunos casos puede ser 5-10% más por las certificaciones, pero la diferencia es mínima comparada con el valor de marca que genera." } },
-    { "@type": "Question", "name": "¿Pueden incluir el símbolo de reciclaje o certificación FSC en las cajas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos imprimir el símbolo de reciclaje, la certificación FSC o cualquier mensaje de sustentabilidad que quieras comunicar a tus clientes." } },
-    { "@type": "Question", "name": "¿Tienen opciones biodegradables además del cartón?", "acceptedAnswer": { "@type": "Answer", "text": "El cartón corrugado ya es biodegradable. Para necesidades específicas de empaques compuestos o con barreras especiales, evaluamos alternativas sustentables caso por caso." } }
+    { "@type": "Question", "name": "¿Qué significa la certificación FSC?", "acceptedAnswer": { "@type": "Answer", "text": "FSC (Forest Stewardship Council) certifica que el papel proviene de bosques gestionados de forma responsable o de material reciclado." } },
+    { "@type": "Question", "name": "¿El cartón reciclado tiene la misma resistencia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, el cartón reciclado de calidad tiene resistencias ECT comparables al cartón virgen para la mayoría de usos." } },
+    { "@type": "Question", "name": "¿Puedo imprimir con tintas ecológicas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, usamos tintas base agua para todos nuestros pedidos de packaging ecológico. Sin solventes orgánicos." } },
+    { "@type": "Question", "name": "¿Pueden proveer documentación de sustentabilidad?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos emitir carta de proveedor con especificaciones FSC y de material reciclado para tus reportes." } }
     ]
   }
 ];
@@ -42,127 +42,189 @@ const schema = [
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
     { name: "Servicios", href: "/servicios" },
-    { name: "Packaging Ecológico y Sustentable" },
+    { name: "Packaging Ecológico de Cartón Reciclado FSC" },
   ]}
   whatsapp={WHATSAPP}
 >
 
-  <section class="svc-page__hero">
-    <div class="svc-page__hero-inner container">
-      <div class="svc-page__hero-col1">
-      <div class="svc-page__hero-emoji">🌿</div>
-      <h1 class="svc-page__hero-title">Packaging Ecológico y Sustentable</h1>
-      <p class="svc-page__hero-tagline">Cajas de cartón reciclado FSC — huella de carbono reducida</p>
-      <p class="svc-page__hero-desc">Ofrecemos cajas de cartón corrugado fabricadas con papel reciclado certificado FSC y materiales de fuentes sostenibles. Para empresas que quieren reducir su huella de carbono y comunicar un compromiso real con el medio ambiente.</p>
-      <div class="svc-page__hero-ctas">
-        <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Packaging+Ecológico+y+Sustentable"}
-           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
+  {/* ════════ HERO ════════ */}
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__left">
+          <p class="hero__badge">Servicio · Certificación FSC · Sustentable</p>
+          <h1 class="hero__title"><span>Packaging Ecológico de Cartón Reciclado FSC</span></h1>
+          <p class="hero__intro">Cartón kraft reciclado certificado FSC, tintas base agua sin solventes y diseños que minimizan el material. Para marcas que comunican responsabilidad ambiental.</p>
+          <div class="hero__ctas">
+            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Packaging+Ecol%C3%B3gico+de+CADECA"}
+               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
           </div>
-      <div class="svc-page__hero-col2">
-        <p>CADECA produce <strong>packaging ecológico de cartón corrugado reciclado y reciclable</strong> certificado FSC para empresas comprometidas con la sostenibilidad. Cartón kraft natural, tintas base agua sin solventes, adhesivos no tóxicos y diseños optimizados para minimizar el material usado.</p>
-        <p>Nuestros <strong>empaques ecológicos</strong> cumplen con las normas ambientales mexicanas y los requisitos de grandes cadenas de retail que exigen materiales sustentables. Ideal para marcas que comunican responsabilidad ambiental. Cotización de packaging ecológico en menos de 2 horas.</p>
+          <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-value">FSC</span>
+            <span class="hero__metric-label">Certificado</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">100%</span>
+            <span class="hero__metric-label">Reciclable</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">Agua</span>
+            <span class="hero__metric-label">Tintas sin solventes</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">2 hrs</span>
+            <span class="hero__metric-label">Cotización</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <p>CADECA produce <strong>packaging ecológico de cartón corrugado reciclado y reciclable</strong> certificado FSC para empresas comprometidas con la sostenibilidad. Cartón kraft natural, tintas base agua sin solventes, adhesivos no tóxicos y diseños optimizados para minimizar el material.</p>
+          <p>Nuestros <strong>empaques ecológicos</strong> cumplen con las normas ambientales mexicanas y los requisitos de grandes cadenas de retail que exigen materiales sustentables. Ideal para marcas que comunican responsabilidad ambiental a sus clientes. Cotización en menos de 2 horas.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="svc-page__section">
+  {/* ════════ BENEFICIOS ════════ */}
+  <section class="page-section">
     <div class="container">
-      <SectionHeader title="Beneficios del servicio" subtitle="Por qué elegir CADECA para packaging ecológico y sustentable" />
-      <ul class="svc-page__beneficios">
-              <li><span>✓</span> Papel reciclado certificado FSC — fuentes responsablemente gestionadas</li>
-              <li><span>✓</span> Impresión con tintas a base de agua — sin solventes contaminantes</li>
-              <li><span>✓</span> 100% reciclable y biodegradable — no genera residuos plásticos</li>
-              <li><span>✓</span> Certificación de sustentabilidad disponible para tus clientes</li>
-              <li><span>✓</span> Precio competitivo — el cartón reciclado no cuesta más</li>
+      <SectionHeader
+        title="Beneficios del servicio"
+        subtitle={"Por qué elegir CADECA para packaging ecológico de cartón reciclado fsc"}
+      />
+      <ul class="feature-grid">
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Cartón kraft reciclado con certificación FSC</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Tintas base agua — sin solventes orgánicos</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Adhesivos no tóxicos compatibles con reciclaje</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Diseño optimizado para minimizar uso de material</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>100% reciclable — sin materiales mixtos no separables</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Cumple requisitos de retail y e-commerce sustentable</span>
+          </li>
       </ul>
     </div>
   </section>
 
-  <section class="svc-page__section svc-page__section--alt">
+  {/* ════════ PROCESO ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title="Cómo funciona" subtitle="Proceso simple, sin burocracia, con respuesta rápida" />
-      <div class="svc-page__pasos">
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">1</div>
-            <div>
-              <strong>Evaluación</strong>
-              <p>Analizamos tus necesidades actuales y te proponemos el empaque más sustentable para tu tipo de producto.</p>
+      <SectionHeader
+        title="¿Cómo funciona?"
+        subtitle="Proceso simple, sin burocracia, con respuesta rápida"
+      />
+      <div class="process-grid">
+          <div class="process-step">
+            <div class="process-step__num">1</div>
+            <p class="process-step__title">Consulta de materiales</p>
+            <p class="process-step__desc">Te informamos sobre las opciones de cartón reciclado y certificaciones disponibles.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">2</div>
+            <p class="process-step__title">Diseño sustentable</p>
+            <p class="process-step__desc">Nuestro equipo optimiza las dimensiones y el material para minimizar el impacto ambiental.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">3</div>
+            <p class="process-step__title">Producción certificada</p>
+            <p class="process-step__desc">Fabricamos con materiales FSC y tintas base agua. Proveemos documentación si la necesitas.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">4</div>
+            <p class="process-step__title">Entrega y documentación</p>
+            <p class="process-step__desc">Entrega en CDMX con carta de material FSC si la necesitas para tus reportes de sustentabilidad.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ════════ FAQ ════════ */}
+  <section class="page-section">
+    <div class="container">
+      <SectionHeader
+        title="Preguntas frecuentes"
+        subtitle={"Todo sobre packaging ecológico de cartón reciclado fsc"}
+      />
+      <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-0">
+              <span>¿Qué significa la certificación FSC?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-packaging-ecologico-0">
+              <p>FSC (Forest Stewardship Council) certifica que el papel proviene de bosques gestionados de forma responsable o de material reciclado.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">2</div>
-            <div>
-              <strong>Selección de material</strong>
-              <p>Elegimos el papel reciclado adecuado según resistencia requerida y certificaciones necesarias.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-1">
+              <span>¿El cartón reciclado tiene la misma resistencia?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-packaging-ecologico-1">
+              <p>Sí, el cartón reciclado de calidad tiene resistencias ECT comparables al cartón virgen para la mayoría de usos.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">3</div>
-            <div>
-              <strong>Producción</strong>
-              <p>Fabricamos con materiales certificados. Podemos incluir el logo de reciclaje o certificaciones en el impreso.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-2">
+              <span>¿Puedo imprimir con tintas ecológicas?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-packaging-ecologico-2">
+              <p>Sí, usamos tintas base agua para todos nuestros pedidos de packaging ecológico. Sin solventes orgánicos.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">4</div>
-            <div>
-              <strong>Documentación</strong>
-              <p>Te proporcionamos certificados de material para que puedas comunicar la sustentabilidad a tus clientes.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-3">
+              <span>¿Pueden proveer documentación de sustentabilidad?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-packaging-ecologico-3">
+              <p>Sí, podemos emitir carta de proveedor con especificaciones FSC y de material reciclado para tus reportes.</p>
             </div>
           </div>
       </div>
     </div>
   </section>
 
-  <section class="svc-page__section">
+  {/* ════════ PRODUCTOS RELACIONADOS ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title="Preguntas frecuentes" subtitle={"Todo sobre " + "packaging ecológico y sustentable"} />
-      <div class="svc-page__faq">
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿El cartón reciclado es igual de resistente?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Sí, el cartón reciclado de calidad tiene la misma resistencia que el virgen para la mayoría de los usos. Para aplicaciones de alta exigencia (exportación pesada) evaluamos caso por caso.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Cuánto más cuesta el packaging ecológico?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>En general el precio es similar al cartón convencional. En algunos casos puede ser 5-10% más por las certificaciones, pero la diferencia es mínima comparada con el valor de marca que genera.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Pueden incluir el símbolo de reciclaje o certificación FSC en las cajas?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Sí, podemos imprimir el símbolo de reciclaje, la certificación FSC o cualquier mensaje de sustentabilidad que quieras comunicar a tus clientes.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Tienen opciones biodegradables además del cartón?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>El cartón corrugado ya es biodegradable. Para necesidades específicas de empaques compuestos o con barreras especiales, evaluamos alternativas sustentables caso por caso.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="svc-page__section svc-page__section--alt">
-    <div class="container">
-      <SectionHeader title="Productos relacionados" subtitle="Explora el catálogo de CADECA" />
+      <SectionHeader
+        title="Productos relacionados"
+        subtitle="Explora el catálogo de CADECA"
+      />
       <div class="products__grid svc-products-grid">
           <ProductCard
             title="Láminas Ecológicas FSC"
@@ -174,7 +236,7 @@ const schema = [
           />
           <ProductCard
             title="Cajas a la Medida"
-            desc="En material ecológico"
+            desc="En material ecológico FSC"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
             href="/catalogo/cajas-a-la-medida"
@@ -182,66 +244,131 @@ const schema = [
           />
           <ProductCard
             title="Cajas Personalizadas"
-            desc="Tintas base agua FSC"
+            desc="Con tintas base agua"
             imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
             imgAlt="Cajas Personalizadas — CADECA"
             href="/catalogo/cajas-personalizadas-con-logo"
             btnText="Ver producto"
           />
-        </div>
+      </div>
     </div>
   </section>
 
   <LeadCapture
-    titulo="¿Listo para comenzar con packaging ecológico y sustentable?"
-    subtitulo="Cotización sin compromiso en menos de 2 horas. Fabricante directo, los mejores precios de CDMX."
+    titulo="Cotiza tu packaging ecológico FSC"
+    subtitulo="Certificado FSC · Tintas base agua · Fabricante directo en CDMX"
     whatsapp={WHATSAPP}
   />
 
 </PageLayout>
 
 <style>
-.svc-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); }
-.svc-page__hero-inner { max-width: var(--container-max,1400px); margin: 0 auto; padding: 0 var(--space-5); display:grid; grid-template-columns:1fr; gap:var(--space-10); }
-.svc-page__hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
-.svc-page__hero-title { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: var(--space-3); }
-.svc-page__hero-tagline { font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4); }
-.svc-page__hero-desc { color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-8); }
-.svc-page__hero-ctas { display: flex; gap: var(--space-4); flex-wrap: wrap; }
-@media(min-width:1024px){ .svc-page__hero-inner{grid-template-columns:1fr 1fr;align-items:start;} }
-.svc-page__hero-col2{display:flex;flex-direction:column;gap:var(--space-6);}
-.svc-page__hero-col2 p{font-size:var(--text-sm,0.9rem);color:rgba(255,255,255,0.78);line-height:1.75;}
-.svc-page__hero-col2 p strong{color:#fff;font-weight:700;}
-.svc-page__hero-col2 p+p{padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1);margin-top:var(--space-5);}
-.svc-page__section { padding: var(--space-16) 0; }
-.svc-page__section--alt { background: var(--color-surface); }
-.svc-page__beneficios { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-3); margin-top: var(--space-8); }
-.svc-page__beneficios li { display: flex; gap: var(--space-3); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
-.svc-page__beneficios span { color: var(--color-primary); font-weight: 900; flex-shrink: 0; }
-.svc-page__pasos { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-8); max-width: 680px; margin-left: auto; margin-right: auto; }
-.svc-page__paso { display: flex; gap: var(--space-5); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
-.svc-page__paso-num { width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: var(--text-lg); flex-shrink: 0; }
-.svc-page__paso strong { display: block; color: var(--color-secondary); font-size: var(--text-base); margin-bottom: var(--space-1); }
-.svc-page__paso p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.svc-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
-.svc-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
-.svc-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
-.svc-page__faq-q:hover { color: var(--color-primary); }
-.svc-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
-.svc-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.svc-page__faq-item.is-open .svc-page__faq-a { display: block; }
-.svc-page__faq-item.is-open .svc-page__faq-q svg { transform: rotate(180deg); }
-.svc-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
-@media (max-width: 640px) {
-  .svc-page__hero-ctas { flex-direction: column; }
-  .svc-page__beneficios { grid-template-columns: 1fr; }
+.page-section { padding: var(--spacing-3xl) 0; }
+.page-section--alt { background: var(--color-surface, #f8f9fb); }
+
+/* Feature grid */
+.feature-grid {
+  list-style: none; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
 }
+.feature-item {
+  display: flex; align-items: flex-start; gap: var(--spacing-sm);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  font-weight: 500;
+}
+.feature-item__icon {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(224,88,0,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+
+/* Process steps */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+.process-step {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  position: relative;
+}
+.process-step__num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+.process-step__title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+.process-step__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* FAQ */
+.faq-list {
+  display: flex; flex-direction: column; gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.faq-item__btn {
+  width: 100%; text-align: left;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: none; border: none; cursor: pointer;
+  font-weight: 600; font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+.faq-item__btn:hover { color: var(--color-primary); }
+.faq-item__btn svg { flex-shrink: 0; }
+.faq-item__ans {
+  display: none;
+  padding: 0 var(--spacing-xl) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+.faq-item__ans p { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: var(--line-height-relaxed); margin: var(--spacing-md) 0 0; }
+.faq-item.is-open .faq-item__ans { display: block; }
+.faq-item.is-open .faq-item__btn svg { transform: rotate(180deg); }
+
+/* Products grid: 3 cols en servicios */
+@media(min-width:768px){ .svc-products-grid{ grid-template-columns: repeat(3,1fr); } }
 </style>
 
 <script>
-document.querySelectorAll('.svc-page__faq-q').forEach(function(btn) {
+document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    var item = btn.closest('.svc-page__faq-item');
+    var item = btn.closest('.faq-item');
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });

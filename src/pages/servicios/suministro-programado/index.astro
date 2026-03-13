@@ -7,15 +7,15 @@ import ProductCard from "@/components/ProductCard.astro";
 const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Suministro Programado de Cajas — CADECA Fabricante Directo CDMX";
-const description = "Para empresas que consumen cajas de manera continua, ofrecemos contratos de suministro programado: precio fijo por período, entregas según tu calendario de prod";
+const title       = "Suministro Programado de Cajas de Cartón CDMX — CADECA Fabricante Directo";
+const description = "Programa tu suministro continuo de cajas de cartón corrugado en CDMX. Entregas periódicas con precio fijo, sin riesgo de desabasto. Fabricante directo.";
 const canonical   = SITE + "/servicios/suministro-programado";
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Suministro Programado de Cajas",
+    "name": "Suministro Programado de Cajas de Cartón",
     "description": description,
     "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
@@ -25,10 +25,10 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-    { "@type": "Question", "name": "¿Cuál es el volumen mínimo para contrato de suministro?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos con empresas que consumen al menos 500 cajas al mes. Empresas con mayor volumen obtienen mejores condiciones." } },
-    { "@type": "Question", "name": "¿Puedo cambiar las medidas o cantidades durante el contrato?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, con un aviso de 5 días hábiles podemos ajustar cantidades y medidas dentro de márgenes acordados. La flexibilidad es parte del servicio." } },
-    { "@type": "Question", "name": "¿Ofrecen crédito?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, para clientes con contrato vigente y buen historial ofrecemos crédito a 30 días. Para montos mayores evaluamos crédito a 45-60 días." } },
-    { "@type": "Question", "name": "¿Qué pasa si tengo una emergencia fuera del calendario?", "acceptedAnswer": { "@type": "Answer", "text": "Mantenemos stock de seguridad de tus cajas en nuestras instalaciones. Para emergencias respondemos en el mismo día en CDMX." } }
+    { "@type": "Question", "name": "¿Cuál es el volumen mínimo para suministro programado?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos con empresas que consumen a partir de 500 cajas mensuales. Contáctanos y analizamos tu caso." } },
+    { "@type": "Question", "name": "¿Puedo cambiar las cantidades durante el programa?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, tenemos flexibilidad para ajustar volúmenes dentro de rangos razonables según disponibilidad." } },
+    { "@type": "Question", "name": "¿El precio es fijo aunque suban los insumos?", "acceptedAnswer": { "@type": "Answer", "text": "Respetamos el precio acordado durante la vigencia del contrato, generalmente 6 o 12 meses." } },
+    { "@type": "Question", "name": "¿Hacen suministro para múltiples puntos de entrega?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos distribuir en múltiples bodegas o plantas dentro de la Zona Metropolitana." } }
     ]
   }
 ];
@@ -42,127 +42,189 @@ const schema = [
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
     { name: "Servicios", href: "/servicios" },
-    { name: "Suministro Programado de Cajas" },
+    { name: "Suministro Programado de Cajas de Cartón" },
   ]}
   whatsapp={WHATSAPP}
 >
 
-  <section class="svc-page__hero">
-    <div class="svc-page__hero-inner container">
-      <div class="svc-page__hero-col1">
-      <div class="svc-page__hero-emoji">📅</div>
-      <h1 class="svc-page__hero-title">Suministro Programado de Cajas</h1>
-      <p class="svc-page__hero-tagline">Abasto continuo sin interrupciones — precio fijo y entregas recurrentes</p>
-      <p class="svc-page__hero-desc">Para empresas que consumen cajas de manera continua, ofrecemos contratos de suministro programado: precio fijo por período, entregas según tu calendario de producción y stock de seguridad en nuestras instalaciones para emergencias.</p>
-      <div class="svc-page__hero-ctas">
-        <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Suministro+Programado+de+Cajas"}
-           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
+  {/* ════════ HERO ════════ */}
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__left">
+          <p class="hero__badge">Servicio · Entregas Periódicas CDMX</p>
+          <h1 class="hero__title"><span>Suministro Programado de Cajas de Cartón</span></h1>
+          <p class="hero__intro">Garantizamos que tu operación nunca se detenga. Definimos un calendario de entregas semanal, quincenal o mensual con precio fijo y prioridad de producción para tu empresa.</p>
+          <div class="hero__ctas">
+            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Suministro+Programado+de+Cajas"}
+               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
           </div>
-      <div class="svc-page__hero-col2">
-        <p>El <strong>suministro programado de cajas de cartón</strong> de CADECA garantiza que tu operación nunca se detenga por falta de empaques. Definimos contigo un calendario de entregas periódicas — semanal, quincenal o mensual — con precio fijo y prioridad de producción para tu empresa.</p>
-        <p>Ideal para empresas con consumo regular de cajas: manufactura, e-commerce, distribución y logística en CDMX y Estado de México. <strong>Sin riesgo de desabasto, sin necesidad de almacenar grandes inventarios.</strong> Reducimos tu costo total de empaque hasta un 20% vs. compras puntuales. Cotiza tu programa ahora.</p>
+          <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-value">Semanal</span>
+            <span class="hero__metric-label">Entrega más frecuente</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">Fijo</span>
+            <span class="hero__metric-label">Precio garantizado</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">0</span>
+            <span class="hero__metric-label">Riesgo desabasto</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">2 hrs</span>
+            <span class="hero__metric-label">Cotización</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <p>El <strong>suministro programado de cajas de cartón</strong> de CADECA garantiza que tu operación nunca se detenga por falta de empaques. Definimos contigo un calendario de entregas periódicas — semanal, quincenal o mensual — con precio fijo y prioridad de producción.</p>
+          <p>Ideal para empresas con consumo regular: manufactura, e-commerce, distribución y logística en CDMX y Estado de México. <strong>Sin riesgo de desabasto, sin inventario excesivo.</strong> Reducimos tu costo total de empaque hasta un 20% vs. compras puntuales.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="svc-page__section">
+  {/* ════════ BENEFICIOS ════════ */}
+  <section class="page-section">
     <div class="container">
-      <SectionHeader title="Beneficios del servicio" subtitle="Por qué elegir CADECA para suministro programado de cajas" />
-      <ul class="svc-page__beneficios">
-              <li><span>✓</span> Precio fijo por 3, 6 o 12 meses — sin variaciones de mercado</li>
-              <li><span>✓</span> Entregas programadas según tu calendario (semanal, quincenal, mensual)</li>
-              <li><span>✓</span> Stock de seguridad sin costo en nuestras instalaciones</li>
-              <li><span>✓</span> Línea de crédito disponible para clientes recurrentes (30 días)</li>
-              <li><span>✓</span> Asesor dedicado con contacto directo por WhatsApp</li>
+      <SectionHeader
+        title="Beneficios del servicio"
+        subtitle={"Por qué elegir CADECA para suministro programado de cajas de cartón"}
+      />
+      <ul class="feature-grid">
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Precio fijo durante toda la vigencia del contrato</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Prioridad en la línea de producción para tu empresa</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Sin riesgo de desabasto — siempre cajas disponibles</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Sin necesidad de almacenar grandes inventarios</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Flexibilidad para ajustar cantidades mes a mes</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Ahorro de hasta 20% vs. compras puntuales</span>
+          </li>
       </ul>
     </div>
   </section>
 
-  <section class="svc-page__section svc-page__section--alt">
+  {/* ════════ PROCESO ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title="Cómo funciona" subtitle="Proceso simple, sin burocracia, con respuesta rápida" />
-      <div class="svc-page__pasos">
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">1</div>
-            <div>
-              <strong>Diagnóstico</strong>
-              <p>Analizamos tu consumo histórico, variaciones estacionales y necesidades especiales. Sin compromiso.</p>
+      <SectionHeader
+        title="¿Cómo funciona?"
+        subtitle="Proceso simple, sin burocracia, con respuesta rápida"
+      />
+      <div class="process-grid">
+          <div class="process-step">
+            <div class="process-step__num">1</div>
+            <p class="process-step__title">Diagnóstico</p>
+            <p class="process-step__desc">Analizamos tu consumo actual y tu proyección para definir el programa óptimo.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">2</div>
+            <p class="process-step__title">Propuesta</p>
+            <p class="process-step__desc">Te presentamos un calendario de entregas con precio fijo y condiciones claras.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">3</div>
+            <p class="process-step__title">Contrato</p>
+            <p class="process-step__desc">Firmamos el acuerdo de suministro. Sin letra chica, sin sorpresas.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">4</div>
+            <p class="process-step__title">Operación</p>
+            <p class="process-step__desc">Empezamos a entregarte según el calendario acordado. Ajustes disponibles si tu demanda cambia.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ════════ FAQ ════════ */}
+  <section class="page-section">
+    <div class="container">
+      <SectionHeader
+        title="Preguntas frecuentes"
+        subtitle={"Todo sobre suministro programado de cajas de cartón"}
+      />
+      <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-0">
+              <span>¿Cuál es el volumen mínimo para suministro programado?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-suministro-programado-0">
+              <p>Trabajamos con empresas que consumen a partir de 500 cajas mensuales. Contáctanos y analizamos tu caso.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">2</div>
-            <div>
-              <strong>Propuesta comercial</strong>
-              <p>Te presentamos propuesta con precios, frecuencia de entregas y condiciones. En 48 hrs.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-1">
+              <span>¿Puedo cambiar las cantidades durante el programa?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-suministro-programado-1">
+              <p>Sí, tenemos flexibilidad para ajustar volúmenes dentro de rangos razonables según disponibilidad.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">3</div>
-            <div>
-              <strong>Contrato</strong>
-              <p>Firmamos acuerdo de suministro. Definimos stock de seguridad y protocolo de emergencias.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-2">
+              <span>¿El precio es fijo aunque suban los insumos?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-suministro-programado-2">
+              <p>Respetamos el precio acordado durante la vigencia del contrato, generalmente 6 o 12 meses.</p>
             </div>
           </div>
-          <div class="svc-page__paso">
-            <div class="svc-page__paso-num">4</div>
-            <div>
-              <strong>Operación</strong>
-              <p>Entregas automáticas según calendario. Asesor dedicado disponible por WhatsApp para ajustes.</p>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-3">
+              <span>¿Hacen suministro para múltiples puntos de entrega?</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-item__ans" id="faq-suministro-programado-3">
+              <p>Sí, podemos distribuir en múltiples bodegas o plantas dentro de la Zona Metropolitana.</p>
             </div>
           </div>
       </div>
     </div>
   </section>
 
-  <section class="svc-page__section">
+  {/* ════════ PRODUCTOS RELACIONADOS ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title="Preguntas frecuentes" subtitle={"Todo sobre " + "suministro programado de cajas"} />
-      <div class="svc-page__faq">
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Cuál es el volumen mínimo para contrato de suministro?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Trabajamos con empresas que consumen al menos 500 cajas al mes. Empresas con mayor volumen obtienen mejores condiciones.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Puedo cambiar las medidas o cantidades durante el contrato?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Sí, con un aviso de 5 días hábiles podemos ajustar cantidades y medidas dentro de márgenes acordados. La flexibilidad es parte del servicio.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Ofrecen crédito?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Sí, para clientes con contrato vigente y buen historial ofrecemos crédito a 30 días. Para montos mayores evaluamos crédito a 45-60 días.</p>
-            </div>
-          </div>
-          <div class="svc-page__faq-item">
-            <button class="svc-page__faq-q" aria-expanded="false">
-              <span>¿Qué pasa si tengo una emergencia fuera del calendario?</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="svc-page__faq-a">
-              <p>Mantenemos stock de seguridad de tus cajas en nuestras instalaciones. Para emergencias respondemos en el mismo día en CDMX.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="svc-page__section svc-page__section--alt">
-    <div class="container">
-      <SectionHeader title="Productos relacionados" subtitle="Explora el catálogo de CADECA" />
+      <SectionHeader
+        title="Productos relacionados"
+        subtitle="Explora el catálogo de CADECA"
+      />
       <div class="products__grid svc-products-grid">
           <ProductCard
             title="Corrugado Estándar"
@@ -174,7 +236,7 @@ const schema = [
           />
           <ProductCard
             title="Cajas a la Medida"
-            desc="Producción continua"
+            desc="Producción continua a tu medida"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
             href="/catalogo/cajas-a-la-medida"
@@ -188,60 +250,125 @@ const schema = [
             href="/catalogo/cajas-personalizadas-con-logo"
             btnText="Ver producto"
           />
-        </div>
+      </div>
     </div>
   </section>
 
   <LeadCapture
-    titulo="¿Listo para comenzar con suministro programado de cajas?"
-    subtitulo="Cotización sin compromiso en menos de 2 horas. Fabricante directo, los mejores precios de CDMX."
+    titulo="Programa tu suministro de cajas"
+    subtitulo="Precio fijo · Sin desabasto · Fabricante directo en CDMX"
     whatsapp={WHATSAPP}
   />
 
 </PageLayout>
 
 <style>
-.svc-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); }
-.svc-page__hero-inner { max-width: var(--container-max,1400px); margin: 0 auto; padding: 0 var(--space-5); display:grid; grid-template-columns:1fr; gap:var(--space-10); }
-.svc-page__hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
-.svc-page__hero-title { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: var(--space-3); }
-.svc-page__hero-tagline { font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4); }
-.svc-page__hero-desc { color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-8); }
-.svc-page__hero-ctas { display: flex; gap: var(--space-4); flex-wrap: wrap; }
-@media(min-width:1024px){ .svc-page__hero-inner{grid-template-columns:1fr 1fr;align-items:start;} }
-.svc-page__hero-col2{display:flex;flex-direction:column;gap:var(--space-6);}
-.svc-page__hero-col2 p{font-size:var(--text-sm,0.9rem);color:rgba(255,255,255,0.78);line-height:1.75;}
-.svc-page__hero-col2 p strong{color:#fff;font-weight:700;}
-.svc-page__hero-col2 p+p{padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1);margin-top:var(--space-5);}
-.svc-page__section { padding: var(--space-16) 0; }
-.svc-page__section--alt { background: var(--color-surface); }
-.svc-page__beneficios { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-3); margin-top: var(--space-8); }
-.svc-page__beneficios li { display: flex; gap: var(--space-3); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
-.svc-page__beneficios span { color: var(--color-primary); font-weight: 900; flex-shrink: 0; }
-.svc-page__pasos { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-8); max-width: 680px; margin-left: auto; margin-right: auto; }
-.svc-page__paso { display: flex; gap: var(--space-5); align-items: flex-start; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
-.svc-page__paso-num { width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: var(--text-lg); flex-shrink: 0; }
-.svc-page__paso strong { display: block; color: var(--color-secondary); font-size: var(--text-base); margin-bottom: var(--space-1); }
-.svc-page__paso p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.svc-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
-.svc-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
-.svc-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
-.svc-page__faq-q:hover { color: var(--color-primary); }
-.svc-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
-.svc-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.svc-page__faq-item.is-open .svc-page__faq-a { display: block; }
-.svc-page__faq-item.is-open .svc-page__faq-q svg { transform: rotate(180deg); }
-.svc-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
-@media (max-width: 640px) {
-  .svc-page__hero-ctas { flex-direction: column; }
-  .svc-page__beneficios { grid-template-columns: 1fr; }
+.page-section { padding: var(--spacing-3xl) 0; }
+.page-section--alt { background: var(--color-surface, #f8f9fb); }
+
+/* Feature grid */
+.feature-grid {
+  list-style: none; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
 }
+.feature-item {
+  display: flex; align-items: flex-start; gap: var(--spacing-sm);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  font-weight: 500;
+}
+.feature-item__icon {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(224,88,0,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+
+/* Process steps */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+.process-step {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  position: relative;
+}
+.process-step__num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+.process-step__title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+.process-step__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* FAQ */
+.faq-list {
+  display: flex; flex-direction: column; gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.faq-item__btn {
+  width: 100%; text-align: left;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: none; border: none; cursor: pointer;
+  font-weight: 600; font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+.faq-item__btn:hover { color: var(--color-primary); }
+.faq-item__btn svg { flex-shrink: 0; }
+.faq-item__ans {
+  display: none;
+  padding: 0 var(--spacing-xl) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+.faq-item__ans p { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: var(--line-height-relaxed); margin: var(--spacing-md) 0 0; }
+.faq-item.is-open .faq-item__ans { display: block; }
+.faq-item.is-open .faq-item__btn svg { transform: rotate(180deg); }
+
+/* Products grid: 3 cols en servicios */
+@media(min-width:768px){ .svc-products-grid{ grid-template-columns: repeat(3,1fr); } }
 </style>
 
 <script>
-document.querySelectorAll('.svc-page__faq-q').forEach(function(btn) {
+document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    var item = btn.closest('.svc-page__faq-item');
+    var item = btn.closest('.faq-item');
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });
