@@ -2,6 +2,7 @@
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import ProductCard from "@/components/ProductCard.astro";
 
 const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
@@ -150,27 +151,39 @@ const schema = [
         title={"Productos más solicitados en Naucalpan / Tlalnepantla"}
         subtitle="Cajas en stock con entrega exprés · Sin mínimos restrictivos"
       />
-      <div class="prod-grid">
-          <a href="/catalogo/cajas-corrugado-estandar" class="prod-card">
-            <span class="prod-card__icon" aria-hidden="true">📦</span>
-            <strong class="prod-card__name">Corrugado Estándar</strong>
-            <span class="prod-card__sub">24 hrs en stock</span>
-          </a>
-          <a href="/catalogo/cajas-a-la-medida" class="prod-card">
-            <span class="prod-card__icon" aria-hidden="true">📐</span>
-            <strong class="prod-card__name">Cajas a la Medida</strong>
-            <span class="prod-card__sub">Líneas de producción</span>
-          </a>
-          <a href="/catalogo/cajas-industriales-triple-pared" class="prod-card">
-            <span class="prod-card__icon" aria-hidden="true">🏭</span>
-            <strong class="prod-card__name">Industrial Triple Pared</strong>
-            <span class="prod-card__sub">Exportación ASTM</span>
-          </a>
-          <a href="/catalogo/cajas-personalizadas-con-logo" class="prod-card">
-            <span class="prod-card__icon" aria-hidden="true">🎨</span>
-            <strong class="prod-card__name">Cajas Personalizadas</strong>
-            <span class="prod-card__sub">Con logo e impresión</span>
-          </a>
+      <div class="products__grid">
+          <ProductCard
+            title="Corrugado Estándar"
+            desc="24 hrs en stock"
+            imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
+            imgAlt="Corrugado Estándar en CDMX — CADECA"
+            href="/catalogo/cajas-corrugado-estandar"
+            btnText="Ver detalles"
+          />
+          <ProductCard
+            title="Cajas a la Medida"
+            desc="Líneas de producción"
+            imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
+            imgAlt="Cajas a la Medida en CDMX — CADECA"
+            href="/catalogo/cajas-a-la-medida"
+            btnText="Ver detalles"
+          />
+          <ProductCard
+            title="Industrial Triple Pared"
+            desc="Exportación ASTM"
+            imgSrc="/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif"
+            imgAlt="Industrial Triple Pared en CDMX — CADECA"
+            href="/catalogo/cajas-industriales-triple-pared"
+            btnText="Ver detalles"
+          />
+          <ProductCard
+            title="Cajas Personalizadas"
+            desc="Con logo e impresión"
+            imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
+            imgAlt="Cajas Personalizadas en CDMX — CADECA"
+            href="/catalogo/cajas-personalizadas-con-logo"
+            btnText="Ver detalles"
+          />
       </div>
     </div>
   </section>
@@ -272,31 +285,6 @@ const schema = [
   color: var(--color-secondary);
 }
 
-/* ── Product cards ── */
-.prod-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
-}
-.prod-card {
-  display: flex; flex-direction: column; align-items: center;
-  text-align: center; gap: var(--spacing-sm);
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-xl) var(--spacing-lg);
-  text-decoration: none;
-  color: var(--color-text);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-.prod-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(224,88,0,0.12);
-}
-.prod-card__icon { font-size: 2.25rem; line-height: 1; }
-.prod-card__name { font-size: var(--font-size-base); font-weight: 700; color: var(--color-secondary); }
-.prod-card__sub { font-size: var(--font-size-sm); color: var(--color-text-light); }
 
 /* ── FAQ ── */
 .faq-list {
@@ -328,6 +316,7 @@ const schema = [
 .faq-item__ans p { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: var(--line-height-relaxed); margin: var(--spacing-md) 0 0; }
 .faq-item.is-open .faq-item__ans { display: block; }
 .faq-item.is-open .faq-item__btn svg { transform: rotate(180deg); }
+@media(min-width:1024px){ .products__grid { grid-template-columns: repeat(2, 1fr); } }
 </style>
 
 <script>
