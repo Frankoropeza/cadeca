@@ -48,6 +48,7 @@ const schema = [
 
   <section class="zona-page__hero">
     <div class="zona-page__hero-inner container">
+      <div class="zona-page__hero-col1">
       <div class="zona-page__hero-badge">📦 Alcaldías: Coyoacán, Benito Juárez, Álvaro Obregón</div>
       <h1 class="zona-page__hero-title">
         Cajas de Cartón en<br/><span class="zona-page__hero-hl">Coyoacán / Benito Juárez</span>
@@ -62,6 +63,11 @@ const schema = [
         <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
         <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Coyoacán%20%2F%20Benito%20Juárez"}
            class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+          </div>
+      <div class="zona-page__hero-col2">
+        <p>CADECA entrega <strong>cajas de cartón corrugado en Coyoacán y Benito Juárez</strong>, alcaldías con alta concentración de empresas de servicios, e-commerce, startups y marcas de consumo. Empaques de calidad para negocios que valoran la presentación y la funcionalidad de su empaque.</p>
+        <p>Ideal para <strong>vendedores de e-commerce, marcas independientes y startups</strong> en Coyoacán y BJ. Cajas a la medida con impresión personalizada desde 100 piezas, entrega en 48-72 horas. CADECA es el proveedor de cajas preferido de los emprendedores del sur de CDMX. Cotiza ahora sin compromiso.</p>
       </div>
     </div>
   </section>
@@ -174,8 +180,13 @@ const schema = [
 </PageLayout>
 
 <style>
-.zona-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); text-align: center; }
-.zona-page__hero-inner { max-width: 760px; margin: 0 auto; padding: 0 var(--space-5); }
+.zona-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); }
+.zona-page__hero-inner { max-width: var(--container-max,1400px); margin: 0 auto; padding: 0 var(--space-5); display:grid; grid-template-columns:1fr; gap:var(--space-10); }
+@media(min-width:1024px){ .zona-page__hero-inner{grid-template-columns:1fr 1fr;align-items:start;} }
+.zona-page__hero-col2{display:flex;flex-direction:column;gap:var(--space-5);}
+.zona-page__hero-col2 p{font-size:var(--text-sm,0.9rem);color:rgba(255,255,255,0.78);line-height:1.75;}
+.zona-page__hero-col2 p strong{color:#fff;font-weight:700;}
+.zona-page__hero-col2 p+p{padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1);margin-top:var(--space-5);}
 .zona-page__hero-badge { display: inline-block; background: rgba(224,88,0,0.15); border: 1px solid rgba(224,88,0,0.3); color: #ff8c42; padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-4); }
 .zona-page__hero-title { font-size: clamp(2rem,5vw,3rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: var(--space-4); }
 .zona-page__hero-hl { color: var(--color-primary); }

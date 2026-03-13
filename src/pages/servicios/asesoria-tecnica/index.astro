@@ -48,6 +48,7 @@ const schema = [
 
   <section class="svc-page__hero">
     <div class="svc-page__hero-inner container">
+      <div class="svc-page__hero-col1">
       <div class="svc-page__hero-emoji">🔬</div>
       <h1 class="svc-page__hero-title">Asesoría Técnica Gratuita de Empaque</h1>
       <p class="svc-page__hero-tagline">Ingeniería de empaque sin costo — encontramos la caja ideal para tu producto</p>
@@ -56,6 +57,11 @@ const schema = [
         <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
         <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Asesoría+Técnica+Gratuita+de+Empaque"}
            class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+          </div>
+      <div class="svc-page__hero-col2">
+        <p>La <strong>asesoría técnica gratuita de empaque</strong> de CADECA te ayuda a seleccionar la caja correcta para tu producto: flauta, calibre, resistencia ECT, dimensiones óptimas y tipo de sellado. Nuestro equipo de ingeniería analiza tu producto, proceso y destino para recomendarte la solución más eficiente y económica.</p>
+        <p>Miles de empresas en CDMX han optimizado su costo de empaque con nuestra asesoría. <strong>Reducimos mermas, daños en tránsito y sobreempaque</strong> sin incrementar el presupuesto. El servicio es completamente gratuito, sin compromiso de compra. Un asesor te responde en menos de 2 horas.</p>
       </div>
     </div>
   </section>
@@ -182,13 +188,18 @@ const schema = [
 </PageLayout>
 
 <style>
-.svc-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); text-align: center; }
-.svc-page__hero-inner { max-width: 720px; margin: 0 auto; padding: 0 var(--space-5); }
+.svc-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); }
+.svc-page__hero-inner { max-width: var(--container-max,1400px); margin: 0 auto; padding: 0 var(--space-5); display:grid; grid-template-columns:1fr; gap:var(--space-10); }
 .svc-page__hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
 .svc-page__hero-title { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: var(--space-3); }
 .svc-page__hero-tagline { font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4); }
 .svc-page__hero-desc { color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-8); }
-.svc-page__hero-ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+.svc-page__hero-ctas { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+@media(min-width:1024px){ .svc-page__hero-inner{grid-template-columns:1fr 1fr;align-items:start;} }
+.svc-page__hero-col2{display:flex;flex-direction:column;gap:var(--space-6);}
+.svc-page__hero-col2 p{font-size:var(--text-sm,0.9rem);color:rgba(255,255,255,0.78);line-height:1.75;}
+.svc-page__hero-col2 p strong{color:#fff;font-weight:700;}
+.svc-page__hero-col2 p+p{padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1);margin-top:var(--space-5);}
 .svc-page__section { padding: var(--space-16) 0; }
 .svc-page__section--alt { background: var(--color-surface); }
 .svc-page__beneficios { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-3); margin-top: var(--space-8); }
