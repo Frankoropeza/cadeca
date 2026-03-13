@@ -557,7 +557,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   gap: var(--spacing-lg);
 }
 @media (min-width: 640px)  { .products__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .products__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .products__grid { grid-template-columns: repeat(4, 1fr); } }
 
 .product-card {
   background: var(--color-white);
@@ -579,14 +579,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   object-fit: cover;
 }
 .product-card__body {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: var(--spacing-sm);
 }
 .product-card__title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: 700;
   color: var(--color-secondary);
   line-height: var(--line-height-tight);
