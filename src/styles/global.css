@@ -1367,7 +1367,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .catalog-nav__breadcrumb a:hover { text-decoration: underline; }
 .catalog-nav__breadcrumb span { color: var(--color-text-light); }
 .catalog-nav__breadcrumb .sep { color: var(--color-border); }
-.catalog-nav__actions { display: flex; gap: 0.75rem; align-items: center; }
+.catalog-nav__actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
 .catalog-nav__chapter-link {
   font-size: var(--font-size-xs);
   font-weight: 700;
@@ -1700,11 +1700,8 @@ img, video, iframe { max-width: 100%; height: auto; }
 
 /* Fix nav catálogo en móvil */
 .catalog-nav__actions {
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: wrap;
 }
-.catalog-nav__actions::-webkit-scrollbar { display: none; }
 
 /* Fix specs-strip overflow en móvil */
 @media (max-width: 640px) {
@@ -2667,12 +2664,10 @@ pre, code {
 .cat-bar__list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.4rem;
-  overflow-x: auto;
-  scrollbar-width: none;
   padding: 0.875rem 0;
 }
-.cat-bar__list::-webkit-scrollbar { display: none; }
 .cat-bar__btn {
   display: inline-flex;
   align-items: center;
