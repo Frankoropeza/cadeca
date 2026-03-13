@@ -6,18 +6,18 @@ import LeadCapture from "@/components/LeadCapture.astro";
 const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Cajas de Cartón Venustiano Carranza / Centro — Entrega 24 hrs · Fabricante Directo | CADECA";
-const description = "Cajas de cartón corrugado con entrega en 24 hrs en Venustiano Carranza / Centro. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
+const title       = "Cajas de Cartón Centro Histórico / Venustiano Carranza — Entrega 24 hrs · Fabricante Directo | CADECA";
+const description = "Cajas de cartón corrugado con entrega en 24 hrs en Centro Histórico / Venustiano Carranza. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
 const canonical   = SITE + "/zonas-de-servicio/venustiano-carranza-centro";
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "CADECA — Cajas de Cartón Venustiano Carranza / Centro",
+    "name": "CADECA — Cajas de Cartón Centro Histórico / Venustiano Carranza",
     "description": description,
     "url": canonical,
-    "areaServed": ["Venustiano Carranza, Cuauhtémoc"],
+    "areaServed": ["Venustiano Carranza", "Centro Histórico"],
     "address": { "@type": "PostalAddress", "addressRegion": "Ciudad de México", "addressCountry": "MX" },
     "priceRange": "$$"
   },
@@ -25,9 +25,9 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-    { "@type": "Question", "name": "¿Hacen entregas en Tepito y La Merced?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, entregamos en toda la zona de Tepito, La Merced y el Centro Histórico. Recomendamos coordinar el horario para evitar restricciones de tráfico." } },
-    { "@type": "Question", "name": "¿Tienen cajas para empacar ropa y textiles?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, contamos con cajas de cartón corrugado en múltiples medidas ideales para textiles, calzado y mercancía general. También hacemos cajas a la medida." } },
-    { "@type": "Question", "name": "¿Pueden entregar cerca del Aeropuerto Internacional?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, la zona de Venustiano Carranza incluye el acceso al AICM. Entregamos en empresas de carga, agentes aduanales y negocios de la zona." } }
+    { "@type": "Question", "name": "¿Entregan en Tepito y La Merced?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, tenemos rutas de entrega en todo Venustiano Carranza incluyendo Tepito, La Merced y el Centro Histórico." } },
+    { "@type": "Question", "name": "¿Hacen facturas para distribuidoras?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, emitimos facturas CFDI con todos los requisitos fiscales para distribuidoras e importadoras." } },
+    { "@type": "Question", "name": "¿Tienen cajas reforzadas para mercancía pesada?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, manejamos corrugado de doble y triple pared para productos pesados o que requieren protección adicional." } }
     ]
   }
 ];
@@ -41,130 +41,173 @@ const schema = [
   breadcrumbs={[
     { name: "Inicio",            href: "/" },
     { name: "Zonas de Servicio", href: "/zonas-de-servicio" },
-    { name: "Venustiano Carranza / Centro" },
+    { name: "Centro Histórico / Venustiano Carranza" },
   ]}
   whatsapp={WHATSAPP}
 >
 
-  <section class="zona-page__hero">
-    <div class="zona-page__hero-inner container">
-      <div class="zona-page__hero-col1">
-      <div class="zona-page__hero-badge">📦 Alcaldías: Venustiano Carranza, Cuauhtémoc</div>
-      <h1 class="zona-page__hero-title">
-        Cajas de Cartón en<br/><span class="zona-page__hero-hl">Venustiano Carranza / Centro</span>
-      </h1>
-      <p class="zona-page__hero-sub">Zona comercial e histórica de CDMX. Tepito, La Merced y el Centro Histórico concentran miles de comercios que requieren empaques de calidad.</p>
-      <div class="zona-page__hero-meta">
-        <span class="zona-page__meta-pill">⚡ Entrega 24 hrs</span>
-        <span class="zona-page__meta-pill">🏭 Fabricante directo</span>
-        <span class="zona-page__meta-pill">📋 Cotización gratuita</span>
-      </div>
-      <div class="zona-page__hero-ctas">
-        <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
-        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Venustiano%20Carranza%20%2F%20Centro"}
-           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
+  {/* ════════ HERO — idéntico al index ════════ */}
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__left">
+          <p class="hero__badge">Zona Centro · Venustiano Carranza · Tepito</p>
+          <h1 class="hero__title">
+            Cajas de Cartón en<br><span>Centro Histórico / Venustiano Carranza</span>
+          </h1>
+          <p class="hero__intro">Cajas de cartón corrugado para comercios y distribuidoras del Centro Histórico, Tepito y toda la alcaldía Venustiano Carranza. Entrega en 24 hrs.</p>
+          <div class="hero__ctas">
+            <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
+            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+el+Centro+Hist%C3%B3rico"}
+               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
           </div>
-      <div class="zona-page__hero-col2">
-        <p>CADECA surte <strong>cajas de cartón para negocios del Centro Histórico y Venustiano Carranza</strong> en CDMX. La zona con mayor densidad comercial de México — mercados, bodegas, comercio al mayoreo y pequeñas empresas — requiere empaques confiables con entregas rápidas y precios competitivos.</p>
-        <p>Atendemos a comerciantes, importadores, distribuidores y pequeñas empresas del Centro con entregas en <strong>24 horas</strong>. Cajas corrugadas estándar, a la medida y personalizadas con tu logo. Pedidos desde <strong>50 piezas</strong> sin mínimos restrictivos. Cotiza por WhatsApp en menos de 2 horas.</p>
+          <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-value">24 hrs</span>
+            <span class="hero__metric-label">Entrega en el Centro</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">50+</span>
+            <span class="hero__metric-label">Piezas mínimo</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">100+</span>
+            <span class="hero__metric-label">Piezas para personaliz.</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">2 hrs</span>
+            <span class="hero__metric-label">Cotización</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <p>CADECA surte <strong>cajas de cartón para negocios del Centro Histórico y Venustiano Carranza</strong> en CDMX. La zona con mayor densidad comercial de México — mercados, bodegas, comercio al mayoreo y pequeñas empresas — requiere empaques confiables con entregas rápidas y precios competitivos.</p>
+          <p>Atendemos a comerciantes, importadores, distribuidores y pequeñas empresas del Centro con entregas en <strong>24 horas</strong>. Cajas corrugadas estándar, a la medida y personalizadas con tu logo. Pedidos desde <strong>50 piezas</strong> sin mínimos restrictivos. Cotiza por WhatsApp y recibe respuesta en menos de 2 horas.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="zona-page__section">
+  {/* ════════ VENTAJAS ════════ */}
+  <section class="page-section">
     <div class="container">
-      <SectionHeader title={"¿Por qué elegir CADECA en Venustiano Carranza / Centro?"} subtitle="Fabricante directo con entrega propia — sin intermediarios, sin costos ocultos" />
-      <ul class="zona-page__ventajas">
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Entrega en el corazón comercial de CDMX
-                </li>
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Cubrimos Tepito, La Merced y Centro Histórico
-                </li>
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Cajas para comercio al menudeo y mayoreo
-                </li>
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Servicio a comerciantes e importadores
-                </li>
+      <SectionHeader
+        title={"¿Por qué elegir CADECA en Centro Histórico / Venustiano Carranza?"}
+        subtitle="Fabricante directo con entrega propia — sin intermediarios, sin costos ocultos"
+      />
+      <ul class="feature-grid">
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Entrega en el Centro Histórico y Tepito en 24 hrs</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Pedidos desde 50 piezas sin restricciones</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Atención a importadores y distribuidores mayoristas</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Cajas personalizadas con logo desde 100 piezas</span>
+          </li>
       </ul>
     </div>
   </section>
 
-  <section class="zona-page__section zona-page__section--alt">
+  {/* ════════ INDUSTRIAS ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title={"Industrias que atendemos en Venustiano Carranza / Centro}"} subtitle="Cajas de cartón corrugado para todos los sectores productivos de la zona" />
-      <ul class="zona-page__industrias">
-                <li>Comercio textil y de ropa</li>
-                <li>Juguetes y mercería</li>
-                <li>Electrónicos y tecnología</li>
-                <li>Restaurantes y gastronomía</li>
+      <SectionHeader
+        title={"Industrias y sectores en Centro Histórico / Venustiano Carranza"}
+        subtitle="Atendemos todos los sectores productivos de la zona"
+      />
+      <ul class="tag-cloud">
+          <li class="tag-item">Comercio mayorista e importación</li>
+          <li class="tag-item">Distribución de electrónicos y ropa</li>
+          <li class="tag-item">Pequeños comercios y pymes</li>
+          <li class="tag-item">Mercados y tianguis establecidos</li>
       </ul>
     </div>
   </section>
 
-  <section class="zona-page__section">
+  {/* ════════ PRODUCTOS ════════ */}
+  <section class="page-section">
     <div class="container">
-      <SectionHeader title={"Productos más solicitados en Venustiano Carranza / Centro}"} subtitle="Cajas en stock con entrega express" />
-      <div class="zona-page__productos">
-        <a href="/catalogo/cajas-corrugado-estandar" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">📦</span>
-          <strong>Corrugado Estándar</strong>
-          <span>Entrega 24 hrs</span>
-        </a>
-        <a href="/catalogo/cajas-a-la-medida" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">📐</span>
-          <strong>Cajas a la Medida</strong>
-          <span>Producción en 3-5 días</span>
-        </a>
-        <a href="/catalogo/cajas-ecommerce-mercado-libre" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">🛒</span>
-          <strong>Cajas E-commerce</strong>
-          <span>Mercado Libre y Amazon FBA</span>
-        </a>
-        <a href="/catalogo/cajas-personalizadas-con-logo" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">🎨</span>
-          <strong>Cajas Personalizadas</strong>
-          <span>Con logo e impresión</span>
-        </a>
+      <SectionHeader
+        title={"Productos más solicitados en Centro Histórico / Venustiano Carranza"}
+        subtitle="Cajas en stock con entrega exprés · Sin mínimos restrictivos"
+      />
+      <div class="prod-grid">
+          <a href="/catalogo/cajas-corrugado-estandar" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">📦</span>
+            <strong class="prod-card__name">Corrugado Estándar</strong>
+            <span class="prod-card__sub">Stock permanente</span>
+          </a>
+          <a href="/catalogo/cajas-personalizadas-con-logo" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">🎨</span>
+            <strong class="prod-card__name">Cajas Personalizadas</strong>
+            <span class="prod-card__sub">Con tu logo</span>
+          </a>
+          <a href="/catalogo/cajas-a-la-medida" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">📐</span>
+            <strong class="prod-card__name">Cajas a la Medida</strong>
+            <span class="prod-card__sub">Cualquier dimensión</span>
+          </a>
+          <a href="/catalogo/cajas-ecommerce-mercado-libre" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">🛒</span>
+            <strong class="prod-card__name">E-commerce</strong>
+            <span class="prod-card__sub">Para envíos y Mercado Libre</span>
+          </a>
       </div>
     </div>
   </section>
 
-  <section class="zona-page__section zona-page__section--alt">
+  {/* ════════ FAQ ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title={"Preguntas frecuentes — Venustiano Carranza / Centro}"} subtitle="Todo sobre nuestro servicio en tu zona" />
-      <div class="zona-page__faq">
-          <div class="zona-page__faq-item">
-            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-venustiano-carranza-centro-0">
-              <span>¿Hacen entregas en Tepito y La Merced?</span>
+      <SectionHeader
+        title={"Preguntas frecuentes — Centro Histórico / Venustiano Carranza"}
+        subtitle="Todo sobre nuestro servicio de entrega en tu zona"
+      />
+      <div class="faq-list" role="list">
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-venustiano-carranza-centro-0">
+              <span>¿Entregan en Tepito y La Merced?</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="zona-page__faq-a" id="faq-venustiano-carranza-centro-0">
-              <p>Sí, entregamos en toda la zona de Tepito, La Merced y el Centro Histórico. Recomendamos coordinar el horario para evitar restricciones de tráfico.</p>
+            <div class="faq-item__ans" id="faq-venustiano-carranza-centro-0">
+              <p>Sí, tenemos rutas de entrega en todo Venustiano Carranza incluyendo Tepito, La Merced y el Centro Histórico.</p>
             </div>
           </div>
-          <div class="zona-page__faq-item">
-            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-venustiano-carranza-centro-1">
-              <span>¿Tienen cajas para empacar ropa y textiles?</span>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-venustiano-carranza-centro-1">
+              <span>¿Hacen facturas para distribuidoras?</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="zona-page__faq-a" id="faq-venustiano-carranza-centro-1">
-              <p>Sí, contamos con cajas de cartón corrugado en múltiples medidas ideales para textiles, calzado y mercancía general. También hacemos cajas a la medida.</p>
+            <div class="faq-item__ans" id="faq-venustiano-carranza-centro-1">
+              <p>Sí, emitimos facturas CFDI con todos los requisitos fiscales para distribuidoras e importadoras.</p>
             </div>
           </div>
-          <div class="zona-page__faq-item">
-            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-venustiano-carranza-centro-2">
-              <span>¿Pueden entregar cerca del Aeropuerto Internacional?</span>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-venustiano-carranza-centro-2">
+              <span>¿Tienen cajas reforzadas para mercancía pesada?</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="zona-page__faq-a" id="faq-venustiano-carranza-centro-2">
-              <p>Sí, la zona de Venustiano Carranza incluye el acceso al AICM. Entregamos en empresas de carga, agentes aduanales y negocios de la zona.</p>
+            <div class="faq-item__ans" id="faq-venustiano-carranza-centro-2">
+              <p>Sí, manejamos corrugado de doble y triple pared para productos pesados o que requieren protección adicional.</p>
             </div>
           </div>
       </div>
@@ -172,59 +215,125 @@ const schema = [
   </section>
 
   <LeadCapture
-    titulo={"¿Listo para cotizar cajas en Venustiano Carranza / Centro?"}
-    subtitulo="Cotización sin compromiso en menos de 24 horas. Fabricante directo, los mejores precios."
+    titulo={"Cotiza cajas en Centro Histórico / Venustiano Carranza"}
+    subtitulo="Fabricante directo · Cotización en menos de 2 horas · Entrega en 24 hrs"
     whatsapp={WHATSAPP}
   />
 
 </PageLayout>
 
 <style>
-.zona-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); }
-.zona-page__hero-inner { max-width: var(--container-max,1400px); margin: 0 auto; padding: 0 var(--space-5); display:grid; grid-template-columns:1fr; gap:var(--space-10); }
-@media(min-width:1024px){ .zona-page__hero-inner{grid-template-columns:1fr 1fr;align-items:start;} }
-.zona-page__hero-col2{display:flex;flex-direction:column;gap:var(--space-5);}
-.zona-page__hero-col2 p{font-size:var(--text-sm,0.9rem);color:rgba(255,255,255,0.78);line-height:1.75;}
-.zona-page__hero-col2 p strong{color:#fff;font-weight:700;}
-.zona-page__hero-col2 p+p{padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1);margin-top:var(--space-5);}
-.zona-page__hero-badge { display: inline-block; background: rgba(224,88,0,0.15); border: 1px solid rgba(224,88,0,0.3); color: #ff8c42; padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-4); }
-.zona-page__hero-title { font-size: clamp(2rem,5vw,3rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: var(--space-4); }
-.zona-page__hero-hl { color: var(--color-primary); }
-.zona-page__hero-sub { font-size: var(--text-lg); color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-6); }
-.zona-page__hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-bottom: var(--space-8); }
-.zona-page__meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500; }
-.zona-page__hero-ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-.zona-page__section { padding: var(--space-16) 0; }
-.zona-page__section--alt { background: var(--color-surface); }
-.zona-page__ventajas { list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-4); margin-top: var(--space-8); padding: 0; }
-.zona-page__ventaja { display: flex; align-items: flex-start; gap: var(--space-3); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
-.zona-page__check { color: var(--color-primary); font-weight: 900; font-size: 1.1rem; flex-shrink: 0; }
-.zona-page__industrias { list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: var(--space-3); margin-top: var(--space-8); padding: 0; }
-.zona-page__industrias li { background: #fff; border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-weight: 600; font-size: var(--text-sm); }
-.zona-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
-.zona-page__prod-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-2); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); text-decoration: none; color: var(--color-text); }
-.zona-page__prod-card:hover { border-color: var(--color-primary); }
-.zona-page__prod-icon { font-size: 2rem; }
-.zona-page__prod-card strong { font-size: var(--text-base); color: var(--color-secondary); }
-.zona-page__prod-card span { font-size: var(--text-sm); color: var(--color-text-muted); }
-.zona-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
-.zona-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
-.zona-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
-.zona-page__faq-q:hover { color: var(--color-primary); }
-.zona-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
-.zona-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.zona-page__faq-item.is-open .zona-page__faq-a { display: block; }
-.zona-page__faq-item.is-open .zona-page__faq-q svg { transform: rotate(180deg); }
-@media (max-width: 640px) {
-  .zona-page__hero-ctas { flex-direction: column; }
-  .zona-page__ventajas { grid-template-columns: 1fr; }
+/* ── Secciones generales ── */
+.page-section { padding: var(--spacing-3xl) 0; }
+.page-section--alt { background: var(--color-surface,#f8f9fb); }
+
+/* ── Feature grid (ventajas) ── */
+.feature-grid {
+  list-style: none; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
 }
+.feature-item {
+  display: flex; align-items: flex-start; gap: var(--spacing-sm);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  font-weight: 500;
+}
+.feature-item__icon {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(224,88,0,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+
+/* ── Tag cloud (industrias) ── */
+.tag-cloud {
+  list-style: none; padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+  justify-content: center;
+}
+.tag-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.25rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+/* ── Product cards ── */
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+.prod-card {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: var(--spacing-sm);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.prod-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(224,88,0,0.12);
+}
+.prod-card__icon { font-size: 2.25rem; line-height: 1; }
+.prod-card__name { font-size: var(--font-size-base); font-weight: 700; color: var(--color-secondary); }
+.prod-card__sub { font-size: var(--font-size-sm); color: var(--color-text-light); }
+
+/* ── FAQ ── */
+.faq-list {
+  display: flex; flex-direction: column; gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.faq-item__btn {
+  width: 100%; text-align: left;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: none; border: none; cursor: pointer;
+  font-weight: 600; font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+.faq-item__btn:hover { color: var(--color-primary); }
+.faq-item__btn svg { flex-shrink: 0; }
+.faq-item__ans {
+  display: none;
+  padding: 0 var(--spacing-xl) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+.faq-item__ans p { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: var(--line-height-relaxed); margin: var(--spacing-md) 0 0; }
+.faq-item.is-open .faq-item__ans { display: block; }
+.faq-item.is-open .faq-item__btn svg { transform: rotate(180deg); }
 </style>
 
 <script>
-document.querySelectorAll('.zona-page__faq-q').forEach(function(btn) {
+document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    var item = btn.closest('.zona-page__faq-item');
+    var item = btn.closest('.faq-item');
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });

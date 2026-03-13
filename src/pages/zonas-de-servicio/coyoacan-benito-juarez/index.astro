@@ -6,8 +6,8 @@ import LeadCapture from "@/components/LeadCapture.astro";
 const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Cajas de Cartón Coyoacán / Benito Juárez — Entrega 24 hrs · Fabricante Directo | CADECA";
-const description = "Cajas de cartón corrugado con entrega en 24 hrs en Coyoacán / Benito Juárez. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
+const title       = "Cajas de Cartón Coyoacán / Benito Juárez — Entrega 48-72 hrs · Fabricante Directo | CADECA";
+const description = "Cajas de cartón corrugado con entrega en 48-72 hrs en Coyoacán / Benito Juárez. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
 const canonical   = SITE + "/zonas-de-servicio/coyoacan-benito-juarez";
 
 const schema = [
@@ -17,7 +17,7 @@ const schema = [
     "name": "CADECA — Cajas de Cartón Coyoacán / Benito Juárez",
     "description": description,
     "url": canonical,
-    "areaServed": ["Coyoacán, Benito Juárez, Álvaro Obregón"],
+    "areaServed": ["Coyoacán", "Benito Juárez"],
     "address": { "@type": "PostalAddress", "addressRegion": "Ciudad de México", "addressCountry": "MX" },
     "priceRange": "$$"
   },
@@ -25,9 +25,9 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-    { "@type": "Question", "name": "¿Tienen cajas para e-commerce y envíos de Mercado Libre?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, somos proveedor de cajas compatibles con Mercado Envíos y Amazon FBA. Tenemos medidas 1A, 1B, 1C, 1D, 1E estándar en stock permanente." } },
-    { "@type": "Question", "name": "¿Hacen cajas personalizadas para marcas en Coyoacán?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, hacemos cajas con impresión de logo y marca para empresas que buscan empaque profesional. Tiempo de producción: 5-7 días hábiles." } },
-    { "@type": "Question", "name": "¿Cuánto cuesta la entrega en Benito Juárez?", "acceptedAnswer": { "@type": "Answer", "text": "La entrega es sin costo para pedidos de 200 piezas o más en Benito Juárez y Coyoacán. Para pedidos menores, cotizamos el flete según la colonia." } }
+    { "@type": "Question", "name": "¿Hacen cajas para e-commerce con logo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, desde 100 piezas fabricamos cajas personalizadas con tu logo e impresión en 1-4 colores." } },
+    { "@type": "Question", "name": "¿Tienen opciones de packaging ecológico?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, manejamos cartón kraft reciclado certificado FSC para marcas con valores sustentables." } },
+    { "@type": "Question", "name": "¿Cuánto tarda la entrega en Coyoacán?", "acceptedAnswer": { "@type": "Answer", "text": "Entre 48-72 hrs hábiles desde la confirmación del pedido." } }
     ]
   }
 ];
@@ -46,125 +46,168 @@ const schema = [
   whatsapp={WHATSAPP}
 >
 
-  <section class="zona-page__hero">
-    <div class="zona-page__hero-inner container">
-      <div class="zona-page__hero-col1">
-      <div class="zona-page__hero-badge">📦 Alcaldías: Coyoacán, Benito Juárez, Álvaro Obregón</div>
-      <h1 class="zona-page__hero-title">
-        Cajas de Cartón en<br/><span class="zona-page__hero-hl">Coyoacán / Benito Juárez</span>
-      </h1>
-      <p class="zona-page__hero-sub">Zona residencial y de oficinas corporativas. Alta demanda de cajas para e-commerce, mudanzas y empresas de servicios con operaciones de logística.</p>
-      <div class="zona-page__hero-meta">
-        <span class="zona-page__meta-pill">⚡ Entrega 24 hrs</span>
-        <span class="zona-page__meta-pill">🏭 Fabricante directo</span>
-        <span class="zona-page__meta-pill">📋 Cotización gratuita</span>
-      </div>
-      <div class="zona-page__hero-ctas">
-        <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
-        <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Coyoacán%20%2F%20Benito%20Juárez"}
-           class="btn btn--outline btn--lg" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
+  {/* ════════ HERO — idéntico al index ════════ */}
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__left">
+          <p class="hero__badge">Alcaldías: Coyoacán · Benito Juárez</p>
+          <h1 class="hero__title">
+            Cajas de Cartón en<br><span>Coyoacán / Benito Juárez</span>
+          </h1>
+          <p class="hero__intro">Cajas de cartón corrugado y packaging personalizado para e-commerce, marcas independientes y empresas del sur de CDMX. Entrega en 48-72 hrs.</p>
+          <div class="hero__ctas">
+            <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
+            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Coyoac%C3%A1n"}
+               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
           </div>
-      <div class="zona-page__hero-col2">
-        <p>CADECA entrega <strong>cajas de cartón corrugado en Coyoacán y Benito Juárez</strong>, alcaldías con alta concentración de empresas de servicios, e-commerce, startups y marcas de consumo. Empaques de calidad para negocios que valoran la presentación y la funcionalidad de su empaque.</p>
-        <p>Ideal para <strong>vendedores de e-commerce, marcas independientes y startups</strong> en Coyoacán y BJ. Cajas a la medida con impresión personalizada desde 100 piezas, entrega en 48-72 horas. CADECA es el proveedor de cajas preferido de los emprendedores del sur de CDMX. Cotiza ahora sin compromiso.</p>
+          <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-value">48-72 hrs</span>
+            <span class="hero__metric-label">Entrega en la zona</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">100+</span>
+            <span class="hero__metric-label">Piezas con logo</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">50+</span>
+            <span class="hero__metric-label">Piezas estándar</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">2 hrs</span>
+            <span class="hero__metric-label">Cotización</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <p>CADECA entrega <strong>cajas de cartón corrugado en Coyoacán y Benito Juárez</strong>, alcaldías con alta concentración de empresas de servicios, e-commerce, startups y marcas de consumo. Empaques de calidad para negocios que valoran la presentación y la funcionalidad de su empaque.</p>
+          <p>Ideal para <strong>vendedores de e-commerce, marcas independientes y startups</strong> en Coyoacán y BJ. Cajas a la medida con impresión personalizada desde 100 piezas, entrega en 48-72 horas. CADECA es el proveedor de cajas preferido de los emprendedores del sur de CDMX. Cotiza ahora sin compromiso.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="zona-page__section">
+  {/* ════════ VENTAJAS ════════ */}
+  <section class="page-section">
     <div class="container">
-      <SectionHeader title={"¿Por qué elegir CADECA en Coyoacán / Benito Juárez?"} subtitle="Fabricante directo con entrega propia — sin intermediarios, sin costos ocultos" />
-      <ul class="zona-page__ventajas">
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Ideal para empresas de e-commerce en Del Valle y Narvarte
-                </li>
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Cajas para mudanza residencial de alta calidad
-                </li>
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Entrega programada para oficinas corporativas
-                </li>
-                <li class="zona-page__ventaja">
-                  <span class="zona-page__check" aria-hidden="true">&#10003;</span>
-                  Empaques personalizados para marcas premium
-                </li>
+      <SectionHeader
+        title={"¿Por qué elegir CADECA en Coyoacán / Benito Juárez?"}
+        subtitle="Fabricante directo con entrega propia — sin intermediarios, sin costos ocultos"
+      />
+      <ul class="feature-grid">
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Packaging profesional para marcas y e-commerce</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Cajas personalizadas con logo desde 100 piezas</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Entrega en 48-72 hrs en Coyoacán y BJ</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span>Ideal para Mercado Libre, Amazon y Shopify</span>
+          </li>
       </ul>
     </div>
   </section>
 
-  <section class="zona-page__section zona-page__section--alt">
+  {/* ════════ INDUSTRIAS ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title={"Industrias que atendemos en Coyoacán / Benito Juárez}"} subtitle="Cajas de cartón corrugado para todos los sectores productivos de la zona" />
-      <ul class="zona-page__industrias">
-                <li>E-commerce y startups</li>
-                <li>Corporativos y oficinas</li>
-                <li>Mudanzas residenciales</li>
-                <li>Gastronomía y delivery</li>
+      <SectionHeader
+        title={"Industrias y sectores en Coyoacán / Benito Juárez"}
+        subtitle="Atendemos todos los sectores productivos de la zona"
+      />
+      <ul class="tag-cloud">
+          <li class="tag-item">E-commerce y marcas DTC</li>
+          <li class="tag-item">Startups y scale-ups</li>
+          <li class="tag-item">Retail y tiendas independientes</li>
+          <li class="tag-item">Gastronomía y alimentos gourmet</li>
       </ul>
     </div>
   </section>
 
-  <section class="zona-page__section">
+  {/* ════════ PRODUCTOS ════════ */}
+  <section class="page-section">
     <div class="container">
-      <SectionHeader title={"Productos más solicitados en Coyoacán / Benito Juárez}"} subtitle="Cajas en stock con entrega express" />
-      <div class="zona-page__productos">
-        <a href="/catalogo/cajas-corrugado-estandar" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">📦</span>
-          <strong>Corrugado Estándar</strong>
-          <span>Entrega 24 hrs</span>
-        </a>
-        <a href="/catalogo/cajas-a-la-medida" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">📐</span>
-          <strong>Cajas a la Medida</strong>
-          <span>Producción en 3-5 días</span>
-        </a>
-        <a href="/catalogo/cajas-ecommerce-mercado-libre" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">🛒</span>
-          <strong>Cajas E-commerce</strong>
-          <span>Mercado Libre y Amazon FBA</span>
-        </a>
-        <a href="/catalogo/cajas-personalizadas-con-logo" class="zona-page__prod-card">
-          <span class="zona-page__prod-icon">🎨</span>
-          <strong>Cajas Personalizadas</strong>
-          <span>Con logo e impresión</span>
-        </a>
+      <SectionHeader
+        title={"Productos más solicitados en Coyoacán / Benito Juárez"}
+        subtitle="Cajas en stock con entrega exprés · Sin mínimos restrictivos"
+      />
+      <div class="prod-grid">
+          <a href="/catalogo/cajas-ecommerce-mercado-libre" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">🛒</span>
+            <strong class="prod-card__name">Cajas E-commerce</strong>
+            <span class="prod-card__sub">ML · Amazon · Shopify</span>
+          </a>
+          <a href="/catalogo/cajas-personalizadas-con-logo" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">🎨</span>
+            <strong class="prod-card__name">Cajas con Logo</strong>
+            <span class="prod-card__sub">Impresión full color</span>
+          </a>
+          <a href="/catalogo/cajas-a-la-medida" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">📐</span>
+            <strong class="prod-card__name">Cajas a la Medida</strong>
+            <span class="prod-card__sub">Para tu producto exacto</span>
+          </a>
+          <a href="/catalogo/packaging-ecologico" class="prod-card">
+            <span class="prod-card__icon" aria-hidden="true">🌿</span>
+            <strong class="prod-card__name">Packaging Ecológico</strong>
+            <span class="prod-card__sub">Certificado FSC</span>
+          </a>
       </div>
     </div>
   </section>
 
-  <section class="zona-page__section zona-page__section--alt">
+  {/* ════════ FAQ ════════ */}
+  <section class="page-section page-section--alt">
     <div class="container">
-      <SectionHeader title={"Preguntas frecuentes — Coyoacán / Benito Juárez}"} subtitle="Todo sobre nuestro servicio en tu zona" />
-      <div class="zona-page__faq">
-          <div class="zona-page__faq-item">
-            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-coyoacan-benito-juarez-0">
-              <span>¿Tienen cajas para e-commerce y envíos de Mercado Libre?</span>
+      <SectionHeader
+        title={"Preguntas frecuentes — Coyoacán / Benito Juárez"}
+        subtitle="Todo sobre nuestro servicio de entrega en tu zona"
+      />
+      <div class="faq-list" role="list">
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-coyoacan-benito-juarez-0">
+              <span>¿Hacen cajas para e-commerce con logo?</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="zona-page__faq-a" id="faq-coyoacan-benito-juarez-0">
-              <p>Sí, somos proveedor de cajas compatibles con Mercado Envíos y Amazon FBA. Tenemos medidas 1A, 1B, 1C, 1D, 1E estándar en stock permanente.</p>
+            <div class="faq-item__ans" id="faq-coyoacan-benito-juarez-0">
+              <p>Sí, desde 100 piezas fabricamos cajas personalizadas con tu logo e impresión en 1-4 colores.</p>
             </div>
           </div>
-          <div class="zona-page__faq-item">
-            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-coyoacan-benito-juarez-1">
-              <span>¿Hacen cajas personalizadas para marcas en Coyoacán?</span>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-coyoacan-benito-juarez-1">
+              <span>¿Tienen opciones de packaging ecológico?</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="zona-page__faq-a" id="faq-coyoacan-benito-juarez-1">
-              <p>Sí, hacemos cajas con impresión de logo y marca para empresas que buscan empaque profesional. Tiempo de producción: 5-7 días hábiles.</p>
+            <div class="faq-item__ans" id="faq-coyoacan-benito-juarez-1">
+              <p>Sí, manejamos cartón kraft reciclado certificado FSC para marcas con valores sustentables.</p>
             </div>
           </div>
-          <div class="zona-page__faq-item">
-            <button class="zona-page__faq-q" aria-expanded="false" aria-controls="faq-coyoacan-benito-juarez-2">
-              <span>¿Cuánto cuesta la entrega en Benito Juárez?</span>
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-coyoacan-benito-juarez-2">
+              <span>¿Cuánto tarda la entrega en Coyoacán?</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="zona-page__faq-a" id="faq-coyoacan-benito-juarez-2">
-              <p>La entrega es sin costo para pedidos de 200 piezas o más en Benito Juárez y Coyoacán. Para pedidos menores, cotizamos el flete según la colonia.</p>
+            <div class="faq-item__ans" id="faq-coyoacan-benito-juarez-2">
+              <p>Entre 48-72 hrs hábiles desde la confirmación del pedido.</p>
             </div>
           </div>
       </div>
@@ -172,59 +215,125 @@ const schema = [
   </section>
 
   <LeadCapture
-    titulo={"¿Listo para cotizar cajas en Coyoacán / Benito Juárez?"}
-    subtitulo="Cotización sin compromiso en menos de 24 horas. Fabricante directo, los mejores precios."
+    titulo={"Cotiza cajas en Coyoacán / Benito Juárez"}
+    subtitulo="Fabricante directo · Cotización en menos de 2 horas · Entrega en 48-72 hrs"
     whatsapp={WHATSAPP}
   />
 
 </PageLayout>
 
 <style>
-.zona-page__hero { background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1d35 100%); padding: var(--space-20) 0 var(--space-16); }
-.zona-page__hero-inner { max-width: var(--container-max,1400px); margin: 0 auto; padding: 0 var(--space-5); display:grid; grid-template-columns:1fr; gap:var(--space-10); }
-@media(min-width:1024px){ .zona-page__hero-inner{grid-template-columns:1fr 1fr;align-items:start;} }
-.zona-page__hero-col2{display:flex;flex-direction:column;gap:var(--space-5);}
-.zona-page__hero-col2 p{font-size:var(--text-sm,0.9rem);color:rgba(255,255,255,0.78);line-height:1.75;}
-.zona-page__hero-col2 p strong{color:#fff;font-weight:700;}
-.zona-page__hero-col2 p+p{padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1);margin-top:var(--space-5);}
-.zona-page__hero-badge { display: inline-block; background: rgba(224,88,0,0.15); border: 1px solid rgba(224,88,0,0.3); color: #ff8c42; padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-4); }
-.zona-page__hero-title { font-size: clamp(2rem,5vw,3rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: var(--space-4); }
-.zona-page__hero-hl { color: var(--color-primary); }
-.zona-page__hero-sub { font-size: var(--text-lg); color: rgba(255,255,255,0.75); line-height: var(--line-relaxed); margin-bottom: var(--space-6); }
-.zona-page__hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-bottom: var(--space-8); }
-.zona-page__meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500; }
-.zona-page__hero-ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-.zona-page__section { padding: var(--space-16) 0; }
-.zona-page__section--alt { background: var(--color-surface); }
-.zona-page__ventajas { list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: var(--space-4); margin-top: var(--space-8); padding: 0; }
-.zona-page__ventaja { display: flex; align-items: flex-start; gap: var(--space-3); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); font-size: var(--text-sm); line-height: var(--line-relaxed); }
-.zona-page__check { color: var(--color-primary); font-weight: 900; font-size: 1.1rem; flex-shrink: 0; }
-.zona-page__industrias { list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: var(--space-3); margin-top: var(--space-8); padding: 0; }
-.zona-page__industrias li { background: #fff; border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-weight: 600; font-size: var(--text-sm); }
-.zona-page__productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: var(--space-4); margin-top: var(--space-8); }
-.zona-page__prod-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-2); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); text-decoration: none; color: var(--color-text); }
-.zona-page__prod-card:hover { border-color: var(--color-primary); }
-.zona-page__prod-icon { font-size: 2rem; }
-.zona-page__prod-card strong { font-size: var(--text-base); color: var(--color-secondary); }
-.zona-page__prod-card span { font-size: var(--text-sm); color: var(--color-text-muted); }
-.zona-page__faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); max-width: 780px; margin-left: auto; margin-right: auto; }
-.zona-page__faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
-.zona-page__faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: none; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-sm); color: var(--color-secondary); }
-.zona-page__faq-q:hover { color: var(--color-primary); }
-.zona-page__faq-a { padding: 0 var(--space-5) var(--space-4); display: none; }
-.zona-page__faq-a p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--line-relaxed); margin: 0; }
-.zona-page__faq-item.is-open .zona-page__faq-a { display: block; }
-.zona-page__faq-item.is-open .zona-page__faq-q svg { transform: rotate(180deg); }
-@media (max-width: 640px) {
-  .zona-page__hero-ctas { flex-direction: column; }
-  .zona-page__ventajas { grid-template-columns: 1fr; }
+/* ── Secciones generales ── */
+.page-section { padding: var(--spacing-3xl) 0; }
+.page-section--alt { background: var(--color-surface,#f8f9fb); }
+
+/* ── Feature grid (ventajas) ── */
+.feature-grid {
+  list-style: none; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
 }
+.feature-item {
+  display: flex; align-items: flex-start; gap: var(--spacing-sm);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  font-weight: 500;
+}
+.feature-item__icon {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(224,88,0,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+
+/* ── Tag cloud (industrias) ── */
+.tag-cloud {
+  list-style: none; padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+  justify-content: center;
+}
+.tag-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.25rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+/* ── Product cards ── */
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+.prod-card {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: var(--spacing-sm);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.prod-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(224,88,0,0.12);
+}
+.prod-card__icon { font-size: 2.25rem; line-height: 1; }
+.prod-card__name { font-size: var(--font-size-base); font-weight: 700; color: var(--color-secondary); }
+.prod-card__sub { font-size: var(--font-size-sm); color: var(--color-text-light); }
+
+/* ── FAQ ── */
+.faq-list {
+  display: flex; flex-direction: column; gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.faq-item__btn {
+  width: 100%; text-align: left;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: none; border: none; cursor: pointer;
+  font-weight: 600; font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+.faq-item__btn:hover { color: var(--color-primary); }
+.faq-item__btn svg { flex-shrink: 0; }
+.faq-item__ans {
+  display: none;
+  padding: 0 var(--spacing-xl) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+.faq-item__ans p { font-size: var(--font-size-sm); color: var(--color-text-light); line-height: var(--line-height-relaxed); margin: var(--spacing-md) 0 0; }
+.faq-item.is-open .faq-item__ans { display: block; }
+.faq-item.is-open .faq-item__btn svg { transform: rotate(180deg); }
 </style>
 
 <script>
-document.querySelectorAll('.zona-page__faq-q').forEach(function(btn) {
+document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    var item = btn.closest('.zona-page__faq-item');
+    var item = btn.closest('.faq-item');
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });
