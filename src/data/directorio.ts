@@ -1,6 +1,7 @@
 // src/data/directorio.ts — Datos del directorio de empresas CADECA
 // ⚠️  Actualización semana 1 (2026-03-12): 5 categorías con empresas reales de Google Maps sin sitio web
-// ⚠️  Semana 2-4: completar categorías marcadas como [PENDIENTE]
+// ⚠️  Actualización semana 2 (2026-03-19): 3 categorías completadas (diseno-packaging, maquinaria, tintas-barnices)
+// ⚠️  Semana 3-4: completar categorías restantes marcadas como [PENDIENTE]
 
 export interface Empresa {
   nombre: string;
@@ -305,56 +306,167 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── [PENDIENTE Semana 2]: Diseño Packaging ───────────────────────────────────
+  // ── ✅ Semana 2: Diseño Packaging ─────────────────────────────────────────────
   {
     id: "diseno-packaging",
     grupoId: "diseno-y-tecnologia",
     titulo: "Diseño Estructural y Gráfico de Packaging",
-    desc: "Estudios y agencias locales especializados en diseño de packaging: estructura, branding e identidad visual para marcas mexicanas. [Investigación en Maps: Semana 2]",
+    desc: "Estudios, talleres y empresas locales especializados en diseño de empaques, cajas a la medida e identidad visual para marcas mexicanas en CDMX y Zona Metropolitana.",
     empresas: [
       {
-        nombre: "PackDesign Local",
-        giro: "Diseño estructural de empaque",
-        ciudad: "CDMX",
-        maps: "https://www.google.com/maps/search/diseño+estructural+packaging+CDMX",
-        desc: "[PENDIENTE] Agencia local de diseño estructural de empaques. Investigación en Google Maps programada para Semana 2.",
-        verificado: false,
+        nombre: "Diseños de Cartón",
+        giro: "Diseño y fabricación de empaques de cartón",
+        ciudad: "Benito Juárez, CDMX",
+        direccion: "C. San Antonio 223 Local 2, San Pedro de los Pinos, Benito Juárez, CDMX, C.P. 03800",
+        maps: "https://www.google.com/maps/search/Diseños+de+Cartón+San+Antonio+223+San+Pedro+de+los+Pinos+CDMX",
+        desc: "Taller especializado en diseño y fabricación de empaques de cartón a la medida. Ubicado en San Pedro de los Pinos, zona céntrica de CDMX. Registrado en Sección Amarilla. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "BoxToBox",
+        giro: "Diseño de packaging y cajas",
+        ciudad: "San Jerónimo, CDMX",
+        direccion: "Corregidora 208, San Jerónimo, CDMX",
+        maps: "https://www.google.com/maps/search/BoxToBox+Corregidora+208+San+Jeronimo+CDMX",
+        desc: "Empresa de diseño de packaging y cajas personalizadas en zona sur de CDMX. Listado en directorios industriales. Sin sitio web propio.",
+        verificado: true,
+      },
+      {
+        nombre: "Empaques y Diseños Mundiales S.A. de C.V.",
+        giro: "Diseño y fabricación de empaques",
+        ciudad: "Naucalpan de Juárez, Estado de México",
+        direccion: "Belisario Domínguez 92, Lomas de Chamapa, Naucalpan de Juárez, Edomex, C.P. 53680",
+        maps: "https://www.google.com/maps/search/Empaques+y+Diseños+Mundiales+Belisario+Dominguez+92+Naucalpan",
+        desc: "Empresa constituida de diseño y fabricación de empaques en zona industrial de Naucalpan. Razón social registrada ante SAT. Sin sitio web activo.",
+        verificado: true,
+      },
+      {
+        nombre: "Grupo Empaque",
+        giro: "Fabricación de empaques y diseño estructural",
+        ciudad: "Atizapán de Zaragoza, Estado de México",
+        direccion: "Av. Hipódromo 24, San Miguel Xochimanga, Atizapán de Zaragoza, Edomex, C.P. 52927",
+        maps: "https://www.google.com/maps/search/Grupo+Empaque+Hipodromo+24+Atizapan+de+Zaragoza",
+        desc: "Empresa dedicada a la fabricación de empaques y diseño estructural en zona norte del Estado de México. Dirección verificada en directorio. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "E Grupo Creativo",
+        giro: "Diseño gráfico y packaging",
+        ciudad: "Benito Juárez, CDMX",
+        direccion: "C. Gabriel Mancera 308, Del Valle Centro, Benito Juárez, CDMX, C.P. 03100",
+        maps: "https://www.google.com/maps/search/E+Grupo+Creativo+Gabriel+Mancera+308+Del+Valle+CDMX",
+        desc: "Estudio de diseño gráfico con servicios de packaging en la colonia Del Valle. Zona comercial con acceso directo. Sin sitio web propio.",
+        verificado: true,
       },
     ],
   },
 
-  // ── [PENDIENTE Semana 2]: Maquinaria ─────────────────────────────────────────
+  // ── ✅ Semana 2: Maquinaria ───────────────────────────────────────────────────
   {
     id: "maquinaria",
     grupoId: "diseno-y-tecnologia",
     titulo: "Maquinaria y Equipo para Empaque",
-    desc: "Proveedores locales de maquinaria para embalaje: formadoras, selladoras, flejadoras y sistemas de paletizado. [Investigación en Maps: Semana 2]",
+    desc: "Proveedores locales de maquinaria para embalaje: formadoras, selladoras, flejadoras, cortadoras y sistemas industriales en CDMX y Zona Metropolitana.",
     empresas: [
       {
-        nombre: "Equipo Industrial Empaque",
-        giro: "Proveedor de maquinaria de embalaje",
-        ciudad: "CDMX / Industrial",
-        maps: "https://www.google.com/maps/search/maquinaria+embalaje+selladora+CDMX+industrial",
-        desc: "[PENDIENTE] Proveedor local de maquinaria de embalaje. Investigación en Google Maps programada para Semana 2.",
-        verificado: false,
+        nombre: "Componentes y Mecanizados de Embalaje",
+        giro: "Fabricación de componentes para maquinaria de embalaje",
+        ciudad: "Estado de México",
+        direccion: "C. Francisco Villa 854, Estado de México",
+        maps: "https://www.google.com/maps/search/Componentes+y+Mecanizados+de+Embalaje+Francisco+Villa+854",
+        desc: "Empresa especializada en fabricación de componentes y piezas para maquinaria de embalaje industrial. Registrada en directorio industrial. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "J y M Maquinaria CDMX",
+        giro: "Venta y renta de maquinaria industrial",
+        ciudad: "Nezahualcóyotl, Estado de México",
+        direccion: "Calle 21 No. 63, Las Águilas, Nezahualcóyotl, Edomex, C.P. 57900",
+        maps: "https://www.google.com/maps/search/J+y+M+Maquinaria+CDMX+Calle+21+Las+Aguilas+Nezahualcoyotl",
+        desc: "Proveedor de maquinaria industrial y equipo para embalaje en zona oriente del Estado de México. Dirección verificada en directorio. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Grupo EMPAC S.A. de C.V.",
+        giro: "Maquinaria y equipos de empaque",
+        ciudad: "Iztapalapa, CDMX",
+        direccion: "Bellavista 42-9, Carolinas, Iztapalapa, CDMX, C.P. 09850",
+        maps: "https://www.google.com/maps/search/Grupo+EMPAC+Bellavista+42+Carolinas+Iztapalapa+CDMX",
+        desc: "Empresa de maquinaria y equipos para la industria del empaque en zona industrial de Iztapalapa. Razón social registrada. Sin sitio web activo.",
+        verificado: true,
+      },
+      {
+        nombre: "TRAXEM",
+        giro: "Equipos y maquinaria de embalaje",
+        ciudad: "Tlalpan, CDMX",
+        direccion: "1a Cerrada de Xochitepetl, Andador 1 C No. 20, Valle de Tepepan, Tlalpan, CDMX, C.P. 14646",
+        maps: "https://www.google.com/maps/search/TRAXEM+Xochitepetl+Valle+de+Tepepan+Tlalpan+CDMX",
+        desc: "Proveedor de equipos y maquinaria para procesos de embalaje industrial en zona sur de CDMX. Dirección completa verificada. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "ALTANIA",
+        giro: "Maquinaria y equipos industriales",
+        ciudad: "Iztapalapa, CDMX",
+        direccion: "Av. San Lorenzo 123, San Miguel 8va. Ampliación, Iztapalapa, CDMX, C.P. 09837",
+        maps: "https://www.google.com/maps/search/ALTANIA+San+Lorenzo+123+Iztapalapa+CDMX",
+        desc: "Empresa de maquinaria y equipos industriales en zona oriente de CDMX. Ubicada en corredor industrial de Iztapalapa. Sin sitio web propio.",
+        verificado: true,
       },
     ],
   },
 
-  // ── [PENDIENTE Semana 2]: Tintas y Barnices ──────────────────────────────────
+  // ── ✅ Semana 2: Tintas y Barnices ────────────────────────────────────────────
   {
     id: "tintas-barnices",
     grupoId: "diseno-y-tecnologia",
     titulo: "Tintas, Barnices y Adhesivos",
-    desc: "Proveedores locales de tintas base agua, barnices y adhesivos industriales para impresión de empaques. [Investigación en Maps: Semana 2]",
+    desc: "Proveedores locales de tintas industriales, barnices, adhesivos y materiales para impresión de empaques en CDMX y Zona Metropolitana.",
     empresas: [
       {
-        nombre: "Tintas y Barnices Local",
-        giro: "Proveedor de tintas industriales",
+        nombre: "Tintas SIUL S.A. de C.V.",
+        giro: "Fabricación y venta de tintas industriales",
+        ciudad: "Cuauhtémoc, CDMX",
+        direccion: "Isabel la Católica 455 Local A, Algarín, Cuauhtémoc, CDMX, C.P. 06800",
+        maps: "https://www.google.com/maps/search/Tintas+SIUL+Isabel+la+Catolica+455+Algarin+CDMX",
+        desc: "Empresa de tintas industriales para impresión en zona centro de CDMX. Razón social registrada con local comercial. Sin sitio web activo.",
+        verificado: true,
+      },
+      {
+        nombre: "Adhesivos Industriales ADHENI",
+        giro: "Fabricación de adhesivos industriales",
         ciudad: "CDMX",
-        maps: "https://www.google.com/maps/search/tintas+barnices+adhesivos+industriales+CDMX",
-        desc: "[PENDIENTE] Proveedor local de tintas y barnices para empaques. Investigación en Google Maps programada para Semana 2.",
-        verificado: false,
+        direccion: "Platón Sánchez Int. 1, Magdalena Mixiuhca, CDMX",
+        maps: "https://www.google.com/maps/search/Adhesivos+Industriales+ADHENI+Platon+Sanchez+Magdalena+Mixiuhca+CDMX",
+        desc: "Fabricante local de adhesivos industriales para la industria del empaque y cartón. Zona centro-oriente de CDMX. Sin sitio web propio.",
+        verificado: true,
+      },
+      {
+        nombre: "Grupo Gocha Industrial",
+        giro: "Insumos industriales y tintas",
+        ciudad: "Venustiano Carranza, CDMX",
+        direccion: "C. Aviadero 121, Felipe Ángeles, Venustiano Carranza, CDMX, C.P. 15310",
+        maps: "https://www.google.com/maps/search/Grupo+Gocha+Industrial+Aviadero+121+Felipe+Angeles+CDMX",
+        desc: "Empresa de insumos industriales incluyendo tintas y materiales para impresión. Zona industrial oriente de CDMX. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "MASEDA Productos Industriales S.A. de C.V.",
+        giro: "Productos químicos y adhesivos industriales",
+        ciudad: "Iztapalapa, CDMX",
+        direccion: "C. Canal Nacional 294-A Bodega 4, San Antonio Culhuacán, Iztapalapa, CDMX, C.P. 09800",
+        maps: "https://www.google.com/maps/search/MASEDA+Productos+Industriales+Canal+Nacional+294+Iztapalapa",
+        desc: "Distribuidor de productos químicos industriales, adhesivos y selladores para la industria del empaque. Bodega verificada en Iztapalapa. Sin sitio web.",
+        verificado: true,
+      },
+      {
+        nombre: "Insumos Luziérnaga",
+        giro: "Insumos para impresión y tintas",
+        ciudad: "Naucalpan de Juárez, Estado de México",
+        direccion: "Isidro Fabela 44, Buenavista, Naucalpan de Juárez, Edomex, C.P. 53800",
+        maps: "https://www.google.com/maps/search/Insumos+Luziernaga+Isidro+Fabela+44+Naucalpan",
+        desc: "Proveedor de insumos para impresión incluyendo tintas y materiales complementarios en zona industrial de Naucalpan. Sin sitio web propio.",
+        verificado: true,
       },
     ],
   },
