@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "npm run validate:mdx && astro build",
+    "preview": "astro preview",
+    "validate:mdx": "node scripts/validate-mdx.mjs",
+    "install:hooks": "bash scripts/install-hooks.sh"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.0",
