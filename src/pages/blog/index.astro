@@ -13,11 +13,11 @@ const featuredPost = allPosts.find(p => p.data.featured) || allPosts[0];
 const gridPosts  = allPosts.filter(p => p.slug !== featuredPost.slug);
 
 const CATEGORIES = [
- { name: "Guías",  slug: "guias",  color: "#1C2B4A", icon: "" },
- { name: "E-commerce",  slug: "e-commerce",  color: "#E05800", icon: "" },
- { name: "Industria",  slug: "industria",  color: "#0066CC", icon: "" },
- { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32", icon: "️" },
- { name: "Consejos",  slug: "consejos",  color: "#6A1B9A", icon: "" },
+ { name: "Guías",  slug: "guias",  color: "#1C2B4A" },
+ { name: "E-commerce",  slug: "e-commerce",  color: "#E05800" },
+ { name: "Industria",  slug: "industria",  color: "#0066CC" },
+ { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32" },
+ { name: "Consejos",  slug: "consejos",  color: "#6A1B9A" },
 ];
 
 const allTags = [...new Set(allPosts.flatMap(p => p.data.tags || []))].slice(0, 20);
@@ -87,7 +87,7 @@ function formatDate(d: Date) {
  const count = allPosts.filter(p => p.data.category === cat.name).length;
  return (
  <a href={`/blog/categoria/${cat.slug}/`} class="blog-filter-bar__link">
- {cat.icon} {cat.name}
+ {cat.name}
  {count > 0 && <span class="blog-filter-bar__count">{count}</span>}
  </a>
  );
@@ -169,7 +169,7 @@ function formatDate(d: Date) {
  <div class="blog-card__footer">
  <span>{post.data.category}</span>
  <span class="blog-card__read-more">
- {post.data.readingTime ? `${post.data.readingTime} min →` : "Leer →"}
+ {post.data.readingTime ? `${post.data.readingTime} min` : "Leer"}
  </span>
  </div>
  </div>
@@ -185,7 +185,6 @@ function formatDate(d: Date) {
 
  <!-- CTA Cotizar -->
  <div class="sidebar-cta">
- <span class="sidebar-cta__icon"></span>
  <h3 class="sidebar-cta__title">¿Necesitas cajas para tu negocio?</h3>
  <p class="sidebar-cta__desc">Cotización sin compromiso, con entrega en CDMX y Estado de México.</p>
  <a href="/cotizar/" class="sidebar-cta__btn">Solicitar cotización</a>
@@ -197,7 +196,6 @@ function formatDate(d: Date) {
  <!-- Categorías -->
  <div class="blog-sidebar__widget">
  <div class="blog-sidebar__widget-header">
- <div class="blog-sidebar__widget-icon"></div>
  <h3 class="blog-sidebar__widget-title">Categorías</h3>
  </div>
  <nav class="sidebar-categories">
@@ -206,7 +204,7 @@ function formatDate(d: Date) {
  return (
  <a href={`/blog/categoria/${cat.slug}/`} class="sidebar-categories__item">
  <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
- <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
+ <span class="sidebar-categories__name">{cat.name}</span>
  <span class="sidebar-categories__count">{count}</span>
  </a>
  );
@@ -217,7 +215,6 @@ function formatDate(d: Date) {
  <!-- Artículos recientes -->
  <div class="blog-sidebar__widget">
  <div class="blog-sidebar__widget-header">
- <div class="blog-sidebar__widget-icon"></div>
  <h3 class="blog-sidebar__widget-title">Recientes</h3>
  </div>
  <nav class="sidebar-recent">
@@ -245,7 +242,6 @@ function formatDate(d: Date) {
  {allTags.length > 0 && (
  <div class="blog-sidebar__widget">
  <div class="blog-sidebar__widget-header">
- <div class="blog-sidebar__widget-icon"></div>
  <h3 class="blog-sidebar__widget-title">Temas</h3>
  </div>
  <div class="sidebar-tags">

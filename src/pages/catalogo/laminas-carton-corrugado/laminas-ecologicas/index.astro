@@ -126,7 +126,7 @@ const gallery = [
  </tbody></table>
  <div class="sku-detail__actions">
  <a href={contactoHref(`Hola, quiero cotizar CAD-LC-05 Láminas Recicladas FSC`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LC-05</a>
- <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">Ver categoría</a>
  </div>
  </div>
  </div>
@@ -143,13 +143,13 @@ const gallery = [
  {medidas.map(m => (
  <tr class={m.hl ? "highlight" : ""}>
  <td><strong>{m.talla}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.peso}</td>
- <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}</span></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":m.disp==="yellow"?"":""} {m.label}</span></td>
  </tr>
  ))}
  </tbody>
  </table>
  </div>
- <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Disponibilidad según pedido ·  Producción 3-5 días · ○ Consultar</p>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Disponibilidad según pedido ·  Producción 3-5 días · Consultar</p>
  </div>
  </section>
 

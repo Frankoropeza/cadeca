@@ -121,7 +121,7 @@ const gallery = [
  </tbody></table>
  <div class="sku-detail__actions">
  <a href={contactoHref(`Hola, quiero cotizar CAD-CD-01 Doble Corrugado`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-CD-01</a>
- <a href="/catalogo/cajas-corrugado-estandar/" class="btn btn--outline">← Ver categoría</a>
+ <a href="/catalogo/cajas-corrugado-estandar/" class="btn btn--outline">Ver categoría</a>
  </div>
  </div>
  </div>
@@ -138,13 +138,13 @@ const gallery = [
  {medidas.map(m => (
  <tr class={m.hl ? "highlight" : ""}>
  <td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td>
- <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}</span></td>
+ <td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":m.disp==="yellow"?"":""} {m.label}</span></td>
  </tr>
  ))}
  </tbody>
  </table>
  </div>
- <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Disponibilidad según pedido ·  Producción rápida · ○ Pedido especial. Pesos bajo condiciones estándar.</p>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Disponibilidad según pedido ·  Producción rápida · Pedido especial. Pesos bajo condiciones estándar.</p>
  </div>
  </section>
 

@@ -8,12 +8,12 @@ const title  = "Nosotros | Proveedor de Cajas de Cartón en CDMX | CADECA";
 const description = "Conoce CADECA, proveedor y distribuidor de cajas de cartón corrugado para empresas en CDMX y Estado de México.";
 
 const valores = [
- { icono: "", titulo: "Proveedor y distribuidor", desc: "Surtimos cajas producidas por talleres y fabricantes aliados, coordinando opciones de material, volumen y entrega." },
- { icono: "", titulo: "Precisión Técnica", desc: "Cada caja cumple con ECT verificado en laboratorio. No vendemos especificaciones de papel — vendemos resistencia real y demostrable." },
- { icono: "", titulo: "Entrega programada", desc: "Coordinamos entregas en CDMX y Estado de México según el volumen, la zona y la disponibilidad de rutas." },
- { icono: "", titulo: "Asesoría Sin Costo", desc: "Te ayudamos a elegir el corrugado correcto para tu producto, el peso volumétrico y el diseño de separadores." },
- { icono: "", titulo: "Opciones sustentables", desc: "Surtimos papel reciclado y, si tu proyecto requiere certificación FSC, la confirmamos con el fabricante al cotizar." },
- { icono: "", titulo: "A la Medida Real", desc: "Coordinamos cajas en las medidas que necesitas con talleres especializados y confirmamos las especificaciones al cotizar." },
+ { titulo: "Proveedor y distribuidor", desc: "Surtimos cajas producidas por talleres y fabricantes aliados, coordinando opciones de material, volumen y entrega." },
+ { titulo: "Precisión Técnica", desc: "Cada caja cumple con ECT verificado en laboratorio. No vendemos especificaciones de papel — vendemos resistencia real y demostrable." },
+ { titulo: "Entrega programada", desc: "Coordinamos entregas en CDMX y Estado de México según el volumen, la zona y la disponibilidad de rutas." },
+ { titulo: "Asesoría Sin Costo", desc: "Te ayudamos a elegir el corrugado correcto para tu producto, el peso volumétrico y el diseño de separadores." },
+ { titulo: "Opciones sustentables", desc: "Surtimos papel reciclado y, si tu proyecto requiere certificación FSC, la confirmamos con el fabricante al cotizar." },
+ { titulo: "A la Medida Real", desc: "Coordinamos cajas en las medidas que necesitas con talleres especializados y confirmamos las especificaciones al cotizar." },
 ];
 
 const cifras = [
@@ -117,7 +117,6 @@ const breadcrumbs = [
  <div class="about-valores__grid">
  {valores.map(v => (
  <div class="about-valores__card">
- <span class="about-valores__icono">{v.icono}</span>
  <h3 class="about-valores__titulo">{v.titulo}</h3>
  <p class="about-valores__desc">{v.desc}</p>
  </div>
@@ -155,10 +154,10 @@ const breadcrumbs = [
  <ul class="about-zona__list">
  <li> Entrega programada en Ciudad de México</li>
  <li> Fecha según pedido y zona</li>
- <li>️ Cobertura: ZMVM — CDMX + Edomex</li>
+ <li>Cobertura: ZMVM — CDMX + Edomex</li>
  <li> Interior de la República: 2-5 días (paquetería)</li>
  </ul>
- <a href="/zonas-de-servicio/" class="btn btn--primary" style="margin-top:var(--spacing-lg)">Ver zonas de servicio →</a>
+ <a href="/zonas-de-servicio/" class="btn btn--primary" style="margin-top:var(--spacing-lg)">Ver zonas de servicio</a>
  </div>
  </div>
  </div>

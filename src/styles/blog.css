@@ -175,7 +175,6 @@
   font-size: 0.9rem;
   color: var(--color-primary);
 }
-.blog-featured-hero__read::after { content: '→'; }
 
 /* ─── Section Divider ───────────────────────────────────────────────────── */
 .blog-section-header {

@@ -60,7 +60,7 @@ export const categorias: Categoria[] = [
   // GRUPO 1 · Cadena de valor
   // ══════════════════════════════════════════════════════════════════════════════
 
-  // ── ✅ Semana 1: Fabricantes de Papel ────────────────────────────────────────
+  // ── Semana 1: Fabricantes de Papel ────────────────────────────────────────
   {
     id: "fabricantes-papel",
     grupoId: "cadena-de-valor",
@@ -127,7 +127,7 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── ✅ Semana 1: Fabricantes de Cajas ────────────────────────────────────────
+  // ── Semana 1: Fabricantes de Cajas ────────────────────────────────────────
   {
     id: "fabricantes-cajas",
     grupoId: "cadena-de-valor",
@@ -143,7 +143,7 @@ export const categorias: Categoria[] = [
         maps: "https://www.google.com/maps/search/Cajas+de+Carton+y+Empaque+Neza+Acacia+191",
         rating: 4.7,
         reviews: 14,
-        desc: "Empresa de embalaje y fabricación de cajas en Neza. Muy bien calificada en Google Maps (4.7★). Atiende pedidos locales.",
+        desc: "Empresa de embalaje y fabricación de cajas en Neza. Muy bien calificada en Google Maps (4.7/5). Atiende pedidos locales.",
         verificado: true,
       },
       {
@@ -196,7 +196,7 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── ✅ Semana 1: Distribuidores ──────────────────────────────────────────────
+  // ── Semana 1: Distribuidores ──────────────────────────────────────────────
   {
     id: "distribuidores",
     grupoId: "cadena-de-valor",
@@ -224,7 +224,7 @@ export const categorias: Categoria[] = [
         maps: "https://www.google.com/maps/search/Cajas+de+Carton+Via+Morelos+583+Ecatepec",
         rating: 4.7,
         reviews: 46,
-        desc: "Distribuidor de cajas en zona norte con alta calificación (4.7★). Teléfono activo y horario verificado en Google Maps.",
+        desc: "Distribuidor de cajas en zona norte con alta calificación (4.7/5). Teléfono activo y horario verificado en Google Maps.",
         verificado: true,
       },
       {
@@ -254,7 +254,7 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── ✅ Semana 1: Impresión y Troquelado ──────────────────────────────────────
+  // ── Semana 1: Impresión y Troquelado ──────────────────────────────────────
   {
     id: "impresion-troquelado",
     grupoId: "cadena-de-valor",
@@ -286,7 +286,7 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── ✅ Semana 2: Diseño Packaging ─────────────────────────────────────────────
+  // ── Semana 2: Diseño Packaging ─────────────────────────────────────────────
   {
     id: "diseno-packaging",
     grupoId: "diseno-y-tecnologia",
@@ -341,7 +341,7 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── ✅ Semana 2: Maquinaria ───────────────────────────────────────────────────
+  // ── Semana 2: Maquinaria ───────────────────────────────────────────────────
   {
     id: "maquinaria",
     grupoId: "diseno-y-tecnologia",
@@ -396,7 +396,7 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── ✅ Semana 2: Tintas y Barnices ────────────────────────────────────────────
+  // ── Semana 2: Tintas y Barnices ────────────────────────────────────────────
   {
     id: "tintas-barnices",
     grupoId: "diseno-y-tecnologia",
@@ -451,7 +451,7 @@ export const categorias: Categoria[] = [
     ],
   },
 
-  // ── ✅ Semana 1: Materiales Complementarios ──────────────────────────────────
+  // ── Semana 1: Materiales Complementarios ──────────────────────────────────
   {
     id: "materiales-complementarios",
     grupoId: "logistica-local",

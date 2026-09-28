@@ -198,22 +198,13 @@ const faqs = [
 ];
 
 // ── Accesos principales (franja bajo el hero) ─────────
-const iconos: Record<string, string> = {
- catalogo:  '<path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/>',
- medida:  '<path d="M3 17 17 3l4 4L7 21l-4-4Z"/><path d="m7 13 2 2M10 10l2 2M13 7l2 2"/>',
- logo:  '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
- ecommerce: '<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/>',
- medidas:  '<path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/><rect x="7.5" y="7.5" width="9" height="9" rx="1"/>',
- cotizar:  '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
-};
-
 const accesos = [
- { href: "/catalogo/",  icono: "catalogo",  label: "Catálogo completo",  sub: "Todos los tipos de caja" },
- { href: "/catalogo/cajas-a-la-medida/",  icono: "medida",  label: "Cajas a la medida",  sub: "Cualquier dimensión" },
- { href: "/catalogo/cajas-personalizadas-logo/", icono: "logo",  label: "Personalizadas con logo", sub: "Impresión desde 100 pzas" },
- { href: "/catalogo/cajas-para-ecommerce/",  icono: "ecommerce", label: "Cajas para e‑commerce",  sub: "Mercado Libre y Amazon" },
- { href: "/medidas-de-cajas-de-carton/",  icono: "medidas",  label: "Guía de medidas",  sub: "Elige el tamaño correcto" },
- { href: "/cotizar/",  icono: "cotizar",  label: "Solicitar cotización",  sub: "Sin compromiso", destacado: true },
+ { href: "/catalogo/",  label: "Catálogo completo",  sub: "Todos los tipos de caja" },
+ { href: "/catalogo/cajas-a-la-medida/",  label: "Cajas a la medida",  sub: "Cualquier dimensión" },
+ { href: "/catalogo/cajas-personalizadas-logo/",  label: "Personalizadas con logo", sub: "Impresión desde 100 pzas" },
+ { href: "/catalogo/cajas-para-ecommerce/", label: "Cajas para e‑commerce",  sub: "Mercado Libre y Amazon" },
+ { href: "/medidas-de-cajas-de-carton/",  label: "Guía de medidas",  sub: "Elige el tamaño correcto" },
+ { href: "/cotizar/",  label: "Solicitar cotización",  sub: "Sin compromiso", destacado: true },
 ];
 ---
 
@@ -259,7 +250,6 @@ const accesos = [
  {accesos.map(a => (
  <li class="quick-nav__item">
  <a href={a.href} class={`quick-nav__link${a.destacado ? " quick-nav__link--featured" : ""}`}>
- <svg class="quick-nav__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={iconos[a.icono]} />
  <span class="quick-nav__text">
  <span class="quick-nav__label">{a.label}</span>
  <span class="quick-nav__sub">{a.sub}</span>
@@ -407,20 +397,19 @@ const accesos = [
  <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Accede a las especificaciones exactas de cada producto: flauta, ECT, gramaje, peso máximo, medidas disponibles y tiempo de producción. 30 fichas técnicas completas para tu área de compras.</p>
  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
  <a href="/catalogo/" class="btn btn--primary btn--lg">Ver Catálogo Completo</a>
- <a href="/cotizar/" style="border:2px solid rgba(255,255,255,0.4);color:white;padding:0.75rem 1.5rem;border-radius:0.5rem;font-weight:700;text-decoration:none;font-size:0.9rem;">Cotizar ahora →</a>
+ <a href="/cotizar/" style="border:2px solid rgba(255,255,255,0.4);color:white;padding:0.75rem 1.5rem;border-radius:0.5rem;font-weight:700;text-decoration:none;font-size:0.9rem;">Cotizar ahora</a>
  </div>
  </div>
  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;">
  {[
- {icon:"", label:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/", tag:"5 SKUs"},
- {icon:"", label:"Para E-commerce", href:"/catalogo/cajas-para-ecommerce/", tag:"5 SKUs"},
- {icon:"", label:"Personalizadas", href:"/catalogo/cajas-personalizadas-logo/", tag:"5 SKUs"},
- {icon:"", label:"A la Medida", href:"/catalogo/cajas-a-la-medida/", tag:"5 SKUs"},
- {icon:"", label:"Para Alimentos", href:"/catalogo/cajas-para-alimentos/", tag:"5 SKUs"},
- {icon:"", label:"Láminas de cartón", href:"/catalogo/laminas-carton-corrugado/", tag:"Catálogo"},
+ { label:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/", tag:"5 SKUs"},
+ { label:"Para E-commerce", href:"/catalogo/cajas-para-ecommerce/", tag:"5 SKUs"},
+ { label:"Personalizadas", href:"/catalogo/cajas-personalizadas-logo/", tag:"5 SKUs"},
+ { label:"A la Medida", href:"/catalogo/cajas-a-la-medida/", tag:"5 SKUs"},
+ { label:"Para Alimentos", href:"/catalogo/cajas-para-alimentos/", tag:"5 SKUs"},
+ { label:"Láminas de cartón", href:"/catalogo/laminas-carton-corrugado/", tag:"Catálogo"},
  ].map(item => (
  <a href={item.href} style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.75rem;padding:1rem;text-decoration:none;transition:background 0.2s;display:flex;align-items:center;gap:0.75rem;">
- <span style="font-size:1.5rem;">{item.icon}</span>
  <div>
  <span style="font-size:0.85rem;font-weight:700;color:white;display:block;">{item.label}</span>
  <span style="font-size:0.7rem;color:var(--color-primary);font-weight:600;">{item.tag}</span>
@@ -445,26 +434,26 @@ const accesos = [
  <a href="/zonas-de-servicio/#gustavo-a-madero" class="home-zona-pill"> Gustavo A. Madero</a>
  <a href="/zonas-de-servicio/#miguel-hidalgo" class="home-zona-pill"> Miguel Hidalgo</a>
  <a href="/zonas-de-servicio/#cuauhtemoc" class="home-zona-pill"> Cuauhtémoc</a>
- <a href="/zonas-de-servicio/#benito-juarez" class="home-zona-pill">️ Benito Juárez</a>
- <a href="/zonas-de-servicio/#venustiano-carranza" class="home-zona-pill">️ Venustiano Carranza</a>
+ <a href="/zonas-de-servicio/#benito-juarez" class="home-zona-pill">Benito Juárez</a>
+ <a href="/zonas-de-servicio/#venustiano-carranza" class="home-zona-pill">Venustiano Carranza</a>
  <a href="/zonas-de-servicio/#alvaro-obregon" class="home-zona-pill"> Álvaro Obregón</a>
  <a href="/zonas-de-servicio/#coyoacan" class="home-zona-pill"> Coyoacán</a>
  <a href="/zonas-de-servicio/#tlalpan" class="home-zona-pill"> Tlalpan</a>
  <a href="/zonas-de-servicio/#xochimilco" class="home-zona-pill"> Xochimilco</a>
  <a href="/zonas-de-servicio/#iztacalco" class="home-zona-pill"> Iztacalco</a>
  <a href="/zonas-de-servicio/#cuajimalpa" class="home-zona-pill"> Cuajimalpa</a>
- <a href="/zonas-de-servicio/#tlahuac" class="home-zona-pill">️ Tláhuac</a>
- <a href="/zonas-de-servicio/#magdalena-contreras" class="home-zona-pill">️ Magdalena Contreras</a>
+ <a href="/zonas-de-servicio/#tlahuac" class="home-zona-pill">Tláhuac</a>
+ <a href="/zonas-de-servicio/#magdalena-contreras" class="home-zona-pill">Magdalena Contreras</a>
  <a href="/zonas-de-servicio/#milpa-alta" class="home-zona-pill"> Milpa Alta</a>
  <a href="/zonas-de-servicio/#naucalpan" class="home-zona-pill home-zona-pill--edomex"> Naucalpan</a>
  <a href="/zonas-de-servicio/#tlalnepantla" class="home-zona-pill home-zona-pill--edomex"> Tlalnepantla</a>
- <a href="/zonas-de-servicio/#ecatepec" class="home-zona-pill home-zona-pill--edomex">️ Ecatepec</a>
+ <a href="/zonas-de-servicio/#ecatepec" class="home-zona-pill home-zona-pill--edomex">Ecatepec</a>
  <a href="/zonas-de-servicio/#nezahualcoyotl" class="home-zona-pill home-zona-pill--edomex"> Nezahualcóyotl</a>
- <a href="/zonas-de-servicio/#atizapan-nicolas-romero" class="home-zona-pill home-zona-pill--edomex">️ Atizapán</a>
+ <a href="/zonas-de-servicio/#atizapan-nicolas-romero" class="home-zona-pill home-zona-pill--edomex">Atizapán</a>
  <a href="/zonas-de-servicio/#cuautitlan-izcalli" class="home-zona-pill home-zona-pill--edomex"> Cuautitlán Izcalli</a>
  </div>
  <div style="text-align:center; margin-top: var(--spacing-lg)">
- <a href="/zonas-de-servicio/" class="btn btn--secondary">Ver todas las zonas de cobertura →</a>
+ <a href="/zonas-de-servicio/" class="btn btn--secondary">Ver todas las zonas de cobertura</a>
  </div>
  </div>
  </section>

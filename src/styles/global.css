@@ -319,12 +319,18 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* Hamburger */
 .hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border: 1.5px solid var(--color-secondary);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--color-secondary);
+  font: 700 var(--font-size-sm)/1 var(--font-family);
+  letter-spacing: 0.02em;
   cursor: pointer;
 }
+.hamburger[aria-expanded="true"] { background: var(--color-secondary); color: #fff; }
 @media (min-width: 1024px) { .hamburger { display: none; } }
 .hamburger__line {
   display: block;
@@ -534,8 +540,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   outline: none;
   box-shadow: inset 0 0 0 3px #fff;
 }
-.quick-nav__icon { flex-shrink: 0; width: 24px; height: 24px; opacity: 0.95; }
-@media (min-width: 768px) { .quick-nav__icon { width: 28px; height: 28px; } }
 .quick-nav__text { display: flex; flex-direction: column; min-width: 0; }
 .quick-nav__label {
   font-size: var(--font-size-sm);
@@ -968,7 +972,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   align-items: center;
   gap: 0.4rem;
 }
-.lead-capture__bullet::before { content: "✓"; color: var(--color-primary-light); font-weight: 700; }
+.lead-capture__bullet::before { content: "•"; color: var(--color-primary-light); font-weight: 700; }
 .lead-capture__form {
   display: grid;
   grid-template-columns: 1fr;
@@ -2635,7 +2639,7 @@ pre, code {
 .cotizar-sidebar__card p { font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--spacing-md); line-height: 1.6; }
 .cotizar-sidebar__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
 .cotizar-sidebar__list li { font-size: var(--font-size-sm); color: var(--color-text-light); padding-left: 1rem; position: relative; }
-.cotizar-sidebar__list li::before { content: "→"; position: absolute; left: 0; color: var(--color-primary); }
+.cotizar-sidebar__list li::before { content: "•"; position: absolute; left: 0; color: var(--color-primary); }
 
 @media (max-width: 768px) {
   .cotizar-layout { grid-template-columns: 1fr; }

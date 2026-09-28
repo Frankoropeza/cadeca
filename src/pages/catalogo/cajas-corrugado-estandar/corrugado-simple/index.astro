@@ -143,7 +143,7 @@ const gallery = [
 
  <div class="sku-detail__actions">
  <a href={contactoHref(`Hola, quiero cotizar CAD-CS-01 Corrugado Simple`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-CS-01</a>
- <a href="/catalogo/cajas-corrugado-estandar/" class="btn btn--outline">← Ver categoría</a>
+ <a href="/catalogo/cajas-corrugado-estandar/" class="btn btn--outline">Ver categoría</a>
  </div>
  </div>
 
@@ -181,7 +181,7 @@ const gallery = [
  <td><strong>{m.máx}</strong></td>
  <td>
  <span class={`stock-chip stock-chip--${m.disp}`}>
- {m.disp==="green"?"":m.disp==="yellow"?"":"○"} {m.label}
+ {m.disp==="green"?"":m.disp==="yellow"?"":""} {m.label}
  </span>
  </td>
  </tr>
@@ -190,7 +190,7 @@ const gallery = [
  </table>
  </div>
  <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">
- Disponibilidad según pedido ·  Producción rápida · ○ Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
+ Disponibilidad según pedido ·  Producción rápida · Pedido especial — 3 a 5 días hábiles. Pesos bajo condiciones estándar: 20°C y 50% HR.
  </p>
  </div>
  </section>

@@ -182,12 +182,14 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  mobileNav?.classList.add('mobile-nav--open');
  overlay?.classList.add('mobile-overlay--open');
  hamburger?.setAttribute('aria-expanded', 'true');
+ const hl = hamburger?.querySelector('.hamburger__label'); if (hl) hl.textContent = 'Cerrar';
  document.body.style.overflow = 'hidden';
  }
  function closeNav() {
  mobileNav?.classList.remove('mobile-nav--open');
  overlay?.classList.remove('mobile-overlay--open');
  hamburger?.setAttribute('aria-expanded', 'false');
+ const hl2 = hamburger?.querySelector('.hamburger__label'); if (hl2) hl2.textContent = 'Menú';
  document.body.style.overflow = '';
  }
 
