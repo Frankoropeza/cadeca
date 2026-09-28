@@ -172,7 +172,7 @@
 .blog-section-header__line {
   flex: 1;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-border), transparent);
+  background: var(--color-border);
   border: none;
   margin: 0;
 }
@@ -224,11 +224,11 @@
   letter-spacing: 0.1em;
   color: rgba(255,255,255,0.9);
 }
-.blog-card__placeholder--guias         { background: linear-gradient(135deg, var(--color-secondary), #253a5e); }
-.blog-card__placeholder--e-commerce    { background: linear-gradient(135deg, var(--color-primary), #FF8C42); }
-.blog-card__placeholder--industria     { background: linear-gradient(135deg, #0066CC, #0088FF); }
-.blog-card__placeholder--sostenibilidad{ background: linear-gradient(135deg, #2E7D32, #4CAF50); }
-.blog-card__placeholder--consejos      { background: linear-gradient(135deg, #6A1B9A, #9C27B0); }
+.blog-card__placeholder--guias         { background: var(--color-secondary); }
+.blog-card__placeholder--e-commerce    { background: var(--color-primary); }
+.blog-card__placeholder--industria     { background: #0066CC; }
+.blog-card__placeholder--sostenibilidad{ background: #2E7D32; }
+.blog-card__placeholder--consejos      { background: #6A1B9A; }
 .blog-card__cat-badge {
   position: absolute;
   bottom: 0.75rem; left: 0.75rem;
@@ -438,7 +438,7 @@
 
 /* CTA widget */
 .sidebar-cta {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #253a5e 100%);
+  background: var(--color-secondary);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-lg);
   text-align: center;
@@ -774,7 +774,7 @@
 .post-author__avatar {
   width: 56px; height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), #FF8C42);
+  background: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -21,7 +21,8 @@ export async function getStaticPaths() {
 const { categoria } = Astro.params;
 const categoryName = categoryMap[categoria!] || categoria;
 
-const allPosts = (await getCollection("blog"))
+const todos = await getCollection("blog");
+const allPosts = todos
  .filter(p => p.data.category === categoryName)
  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -79,19 +80,29 @@ const schemaCollection = {
 
  <PageHero eyebrow={`Blog · ${categoryName}`} titleHtml={true} title={hero.title} desc={hero.desc} desc2={hero.desc2} />
 
- <!-- Category Filter -->
- <div class="container" style="padding-top: var(--spacing-xl);">
- <div class="blog-categories">
- <a href="/blog/" class="blog-categories__link">Todos</a>
+ <!-- Filtro de categorías (mismo componente visual que /blog/) -->
+ <div class="blog-filter-bar">
+ <div class="container">
+ <div class="blog-filter-bar__inner">
+ <a href="/blog/" class="blog-filter-bar__link">
+ Todos <span class="blog-filter-bar__count">{todos.length}</span>
+ </a>
  {categories.map(cat => {
  const catSlug = cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
  const isActive = catSlug === categoria;
- return <a href={`/blog/categoria/${catSlug}/`} class={`blog-categories__link ${isActive ? "blog-categories__link--active" : ""}`}>{cat}</a>;
+ const count = todos.filter(p => p.data.category === cat).length;
+ return (
+ <a href={`/blog/categoria/${catSlug}/`} class={`blog-filter-bar__link${isActive ? " blog-filter-bar__link--active" : ""}`} aria-current={isActive ? "page" : undefined}>
+ {cat}
+ {count > 0 && <span class="blog-filter-bar__count">{count}</span>}
+ </a>
+ );
  })}
  </div>
  </div>
+ </div>
 
- <div class="container" style="padding-bottom: var(--spacing-3xl);">
+ <div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-3xl);">
  {allPosts.length > 0 ? (
  <div class="blog-grid">
  {allPosts.map(post => (
