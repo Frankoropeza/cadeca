@@ -1,15 +1,14 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Packaging Ecológico Cartón Reciclado FSC CDMX — CADECA Fabricante Directo";
 const description = "Packaging ecológico de cartón corrugado reciclado con certificación FSC en CDMX. Tintas base agua, diseño sustentable. Para marcas con compromiso ambiental.";
-const canonical   = SITE + "/servicios/packaging-ecologico";
+const canonical   = SITE + "/servicios/packaging-ecologico/";
 
 const schema = [
   {
@@ -17,7 +16,7 @@ const schema = [
     "@type": "Service",
     "name": "Packaging Ecológico de Cartón Reciclado FSC",
     "description": description,
-    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "provider": { "@type": "Organization", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
     "url": canonical
   },
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
-    { name: "Servicios", href: "/servicios" },
+    { name: "Servicios", href: "/servicios/" },
     { name: "Packaging Ecológico de Cartón Reciclado FSC" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO ════════ */}
@@ -57,9 +55,11 @@ const schema = [
           <h1 class="hero__title"><span>Packaging Ecológico de Cartón Reciclado FSC</span></h1>
           <p class="hero__intro">Cartón kraft reciclado certificado FSC, tintas base agua sin solventes y diseños que minimizan el material. Para marcas que comunican responsabilidad ambiental.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Packaging+Ecol%C3%B3gico+de+CADECA"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, quiero información sobre Packaging Ecológico de CADECA")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -231,7 +231,7 @@ const schema = [
             desc="Cartón reciclado certificado"
             imgSrc="/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif"
             imgAlt="Láminas Ecológicas FSC — CADECA"
-            href="/catalogo/laminas-carton-corrugado"
+            href="/catalogo/laminas-carton-corrugado/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -239,7 +239,7 @@ const schema = [
             desc="En material ecológico FSC"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -247,7 +247,7 @@ const schema = [
             desc="Con tintas base agua"
             imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
             imgAlt="Cajas Personalizadas — CADECA"
-            href="/catalogo/cajas-personalizadas-con-logo"
+            href="/catalogo/cajas-personalizadas-logo/"
             btnText="Ver producto"
           />
       </div>
@@ -257,7 +257,6 @@ const schema = [
   <LeadCapture
     titulo="Cotiza tu packaging ecológico FSC"
     subtitulo="Certificado FSC · Tintas base agua · Fabricante directo en CDMX"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

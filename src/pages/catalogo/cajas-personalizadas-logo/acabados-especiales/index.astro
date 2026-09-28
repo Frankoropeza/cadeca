@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas Cartón Acabados Especiales Barniz UV CDMX | CAD-PL-04 | Packaging Premium | CADECA";
 const description = "Cajas de cartón con acabados especiales en CDMX. Barniz UV spot y total, laminado mate y brillante, troquelado y relieve seco. Desde 500 piezas. Packaging premium. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"S", ml:"20×15×10 cm", real:"20×15×10", flauta:"C",ect:"ECT-32",vacío:"0.20 kg",máx:"5 kg", disp:"gray", label:"10-15 días", hl:false },
@@ -56,9 +56,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo"}, {name:"Acabados Especiales"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo/"}, {name:"Acabados Especiales"}]}
  faqItems={[{question:"¿Qué es el barniz UV spot y cuándo se usa en packaging?", answer:"El barniz UV spot es una capa de barniz transparente de altísimo brillo aplicada solo en zonas específicas del diseño (spot = punto), como el logo, el nombre de la marca o un elemento decorativo. El contraste entre el área brillante y el resto impreso crea un efecto visual y táctil muy distintivo. Se cura con luz ultravioleta en milisegundos. Es el acabado más solicitado en perfumería, cosméticos, chocolates premium y electrónica de consumo porque añade percepción de valor al packaging sin cambiar el diseño base."}, {question:"¿Cuándo vale la pena invertir en laminado mate o brillante?", answer:"El laminado (film de polipropileno aplicado por calor sobre el impreso) protege la impresión contra humedad, rozaduras y manipulación, y mejora el aspecto visual. El brillante amplifica los colores y da sensación de lujo accesible; el mate da una apariencia sofisticada y moderna muy usada en moda, tecnología y gastronomía premium. Vale la pena cuando: el producto tiene precio de venta mayor a 200 pesos y el packaging forma parte de la decisión de compra; cuando el producto será exhibido en punto de venta; o cuando el cliente final recibirá la caja directamente (e-commerce premium, gifts)."}]}
  product={{name:"Caja Cartón Acabados Especiales Barniz UV Laminado", sku:"CAD-PL-04", description:"Caja Cartón Acabados Especiales Barniz UV Laminado en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif", material:"Cartón corrugado con acabados UV laminado mate brillante troquelado", category:"Cajas de Cartón Personalizadas con Logo", moq:"500"}}
 >
@@ -66,8 +65,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-personalizadas-logo">Personalizadas con Logo</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo/">Personalizadas con Logo</a></li>
  <li><span class="current">Acabados Especiales</span></li>
  </ol>
  </div>
@@ -109,8 +108,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-04 Acabados Especiales Barniz UV`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-04</a>
- <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-PL-04 Acabados Especiales Barniz UV`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-PL-04</a>
+ <a href="/catalogo/cajas-personalizadas-logo/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -145,5 +144,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-PL-04 — Acabados premium, entrega 10-15 días" />
+ <LeadCapture title="Cotiza CAD-PL-04 — Acabados premium, entrega 10-15 días" />
 </PageLayout>

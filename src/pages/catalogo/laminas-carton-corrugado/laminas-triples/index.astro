@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Láminas Triple Corrugado BCB CDMX | ECT-61 Sustituto Madera | CAD-LC-03 | CADECA";
 const description = "Láminas triple corrugado BCB CDMX. ECT-61+, 120×200cm, sustituto madera, sin NIMF 15. Desde 25 pzas, 5-7 días. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"60×40 cm", ml:"60×40 cm", real:"60×40", flauta:"BCB",ect:"ECT-61",vacío:"0.36 kg/ud",máx:"—", disp:"yellow", label:"5-7 días", hl:false },
@@ -58,9 +58,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Láminas Triples BCB"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado/"}, {name:"Láminas Triples BCB"}]}
  faqItems={[{question:"¿Puede sustituir la madera en embalaje industrial?", answer:"En muchas aplicaciones sí. Ventajas: sin NIMF 15 para exportación, 60-70% más ligero a resistencia equivalente, 100% reciclable, se imprime fácilmente. Limitaciones: menor resistencia a humedad extrema prolongada y menor rigidez lateral sin esquineros."}, {question:"¿Qué grosor de madera equivale en resistencia al aplastamiento?", answer:"BCT comparable a madera contrachapada 9-12 mm según aplicación. Para layer pads iguala madera 9 mm. Para bases exportación iguala 6 mm. Para laterales de caja industrial, madera 12 mm sigue siendo superior en rigidez lateral. Con esquineros en L puede sustituir madera 12 mm en mayoría de cajas de exportación."}]}
  product={{name:"Láminas Triple Corrugado BCB Sustituto Madera", sku:"CAD-LC-03", description:"Láminas Triple Corrugado BCB Sustituto Madera en CDMX — fabricante directo CADECA", image:"/img/catalogo/laminas-carton-corrugado-triple-cdmx.avif", material:"Láminas triple corrugado BCB ECT-61 sustituto madera exportación industrial", category:"Láminas de Cartón Corrugado", moq:"25"}}
 >
@@ -68,8 +67,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado/">Láminas Cartón</a></li>
  <li><span class="current">Láminas Triples BCB</span></li>
  </ol>
  </div>
@@ -111,8 +110,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-03 Láminas Triple BCB Sustituto Madera`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-03</a>
- <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-LC-03 Láminas Triple BCB Sustituto Madera`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LC-03</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -147,5 +146,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-03 — Láminas triples desde 25 piezas, entrega 5-7 días" />
+ <LeadCapture title="Cotiza CAD-LC-03 — Láminas triples desde 25 piezas, entrega 5-7 días" />
 </PageLayout>

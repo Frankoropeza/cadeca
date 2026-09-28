@@ -1,20 +1,21 @@
 ---
 // WaBubble.astro — Botón flotante de WhatsApp
+import { HAS_WA, contactoHref } from "@/data/contacto";
+
 export interface Props {
- whatsapp?: string;
  message?:  string;
  tooltip?:  string;
 }
 
 const {
- whatsapp = "5255XXXXXXXX",
- message  = "Hola CADECA, me interesa cotizar cajas de cartón.",
+ message  = "Hola, me interesa cotizar cajas de cartón.",
  tooltip  = "Cotizar por WhatsApp",
 } = Astro.props;
 
-const href = `https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`;
+const href = contactoHref(message);
 ---
 
+{HAS_WA && (
 <div class="wa-bubble">
  <span class="wa-bubble__tooltip">{tooltip}</span>
  <a class="wa-bubble__btn" href={href}
@@ -25,3 +26,4 @@ const href = `https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`;
  </svg>
  </a>
 </div>
+)}

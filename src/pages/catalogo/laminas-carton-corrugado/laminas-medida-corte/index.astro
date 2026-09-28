@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Láminas Corrugado a la Medida Corte Exacto CDMX | CAD-LA-06 | CADECA";
 const description = "Láminas de cartón corrugado a la medida con corte exacto en CDMX. Simple, doble o triple pared. Para fabricantes y talleres. MOQ 50 piezas. Entrega 24 hrs. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
  ["Código SKU", "CAD-LA-06"],
@@ -38,9 +38,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado a la Medida con Corte Exacto"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado/"},{name:"Láminas Corrugado a la Medida con Corte Exacto"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
  product={{name:"Láminas Corrugado a la Medida con Corte Exacto",sku:"CAD-LA-06",description:"Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales.",image:gallery[0].src,material:"CAD-LA-06",category:"Láminas de Cartón Corrugado",moq:"50 láminas/medida"}}
 >
@@ -48,8 +47,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado/">Láminas de Cartón Corrugado</a></li>
  <li><span class="current">Láminas Corrugado a la Medida con Corte Exacto</span></li>
  </ol>
  </div>
@@ -91,8 +90,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-06 Láminas Corrugado a la Medida con Corte Exacto`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-06</a>
- <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-LA-06 Láminas Corrugado a la Medida con Corte Exacto`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LA-06</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -109,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Fabricas cajas o empaques? Cotiza tus láminas a la medida exacta con corte en 24 horas" />
+ <LeadCapture title="¿Fabricas cajas o empaques? Cotiza tus láminas a la medida exacta con corte en 24 horas" />
 </PageLayout>

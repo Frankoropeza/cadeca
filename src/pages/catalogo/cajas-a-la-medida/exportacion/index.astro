@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas Exportación IATA ISTA CDMX | ECT-51/61 | CAD-AM-02 | CADECA";
 const description = "Cajas a la medida para exportación en CDMX. Certificación ISTA 2A/3A, normas IATA para aéreo, ECT-51 mínimo. Desde 25 piezas, entrega 5-7 días. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"S 5-15kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-51",vacío:"varía",máx:"15 kg",  disp:"yellow", label:"5-7 días",  hl:false },
@@ -57,9 +57,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Exportación IATA"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Exportación IATA"}]}
  faqItems={[{question:"¿Qué normas aplican para exportar productos en caja de cartón?", answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA fabricamos cumpliendo estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal."}, {question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?", answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino."}]}
  product={{name:"Caja a la Medida para Exportación IATA ISTA", sku:"CAD-AM-02", description:"Caja a la Medida para Exportación IATA ISTA en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", material:"Cartón doble o triple corrugado certificado ISTA para exportación", category:"Cajas a la Medida", moq:"25"}}
 >
@@ -67,8 +66,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida/">Cajas a la Medida</a></li>
  <li><span class="current">Exportación IATA</span></li>
  </ol>
  </div>
@@ -110,8 +109,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-02 Caja Exportación IATA ISTA`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-02</a>
- <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AM-02 Caja Exportación IATA ISTA`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AM-02</a>
+ <a href="/catalogo/cajas-a-la-medida/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -146,5 +145,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-02 — Exportación certificada ISTA, entrega 5-7 días" />
+ <LeadCapture title="Cotiza CAD-AM-02 — Exportación certificada ISTA, entrega 5-7 días" />
 </PageLayout>

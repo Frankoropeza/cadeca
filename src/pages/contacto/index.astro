@@ -1,55 +1,57 @@
 ---
+import { CONTACTO, HAS_TEL, HAS_WA, HAS_EMAIL, contactoHref } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const WHATSAPP = "5255XXXXXXXX";
-const TEL  = "55 XXXX-XXXX";
-const EMAIL  = "ventas@cadeca.com.mx";
-
-const title  = "Contacto | Cajas de Cartón CDMX | CADECA — Fabricante Directo";
-const description = "Contacta a CADECA, fabricante de cajas de cartón en CDMX. WhatsApp, teléfono y formulario de cotización. Respuesta en menos de 1 hora en horario hábil.";
+const title  = "Contacto | Cajas de Cartón en CDMX | CADECA";
+const description = "Contacta a CADECA para cotizar cajas de cartón corrugado en CDMX y Estado de México: estándar, a la medida, personalizadas con logo y láminas.";
 
 const breadcrumbs = [
  { name: "Inicio", href: "/" },
  { name: "Contacto" },
 ];
 
+// Canales activos: sólo los que tienen dato en src/data/contacto.ts
 const canales = [
  {
- icono: "",
- titulo: "WhatsApp",
- desc: "La forma más rápida. Respuesta en menos de 15 minutos en horario hábil.",
- cta: "Escribir por WhatsApp",
- href: `https://wa.me/${WHATSAPP}?text=Hola CADECA, quiero cotizar cajas de cartón`,
- externo: true,
+ titulo: "Formulario de cotización",
+ desc: "La vía recomendada: indícanos tipo de caja, medidas y cantidad, y te enviamos precio y tiempo de entrega.",
+ cta: "Ir al formulario",
+ href: "/cotizar/",
+ externo: false,
  destaca: true,
  },
- {
- icono: "",
+ ...(HAS_WA ? [{
+ titulo: "WhatsApp",
+ desc: "Envíanos medidas y cantidad por mensaje.",
+ cta: "Escribir por WhatsApp",
+ href: contactoHref("Hola, quiero cotizar cajas de cartón"),
+ externo: true,
+ destaca: false,
+ }] : []),
+ ...(HAS_TEL ? [{
  titulo: "Teléfono",
- desc: "Lunes a viernes de 8:00 a 18:00, sábados de 9:00 a 14:00.",
- cta: `Llamar a ${TEL}`,
- href: `tel:+5255XXXXXXXX`,
+ desc: CONTACTO.horario ? `Atención: ${CONTACTO.horario}.` : "Atención en horario hábil.",
+ cta: `Llamar al ${CONTACTO.telefonoVisible}`,
+ href: `tel:+${CONTACTO.telefono}`,
  externo: false,
  destaca: false,
- },
- {
- icono: "️",
+ }] : []),
+ ...(HAS_EMAIL ? [{
  titulo: "Correo electrónico",
- desc: "Para cotizaciones formales, licitaciones y pedidos con orden de compra.",
- cta: EMAIL,
- href: `mailto:${EMAIL}`,
+ desc: "Para cotizaciones formales y pedidos con orden de compra.",
+ cta: CONTACTO.email,
+ href: `mailto:${CONTACTO.email}`,
  externo: false,
  destaca: false,
- },
+ }] : []),
 ];
 ---
 
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="page"
  breadcrumbs={breadcrumbs}
 >
@@ -64,19 +66,18 @@ const canales = [
  </div>
 
  <PageHero
- eyebrow="Respuesta garantizada en menos de 1 hora"
+ eyebrow="Cotizaciones para empresas y negocios"
  titleHtml={true}
- title="Habla Directo con el <span>Fabricante</span>"
- desc="Sin intermediarios, sin call centers. Nuestros asesores técnicos atienden directo y conocen el corrugado de adentro hacia afuera."
- desc2="Precio unitario, disponibilidad de stock y tiempo de entrega en un solo mensaje. Nuestros asesores técnicos atienden WhatsApp de lunes a sábado de 8 a.m. a 6 p.m. y correo electrónico con respuesta garantizada el mismo día hábil, incluyendo cotizaciones con especificaciones técnicas completas.||Para conocer nuestra planta de producción en CDMX, revisar muestras físicas de materiales o realizar pruebas de resistencia con tus productos, agenda una visita técnica con al menos 24 horas de anticipación. Asignamos un ingeniero de empaque para atenderte personalmente, sin costo ni compromiso de compra."
+ title="Contacto y <span>Cotizaciones</span>"
+ desc="Te ayudamos a elegir y cotizar la caja de cartón correcta para tu producto: medidas, tipo de corrugado, impresión y volumen."
+ desc2="Atendemos a tiendas en línea, comercios, oficinas y empresas industriales de la Ciudad de México y el Estado de México. Para darte una cotización precisa necesitamos saber qué vas a empacar, sus medidas y peso, y cuántas cajas requieres al mes.||Si ya usas una caja y quieres mejorarla o bajar su costo, descríbela en el formulario: medidas exteriores, tipo de cartón y el problema que tienes (se aplasta, se rompe en el envío, sobra espacio)."
  chips={[
- { label: "WhatsApp directo" },
- { label: "Lun–Sáb 8am–6pm" },
- { label: "Visita a planta" },
- { label: "Respuesta < 1 hora" },
+ { label: "Cotización sin compromiso" },
+ { label: "Asesoría para elegir la caja" },
+ { label: "CDMX y Estado de México" },
  ]}
  ctas={[
- { href: `https://wa.me/${WHATSAPP}`, label: "Escribir por WhatsApp", variant: "primary" },
+ { href: "/cotizar/", label: "Solicitar cotización", variant: "primary" },
  ]}
  />
 
@@ -88,7 +89,6 @@ const canales = [
  <div class="contact-canales__grid">
  {canales.map(c => (
  <div class={`contact-canal${c.destaca ? " contact-canal--destaca" : ""}`}>
- <span class="contact-canal__icono">{c.icono}</span>
  <h3 class="contact-canal__titulo">{c.titulo}</h3>
  <p class="contact-canal__desc">{c.desc}</p>
  <a
@@ -104,52 +104,27 @@ const canales = [
  </div>
  </section>
 
- <section class="contact-horario" aria-labelledby="horario-title">
- <div class="container">
- <div class="contact-horario__inner">
- <h2 id="horario-title" class="contact-horario__title">Horario de Atención</h2>
- <div class="contact-horario__grid">
- <div class="contact-horario__item">
- <span class="contact-horario__dia">Lunes – Viernes</span>
- <span class="contact-horario__hora">8:00 – 18:00 hrs</span>
- </div>
- <div class="contact-horario__item">
- <span class="contact-horario__dia">Sábados</span>
- <span class="contact-horario__hora">9:00 – 14:00 hrs</span>
- </div>
- <div class="contact-horario__item">
- <span class="contact-horario__dia">Domingos y festivos</span>
- <span class="contact-horario__hora">Cerrado</span>
- </div>
- </div>
- <p class="contact-horario__nota"> Los mensajes de WhatsApp fuera de horario se responden a partir del siguiente día hábil a las 8:00 hrs.</p>
- </div>
- </div>
- </section>
-
  <section class="contact-ubicacion" aria-labelledby="ubic-title">
  <div class="container">
  <h2 id="ubic-title" class="contact-ubicacion__title">Zona de Cobertura</h2>
  <div class="contact-ubicacion__grid">
  <div>
- <h3> Planta y oficinas</h3>
- <p>Ciudad de México<br><em>(Dirección exacta — pendiente de actualizar)</em></p>
- <h3 style="margin-top:var(--spacing-lg)"> Entregas express (24 hrs)</h3>
+ <h3>Ciudad de México</h3>
+ <p>Entregas en las 16 alcaldías. Consulta el detalle en <a href="/zonas-de-servicio/">zonas de servicio</a>.</p>
+ <h3 style="margin-top:var(--spacing-lg)">Estado de México</h3>
+ <p>Municipios del área metropolitana: Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli, Texcoco, Chalco, Ixtapaluca y Toluca, entre otros.</p>
+ <h3 style="margin-top:var(--spacing-lg)">Resto de la República</h3>
+ <p>Envíos por paquetería según volumen y destino; se cotizan por separado.</p>
+ </div>
+ <div>
+ <h3>Antes de cotizar</h3>
  <ul>
- <li>Ciudad de México — todas las alcaldías</li>
- <li>Naucalpan, Tlalnepantla, Ecatepec</li>
- <li>Texcoco, Chalco, Ixtapaluca</li>
- <li>Toluca y área conurbada</li>
+ <li>Medidas del producto o de la caja actual (largo × ancho × alto, en cm)</li>
+ <li>Peso aproximado del producto</li>
+ <li>Cantidad por pedido y frecuencia de compra</li>
+ <li>Si la caja lleva impresión (logo, colores)</li>
+ <li>Uso: envío por paquetería, almacén, exportación o punto de venta</li>
  </ul>
- <h3 style="margin-top:var(--spacing-lg)"> Interior de la República</h3>
- <p>2-5 días vía paquetería (DHL, FedEx, Estafeta). Consultar disponibilidad.</p>
- </div>
- <div class="contact-ubicacion__map">
- <!-- Placeholder mapa — reemplazar con Google Maps embed cuando tengamos dirección real -->
- <div style="background:var(--color-accent);border-radius:var(--radius-lg);height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;border:2px dashed var(--color-border);">
- <span style="font-size:3rem">️</span>
- <p style="color:var(--color-text-light);font-size:var(--font-size-sm);text-align:center">Mapa de ubicación<br>próximamente</p>
- </div>
  </div>
  </div>
  </div>
@@ -157,7 +132,6 @@ const canales = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Prefieres que te contactemos nosotros? Deja tu número y te llamamos" />
+ <LeadCapture title="Solicita tu cotización" />
 
 </PageLayout>
-

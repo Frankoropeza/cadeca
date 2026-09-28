@@ -1,15 +1,14 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Fabricación de Cajas a la Medida CDMX — Fabricante Directo | CADECA";
 const description = "Fabricamos cajas de cartón corrugado exactamente a tus dimensiones en CDMX y EDOMEX. Diseño CAD incluido, desde 100 piezas, entrega en 3-5 días. Cotización en 2 horas.";
-const canonical   = SITE + "/servicios/fabricacion-cajas-medida";
+const canonical   = SITE + "/servicios/fabricacion-cajas-medida/";
 
 const schema = [
   {
@@ -17,7 +16,7 @@ const schema = [
     "@type": "Service",
     "name": "Fabricación de Cajas a la Medida",
     "description": description,
-    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "provider": { "@type": "Organization", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
     "url": canonical
   },
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
-    { name: "Servicios", href: "/servicios" },
+    { name: "Servicios", href: "/servicios/" },
     { name: "Fabricación de Cajas a la Medida" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO ════════ */}
@@ -57,9 +55,11 @@ const schema = [
           <h1 class="hero__title"><span>Fabricación de Cajas a la Medida</span></h1>
           <p class="hero__intro">Cualquier dimensión exacta, sin cargos adicionales por medida especial. Diseño CAD técnico incluido sin costo, asesoría de ingeniería y entrega en 3–5 días hábiles.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Fabricaci%C3%B3n+de+Cajas+a+la+Medida"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, quiero información sobre Fabricación de Cajas a la Medida")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -231,7 +231,7 @@ const schema = [
             desc="Cualquier dimensión exacta"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -239,7 +239,7 @@ const schema = [
             desc="Stock permanente en CDMX"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar — CADECA"
-            href="/catalogo/cajas-corrugado-estandar"
+            href="/catalogo/cajas-corrugado-estandar/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -247,7 +247,7 @@ const schema = [
             desc="Alta resistencia ECT"
             imgSrc="/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif"
             imgAlt="Industrial Triple Pared — CADECA"
-            href="/catalogo/cajas-industriales-triple-pared"
+            href="/catalogo/cajas-corrugado-estandar/triple-corrugado/"
             btnText="Ver producto"
           />
       </div>
@@ -257,7 +257,6 @@ const schema = [
   <LeadCapture
     titulo="Cotiza tu fabricación de cajas a la medida"
     subtitulo="Diseño CAD incluido · Fabricante directo · Respuesta en menos de 2 horas"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

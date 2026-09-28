@@ -66,7 +66,7 @@ const thumbs = images.slice(1);
 <script>
  // Minimal vanilla JS — switch main image on thumb click
  document.querySelectorAll<HTMLElement>("[data-gallery]").forEach((gallery) => {
- const mainImg = gallery.querySelector<HTMLImageElement>("pg-main-img");
+ const mainImg = gallery.querySelector<HTMLImageElement>("#pg-main-img");
  const thumbs  = gallery.querySelectorAll<HTMLButtonElement>(".pg__thumb");
 
  thumbs.forEach((btn) => {

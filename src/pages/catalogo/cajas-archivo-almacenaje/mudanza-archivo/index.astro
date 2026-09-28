@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Mudanza y Archivo con Asas CDMX | CAD-AH-05 | CADECA";
 const description = "Ficha técnica caja mudanza y archivo con asas troqueladas en CDMX. Doble pared BC, ECT-44, dual-purpose. 6 medidas disponibles. Sin mínimo, entrega 24-48 hrs. CADECA fabricante.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Chica",  lah:"35×25×30",  flauta:"BC", ect:"ECT-44",vacío:"0.65 kg",máx:"20 kg", disp:"green",  label:"Stock" },
@@ -87,9 +87,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Mudanza y Archivo"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje/"}, {name:"Mudanza y Archivo"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja Mudanza y Archivo con Asas", sku:"CAD-AH-05", description:"Caja doble uso mudanza y archivo con asas troqueladas, doble pared BC ECT-44 — CADECA CDMX", image:"/img/catalogo/caja-mudanza-archivo-corporativo-cdmx.avif", material:"Cartón kraft corrugado doble pared BC ECT-44", category:"Cajas de Archivo y Almacenaje", moq:"1"}}
 >
@@ -98,8 +97,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-archivo-almacenaje/">Archivo y Almacenaje</a></li>
  <li><span class="current">Mudanza y Archivo</span></li>
  </ol>
  </div>
@@ -169,9 +168,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-05 Mudanza y Archivo con Asas`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-05</a>
- <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AH-05 Mudanza y Archivo con Asas`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AH-05</a>
+ <a href="/catalogo/cajas-archivo-almacenaje/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -235,6 +233,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-05 — Sin mínimo, entrega 24-48 hrs en CDMX" />
+ <LeadCapture title="Cotiza CAD-AH-05 — Sin mínimo, entrega 24-48 hrs en CDMX" />
 
 </PageLayout>

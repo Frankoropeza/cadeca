@@ -17,12 +17,6 @@ export interface Props {
  breadcrumbs?: Array<{ name: string; href?: string }>;
  faqItems?:  Array<{ question: string; answer: string }>;
  product?:  { name: string; sku: string; description: string; image: string; brand?: string; material?: string; category?: string; moq?: string; };
- // Contacto global
- phone?:  string;
- whatsapp?:  string;
- email?:  string;
- address?:  string;
- schedule?:  string;
 }
 
 const {
@@ -35,11 +29,6 @@ const {
  breadcrumbs,
  faqItems,
  product,
- phone  = "55 XXXX-XXXX",
- whatsapp = "5255XXXXXXXX",
- email  = "ventas@cadeca.com.mx",
- address  = "[Dirección], CDMX",
- schedule = "Lun–Vie: 8:00 – 18:00 · Sáb: 9:00 – 14:00",
 } = Astro.props;
 ---
 
@@ -54,11 +43,12 @@ const {
  faqItems={faqItems}
  product={product}
 >
- <Topbar  phone={phone} whatsapp={whatsapp} />
- <Header  whatsapp={whatsapp} currentPath={Astro.url.pathname} />
+ <Topbar />
+ <Header currentPath={Astro.url.pathname} />
+ <span id="contenido" tabindex="-1"></span>
 
  <slot />
 
- <Footer  phone={phone} whatsapp={whatsapp} email={email} address={address} schedule={schedule} />
- <WaBubble whatsapp={whatsapp} />
+ <Footer />
+ <WaBubble />
 </BaseLayout>

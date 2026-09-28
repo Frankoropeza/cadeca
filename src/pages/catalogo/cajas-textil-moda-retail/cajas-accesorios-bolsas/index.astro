@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para Accesorios y Bolsas Corrugado CDMX | CAD-TX-03 | CADECA";
 const description = "Ficha técnica caja corrugado para accesorios y bolsas de moda en CDMX. Flauta E, ECT-23, medidas joyería a bolsa grande. Acabados premium, impresión CMYK, MOQ 300 pzas. CADECA fabricante.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Joyería",  lah:"12×8×4",  flauta:"E",  ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"green",  label:"Stock" },
@@ -83,9 +83,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Accesorios y Bolsas"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Accesorios y Bolsas"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja para Accesorios y Bolsas Corrugado Pared Simple",sku:"CAD-TX-03",description:"Caja de cartón corrugado para accesorios y bolsas de moda en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-accesorios-bolsas-premium-cdmx.avif",material:"Cartón GC1/SBS micro-flauta E ECT-23 con acabados premium",category:"Cajas para Textil, Moda y Retail",moq:"300"}}
 >
@@ -94,8 +93,8 @@ const gallery = [
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container"><ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-textil-moda-retail/">Textil, Moda y Retail</a></li>
  <li><span class="current">Accesorios y Bolsas</span></li>
  </ol></div>
  </div>
@@ -164,9 +163,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-03 Caja Accesorios y Bolsas`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-03</a>
- <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-TX-03 Caja Accesorios y Bolsas`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-TX-03</a>
+ <a href="/catalogo/cajas-textil-moda-retail/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -231,6 +229,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-03 — Cajas premium para accesorios y bolsas de moda" />
+ <LeadCapture title="Cotiza CAD-TX-03 — Cajas premium para accesorios y bolsas de moda" />
 
 </PageLayout>

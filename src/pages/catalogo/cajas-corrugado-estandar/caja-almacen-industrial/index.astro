@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Corrugado para Almacén Industrial CDMX | CAD-CS-12 | Racks | CADECA";
 const description = "Caja corrugado para almacén industrial en CDMX. Alta resistencia al apilado, compatible con racks selectivos. ECT-44 doble pared. Desde 50 pzas. Entrega 24 hrs. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
  ["Código SKU",  "CAD-CS-12"],
@@ -51,9 +51,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar"},{name:"Caja Almacén Industrial"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Corrugado Estándar",href:"/catalogo/cajas-corrugado-estandar/"},{name:"Caja Almacén Industrial"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
  product={{name:"Caja Corrugado para Almacén Industrial",sku:"CAD-CS-12",description:"Caja corrugado ECT-44 para almacén industrial y racks en CDMX — CADECA",image:gallery[0].src,material:"Kraft virgen 175g/m² doble corrugado BC ECT-44",category:"Cajas Corrugado Estándar",moq:"50"}}
 >
@@ -62,8 +61,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-corrugado-estandar/">Corrugado Estándar</a></li>
  <li><span class="current">Caja Almacén Industrial</span></li>
  </ol>
  </div>
@@ -109,8 +108,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CS-12 Caja Corrugado Almacén Industrial`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CS-12</a>
- <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-CS-12 Caja Corrugado Almacén Industrial`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-CS-12</a>
+ <a href="/catalogo/cajas-corrugado-estandar/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -127,5 +126,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza Caja para Almacén Industrial — ECT-44, Compatible con Racks, CDMX" />
+ <LeadCapture title="Cotiza Caja para Almacén Industrial — ECT-44, Compatible con Racks, CDMX" />
 </PageLayout>

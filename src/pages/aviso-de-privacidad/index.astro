@@ -1,12 +1,12 @@
 ---
+import { CONTACTO, HAS_EMAIL, HAS_WA, contactoHref, contactoAttrs } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 
 const title  = "Aviso de Privacidad | CADECA — Cajas de Cartón CDMX";
 const description = "Aviso de privacidad de CADECA. Información sobre el tratamiento de datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).";
-const WHATSAPP  = "5255XXXXXXXX";
 ---
 
-<PageLayout title={title} description={description} whatsapp={WHATSAPP} pageType="page"
+<PageLayout title={title} description={description} pageType="page"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Aviso de Privacidad"}]}>
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -26,7 +26,7 @@ const WHATSAPP  = "5255XXXXXXXX";
  <p class="legal-page__fecha">Última actualización: marzo de 2026</p>
 
  <h2>I. Identidad y Domicilio del Responsable</h2>
- <p><strong>CADECA</strong> (en adelante "el Responsable"), con domicilio en Ciudad de México, México, es responsable del tratamiento de los datos personales que usted proporciona a través de nuestro sitio web <strong>cadeca.com.mx</strong> y medios de contacto.</p>
+ <p><strong>CADECA</strong> (en adelante "el Responsable"), con domicilio en Ciudad de México, México, es responsable del tratamiento de los datos personales que usted proporciona a través de nuestro sitio web <strong>cajas-de-carton.com</strong> y medios de contacto.</p>
 
  <h2>II. Datos Personales que Recabamos</h2>
  <p>Para las finalidades descritas en este Aviso, recabamos los siguientes datos personales:</p>
@@ -61,19 +61,20 @@ const WHATSAPP  = "5255XXXXXXXX";
 
  <h2>V. Derechos ARCO</h2>
  <p>Usted tiene derecho a: <strong>Acceder</strong> a sus datos personales; <strong>Rectificar</strong> datos inexactos; <strong>Cancelar</strong> sus datos de nuestras bases; <strong>Oponerse</strong> al tratamiento de sus datos para finalidades secundarias.</p>
- <p>Para ejercer sus derechos ARCO, comuníquese a: <a href="mailto:ventas@cadeca.com.mx">ventas@cadeca.com.mx</a></p>
+ <p>Para ejercer sus derechos ARCO, envíe su solicitud a través de {HAS_EMAIL ? (<a href={`mailto:${CONTACTO.email}`}>{CONTACTO.email}</a>) : (<a href="/contacto/">nuestra página de contacto</a>)}, indicando su nombre, el derecho que desea ejercer y un medio para responderle.</p>
 
  <h2>VI. Uso de Cookies y Tecnologías de Rastreo</h2>
  <p>Nuestro sitio web puede utilizar cookies y tecnologías similares para mejorar la experiencia del usuario y analizar el tráfico. Puede configurar su navegador para rechazar cookies; sin embargo, esto puede afectar la funcionalidad del sitio.</p>
 
  <h2>VII. Cambios al Aviso de Privacidad</h2>
- <p>Este Aviso puede ser modificado. Cualquier cambio será notificado a través de nuestro sitio web <strong>cadeca.com.mx</strong> con al menos 10 días de anticipación.</p>
+ <p>Este Aviso puede ser modificado. Cualquier cambio será notificado a través de nuestro sitio web <strong>cajas-de-carton.com</strong> con al menos 10 días de anticipación.</p>
 
  <h2>VIII. Contacto</h2>
  <p>Para cualquier duda sobre este Aviso de Privacidad:</p>
  <ul>
- <li>Correo: <a href="mailto:ventas@cadeca.com.mx">ventas@cadeca.com.mx</a></li>
- <li>WhatsApp: <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener">Escribir por WhatsApp</a></li>
+ {HAS_EMAIL && <li>Correo: <a href={`mailto:${CONTACTO.email}`}>{CONTACTO.email}</a></li>}
+ {HAS_WA && <li>WhatsApp: <a href={contactoHref()} {...contactoAttrs}>Escribir por WhatsApp</a></li>}
+ <li>Formulario: <a href="/contacto/">página de contacto</a></li>
  </ul>
 
  </div>

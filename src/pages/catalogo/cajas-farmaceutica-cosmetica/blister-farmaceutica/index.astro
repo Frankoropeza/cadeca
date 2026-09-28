@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Blíster Farmacéutica Flauta E CDMX | CAD-FC-01 | CADECA";
 const description = "Caja corrugado flauta E para blíster farmacéutico en CDMX. ECT-23, impresión regulatoria NOM-072, medidas estándar y a la medida. Fabricante directo CADECA.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Unitario Chico",  lah:"12×8×4",  flauta:"E",ect:"ECT-23",vacío:"0.04 kg",máx:"0.5 kg", disp:"green",  label:"Stock" },
@@ -81,9 +81,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Blíster Farmacéutica"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Blíster Farmacéutica"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja Blíster Farmacéutica Flauta E",sku:"CAD-FC-01",description:"Caja corrugado flauta E para blíster farmacéutico en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-blister-farmaceutica-corrugado-cdmx.avif",material:"Cartón SBS blanqueado flauta E ECT-23",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"200"}}
 >
@@ -91,8 +90,8 @@ const gallery = [
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container"><ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-farmaceutica-cosmetica/">Farmacéutica y Cosmética</a></li>
  <li><span class="current">Blíster Farmacéutica</span></li>
  </ol></div>
  </div>
@@ -161,9 +160,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-01 Blíster Farmacéutica`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-01</a>
- <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-FC-01 Blíster Farmacéutica`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-FC-01</a>
+ <a href="/catalogo/cajas-farmaceutica-cosmetica/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -227,6 +225,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-01 — Empaques farmacéuticos con entrega en CDMX" />
+ <LeadCapture title="Cotiza CAD-FC-01 — Empaques farmacéuticos con entrega en CDMX" />
 
 </PageLayout>

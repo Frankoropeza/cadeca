@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Línea Producción Pharma Alta Velocidad CDMX | CAD-FC-05 | CADECA";
 const description = "Caja corrugado para líneas de producción farmacéutica automatizadas en CDMX. Tolerancia ±1mm, troquelado precisión, compatible Bosch, IMA, Marchesini. CADECA.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Blíster Individual",lah:"8×5×3",  flauta:"E",ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"yellow", label:"48 hrs" },
@@ -82,9 +82,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Línea Producción Pharma"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Línea Producción Pharma"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja Línea Producción Pharma Alta Velocidad",sku:"CAD-FC-05",description:"Caja corrugado para líneas de producción farmacéutica automatizadas en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-linea-produccion-farmaceutica-cdmx.avif",material:"Cartón SBS/GC1 flauta E tolerancia ±1mm",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"500"}}
 >
@@ -92,8 +91,8 @@ const gallery = [
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container"><ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-farmaceutica-cosmetica/">Farmacéutica y Cosmética</a></li>
  <li><span class="current">Línea Producción Pharma</span></li>
  </ol></div>
  </div>
@@ -162,9 +161,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-05 Línea Producción Pharma`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-05</a>
- <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-FC-05 Línea Producción Pharma`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-FC-05</a>
+ <a href="/catalogo/cajas-farmaceutica-cosmetica/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -228,6 +226,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-05 — Cajas para línea de producción pharma automatizada" />
+ <LeadCapture title="Cotiza CAD-FC-05 — Cajas para línea de producción pharma automatizada" />
 
 </PageLayout>

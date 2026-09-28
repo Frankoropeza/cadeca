@@ -1,43 +1,37 @@
 ---
-// Topbar.astro — Barra superior de contacto
+// Topbar.astro — Barra superior de contacto.
+// Los canales salen de src/data/contacto.ts; un canal sin dato no se muestra.
+import { CONTACTO, HAS_TEL, HAS_WA, contactoHref } from "@/data/contacto";
+
 export interface Props {
- phone?:  string;
- whatsapp?:  string;
- schedule?:  string;
  ctaText?:  string;
  ctaHref?:  string;
  tagline?:  string;
 }
 
 const {
- phone  = "55 XXXX-XXXX",
- whatsapp = "5255XXXXXXXX",
- schedule = "Lun-Vie 8:00 - 18:00 · Sáb 9:00 - 14:00",
  ctaText  = "Cotizar ahora",
- ctaHref  = "cotizar",
- tagline  = "Entrega en 24-48 hrs · CDMX y Estado de México",
+ ctaHref  = "/cotizar/",
+ tagline  = "Cajas de cartón para empresas · CDMX y Estado de México",
 } = Astro.props;
 ---
 
 <div class="topbar" role="complementary" aria-label="Información de contacto">
  <div class="container">
 
- <!-- Mobile -->
+ {(HAS_TEL || HAS_WA) && (
  <div class="topbar__mobile-info">
- <a href={`tel:+${whatsapp}`}>Tel: {phone}</a>
- <span class="topbar__separator">|</span>
- <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">WhatsApp</a>
+ {HAS_TEL && <a href={`tel:+${CONTACTO.telefono}`}>Tel: {CONTACTO.telefonoVisible}</a>}
+ {HAS_TEL && HAS_WA && <span class="topbar__separator">|</span>}
+ {HAS_WA && <a href={contactoHref()} target="_blank" rel="noopener">WhatsApp</a>}
  </div>
+ )}
 
- <!-- Desktop -->
  <div class="topbar__left">
  <span class="topbar__label">Cajas de Cartón CDMX</span>
- <span class="topbar__separator">|</span>
- <a href={`tel:+${whatsapp}`}>Tel: {phone}</a>
- <span class="topbar__separator">|</span>
- <span>{schedule}</span>
- <span class="topbar__separator">|</span>
- <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">WhatsApp: {phone}</a>
+ {HAS_TEL && (<><span class="topbar__separator">|</span><a href={`tel:+${CONTACTO.telefono}`}>Tel: {CONTACTO.telefonoVisible}</a></>)}
+ {CONTACTO.horario && (<><span class="topbar__separator">|</span><span>{CONTACTO.horario}</span></>)}
+ {HAS_WA && (<><span class="topbar__separator">|</span><a href={contactoHref()} target="_blank" rel="noopener">WhatsApp</a></>)}
  </div>
 
  <div class="topbar__right">

@@ -5,6 +5,7 @@ import Header  from "@/components/Header.astro";
 import Footer  from "@/components/Footer.astro";
 import WaBubble  from "@/components/WaBubble.astro";
 import "@/styles/blog.css";
+import { HAS_WA, contactoHref } from "@/data/contacto";
 
 export interface Props {
  title:  string;
@@ -29,7 +30,7 @@ const {
 } = Astro.props;
 
 const SITE = "https://cajas-de-carton.com";
-const pageUrl = `${SITE}/blog/${slug}`;
+const pageUrl = `${SITE}/blog/${slug}/`;
 
 function catSlug(name: string) {
  return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
@@ -41,24 +42,24 @@ function formatDate(d: Date) {
 const cs = catSlug(category);
 
 const categoryColors: Record<string, string> = {
- "E-commerce":  "E05800",
- "Guías":  "1C2B4A",
- "Industria":  "0066CC",
- "Sostenibilidad": "2E7D32",
- "Consejos":  "6A1B9A",
+ "E-commerce":  "#E05800",
+ "Guías":  "#1C2B4A",
+ "Industria":  "#0066CC",
+ "Sostenibilidad": "#2E7D32",
+ "Consejos":  "#6A1B9A",
 };
 
 const CATEGORIES = [
- { name: "Guías",  slug: "guias",  color: "1C2B4A", icon: "" },
- { name: "E-commerce",  slug: "e-commerce",  color: "E05800", icon: "" },
- { name: "Industria",  slug: "industria",  color: "0066CC", icon: "" },
- { name: "Sostenibilidad", slug: "sostenibilidad", color: "2E7D32", icon: "️" },
- { name: "Consejos",  slug: "consejos",  color: "6A1B9A", icon: "" },
+ { name: "Guías",  slug: "guias",  color: "#1C2B4A", icon: "" },
+ { name: "E-commerce",  slug: "e-commerce",  color: "#E05800", icon: "" },
+ { name: "Industria",  slug: "industria",  color: "#0066CC", icon: "" },
+ { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32", icon: "️" },
+ { name: "Consejos",  slug: "consejos",  color: "#6A1B9A", icon: "" },
 ];
 
 const breadcrumbs = [
  { name: "Inicio", href: "/" },
- { name: "Blog",  href: "/blog" },
+ { name: "Blog",  href: "/blog/" },
  { name: title },
 ];
 
@@ -72,7 +73,7 @@ const schemaArticle = {
  "author": { "@type": "Organization", "name": author },
  "publisher": {
  "@type": "Organization",
- "name": "CADECA",
+ "name": "#CADECA",
  "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
  },
  "datePublished": pubDate.toISOString(),
@@ -92,7 +93,7 @@ const schemaBreadcrumb = {
  })),
 };
 
-const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y me interesa cotizar cajas.`);
+const waMsg = `Hola, leí el artículo "${title}" y me interesa cotizar cajas.`;
 ---
 
 <BaseLayout
@@ -104,6 +105,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
 >
  <Topbar />
  <Header currentPath={Astro.url.pathname} />
+ <span id="contenido" tabindex="-1"></span>
 
  <!-- Reading Progress -->
  <div class="reading-progress" aria-hidden="true">
@@ -117,11 +119,11 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  <nav class="post-hero__breadcrumb" aria-label="Breadcrumb">
  <a href="/">Inicio</a>
  <span>/</span>
- <a href="/blog">Blog</a>
+ <a href="/blog/">Blog</a>
  <span>/</span>
  <span>{category}</span>
  </nav>
- <span class="post-hero__cat" style={`background:${categoryColors[category] || "E05800"}`}>
+ <span class="post-hero__cat" style={`background:${categoryColors[category] || "#E05800"}`}>
  {category}
  </span>
  <h1 class="post-hero__title">{title}</h1>
@@ -220,7 +222,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  {relatedPosts.map(post => {
  const rcs = catSlug(post.category);
  return (
- <a href={`/blog/${post.slug}`} class="blog-card">
+ <a href={`/blog/${post.slug}/`} class="blog-card">
  <div class="blog-card__img-wrap">
  {post.image ? (
  <img class="blog-card__img" src={post.image} alt={post.title} width="480" height="270" loading="lazy" />
@@ -258,24 +260,24 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  <ul class="toc__list" id="toc-list">
  {tocHeadings.map(h => (
  <li class={h.depth === 3 ? "toc__h3" : ""}>
- <a href={`${h.slug}`} data-heading={h.slug}>{h.text}</a>
+ <a href={`#${h.slug}`} data-heading={h.slug}>{h.text}</a>
  </li>
  ))}
  </ul>
  </div>
  )}
 
- <!-- CTA WhatsApp -->
+ <!-- CTA cotización -->
  <div class="sidebar-cta">
  <span class="sidebar-cta__icon"></span>
  <h3 class="sidebar-cta__title">¿Necesitas estas cajas?</h3>
- <p class="sidebar-cta__desc">Cotización sin compromiso. Producción en CDMX, entrega en 24–48 hrs.</p>
- <a href="/cotizar" class="sidebar-cta__btn">Solicitar cotización</a>
- <a
- href={`https://wa.me/5255XXXXXXXX?text=${waText}`}
+ <p class="sidebar-cta__desc">Cotización sin compromiso para tu negocio, con entrega en CDMX y área metropolitana.</p>
+ <a href="/cotizar/" class="sidebar-cta__btn">Solicitar cotización</a>
+ {HAS_WA && (<a
+ href={contactoHref(waMsg)}
  class="sidebar-cta__btn sidebar-cta__btn--wa"
  target="_blank" rel="noopener"
- > WhatsApp directo</a>
+ >WhatsApp directo</a>)}
  </div>
 
  <!-- Categorías -->
@@ -286,7 +288,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  </div>
  <nav class="sidebar-categories">
  {CATEGORIES.map(cat => (
- <a href={`/blog/categoria/${cat.slug}`} class={`sidebar-categories__item${cat.name === category ? " sidebar-categories__item--active" : ""}`}>
+ <a href={`/blog/categoria/${cat.slug}/`} class={`sidebar-categories__item${cat.name === category ? " sidebar-categories__item--active" : ""}`}>
  <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
  <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
  </a>
@@ -301,7 +303,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  <h3 class="blog-sidebar__widget-title">Más artículos</h3>
  </div>
  <div style="padding: 1rem 1.25rem;">
- <a href="/blog" style="display:inline-flex;align-items:center;gap:0.4em;font-weight:700;font-size:0.875rem;color:var(--color-primary);text-decoration:none;">
+ <a href="/blog/" style="display:inline-flex;align-items:center;gap:0.4em;font-weight:700;font-size:0.875rem;color:var(--color-primary);text-decoration:none;">
  Ver todos los artículos →
  </a>
  </div>
@@ -339,7 +341,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  }
 
  // TOC active — sin scrollIntoView para evitar scroll loop
- const tocLinks = document.querySelectorAll<HTMLAnchorElement>('toc-list a[data-heading]');
+ const tocLinks = document.querySelectorAll<HTMLAnchorElement>('#toc-list a[data-heading]');
  if (!tocLinks.length) return;
 
  const observer = new IntersectionObserver(entries => {
@@ -347,7 +349,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  if (entry.isIntersecting) {
  tocLinks.forEach(a => a.classList.remove('toc-active'));
  const active = document.querySelector<HTMLElement>(
- `toc-list a[data-heading="${entry.target.id}"]`
+ `#toc-list a[data-heading="${entry.target.id}"]`
  );
  if (active) active.classList.add('toc-active');
  // NO scrollIntoView — causaba scroll loop en mobile
@@ -355,7 +357,7 @@ const waText = encodeURIComponent(`Hola CADECA, leí su artículo "${title}" y m
  });
  }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
 
- document.querySelectorAll('article-content h2[id], article-content h3[id]').forEach(h => {
+ document.querySelectorAll('#article-content h2[id], #article-content h3[id]').forEach(h => {
  observer.observe(h);
  });
 })();

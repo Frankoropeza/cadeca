@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Personalizada Startup Marca Emergente CDMX | MOQ 100 | CAD-PL-10 | CADECA";
 const description = "Caja personalizada para startups y marcas emergentes en CDMX. MOQ bajo 100 pzas, diseño gratis, turnaround 5–7 días. La mejor opción para marcas DTC que empiezan. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
  ["Código SKU", "CAD-PL-10"],
@@ -38,9 +38,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo"},{name:"Caja Personalizada para Startups y Marcas Emergentes"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja Personalizada para Startups y Marcas Emergentes"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
  product={{name:"Caja Personalizada para Startups y Marcas Emergentes",sku:"CAD-PL-10",description:"La caja personalizada con logo de menor MOQ del mercado: desde 100 piezas para startups y marcas emergentes en CDMX. Diseño gratuito y entrega en 5–7 días.",image:gallery[0].src,material:"CAD-PL-10",category:"Cajas Personalizadas con Logo",moq:"100 piezas (el más bajo)"}}
 >
@@ -48,8 +47,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-personalizadas-logo">Cajas Personalizadas con Logo</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo/">Cajas Personalizadas con Logo</a></li>
  <li><span class="current">Caja Personalizada para Startups y Marcas Emergentes</span></li>
  </ol>
  </div>
@@ -91,8 +90,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-10 Caja Personalizada para Startups y Marcas Emergentes`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-10</a>
- <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-PL-10 Caja Personalizada para Startups y Marcas Emergentes`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-PL-10</a>
+ <a href="/catalogo/cajas-personalizadas-logo/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -109,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Estás lanzando tu marca? Empieza con solo 100 cajas con tu logo — diseño gratis incluido" />
+ <LeadCapture title="¿Estás lanzando tu marca? Empieza con solo 100 cajas con tu logo — diseño gratis incluido" />
 </PageLayout>

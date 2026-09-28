@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Almacenaje Farmacia Hospital CDMX | BPM COFEPRIS | CAD-AH-07 | CADECA";
 const description = "Caja de almacenaje para farmacia y hospital en CDMX. Corrugado blanco BPM, compatible COFEPRIS, apilable en racks selectivos. MOQ 100 pzas. Entrega 24 hrs. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
  ["Código SKU", "CAD-AH-07"],
@@ -38,9 +38,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas de Archivo y Almacenaje",href:"/catalogo/cajas-archivo-almacenaje"},{name:"Caja de Almacenaje para Farmacia y Hospital"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas de Archivo y Almacenaje",href:"/catalogo/cajas-archivo-almacenaje/"},{name:"Caja de Almacenaje para Farmacia y Hospital"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
  product={{name:"Caja de Almacenaje para Farmacia y Hospital",sku:"CAD-AH-07",description:"Caja de almacenaje corrugado blanco compatible con BPM COFEPRIS para farmacias y hospitales. Apilable en racks selectivos, etiquetado visible, desde 100 piezas en CDMX.",image:gallery[0].src,material:"CAD-AH-07",category:"Cajas de Archivo y Almacenaje",moq:"100 piezas"}}
 >
@@ -48,8 +47,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-archivo-almacenaje">Cajas de Archivo y Almacenaje</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-archivo-almacenaje/">Cajas de Archivo y Almacenaje</a></li>
  <li><span class="current">Caja de Almacenaje para Farmacia y Hospital</span></li>
  </ol>
  </div>
@@ -91,8 +90,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-07 Caja de Almacenaje para Farmacia y Hospital`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-07</a>
- <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AH-07 Caja de Almacenaje para Farmacia y Hospital`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AH-07</a>
+ <a href="/catalogo/cajas-archivo-almacenaje/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -109,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Tienes farmacia u hospital? Cotiza la caja de almacenaje compatible con BPM en menos de 1 hora" />
+ <LeadCapture title="¿Tienes farmacia u hospital? Cotiza la caja de almacenaje compatible con BPM en menos de 1 hora" />
 </PageLayout>

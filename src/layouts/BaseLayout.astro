@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import { CONTACTO, HAS_TEL, HAS_EMAIL } from "@/data/contacto";
 
 // ─── Tipos ────────────────────────────────────────────────────────────────────
 export interface BreadcrumbItem { name: string; href?: string; }
@@ -41,115 +42,40 @@ const {
 
 const SITE  = "https://cajas-de-carton.com";
 const SITE_NAME = "CADECA";
-const TEL  = "+52-55-XXXX-XXXX";  // ← cambiar
-const EMAIL  = "ventas@cadeca.com.mx";  // ← cambiar
 
 // ─── Schemas base (siempre presentes) ─────────────────────────────────────────
 const schemaOrg = {
  "@context": "https://schema.org",
  "@type": "Organization",
- "@id": `${SITE}/org`,
+ "@id": `${SITE}/#org`,
  "name": SITE_NAME,
+ "alternateName": "CADECA Cajas de Cartón",
  "url": SITE,
  "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
- "description": "La mejor empresa de cajas de cartón en CDMX y Estado de México. Fabricante directo de cajas corrugadas estándar, a medida y personalizadas al mayoreo.",
- "telephone": TEL,
- "email": EMAIL,
- "address": {
- "@type": "PostalAddress",
- "addressLocality": "Ciudad de México",
- "addressRegion": "CDMX",
- "addressCountry": "MX"
- },
+ "description": "Proveedor de cajas de cartón corrugado para empresas y negocios en la Ciudad de México y el Estado de México: cajas estándar, a la medida, personalizadas con logo y láminas de cartón.",
  "areaServed": [
  { "@type": "State", "name": "Ciudad de México" },
  { "@type": "State", "name": "Estado de México" }
  ],
- "contactPoint": {
+ ...(HAS_TEL ? { "telephone": `+${CONTACTO.telefono}` } : {}),
+ ...(HAS_EMAIL ? { "email": CONTACTO.email } : {}),
+ ...((HAS_TEL || HAS_EMAIL) ? { "contactPoint": {
  "@type": "ContactPoint",
- "telephone": TEL,
  "contactType": "sales",
  "areaServed": "MX",
- "availableLanguage": "Spanish"
- }
-};
-
-const schemaLocal = {
- "@context": "https://schema.org",
- "@type": "LocalBusiness",
- "@id": `${SITE}/negocio`,
- "name": "CADECA — Cajas de Cartón",
- "url": SITE,
- "logo": `${SITE}/img/cadeca-logo.png`,
- "image": `${SITE}/img/og-cadeca.jpg`,
- "description": "Fabricante directo de cajas de cartón corrugado al mayoreo en CDMX y Estado de México. Cajas estándar, a la medida y personalizadas con logo. Entrega mismo día CDMX.",
- "telephone": TEL,
- "email": EMAIL,
- "priceRange": "$$",
- "currenciesAccepted": "MXN",
- "paymentAccepted": "Transferencia, Tarjeta, Efectivo",
- "openingHoursSpecification": [
- { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
- { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "14:00" }
- ],
- "geo": { "@type": "GeoCoordinates", "latitude": 19.4326, "longitude": -99.1332 },
- "address": {
- "@type": "PostalAddress",
- "addressLocality": "Ciudad de México",
- "addressRegion": "CDMX",
- "addressCountry": "MX"
- },
- "areaServed": ["Ciudad de México","Estado de México","Zona Metropolitana del Valle de México"],
- "hasOfferCatalog": {
- "@type": "OfferCatalog",
- "name": "Catálogo de Cajas de Cartón Corrugado",
- "url": `${SITE}/catalogo`
- },
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "4.9",
- "bestRating": "5",
- "worstRating": "1",
- "reviewCount": "847",
- "ratingCount": "847"
- },
- "review": [
- {
- "@type": "Review",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
- "author": { "@type": "Person", "name": "Ing. Raúl Mendoza" },
- "datePublished": "2025-11-18",
- "reviewBody": "Llevamos 3 años comprando cajas con CADECA. La calidad del corrugado es constante, las entregas siempre puntuales y el equipo de ventas resuelve cualquier duda técnica al momento. Los recomiendo ampliamente."
- },
- {
- "@type": "Review",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
- "author": { "@type": "Person", "name": "Martha Ruiz" },
- "datePublished": "2026-01-10",
- "reviewBody": "Excelente servicio. Pedimos cajas personalizadas con nuestro logo y el resultado superó nuestras expectativas. La impresión nítida y el cartón muy resistente. Entrega en CDMX al día siguiente."
- },
- {
- "@type": "Review",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
- "author": { "@type": "Person", "name": "José Luis Hernández" },
- "datePublished": "2026-02-25",
- "reviewBody": "Como vendedor de Mercado Libre necesitaba cajas con medidas exactas y a buen precio. CADECA me cotizó en menos de una hora y al día siguiente tenía las cajas en mi bodega. Precio justo y calidad superior."
- }
- ]
+ "availableLanguage": "Spanish",
+ ...(HAS_TEL ? { "telephone": `+${CONTACTO.telefono}` } : {}),
+ ...(HAS_EMAIL ? { "email": CONTACTO.email } : {})
+ } } : {})
 };
 
 const schemaWebSite = {
  "@context": "https://schema.org",
  "@type": "WebSite",
- "@id": `${SITE}/website`,
+ "@id": `${SITE}/#website`,
  "name": SITE_NAME,
  "url": SITE,
- "publisher": { "@id": `${SITE}/org` },
- "potentialAction": {
- "@type": "SearchAction",
- "target": { "@type": "EntryPoint", "urlTemplate": `${SITE}/productos?q={search_term_string}` },
- "query-input": "required name=search_term_string"
- }
+ "publisher": { "@id": `${SITE}/#org` }
 };
 
 // ─── BreadcrumbList JSON-LD (si se pasan breadcrumbs) ─────────────────────────
@@ -175,44 +101,12 @@ const schemaFaq = faqItems?.length ? {
  }))
 } : null;
 
-// ─── Product JSON-LD (si se pasa product) ────────────────────────────────────
-const schemaProduct = product ? {
- "@context": "https://schema.org",
- "@type": "Product",
- "name": product.name,
- "sku": product.sku,
- "description": product.description,
- "image": `${SITE}${product.image}`,
- "brand": { "@type": "Brand", "name": product.brand ?? SITE_NAME },
- ...(product.material ? { "material": product.material } : {}),
- ...(product.category ? { "category": product.category } : {}),
- "manufacturer": { "@id": `${SITE}/org` },
- "offers": {
- "@type": "Offer",
- "url": canonical,
- "priceCurrency": "MXN",
- "priceSpecification": {
- "@type": "UnitPriceSpecification",
- "priceCurrency": "MXN",
- "unitCode": "C62",
- "name": "Precio por pieza (volumen)"
- },
- "availability": "https://schema.org/InStock",
- "seller": { "@id": `${SITE}/org` },
- "areaServed": "MX",
- "eligibleQuantity": {
- "@type": "QuantitativeValue",
- "minValue": product.moq ? parseInt(product.moq) : 50,
- "unitText": "piezas"
- }
- }
-} : null;
+// Product JSON-LD: se omite mientras no haya precios publicados (Offer sin price es inválido).
 
 // ─── Ensamblar todos los schemas ──────────────────────────────────────────────
-const allSchemas: object[] = [schemaOrg, schemaLocal, schemaWebSite];
+const allSchemas: object[] = [schemaOrg, schemaWebSite];
 if (schemaBreadcrumb) allSchemas.push(schemaBreadcrumb);
 if (schemaFaq)  allSchemas.push(schemaFaq);
-if (schemaProduct)  allSchemas.push(schemaProduct);
 if (schema) {
  const extra = Array.isArray(schema) ? schema : [schema];
  allSchemas.push(...extra);
@@ -234,12 +128,6 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  <meta name="description" content={description} />
  <link rel="canonical" href={canonical} />
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-
- <!-- Geo Local SEO (CDMX) -->
- <meta name="geo.region"  content="MX-CMX" />
- <meta name="geo.placename" content="Ciudad de México" />
- <meta name="geo.position"  content="19.4326;-99.1332" />
- <meta name="ICBM"  content="19.4326, -99.1332" />
 
  <!-- Open Graph -->
  <meta property="og:type"  content={ogType} />
@@ -265,11 +153,9 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  <link rel="icon"  href="/favicon.svg" type="image/svg+xml" />
  <link rel="icon"  href="/favicon.svg" sizes="any" />
  <link rel="apple-touch-icon" href="/favicon.svg" />
- <meta name="theme-color"  content="E05800" />
+ <meta name="theme-color"  content="#E05800" />
  <link rel="manifest"  href="/site.webmanifest" />
 
- <!-- Theme -->
- <meta name="theme-color" content="E05800" />
 
  <!-- Schema.org JSON-LD (múltiples bloques = mejor parsing por Google) -->
  {allSchemas.map(s => (
@@ -282,6 +168,8 @@ const ogType = (pageType === "product") ? "og:product" : "website";
 </html>
 
 <script>
+ import "@/scripts/lead-form.ts"; // formularios de cotización
+
  // Mobile nav toggle
  const hamburger = document.getElementById('hamburger');
  const mobileNav = document.getElementById('mobile-nav');
@@ -333,17 +221,4 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  });
  });
 
- // Lead form → WhatsApp
- document.getElementById('cotizar-form')?.addEventListener('submit', (e) => {
- e.preventDefault();
- const form  = e.target as HTMLFormElement;
- const nombre  = (form.querySelector('[name="nombre"]')  as HTMLInputElement)?.value.trim();
- const contacto = (form.querySelector('[name="contacto"]') as HTMLInputElement)?.value.trim();
- const tipo  = (form.querySelector('[name="tipo"]')  as HTMLSelectElement)?.value;
- const cantidad = (form.querySelector('[name="cantidad"]') as HTMLSelectElement)?.value;
- const msg = encodeURIComponent(
- `Hola CADECA, soy ${nombre}.\nNecesito cotizar: ${tipo} — Cantidad aprox.: ${cantidad}.\nContacto: ${contacto}`
- );
- window.open(`https://wa.me/5255XXXXXXXX?text=${msg}`, '_blank');
- });
 </script>

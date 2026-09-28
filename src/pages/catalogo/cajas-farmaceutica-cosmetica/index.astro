@@ -6,7 +6,6 @@ import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas para Industria Farmacéutica y Cosmética CDMX | 5 Productos | CADECA";
 const description = "Cajas de cartón para farmacéutica y cosmética en CDMX. Blíster, cosmética premium, distribuidora, suplementos y línea de producción. Fichas técnicas con medidas y especificaciones.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const productos = [
  {
@@ -18,7 +17,7 @@ const productos = [
  desc:  "Caja corrugado micro flauta E para blíster de medicamentos. Alta calidad de impresión para información regulatoria. Cumple NOM-072-SSA1. Pedido mínimo 200 piezas.",
  imgSrc:  "/img/catalogo/caja-blister-farmaceutica-corrugado-cdmx.avif",
  imgAlt:  "Caja de cartón para blíster farmacéutica CDMX — CADECA CAD-FC-01",
- href:  "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/blister-farmaceutica/",
  specs: [
  { label: "Pared",  value: "Simple (Flauta E)" },
  { label: "ECT",  value: "ECT-23" },
@@ -36,7 +35,7 @@ const productos = [
  desc:  "Caja con acabado mate, barniz UV selectivo y soft touch para líneas de cosméticos premium. Impresión full color CMYK. Ideal para skincare, maquillaje y perfumería.",
  imgSrc:  "/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif",
  imgAlt:  "Caja de cartón cosmética premium acabados especiales CDMX — CADECA CAD-FC-02",
- href:  "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium/",
  specs: [
  { label: "Pared",  value: "Simple (Flauta E)" },
  { label: "Acabado",  value: "Mate · UV · Soft Touch" },
@@ -54,7 +53,7 @@ const productos = [
  desc:  "Caja doble corrugado BC para distribución de medicamentos a farmacias y hospitales. Apilable, resistente a humedad. Trazabilidad con código de barras impreso.",
  imgSrc:  "/img/catalogo/caja-distribuidora-farmacia-mayoreo-cdmx.avif",
  imgAlt:  "Caja de cartón distribuidora farmacia industrial CDMX — CADECA CAD-FC-03",
- href:  "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia/",
  specs: [
  { label: "Pared",  value: "Doble (BC)" },
  { label: "ECT",  value: "ECT-44" },
@@ -72,7 +71,7 @@ const productos = [
  desc:  "Caja corrugado simple para suplementos alimenticios, vitaminas y proteínas. Impresión flexográfica con datos nutricionales. Compatible con NOM-051-SCFI.",
  imgSrc:  "/img/catalogo/caja-suplementos-nutricion-deportiva-cdmx.avif",
  imgAlt:  "Caja de cartón para suplementos y nutrición CDMX — CADECA CAD-FC-04",
- href:  "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion/",
  specs: [
  { label: "Pared",  value: "Simple (Flauta B)" },
  { label: "ECT",  value: "ECT-32" },
@@ -90,7 +89,7 @@ const productos = [
  desc:  "Caja diseñada para líneas de empaque automatizadas. Tolerancias ±1mm, troquelado de precisión, compatible con equipos Bosch, IMA y Marchesini.",
  imgSrc:  "/img/catalogo/caja-linea-produccion-farmaceutica-cdmx.avif",
  imgAlt:  "Caja de cartón línea producción pharma alta velocidad CDMX — CADECA CAD-FC-05",
- href:  "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma",
+ href:  "/catalogo/cajas-farmaceutica-cosmetica/linea-produccion-pharma/",
  specs: [
  { label: "Pared",  value: "Simple (Flauta E/B)" },
  { label: "Tolerancia", value: "±1mm" },
@@ -106,7 +105,7 @@ const productos = [
  desc: "Corrugado blanco ECT-44 sin olor, compatible BPM COFEPRIS. Para reactivos, kits diagnóstico y material de laboratorio. Certificación sanitaria disponible. CDMX.",
  imgSrc: "/img/catalogo/caja-blister-farmaceutica-hero-cdmx.avif",
  imgAlt: "Caja laboratorio clínico diagnóstico COFEPRIS CDMX — CADECA CAD-FC-06",
- href: "/catalogo/cajas-farmaceutica-cosmetica/caja-laboratorio-clinico",
+ href: "/catalogo/cajas-farmaceutica-cosmetica/caja-laboratorio-clinico/",
  specs: [{ label:"BPM",value:"COFEPRIS"},{label:"Liner",value:"Blanco sin olor"},{label:"ECT",value:"ECT-44"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -116,7 +115,7 @@ const productos = [
  desc: "MOQ bajo 100 pzas para marcas de cosmética que empiezan. Kraft o blanco, personalización gráfica opcional. Unboxing premium. Diseño gratuito. Turnaround 5–7 días.",
  imgSrc: "/img/catalogo/caja-cosmetica-premium-display-cdmx.avif",
  imgAlt: "Caja cosmética startup marca emergente CDMX — CADECA CAD-FC-07",
- href: "/catalogo/cajas-farmaceutica-cosmetica/caja-cosmetica-startup",
+ href: "/catalogo/cajas-farmaceutica-cosmetica/caja-cosmetica-startup/",
  specs: [{ label:"MOQ",value:"100 pzas"},{label:"Branding",value:"Opcional"},{label:"Unboxing",value:"Premium"},{label:"Entrega",value:"5–7 días"}],
  moq: "100 pzas",
  },
@@ -126,7 +125,7 @@ const productos = [
  desc: "Barrera EPS + corrugado que mantiene 2–8°C hasta 24 hrs. Para insulina, vacunas y biológicos. Compatible con protocolos de cadena de frío COFEPRIS. CDMX.",
  imgSrc: "/img/catalogo/caja-distribuidora-farmacia-hero-cdmx.avif",
  imgAlt: "Caja cadena frío farmacéutico insulina vacunas CDMX — CADECA CAD-FC-08",
- href: "/catalogo/cajas-farmaceutica-cosmetica/caja-frio-farmaceutico",
+ href: "/catalogo/cajas-farmaceutica-cosmetica/caja-frio-farmaceutico/",
  specs: [{ label:"Temperatura",value:"2–8°C 24 hrs"},{label:"Uso",value:"Insulina · Vacunas"},{label:"COFEPRIS",value:"Compatible"},{label:"MOQ",value:"50 pzas"}],
  moq: "50 pzas",
  },
@@ -136,7 +135,7 @@ const productos = [
  desc: "Corrugado blanco premium apto COFEPRIS y FDA. Para jeringas, catéteres, equipos hospitalarios y dispositivos clase I y II. Registro sanitario opcional.",
  imgSrc: "/img/catalogo/caja-linea-produccion-farmaceutica-cdmx.avif",
  imgAlt: "Caja dispositivos médicos hospitalario COFEPRIS FDA CDMX — CADECA CAD-FC-09",
- href: "/catalogo/cajas-farmaceutica-cosmetica/caja-dispositivos-medicos",
+ href: "/catalogo/cajas-farmaceutica-cosmetica/caja-dispositivos-medicos/",
  specs: [{ label:"COFEPRIS",value:"Apto"},{label:"FDA",value:"Compatible"},{label:"Clase",value:"I y II dispositivos"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -146,7 +145,7 @@ const productos = [
  desc: "Kraft FSC reciclado sin blanqueantes, food-grade, imagen orgánica. Para suplementos naturales, vitaminas y productos de bienestar. MOQ 100 pzas CDMX.",
  imgSrc: "/img/catalogo/caja-suplementos-nutricion-deportiva-cdmx.avif",
  imgAlt: "Caja wellness bienestar productos naturales CDMX — CADECA CAD-FC-10",
- href: "/catalogo/cajas-farmaceutica-cosmetica/caja-wellness-natural",
+ href: "/catalogo/cajas-farmaceutica-cosmetica/caja-wellness-natural/",
  specs: [{ label:"FSC",value:"Reciclado"},{label:"Food-grade",value:"NOM-051"},{label:"Imagen",value:"Orgánica"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -154,13 +153,13 @@ const productos = [
 ---
 
 <PageLayout
- ogImage="/img/categorias/cajas-farmaceutica-cosmetica-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}>
+ ogImage="/img/categorias/cajas-farmaceutica-cosmetica-hero-cdmx.avif" title={title} description={description}>
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
  <li><span class="current">Farmacéutica y Cosmética</span></li>
  </ol>
  </div>
@@ -179,7 +178,7 @@ const productos = [
  { label: "Soft touch · UV" },
  ]}
  ctas={[
- { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+ { href: "/cotizar/", label: "Cotizar ahora", variant: "primary" },
  { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
  ]}
  />
@@ -192,7 +191,7 @@ const productos = [
  twoCol
  title="5 Productos — Farmacéutica y Cosmética"
  subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones y condiciones de pedido."
- link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+ link={{ text: "← Volver al catálogo", href: "/catalogo/" }}
  >
  <p>Cada producto tiene su propia ficha técnica con tabla de medidas disponibles, especificaciones de material, resistencia ECT, flauta, gramaje, peso máximo y condiciones de pedido. Haz clic en cualquier producto para ver todos los detalles.</p>
  </SectionHeader>
@@ -237,23 +236,23 @@ const productos = [
  <h2 class="cat-blog-links__title"> Del Blog CADECA</h2>
  <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
  <div class="cat-blog-links__grid">
- <a href="/blog/corrugado-farmaceutico-gmp-cofepris-mexico" class="cat-blog-links__item">
+ <a href="/blog/corrugado-farmaceutico-gmp-cofepris-mexico/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Corrugado farmacéutico: GMP y COFEPRIS</span>
  </a>
- <a href="/blog/checklist-control-calidad-cajas-carton-proveedor" class="cat-blog-links__item">
+ <a href="/blog/checklist-control-calidad-cajas-carton-proveedor/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Checklist de control de calidad</span>
  </a>
- <a href="/blog/cajas-corrugado-industrial-especificaciones-ect-bct-mexico" class="cat-blog-links__item">
+ <a href="/blog/cajas-corrugado-industrial-especificaciones-ect-bct-mexico/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Especificaciones ECT y BCT</span>
  </a>
  </div>
- <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
+ <a href="/blog/" class="cat-blog-links__more">Ver todos los artículos →</a>
  </div>
  </section>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas empaques para farmacéutica o cosmética? Asesoría técnica sin costo" />
+ <LeadCapture title="¿Necesitas empaques para farmacéutica o cosmética? Asesoría técnica sin costo" />
 
 </PageLayout>

@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://cajas-de-carton.com",
+  trailingSlash: "always",
   integrations: [
     mdx(),
     sitemap({

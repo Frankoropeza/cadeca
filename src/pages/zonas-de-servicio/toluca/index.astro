@@ -1,26 +1,25 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Cajas de Cartón Toluca / Valle de Toluca — Entrega 48-72 hrs · Fabricante Directo | CADECA";
 const description = "Cajas de cartón corrugado con entrega en 48-72 hrs en Toluca / Valle de Toluca. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
-const canonical   = SITE + "/zonas-de-servicio/toluca";
+const canonical   = SITE + "/zonas-de-servicio/toluca/";
 
 const schema = [
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Service",
     "name": "CADECA — Cajas de Cartón Toluca / Valle de Toluca",
+    "serviceType": "Venta y entrega de cajas de cartón corrugado",
     "description": description,
     "url": canonical,
-    "areaServed": ["Toluca", "Lerma", "Ocoyoacac"],
-    "address": { "@type": "PostalAddress", "addressRegion": "Estado de México", "addressCountry": "MX" },
-    "priceRange": "$$"
+    "provider": { "@id": "https://cajas-de-carton.com/#org" },
+    "areaServed": ["Toluca", "Lerma", "Ocoyoacac"]
   },
   {
     "@context": "https://schema.org",
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",            href: "/" },
-    { name: "Zonas de Servicio", href: "/zonas-de-servicio" },
+    { name: "Zonas de Servicio", href: "/zonas-de-servicio/" },
     { name: "Toluca / Valle de Toluca" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO — idéntico al index ════════ */}
@@ -59,9 +57,11 @@ const schema = [
           </h1>
           <p class="hero__intro">Cajas de cartón corrugado para el corredor industrial de Toluca y el Valle de México. Fabricante directo con entrega en 48-72 hrs.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Toluca"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, necesito cajas en Toluca")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -157,7 +157,7 @@ const schema = [
             desc="Para exportación ASTM"
             imgSrc="/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif"
             imgAlt="Industrial Triple Pared en CDMX — CADECA"
-            href="/catalogo/cajas-industriales-triple-pared"
+            href="/catalogo/cajas-corrugado-estandar/triple-corrugado/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -165,7 +165,7 @@ const schema = [
             desc="Para líneas de producción"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida en CDMX — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -173,7 +173,7 @@ const schema = [
             desc="Entrega en 48-72 hrs"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar en CDMX — CADECA"
-            href="/catalogo/cajas-corrugado-estandar"
+            href="/catalogo/cajas-corrugado-estandar/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -181,7 +181,7 @@ const schema = [
             desc="Con logo e impresión"
             imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
             imgAlt="Cajas Personalizadas en CDMX — CADECA"
-            href="/catalogo/cajas-personalizadas-con-logo"
+            href="/catalogo/cajas-personalizadas-logo/"
             btnText="Ver detalles"
           />
       </div>
@@ -230,7 +230,6 @@ const schema = [
   <LeadCapture
     titulo={"Cotiza cajas en Toluca / Valle de Toluca"}
     subtitulo="Fabricante directo · Cotización en menos de 2 horas · Entrega en 48-72 hrs"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

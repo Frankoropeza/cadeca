@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader  from "@/components/SectionHeader.astro";
 import ProductCard  from "@/components/ProductCard.astro";
@@ -10,65 +11,6 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 
 const title  = "Cajas de Cartón Corrugado Estándar CDMX | Simple, Doble y Triple Pared | CADECA";
 const description = "Compra cajas de cartón corrugado estándar en CDMX y Estado de México. Simple, doble y triple pared. Sin mínimo, entrega en 24 hrs, precios de mayoreo. Cotiza gratis.";
-const WHATSAPP  = "5255XXXXXXXX"; // ← cambiar
-
-// ── Schema Product ─────────────────────────────────────
-const productSchema = {
- "@context": "https://schema.org",
- "@type": "Product",
- "name": "Cajas de Cartón Corrugado Estándar",
- "description": "Cajas de cartón corrugado estándar en pared simple, doble y triple. Disponibles en CDMX y Estado de México con entrega en 24-48 hrs. Precios de mayoreo desde 1 pieza.",
- "brand": { "@type": "Brand", "name": "CADECA" },
- "manufacturer": { "@type": "Organization", "name": "CADECA" },
- "url": "https://cajas-de-carton.com/productos/cajas-corrugado-estandar",
- "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
- "category": "Cajas de Cartón Corrugado",
- "areaServed": ["Ciudad de México", "Estado de México"],
- "offers": {
- "@type": "AggregateOffer",
- "priceCurrency": "MXN",
- "lowPrice": "3.80",
- "highPrice": "35.00",
- "availability": "https://schema.org/InStock",
- "seller": { "@type": "Organization", "name": "CADECA" }
- },
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "4.9",
- "reviewCount": "87",
- "bestRating": "5",
- "worstRating": "1"
- },
- "review": [
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Miguel A." },
- "datePublished": "2025-10-12",
- "reviewBody": "Llevamos más de un año usando las cajas corrugado estándar de CADECA para nuestras operaciones de almacén. Son confiables, resistentes y siempre llegan a tiempo. Excelente proveedor para operaciones de bodega.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
- },
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Patricia S." },
- "datePublished": "2025-12-03",
- "reviewBody": "La variedad de tamaños disponibles es ideal para nuestro negocio. Pedimos diferentes medidas y todas llegan en tiempo récord. La entrega rápida nos ha sacado de apuros más de una vez.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
- },
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Roberto D." },
- "datePublished": "2026-02-18",
- "reviewBody": "Excelente relación precio-calidad en compras al mayoreo. Las cajas soportan el peso indicado sin problema y el precio por volumen es muy competitivo. Totalmente recomendados para compras al por mayor.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
- }
- ],
- "additionalProperty": [
- { "@type": "PropertyValue", "name": "Paredes", "value": "Simple / Doble / Triple" },
- { "@type": "PropertyValue", "name": "Flautas", "value": "B / C / BC / ACC" },
- { "@type": "PropertyValue", "name": "Resistencia", "value": "ECT-23 a ECT-71" },
- { "@type": "PropertyValue", "name": "Entrega", "value": "24-48 hrs CDMX" }
- ]
-};
 
 // ── Subcategorías (ProductCard) ────────────────────────
 const subcategorias = [
@@ -77,11 +19,11 @@ const subcategorias = [
  desc:  "La caja más económica y versátil. Una sola capa de flauta entre dos liners. Ideal para productos ligeros y envíos de e-commerce hasta 10 kg.",
  imgSrc:  "/img/productos/cajas-carton-corrugado-simple-pared-cdmx.avif",
  imgAlt:  "Cajas de cartón corrugado simple pared simple en CDMX — CADECA",
- href:  "/productos/cajas-corrugado-estandarsimple",
+ href:  "/productos/cajas-corrugado-estandar/",
  tags: [
- { label: "Flauta B y C",  href: "/productos/cajas-corrugado-estandarflautas" },
- { label: "ECT-23 y ECT-32",  href: "/productos/cajas-corrugado-estandarresistencia" },
- { label: "Hasta 10 kg",  href: "/productos/cajas-corrugado-estandarpeso" },
+ { label: "Flauta B y C",  href: "/productos/cajas-corrugado-estandar/" },
+ { label: "ECT-23 y ECT-32",  href: "/productos/cajas-corrugado-estandar/" },
+ { label: "Hasta 10 kg",  href: "/productos/cajas-corrugado-estandar/" },
  ],
  btnText: "Ver Corrugado Simple",
  },
@@ -90,11 +32,11 @@ const subcategorias = [
  desc:  "Mayor resistencia para productos de mediano peso. Dos capas de flauta que absorben impactos. Recomendado para electrónica, menaje y distribución industrial.",
  imgSrc:  "/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif",
  imgAlt:  "Cajas de cartón doble corrugado resistente pared doble en CDMX — CADECA",
- href:  "/productos/cajas-doble-corrugado",
+ href:  "/catalogo/cajas-corrugado-estandar/doble-corrugado/",
  tags: [
- { label: "Flauta BC",  href: "/productos/cajas-doble-corrugadoflautas" },
- { label: "ECT-44",  href: "/productos/cajas-doble-corrugadoresistencia" },
- { label: "Hasta 25 kg",  href: "/productos/cajas-doble-corrugadopeso" },
+ { label: "Flauta BC",  href: "/catalogo/cajas-corrugado-estandar/doble-corrugado/" },
+ { label: "ECT-44",  href: "/catalogo/cajas-corrugado-estandar/doble-corrugado/" },
+ { label: "Hasta 25 kg",  href: "/catalogo/cajas-corrugado-estandar/doble-corrugado/" },
  ],
  btnText: "Ver Doble Corrugado",
  },
@@ -103,11 +45,11 @@ const subcategorias = [
  desc:  "La máxima resistencia en cartón corrugado. Tres capas de flauta para carga pesada, exportación, nearshoring y transporte en condiciones extremas.",
  imgSrc:  "/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif",
  imgAlt:  "Cajas de cartón triple corrugado industrial pared triple en CDMX — CADECA",
- href:  "/productos/cajas-triple-corrugado",
+ href:  "/catalogo/cajas-corrugado-estandar/triple-corrugado/",
  tags: [
- { label: "ECT-51 y ECT-71",  href: "/productos/cajas-triple-corrugadoresistencia" },
- { label: "+25 kg",  href: "/productos/cajas-triple-corrugadopeso" },
- { label: "Industria y export.", href: "/productos/cajas-triple-corrugadousos" },
+ { label: "ECT-51 y ECT-71",  href: "/catalogo/cajas-corrugado-estandar/triple-corrugado/" },
+ { label: "+25 kg",  href: "/catalogo/cajas-corrugado-estandar/triple-corrugado/" },
+ { label: "Industria y export.", href: "/catalogo/cajas-corrugado-estandar/triple-corrugado/" },
  ],
  btnText: "Ver Triple Corrugado",
  },
@@ -116,11 +58,11 @@ const subcategorias = [
  desc:  "Resistentes y con asas reforzadas. Disponibles en tamaño chico, mediano y grande. Sin mínimo, listas en inventario permanente para entrega inmediata.",
  imgSrc:  "/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif",
  imgAlt:  "Cajas de cartón para mudanza resistentes con asas en CDMX — CADECA",
- href:  "/productos/cajas-mudanza",
+ href:  "/catalogo/cajas-corrugado-estandar/cajas-mudanza/",
  tags: [
- { label: "Chica · Mediana · Grande", href: "/productos/cajas-mudanzamedidas" },
- { label: "Asas reforzadas",  href: "/productos/cajas-mudanzacaracteristicas" },
- { label: "Sin mínimo",  href: "/productos/cajas-mudanzapedido" },
+ { label: "Chica · Mediana · Grande", href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza/" },
+ { label: "Asas reforzadas",  href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza/" },
+ { label: "Sin mínimo",  href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza/" },
  ],
  btnText: "Ver Cajas Mudanza",
  },
@@ -132,28 +74,28 @@ const industrias = [
  icon:  "",
  title:  "Vendedores de E-commerce",
  desc:  "Medidas compatibles con Mercado Envíos, Amazon MX, DHL y FedEx. El empaque más usado por vendedores de Mercado Libre y Amazon en CDMX. Desde 1 pieza.",
- href:  "/soluciones/ecommerce",
+ href:  "/catalogo/cajas-para-ecommerce/",
  linkText: "Ver solución e-commerce",
  },
  {
  icon:  "",
  title:  "Industria y Manufactura",
  desc:  "Triple corrugado con ECT alto para plantas manufactureras en Naucalpan, Tlalnepantla y Cuautitlán. Contratos de suministro mensual disponibles.",
- href:  "/soluciones/industrial-nearshoring",
+ href:  "/catalogo/cajas-a-la-medida/industrial/",
  linkText: "Ver solución industrial",
  },
  {
  icon:  "",
  title:  "Distribuidoras y Almacenes",
  desc:  "Empaques de alta rotación para centros de distribución. Precios de mayoreo escalonados por volumen. Crédito disponible para clientes frecuentes.",
- href:  "/zonas-de-servicio",
+ href:  "/zonas-de-servicio/",
  linkText: "Ver zonas de entrega",
  },
  {
  icon:  "",
  title:  "Mudanzas y Servicios",
  desc:  "Cajas resistentes con asas para empresas de mudanza y servicios de almacenamiento en CDMX y Estado de México. Inventario siempre disponible.",
- href:  "/productos/cajas-mudanza",
+ href:  "/catalogo/cajas-corrugado-estandar/cajas-mudanza/",
  linkText: "Ver cajas para mudanza",
  },
 ];
@@ -225,7 +167,7 @@ const faqs = [
 const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
 const breadcrumbs = [
  { name: "Inicio", href: "/" },
- { name: "Productos", href: "/productos" },
+ { name: "Productos", href: "/productos/" },
  { name: "Cajas Corrugado Estándar" },
 ];
 ---
@@ -233,10 +175,8 @@ const breadcrumbs = [
 <PageLayout
  title={title}
  description={description}
- schema={productSchema}
  faqItems={faqItems}
  breadcrumbs={breadcrumbs}
- whatsapp={WHATSAPP}
 >
 
  <!-- ══════════════════════════════════════
@@ -247,7 +187,7 @@ const breadcrumbs = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/productos">Productos</a></li>
+ <li><a href="/productos/">Productos</a></li>
  <li><span class="current">Cajas Corrugado Estándar</span></li>
  </ol>
  </div>
@@ -258,7 +198,7 @@ const breadcrumbs = [
  <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
  <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
  <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
- <a href="/catalogo/cajas-corrugado-estandar" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
+ <a href="/catalogo/cajas-corrugado-estandar/" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
  </div>
  </div>
 
@@ -277,8 +217,8 @@ const breadcrumbs = [
  Simple, doble y triple pared disponibles en inventario permanente. La solución de empaque más versátil y económica en la Ciudad de México y Estado de México. Sin pedido mínimo.
  </p>
  <div class="page-hero__ctas">
- <a href="cotizar" class="btn btn--primary">Cotizar Ahora</a>
- <a href="subcategorias" class="btn btn--outline">Ver Tipos</a>
+ <a href="/cotizar/" class="btn btn--primary">Cotizar Ahora</a>
+ <a href="#subcategorias" class="btn btn--outline">Ver Tipos</a>
  </div>
  </div>
 <div class="page-hero__stat">
@@ -370,9 +310,10 @@ const breadcrumbs = [
  </div>
 
  <div class="prod-detail__actions">
- <a href="cotizar"  class="btn btn--primary">Solicitar Cotización</a>
- <a href={`https://wa.me/${WHATSAPP}`}
- target="_blank" rel="noopener"  class="btn btn--outline">WhatsApp Directo</a>
+ <a href="/cotizar/"  class="btn btn--primary">Solicitar Cotización</a>
+ {HAS_WA && (
+<a href={contactoHref()}  class="btn btn--outline" {...contactoAttrs}>WhatsApp Directo</a>
+)}
  </div>
 
  </div>
@@ -390,7 +331,7 @@ const breadcrumbs = [
  twoCol
  title="Tipos de Cajas Corrugado: Elige la Resistencia que Necesitas"
  subtitle="Simple, doble, triple pared y cajas para mudanza. Inventario permanente con entrega en 24-48 hrs en CDMX."
- link={{ text: "Ver catálogo completo", href: "/productos" }}
+ link={{ text: "Ver catálogo completo", href: "/productos/" }}
  >
  <p>La elección del tipo de corrugado depende del peso de tu producto, las condiciones de almacenamiento y el número de apilados durante el transporte. El corrugado incorrecto puede resultar en cajas rotas y productos dañados — o en sobrecostos por usar un empaque más resistente del necesario.</p>
  <p>Nuestro equipo técnico te ayuda a seleccionar el tipo de corrugado, flauta y ECT correcto para tu caso específico, sin costo y sin compromiso de compra.</p>
@@ -473,7 +414,7 @@ const breadcrumbs = [
  Para los <strong>vendedores de Mercado Libre y Amazon MX en CDMX</strong>, las cajas de corrugado simple y doble pared son el estándar de la industria: ligeras para reducir el costo de envío, suficientemente resistentes para proteger el producto en tránsito con las paqueterías más usadas. Manejamos todas las medidas compatibles con Mercado Envíos, DHL, FedEx, Estafeta y J&T, sin pedido mínimo. Para la <strong>industria manufacturera y proyectos de nearshoring</strong> en Naucalpan, Tlalnepantla y Cuautitlán Izcalli, el triple corrugado con ECT-51 o ECT-71 es la solución correcta: soporta más de 25 kg, resiste condiciones extremas de transporte y cumple los estándares internacionales requeridos por corporativos extranjeros.
  </p>
  <p class="seo-content__text">
- Como <strong>fabricante de cajas de cartón corrugado en CDMX</strong>, CADECA produce directamente sin intermediarios, lo que se traduce en precios más bajos, control total de calidad y tiempos de entrega garantizados. Todo nuestro cartón está disponible con <strong>certificación FSC</strong> bajo pedido, ideal para marcas con compromisos de sostenibilidad o que exportan a mercados que exigen trazabilidad de materiales. <a href="cotizar">Solicita tu cotización</a> ahora — sin mínimo, sin compromiso y con respuesta en menos de 2 horas.
+ Como <strong>fabricante de cajas de cartón corrugado en CDMX</strong>, CADECA produce directamente sin intermediarios, lo que se traduce en precios más bajos, control total de calidad y tiempos de entrega garantizados. Todo nuestro cartón está disponible con <strong>certificación FSC</strong> bajo pedido, ideal para marcas con compromisos de sostenibilidad o que exportan a mercados que exigen trazabilidad de materiales. <a href="/cotizar/">Solicita tu cotización</a> ahora — sin mínimo, sin compromiso y con respuesta en menos de 2 horas.
  </p>
  </div>
  </section>
@@ -500,6 +441,6 @@ const breadcrumbs = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas de cartón corrugado en minutos" />
+ <LeadCapture title="Cotiza tus cajas de cartón corrugado en minutos" />
 
 </PageLayout>

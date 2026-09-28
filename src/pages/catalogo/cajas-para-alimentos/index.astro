@@ -6,7 +6,6 @@ import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Catálogo Cajas para Alimentos CDMX | Pizza, Fast Food, Pastelería, Frutas | CADECA";
 const description = "Catálogo cajas cartón para alimentos CDMX. Pizza, fast food, pastelería, frutas y congelados. Food-grade, COFEPRIS. Desde 50 pzas. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const productos = [
  {
@@ -18,7 +17,7 @@ const productos = [
  desc:  "Cajas pizza corrugado food-grade de 20 a 45 cm. Liner kraft marrón o blanco, ECT-32, ventilación anti-vapor opcional. Desde 100 pzas.",
  imgSrc:  "/img/catalogo/cajas-pizza-corrugado-doble-cdmx.avif",
  imgAlt:  "Cajas para pizza corrugado food grade CDMX — CADECA CAD-AL-01",
- href:  "/catalogo/cajas-para-alimentos/pizza",
+ href:  "/catalogo/cajas-para-alimentos/pizza/",
  specs: [
  { label: "Material",  value: "Food-grade ECT-32" },
  { label: "Medidas",  value: "20 a 45 cm" },
@@ -36,7 +35,7 @@ const productos = [
  desc:  "Cajas fast food con tratamiento antigrasa FDA compliant. Hamburguesas, wraps y nuggets. Formato almeja o tapa. Desde 100 pzas.",
  imgSrc:  "/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif",
  imgAlt:  "Cajas fast food antigrasa CDMX — CADECA CAD-AL-02",
- href:  "/catalogo/cajas-para-alimentos/fast-food",
+ href:  "/catalogo/cajas-para-alimentos/fast-food/",
  specs: [
  { label: "Tratamiento", value: "Antigrasa FDA" },
  { label: "Formato",  value: "Almeja o tapa" },
@@ -54,7 +53,7 @@ const productos = [
  desc:  "Cajas pastelería con interior blanco y base reforzada 2 capas. Pay, tarta, cupcakes y gelatinas. Ventana acetato opcional. Desde 100 pzas.",
  imgSrc:  "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif",
  imgAlt:  "Cajas pastelería tartas base reforzada CDMX — CADECA CAD-AL-03",
- href:  "/catalogo/cajas-para-alimentos/pasteleria",
+ href:  "/catalogo/cajas-para-alimentos/pasteleria/",
  specs: [
  { label: "Interior",  value: "Blanco coated" },
  { label: "Base",  value: "Reforzada 2 capas" },
@@ -72,7 +71,7 @@ const productos = [
  desc:  "Cajas ventiladas para frutas, verduras y flores. Doble corrugado ECT-44, WR básico incluido, aptas para cámara fría hasta -4°C. Desde 50 pzas.",
  imgSrc:  "/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif",
  imgAlt:  "Cajas frutas verduras ventiladas cámara fría CDMX — CADECA CAD-AL-04",
- href:  "/catalogo/cajas-para-alimentos/frutas-verduras",
+ href:  "/catalogo/cajas-para-alimentos/frutas-verduras/",
  specs: [
  { label: "Ventilación", value: "15-20% lateral" },
  { label: "ECT",  value: "ECT-44 doble BC" },
@@ -90,7 +89,7 @@ const productos = [
  desc:  "Cajas con liner WR water resistant para congelados a -18°C. Helados, mariscos y carnes. ECT-44 retiene 80% a 90% HR. Desde 100 pzas.",
  imgSrc:  "/img/catalogo/cajas-congelados-humedad-cdmx.avif",
  imgAlt:  "Cajas congelados resistentes humedad WR CDMX — CADECA CAD-AL-05",
- href:  "/catalogo/cajas-para-alimentos/congelados",
+ href:  "/catalogo/cajas-para-alimentos/congelados/",
  specs: [
  { label: "Liner",  value: "WR Water Resistant" },
  { label: "Temperatura", value: "Hasta -18°C" },
@@ -106,7 +105,7 @@ const productos = [
  desc: "Kraft food-grade NOM-051 con ventilación natural. Sin tintas tóxicas. Para pan artesanal, galletas y repostería. Conserva el crujiente. Desde 100 pzas CDMX.",
  imgSrc: "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif",
  imgAlt: "Caja panadería repostería artesanal CDMX — CADECA CAD-AL-06",
- href: "/catalogo/cajas-para-alimentos/panaderia-artesanal",
+ href: "/catalogo/cajas-para-alimentos/panaderia-artesanal/",
  specs: [{ label:"Food-grade",value:"NOM-051"},{label:"Ventilación",value:"Natural"},{label:"Tintas",value:"Water-based"},{label:"Stock",value:"24 hrs CDMX"}],
  moq: "100 pzas",
  },
@@ -116,7 +115,7 @@ const productos = [
  desc: "Barrera antihumedad exterior, apta refrigeración 2–8°C hasta 6 hrs. Cumple NOM-213 para distribución de cárnicos en CDMX y zona metropolitana.",
  imgSrc: "/img/catalogo/cajas-congelados-humedad-cdmx.avif",
  imgAlt: "Caja cárnicos productos fríos antihumedad CDMX — CADECA CAD-AL-07",
- href: "/catalogo/cajas-para-alimentos/carnicos-productos-frios",
+ href: "/catalogo/cajas-para-alimentos/carnicos-productos-frios/",
  specs: [{ label:"NOM-213",value:"Cárnicos"},{label:"Antihumedad",value:"Exterior"},{label:"Temperatura",value:"2–8°C"},{label:"Resistencia",value:"ECT-44 húmedo"}],
  moq: "200 pzas",
  },
@@ -126,7 +125,7 @@ const productos = [
  desc: "ECT-44, 6 medidas en stock permanente para reorden semanal. Alta resistencia al apilado en rutas de distribución en CDMX y EDOMEX. MOQ 500 pzas.",
  imgSrc: "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif",
  imgAlt: "Caja distribuidora alimentos mayoreo CDMX — CADECA CAD-AL-08",
- href: "/catalogo/cajas-para-alimentos/distribuidora-mayoreo",
+ href: "/catalogo/cajas-para-alimentos/distribuidora-mayoreo/",
  specs: [{ label:"Resistencia",value:"ECT-44"},{label:"Medidas",value:"6 en stock"},{label:"Ciclo",value:"Reorden semanal"},{label:"MOQ",value:"500 pzas"}],
  moq: "500 pzas",
  },
@@ -136,7 +135,7 @@ const productos = [
  desc: "Food-grade para café de especialidad, bebidas naturales y snacks artesanales. Compatible con distribución B2B y e-commerce a toda la república. Desde 100 pzas.",
  imgSrc: "/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif",
  imgAlt: "Caja café bebidas productos secos CDMX — CADECA CAD-AL-09",
- href: "/catalogo/cajas-para-alimentos/cafe-bebidas-secos",
+ href: "/catalogo/cajas-para-alimentos/cafe-bebidas-secos/",
  specs: [{ label:"Food-grade",value:"NOM-051"},{label:"Compatibilidad",value:"B2B y e-commerce"},{label:"Medidas",value:"4 estándar"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -146,7 +145,7 @@ const productos = [
  desc: "Liner blanco premium food-grade para presentación profesional. Medidas para menús completos e individuales. Personalizable con logo desde 100 pzas. CDMX.",
  imgSrc: "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif",
  imgAlt: "Caja catering eventos corporativos presentación premium CDMX — CADECA CAD-AL-10",
- href: "/catalogo/cajas-para-alimentos/catering-eventos",
+ href: "/catalogo/cajas-para-alimentos/catering-eventos/",
  specs: [{ label:"Liner",value:"Blanco premium"},{label:"Food-grade",value:"NOM-051"},{label:"Logo",value:"Desde 100 pzas"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -156,7 +155,7 @@ const productos = [
  desc: "Kraft reciclado postconsumer FSC food-grade. Sin blanqueantes de cloro, tintas water-based. Para marcas orgánicas y naturales. Compatible certificaciones. Desde 100 pzas.",
  imgSrc: "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif",
  imgAlt: "Caja orgánicos naturales FSC reciclado CDMX — CADECA CAD-AL-11",
- href: "/catalogo/cajas-para-alimentos/organicos-naturales",
+ href: "/catalogo/cajas-para-alimentos/organicos-naturales/",
  specs: [{ label:"FSC",value:"Reciclado"},{label:"Food-grade",value:"NOM-051"},{label:"Sin cloro",value:"ECF free"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -164,15 +163,15 @@ const productos = [
 ---
 
 <PageLayout
- ogImage="/img/categorias/cajas-para-alimentos-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}
+ ogImage="/img/categorias/cajas-para-alimentos-hero-cdmx.avif" title={title} description={description}
  pageType="category"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas para Alimentos"}]}>
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas para Alimentos"}]}>
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
  <li><span class="current">Cajas para Alimentos</span></li>
  </ol>
  </div>
@@ -191,7 +190,7 @@ const productos = [
  { label: "Food grade" },
  ]}
  ctas={[
- { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+ { href: "/cotizar/", label: "Cotizar ahora", variant: "primary" },
  { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
  ]}
  />
@@ -204,7 +203,7 @@ const productos = [
  twoCol
  title="5 Productos — Cajas para Alimentos"
  subtitle="Selecciona el tipo de caja para ver la ficha técnica completa con medidas, materiales food-grade y condiciones de pedido."
- link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+ link={{ text: "← Volver al catálogo", href: "/catalogo/" }}
  >
  <p>Desde cajas pizza estándar hasta embalaje para congelados a -18°C. Cada ficha técnica incluye tratamientos, certificaciones y medidas disponibles para tu tipo de alimento.</p>
  </SectionHeader>
@@ -248,22 +247,22 @@ const productos = [
  <h2 class="cat-blog-links__title"> Del Blog CADECA</h2>
  <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
  <div class="cat-blog-links__grid">
- <a href="/blog/cadena-frio-empaques-alimentos-refrigerados" class="cat-blog-links__item">
+ <a href="/blog/cadena-frio-empaques-alimentos-refrigerados/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Cadena de frío y empaques correctos</span>
  </a>
- <a href="/blog/comparativa-carton-plastico-espuma-costo-roi-mexico" class="cat-blog-links__item">
+ <a href="/blog/comparativa-carton-plastico-espuma-costo-roi-mexico/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Cartón vs plástico para alimentos</span>
  </a>
- <a href="/blog/packaging-sustentable-mexico-carton-reciclado-huella-carbono" class="cat-blog-links__item">
+ <a href="/blog/packaging-sustentable-mexico-carton-reciclado-huella-carbono/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Packaging sustentable para alimentos</span>
  </a>
  </div>
- <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
+ <a href="/blog/" class="cat-blog-links__more">Ver todos los artículos →</a>
  </div>
  </section>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Qué tipo de caja para alimentos necesitas? Te asesoramos gratis en menos de 1 hora" />
+ <LeadCapture title="¿Qué tipo de caja para alimentos necesitas? Te asesoramos gratis en menos de 1 hora" />
 </PageLayout>

@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas Automáticas Alta Velocidad CDMX | ±0.5mm Tolerancia | CAD-AM-05 | CADECA";
 const description = "Cajas para líneas de empaque automáticas en CDMX. Tolerancias ±0.5mm, RSC y auto-erect, compatibles con Bosch, IWK, Marchesini. Desde 500 pzas. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"XS línea rápida", ml:"A definir", real:"A definir", flauta:"C",ect:"ECT-32",vacío:"varía",máx:"5 kg",  disp:"yellow", label:"7-10 días",  hl:false },
@@ -57,9 +57,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Automática Alta Velocidad"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Automática Alta Velocidad"}]}
  faqItems={[{question:"¿Qué tolerancias dimensionales necesita una línea de empaque automática?", answer:"Las líneas automáticas modernas (Bosch, IWK, Marchesini, Romaco) operan con tolerancias de ±0.5mm a ±1mm en largo, ancho y alto de la caja. Una variación mayor causa atascamientos, mal sellado del flap, paros no programados y cajas dañadas. Las cajas estándar de fábrica tienen tolerancias de ±2-3mm, lo que es insuficiente para velocidades de 80+ cajas por minuto. Nuestro CAD-AM-05 se fabrica con control de tolerancias ±0.5mm y se entrega con muestra de preproducción para validar en tu línea antes del pedido completo."}, {question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?", answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos."}]}
  product={{name:"Caja Automática Alta Velocidad Línea de Empaque", sku:"CAD-AM-05", description:"Caja Automática Alta Velocidad Línea de Empaque en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", material:"Cartón corrugado tolerancia ±0.5mm para líneas automáticas de empaque", category:"Cajas a la Medida", moq:"500"}}
 >
@@ -67,8 +66,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida/">Cajas a la Medida</a></li>
  <li><span class="current">Automática Alta Velocidad</span></li>
  </ol>
  </div>
@@ -110,8 +109,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-05 Caja Automática Alta Velocidad`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-05</a>
- <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AM-05 Caja Automática Alta Velocidad`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AM-05</a>
+ <a href="/catalogo/cajas-a-la-medida/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -146,5 +145,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-05 — Tolerancia ±0.5mm, muestra gratis" />
+ <LeadCapture title="Cotiza CAD-AM-05 — Tolerancia ±0.5mm, muestra gratis" />
 </PageLayout>

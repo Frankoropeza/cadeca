@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Separadores Cartón Corrugado CDMX | Divisiones a la Medida | CAD-LC-04 | CADECA";
 const description = "Separadores cartón corrugado CDMX. Flauta B o E, diseño por caja, precio mínimo. Desde 200 pzas, 3-5 días. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"4 div. (1×4)", ml:"Según caja", real:"A definir", flauta:"B",ect:"ECT-26",vacío:"0.04 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
@@ -58,9 +58,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Separadores y Divisiones"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado/"}, {name:"Separadores y Divisiones"}]}
  faqItems={[{question:"¿Cómo diseñan el separador exacto para mi caja?", answer:"Compártenos dimensiones interiores de tu caja y número de unidades a separar. Calculamos grosor óptimo de ranura para que entre justo. CAD en 24 horas para aprobación, muestra en 24-48 horas. El separador correcto hace que las unidades no se toquen ni roten, eliminando daño por vibración en tránsito."}, {question:"¿Cuántas divisiones tienen sentido económicamente?", answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador."}]}
  product={{name:"Separadores Cartón Corrugado Divisiones a la Medida", sku:"CAD-LC-04", description:"Separadores Cartón Corrugado Divisiones a la Medida en CDMX — fabricante directo CADECA", image:"/img/catalogo/separadores-carton-corrugado-cdmx.avif", material:"Separadores cartón corrugado flauta B o E ranurados a la medida", category:"Láminas de Cartón Corrugado", moq:"200"}}
 >
@@ -68,8 +67,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado/">Láminas Cartón</a></li>
  <li><span class="current">Separadores y Divisiones</span></li>
  </ol>
  </div>
@@ -111,8 +110,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-04 Separadores Divisiones a la Medida`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-04</a>
- <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-LC-04 Separadores Divisiones a la Medida`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LC-04</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -147,5 +146,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-04 — Separadores desde 200 piezas, diseño CAD gratis" />
+ <LeadCapture title="Cotiza CAD-LC-04 — Separadores desde 200 piezas, diseño CAD gratis" />
 </PageLayout>

@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas Triple Corrugado BCB Industrial CDMX | ECT-61 | CAD-AM-04 | CADECA";
 const description = "Cajas triple corrugado BCB a la medida en CDMX. ECT-61+, hasta 100+ kg, para maquinaria industrial y equipos pesados. Desde 25 piezas, entrega 5-7 días. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"M hasta 50kg",  ml:"A definir", real:"A definir", flauta:"BCB",ect:"ECT-61",vacío:"varía",máx:"50 kg",  disp:"yellow", label:"5-7 días",  hl:true  },
@@ -57,9 +57,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Triple Corrugado Reforzado"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Triple Corrugado Reforzado"}]}
  faqItems={[{question:"¿Cuándo necesito triple corrugado y no basta con doble corrugado?", answer:"Triple corrugado (BCB, ECT-61+) es necesario cuando el producto pesa más de 30 kg y requiere máxima protección en múltiples ciclos de manejo, el producto tiene bordes metálicos o esquinas duras que podrían perforar el doble corrugado, la caja será exportada por vía marítima 30+ días en contenedor con alta humedad, el producto requiere certificación ISTA 2A o 3A para seguro de transporte, o el cliente (retail, gobierno, industria aeroespacial) especifica triple corrugado en su política de empaque. Para la mayoría de productos industriales hasta 25 kg, el doble corrugado ECT-44 con esquineros es suficiente y más económico."}, {question:"¿Cuál es la diferencia entre ECT-61 y ECT-44 en términos prácticos de resistencia?", answer:"El ECT (Edge Crush Test) mide la fuerza necesaria para aplastar el corrugado por el borde. ECT-44 resiste 44 lbs por pulgada lineal de borde; ECT-61 resiste 61 lbs. En términos de BCT (Box Compression Test, la resistencia real de la caja completa), un ECT-44 típico da ~500-600 kg de carga estática; un ECT-61 da ~900-1100 kg. Esto significa que el triple corrugado puede soportar el equivalente a 2 cajas de ECT-44 apiladas sin deformarse. Para maquinaria, equipos industriales o exportación marítima, el BCT de ECT-61 es el mínimo recomendado."}]}
  product={{name:"Caja Triple Corrugado BCB Industrial Reforzada", sku:"CAD-AM-04", description:"Caja Triple Corrugado BCB Industrial Reforzada en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif", material:"Cartón triple corrugado BCB ECT-61 para maquinaria y equipos pesados", category:"Cajas a la Medida", moq:"25"}}
 >
@@ -67,8 +66,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida/">Cajas a la Medida</a></li>
  <li><span class="current">Triple Corrugado Reforzado</span></li>
  </ol>
  </div>
@@ -110,8 +109,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-04 Caja Triple Corrugado BCB`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-04</a>
- <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AM-04 Caja Triple Corrugado BCB`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AM-04</a>
+ <a href="/catalogo/cajas-a-la-medida/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -146,5 +145,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-04 — Triple corrugado ECT-61, entrega 5-7 días" />
+ <LeadCapture title="Cotiza CAD-AM-04 — Triple corrugado ECT-61, entrega 5-7 días" />
 </PageLayout>

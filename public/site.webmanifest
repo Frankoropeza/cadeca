@@ -1,0 +1,9 @@
+{
+  "name": "CADECA — Cajas de Cartón",
+  "short_name": "CADECA",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#E05800",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

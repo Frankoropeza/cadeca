@@ -4,8 +4,6 @@ import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const WHATSAPP = "5255XXXXXXXX";
-
 const title  = "Nosotros | Fabricante de Cajas de Cartón en CDMX | CADECA";
 const description = "Conoce CADECA, fabricante directo de cajas de cartón corrugado en CDMX. Más de 20 años en la industria del empaque, tecnología de punta y compromiso con la sustentabilidad.";
 
@@ -41,7 +39,6 @@ const breadcrumbs = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="page"
  breadcrumbs={breadcrumbs}
 >
@@ -68,7 +65,7 @@ const breadcrumbs = [
  { value: "45", label: "SKUs en catálogo" },
  ]}
  ctas={[
- { href: "/cotizar", label: "Solicitar cotización", variant: "primary" },
+ { href: "/cotizar/", label: "Solicitar cotización", variant: "primary" },
  { href: "/catalogo/", label: "Ver catálogo", variant: "outline" },
  ]}
  />
@@ -165,7 +162,7 @@ const breadcrumbs = [
  <li>️ Cobertura: ZMVM — CDMX + Edomex</li>
  <li> Interior de la República: 2-5 días (paquetería)</li>
  </ul>
- <a href="/zonas-de-servicio" class="btn btn--primary" style="margin-top:var(--spacing-lg)">Ver zonas de servicio →</a>
+ <a href="/zonas-de-servicio/" class="btn btn--primary" style="margin-top:var(--spacing-lg)">Ver zonas de servicio →</a>
  </div>
  </div>
  </div>
@@ -207,7 +204,7 @@ const breadcrumbs = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Listo para trabajar con el fabricante directo? Cotiza en menos de 1 hora" />
+ <LeadCapture title="¿Listo para trabajar con el fabricante directo? Cotiza en menos de 1 hora" />
 
 </PageLayout>
 

@@ -6,7 +6,6 @@ import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas de Archivo y Almacenaje CDMX | 5 Productos | CADECA";
 const description = "Cajas de cartón para archivo muerto, almacén industrial y almacenaje en CDMX. Tamaño oficio, carta, apilables y mudanza. Fichas técnicas, medidas y precios mayoreo.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const productos = [
  {
@@ -18,7 +17,7 @@ const productos = [
  desc:  "Caja estándar para archivo muerto tamaño oficio. Flauta C, ECT-32. Tapa integrada o separada. La solución más usada en oficinas, despachos y archivos corporativos en CDMX. Sin pedido mínimo.",
  imgSrc:  "/img/catalogo/caja-archivo-muerto-oficio-corporativo-cdmx.avif",
  imgAlt:  "Caja archivo muerto tamaño oficio cartón corrugado CDMX — CADECA",
- href:  "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio",
+ href:  "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio/",
  specs: [
  { label: "Tamaño",  value: "Oficio (legal)" },
  { label: "ECT",  value: "ECT-32" },
@@ -36,7 +35,7 @@ const productos = [
  desc:  "Caja de almacén industrial doble pared BC. ECT-44 y ECT-51 para almacenaje pesado en racks, bodegas y centros de distribución. Resistencia superior al apilamiento prolongado.",
  imgSrc:  "/img/catalogo/caja-almacen-industrial-triple-pared-cdmx.avif",
  imgAlt:  "Caja almacén industrial doble pared corrugado CDMX — CADECA",
- href:  "/catalogo/cajas-archivo-almacenaje/almacen-industrial",
+ href:  "/catalogo/cajas-archivo-almacenaje/almacen-industrial/",
  specs: [
  { label: "Pared",  value: "Doble (BC)" },
  { label: "ECT",  value: "ECT-44 / ECT-51" },
@@ -54,7 +53,7 @@ const productos = [
  desc:  "Caja para documentos tamaño carta. Flauta B/C, ECT-32. Compacta y ligera para oficinas con espacio limitado. Tapa integrada con ranuras de identificación. Sin mínimo, stock permanente.",
  imgSrc:  "/img/catalogo/caja-documentos-carta-despacho-cdmx.avif",
  imgAlt:  "Caja documentos tamaño carta cartón corrugado CDMX — CADECA",
- href:  "/catalogo/cajas-archivo-almacenaje/documentos-carta",
+ href:  "/catalogo/cajas-archivo-almacenaje/documentos-carta/",
  specs: [
  { label: "Tamaño",  value: "Carta (letter)" },
  { label: "ECT",  value: "ECT-32" },
@@ -72,7 +71,7 @@ const productos = [
  desc:  "Caja apilable de triple pared BCB/BCF. ECT-51 y ECT-71 para almacenaje prolongado con máxima resistencia a la compresión. Ideal para bodegas industriales y archivos de largo plazo.",
  imgSrc:  "/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif",
  imgAlt:  "Caja apilable resistente triple pared corrugado CDMX — CADECA",
- href:  "/catalogo/cajas-archivo-almacenaje/apilable-resistente",
+ href:  "/catalogo/cajas-archivo-almacenaje/apilable-resistente/",
  specs: [
  { label: "Pared",  value: "Triple (BCB/BCF)" },
  { label: "ECT",  value: "ECT-51 / ECT-71" },
@@ -90,7 +89,7 @@ const productos = [
  desc:  "Caja doble uso para mudanza y archivo con asas troqueladas. Doble pared BC, ECT-44. Diseño ergonómico para manejo manual frecuente. Sin mínimo, stock permanente en CDMX.",
  imgSrc:  "/img/catalogo/caja-mudanza-archivo-corporativo-cdmx.avif",
  imgAlt:  "Caja mudanza y archivo con asas cartón corrugado CDMX — CADECA",
- href:  "/catalogo/cajas-archivo-almacenaje/mudanza-archivo",
+ href:  "/catalogo/cajas-archivo-almacenaje/mudanza-archivo/",
  specs: [
  { label: "Pared",  value: "Doble (BC) + Asas" },
  { label: "ECT",  value: "ECT-44" },
@@ -106,7 +105,7 @@ const productos = [
  desc: "Tamaño oficio+extra para expedientes legales y notariales. Tapa y base independientes, área de etiquetado completa. Resistente al peso de expedientes. CDMX.",
  imgSrc: "/img/catalogo/caja-archivo-oficio-hero-cdmx.avif",
  imgAlt: "Caja archivo legal notaría CDMX — CADECA CAD-AH-06",
- href: "/catalogo/cajas-archivo-almacenaje/caja-archivo-legal",
+ href: "/catalogo/cajas-archivo-almacenaje/caja-archivo-legal/",
  specs: [{ label:"Tamaño",value:"Oficio+"},{label:"Tapa",value:"Independiente"},{label:"NOM-004",value:"Compatible"},{label:"MOQ",value:"50 pzas"}],
  moq: "50 pzas",
  },
@@ -116,7 +115,7 @@ const productos = [
  desc: "Liner blanco BPM compatible COFEPRIS. Apilable en racks selectivos farmacéuticos. Etiquetado frontal y lateral visible. Para farmacias y hospitales en CDMX.",
  imgSrc: "/img/catalogo/caja-documentos-carta-hero-cdmx.avif",
  imgAlt: "Caja almacenaje farmacia hospital BPM CDMX — CADECA CAD-AH-07",
- href: "/catalogo/cajas-archivo-almacenaje/almacen-farmacia-hospital",
+ href: "/catalogo/cajas-archivo-almacenaje/almacen-farmacia-hospital/",
  specs: [{ label:"BPM",value:"COFEPRIS"},{label:"Liner",value:"Blanco"},{label:"Racks",value:"Selectivos"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -126,7 +125,7 @@ const productos = [
  desc: "4 tamaños: chica, mediana, grande y extra. Doble corrugado ECT-44 con manijas reforzadas. MOQ mínimo de solo 20 piezas. Entrega 24 hrs en CDMX.",
  imgSrc: "/img/catalogo/caja-mudanza-corporativa-hero-cdmx.avif",
  imgAlt: "Caja mudanza residencial reforzada CDMX — CADECA CAD-AH-08",
- href: "/catalogo/cajas-archivo-almacenaje/mudanza-residencial-reforzada",
+ href: "/catalogo/cajas-archivo-almacenaje/mudanza-residencial-reforzada/",
  specs: [{ label:"ECT-44",value:"Reforzada"},{label:"Tamaños",value:"4 en stock"},{label:"Manijas",value:"Reforzadas"},{label:"MOQ",value:"20 pzas"}],
  moq: "20 pzas",
  },
@@ -136,7 +135,7 @@ const productos = [
  desc: "Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible racks shelving 60 cm. Para bodegas PIMSA y centros de fulfillment en CDMX y EDOMEX.",
  imgSrc: "/img/catalogo/caja-almacen-industrial-rack-cdmx.avif",
  imgAlt: "Caja almacenaje e-commerce fulfillment CDMX — CADECA CAD-AH-09",
- href: "/catalogo/cajas-archivo-almacenaje/almacen-ecommerce-fulfillment",
+ href: "/catalogo/cajas-archivo-almacenaje/almacen-ecommerce-fulfillment/",
  specs: [{ label:"Apilado",value:"1.5m"},{label:"Shelving",value:"60cm"},{label:"Etiquetado",value:"Frontal+lateral"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
@@ -146,7 +145,7 @@ const productos = [
  desc: "Diseñada para proyectos de digitalización masiva: etiquetado completo (caja/área/estado/responsable), compatible con carros de archivo. Tamaños oficio y carta.",
  imgSrc: "/img/catalogo/caja-archivo-oficio-interior-cdmx.avif",
  imgAlt: "Caja archivo transición digital digitalización CDMX — CADECA CAD-AH-10",
- href: "/catalogo/cajas-archivo-almacenaje/archivo-transicion-digital",
+ href: "/catalogo/cajas-archivo-almacenaje/archivo-transicion-digital/",
  specs: [{ label:"Etiquetado",value:"Completo"},{label:"Compatibilidad",value:"Carros archivo"},{label:"Tamaños",value:"Oficio y carta"},{label:"MOQ",value:"50 pzas"}],
  moq: "50 pzas",
  },
@@ -154,13 +153,13 @@ const productos = [
 ---
 
 <PageLayout
- ogImage="/img/categorias/cajas-archivo-almacenaje-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}>
+ ogImage="/img/categorias/cajas-archivo-almacenaje-hero-cdmx.avif" title={title} description={description}>
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
  <li><span class="current">Archivo y Almacenaje</span></li>
  </ol>
  </div>
@@ -179,7 +178,7 @@ const productos = [
  { label: "Apilamiento BCT certificado" },
  ]}
  ctas={[
- { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+ { href: "/cotizar/", label: "Cotizar ahora", variant: "primary" },
  { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
  ]}
  />
@@ -192,7 +191,7 @@ const productos = [
  twoCol
  title="5 Productos — Archivo y Almacenaje"
  subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones ECT y condiciones de pedido."
- link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+ link={{ text: "← Volver al catálogo", href: "/catalogo/" }}
  >
  <p>Cada producto tiene su propia ficha técnica con tabla de medidas disponibles, especificaciones de material, resistencia ECT, flauta, gramaje, peso máximo y condiciones de pedido. Haz clic en cualquier producto para ver todos los detalles.</p>
  </SectionHeader>
@@ -237,23 +236,23 @@ const productos = [
  <h2 class="cat-blog-links__title"> Del Blog CADECA</h2>
  <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
  <div class="cat-blog-links__grid">
- <a href="/blog/almacenar-cajas-carton-bodega-correctamente" class="cat-blog-links__item">
+ <a href="/blog/almacenar-cajas-carton-bodega-correctamente/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Cómo almacenar cajas correctamente</span>
  </a>
- <a href="/blog/gestion-inventario-empaques-stock-reorden" class="cat-blog-links__item">
+ <a href="/blog/gestion-inventario-empaques-stock-reorden/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Gestión de inventario de empaques</span>
  </a>
- <a href="/blog/cajas-corrugado-industrial-especificaciones-ect-bct-mexico" class="cat-blog-links__item">
+ <a href="/blog/cajas-corrugado-industrial-especificaciones-ect-bct-mexico/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Especificaciones para almacén industrial</span>
  </a>
  </div>
- <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
+ <a href="/blog/" class="cat-blog-links__more">Ver todos los artículos →</a>
  </div>
  </section>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Necesitas cajas de archivo o almacenaje? Nuestro asesor responde en menos de 2 horas" />
+ <LeadCapture title="¿Necesitas cajas de archivo o almacenaje? Nuestro asesor responde en menos de 2 horas" />
 
 </PageLayout>

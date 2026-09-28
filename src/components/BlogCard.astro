@@ -37,7 +37,7 @@ const formattedDate = pubDate.toLocaleDateString("es-MX", {
 ---
 
 <article class={`blog-card ${featured ? "blog-card--featured" : ""}`}>
- <a href={`/blog/${slug}`} aria-label={`Leer: ${title}`}>
+ <a href={`/blog/${slug}/`} aria-label={`Leer: ${title}`}>
  {image ? (
  <img src={image} alt={imageAlt || title} class="blog-card__image" loading="lazy" />
  ) : (
@@ -53,10 +53,10 @@ const formattedDate = pubDate.toLocaleDateString("es-MX", {
  {readingTime && <span class="blog-card__reading">· {readingTime} min de lectura</span>}
  </div>
  <h3 class="blog-card__title">
- <a href={`/blog/${slug}`}>{title}</a>
+ <a href={`/blog/${slug}/`}>{title}</a>
  </h3>
  <p class="blog-card__desc">{description}</p>
- <a href={`/blog/${slug}`} class="blog-card__link">
+ <a href={`/blog/${slug}/`} class="blog-card__link">
  Leer más <span aria-hidden="true">→</span>
  </a>
  </div>

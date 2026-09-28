@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Suplementos y Nutrición Corrugado CDMX | CAD-FC-04 | CADECA";
 const description = "Caja corrugado para suplementos alimenticios y nutrición en CDMX. Flauta B ECT-32, impresión datos nutricionales NOM-051. Vitaminas, proteínas, colágeno. CADECA.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Frasco Individual",lah:"10×10×15",flauta:"B",ect:"ECT-32",vacío:"0.06 kg",máx:"1 kg",  disp:"green",  label:"Stock" },
@@ -81,9 +81,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Suplementos y Nutrición"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Suplementos y Nutrición"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja Suplementos y Nutrición Corrugado",sku:"CAD-FC-04",description:"Caja corrugado para suplementos alimenticios y nutrición en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-suplementos-nutricion-deportiva-cdmx.avif",material:"Cartón corrugado simple flauta B ECT-32",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"200"}}
 >
@@ -91,8 +90,8 @@ const gallery = [
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container"><ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-farmaceutica-cosmetica/">Farmacéutica y Cosmética</a></li>
  <li><span class="current">Suplementos y Nutrición</span></li>
  </ol></div>
  </div>
@@ -161,9 +160,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-04 Suplementos y Nutrición`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-04</a>
- <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-FC-04 Suplementos y Nutrición`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-FC-04</a>
+ <a href="/catalogo/cajas-farmaceutica-cosmetica/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -227,6 +225,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-04 — Cajas para suplementos con datos nutricionales NOM-051" />
+ <LeadCapture title="Cotiza CAD-FC-04 — Cajas para suplementos con datos nutricionales NOM-051" />
 
 </PageLayout>

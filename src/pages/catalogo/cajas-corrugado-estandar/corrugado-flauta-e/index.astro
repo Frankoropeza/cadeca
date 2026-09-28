@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Corrugado Micro Flauta E CDMX | Cosméticos y Joyería | CAD-CE-01 | CADECA";
 const description = "Ficha técnica caja corrugado micro flauta E en CDMX. 1.5mm, ECT-23. Para cosméticos, joyería, suplementos y productos de presentación premium. Desde 100 pzas. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"XS Cosméticos",  lah:"10×8×5",  flauta:"E",ect:"ECT-23",vacío:"0.06 kg",máx:"1 kg",  disp:"yellow",label:"3-5 días" },
@@ -61,9 +61,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar"}, {name:"Corrugado Micro Flauta E"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/"}, {name:"Corrugado Micro Flauta E"}]}
  faqItems={[{question:"¿Por qué la flauta E tiene mejor calidad de impresión que la B o C?", answer:"La flauta E (1.5mm) produce una superficie más plana y uniforme que las flautas B (3mm) y C (4mm). El corrugado más fino hace que las ondulaciones del médium no se reflejen en la superficie exterior, resultando en una base de impresión casi tan lisa como el cartón sólido. Esto permite impresión offset, digital de alta resolución y detalles finos de logotipo sin el efecto de tablero de ajedrez que aparece en flautas grandes."}, {question:"¿La flauta E tiene menos resistencia que la B o C?", answer:"Sí, la flauta E tiene menor resistencia estructural. Por eso se recomienda solo para productos ligeros (hasta 5 kg) y es ideal para packaging de presentación donde la imagen es prioritaria. Para productos que requieren buena impresión Y alta resistencia, la flauta B es un buen punto medio. Si el producto pesa más de 5 kg, cambia a corrugado simple flauta C o doble corrugado BC."}]}
  product={{name:"Caja Corrugado Micro Flauta E Presentación", sku:"CAD-CE-01", description:"Caja Corrugado Micro Flauta E Presentación en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-impresion-logo-1-color-cdmx.avif", material:"Cartón corrugado micro flauta E ECT-23 para cosméticos", category:"Cajas de Cartón Corrugado Estándar", moq:"100"}}
 >
@@ -72,8 +71,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-corrugado-estandar">Corrugado Estándar</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-corrugado-estandar/">Corrugado Estándar</a></li>
  <li><span class="current">Corrugado Micro Flauta E</span></li>
  </ol>
  </div>
@@ -115,8 +114,8 @@ const gallery = [
  {specs.map(([label, val]) => <tr><td>{label}</td><td>{val}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-CE-01 Corrugado Flauta E`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-CE-01</a>
- <a href="/catalogo/cajas-corrugado-estandar" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-CE-01 Corrugado Flauta E`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-CE-01</a>
+ <a href="/catalogo/cajas-corrugado-estandar/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -143,5 +142,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-CE-01 — Microflauta E, alta calidad de impresión, desde 100 pzas" />
+ <LeadCapture title="Cotiza CAD-CE-01 — Microflauta E, alta calidad de impresión, desde 100 pzas" />
 </PageLayout>

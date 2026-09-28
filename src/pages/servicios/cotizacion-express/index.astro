@@ -1,15 +1,14 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Cotización Exprés de Cajas de Cartón en 2 Horas CDMX — CADECA";
 const description = "Cotización de cajas de cartón corrugado en menos de 2 horas en CDMX. Fabricante directo, precios de fábrica, respuesta inmediata por WhatsApp. Sin compromiso.";
-const canonical   = SITE + "/servicios/cotizacion-express";
+const canonical   = SITE + "/servicios/cotizacion-express/";
 
 const schema = [
   {
@@ -17,7 +16,7 @@ const schema = [
     "@type": "Service",
     "name": "Cotización Exprés de Cajas de Cartón en 2 Horas",
     "description": description,
-    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "provider": { "@type": "Organization", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
     "url": canonical
   },
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
-    { name: "Servicios", href: "/servicios" },
+    { name: "Servicios", href: "/servicios/" },
     { name: "Cotización Exprés de Cajas de Cartón en 2 Horas" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO ════════ */}
@@ -57,9 +55,11 @@ const schema = [
           <h1 class="hero__title"><span>Cotización Exprés de Cajas de Cartón en 2 Horas</span></h1>
           <p class="hero__intro">Garantizamos cotización con precio, especificaciones técnicas y tiempo de entrega en menos de 2 horas. Lunes a sábado de 8:00 a 20:00. Para urgentes, 30 min por WhatsApp.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+una+cotizaci%C3%B3n+express+de+cajas+de+cart%C3%B3n"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, necesito una cotización express de cajas de cartón")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -231,7 +231,7 @@ const schema = [
             desc="Cotización en 2 horas"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar — CADECA"
-            href="/catalogo/cajas-corrugado-estandar"
+            href="/catalogo/cajas-corrugado-estandar/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -239,7 +239,7 @@ const schema = [
             desc="Cotización con diseño CAD"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -247,7 +247,7 @@ const schema = [
             desc="Cotización con muestra digital"
             imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
             imgAlt="Cajas Personalizadas — CADECA"
-            href="/catalogo/cajas-personalizadas-con-logo"
+            href="/catalogo/cajas-personalizadas-logo/"
             btnText="Ver producto"
           />
       </div>
@@ -257,7 +257,6 @@ const schema = [
   <LeadCapture
     titulo="Solicita tu cotización exprés ahora"
     subtitulo="Respuesta en menos de 2 horas · Fabricante directo · Sin compromiso"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

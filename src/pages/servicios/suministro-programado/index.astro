@@ -1,15 +1,14 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Suministro Programado de Cajas de Cartón CDMX — CADECA Fabricante Directo";
 const description = "Programa tu suministro continuo de cajas de cartón corrugado en CDMX. Entregas periódicas con precio fijo, sin riesgo de desabasto. Fabricante directo.";
-const canonical   = SITE + "/servicios/suministro-programado";
+const canonical   = SITE + "/servicios/suministro-programado/";
 
 const schema = [
   {
@@ -17,7 +16,7 @@ const schema = [
     "@type": "Service",
     "name": "Suministro Programado de Cajas de Cartón",
     "description": description,
-    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "provider": { "@type": "Organization", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
     "url": canonical
   },
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
-    { name: "Servicios", href: "/servicios" },
+    { name: "Servicios", href: "/servicios/" },
     { name: "Suministro Programado de Cajas de Cartón" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO ════════ */}
@@ -57,9 +55,11 @@ const schema = [
           <h1 class="hero__title"><span>Suministro Programado de Cajas de Cartón</span></h1>
           <p class="hero__intro">Garantizamos que tu operación nunca se detenga. Definimos un calendario de entregas semanal, quincenal o mensual con precio fijo y prioridad de producción para tu empresa.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Suministro+Programado+de+Cajas"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, quiero información sobre Suministro Programado de Cajas")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -231,7 +231,7 @@ const schema = [
             desc="Entrega programada semanal"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar — CADECA"
-            href="/catalogo/cajas-corrugado-estandar"
+            href="/catalogo/cajas-corrugado-estandar/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -239,7 +239,7 @@ const schema = [
             desc="Producción continua a tu medida"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -247,7 +247,7 @@ const schema = [
             desc="Suministro con tu marca"
             imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
             imgAlt="Cajas Personalizadas — CADECA"
-            href="/catalogo/cajas-personalizadas-con-logo"
+            href="/catalogo/cajas-personalizadas-logo/"
             btnText="Ver producto"
           />
       </div>
@@ -257,7 +257,6 @@ const schema = [
   <LeadCapture
     titulo="Programa tu suministro de cajas"
     subtitulo="Precio fijo · Sin desabasto · Fabricante directo en CDMX"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

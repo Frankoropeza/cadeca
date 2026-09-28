@@ -1,12 +1,11 @@
 ---
+import { CONTACTO, HAS_WA, contactoHref, contactoAttrs } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const WHATSAPP = "5255XXXXXXXX";
-
-const title  = "Cotizar Cajas de Cartón CDMX | Respuesta en 1 Hora | CADECA";
-const description = "Cotiza cajas de cartón corrugado en CDMX. Respuesta en menos de 1 hora en horario hábil. Cajas estándar, a la medida y personalizadas con logo. CADECA fabricante directo.";
+const title  = "Cotizar Cajas de Cartón en CDMX | CADECA";
+const description = "Solicita tu cotización de cajas de cartón corrugado en CDMX y Estado de México: estándar, a la medida, personalizadas con logo y láminas. Sin compromiso.";
 
 const breadcrumbs = [
  { name: "Inicio", href: "/" },
@@ -14,17 +13,16 @@ const breadcrumbs = [
 ];
 
 const faqs = [
- { question: "¿Cuánto tiempo tarda en llegar mi cotización?", answer: "En horario hábil (Lun-Vie 8:00-18:00, Sáb 9:00-14:00) respondemos en menos de 60 minutos por WhatsApp. Para cotizaciones con mucho detalle técnico puede tomar hasta 2-3 horas." },
- { question: "¿Cuánto es el pedido mínimo?", answer: "Depende del tipo de caja: cajas estándar desde 50 piezas, cajas personalizadas con logo desde 100 piezas, cajas a la medida desde 25-50 piezas según el tipo. Consulta el catálogo para el MOQ exacto por SKU." },
- { question: "¿El diseño y el CAD tienen costo?", answer: "No. El diseño CAD para cajas a la medida es gratuito y lo entregamos en 24 horas. La vectorización de logotipos para impresión también es sin costo en el primer pedido." },
- { question: "¿Puedo pedir muestras antes de hacer el pedido completo?", answer: "Sí. Para pedidos de cajas a la medida y personalizadas entregamos de 3 a 5 muestras de preproducción para que valides en tu línea o con tu producto antes del pedido completo." },
+ { question: "¿Qué datos necesito para cotizar?", answer: "Tipo de caja, medidas aproximadas (largo × ancho × alto en cm), cantidad estimada y, si aplica, si llevará impresión de logo. Con eso preparamos una cotización con precio por pieza y tiempo de entrega." },
+ { question: "¿Cuánto tarda la respuesta?", answer: "Respondemos las solicitudes en horario hábil. Las cotizaciones con medidas especiales o impresión pueden requerir más tiempo porque se validan con el taller que produce la caja." },
+ { question: "¿Hay pedido mínimo?", answer: "Depende del tipo de caja: las medidas estándar se surten en cantidades menores que las cajas a la medida o impresas, que tienen un mínimo de producción. En la cotización te indicamos el mínimo para tu caso." },
+ { question: "¿Puedo pedir una muestra antes del pedido completo?", answer: "En cajas a la medida y personalizadas es posible solicitar una muestra para validar medidas y resistencia antes de producir el volumen completo. Indícalo en el formulario." },
 ];
 ---
 
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="page"
  breadcrumbs={breadcrumbs}
  faqItems={faqs}
@@ -40,19 +38,20 @@ const faqs = [
  </div>
 
  <PageHero
- eyebrow="Respuesta garantizada en menos de 1 hora"
+ eyebrow="Cotización sin compromiso"
  titleHtml={true}
  title="Cotiza tus Cajas de <span>Cartón en CDMX</span>"
- desc="Completa el formulario o escríbenos por WhatsApp. Sin rodeos: precio, disponibilidad y tiempo de entrega en un solo mensaje."
- desc2="Enviamos cotización detallada con precio unitario, precio por volumen, tiempo de producción y opciones de personalización. Sin letra chica, sin costos ocultos.||¿Tienes un plano técnico o muestra física? Compártenos las medidas exactas y el uso final: diseñamos la solución óptima para tu producto y presupuesto en menos de 2 horas."
+ desc="Cuéntanos qué necesitas y te enviamos una cotización con precio por pieza, cantidad mínima y tiempo de entrega."
+ desc2="Trabajamos cajas de cartón corrugado estándar, a la medida, personalizadas con logo y láminas de cartón para empresas, tiendas en línea y negocios de la Ciudad de México y el Estado de México.||Si tienes una muestra, un plano o una caja de referencia, descríbela en el formulario: con medidas, peso del producto y uso final podemos recomendarte el tipo de corrugado adecuado."
  chips={[
- { label: "Cotización en 2 horas" },
  { label: "Sin compromiso" },
- { label: "Precio unitario + volumen" },
- { label: "Diseño CAD gratis" },
+ { label: "Precio por pieza y por volumen" },
+ { label: "Asesoría para elegir la caja" },
+ { label: "CDMX y Estado de México" },
  ]}
  ctas={[
- { href: `https://wa.me/${WHATSAPP}`, label: "WhatsApp directo", variant: "primary" },
+ { href: "#cotizar-page-form", label: "Llenar formulario", variant: "primary" },
+ ...(HAS_WA ? [{ href: contactoHref(), label: "WhatsApp", variant: "outline" as const }] : []),
  ]}
  />
 
@@ -64,7 +63,7 @@ const faqs = [
 
  <div class="cotizar-form-wrap">
  <h2 class="cotizar-form-wrap__title">Formulario de Cotización</h2>
- <form id="cotizar-page-form" class="cotizar-form" novalidate>
+ <form id="cotizar-page-form" class="cotizar-form" data-lead-form data-wa={CONTACTO.whatsapp || undefined}>
 
  <div class="cotizar-form__group">
  <label for="cot-nombre" class="cotizar-form__label">Nombre completo *</label>
@@ -78,7 +77,7 @@ const faqs = [
 
  <div class="cotizar-form__row">
  <div class="cotizar-form__group">
- <label for="cot-contacto" class="cotizar-form__label">WhatsApp o teléfono *</label>
+ <label for="cot-contacto" class="cotizar-form__label">Teléfono o WhatsApp *</label>
  <input id="cot-contacto" name="contacto" type="tel" class="cotizar-form__input" placeholder="55 1234-5678" required />
  </div>
  <div class="cotizar-form__group">
@@ -140,31 +139,40 @@ const faqs = [
  </div>
 
  <div class="cotizar-form__group">
+ <label for="cot-producto" class="cotizar-form__label">Producto de referencia (opcional)</label>
+ <input id="cot-producto" name="producto" type="text" class="cotizar-form__input" placeholder="Clave o nombre del catálogo, p. ej. CAD-CS-01" />
+ </div>
+
+ <div class="cotizar-form__group">
  <label for="cot-detalles" class="cotizar-form__label">Detalles adicionales (producto, uso, urgencia)</label>
  <textarea id="cot-detalles" name="detalles" class="cotizar-form__textarea" rows="4" placeholder="Describe tu producto, si es para e-commerce, industrial, alimentos... Cualquier detalle que nos ayude a cotizar con precisión."></textarea>
  </div>
 
+ <input type="text" name="sitio_web" tabindex="-1" autocomplete="off" aria-hidden="true" class="lead-capture__hp" />
  <button type="submit" class="btn btn--primary btn--full btn--lg">
- Enviar cotización por WhatsApp →
+ Solicitar cotización
  </button>
- <p class="cotizar-form__nota">Al enviar, se abrirá WhatsApp con tu información precargada. Respondemos en menos de 1 hora en horario hábil.</p>
+ <p class="cotizar-form__nota">Usamos tus datos sólo para responder esta solicitud. Consulta el <a href="/aviso-de-privacidad/">aviso de privacidad</a>.</p>
+ <p class="cotizar-form__status" data-lead-status role="status" aria-live="polite" hidden></p>
  </form>
  </div>
 
  <div class="cotizar-sidebar">
+ {HAS_WA && (
  <div class="cotizar-sidebar__card">
- <h3> ¿Prefieres WhatsApp directo?</h3>
- <p>Escríbenos con las medidas y cantidad y te respondemos al momento.</p>
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar cajas de cartón en CDMX`} target="_blank" rel="noopener" class="btn btn--primary btn--full">Abrir WhatsApp</a>
+ <h3>¿Prefieres WhatsApp?</h3>
+ <p>Envíanos medidas y cantidad por mensaje.</p>
+ <a href={contactoHref("Hola, quiero cotizar cajas de cartón")} class="btn btn--primary btn--full" {...contactoAttrs}>Abrir WhatsApp</a>
  </div>
+ )}
 
- <div class="cotizar-sidebar__card" style="margin-top:var(--spacing-md)">
- <h3> Tiempo de respuesta</h3>
+ <div class="cotizar-sidebar__card">
+ <h3>Qué incluye tu cotización</h3>
  <ul class="cotizar-sidebar__list">
- <li>WhatsApp: <strong>&lt; 15 min</strong></li>
- <li>Formulario: <strong>&lt; 1 hora</strong></li>
- <li>CAD a la medida: <strong>24 hrs</strong></li>
- <li>Muestra física: <strong>48 hrs</strong></li>
+ <li>Precio por pieza y por volumen</li>
+ <li>Cantidad mínima para tu tipo de caja</li>
+ <li>Tiempo de entrega estimado</li>
+ <li>Recomendación de corrugado (simple, doble o triple)</li>
  </ul>
  </div>
 
@@ -197,27 +205,4 @@ const faqs = [
  </main>
 </PageLayout>
 
-<script>
- document.getElementById('cotizar-page-form')?.addEventListener('submit', (e) => {
- e.preventDefault();
- const form  = e.target as HTMLFormElement;
- const nombre  = (form.querySelector('[name="nombre"]')  as HTMLInputElement)?.value.trim();
- const empresa  = (form.querySelector('[name="empresa"]')  as HTMLInputElement)?.value.trim();
- const contacto = (form.querySelector('[name="contacto"]') as HTMLInputElement)?.value.trim();
- const tipo  = (form.querySelector('[name="tipo"]')  as HTMLSelectElement)?.value;
- const medida  = (form.querySelector('[name="medida"]')  as HTMLInputElement)?.value.trim();
- const cantidad = (form.querySelector('[name="cantidad"]') as HTMLSelectElement)?.value;
- const detalles = (form.querySelector('[name="detalles"]') as HTMLTextAreaElement)?.value.trim();
-
- let msg = `Hola CADECA, soy ${nombre}`;
- if (empresa) msg += ` de ${empresa}`;
- msg += `.\n\n Tipo de caja: ${tipo}`;
- if (medida) msg += `\n Medida: ${medida} cm`;
- msg += `\n Cantidad: ${cantidad}`;
- if (detalles) msg += `\n Detalles: ${detalles}`;
- msg += `\n Contacto: ${contacto}`;
-
- window.open(`https://wa.me/5255XXXXXXXX?text=${encodeURIComponent(msg)}`, '_blank');
- });
-</script>
 

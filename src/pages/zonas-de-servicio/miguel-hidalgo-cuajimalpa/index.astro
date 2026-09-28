@@ -1,26 +1,25 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Cajas de Cartón Miguel Hidalgo / Cuajimalpa — Entrega 24-48 hrs · Fabricante Directo | CADECA";
 const description = "Cajas de cartón corrugado con entrega en 24-48 hrs en Miguel Hidalgo / Cuajimalpa. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
-const canonical   = SITE + "/zonas-de-servicio/miguel-hidalgo-cuajimalpa";
+const canonical   = SITE + "/zonas-de-servicio/miguel-hidalgo-cuajimalpa/";
 
 const schema = [
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Service",
     "name": "CADECA — Cajas de Cartón Miguel Hidalgo / Cuajimalpa",
+    "serviceType": "Venta y entrega de cajas de cartón corrugado",
     "description": description,
     "url": canonical,
-    "areaServed": ["Miguel Hidalgo", "Cuajimalpa"],
-    "address": { "@type": "PostalAddress", "addressRegion": "Ciudad de México", "addressCountry": "MX" },
-    "priceRange": "$$"
+    "provider": { "@id": "https://cajas-de-carton.com/#org" },
+    "areaServed": ["Miguel Hidalgo", "Cuajimalpa"]
   },
   {
     "@context": "https://schema.org",
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",            href: "/" },
-    { name: "Zonas de Servicio", href: "/zonas-de-servicio" },
+    { name: "Zonas de Servicio", href: "/zonas-de-servicio/" },
     { name: "Miguel Hidalgo / Cuajimalpa" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO — idéntico al index ════════ */}
@@ -59,9 +57,11 @@ const schema = [
           </h1>
           <p class="hero__intro">Packaging premium y cajas personalizadas para empresas del corredor corporativo de CDMX: Polanco, Santa Fe, Lomas y Cuajimalpa.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Miguel+Hidalgo+%2F+Polanco"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, necesito cajas en Miguel Hidalgo / Polanco")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -157,7 +157,7 @@ const schema = [
             desc="Impresión premium 4 colores"
             imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
             imgAlt="Cajas con Logo en CDMX — CADECA"
-            href="/catalogo/cajas-personalizadas-con-logo"
+            href="/catalogo/cajas-personalizadas-logo/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -165,7 +165,7 @@ const schema = [
             desc="Diseño CAD incluido"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida en CDMX — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -173,7 +173,7 @@ const schema = [
             desc="FSC certificado"
             imgSrc="/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif"
             imgAlt="Packaging Sustentable en CDMX — CADECA"
-            href="/catalogo/packaging-ecologico"
+            href="/servicios/packaging-ecologico/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -181,7 +181,7 @@ const schema = [
             desc="Para restaurantes y catering"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Cajas para Alimentos en CDMX — CADECA"
-            href="/catalogo/cajas-para-alimentos"
+            href="/catalogo/cajas-para-alimentos/"
             btnText="Ver detalles"
           />
       </div>
@@ -230,7 +230,6 @@ const schema = [
   <LeadCapture
     titulo={"Cotiza cajas en Miguel Hidalgo / Cuajimalpa"}
     subtitulo="Fabricante directo · Cotización en menos de 2 horas · Entrega en 24-48 hrs"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

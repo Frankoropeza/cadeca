@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Láminas Corrugado Industria Automotriz Interleaving CDMX | CAD-LA-10 | CADECA";
 const description = "Láminas corrugado para industria automotriz en CDMX. Triple pared interleaving entre piezas metálicas, protección anticorrosión con papel VCI. MOQ 100 pzas. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
  ["Código SKU", "CAD-LA-10"],
@@ -38,9 +38,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Industria Automotriz"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado/"},{name:"Láminas Corrugado para Industria Automotriz"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
  product={{name:"Láminas Corrugado para Industria Automotriz",sku:"CAD-LA-10",description:"Láminas triple pared para interleaving entre piezas metálicas de automóviles. Con opción de papel VCI anticorrosión. Para proveedores Tier 1 y Tier 2 de la industria automotriz.",image:gallery[0].src,material:"CAD-LA-10",category:"Láminas de Cartón Corrugado",moq:"100 láminas"}}
 >
@@ -48,8 +47,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado/">Láminas de Cartón Corrugado</a></li>
  <li><span class="current">Láminas Corrugado para Industria Automotriz</span></li>
  </ol>
  </div>
@@ -91,8 +90,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-10 Láminas Corrugado para Industria Automotriz`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-10</a>
- <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-LA-10 Láminas Corrugado para Industria Automotriz`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LA-10</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -109,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Eres proveedor automotriz? Cotiza las láminas de interleaving con especificación técnica incluida" />
+ <LeadCapture title="¿Eres proveedor automotriz? Cotiza las láminas de interleaving con especificación técnica incluida" />
 </PageLayout>

@@ -1,11 +1,10 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout    from "@/layouts/PageLayout.astro";
 import PageHero      from "@/components/PageHero.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import ProductCard   from "@/components/ProductCard.astro";
 import { grupos, categorias, totalEmpresas } from "@/data/directorio";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Directorio de Empresas — Empaques y Cartón Corrugado CDMX | CADECA";
@@ -16,7 +15,7 @@ const schema = {
   "@type": "CollectionPage",
   "name": "Directorio de Empresas — Empaques Corrugado CDMX",
   "description": description,
-  "url": `${SITE}/directorio`,
+  "url": `${SITE}/directorio/`,
   "publisher": { "@type": "Organization", "name": "CADECA", "url": SITE },
 };
 
@@ -33,7 +32,7 @@ const gruposConData = grupos.map((g, i) => {
   // Tags = primeras 4 categorías del grupo
   const tags = cats.slice(0, 4).map(c => ({
     label: c.titulo,
-    href:  `/directorio/${g.id}/${c.id}`,
+    href:  `/directorio/${g.id}/${c.id}/`,
   }));
 
   return { ...g, catCount: cats.length, empCount, imgSrc, tags };
@@ -45,7 +44,6 @@ const gruposConData = grupos.map((g, i) => {
   description={description}
   schema={schema}
   breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Directorio" }]}
-  whatsapp={WHATSAPP}
 >
 
   <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -64,8 +62,8 @@ const gruposConData = grupos.map((g, i) => {
     desc={`Más de ${totalEmpresas} empresas organizadas en 5 grupos y 17 categorías. Encuentra fabricantes, diseñadores, paqueterías, clientes industriales y organismos del ecosistema de empaque en México.`}
     desc2="Este directorio concentra a los principales actores del ecosistema de empaque en México: productores de materia prima, conversores industriales, diseñadores de packaging, paqueterías, clientes mayoristas y organismos certificadores, todos verificados y actualizados con información de contacto real.||La estructura en grupos temáticos facilita la búsqueda: ya sea que necesites cotizar insumos, encontrar un socio logístico, identificar clientes potenciales o localizar organismos de certificación para tu operación. Presencia gratuita disponible para todas las empresas verificadas del sector."
     ctas={[
-      { href: "/contacto", label: "Registrar mi empresa", variant: "primary" },
-      { href: "/catalogo", label: "Ver catálogo CADECA",  variant: "outline" },
+      { href: "/contacto/", label: "Registrar mi empresa", variant: "primary" },
+      { href: "/catalogo/", label: "Ver catálogo CADECA",  variant: "outline" },
     ]}
   />
 
@@ -79,10 +77,10 @@ const gruposConData = grupos.map((g, i) => {
       <SectionHeader
         title={`Directorio · ${grupos.length} grupos · ${totalEmpresas} empresas`}
         twoCol
-        link={{ text: "Registrar mi empresa", href: "/contacto" }}
+        link={{ text: "Registrar mi empresa", href: "/contacto/" }}
       >
         <p>Este directorio reúne a los principales actores del ecosistema de empaque en México: fabricantes de materia prima, conversores, agencias de diseño, paqueterías y organismos certificadores.</p>
-        <p>Selecciona un grupo para explorar sus categorías. ¿Tu empresa no aparece? <a href="/contacto" style="color:var(--color-primary);font-weight:700;">Regístrala gratis →</a></p>
+        <p>Selecciona un grupo para explorar sus categorías. ¿Tu empresa no aparece? <a href="/contacto/" style="color:var(--color-primary);font-weight:700;">Regístrala gratis →</a></p>
       </SectionHeader>
 
       <div class="products__grid dir-grupos-grid">
@@ -92,7 +90,7 @@ const gruposConData = grupos.map((g, i) => {
             desc={`${g.catCount} categorías · ${g.empCount} empresas — ${g.desc.slice(0, 90)}…`}
             imgSrc={g.imgSrc}
             imgAlt={`Grupo ${g.nombre} — Directorio de empaques CADECA`}
-            href={`/directorio/${g.id}`}
+            href={`/directorio/${g.id}/`}
             tags={g.tags}
             btnText="Ver categorías"
           />
@@ -104,8 +102,10 @@ const gruposConData = grupos.map((g, i) => {
         <h2 class="dir-cta__title">¿Tu empresa no aparece en el directorio?</h2>
         <p class="dir-cta__desc">Registra tu empresa gratuitamente. Llegamos a miles de compradores de empaques cada mes en CDMX y Zona Metropolitana.</p>
         <div class="dir-cta__actions">
-          <a href="/contacto" class="btn btn--primary">Registrar empresa gratis</a>
-          <a href={`https://wa.me/${WHATSAPP}`} class="btn btn--outline" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a href="/contacto/" class="btn btn--primary">Registrar empresa gratis</a>
+          {HAS_WA && (
+<a href={contactoHref()} class="btn btn--outline" {...contactoAttrs}>Consultar por WhatsApp</a>
+)}
         </div>
       </div>
 

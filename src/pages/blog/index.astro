@@ -1,4 +1,5 @@
 ---
+import { HAS_WA, contactoHref } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import PageHero  from "@/components/PageHero.astro";
 import "@/styles/blog.css";
@@ -12,12 +13,12 @@ const featuredPost = allPosts.find(p => p.data.featured) || allPosts[0];
 const gridPosts  = allPosts.filter(p => p.slug !== featuredPost.slug);
 
 const CATEGORIES = [
- { name: "Guías",  slug: "guias",  color: "1C2B4A", icon: "" },
- { name: "E-commerce",  slug: "e-commerce",  color: "E05800", icon: "" },
- { name: "Industria",  slug: "industria",  color: "0066CC", icon: "" },
- { name: "Sostenibilidad", slug: "sostenibilidad", color: "2E7D32", icon: "️" },
- { name: "Consejos",  slug: "consejos",  color: "6A1B9A", icon: "" },
- { name: "Zonas",  slug: "zonas",  color: "E05800", icon: "" },
+ { name: "Guías",  slug: "guias",  color: "#1C2B4A", icon: "" },
+ { name: "E-commerce",  slug: "e-commerce",  color: "#E05800", icon: "" },
+ { name: "Industria",  slug: "industria",  color: "#0066CC", icon: "" },
+ { name: "Sostenibilidad", slug: "sostenibilidad", color: "#2E7D32", icon: "️" },
+ { name: "Consejos",  slug: "consejos",  color: "#6A1B9A", icon: "" },
+ { name: "Zonas",  slug: "zonas",  color: "#E05800", icon: "" },
 ];
 
 const allTags = [...new Set(allPosts.flatMap(p => p.data.tags || []))].slice(0, 20);
@@ -28,10 +29,10 @@ const schemaBlog = {
  "@type": "Blog",
  "name": "Blog CADECA — Guías y Consejos de Empaque",
  "description": "Artículos especializados sobre cajas de cartón corrugado, empaques para e-commerce, industria y sostenibilidad en CDMX.",
- "url": `${SITE}/blog`,
+ "url": `${SITE}/blog/`,
  "publisher": {
  "@type": "Organization",
- "name": "CADECA",
+ "name": "#CADECA",
  "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
  },
  "blogPost": allPosts.map(post => ({
@@ -39,7 +40,7 @@ const schemaBlog = {
  "headline": post.data.title,
  "description": post.data.description,
  "datePublished": post.data.pubDate.toISOString(),
- "url": `${SITE}/blog/${post.slug}`,
+ "url": `${SITE}/blog/${post.slug}/`,
  })),
 };
 
@@ -72,7 +73,7 @@ function formatDate(d: Date) {
  ]}
  ctas={[
  { href: "/catalogo/", label: "Ver catálogo de productos", variant: "primary" },
- { href: "/cotizar", label: "Cotizar ahora", variant: "outline" },
+ { href: "/cotizar/", label: "Cotizar ahora", variant: "outline" },
  ]}
  />
 
@@ -80,13 +81,13 @@ function formatDate(d: Date) {
  <div class="blog-filter-bar">
  <div class="container">
  <div class="blog-filter-bar__inner">
- <a href="/blog" class="blog-filter-bar__link blog-filter-bar__link--active">
+ <a href="/blog/" class="blog-filter-bar__link blog-filter-bar__link--active">
  Todos <span class="blog-filter-bar__count">{allPosts.length}</span>
  </a>
  {CATEGORIES.map(cat => {
  const count = allPosts.filter(p => p.data.category === cat.name).length;
  return (
- <a href={`/blog/categoria/${cat.slug}`} class="blog-filter-bar__link">
+ <a href={`/blog/categoria/${cat.slug}/`} class="blog-filter-bar__link">
  {cat.icon} {cat.name}
  {count > 0 && <span class="blog-filter-bar__count">{count}</span>}
  </a>
@@ -104,7 +105,7 @@ function formatDate(d: Date) {
  <div>
 
  <!-- Featured Post -->
- <a href={`/blog/${featuredPost.slug}`} class="blog-featured-hero">
+ <a href={`/blog/${featuredPost.slug}/`} class="blog-featured-hero">
  <div class="blog-featured-hero__img-wrap">
  {featuredPost.data.image ? (
  <img
@@ -144,7 +145,7 @@ function formatDate(d: Date) {
  {gridPosts.map(post => {
  const cs = catSlug(post.data.category);
  return (
- <a href={`/blog/${post.slug}`} class="blog-card">
+ <a href={`/blog/${post.slug}/`} class="blog-card">
  <div class="blog-card__img-wrap">
  {post.data.image ? (
  <img
@@ -187,11 +188,11 @@ function formatDate(d: Date) {
  <div class="sidebar-cta">
  <span class="sidebar-cta__icon"></span>
  <h3 class="sidebar-cta__title">¿Necesitas cajas para tu negocio?</h3>
- <p class="sidebar-cta__desc">Cotización sin compromiso. Entrega en 24–48 hrs en CDMX y Edomex.</p>
- <a href="/cotizar" class="sidebar-cta__btn">Solicitar cotización</a>
- <a href="https://wa.me/5255XXXXXXXX?text=Hola%20CADECA%2C%20me%20interesa%20cotizar%20cajas." class="sidebar-cta__btn sidebar-cta__btn--wa" target="_blank" rel="noopener">
+ <p class="sidebar-cta__desc">Cotización sin compromiso, con entrega en CDMX y Estado de México.</p>
+ <a href="/cotizar/" class="sidebar-cta__btn">Solicitar cotización</a>
+ {HAS_WA && (<a href={contactoHref("Hola, me interesa cotizar cajas de cartón.")} class="sidebar-cta__btn sidebar-cta__btn--wa" target="_blank" rel="noopener">
  WhatsApp directo
- </a>
+ </a>)}
  </div>
 
  <!-- Categorías -->
@@ -204,7 +205,7 @@ function formatDate(d: Date) {
  {CATEGORIES.map(cat => {
  const count = allPosts.filter(p => p.data.category === cat.name).length;
  return (
- <a href={`/blog/categoria/${cat.slug}`} class="sidebar-categories__item">
+ <a href={`/blog/categoria/${cat.slug}/`} class="sidebar-categories__item">
  <span class="sidebar-categories__dot" style={`background:${cat.color}`}></span>
  <span class="sidebar-categories__name">{cat.icon} {cat.name}</span>
  <span class="sidebar-categories__count">{count}</span>
@@ -222,7 +223,7 @@ function formatDate(d: Date) {
  </div>
  <nav class="sidebar-recent">
  {allPosts.slice(0, 5).map(post => (
- <a href={`/blog/${post.slug}`} class="sidebar-recent__item">
+ <a href={`/blog/${post.slug}/`} class="sidebar-recent__item">
  <div class="sidebar-recent__thumb">
  {post.data.image ? (
  <img src={post.data.image} alt={post.data.title} width="56" height="42" loading="lazy" />

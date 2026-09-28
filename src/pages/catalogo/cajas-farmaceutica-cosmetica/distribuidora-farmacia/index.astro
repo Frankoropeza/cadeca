@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Distribuidora Farmacia Doble/Triple Pared CDMX | CAD-FC-03 | CADECA";
 const description = "Caja corrugado doble y triple pared ECT-44 a ECT-71 para distribución farmacéutica. Heavy-duty, apilable, cadena de frío. Fabricante directo CDMX — CADECA.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Mediana Doble",  lah:"40×30×30",  flauta:"BC",  ect:"ECT-44",vacío:"0.65 kg",máx:"25 kg", disp:"green",  label:"Stock" },
@@ -85,9 +85,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica"},{name:"Distribuidora Farmacia"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Distribuidora Farmacia"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja Distribuidora Farmacia Doble/Triple Pared",sku:"CAD-FC-03",description:"Caja corrugado doble y triple pared ECT-44 a ECT-71 para distribución farmacéutica en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-distribuidora-farmacia-mayoreo-cdmx.avif",material:"Kraft natural corrugado doble pared BC / triple pared BCE",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"50"}}
 >
@@ -95,8 +94,8 @@ const gallery = [
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container"><ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-farmaceutica-cosmetica">Farmacéutica y Cosmética</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-farmaceutica-cosmetica/">Farmacéutica y Cosmética</a></li>
  <li><span class="current">Distribuidora Farmacia</span></li>
  </ol></div>
  </div>
@@ -165,9 +164,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-FC-03 Distribuidora Farmacia`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-FC-03</a>
- <a href="/catalogo/cajas-farmaceutica-cosmetica" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-FC-03 Distribuidora Farmacia`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-FC-03</a>
+ <a href="/catalogo/cajas-farmaceutica-cosmetica/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -231,6 +229,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-FC-03 — Cajas distribución farmacéutica con entrega en CDMX" />
+ <LeadCapture title="Cotiza CAD-FC-03 — Cajas distribución farmacéutica con entrega en CDMX" />
 
 </PageLayout>

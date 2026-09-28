@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Triple Pared Extra Reforzada CDMX | ECT-71 | CAD-AM-11 | CADECA";
 const description = "Caja triple pared extra reforzada ECT-71 en CDMX. Juntas grapadas, refuerzo de esquinas, para cargas mayores a 80 kg. MOQ 10 pzas. CADECA fabricante directo.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
  ["Código SKU",  "CAD-AM-11"],
@@ -50,9 +50,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida"},{name:"Triple Pared Extra Reforzada"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas a la Medida",href:"/catalogo/cajas-a-la-medida/"},{name:"Triple Pared Extra Reforzada"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
  product={{name:"Caja Triple Pared Extra Reforzada",sku:"CAD-AM-11",description:"Caja triple pared extra reforzada ECT-71 en CDMX — CADECA",image:gallery[0].src,material:"Triple corrugado BCB ECT-71 juntas grapadas",category:"Cajas a la Medida",moq:"10"}}
 >
@@ -60,8 +59,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida/">Cajas a la Medida</a></li>
  <li><span class="current">Triple Pared Extra Reforzada</span></li>
  </ol>
  </div>
@@ -103,8 +102,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-11 Caja Triple Pared Extra Reforzada`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-11</a>
- <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AM-11 Caja Triple Pared Extra Reforzada`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AM-11</a>
+ <a href="/catalogo/cajas-a-la-medida/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -121,5 +120,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Máxima resistencia ECT-71 — Cotiza tu Caja Triple Pared Reforzada" />
+ <LeadCapture title="Máxima resistencia ECT-71 — Cotiza tu Caja Triple Pared Reforzada" />
 </PageLayout>

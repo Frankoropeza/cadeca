@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import ProductCard  from "@/components/ProductCard.astro";
@@ -10,65 +11,6 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 
 const title  = "Cajas de Cartón a la Medida CDMX | Cualquier Dimensión Exacta | CADECA";
 const description = "Cajas de cartón a la medida en CDMX y Estado de México. Cualquier dimensión exacta, diseño CAD gratis, asesoría técnica incluida. Desde 50 piezas, entrega 3-5 días. Cotiza gratis.";
-const WHATSAPP  = "5255XXXXXXXX";
-
-const productSchema = {
- "@context": "https://schema.org",
- "@type": "Product",
- "name": "Cajas de Cartón a la Medida",
- "description": "Fabricamos cajas de cartón corrugado en cualquier dimensión exacta en CDMX. Diseño CAD gratuito, asesoría técnica y entrega en 3-5 días hábiles. Desde 50 piezas.",
- "brand": { "@type": "Brand", "name": "CADECA" },
- "manufacturer": { "@type": "Organization", "name": "CADECA" },
- "url": "https://cajas-de-carton.com/productos/cajas-a-la-medida",
- "image": "https://cajas-de-carton.com/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
- "category": "Cajas a la Medida",
- "areaServed": ["Ciudad de México", "Estado de México"],
- "offers": {
- "@type": "AggregateOffer",
- "priceCurrency": "MXN",
- "lowPrice": "5.50",
- "highPrice": "45.00",
- "availability": "https://schema.org/InStock",
- "seller": { "@type": "Organization", "name": "CADECA" }
- },
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "4.9",
- "reviewCount": "52",
- "bestRating": "5",
- "worstRating": "1"
- },
- "review": [
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Fernando T." },
- "datePublished": "2025-08-22",
- "reviewBody": "Necesitábamos cajas con dimensiones exactas para piezas de maquinaria y CADECA las fabricó al milímetro. El ajuste perfecto eliminó movimiento en tránsito y dejamos de usar relleno extra. Excelente servicio.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
- },
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Mariana L." },
- "datePublished": "2025-11-05",
- "reviewBody": "Lo que más me sorprendió es que el servicio de diseño CAD viene incluido sin costo. Nos entregaron el plano técnico en menos de 24 horas y pudimos aprobar el diseño antes de producir. Muy profesionales.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
- },
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Jorge H." },
- "datePublished": "2026-01-30",
- "reviewBody": "El pedido mínimo de 50 piezas es muy flexible para nosotros que somos empresa pequeña. La calidad del corrugado es excelente y el precio muy competitivo. Totalmente recomendados para cualquier volumen.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
- }
- ],
- "additionalProperty": [
- { "@type": "PropertyValue", "name": "Dimensiones", "value": "Cualquier L×A×H" },
- { "@type": "PropertyValue", "name": "Tamaño máximo", "value": "200×120×100 cm" },
- { "@type": "PropertyValue", "name": "Flautas", "value": "B/C/E/BC" },
- { "@type": "PropertyValue", "name": "Pedido mínimo", "value": "50 piezas" },
- { "@type": "PropertyValue", "name": "Producción", "value": "3-5 días hábiles" }
- ]
-};
 
 const subcategorias = [
  {
@@ -76,11 +18,11 @@ const subcategorias = [
  desc:  "Fabricación en cualquier combinación de largo, ancho y alto. Sin restricciones de medida ni costo extra por dimensiones especiales. La caja perfecta para tu producto.",
  imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
  imgAlt:  "Cajas de cartón exactas dimensiones personalizadas CDMX — CADECA",
- href:  "/productos/cajas-a-la-medidadimensiones",
+ href:  "/productos/cajas-a-la-medida/",
  tags:[
- { label:"Cualquier medida",  href:"/productos/cajas-a-la-medidadimensiones" },
- { label:"Diseño CAD gratis",  href:"/productos/cajas-a-la-medidacad" },
- { label:"Desde 50 pzas",  href:"/productos/cajas-a-la-medidapedido" },
+ { label:"Cualquier medida",  href:"/productos/cajas-a-la-medida/" },
+ { label:"Diseño CAD gratis",  href:"/productos/cajas-a-la-medida/" },
+ { label:"Desde 50 pzas",  href:"/productos/cajas-a-la-medida/" },
  ],
  btnText:"Ver Medidas Exactas",
  },
@@ -89,11 +31,11 @@ const subcategorias = [
  desc:  "Corrugado doble y triple pared con ECT elevado para productos pesados o frágiles. Calculamos el ECT mínimo necesario para proteger tu producto y reducir costos de material.",
  imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
  imgAlt:  "Cajas de cartón alta resistencia ECT especial a la medida CDMX — CADECA",
- href:  "/productos/cajas-a-la-medidaresistencia",
+ href:  "/productos/cajas-a-la-medida/",
  tags:[
- { label:"ECT calculado",  href:"/productos/cajas-a-la-medidaect" },
- { label:"Doble y triple pared",href:"/productos/cajas-doble-corrugado" },
- { label:"Hasta 50+ kg",  href:"/productos/cajas-a-la-medidapeso" },
+ { label:"ECT calculado",  href:"/productos/cajas-a-la-medida/" },
+ { label:"Doble y triple pared",href:"/catalogo/cajas-corrugado-estandar/doble-corrugado/" },
+ { label:"Hasta 50+ kg",  href:"/productos/cajas-a-la-medida/" },
  ],
  btnText:"Ver Alta Resistencia",
  },
@@ -102,11 +44,11 @@ const subcategorias = [
  desc:  "Elegimos contigo la flauta correcta según uso, peso y método de impresión. Flauta E para alta calidad de impresión; flauta BC para máxima resistencia estructural.",
  imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
  imgAlt:  "Cajas de cartón flauta B C E BC a la medida en CDMX — CADECA",
- href:  "/productos/cajas-a-la-medidaflautas",
+ href:  "/productos/cajas-a-la-medida/",
  tags:[
- { label:"Flauta E (impresión)", href:"/productos/cajas-a-la-medidaflautas" },
- { label:"Flauta B y C",  href:"/productos/cajas-a-la-medidaflautas" },
- { label:"Flauta BC (resistencia)",href:"/productos/cajas-a-la-medidaflautas" },
+ { label:"Flauta E (impresión)", href:"/productos/cajas-a-la-medida/" },
+ { label:"Flauta B y C",  href:"/productos/cajas-a-la-medida/" },
+ { label:"Flauta BC (resistencia)",href:"/productos/cajas-a-la-medida/" },
  ],
  btnText:"Ver Tipos de Flauta",
  },
@@ -115,11 +57,11 @@ const subcategorias = [
  desc:  "Fabricamos para plantas manufactureras y proyectos de nearshoring en el Estado de México. Contratos de suministro mensual, crédito empresarial y documentación técnica.",
  imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
  imgAlt:  "Cajas de cartón industriales nearshoring Estado de México — CADECA",
- href:  "/soluciones/industrial-nearshoring",
+ href:  "/catalogo/cajas-a-la-medida/industrial/",
  tags:[
- { label:"Naucalpan · Tlalnepantla", href:"/zonas-de-servicio" },
- { label:"Cuautitlán · Tepotzotlán", href:"/zonas-de-servicio" },
- { label:"Contrato mensual",  href:"/soluciones/industrial-nearshoring" },
+ { label:"Naucalpan · Tlalnepantla", href:"/zonas-de-servicio/" },
+ { label:"Cuautitlán · Tepotzotlán", href:"/zonas-de-servicio/" },
+ { label:"Contrato mensual",  href:"/catalogo/cajas-a-la-medida/industrial/" },
  ],
  btnText:"Ver Solución Industrial",
  },
@@ -130,28 +72,28 @@ const industrias = [
  icon: "",
  title: "Manufactura e Industria",
  desc: "Cajas a la medida para líneas de producción. El empaque exacto elimina desperdicios de material, reduce el tiempo de empacado y protege el producto en el tránsito hasta el cliente final.",
- href: "/soluciones/industrial-nearshoring",
+ href: "/catalogo/cajas-a-la-medida/industrial/",
  linkText: "Ver solución industrial",
  },
  {
  icon: "",
  title: "Electrónica y Tecnología",
  desc: "Dimensiones exactas para dispositivos, accesorios y componentes electrónicos. Corrugado con recubrimiento antiestático disponible. Protección máxima en cada envío.",
- href: "/productos/cajas-a-la-medidaelectronica",
+ href: "/productos/cajas-a-la-medida/",
  linkText: "Ver cajas para electrónica",
  },
  {
  icon: "",
  title: "Artesanías y Artículos Frágiles",
  desc: "Cajas que se adaptan al producto, no al revés. Elimina el uso excesivo de relleno y reduce el riesgo de daño. Ideal para piezas únicas, cerámica y objetos de colección.",
- href: "/productos/cajas-a-la-medidafragiles",
+ href: "/productos/cajas-a-la-medida/",
  linkText: "Ver cajas para frágiles",
  },
  {
  icon: "",
  title: "Exportación y Nearshoring",
  desc: "Cajas que cumplen los estándares ISPM-15, ISTA y ASTM para exportación. Certificación FSC disponible. Documentación técnica completa para auditorías de clientes internacionales.",
- href: "/soluciones/exportacion",
+ href: "/catalogo/cajas-a-la-medida/exportacion/",
  linkText: "Ver solución exportación",
  },
 ];
@@ -220,19 +162,19 @@ const faqs = [
 const faqItems = faqs.map(f => ({ question: f.question, answer: f.answer }));
 const breadcrumbs = [
  { name: "Inicio", href: "/" },
- { name: "Productos", href: "/productos" },
+ { name: "Productos", href: "/productos/" },
  { name: "Cajas a la Medida" },
 ];
 ---
 
-<PageLayout title={title} description={description} schema={productSchema} faqItems={faqItems} breadcrumbs={breadcrumbs} whatsapp={WHATSAPP}>
+<PageLayout title={title} description={description} faqItems={faqItems} breadcrumbs={breadcrumbs}>
 
  <!-- Breadcrumb -->
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/productos">Productos</a></li>
+ <li><a href="/productos/">Productos</a></li>
  <li><span class="current">Cajas a la Medida</span></li>
  </ol>
  </div>
@@ -243,7 +185,7 @@ const breadcrumbs = [
  <div style="background:var(--color-secondary);padding:1rem 0;text-align:center;">
  <div class="container" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
  <span style="color:rgba(255,255,255,0.8);font-size:0.85rem;">¿Necesitas specs técnicas, medidas exactas y ECT?</span>
- <a href="/catalogo/cajas-a-la-medida" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
+ <a href="/catalogo/cajas-a-la-medida/" style="background:var(--color-primary);color:fff;padding:0.4rem 1rem;border-radius:0.5rem;font-size:0.8rem;font-weight:700;text-decoration:none;">Ver ficha técnica completa →</a>
  </div>
  </div>
 
@@ -259,8 +201,8 @@ const breadcrumbs = [
  Fabricamos en cualquier dimensión exacta que necesites. Diseño CAD sin costo, asesoría técnica de ingeniería incluida y entrega en 3-5 días. Desde 50 piezas, sin cargo por medida especial.
  </p>
  <div class="page-hero__ctas">
- <a href="cotizar"  class="btn btn--primary">Cotizar con CAD Gratis</a>
- <a href="subcategorias" class="btn btn--outline">Ver Opciones</a>
+ <a href="/cotizar/"  class="btn btn--primary">Cotizar con CAD Gratis</a>
+ <a href="#subcategorias" class="btn btn--outline">Ver Opciones</a>
  </div>
  </div>
  <div class="page-hero__stat">
@@ -337,8 +279,10 @@ const breadcrumbs = [
  </div>
  </div>
  <div class="prod-detail__actions">
- <a href="cotizar" class="btn btn--primary">Solicitar CAD Gratis</a>
- <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener" class="btn btn--outline">WhatsApp Directo</a>
+ <a href="/cotizar/" class="btn btn--primary">Solicitar CAD Gratis</a>
+ {HAS_WA && (
+<a href={contactoHref()} class="btn btn--outline" {...contactoAttrs}>WhatsApp Directo</a>
+)}
  </div>
  </div>
  </div>
@@ -350,7 +294,7 @@ const breadcrumbs = [
  <SectionHeader id="subcats-am-title" twoCol
  title="Opciones de Cajas a la Medida"
  subtitle="Dimensiones exactas, resistencia calculada, flauta óptima e industrial. Sin restricciones."
- link={{ text: "Ver catálogo completo", href: "/productos" }}>
+ link={{ text: "Ver catálogo completo", href: "/productos/" }}>
  <p>Fabricamos en cualquier dimensión sin restricciones. La clave es elegir el corrugado correcto para cada aplicación — y eso es exactamente lo que hace nuestro equipo de ingeniería de forma gratuita con cada cotización.</p>
  <p>Para proyectos industriales de gran volumen en el Estado de México, ofrecemos contratos de suministro mensual con precios escalonados y crédito empresarial.</p>
  </SectionHeader>
@@ -409,7 +353,7 @@ const breadcrumbs = [
  Para la <strong>industria manufacturera en el Estado de México</strong> — parques industriales de Naucalpan, Tlalnepantla, Cuautitlán Izcalli y Tepotzotlán — ofrecemos cajas a la medida con contratos de suministro mensual, crédito empresarial y documentación técnica completa para auditorías de clientes internacionales. Para proyectos de <strong>nearshoring</strong>, cumplimos con los estándares ISTA y ASTM requeridos por corporativos de EUA, Japón y Europa, con opción de <strong>certificación FSC</strong> para cadena de custodia de materiales.
  </p>
  <p class="seo-content__text">
- El proceso es simple: compartes las dimensiones de tu producto, generamos el CAD sin costo, recibes la cotización en el día y en 3-5 días hábiles tienes tus cajas entregadas. <a href="cotizar">Solicita tu diseño CAD gratis ahora</a> — sin mínimo de cotización y sin compromiso de compra.
+ El proceso es simple: compartes las dimensiones de tu producto, generamos el CAD sin costo, recibes la cotización en el día y en 3-5 días hábiles tienes tus cajas entregadas. <a href="/cotizar/">Solicita tu diseño CAD gratis ahora</a> — sin mínimo de cotización y sin compromiso de compra.
  </p>
  </div>
  </section>
@@ -430,6 +374,6 @@ const breadcrumbs = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza tus cajas a la medida — diseño CAD gratis en 24 hrs" />
+ <LeadCapture title="Cotiza tus cajas a la medida — diseño CAD gratis en 24 hrs" />
 
 </PageLayout>

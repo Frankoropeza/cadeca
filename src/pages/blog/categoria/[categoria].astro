@@ -10,10 +10,11 @@ const categoryMap: Record<string, string> = {
  "industria": "Industria",
  "sostenibilidad": "Sostenibilidad",
  "consejos": "Consejos",
+ "zonas": "Zonas",
 };
 
 export async function getStaticPaths() {
- const slugs = ["guias", "e-commerce", "industria", "sostenibilidad", "consejos"];
+ const slugs = ["guias", "e-commerce", "industria", "sostenibilidad", "consejos", "zonas"];
  return slugs.map(slug => ({ params: { categoria: slug } }));
 }
 
@@ -24,7 +25,7 @@ const allPosts = (await getCollection("blog"))
  .filter(p => p.data.category === categoryName)
  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const categories = ["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos"] as const;
+const categories = ["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos", "Zonas"] as const;
 
 const SITE = "https://cajas-de-carton.com";
 
@@ -33,8 +34,8 @@ const schemaCollection = {
  "@type": "CollectionPage",
  "name": `${categoryName} — Blog CADECA`,
  "description": `Artículos sobre ${categoryName?.toLowerCase()} en el blog de CADECA.`,
- "url": `${SITE}/blog/categoria/${categoria}`,
- "publisher": { "@type": "Organization", "name": "CADECA" },
+ "url": `${SITE}/blog/categoria/${categoria}/`,
+ "publisher": { "@type": "Organization", "name": "#CADECA" },
 };
 ---
 
@@ -42,7 +43,7 @@ const schemaCollection = {
  title={`${categoryName} — Blog CADECA | Cajas de Cartón CDMX`}
  description={`Artículos sobre ${categoryName?.toLowerCase()} — guías, consejos y tendencias de empaques de cartón corrugado para tu negocio.`}
  schema={schemaCollection}
- breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Blog", href: "/blog" }, { name: categoryName! }]}
+ breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Blog", href: "/blog/" }, { name: categoryName! }]}
 >
  <main id="contenido-principal">
 
@@ -57,11 +58,11 @@ const schemaCollection = {
  <!-- Category Filter -->
  <div class="container" style="padding-top: var(--spacing-xl);">
  <div class="blog-categories">
- <a href="/blog" class="blog-categories__link">Todos</a>
+ <a href="/blog/" class="blog-categories__link">Todos</a>
  {categories.map(cat => {
  const catSlug = cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-");
  const isActive = catSlug === categoria;
- return <a href={`/blog/categoria/${catSlug}`} class={`blog-categories__link ${isActive ? "blog-categories__link--active" : ""}`}>{cat}</a>;
+ return <a href={`/blog/categoria/${catSlug}/`} class={`blog-categories__link ${isActive ? "blog-categories__link--active" : ""}`}>{cat}</a>;
  })}
  </div>
  </div>
@@ -85,7 +86,7 @@ const schemaCollection = {
  ) : (
  <div style="text-align: center; padding: var(--spacing-3xl) 0;">
  <p style="font-size: var(--font-size-lg); color: var(--color-text-light);">Aún no hay artículos en esta categoría.</p>
- <a href="/blog" class="btn btn--primary" style="margin-top: var(--spacing-lg);">Ver todos los artículos</a>
+ <a href="/blog/" class="btn btn--primary" style="margin-top: var(--spacing-lg);">Ver todos los artículos</a>
  </div>
  )}
  </div>

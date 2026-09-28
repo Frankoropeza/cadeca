@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Láminas Cartón Corrugado Doble BC CDMX | ECT-44 Bases Tarima | CAD-LC-02 | CADECA";
 const description = "Láminas doble corrugado BC CDMX. ECT-44, hasta 120×240cm, bases tarima y refuerzo. Desde 50 pzas, 3-5 días. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"60×40 cm", ml:"60×40 cm", real:"60×40", flauta:"BC",ect:"ECT-44",vacío:"0.18 kg/ud",máx:"—", disp:"yellow", label:"3-5 días", hl:false },
@@ -58,9 +58,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Láminas Dobles BC"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado/"}, {name:"Láminas Dobles BC"}]}
  faqItems={[{question:"¿Cuándo uso lámina doble vs caja corrugada?", answer:"Láminas dobles cuando: producto ya tiene empaque primario y solo necesitas protección en tarima; forma irregular no encaja en caja rectangular; necesitas cubrir superficies planas grandes; o construyes embalaje custom. Costo/m² 15-25% menor que material de caja."}, {question:"¿Cómo se usan como refuerzo en tarimas?", answer:"1) Layer pad entre capas: distribuye peso y aumenta capacidad de apilamiento 30-40%. 2) Top pad en cima de tarima: protege durante flejado y transporte. 3) Slip sheet sustituto de tarima de madera para cargas ligeras con grúa. ECT-44 es el mínimo recomendado para todas estas aplicaciones."}]}
  product={{name:"Láminas Cartón Corrugado Doble BC ECT-44", sku:"CAD-LC-02", description:"Láminas Cartón Corrugado Doble BC ECT-44 en CDMX — fabricante directo CADECA", image:"/img/catalogo/laminas-carton-corrugado-doble-cdmx.avif", material:"Láminas doble corrugado BC ECT-44 bases tarima refuerzo estructural", category:"Láminas de Cartón Corrugado", moq:"50"}}
 >
@@ -68,8 +67,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado/">Láminas Cartón</a></li>
  <li><span class="current">Láminas Dobles BC</span></li>
  </ol>
  </div>
@@ -111,8 +110,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-02 Láminas Doble BC ECT-44`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-02</a>
- <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-LC-02 Láminas Doble BC ECT-44`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LC-02</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -147,5 +146,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-02 — Láminas dobles desde 50 piezas, entrega 3-5 días" />
+ <LeadCapture title="Cotiza CAD-LC-02 — Láminas dobles desde 50 piezas, entrega 3-5 días" />
 </PageLayout>

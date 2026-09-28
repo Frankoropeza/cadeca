@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Láminas Corrugado Vidrio Cerámica CDMX | Amortiguación | CAD-LA-09 | CADECA";
 const description = "Láminas de cartón corrugado para vidrio, cerámica y artículos frágiles en CDMX. Doble pared amortiguante, celdas de separación. MOQ 50 pzas. Entrega 24 hrs. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const specs = [
  ["Código SKU", "CAD-LA-09"],
@@ -38,9 +38,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado"},{name:"Láminas Corrugado para Vidrio y Cerámica"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado/"},{name:"Láminas Corrugado para Vidrio y Cerámica"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
  product={{name:"Láminas Corrugado para Vidrio y Cerámica",sku:"CAD-LA-09",description:"Láminas doble pared amortiguante para vidrio, cerámica y artículos frágiles. Con opción de celdas de separación hexagonal para mayor protección. Desde 50 piezas en CDMX.",image:gallery[0].src,material:"CAD-LA-09",category:"Láminas de Cartón Corrugado",moq:"50 láminas"}}
 >
@@ -48,8 +47,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/laminas-carton-corrugado">Láminas de Cartón Corrugado</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado/">Láminas de Cartón Corrugado</a></li>
  <li><span class="current">Láminas Corrugado para Vidrio y Cerámica</span></li>
  </ol>
  </div>
@@ -91,8 +90,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LA-09 Láminas Corrugado para Vidrio y Cerámica`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LA-09</a>
- <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-LA-09 Láminas Corrugado para Vidrio y Cerámica`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LA-09</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -109,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Distribuyes vidrio o cerámica? Cotiza las láminas con amortiguación adecuada para tu carga frágil" />
+ <LeadCapture title="¿Distribuyes vidrio o cerámica? Cotiza las láminas con amortiguación adecuada para tu carga frágil" />
 </PageLayout>

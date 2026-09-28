@@ -1,15 +1,14 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Asesoría Técnica Gratuita de Empaque CDMX — CADECA Fabricante Directo";
 const description = "Asesoría técnica gratuita para seleccionar la caja de cartón correcta para tu producto en CDMX. Flauta, calibre, resistencia ECT, dimensiones. Sin compromiso.";
-const canonical   = SITE + "/servicios/asesoria-tecnica";
+const canonical   = SITE + "/servicios/asesoria-tecnica/";
 
 const schema = [
   {
@@ -17,7 +16,7 @@ const schema = [
     "@type": "Service",
     "name": "Asesoría Técnica Gratuita de Empaque",
     "description": description,
-    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "provider": { "@type": "Organization", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
     "url": canonical
   },
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
-    { name: "Servicios", href: "/servicios" },
+    { name: "Servicios", href: "/servicios/" },
     { name: "Asesoría Técnica Gratuita de Empaque" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO ════════ */}
@@ -57,9 +55,11 @@ const schema = [
           <h1 class="hero__title"><span>Asesoría Técnica Gratuita de Empaque</span></h1>
           <p class="hero__intro">Te ayudamos a seleccionar la caja correcta: flauta, calibre, resistencia ECT, dimensiones óptimas y tipo de sellado. Análisis de tu producto y proceso incluido sin costo.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+la+asesor%C3%ADa+t%C3%A9cnica+gratuita+de+CADECA"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, quiero la asesoría técnica gratuita de CADECA")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -231,7 +231,7 @@ const schema = [
             desc="Diseño CAD incluido"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -239,7 +239,7 @@ const schema = [
             desc="Asesoría de flauta y ECT"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar — CADECA"
-            href="/catalogo/cajas-corrugado-estandar"
+            href="/catalogo/cajas-corrugado-estandar/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -247,7 +247,7 @@ const schema = [
             desc="Para exportación y manufactura"
             imgSrc="/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif"
             imgAlt="Industrial Triple Pared — CADECA"
-            href="/catalogo/cajas-industriales-triple-pared"
+            href="/catalogo/cajas-corrugado-estandar/triple-corrugado/"
             btnText="Ver producto"
           />
       </div>
@@ -257,7 +257,6 @@ const schema = [
   <LeadCapture
     titulo="Solicita tu asesoría técnica gratuita"
     subtitulo="Sin compromiso · Respuesta en 2 horas · 15+ años de experiencia técnica"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

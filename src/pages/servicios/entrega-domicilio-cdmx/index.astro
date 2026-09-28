@@ -1,15 +1,14 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Entrega de Cajas de Cartón a Domicilio CDMX — 24 hrs · CADECA Fabricante Directo";
 const description = "Entregamos cajas de cartón corrugado a domicilio en CDMX y Estado de México en 24-48 hrs. Flota propia, rutas diarias, sin costo de flete en pedidos mínimos.";
-const canonical   = SITE + "/servicios/entrega-domicilio-cdmx";
+const canonical   = SITE + "/servicios/entrega-domicilio-cdmx/";
 
 const schema = [
   {
@@ -17,7 +16,7 @@ const schema = [
     "@type": "Service",
     "name": "Entrega de Cajas de Cartón a Domicilio en CDMX",
     "description": description,
-    "provider": { "@type": "LocalBusiness", "name": "CADECA", "url": SITE },
+    "provider": { "@type": "Organization", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
     "url": canonical
   },
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
-    { name: "Servicios", href: "/servicios" },
+    { name: "Servicios", href: "/servicios/" },
     { name: "Entrega de Cajas de Cartón a Domicilio en CDMX" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO ════════ */}
@@ -57,9 +55,11 @@ const schema = [
           <h1 class="hero__title"><span>Entrega de Cajas de Cartón a Domicilio en CDMX</span></h1>
           <p class="hero__intro">Flota propia con rutas diarias en toda la CDMX y Zona Metropolitana. Entregamos en tu planta, bodega o domicilio en 24-48 horas sin costo de flete en pedidos calificados.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+quiero+informaci%C3%B3n+sobre+Entrega+a+Domicilio+en+CDMX"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, quiero información sobre Entrega a Domicilio en CDMX")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -231,7 +231,7 @@ const schema = [
             desc="Entrega 24 hrs en CDMX"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar — CADECA"
-            href="/catalogo/cajas-corrugado-estandar"
+            href="/catalogo/cajas-corrugado-estandar/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -239,7 +239,7 @@ const schema = [
             desc="Entrega directa en tu planta"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver producto"
           />
           <ProductCard
@@ -247,7 +247,7 @@ const schema = [
             desc="Para fulfillment y envíos"
             imgSrc="/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif"
             imgAlt="Cajas E-commerce — CADECA"
-            href="/catalogo/cajas-ecommerce-mercado-libre"
+            href="/catalogo/cajas-para-ecommerce/mercado-envios/"
             btnText="Ver producto"
           />
       </div>
@@ -257,7 +257,6 @@ const schema = [
   <LeadCapture
     titulo="Programa tu entrega de cajas a domicilio"
     subtitulo="24-48 hrs en CDMX · Flota propia · Sin costo de flete en pedidos calificados"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

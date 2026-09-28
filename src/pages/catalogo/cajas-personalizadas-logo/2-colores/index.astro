@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas Cartón Logo 2 Colores CDMX | Flexo ECT-32 | CAD-PL-02 | CADECA";
 const description = "Cajas de cartón con logo 2 colores en CDMX. Impresión flexo 2 tintas pantone, ECT-32, desde 100 piezas, entrega 5-7 días. Logo + texto o 2 colores de marca. CADECA fabricante.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"XS", ml:"20×15×10 cm", real:"20×15×10", flauta:"C",ect:"ECT-32",vacío:"0.18 kg",máx:"5 kg", disp:"yellow", label:"5-7 días", hl:false },
@@ -59,9 +59,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo"}, {name:"2 Colores Flexo"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo/"}, {name:"2 Colores Flexo"}]}
  faqItems={[{question:"¿En qué casos vale la pena agregar un segundo color a mi caja?", answer:"El segundo color justifica su costo adicional (típicamente 15-25% más que 1 color) cuando: tu logo incluye el nombre de la marca en un color y el ícono o símbolo en otro; quieres agregar información de contacto en color distinto al logo; la caja irá a cliente final y el branding es parte de la experiencia; o estás diferenciando diferentes líneas de producto con código de color. Para uso interno o almacén, 1 color suele ser suficiente."}, {question:"¿Puedo combinar pantone con un color negro para mi logo?", answer:"Sí. La combinación más económica de 2 colores es Pantone + Negro, ya que el negro es la tinta base del sistema flexo y no requiere placa adicional en muchos casos. Esta combinación es ideal para logos con tipografía negra y un color corporativo de acento. El costo sería similar a 1 color personalizado + negro. Cualquier combinación de 2 Pantones también es posible; solo confirma los códigos Pantone Coated de tu marca al hacer el pedido."}]}
  product={{name:"Caja Cartón Personalizada Logo 2 Colores Flexo", sku:"CAD-PL-02", description:"Caja Cartón Personalizada Logo 2 Colores Flexo en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif", material:"Cartón corrugado simple flauta C ECT-32 impresión flexo 2 tintas", category:"Cajas de Cartón Personalizadas con Logo", moq:"100"}}
 >
@@ -69,8 +68,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-personalizadas-logo">Personalizadas con Logo</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-personalizadas-logo/">Personalizadas con Logo</a></li>
  <li><span class="current">2 Colores Flexo</span></li>
  </ol>
  </div>
@@ -112,8 +111,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-PL-02 Caja Logo 2 Colores`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-PL-02</a>
- <a href="/catalogo/cajas-personalizadas-logo" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-PL-02 Caja Logo 2 Colores`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-PL-02</a>
+ <a href="/catalogo/cajas-personalizadas-logo/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -148,5 +147,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-PL-02 — 2 colores de marca, entrega 5-7 días" />
+ <LeadCapture title="Cotiza CAD-PL-02 — 2 colores de marca, entrega 5-7 días" />
 </PageLayout>

@@ -6,7 +6,6 @@ import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Catálogo Cajas para E-commerce CDMX | 11 Productos | Mercado Libre, Amazon, Shopify | CADECA";
 const description = "Catálogo cajas de cartón para e-commerce en CDMX. Mercado Envíos, Amazon FBA, DHL, FedEx, Estafeta, Shopify y medidas personalizadas. Fichas técnicas con specs y medidas. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const productos = [
  {
@@ -18,7 +17,7 @@ const productos = [
  desc:  "Todas las tallas oficiales de Mercado Envíos: Chica, Mediana, Grande y Extra Grande. Doble corrugado ECT-44 compatible con todas las paqueterías de ML. Stock permanente.",
  imgSrc:  "/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif",
  imgAlt:  "Cajas Mercado Envíos chica mediana grande en CDMX — CADECA CAD-EC-01",
- href:  "/catalogo/cajas-para-ecommerce/mercado-envios",
+ href:  "/catalogo/cajas-para-ecommerce/mercado-envios/",
  specs: [
  { label: "Plataforma",  value: "Mercado Libre · ML" },
  { label: "ECT",  value: "ECT-44 (doble BC)" },
@@ -36,7 +35,7 @@ const productos = [
  desc:  "Medidas aprobadas por Amazon Seller Central México. ECT-44 mínimo exigido por Amazon para FBA. Sin grapas expuestas, cumple todas las políticas de empaque de Amazon.",
  imgSrc:  "/img/catalogo/cajas-amazon-fba-fbm-seller-central-mexico.avif",
  imgAlt:  "Cajas Amazon FBA FBM Seller Central México en CDMX — CADECA CAD-EC-02",
- href:  "/catalogo/cajas-para-ecommerce/amazon-fba",
+ href:  "/catalogo/cajas-para-ecommerce/amazon-fba/",
  specs: [
  { label: "Plataforma",  value: "Amazon MX (FBA · FBM)" },
  { label: "ECT mín.",  value: "ECT-44 certificado" },
@@ -54,7 +53,7 @@ const productos = [
  desc:  "Medidas optimizadas para reducir el peso volumétrico en DHL, FedEx, Estafeta, J&T y 99Minutos. Calculamos la medida exacta que minimiza tu costo de envío.",
  imgSrc:  "/img/catalogo/cajas-dhl-fedex-estafeta-paqueterias-cdmx.avif",
  imgAlt:  "Cajas DHL FedEx Estafeta paqueterías en CDMX — CADECA CAD-EC-03",
- href:  "/catalogo/cajas-para-ecommerce/paqueterias",
+ href:  "/catalogo/cajas-para-ecommerce/paqueterias/",
  specs: [
  { label: "Carriers",  value: "DHL · FedEx · Estafeta · J&T" },
  { label: "Optimización",value: "Peso volumétrico" },
@@ -72,7 +71,7 @@ const productos = [
  desc:  "Para vendedores con tienda en Shopify, TiendaNube, Instagram o TikTok que gestionan sus propios envíos. Neutras o personalizadas con logo desde 100 piezas.",
  imgSrc:  "/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif",
  imgAlt:  "Cajas Shopify TiendaNube tienda propia e-commerce en México — CADECA CAD-EC-04",
- href:  "/catalogo/cajas-para-ecommerce/tienda-propia",
+ href:  "/catalogo/cajas-para-ecommerce/tienda-propia/",
  specs: [
  { label: "Canales",  value: "Shopify · TiendaNube · RRSS" },
  { label: "Tipo",  value: "Neutra o personalizada" },
@@ -90,7 +89,7 @@ const productos = [
  desc:  "Cuando ninguna medida estándar se ajusta exactamente a tu producto. Fabricamos la medida exacta que minimiza el peso volumétrico y reduce el costo de envío por pieza.",
  imgSrc:  "/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif",
  imgAlt:  "Cajas e-commerce a la medida peso volumétrico en CDMX — CADECA CAD-EC-05",
- href:  "/catalogo/cajas-para-ecommerce/medida-ecommerce",
+ href:  "/catalogo/cajas-para-ecommerce/medida-ecommerce/",
  specs: [
  { label: "Dimensiones",  value: "Cualquier L × A × H" },
  { label: "Objetivo",  value: "Minimizar vol. weight" },
@@ -106,7 +105,7 @@ const productos = [
  desc: "Compatible con DHL, FedEx, Estafeta, J&T y 99Minutos. Doble corrugado ECT-32, 5 medidas en stock permanente CDMX. Ideal para multi-paquetería.",
  imgSrc: "/img/catalogo/caja-envio-online-hero-cdmx.avif",
  imgAlt: "Caja envío online universal multi-paquetería CDMX — CADECA CAD-EC-06",
- href: "/catalogo/cajas-para-ecommerce/caja-envio-online",
+ href: "/catalogo/cajas-para-ecommerce/caja-envio-online/",
  specs: [
  { label: "Paqueterías", value: "DHL · FedEx · J&T · 99Min" },
  { label: "ECT",  value: "ECT-32 (doble BC)" },
@@ -121,7 +120,7 @@ const productos = [
  desc: "Sin mínimo alto — MOQ 50 pzas. Entrega 24 hrs CDMX. Compatible con Shopify, TiendaNube y ventas en local. Para negocios que empiezan o tienen volumen moderado.",
  imgSrc: "/img/catalogo/caja-pyme-hero-cdmx.avif",
  imgAlt: "Caja para PyME con tienda online CDMX — CADECA CAD-EC-07",
- href: "/catalogo/cajas-para-ecommerce/caja-pyme-ecommerce",
+ href: "/catalogo/cajas-para-ecommerce/caja-pyme-ecommerce/",
  specs: [
  { label: "MOQ",  value: "50 piezas" },
  { label: "ECT",  value: "ECT-32" },
@@ -136,7 +135,7 @@ const productos = [
  desc: "Branding opcional desde 100 pzas. Medidas optimizadas para peso volumétrico mínimo. Diseño gratuito con logo vectorial. Turnaround 5–7 días CDMX.",
  imgSrc: "/img/catalogo/caja-shopify-hero-cdmx.avif",
  imgAlt: "Caja para marcas DTC Shopify TikTok Shop CDMX — CADECA CAD-EC-08",
- href: "/catalogo/cajas-para-ecommerce/caja-shopify-dtc",
+ href: "/catalogo/cajas-para-ecommerce/caja-shopify-dtc/",
  specs: [
  { label: "Branding",  value: "Desde 100 pzas" },
  { label: "ECT",  value: "ECT-32" },
@@ -151,7 +150,7 @@ const productos = [
  desc: "Doble corrugado ECT-44 para electrodomésticos, televisores y línea blanca. Medidas XL y XXL. Compatible con Amazon grande, Walmart y PIMSA. Stock CDMX.",
  imgSrc: "/img/catalogo/caja-almacen-industrial-hero-cdmx.avif",
  imgAlt: "Caja gran formato electrodomésticos línea blanca CDMX — CADECA CAD-EC-09",
- href: "/catalogo/cajas-para-ecommerce/caja-gran-formato",
+ href: "/catalogo/cajas-para-ecommerce/caja-gran-formato/",
  specs: [
  { label: "ECT",  value: "ECT-44" },
  { label: "Medidas",  value: "XL y XXL" },
@@ -166,7 +165,7 @@ const productos = [
  desc: "Optimizada para minimizar el peso volumétrico en J&T, 99Minutos y Sendex. Ahorra hasta 30% en costo de flete. ECT-32, 3 medidas en stock CDMX.",
  imgSrc: "/img/catalogo/caja-paqueteria-hero-cdmx.avif",
  imgAlt: "Caja paquetería económica J&T 99Minutos CDMX — CADECA CAD-EC-10",
- href: "/catalogo/cajas-para-ecommerce/caja-paqueteria-economica",
+ href: "/catalogo/cajas-para-ecommerce/caja-paqueteria-economica/",
  specs: [
  { label: "Paqueterías", value: "J&T · 99Min · Sendex" },
  { label: "ECT",  value: "ECT-32" },
@@ -181,7 +180,7 @@ const productos = [
  desc: "Estructura robusta para múltiples productos, interior liso para tissue o divisores. Personalizable con logo 1–4 colores desde 100 pzas. Diseño CAD gratuito.",
  imgSrc: "/img/catalogo/caja-shopify-unboxing-cdmx.avif",
  imgAlt: "Caja suscripción box kits de regalo CDMX — CADECA CAD-EC-11",
- href: "/catalogo/cajas-para-ecommerce/caja-suscripcion-box",
+ href: "/catalogo/cajas-para-ecommerce/caja-suscripcion-box/",
  specs: [
  { label: "Interior",  value: "Liso para tissue/divisores" },
  { label: "Branding",  value: "1–4 colores desde 100 pzas" },
@@ -194,13 +193,13 @@ const productos = [
 ---
 
 <PageLayout
- ogImage="/img/categorias/cajas-para-ecommerce-hero-cdmx.avif" title={title} description={description} whatsapp={WHATSAPP}>
+ ogImage="/img/categorias/cajas-para-ecommerce-hero-cdmx.avif" title={title} description={description}>
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
  <li><span class="current">Cajas para E-commerce</span></li>
  </ol>
  </div>
@@ -219,7 +218,7 @@ const productos = [
  { label: "Mercado Envíos · Amazon · DHL" },
  ]}
  ctas={[
- { href: "/cotizar", label: "Cotizar ahora", variant: "primary" },
+ { href: "/cotizar/", label: "Cotizar ahora", variant: "primary" },
  { href: "/catalogo/", label: "Ver catálogo completo", variant: "outline" },
  ]}
  />
@@ -232,7 +231,7 @@ const productos = [
  twoCol
  title="5 Productos — Cajas para E-commerce"
  subtitle="Selecciona la plataforma o paquetería para ver la ficha técnica completa con medidas exactas, ECT y condiciones de pedido."
- link={{ text: "← Volver al catálogo", href: "/catalogo" }}
+ link={{ text: "← Volver al catálogo", href: "/catalogo/" }}
  >
  <p>Cada plataforma y paquetería tiene requerimientos distintos de medidas y resistencia. Usar la caja incorrecta genera cobros extra por peso volumétrico o rechazos en centros de distribución. Aquí encontrarás la especificación exacta para cada canal de venta.</p>
  </SectionHeader>
@@ -276,22 +275,22 @@ const productos = [
  <h2 class="cat-blog-links__title"> Del Blog CADECA</h2>
  <p class="cat-blog-links__subtitle">Guías y consejos de expertos para tu decisión de compra</p>
  <div class="cat-blog-links__grid">
- <a href="/blog/guia-cajas-corrugado-ecommerce-cdmx" class="cat-blog-links__item">
+ <a href="/blog/guia-cajas-corrugado-ecommerce-cdmx/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Guía de cajas para e-commerce</span>
  </a>
- <a href="/blog/peso-volumetrico-cajas-medida-ecommerce-ahorro-envios" class="cat-blog-links__item">
+ <a href="/blog/peso-volumetrico-cajas-medida-ecommerce-ahorro-envios/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Peso volumétrico y ahorro en envíos</span>
  </a>
- <a href="/blog/amazon-fba-mexico-requisitos-empaque-completo" class="cat-blog-links__item">
+ <a href="/blog/amazon-fba-mexico-requisitos-empaque-completo/" class="cat-blog-links__item">
  <span class="cat-blog-links__arrow">→</span>
  <span>Amazon FBA México: requisitos 2025</span>
  </a>
  </div>
- <a href="/blog" class="cat-blog-links__more">Ver todos los artículos →</a>
+ <a href="/blog/" class="cat-blog-links__more">Ver todos los artículos →</a>
  </div>
  </section>
 
- <LeadCapture whatsapp={WHATSAPP} title="¿Qué plataforma usas? Te recomendamos la caja exacta en menos de 1 hora" />
+ <LeadCapture title="¿Qué plataforma usas? Te recomendamos la caja exacta en menos de 1 hora" />
 </PageLayout>

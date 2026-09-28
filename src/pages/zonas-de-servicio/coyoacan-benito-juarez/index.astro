@@ -1,26 +1,25 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
-
-const WHATSAPP = "5255XXXXXXXX";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Cajas de Cartón Coyoacán / Benito Juárez — Entrega 48-72 hrs · Fabricante Directo | CADECA";
 const description = "Cajas de cartón corrugado con entrega en 48-72 hrs en Coyoacán / Benito Juárez. Fabricante directo, sin intermediarios. Cajas estándar, a la medida y personalizadas. Cotiza gratis.";
-const canonical   = SITE + "/zonas-de-servicio/coyoacan-benito-juarez";
+const canonical   = SITE + "/zonas-de-servicio/coyoacan-benito-juarez/";
 
 const schema = [
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Service",
     "name": "CADECA — Cajas de Cartón Coyoacán / Benito Juárez",
+    "serviceType": "Venta y entrega de cajas de cartón corrugado",
     "description": description,
     "url": canonical,
-    "areaServed": ["Coyoacán", "Benito Juárez"],
-    "address": { "@type": "PostalAddress", "addressRegion": "Ciudad de México", "addressCountry": "MX" },
-    "priceRange": "$$"
+    "provider": { "@id": "https://cajas-de-carton.com/#org" },
+    "areaServed": ["Coyoacán", "Benito Juárez"]
   },
   {
     "@context": "https://schema.org",
@@ -41,10 +40,9 @@ const schema = [
   canonical={canonical}
   breadcrumbs={[
     { name: "Inicio",            href: "/" },
-    { name: "Zonas de Servicio", href: "/zonas-de-servicio" },
+    { name: "Zonas de Servicio", href: "/zonas-de-servicio/" },
     { name: "Coyoacán / Benito Juárez" },
   ]}
-  whatsapp={WHATSAPP}
 >
 
   {/* ════════ HERO — idéntico al index ════════ */}
@@ -59,9 +57,11 @@ const schema = [
           </h1>
           <p class="hero__intro">Cajas de cartón corrugado y packaging personalizado para e-commerce, marcas independientes y empresas del sur de CDMX. Entrega en 48-72 hrs.</p>
           <div class="hero__ctas">
-            <a href="/cotizar" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
-            <a href={"https://wa.me/" + WHATSAPP + "?text=Hola%2C+necesito+cajas+en+Coyoac%C3%A1n"}
-               class="btn btn--outline btn--lg" target="_blank" rel="noopener">&#x1F4AC; WhatsApp</a>
+            <a href="/cotizar/" class="btn btn--primary btn--lg">Cotizar cajas ahora</a>
+            {HAS_WA && (
+<a href={contactoHref("Hola, necesito cajas en Coyoacán")}
+               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
+)}
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
@@ -157,7 +157,7 @@ const schema = [
             desc="ML · Amazon · Shopify"
             imgSrc="/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif"
             imgAlt="Cajas E-commerce en CDMX — CADECA"
-            href="/catalogo/cajas-ecommerce-mercado-libre"
+            href="/catalogo/cajas-para-ecommerce/mercado-envios/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -165,7 +165,7 @@ const schema = [
             desc="Impresión full color"
             imgSrc="/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif"
             imgAlt="Cajas con Logo en CDMX — CADECA"
-            href="/catalogo/cajas-personalizadas-con-logo"
+            href="/catalogo/cajas-personalizadas-logo/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -173,7 +173,7 @@ const schema = [
             desc="Para tu producto exacto"
             imgSrc="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
             imgAlt="Cajas a la Medida en CDMX — CADECA"
-            href="/catalogo/cajas-a-la-medida"
+            href="/catalogo/cajas-a-la-medida/"
             btnText="Ver detalles"
           />
           <ProductCard
@@ -181,7 +181,7 @@ const schema = [
             desc="Certificado FSC"
             imgSrc="/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif"
             imgAlt="Packaging Ecológico en CDMX — CADECA"
-            href="/catalogo/packaging-ecologico"
+            href="/servicios/packaging-ecologico/"
             btnText="Ver detalles"
           />
       </div>
@@ -230,7 +230,6 @@ const schema = [
   <LeadCapture
     titulo={"Cotiza cajas en Coyoacán / Benito Juárez"}
     subtitulo="Fabricante directo · Cotización en menos de 2 horas · Entrega en 48-72 hrs"
-    whatsapp={WHATSAPP}
   />
 
 </PageLayout>

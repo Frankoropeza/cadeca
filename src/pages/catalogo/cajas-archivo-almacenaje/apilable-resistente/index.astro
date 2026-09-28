@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Apilable Resistente Triple Pared CDMX | CAD-AH-04 | CADECA";
 const description = "Ficha técnica caja apilable resistente triple pared BCB/BCF en CDMX. ECT-51 y ECT-71, máxima compresión. 6 medidas disponibles. MOQ 50 pzas, entrega 48-72 hrs. CADECA fabricante.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Mediana",  lah:"40×30×30",  flauta:"BCB", ect:"ECT-51",vacío:"1.60 kg",máx:"40 kg",  disp:"green",  label:"Stock" },
@@ -86,9 +86,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje"}, {name:"Apilable Resistente"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Archivo y Almacenaje", href:"/catalogo/cajas-archivo-almacenaje/"}, {name:"Apilable Resistente"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja Apilable Resistente Triple Pared", sku:"CAD-AH-04", description:"Caja triple pared BCB/BCF con ECT-51 y ECT-71, máxima resistencia al apilamiento — CADECA CDMX", image:"/img/catalogo/caja-apilable-resistente-triple-pared-cdmx.avif", material:"Cartón kraft virgen corrugado triple pared BCB/BCF", category:"Cajas de Archivo y Almacenaje", moq:"50"}}
 >
@@ -97,8 +96,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-archivo-almacenaje">Archivo y Almacenaje</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-archivo-almacenaje/">Archivo y Almacenaje</a></li>
  <li><span class="current">Apilable Resistente</span></li>
  </ol>
  </div>
@@ -168,9 +167,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AH-04 Apilable Resistente Triple Pared`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AH-04</a>
- <a href="/catalogo/cajas-archivo-almacenaje" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AH-04 Apilable Resistente Triple Pared`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AH-04</a>
+ <a href="/catalogo/cajas-archivo-almacenaje/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -234,6 +232,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AH-04 — Triple Pared Apilable, entrega 48-72 hrs en CDMX" />
+ <LeadCapture title="Cotiza CAD-AH-04 — Triple Pared Apilable, entrega 48-72 hrs en CDMX" />
 
 </PageLayout>

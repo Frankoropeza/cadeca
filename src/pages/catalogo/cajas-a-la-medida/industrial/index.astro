@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas a la Medida Industrial Reforzada CDMX | ECT-44/51 | CAD-AM-01 | CADECA";
 const description = "Ficha técnica cajas a la medida industrial en CDMX. ECT-44 o ECT-51 según carga, hasta 50 kg, CAD gratis 24 hrs, entrega 3-5 días. Para manufactura y distribución. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"S hasta 10kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"10 kg",  disp:"yellow", label:"3-5 días",  hl:false },
@@ -58,9 +58,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida"}, {name:"Industrial Reforzada"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Industrial Reforzada"}]}
  faqItems={[{question:"¿Cómo sé qué ECT necesito para mi producto industrial?", answer:"El ECT (Edge Crush Test) define la resistencia del corrugado. Regla práctica: productos hasta 15 kg → ECT-32; 15-30 kg → ECT-44; 30-50 kg → ECT-51; más de 50 kg → ECT-61 (triple corrugado). Sin embargo, también importa el método de apilamiento: cajas apiladas en tarima 4 niveles necesitan mayor ECT que una caja que va sola. Nuestros asesores realizan el cálculo de BCT (Box Compression Test) estimado gratis para confirmar el ECT correcto para tu aplicación específica."}, {question:"¿Qué son los esquineros de cartón y cuándo se usan con cajas industriales?", answer:"Los esquineros son perfiles de cartón corrugado en forma de ángulo recto de 90° que se colocan en las esquinas verticales de la caja o de la tarima. Aumentan la resistencia al aplastamiento vertical en un 40-60% adicional al ECT de la caja base. Se usan cuando: el producto es pesado y se apila en múltiples niveles, la caja viajará en camión por largas distancias con vibración, o el cliente exige protección de esquinas visible. CADECA los fabrica a la medida sin costo extra en pedidos de 50+ piezas que los incluyan."}]}
  product={{name:"Caja a la Medida Industrial Reforzada", sku:"CAD-AM-01", description:"Caja a la Medida Industrial Reforzada en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif", material:"Cartón doble corrugado BC ECT-44/51 a la medida para uso industrial", category:"Cajas a la Medida", moq:"50"}}
 >
@@ -68,8 +67,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-a-la-medida">Cajas a la Medida</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-a-la-medida/">Cajas a la Medida</a></li>
  <li><span class="current">Industrial Reforzada</span></li>
  </ol>
  </div>
@@ -111,8 +110,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-AM-01 Caja Industrial a la Medida`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-AM-01</a>
- <a href="/catalogo/cajas-a-la-medida" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-AM-01 Caja Industrial a la Medida`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-AM-01</a>
+ <a href="/catalogo/cajas-a-la-medida/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -147,5 +146,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-AM-01 — Diseño CAD gratis en 24 hrs, entrega 3-5 días" />
+ <LeadCapture title="Cotiza CAD-AM-01 — Diseño CAD gratis en 24 hrs, entrega 3-5 días" />
 </PageLayout>

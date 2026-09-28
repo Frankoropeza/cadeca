@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Láminas Cartón Corrugado Simple Flauta C CDMX | ECT-26/32 | CAD-LC-01 | CADECA";
 const description = "Láminas cartón corrugado simple flauta C CDMX. ECT-26/32, hasta 120×240cm, corte a medida. Para protección y embalaje. Desde 100 pzas. CADECA.";
-const WHATSAPP  = "5255XXXXXXXX";
 
 const medidas = [
  { talla:"60×40 cm", ml:"60×40 cm", real:"60×40", flauta:"C",ect:"ECT-32",vacío:"0.09 kg/ud",máx:"—", disp:"green", label:"Stock", hl:false },
@@ -58,9 +58,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado"}, {name:"Láminas Simples Flauta C"}]}
+ breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado/"}, {name:"Láminas Simples Flauta C"}]}
  faqItems={[{question:"¿Cuál es la diferencia entre flauta B y C para láminas?", answer:"Flauta B (3 mm): mayor rigidez puntual, mejor para separadores entre frágiles. Flauta C (4 mm): mejor amortiguación distribuida, menor costo, ideal para protección de superficies grandes, relleno y layer pads."}, {question:"¿Para qué usos industriales son ideales?", answer:"1) Interleaving entre piezas metálicas para evitar rayones. 2) Corner protection dobladas en ángulo. 3) Layer pads entre niveles de tarima. 4) Void fill en cajas de exportación. 5) Surface protection temporal de pisos y cristales. Las más económicas del catálogo."}]}
  product={{name:"Láminas Cartón Corrugado Simple Flauta C", sku:"CAD-LC-01", description:"Láminas Cartón Corrugado Simple Flauta C en CDMX — fabricante directo CADECA", image:"/img/catalogo/laminas-carton-corrugado-simple-cdmx.avif", material:"Láminas cartón corrugado simple flauta C ECT-26/32 kraft corte a medida", category:"Láminas de Cartón Corrugado", moq:"100"}}
 >
@@ -68,8 +67,8 @@ const gallery = [
  <div class="container">
  <ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/laminas-carton-corrugado">Láminas Cartón</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/laminas-carton-corrugado/">Láminas Cartón</a></li>
  <li><span class="current">Láminas Simples Flauta C</span></li>
  </ol>
  </div>
@@ -111,8 +110,8 @@ const gallery = [
  {specs.map(([l, v]) => <tr><td>{l}</td><td>{v}</td></tr>)}
  </tbody></table>
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-LC-01 Láminas Corrugado Simple Flauta C`} target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-LC-01</a>
- <a href="/catalogo/laminas-carton-corrugado" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-LC-01 Láminas Corrugado Simple Flauta C`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-LC-01</a>
+ <a href="/catalogo/laminas-carton-corrugado/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
  </div>
@@ -147,5 +146,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-LC-01 — Láminas simples desde 100 piezas, entrega 3-5 días" />
+ <LeadCapture title="Cotiza CAD-LC-01 — Láminas simples desde 100 piezas, entrega 3-5 días" />
 </PageLayout>

@@ -1,4 +1,5 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
@@ -6,7 +7,6 @@ import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Retail Punto de Venta Display CDMX | CAD-TX-04 | CADECA";
 const description = "Ficha técnica caja display y exhibidor punto de venta en CDMX. Flauta B/C, ECT-32, mostrador, floor stand y pallet display. Impresión full color, MOQ 100 pzas. CADECA fabricante directo.";
-const WHATSAPP = "5255XXXXXXXX";
 
 const medidas = [
  { nombre:"Mostrador Chico",  lah:"25×20×30",  flauta:"B",  ect:"ECT-32",vacío:"0.18 kg",máx:"3 kg",  disp:"green",  label:"Stock" },
@@ -83,9 +83,8 @@ const gallery = [
 <PageLayout
  title={title}
  description={description}
- whatsapp={WHATSAPP}
  pageType="product"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail"},{name:"Retail Punto de Venta"}]}
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Retail Punto de Venta"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
  product={{name:"Caja Retail Punto de Venta Display",sku:"CAD-TX-04",description:"Cajas display y exhibidores punto de venta en cartón corrugado CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-retail-punto-venta-pdv-cdmx.avif",material:"Cartón corrugado flauta B/C/BC con impresión full color CMYK",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
 >
@@ -94,8 +93,8 @@ const gallery = [
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container"><ol>
  <li><a href="/">Inicio</a></li>
- <li><a href="/catalogo">Catálogo</a></li>
- <li><a href="/catalogo/cajas-textil-moda-retail">Textil, Moda y Retail</a></li>
+ <li><a href="/catalogo/">Catálogo</a></li>
+ <li><a href="/catalogo/cajas-textil-moda-retail/">Textil, Moda y Retail</a></li>
  <li><span class="current">Retail Punto de Venta</span></li>
  </ol></div>
  </div>
@@ -164,9 +163,8 @@ const gallery = [
  </table>
 
  <div class="sku-detail__actions">
- <a href={`https://wa.me/${WHATSAPP}?text=Hola, quiero cotizar CAD-TX-04 Display Retail Punto de Venta`}
- target="_blank" rel="noopener" class="btn btn--primary">Cotizar CAD-TX-04</a>
- <a href="/catalogo/cajas-textil-moda-retail" class="btn btn--outline">← Ver categoría</a>
+ <a href={contactoHref(`Hola, quiero cotizar CAD-TX-04 Display Retail Punto de Venta`)} class="btn btn--primary" {...contactoAttrs}>Cotizar CAD-TX-04</a>
+ <a href="/catalogo/cajas-textil-moda-retail/" class="btn btn--outline">← Ver categoría</a>
  </div>
  </div>
 
@@ -231,6 +229,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture whatsapp={WHATSAPP} title="Cotiza CAD-TX-04 — Displays y exhibidores punto de venta, entrega 48-72 hrs CDMX" />
+ <LeadCapture title="Cotiza CAD-TX-04 — Displays y exhibidores punto de venta, entrega 48-72 hrs CDMX" />
 
 </PageLayout>
