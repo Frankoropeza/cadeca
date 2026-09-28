@@ -1,0 +1,113 @@
+---
+// FaqCotizacion.astro — Módulo de dos columnas: preguntas frecuentes (izquierda)
+// y formulario de cotización (derecha). Reutiliza FaqItem (acordeón de BaseLayout)
+// y el envío de src/scripts/lead-form.ts (form[data-lead-form] → /api/lead).
+import FaqItem from "@/components/FaqItem.astro";
+import { CONTACTO } from "@/data/contacto";
+
+export interface Faq { id: string; question: string; answer: string; }
+export interface Props {
+  faqs: Faq[];
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  producto?: string;
+}
+
+const {
+  faqs,
+  eyebrow = "Antes de cotizar",
+  title = "Preguntas frecuentes sobre cajas de cartón",
+  intro = "Tipos de caja, pedidos mínimos, entrega y personalización: lo que más nos preguntan las empresas de CDMX y Estado de México.",
+  producto = "",
+} = Astro.props;
+
+const tipos = [
+  "Cajas de cartón corrugado estándar",
+  "Cajas a la medida",
+  "Cajas personalizadas con logo",
+  "Cajas para envíos y e-commerce",
+  "Cajas para alimentos",
+  "Cajas para regalo",
+  "Cajas para archivo",
+  "Láminas de cartón corrugado",
+  "Varios tipos",
+];
+const cantidades = ["Menos de 50 piezas", "50 – 200 piezas", "200 – 1,000 piezas", "1,000 – 5,000 piezas", "Más de 5,000 piezas"];
+---
+
+<section class="faq-quote" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="faq-quote__grid">
+
+      <div class="faq-quote__faq">
+        <p class="faq-quote__eyebrow">{eyebrow}</p>
+        <h2 id="faq-title" class="faq-quote__title">{title}</h2>
+        <p class="faq-quote__intro">{intro}</p>
+        <div class="faq__list faq-quote__list">
+          {faqs.map((f) => <FaqItem {...f} />)}
+        </div>
+        <p class="faq-quote__more">¿No encuentras tu pregunta? Escríbela en el campo de detalles del formulario y te respondemos en horario hábil.</p>
+      </div>
+
+      <aside class="quote-card" id="cotizar" aria-labelledby="quote-title">
+        <p class="quote-card__eyebrow">Cotización sin compromiso</p>
+        <h3 id="quote-title" class="quote-card__title">Cotiza tus cajas de cartón</h3>
+        <p class="quote-card__lead">Comparte los datos básicos de tu pedido y te enviamos precio, disponibilidad y fecha de entrega.</p>
+
+        <form class="quote-form" data-lead-form data-wa={CONTACTO.whatsapp || undefined} aria-label="Formulario de cotización">
+          <div class="quote-form__row">
+            <label class="quote-form__field">
+              <span class="quote-form__label">Nombre <abbr title="obligatorio">*</abbr></span>
+              <input class="quote-form__control" type="text" name="nombre" required autocomplete="name" />
+            </label>
+            <label class="quote-form__field">
+              <span class="quote-form__label">Empresa</span>
+              <input class="quote-form__control" type="text" name="empresa" autocomplete="organization" />
+            </label>
+          </div>
+          <label class="quote-form__field">
+            <span class="quote-form__label">Teléfono o correo <abbr title="obligatorio">*</abbr></span>
+            <input class="quote-form__control" type="text" name="contacto" required autocomplete="email" inputmode="email" />
+          </label>
+          <div class="quote-form__row">
+            <label class="quote-form__field">
+              <span class="quote-form__label">Tipo de caja <abbr title="obligatorio">*</abbr></span>
+              <select class="quote-form__control" name="tipo" required>
+                <option value="" disabled selected>Selecciona</option>
+                {tipos.map((t) => <option value={t}>{t}</option>)}
+              </select>
+            </label>
+            <label class="quote-form__field">
+              <span class="quote-form__label">Cantidad <abbr title="obligatorio">*</abbr></span>
+              <select class="quote-form__control" name="cantidad" required>
+                <option value="" disabled selected>Selecciona</option>
+                {cantidades.map((c) => <option value={c.replace("–", "-")}>{c}</option>)}
+              </select>
+            </label>
+          </div>
+          <label class="quote-form__field">
+            <span class="quote-form__label">Medidas (largo × ancho × alto, cm)</span>
+            <input class="quote-form__control" type="text" name="medida" placeholder="Ej. 40 × 30 × 25" />
+          </label>
+          <label class="quote-form__field">
+            <span class="quote-form__label">Detalles del pedido</span>
+            <textarea class="quote-form__control quote-form__textarea" name="detalles" rows="3" placeholder="Producto a empacar, peso aproximado, impresión, zona de entrega…"></textarea>
+          </label>
+          <input type="hidden" name="producto" value={producto} />
+          <input type="text" name="sitio_web" tabindex="-1" autocomplete="off" aria-hidden="true" class="lead-capture__hp" />
+          <button type="submit" class="btn btn--primary btn--full quote-form__submit">Solicitar cotización</button>
+          <p class="quote-form__status" data-lead-status role="status" aria-live="polite" hidden></p>
+        </form>
+
+        <ul class="quote-card__points">
+          <li>Asesoría para elegir la caja correcta</li>
+          <li>Pedidos para empresas y negocios</li>
+          <li>Entrega en CDMX y Estado de México</li>
+        </ul>
+        <p class="quote-card__alt">¿Pedido con varias medidas? Usa el <a href="/cotizar/">formulario detallado</a> o visita <a href="/contacto/">contacto</a>.</p>
+      </aside>
+
+    </div>
+  </div>
+</section>

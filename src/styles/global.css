@@ -3561,3 +3561,120 @@ pre, code {
 [data-lead-status][data-estado="ok"]{border-color:#2E7D32;color:#1b5e20;background:#eef7ee}
 [data-lead-status][data-estado="error"]{border-color:#c62828;color:#8e1c1c;background:#fdeeee}
 .cotizar-sidebar__card + .cotizar-sidebar__card{margin-top:var(--spacing-md)}
+
+/* ── FAQ + Cotización (módulo de dos columnas, 2026-09-28) ─────────────
+   Izquierda: preguntas frecuentes (acordeón .faq__*). Derecha: tarjeta de
+   cotización con formulario (form[data-lead-form]). Colores sólidos. */
+.faq-quote { padding: var(--spacing-3xl) 0; background: var(--color-white); }
+.faq-quote__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .faq-quote__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--spacing-3xl); }
+  .quote-card { position: sticky; top: calc(var(--header-h, 80px) + var(--spacing-lg)); }
+}
+.faq-quote__eyebrow,
+.quote-card__eyebrow {
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.faq-quote__title {
+  margin: 0 0 var(--spacing-sm);
+  font-size: clamp(1.6rem, 3vw, var(--font-size-3xl));
+  font-weight: 800;
+  line-height: var(--line-height-tight);
+  color: var(--color-secondary);
+  text-wrap: balance;
+}
+.faq-quote__intro {
+  margin: 0 0 var(--spacing-lg);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  max-width: 60ch;
+}
+.faq-quote__list {
+  max-width: none;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.faq-quote__list .faq__item:last-child { border-bottom: none; }
+.faq-quote__list .faq__question { padding: 1.1rem 0; font-size: var(--font-size-base); line-height: 1.45; }
+.faq-quote__list .faq__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--color-accent); font-size: 1.1rem; font-weight: 700;
+}
+.faq-quote__list .faq__answer p { font-size: var(--font-size-sm); color: var(--color-text); max-width: 68ch; }
+.faq-quote__list .faq__answer a { color: var(--color-primary); font-weight: 600; }
+.faq-quote__more { margin: var(--spacing-md) 0 0; font-size: var(--font-size-sm); color: var(--color-text-light); }
+
+.quote-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+}
+.quote-card__title {
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  line-height: var(--line-height-tight);
+  color: var(--color-secondary);
+}
+.quote-card__lead { margin: 0 0 var(--spacing-lg); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed); color: var(--color-text-light); }
+
+.quote-form { display: flex; flex-direction: column; gap: var(--spacing-md); }
+.quote-form__row { display: grid; grid-template-columns: 1fr; gap: var(--spacing-md); }
+@media (min-width: 560px) { .quote-form__row { grid-template-columns: 1fr 1fr; } }
+.quote-form__field { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+.quote-form__label { font-size: var(--font-size-xs); font-weight: 700; color: var(--color-secondary); letter-spacing: 0.01em; }
+.quote-form__label abbr { color: var(--color-primary); text-decoration: none; }
+.quote-form__control {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
+  font-size: 1rem; /* evita el zoom de iOS */
+  color: var(--color-text);
+  background: var(--color-white);
+  border: 1px solid #CBD5E0;
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.quote-form__control::placeholder { color: #A0AEC0; }
+.quote-form__control:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(224, 88, 0, 0.18); }
+.quote-form__textarea { min-height: 96px; resize: vertical; }
+.quote-form__submit { min-height: 50px; margin-top: var(--spacing-xs); font-size: var(--font-size-base); }
+.quote-form__status { margin: 0; }
+
+.quote-card__points {
+  list-style: none;
+  margin: var(--spacing-lg) 0 0;
+  padding: var(--spacing-md) 0 0;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: 0.4rem;
+}
+.quote-card__points li { position: relative; padding-left: 1rem; font-size: var(--font-size-sm); color: var(--color-text); }
+.quote-card__points li::before {
+  content: ""; position: absolute; left: 0; top: 0.55em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary);
+}
+.quote-card__alt { margin: var(--spacing-md) 0 0; font-size: var(--font-size-xs); color: var(--color-text-light); }
+.quote-card__alt a { color: var(--color-primary); font-weight: 700; }
+
+@media (max-width: 640px) {
+  .faq-quote { padding: var(--spacing-2xl) 0; }
+  .quote-card { padding: var(--spacing-lg); }
+}

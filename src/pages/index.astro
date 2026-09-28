@@ -5,8 +5,7 @@ import SectionHeader  from "@/components/SectionHeader.astro";
 import CategoryCard from "@/components/CategoryCard.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero from "@/components/PageHero.astro";
 
 // ── SEO ──────────────────────────────────────────────
@@ -14,28 +13,6 @@ const title  = "Cajas de Cartón CDMX y Estado de México | CADECA";
 const description = "Proveedor y distribuidor de cajas de cartón en CDMX y Estado de México. Corrugado estándar, a la medida y personalizadas al mayoreo.";
 
 // ── Datos del negocio ─────────────────────────────────
-
-// ── FAQ Schema ────────────────────────────────────────
-const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- { "@type": "Question", "name": "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
- "acceptedAnswer": { "@type": "Answer", "text": "En CADECA puedes cotizar cajas de cartón al mayoreo para la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo." }},
- { "@type": "Question", "name": "¿Qué tipos de cajas de cartón venden?",
- "acceptedAnswer": { "@type": "Answer", "text": "Cajas de cartón corrugado (simple, doble y triple pared), personalizadas con logo, para regalo, para envíos y e-commerce, para comida y alimentos, para archivo, láminas de cartón corrugado y cajas a la medida." }},
- { "@type": "Question", "name": "¿Cuál es el pedido mínimo de cajas de cartón?",
- "acceptedAnswer": { "@type": "Answer", "text": "Para cajas estándar no hay mínimo. Para cajas a la medida desde 50 piezas. Para personalizadas con logo desde 100 piezas." }},
- { "@type": "Question", "name": "¿Hacen entregas a domicilio en CDMX y Estado de México?",
- "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos entregas en CDMX y Estado de México. La fecha depende del volumen, la zona y el tipo de caja." }},
- { "@type": "Question", "name": "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
- "acceptedAnswer": { "@type": "Answer", "text": "Sí, manejamos medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. La fecha de entrega se confirma según el pedido y la zona." }},
- { "@type": "Question", "name": "¿Ofrecen cajas de cartón ecológicas o recicladas?",
- "acceptedAnswer": { "@type": "Answer", "text": "Sí. Contamos con cajas de material reciclado posconsumo y tintas base agua. Si necesitas cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante." }},
- { "@type": "Question", "name": "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
- "acceptedAnswer": { "@type": "Answer", "text": "Llena el formulario o escríbenos por WhatsApp con las medidas (largo × ancho × alto), cantidad y archivo de diseño. Te respondemos en horario hábil con precio y prueba de diseño sin costo cuando aplique." }},
- ],
-};
 
 // ── Datos de contenido ────────────────────────────────
 // Categorías principales — orden por demanda de búsqueda en México (Ahrefs, sep-2026):
@@ -209,37 +186,37 @@ const faqs = [
  {
  id:  "1",
  question: "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
- answer:  "En CADECA puedes comprar o cotizar cajas de cartón al mayoreo para la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Contáctanos por WhatsApp para conocer precio, tiempo de entrega y opciones de pago.",
+ answer:  "En CADECA cotizas cajas de cartón al mayoreo y menudeo para la Ciudad de México y el Estado de México: corrugado estándar, cajas a la medida y personalizadas con logo. Envía el formulario con el tipo de caja y la cantidad aproximada y te respondemos en horario hábil con precio, disponibilidad y fecha de entrega.",
  },
  {
  id:  "2",
  question: "¿Qué tipos de cajas de cartón venden?",
- answer:  "Manejamos 8 categorías principales: (1) cajas de cartón corrugado de simple, doble y triple pared; (2) cajas personalizadas con logo; (3) cajas de cartón para regalo; (4) cajas para envíos y e-commerce; (5) cajas para comida y alimentos; (6) cajas para archivo; (7) láminas de cartón corrugado; y (8) cajas a la medida.",
+ answer:  "Surtimos ocho líneas: cajas de cartón corrugado de simple, doble y triple pared; cajas personalizadas con logo; cajas para regalo; cajas para envíos y e-commerce; cajas para alimentos; cajas para archivo; láminas de cartón corrugado y cajas a la medida. Cada línea tiene fichas técnicas en el <a href=\"/catalogo/\">catálogo</a>.",
  },
  {
  id:  "3",
  question: "¿Cuál es el pedido mínimo de cajas de cartón?",
- answer:  "Para cajas estándar no hay mínimo — puedes pedir desde 1 pieza. Para cajas a la medida el mínimo es de 50 piezas. Para personalizadas con logo el mínimo es de 100 piezas. Te asesoramos según el volumen y presupuesto de tu negocio.",
+ answer:  "En cajas estándar puedes pedir desde una pieza. Las cajas a la medida se cotizan desde 50 piezas y las personalizadas con logo desde 100 piezas. Si tu volumen varía, te ayudamos a definir un pedido acorde a tu ritmo de venta.",
  },
  {
  id:  "4",
  question: "¿Hacen entregas a domicilio en CDMX y Estado de México?",
- answer:  "Sí, entregamos en toda la Ciudad de México y Estado de México. Cajas estándar en 24 a 48 horas, personalizadas o a la medida en 3 a 5 días hábiles. Tenemos rutas establecidas para Naucalpan, Tlalnepantla, Ecatepec, Toluca y más.",
+ answer:  "Sí. Coordinamos entregas a negocio, bodega o domicilio en las alcaldías de la Ciudad de México y en los principales municipios del Estado de México. La fecha se confirma al cotizar, según el volumen, el tipo de caja y la zona de entrega.",
  },
  {
  id:  "5",
  question: "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
- answer:  "Sí. Tenemos cajas estándar en medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Pedidos desde 50 piezas; la entrega se coordina según el pedido y la zona.",
+ answer:  "Sí. Manejamos medidas compatibles con Mercado Envíos, Amazon México y las principales paqueterías, además de cajas a la medida para reducir el peso volumétrico. Consulta las opciones en <a href=\"/catalogo/cajas-para-ecommerce/\">cajas para envíos y e-commerce</a>.",
  },
  {
  id:  "6",
  question: "¿Ofrecen cajas de cartón ecológicas o recicladas?",
- answer:  "Sí. Contamos con cajas de material reciclado posconsumo e impresión con tintas base agua. Si necesitas cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante.",
+ answer:  "Sí. Surtimos cajas de cartón reciclado e impresión con tintas base agua. Si tu proyecto requiere cartón con certificación FSC, lo indicas al cotizar y confirmamos la disponibilidad con el fabricante.",
  },
  {
  id:  "7",
  question: "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
- answer:  "Es muy sencillo: llena el formulario de cotización o escríbenos por WhatsApp indicando las medidas (largo × ancho × alto en cm), la cantidad aproximada y si tienes archivo de diseño (PDF, AI o PNG). Te respondemos en horario hábil con precio y prueba de diseño digital sin costo cuando aplique.",
+ answer:  "Indica en el formulario las medidas (largo × ancho × alto en cm), la cantidad aproximada y si ya cuentas con archivo de diseño (PDF, AI o PNG). Te respondemos en horario hábil con el precio y, cuando aplica, una prueba digital del diseño sin costo.",
  },
 ];
 
@@ -346,28 +323,10 @@ const accesos = [
  </div>
  </section>
 
- <!-- FAQ -->
- <section class="faq" id="faq" aria-labelledby="faq-title">
- <div class="container">
- <SectionHeader
- id="faq-title"
- twoCol
- title="Preguntas Frecuentes sobre Cajas de Cartón en CDMX"
- subtitle="Resolvemos las dudas más comunes sobre tipos de cajas, pedidos mínimos, entrega y personalización"
- >
- <p>Entendemos que elegir el empaque correcto implica decisiones técnicas importantes: resistencia, medidas, tipo de corrugado y logística. Aquí respondemos las consultas más frecuentes de nuestros clientes.</p>
- <p>Si tu pregunta no aparece aquí, nuestro equipo puede orientarte a través del formulario de cotización en horario hábil.</p>
- </SectionHeader>
-
- <div class="faq__list">
- {faqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
+ <!-- Preguntas frecuentes + cotización -->
+ <FaqCotizacion faqs={faqs} />
 
  </main>
-
- <!-- Lead Capture -->
 
  <!-- Sección Zonas en Homepage -->
  <section class="home-zonas">
@@ -406,6 +365,5 @@ const accesos = [
  </div>
  </section>
 
- <LeadCapture />
 
 </PageLayout>
