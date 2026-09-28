@@ -33,14 +33,29 @@ const specs = [
 
 const faqs = [
  {
- id:"pl05-f1",
- question:"¿Qué necesito para empezar mi primera orden de cajas personalizadas?",
- answer:"Solo necesitas: tu logotipo en formato vectorizado (AI, EPS o PDF), la medida aproximada de tu producto (largo, ancho, alto), la cantidad que necesitas (mínimo 100 piezas), y el color o colores de tu marca (código Pantone si lo tienes, o una referencia visual). Si no tienes el logo vectorizado, nuestro equipo lo vectoriza sin costo en 24 horas. Si no estás seguro de la medida, te la calculamos gratis. El proceso desde primer contacto hasta entrega toma 5-7 días hábiles.",
+ id: "pl05-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas personalizadas para pequeña empresa?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
- id:"pl05-f2",
- question:"¿Puedo cambiar el diseño de mis cajas en el siguiente pedido?",
- answer:"Sí. Cada pedido puede tener un diseño diferente. El costo de cambio de diseño (nuevas placas de impresión) se aplica solo cuando cambia el arte o los colores; si solo cambias la cantidad sin cambiar el diseño, no hay costo adicional de fotopolímero. Recomendamos estandarizar el diseño en los primeros 2-3 pedidos para maximizar la inversión en placas (que se amortizan en 3-4 reórdenes del mismo diseño).",
+ id: "pl05-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas personalizadas para pequeña empresa?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "pl05-f3",
+ question: "¿Se pueden personalizar cajas personalizadas para pequeña empresa con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "pl05-f4",
+ question: "¿Cómo debo almacenar cajas personalizadas para pequeña empresa antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "pl05-f5",
+ question: "¿Qué datos necesito para cotizar cajas personalizadas para pequeña empresa?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -59,7 +74,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo/"}, {name:"Pequeña Empresa"}]}
- faqItems={[{question:"¿Qué necesito para empezar mi primera orden de cajas personalizadas?", answer:"Solo necesitas: tu logotipo en formato vectorizado (AI, EPS o PDF), la medida aproximada de tu producto (largo, ancho, alto), la cantidad que necesitas (mínimo 100 piezas), y el color o colores de tu marca (código Pantone si lo tienes, o una referencia visual). Si no tienes el logo vectorizado, nuestro equipo lo vectoriza sin costo en 24 horas. Si no estás seguro de la medida, te la calculamos gratis. El proceso desde primer contacto hasta entrega toma 5-7 días hábiles."}, {question:"¿Puedo cambiar el diseño de mis cajas en el siguiente pedido?", answer:"Sí. Cada pedido puede tener un diseño diferente. El costo de cambio de diseño (nuevas placas de impresión) se aplica solo cuando cambia el arte o los colores; si solo cambias la cantidad sin cambiar el diseño, no hay costo adicional de fotopolímero. Recomendamos estandarizar el diseño en los primeros 2-3 pedidos para maximizar la inversión en placas (que se amortizan en 3-4 reórdenes del mismo diseño)."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Cajas Cartón Personalizadas Pequeña Empresa", sku:"CAD-PL-05", description:"Cajas Cartón Personalizadas Pequeña Empresa en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-personalizadas-pequenas-empresas-100-piezas.avif", material:"Cartón corrugado simple ECT-32 impresión flexo 1-2 colores para PyME", category:"Cajas de Cartón Personalizadas con Logo", moq:"100"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -79,7 +94,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas personalizadas para pequeñas empresas <span>con logo</span>"
    desc="Cajas personalizadas para pequeñas empresas que requieren integrar logo en pedidos desde 100 piezas. Sirven para productos, tiendas y envíos en CDMX y Estado de México."
-   desc2="Se surte en cartón corrugado simple, flauta C y ECT-32 con impresión flexográfica de uno o dos colores. Hay medidas estándar y opciones a la medida desde 100 piezas, para que las <strong>cajas con logo</strong> correspondan al tamaño y uso de cada producto.||CADECA coordina el suministro como proveedor para negocios pequeños. Comparte medidas, cantidad, uso y zona de entrega al solicitar cotización; te asesoramos para elegir la flauta, el tipo de cartón y la impresión de acuerdo con tu pedido."
+   desc2="Se surte en cartón corrugado simple, flauta C y ECT-32 con impresión flexográfica de uno o dos colores. Hay medidas estándar y opciones a la medida desde 100 piezas, para que las <strong>cajas con logo</strong> correspondan al tamaño y uso de cada producto.||Para un negocio pequeño, el tamaño del producto y el arte del logo definen si conviene medida estándar o a la medida. Comparte dimensiones del artículo, archivo del logo, uno o dos colores de impresión y cantidad; CADECA revisa flauta C y ECT-32."
  />
 
  <main id="contenido-principal" role="main">

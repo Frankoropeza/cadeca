@@ -32,14 +32,29 @@ const specs = [
 
 const faqs = [
  {
- id:"pl04-f1",
- question:"¿Qué es el barniz UV spot y cuándo se usa en packaging?",
- answer:"El barniz UV spot es una capa de barniz transparente de altísimo brillo aplicada solo en zonas específicas del diseño (spot = punto), como el logo, el nombre de la marca o un elemento decorativo. El contraste entre el área brillante y el resto impreso crea un efecto visual y táctil muy distintivo. Se cura con luz ultravioleta en milisegundos. Es el acabado más solicitado en perfumería, cosméticos, chocolates premium y electrónica de consumo porque añade percepción de valor al packaging sin cambiar el diseño base.",
+ id: "pl04-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas con acabados especiales?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
- id:"pl04-f2",
- question:"¿Cuándo vale la pena invertir en laminado mate o brillante?",
- answer:"El laminado (film de polipropileno aplicado por calor sobre el impreso) protege la impresión contra humedad, rozaduras y manipulación, y mejora el aspecto visual. El brillante amplifica los colores y da sensación de lujo accesible; el mate da una apariencia sofisticada y moderna muy usada en moda, tecnología y gastronomía premium. Vale la pena cuando: el producto tiene precio de venta mayor a 200 pesos y el packaging forma parte de la decisión de compra; cuando el producto será exhibido en punto de venta; o cuando el cliente final recibirá la caja directamente (e-commerce premium, gifts).",
+ id: "pl04-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas con acabados especiales?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "pl04-f3",
+ question: "¿Se pueden personalizar cajas con acabados especiales con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "pl04-f4",
+ question: "¿Cómo debo almacenar cajas con acabados especiales antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "pl04-f5",
+ question: "¿Qué datos necesito para cotizar cajas con acabados especiales?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -58,7 +73,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo/"}, {name:"Acabados Especiales"}]}
- faqItems={[{question:"¿Qué es el barniz UV spot y cuándo se usa en packaging?", answer:"El barniz UV spot es una capa de barniz transparente de altísimo brillo aplicada solo en zonas específicas del diseño (spot = punto), como el logo, el nombre de la marca o un elemento decorativo. El contraste entre el área brillante y el resto impreso crea un efecto visual y táctil muy distintivo. Se cura con luz ultravioleta en milisegundos. Es el acabado más solicitado en perfumería, cosméticos, chocolates premium y electrónica de consumo porque añade percepción de valor al packaging sin cambiar el diseño base."}, {question:"¿Cuándo vale la pena invertir en laminado mate o brillante?", answer:"El laminado (film de polipropileno aplicado por calor sobre el impreso) protege la impresión contra humedad, rozaduras y manipulación, y mejora el aspecto visual. El brillante amplifica los colores y da sensación de lujo accesible; el mate da una apariencia sofisticada y moderna muy usada en moda, tecnología y gastronomía premium. Vale la pena cuando: el producto tiene precio de venta mayor a 200 pesos y el packaging forma parte de la decisión de compra; cuando el producto será exhibido en punto de venta; o cuando el cliente final recibirá la caja directamente (e-commerce premium, gifts)."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Cartón Acabados Especiales Barniz UV Laminado", sku:"CAD-PL-04", description:"Caja Cartón Acabados Especiales Barniz UV Laminado en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif", material:"Cartón corrugado con acabados UV laminado mate brillante troquelado", category:"Cajas de Cartón Personalizadas con Logo", moq:"500"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -78,7 +93,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas con acabados especiales <span>para marca</span>"
    desc="Cajas con acabados especiales para cosmética, productos de regalo y marcas que buscan destacar su presentación. Integran opciones de impresión y terminado para pedidos en CDMX."
-   desc2="Admite barniz UV selectivo o total, laminado mate o brillante, troquelado y relieve seco. Estas <strong>cajas de lujo</strong> se pueden aplicar a empaques con impresión CMYK para cosméticos, regalos y productos que requieren una presentación cuidada.||CADECA surte como proveedor según las especificaciones de cada proyecto. Comparte medidas, cantidad, uso y zona de entrega para cotizar; te asesoramos sobre el cartón, la impresión y el acabado especial que mejor corresponda con el empaque."
+   desc2="Admite barniz UV selectivo o total, laminado mate o brillante, troquelado y relieve seco. Estas <strong>cajas de lujo</strong> se pueden aplicar a empaques con impresión CMYK para cosméticos, regalos y productos que requieren una presentación cuidada.||Para acabados especiales, el efecto visual y el tipo de producto definen barniz, laminado o relieve. Comparte medidas de la caja, arte CMYK, acabado que buscas y cantidad del proyecto; CADECA revisa la combinación de cartón, impresión y troquelado."
  />
 
  <main id="contenido-principal" role="main">

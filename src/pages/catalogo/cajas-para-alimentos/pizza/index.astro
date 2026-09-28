@@ -44,6 +44,9 @@ const faqs = [
  question:"¿Es mejor liner blanco o kraft marrón para cajas de pizza?",
  answer:"Blanco: mejor presentación, colores vivos, ideal para cadenas premium. Kraft: más económico, misma higiene food-grade, ideal para pizzerías artesanales. Para impresión: kraft acepta tintas oscuras bien; colores claros requieren liner blanco.",
  },
+ { id:"al01-f3", question:"¿Cómo elegir la medida de caja para pizza?", answer:"La dimensión interior debe ser mayor al diámetro de la pizza ya horneada y considerar la altura de la orilla o toppings. Así se reduce el contacto con la tapa y se facilita el acomodo." },
+ { id:"al01-f4", question:"¿Qué tipo de corrugado conviene para cajas de pizza?", answer:"La elección depende del tamaño, peso, nivel de humedad y forma de despacho. El kraft y el liner blanco ofrecen opciones de presentación distintas, mientras la resistencia se ajusta a la carga." },
+ { id:"al01-f5", question:"¿Qué información debo enviar para cotizar cajas para pizza?", answer:"Envía el formulario con diámetro, altura, cantidad, tipo de pizza y necesidad de impresión. También indica si la caja llevará ventilación o un formato especial para revisar la configuración disponible." },
 ];
 
 const mainImg = "/img/catalogo/cajas-pizza-corrugado-doble-cdmx.avif";
@@ -61,7 +64,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Alimentos", href:"/catalogo/cajas-para-alimentos/"}, {name:"Cajas para Pizza"}]}
- faqItems={[{question:"¿Qué medida de caja necesito para una pizza de 33 cm?", answer:"Para 33 cm el interior debe ser 34×34 cm (1 cm extra por lado). Altura 5 cm estándar, 6 cm para orilla rellena, 7-8 cm para decoración alta. Confirma la altura de tu pizza en frío antes de hacer el pedido."}, {question:"¿Es mejor liner blanco o kraft marrón para cajas de pizza?", answer:"Blanco: mejor presentación, colores vivos, ideal para cadenas premium. Kraft: más económico, misma higiene food-grade, ideal para pizzerías artesanales. Para impresión: kraft acepta tintas oscuras bien; colores claros requieren liner blanco."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja para Pizza Food Grade", sku:"CAD-AL-01", description:"Caja para Pizza Food Grade en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-pizza-corrugado-doble-cdmx.avif", material:"Cartón corrugado simple food-grade pizza", category:"Cajas para Alimentos", moq:"100"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -81,7 +84,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para pizza <span>con ventilación</span>"
    desc="Cajas para pizza de 20 a 45 cm que ayudan a organizar la entrega y presentación del producto. Se cotizan para pizzerías según diámetro, cantidad e impresión requerida."
-   desc2="La configuración usa corrugado ECT-32, liner kraft marrón o blanco y ventilación antivapor opcional para formatos de 20 a 45 cm. Las <strong>cajas para pizza personalizadas</strong> pueden llevar impresión y definirse según diámetro, tipo de cierre y presentación.||CADECA coordina el surtido con talleres aliados al confirmar medidas, cantidad, uso y zona de entrega. Indica el diámetro, volumen de pedido y necesidad de impresión para recibir asesoría sobre cartón, ventilación y formato de caja."
+   desc2="La configuración usa corrugado ECT-32, liner kraft marrón o blanco y ventilación antivapor opcional para formatos de 20 a 45 cm. Las <strong>cajas para pizza personalizadas</strong> pueden llevar impresión y definirse según diámetro, tipo de cierre y presentación.||Para elegir una caja de pizza, el diámetro y la ventilación antivapor determinan el formato y el cierre. Indica diámetro de la pizza, altura, tipo de masa, cantidad y si llevará impresión; CADECA revisa kraft, ventilación y presentación para cotizar."
  />
 
  <main id="contenido-principal" role="main">

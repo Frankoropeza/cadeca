@@ -24,31 +24,27 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿De verdad es gratis la asesoría?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, completamente gratuita. No hay costo oculto ni compromiso de compra. Nuestro objetivo es que elijas la caja correcta." } },
-    { "@type": "Question", "name": "¿Qué información necesito tener lista?", "acceptedAnswer": { "@type": "Answer", "text": "Idealmente: dimensiones del producto, peso, tipo de almacenaje y destino de envío. Con eso es suficiente para empezar." } },
-    { "@type": "Question", "name": "¿Cuánto tarda en responder?", "acceptedAnswer": { "@type": "Answer", "text": "Te respondemos en horario hábil de lunes a sábado de 8:00 a 20:00." } },
-    { "@type": "Question", "name": "¿Puedo pedir asesoría para un solo producto?", "acceptedAnswer": { "@type": "Answer", "text": "Por supuesto. La asesoría aplica para cualquier volumen, desde un producto hasta una línea completa." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
  {
   "question": "¿De verdad es gratis la asesoría?",
-  "answer": "Sí, completamente gratuita. No hay costo oculto ni compromiso de compra. Nuestro objetivo es que elijas la caja correcta."
+  "answer": "La asesoría se ofrece sin costo para revisar las necesidades de empaque antes de cotizar. Comparte las características del producto, su manejo y el destino para evaluar medidas, flauta, resistencia ECT y sellado con base en el uso previsto."
  },
  {
   "question": "¿Qué información necesito tener lista?",
-  "answer": "Idealmente: dimensiones del producto, peso, tipo de almacenaje y destino de envío. Con eso es suficiente para empezar."
+  "answer": "Ten disponibles las dimensiones y peso del producto, tipo de almacenaje, forma de envío y cantidad requerida. También ayuda indicar si necesita impresión, apilado o protección adicional, porque esos factores influyen en la estructura y resistencia del cartón."
  },
  {
   "question": "¿Cuánto tarda en responder?",
-  "answer": "Te respondemos en horario hábil de lunes a sábado de 8:00 a 20:00."
+  "answer": "La solicitud se revisa en horario hábil con la información disponible del producto y del pedido. Si requiere varias medidas, impresión o una estructura especial, pueden ser necesarias precisiones técnicas antes de confirmar las alternativas de cotización."
  },
  {
   "question": "¿Puedo pedir asesoría para un solo producto?",
-  "answer": "Por supuesto. La asesoría aplica para cualquier volumen, desde un producto hasta una línea completa."
- }
+  "answer": "La asesoría puede partir de un producto o de varias referencias. Comparte sus dimensiones, peso, forma de manejo y destino para revisar qué combinación de medidas, flauta, resistencia ECT y sellado corresponde al uso previsto."
+ },
+ { "question": "¿Cómo se elige la flauta para una caja de cartón?", "answer": "La flauta se define según el peso, fragilidad, apilado y forma de traslado del producto. Las flautas B, C y E ofrecen perfiles distintos de rigidez y amortiguación; la selección debe considerar también las dimensiones y el tipo de sellado." }
 ];
 ---
 
@@ -70,7 +66,7 @@ const faqsModulo = [
     titleHtml={true}
     title="Asesoría de empaque <span>para tu producto</span>"
     desc="Asesoría de empaque para elegir la caja de cartón según producto, peso y manejo. Revisamos flauta, calibre, medidas, resistencia ECT y tipo de sellado antes de cotizar."
-    desc2="La <strong>asesoría de empaque</strong> revisa el producto, su almacenaje y destino para definir dimensiones, flauta, calibre y sellado. Con esos datos es posible <strong>elegir caja de cartón</strong> con la resistencia necesaria y evitar una especificación que no corresponda al uso.||CADECA coordina alternativas con talleres y fabricantes aliados como proveedor. Comparte medidas, cantidad, uso y zona de entrega; te orientamos sobre la <strong>resistencia ECT</strong> y la caja disponible para cotizar."
+    desc2="La <strong>asesoría de empaque</strong> revisa el producto, su almacenaje y destino para definir dimensiones, flauta, calibre y sellado. Con esos datos es posible <strong>elegir caja de cartón</strong> con la resistencia necesaria y evitar una especificación que no corresponda al uso.||Para definir <strong>resistencia ECT</strong>, importan el peso, almacenamiento y destino del producto. Comparte dimensiones y peso de la pieza, tipo de estiba, método de sellado y recorrido previsto; CADECA revisa flauta, calibre y estructura antes de cotizar."
   />
 
   {/* ════════ BENEFICIOS ════════ */}

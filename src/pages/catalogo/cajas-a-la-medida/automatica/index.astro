@@ -42,6 +42,9 @@ const faqs = [
  question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?",
  answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos.",
  },
+ { id:"am05-f3", question:"¿Qué datos necesito para cotizar cajas para una línea automática?", answer:"Indica las dimensiones internas, peso del producto, estilo de caja y la operación de formado y cerrado de tu línea. También ayuda compartir la tolerancia requerida y el volumen previsto para revisar la alternativa de corrugado y troquelado." },
+ { id:"am05-f4", question:"¿Cómo influye la flauta en una caja para empaque automático?", answer:"La flauta define parte del espesor, rigidez y amortiguación de la caja. La elección entre pared simple, doble o microcorrugado se revisa junto con el peso, las guías de la maquinaria y las condiciones de manejo del producto." },
+ { id:"am05-f5", question:"¿Se puede imprimir una caja para maquinaria de empaque automática?", answer:"La impresión puede incorporarse cuando no interfiera con las zonas de pegado, troquel o lectura del proceso. Comparte el arte y las caras que requieren identificación en el formulario para valorar el método y número de tintas adecuados." },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif";
@@ -59,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Automática Alta Velocidad"}]}
- faqItems={[{question:"¿Qué tolerancias dimensionales necesita una línea de empaque automática?", answer:"Las líneas automáticas modernas (Bosch, IWK, Marchesini, Romaco) operan con tolerancias de ±0.5mm a ±1mm en largo, ancho y alto de la caja. Una variación mayor causa atascamientos, mal sellado del flap, paros no programados y cajas dañadas. Las cajas estándar de fábrica tienen tolerancias de ±2-3mm, lo que es insuficiente para velocidades de 80+ cajas por minuto. Nuestro CAD-AM-05 se fabrica con control de tolerancias ±0.5mm y se entrega con muestra de preproducción para validar en tu línea antes del pedido completo."}, {question:"¿Cuál es la diferencia entre estilo RSC y auto-erect (crash-lock) para líneas automáticas?", answer:"RSC (Regular Slotted Container) es el estilo más común: cuatro solapas superiores e inferiores que se doblan y cierran. Requiere que la máquina doble y cierre cada solapa secuencialmente. Es el estilo más económico. Auto-erect o crash-lock tiene el fondo preplegado en la fábrica que se abre automáticamente al presionarlo (como un cubo de origami), eliminando el paso de cerrar el fondo en la línea. Esto aumenta la velocidad de la línea hasta un 30-40% y reduce los atascamientos en el fondo. Es más caro per pieza pero reduce el costo operativo total en volúmenes altos."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Automática Alta Velocidad Línea de Empaque", sku:"CAD-AM-05", description:"Caja Automática Alta Velocidad Línea de Empaque en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-medida-automatica-alta-velocidad-cdmx.avif", material:"Cartón corrugado tolerancia ±0.5mm para líneas automáticas de empaque", category:"Cajas a la Medida", moq:"500"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -79,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para empacadoras <span>automáticas</span>"
    desc="Cajas para empacadoras automáticas con tolerancias de ±0.5 mm en todos los ejes. Son una alternativa para operaciones que requieren formatos RSC o auto-erect crash-lock."
-   desc2="Para una <strong>formadora automática</strong>, se consideran formatos RSC y auto-erect crash-lock, además de la tolerancia de ±0.5 mm. Estas variables permiten revisar la compatibilidad con equipos Bosch, IWK, Marchesini o Romaco y con el flujo de la línea de empaque.||CADECA surte como proveedor con base en medidas, cantidad, uso y zona de entrega. Comparte los datos de la empacadora, el producto y su manejo para recibir asesoría al elegir la caja y definir la alternativa que se cotiza para la operación."
+   desc2="Para una <strong>formadora automática</strong>, se consideran formatos RSC y auto-erect crash-lock, además de la tolerancia de ±0.5 mm. Estas variables permiten revisar la compatibilidad con equipos Bosch, IWK, Marchesini o Romaco y con el flujo de la línea de empaque.||Para una <strong>formadora automática</strong>, el formato RSC o crash-lock y la tolerancia de ±0.5 mm determinan la compatibilidad con la línea. Para cotizar, envía el modelo de empacadora, dimensiones del producto, formato de caja y ritmo de operación; CADECA revisa la alternativa disponible."
  />
 
  <main id="contenido-principal" role="main">

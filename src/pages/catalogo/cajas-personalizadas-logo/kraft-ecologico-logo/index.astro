@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-pl-11-f1", question:"¿La certificación FSC tiene un costo adicional?", answer:"Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. Cualquier costo o documentación específica se confirma en la cotización." },
- { id:"cad-pl-11-f2", question:"¿El kraft reciclado es igual de resistente que el kraft virgen?", answer:"La resistencia ECT-32 es la misma que en kraft virgen estándar. Donde puede diferir es en el aspecto: el kraft reciclado tiene más variaciones en el tono y puede mostrar pequeñas inclusiones de fibra, lo que en realidad muchas marcas usan como parte de su estética sustentable. Si necesitas homogeneidad perfecta de color, el kraft virgen es mejor opción." },
- { id:"cad-pl-11-f3", question:"¿Puedo presumir la certificación FSC en mi packaging?", answer:"Si el material disponible cuenta con certificación FSC, confirmamos contigo la documentación y las condiciones de uso del logo antes de imprimirlo en la caja." },
+ {
+ id: "cad-pl-11-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas kraft con logo?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-pl-11-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas kraft con logo?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-pl-11-f3",
+ question: "¿Se pueden personalizar cajas kraft con logo con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-pl-11-f4",
+ question: "¿Cómo debo almacenar cajas kraft con logo antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-pl-11-f5",
+ question: "¿Qué datos necesito para cotizar cajas kraft con logo?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja Personalizada Kraft Ecológico con Logo"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Personalizada Kraft Ecológico con Logo",sku:"CAD-PL-11",description:"Caja personalizada en kraft reciclado para marcas con imagen sustentable. La disponibilidad de FSC se confirma al cotizar. Logo 1–2 colores, desde 200 piezas en CDMX.",image:gallery[0].src,material:"CAD-PL-11",category:"Cajas Personalizadas con Logo",moq:"200 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -60,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas kraft personalizadas <span>con logo</span>"
    desc="Cajas kraft personalizadas para marcas que buscan integrar logo y una presentación de papel reciclado. Son una opción para empaques y envíos en CDMX y Estado de México."
-   desc2="Estas cajas usan kraft reciclado postconsumo con impresión de uno o dos colores mediante tintas a base de agua. Con ECT-32, las <strong>cajas ecológicas con logo</strong> conservan las variaciones naturales del papel y se adaptan a proyectos que requieren una imagen de material reciclado.||CADECA coordina el suministro como proveedor de cajas kraft personalizadas. Indica medidas, cantidad, uso y zona de entrega al cotizar; te asesoramos para definir el cartón, la impresión y las condiciones del pedido según tu empaque."
+   desc2="Estas cajas usan kraft reciclado postconsumo con impresión de uno o dos colores mediante tintas a base de agua. Con ECT-32, las <strong>cajas ecológicas con logo</strong> conservan las variaciones naturales del papel y se adaptan a proyectos que requieren una imagen de material reciclado.||Para kraft con logo, el número de tintas, el área de impresión y el peso del producto definen la propuesta. Comparte dimensiones interiores, peso, archivo de arte y colores requeridos; CADECA revisa el cartón ECT-32 y el formato de impresión."
  />
 
  <main id="contenido-principal" role="main">

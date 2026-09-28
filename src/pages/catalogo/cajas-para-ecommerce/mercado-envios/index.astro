@@ -37,13 +37,16 @@ const faqs = [
  {
  id:"ec01-f1",
  question:"¿Las medidas de Mercado Envíos cambian con frecuencia?",
- answer:"Mercado Libre actualiza ocasionalmente las especificaciones de Mercado Envíos. En CADECA monitoreamos estos cambios y actualizamos nuestro stock conforme las nuevas medidas oficiales. Si tienes dudas sobre si las medidas que compraste siguen siendo válidas, escríbenos por WhatsApp con la talla y verificamos la especificación vigente sin costo.",
+ answer:"Las especificaciones de plataformas pueden cambiar, por lo que conviene revisarlas antes de preparar un envío. Comparte la talla, medidas y peso mediante el formulario para orientar la selección de caja conforme a tu operación.",
  },
  {
  id:"ec01-f2",
  question:"¿Puedo usar estas cajas con otras paqueterías además de Mercado Envíos?",
  answer:"Sí. Las medidas de Mercado Envíos también son compatibles con las principales paqueterías del mercado: Estafeta, J&T, DHL y Sendex. El doble corrugado ECT-44 cumple los requerimientos de resistencia de todas estas paqueterías. La única restricción es Amazon FBA, que tiene sus propias medidas específicas — para Amazon te recomendamos el producto CAD-EC-02.",
  },
+ { id:"ec01-f3", question:"¿Cómo elegir la talla de caja para Mercado Envíos?", answer:"Mide el producto ya empacado y compara sus dimensiones con la talla de caja disponible. La elección debe dejar espacio para protección interior sin permitir que el contenido se desplace durante el traslado." },
+ { id:"ec01-f4", question:"¿Qué resistencia necesito en cajas para Mercado Envíos?", answer:"La resistencia se revisa con el peso, tamaño y forma de apilado del producto. El ECT es una medida de compresión del corrugado que ayuda a comparar materiales para distintas necesidades de manejo." },
+ { id:"ec01-f5", question:"¿Qué debo enviar para cotizar cajas para Mercado Envíos?", answer:"Envía el formulario con talla o medidas, cantidad, peso y tipo de producto. Indica si necesitas impresión o separadores para orientar la selección de corrugado y formato." },
 ];
 
 const mainImg = "/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif";
@@ -61,7 +64,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce/"}, {name:"Mercado Envíos"}]}
- faqItems={[{question:"¿Las medidas de Mercado Envíos cambian con frecuencia?", answer:"Mercado Libre actualiza ocasionalmente las especificaciones de Mercado Envíos. En CADECA monitoreamos estos cambios y actualizamos nuestro stock conforme las nuevas medidas oficiales. Si tienes dudas sobre si las medidas que compraste siguen siendo válidas, escríbenos por WhatsApp con la talla y verificamos la especificación vigente sin costo."}, {question:"¿Puedo usar estas cajas con otras paqueterías además de Mercado Envíos?", answer:"Sí. Las medidas de Mercado Envíos también son compatibles con Estafeta, J&T, DHL y Sendex. El doble corrugado ECT-44 cumple los requerimientos de resistencia de todas estas paqueterías. La única restricción es Amazon FBA, que tiene medidas específicas — para Amazon recomendamos el producto CAD-EC-02."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Cajas Mercado Envíos Todas las Tallas", sku:"CAD-EC-01", description:"Cajas Mercado Envíos Todas las Tallas en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif", material:"Cartón doble corrugado BC ECT-44 Mercado Envíos", category:"Cajas para E-commerce", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -81,7 +84,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para Mercado Libre <span>y Mercado Envíos</span>"
    desc="Cajas para Mercado Libre en tallas chica, mediana, grande y extra grande para preparar productos de venta en línea. Se definen según medida, peso y esquema de despacho."
-   desc2="Se surte en doble corrugado BC, ECT-44 y tallas Chica, Mediana, Grande y Extra Grande sin grapas expuestas. Las <strong>cajas para Mercado Envíos</strong> se seleccionan de acuerdo con las dimensiones reales, peso y presentación del producto.||CADECA coordina el suministro con talleres aliados al confirmar medida, cantidad, uso y zona de entrega. Indica la talla o dimensiones y el peso de tu producto para asesorarte sobre la resistencia, formato y caja que corresponda."
+   desc2="Se surte en doble corrugado BC, ECT-44 y tallas Chica, Mediana, Grande y Extra Grande sin grapas expuestas. Las <strong>cajas para Mercado Envíos</strong> se seleccionan de acuerdo con las dimensiones reales, peso y presentación del producto.||Para Mercado Envíos, las dimensiones reales y el peso definen la talla Chica a Extra Grande y la resistencia. Comparte largo, ancho y alto del producto, peso unitario, cantidad por caja y si requiere presentación especial; CADECA revisa el formato BC sin grapas expuestas."
  />
 
  <main id="contenido-principal" role="main">

@@ -42,6 +42,9 @@ const faqs = [
  question:"¿Cuál es la diferencia entre ECT-61 y ECT-44 en términos prácticos de resistencia?",
  answer:"El ECT (Edge Crush Test) mide la fuerza necesaria para aplastar el corrugado por el borde. ECT-44 resiste 44 lbs por pulgada lineal de borde; ECT-61 resiste 61 lbs. En términos de BCT (Box Compression Test, la resistencia real de la caja completa), un ECT-44 típico da ~500-600 kg de carga estática; un ECT-61 da ~900-1100 kg. Esto significa que el triple corrugado puede soportar el equivalente a 2 cajas de ECT-44 apiladas sin deformarse. Para maquinaria, equipos industriales o exportación marítima, el BCT de ECT-61 es el mínimo recomendado.",
  },
+ { id:"am04-f3", question:"¿Cómo influye el ECT en una caja de triple corrugado?", answer:"El ECT mide la resistencia del borde del cartón al aplastamiento y orienta la selección del material. Debe evaluarse con dimensiones, peso, apilamiento, humedad y protección interior para definir una caja adecuada." },
+ { id:"am04-f4", question:"¿Qué cierre se recomienda para una caja triple reforzada?", answer:"El cierre depende del peso, el acceso requerido y las condiciones del traslado. Cinta, adhesivo o grapas pueden valorarse con el diseño; la unión debe complementar la resistencia del corrugado y no sustituir una especificación correcta." },
+ { id:"am04-f5", question:"¿Cómo cotizo una caja de triple corrugado reforzada?", answer:"Incluye medidas internas, peso, cantidad, forma del producto y condiciones de traslado en el formulario. Si se almacenará en tarima o requiere esquineros y relleno, indícalo para revisar la configuración de cartón." },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif";
@@ -59,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Triple Corrugado Reforzado"}]}
- faqItems={[{question:"¿Cuándo necesito triple corrugado y no basta con doble corrugado?", answer:"Triple corrugado (BCB, ECT-61+) es necesario cuando el producto pesa más de 30 kg y requiere máxima protección en múltiples ciclos de manejo, el producto tiene bordes metálicos o esquinas duras que podrían perforar el doble corrugado, la caja será exportada por vía marítima 30+ días en contenedor con alta humedad, el producto requiere certificación ISTA 2A o 3A para seguro de transporte, o el cliente (retail, gobierno, industria aeroespacial) especifica triple corrugado en su política de empaque. Para la mayoría de productos industriales hasta 25 kg, el doble corrugado ECT-44 con esquineros es suficiente y más económico."}, {question:"¿Cuál es la diferencia entre ECT-61 y ECT-44 en términos prácticos de resistencia?", answer:"El ECT (Edge Crush Test) mide la fuerza necesaria para aplastar el corrugado por el borde. ECT-44 resiste 44 lbs por pulgada lineal de borde; ECT-61 resiste 61 lbs. En términos de BCT (Box Compression Test, la resistencia real de la caja completa), un ECT-44 típico da ~500-600 kg de carga estática; un ECT-61 da ~900-1100 kg. Esto significa que el triple corrugado puede soportar el equivalente a 2 cajas de ECT-44 apiladas sin deformarse. Para maquinaria, equipos industriales o exportación marítima, el BCT de ECT-61 es el mínimo recomendado."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Triple Corrugado BCB Industrial Reforzada", sku:"CAD-AM-04", description:"Caja Triple Corrugado BCB Industrial Reforzada en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-medida-triple-reforzada-maquinaria-cdmx.avif", material:"Cartón triple corrugado BCB ECT-61 para maquinaria y equipos pesados", category:"Cajas a la Medida", moq:"25"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -79,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Cartón triple corrugado <span>BCB reforzado</span>"
    desc="Cartón triple corrugado en caja BCB con ECT-61 y grosor de 12 mm, para maquinaria, electrodomésticos, motores y equipo médico de hasta 100 kg."
-   desc2="La <strong>caja triple corrugado BCB</strong> integra ECT-61, grosor de 12 mm y esquineros. Esta configuración se contempla para maquinaria, electrodomésticos, motores y equipo médico con necesidades de empaque para cargas de hasta 100 kg y manejo especializado.||CADECA surte como proveedor. Comparte medidas, cantidad, uso y zona de entrega para cotizar. El equipo asesora al elegir la caja de acuerdo con el producto, el peso, la forma de manejo y los requerimientos de protección del envío."
+   desc2="La <strong>caja triple corrugado BCB</strong> integra ECT-61, grosor de 12 mm y esquineros. Esta configuración se contempla para maquinaria, electrodomésticos, motores y equipo médico con necesidades de empaque para cargas de hasta 100 kg y manejo especializado.||Para maquinaria o equipo de hasta 100 kg, el peso, los esquineros y el grosor de 12 mm determinan la protección. Indica dimensiones del equipo, peso unitario, forma de maniobra y si requiere protección interior para cotizar la caja BCB."
  />
 
  <main id="contenido-principal" role="main">

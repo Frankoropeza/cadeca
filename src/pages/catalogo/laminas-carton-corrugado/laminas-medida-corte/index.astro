@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-la-06-f1", question:"¿Cuál es la medida máxima que pueden cortar?", answer:"Nuestras cizallas trabajan hasta 2.44 m de ancho y largo libre. Para láminas más grandes, evaluamos el proyecto específico. La mayoría de proyectos industriales caben dentro de estos rangos. Consulta con nuestro equipo técnico para proyectos con dimensiones especiales." },
- { id:"cad-la-06-f2", question:"¿Puedo pedir distintas medidas en el mismo pedido?", answer:"Sí. Puedes pedir 5 medidas diferentes en el mismo pedido siempre que cada medida cumpla el MOQ de 50 láminas. Las láminas de distintas medidas se entregan enzunchadas por separado y etiquetadas con sus dimensiones para fácil identificación en tu taller." },
- { id:"cad-la-06-f3", question:"¿Tienen catálogo de espesores disponibles?", answer:"Para simple pared manejamos flautas A (4.5mm), B (3mm), C (4mm) y E (1.5mm). Para doble pared, BC (7mm) y EB. Para triple pared, BCB y BCA. El más vendido para láminas a medida es BC (doble pared 7mm) por el equilibrio entre resistencia y peso. Especifica el espesor al cotizar." },
+ {
+ id: "cad-la-06-f1",
+ question: "¿Cómo elijo la medida adecuada para láminas de cartón a la medida?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-la-06-f2",
+ question: "¿Qué resistencia de cartón conviene para láminas de cartón a la medida?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-la-06-f3",
+ question: "¿Se pueden personalizar láminas de cartón a la medida con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-la-06-f4",
+ question: "¿Cómo debo almacenar láminas de cartón a la medida antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-la-06-f5",
+ question: "¿Qué datos necesito para cotizar láminas de cartón a la medida?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado/"},{name:"Láminas Corrugado a la Medida con Corte Exacto"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Láminas Corrugado a la Medida con Corte Exacto",sku:"CAD-LA-06",description:"Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales.",image:gallery[0].src,material:"CAD-LA-06",category:"Láminas de Cartón Corrugado",moq:"50 láminas/medida"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -60,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Láminas de cartón a la medida <span>con corte</span>"
    desc="Láminas de cartón a la medida para talleres, fabricantes de cajas y proyectos que requieren largo y ancho específicos. Se cotizan en CDMX y Estado de México."
-   desc2="Las láminas se cortan al largo y ancho solicitados, en cartón corrugado de pared simple, doble o triple. El <strong>corte exacto</strong> permite preparar material para empaques, separadores, protección o procesos de transformación donde el formato estándar no funciona.||CADECA coordina el suministro como proveedor de láminas cortadas. Comparte medidas, cantidad, uso y zona de entrega al cotizar; te asesoramos para definir el tipo de pared, el corte y el formato de acuerdo con tu proyecto."
+   desc2="Las láminas se cortan al largo y ancho solicitados, en cartón corrugado de pared simple, doble o triple. El <strong>corte exacto</strong> permite preparar material para empaques, separadores, protección o procesos de transformación donde el formato estándar no funciona.||Para láminas a corte, el largo, ancho y tipo de pared dependen de si funcionarán como separador, protección o empaque. Envía medida terminada, espesor o pared deseada, aplicación y piezas por pedido; CADECA revisa el <strong>corte exacto</strong> requerido."
  />
 
  <main id="contenido-principal" role="main">

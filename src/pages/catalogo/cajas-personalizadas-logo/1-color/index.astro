@@ -35,14 +35,29 @@ const specs = [
 
 const faqs = [
  {
- id:"pl01-f1",
- question:"¿Qué diferencia hay entre impresión flexo y offset en cajas de cartón?",
- answer:"La flexo (flexograbado) usa placas de fotopolímero flexibles con tinta a base de agua aplicada directamente sobre el corrugado. Es la técnica más económica para 1-2 colores, ideal para logos corporativos con colores planos. La impresión offset es más cara pero da mayor resolución (hasta 200 lpi vs 85 lpi de la flexo) y reproduce degradados, fotografías y diseños complejos. Para un logo simple en 1 o 2 colores, la flexo da resultados excelentes al 30-40% del costo del offset.",
+ id: "pl01-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas con logo a una tinta?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
- id:"pl01-f2",
- question:"¿Cuándo debería elegir 1 color en lugar de 2 colores para mi logo?",
- answer:"Elige 1 color cuando: tu marca tiene un color primario dominante y el secundario es opcional; quieres el precio más bajo posible por pieza; el volumen es de 100-300 piezas al mes; la caja es para uso interno o almacén y no es la primera impresión del cliente. Elige 2 colores cuando: tu logo pierde identidad sin al menos 2 colores; el empaque es el primer contacto visual con el cliente; o estás diferenciando tu marca de la competencia en punto de venta.",
+ id: "pl01-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas con logo a una tinta?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "pl01-f3",
+ question: "¿Se pueden personalizar cajas con logo a una tinta con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "pl01-f4",
+ question: "¿Cómo debo almacenar cajas con logo a una tinta antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "pl01-f5",
+ question: "¿Qué datos necesito para cotizar cajas con logo a una tinta?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -61,7 +76,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Personalizadas con Logo", href:"/catalogo/cajas-personalizadas-logo/"}, {name:"1 Color Flexo"}]}
- faqItems={[{question:"¿Qué diferencia hay entre impresión flexo y offset en cajas de cartón?", answer:"La flexo (flexograbado) usa placas de fotopolímero flexibles con tinta a base de agua aplicada directamente sobre el corrugado. Es la técnica más económica para 1-2 colores, ideal para logos corporativos con colores planos. La impresión offset es más cara pero da mayor resolución (hasta 200 lpi vs 85 lpi de la flexo) y reproduce degradados, fotografías y diseños complejos. Para un logo simple en 1 o 2 colores, la flexo da resultados excelentes al 30-40% del costo del offset."}, {question:"¿Cuándo debería elegir 1 color en lugar de 2 colores para mi logo?", answer:"Elige 1 color cuando: tu marca tiene un color primario dominante y el secundario es opcional; quieres el precio más bajo posible por pieza; el volumen es de 100-300 piezas al mes; la caja es para uso interno o almacén y no es la primera impresión del cliente. Elige 2 colores cuando: tu logo pierde identidad sin al menos 2 colores; el empaque es el primer contacto visual con el cliente; o estás diferenciando tu marca de la competencia en punto de venta."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Cartón Personalizada Logo 1 Color Flexo", sku:"CAD-PL-01", description:"Caja Cartón Personalizada Logo 1 Color Flexo en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif", material:"Cartón corrugado simple flauta C ECT-32 impresión flexo 1 tinta", category:"Cajas de Cartón Personalizadas con Logo", moq:"100"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -81,7 +96,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas impresas a una tinta <span>con logo</span>"
    desc="Cajas impresas a una tinta para marcas que requieren identificar sus envíos o productos con colores planos. Se aplican sobre kraft marrón o blanco en CDMX y Estado de México."
-   desc2="La impresión se realiza por <strong>flexograbado de una tinta</strong> sobre cartón corrugado simple, flauta C y ECT-32. El soporte puede ser kraft marrón o blanco, con resolución de hasta 85 lpi; funciona para logos corporativos y textos de alto contraste en medidas estándar o a la medida.||CADECA coordina el suministro como proveedor de <strong>cajas impresas</strong>. Para cotizar, comparte largo, ancho y alto, cantidad, uso previsto y zona de entrega; el equipo te orienta sobre la medida, el material y la impresión adecuados para tu pedido."
+   desc2="La impresión se realiza por <strong>flexograbado de una tinta</strong> sobre cartón corrugado simple, flauta C y ECT-32. El soporte puede ser kraft marrón o blanco, con resolución de hasta 85 lpi; funciona para logos corporativos y textos de alto contraste en medidas estándar o a la medida.||Para <strong>cajas impresas</strong> a una tinta, el contraste del logo y la elección de kraft marrón o blanco definen el resultado. Para cotizar, envía archivo del logotipo, color de impresión, medidas de la caja y cantidad; CADECA revisa el flexograbado sobre flauta C ECT-32."
  />
 
  <main id="contenido-principal" role="main">

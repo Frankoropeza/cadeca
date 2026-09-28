@@ -24,12 +24,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Cuánto cuesta una muestra?", "acceptedAnswer": { "@type": "Answer", "text": "El costo varía según las medidas y material. Cotizamos sin compromiso. Ese costo se descuenta si haces el pedido de producción." } },
-    { "@type": "Question", "name": "¿Puedo pedir una muestra sin compromiso de pedido posterior?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, la muestra no obliga a ningún pedido posterior. Es para que tomes la mejor decisión." } },
-    { "@type": "Question", "name": "¿Incluyen prueba de resistencia en la muestra?", "acceptedAnswer": { "@type": "Answer", "text": "Podemos incluir prueba de compresión y carga bajo solicitud, especialmente para exportación." } },
-    { "@type": "Question", "name": "¿Pueden hacer muestra con mi logo impreso?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos muestras con impresión de 1-4 colores para validar el resultado visual antes de la producción." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
@@ -47,8 +42,9 @@ const faqsModulo = [
  },
  {
   "question": "¿Pueden hacer muestra con mi logo impreso?",
-  "answer": "Sí, coordinamos muestras con impresión de 1-4 colores para validar el resultado visual antes de la producción."
- }
+  "answer": "Se pueden revisar muestras con impresión de 1 a 4 colores para validar la composición visual del empaque. Comparte el archivo del diseño, medidas y cantidad prevista para evaluar la superficie disponible y el método de impresión correspondiente." 
+ },
+ { "question": "¿Qué debo revisar en un prototipo de caja de cartón?", "answer": "Revisa que las dimensiones correspondan al producto, que el cierre funcione y que la estructura resista el manejo esperado. Cuando aplica, también conviene evaluar impresión, acomodo interno, protección y el comportamiento de la caja durante el apilado." }
 ];
 ---
 

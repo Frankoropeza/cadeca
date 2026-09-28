@@ -23,18 +23,28 @@ const specs = [
 const faqs = [
  {
  id: "tx07-f1",
- question: "¿Qué tipo de acabado interior tiene la caja de joyería CAD-TX-07?",
- answer: "La caja CAD-TX-07 tiene un interior en corrugado blanco con laminado suave al tacto (soft touch) que protege piezas delicadas como anillos, pulseras, collares y relojes. Opcionalmente podemos agregar insert de espuma cortada a la medida con ranuras para cada pieza, o un forro de tela tipo gamuza adherido al interior. El resultado es una experiencia de unboxing premium que refuerza el posicionamiento de marcas de joyería y accesorios de lujo.",
+ question: "¿Cómo elijo la medida adecuada para cajas para joyería?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
  id: "tx07-f2",
- question: "¿Ofrecen opciones de personalización para marcas de joyería premium?",
- answer: "Sí. Disponemos de hot stamping en dorado, plateado o cualquier Pantone metálico sobre corrugado blanco, barniz UV selectivo para resaltar el logo, grabado en relieve (embossing) y ventana de acetato para exhibición del producto. También ofrecemos cierre magnético oculto para una apertura ceremonial. Todas estas opciones están disponibles desde 200 piezas con diseño de arte sin costo y entrega en 7 días hábiles en CDMX.",
+ question: "¿Qué resistencia de cartón conviene para cajas para joyería?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
  },
  {
  id: "tx07-f3",
- question: "¿La caja protege suficiente la joyería durante el envío por paquetería?",
- answer: "Absolutamente. La doble pared BC ECT-32 ofrece una resistencia al apilamiento de hasta 120 kg y protección contra impactos durante el transporte. El insert interior de espuma o cartón troquelado inmoviliza cada pieza, previniendo rayones y golpes. La caja ha sido probada bajo condiciones de envío por paquetería (Estafeta, DHL, Fedex) sin incidentes de daño. Ideal para joyerías con venta online y envío a domicilio.",
+ question: "¿Se pueden personalizar cajas para joyería con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "tx07-f4",
+ question: "¿Cómo debo almacenar cajas para joyería antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "tx07-f5",
+ question: "¿Qué datos necesito para cotizar cajas para joyería?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -52,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Joyería Premium"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja para Joyería y Accesorios Premium",sku:"CAD-TX-07",description:"Caja corrugado blanco con interior suave para joyería premium — unboxing de lujo",image:gallery[0].src,material:"Corrugado blanco BC ECT-32 interior soft touch",category:"Cajas para Textil, Moda y Retail",moq:"200"}}
 >
 
@@ -71,7 +81,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para joyería <span>con presentación premium</span>"
    desc="Cajas para joyería, relojes y accesorios que requieren proteger la pieza y cuidar su presentación. Se configuran para marcas y tiendas con pedidos en CDMX y Estado de México."
-   desc2="Se surte en corrugado blanco de doble pared con ECT-32 e interior suave al tacto. Puede incorporar hot stamping, barniz UV selectivo y cierre magnético opcional, para que las <strong>cajas para joyería personalizadas</strong> se adapten a la pieza y a su presentación.||CADECA coordina el suministro como proveedor de cajas para joyería. Indica medidas, cantidad, tipo de pieza y zona de entrega al cotizar; te asesoramos para elegir el cartón, el interior y los acabados de acuerdo con el uso."
+   desc2="Se surte en corrugado blanco de doble pared con ECT-32 e interior suave al tacto. Puede incorporar hot stamping, barniz UV selectivo y cierre magnético opcional, para que las <strong>cajas para joyería personalizadas</strong> se adapten a la pieza y a su presentación.||Para <strong>cajas para joyería personalizadas</strong>, el tipo de pieza y su presentación definen interior suave, cierre magnético o acabados. Para cotizar, comparte medidas de joya o reloj, necesidad de inserto, acabado gráfico y cantidad; CADECA revisa corrugado blanco de doble pared ECT-32."
  />
 
  <main id="contenido-principal" role="main">

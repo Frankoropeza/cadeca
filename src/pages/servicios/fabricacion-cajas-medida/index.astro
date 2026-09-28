@@ -24,12 +24,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Cuánto cuesta hacer cajas a la medida?", "acceptedAnswer": { "@type": "Answer", "text": "El precio depende de las medidas, tipo de cartón y cantidad. A mayor volumen, menor costo unitario. Te cotizamos sin compromiso y te indicamos el tiempo de entrega según el pedido." } },
-    { "@type": "Question", "name": "¿Cuál es la cantidad mínima?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos desde 100 piezas. Para pedidos menores podemos cotizar aunque el precio unitario es más alto." } },
-    { "@type": "Question", "name": "¿Pueden hacer cajas para exportación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos cajas de doble y triple pared con talleres especializados, considerando las normas ASTM D4169 e ISTA para envíos marítimos y aéreos." } },
-    { "@type": "Question", "name": "¿Hacen el diseño o yo debo enviarlo?", "acceptedAnswer": { "@type": "Answer", "text": "Lo hacemos nosotros. Solo necesitamos las medidas internas del producto, el peso y el uso final. El diseño técnico es sin costo." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
@@ -47,8 +42,9 @@ const faqsModulo = [
  },
  {
   "question": "¿Hacen el diseño o yo debo enviarlo?",
-  "answer": "Lo hacemos nosotros. Solo necesitamos las medidas internas del producto, el peso y el uso final. El diseño técnico es sin costo."
- }
+  "answer": "Comparte las medidas internas del producto, peso y uso final para revisar la estructura de la caja. Si cuentas con un plano o requerimiento técnico, inclúyelo en el formulario; así se pueden coordinar las especificaciones necesarias con talleres aliados."
+ },
+ { "question": "¿Cómo defino las medidas de una caja de cartón a la medida?", "answer": "Proporciona largo, ancho y alto interiores del producto, considerando la holgura necesaria para protección o acomodo. También indica si llevará separadores, relleno o varios artículos, pues esos elementos influyen en la medida final y el tipo de corrugado." }
 ];
 ---
 
@@ -70,7 +66,7 @@ const faqsModulo = [
     titleHtml={true}
     title="Fabricación de cajas de cartón <span>a la medida</span>"
     desc="Fabricación de cajas de cartón a la medida mediante talleres aliados para productos con dimensiones específicas. Revisamos largo, ancho, alto, flauta y ECT para coordinar tu pedido."
-    desc2="Las <strong>cajas a la medida</strong> se coordinan con diseño CAD y dimensiones de largo, ancho y alto según el producto. Hay opciones en flautas B, C, E y BC; la resistencia ECT se selecciona con base en el peso, manejo y apilado requeridos.||CADECA actúa como proveedor y coordina talleres aliados para las <strong>cajas de cartón con medidas especiales</strong>. Comparte medidas, cantidad, uso y zona de entrega para cotizar y recibir asesoría al elegir la caja."
+    desc2="Las <strong>cajas a la medida</strong> se coordinan con diseño CAD y dimensiones de largo, ancho y alto según el producto. Hay opciones en flautas B, C, E y BC; la resistencia ECT se selecciona con base en el peso, manejo y apilado requeridos.||Para <strong>cajas de cartón con medidas especiales</strong>, el largo, ancho, alto, peso y apilado definen flauta y ECT. Para cotizar, envía dimensiones del producto, peso por unidad, condiciones de manejo y requerimiento de diseño CAD o muestra; CADECA revisa las opciones B, C, E o BC."
   />
 
   {/* ════════ BENEFICIOS ════════ */}

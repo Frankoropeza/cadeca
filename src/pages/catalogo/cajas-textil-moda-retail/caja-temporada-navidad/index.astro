@@ -23,18 +23,28 @@ const specs = [
 const faqs = [
  {
  id: "tx08-f1",
- question: "¿Con cuánta anticipación debo pedir cajas para temporada navideña?",
- answer: "Recomendamos realizar el pedido de cajas navideñas con 4–6 semanas de anticipación para temporada alta (octubre–diciembre). El tiempo de entrega se confirma según el diseño, volumen y zona. Para pedidos de más de 1,000 pzas en temporada navideña, ofrecemos precio preferencial y almacenamiento sin costo hasta por 30 días.",
+ question: "¿Cómo elijo la medida adecuada para cajas para canastas navideñas?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
  id: "tx08-f2",
- question: "¿Qué medidas recomiendan para canastas navideñas corporativas?",
- answer: "Para canastas navideñas corporativas ofrecemos tres medidas populares: Chica (30×20×15 cm) para gift sets de 3–5 productos, Mediana (40×30×20 cm) para canastas de 6–10 productos con botella de vino, y Grande (50×35×25 cm) para canastas premium con múltiples artículos gourmet. Todas disponibles en kraft con lazo o blanco con diseño festivo personalizado. También surtimos medidas especiales desde 100 pzas.",
+ question: "¿Qué resistencia de cartón conviene para cajas para canastas navideñas?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
  },
  {
  id: "tx08-f3",
- question: "¿Pueden hacer cajas con diseño festivo diferente cada año?",
- answer: "Sí. Cada temporada actualizamos nuestra colección de diseños festivos estándar que incluimos sin costo adicional en pedidos de 500+ pzas. Si prefieres un diseño exclusivo con la identidad de tu marca, nuestro equipo de diseño crea el arte sin costo y lo preparamos para impresión flexo full color. El cliché de impresión se conserva para reutilizar en temporadas futuras, reduciendo el costo de repetición hasta un 30%.",
+ question: "¿Se pueden personalizar cajas para canastas navideñas con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "tx08-f4",
+ question: "¿Cómo debo almacenar cajas para canastas navideñas antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "tx08-f5",
+ question: "¿Qué datos necesito para cotizar cajas para canastas navideñas?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -52,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Temporada Navideña"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja para Temporada y Canastas Navideñas",sku:"CAD-TX-08",description:"Caja para canastas navideñas y gift sets — diseño festivo o neutro, kraft o blanco",image:gallery[0].src,material:"Kraft o corrugado blanco B/C ECT-32",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
 >
 
@@ -71,7 +81,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas navideñas <span>para canastas y regalos</span>"
    desc="Cajas navideñas para canastas corporativas y sets de regalo de temporada. Se adaptan a marcas y empresas que preparan presentaciones para entregar en CDMX y Estado de México."
-   desc2="Las cajas pueden trabajarse en kraft natural o corrugado blanco, con diseño festivo o neutro según el proyecto. Su estructura está pensada para el apilado y transporte de canastas, regalos y sets de temporada, con espacio para organizar los artículos del interior.||CADECA coordina el surtido como proveedor de <strong>cajas para canastas navideñas</strong>. Comparte medidas, cantidad, contenido y zona de entrega al cotizar; te asesoramos para definir el cartón y la configuración que proteja tus regalos."
+   desc2="Las cajas pueden trabajarse en kraft natural o corrugado blanco, con diseño festivo o neutro según el proyecto. Su estructura está pensada para el apilado y transporte de canastas, regalos y sets de temporada, con espacio para organizar los artículos del interior.||Para canastas navideñas, el número de artículos, la altura del set y el apilado definen la estructura. Comparte dimensiones del contenido, peso aproximado, arte festivo o neutro y tipo de traslado para cotizar <strong>cajas para canastas navideñas</strong>."
  />
 
  <main id="contenido-principal" role="main">

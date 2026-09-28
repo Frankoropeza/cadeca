@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-pl-10-f1", question:"¿Por qué su MOQ es tan bajo comparado con otras imprentas?", answer:"Usamos flexografía en planchas fotopolímeras que amortizamos diferente a las planchas metálicas tradicionales, lo que nos permite ofrecer tirajes bajos sin perder rentabilidad. El costo de plancha es fijo por diseño, no por tiraje, por lo que te conviene hacer pedidos más grandes a medida que creces para amortizar ese costo inicial." },
- { id:"cad-pl-10-f2", question:"¿Cuánto sube el precio unitario con mi logo vs caja neutra?", answer:"Para un pedido de 100 piezas, el precio unitario con 1 color de logo es aproximadamente 35% a 50% mayor que la caja neutra equivalente. Para 300 piezas baja al 20-25% de incremento y para 1,000+ piezas el incremento es menor al 15%. A partir de 500 piezas ya es muy competitivo." },
- { id:"cad-pl-10-f3", question:"¿Qué necesito para empezar el proceso?", answer:"Solo necesitas tu logo en formato vectorial (AI, EPS o PDF con tipografías convertidas), las dimensiones de tu producto (largo, ancho, alto) y el número aproximado de piezas. Con eso te mandamos cotización en menos de 2 horas y arte digital en 24 horas para tu aprobación." },
+ {
+ id: "cad-pl-10-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas personalizadas para startups?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-pl-10-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas personalizadas para startups?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-pl-10-f3",
+ question: "¿Se pueden personalizar cajas personalizadas para startups con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-pl-10-f4",
+ question: "¿Cómo debo almacenar cajas personalizadas para startups antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-pl-10-f5",
+ question: "¿Qué datos necesito para cotizar cajas personalizadas para startups?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja Personalizada para Startups y Marcas Emergentes"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Personalizada para Startups y Marcas Emergentes",sku:"CAD-PL-10",description:"La caja personalizada con logo de menor MOQ del mercado: desde 100 piezas para startups y marcas emergentes en CDMX. Diseño gratuito y entrega en 5–7 días.",image:gallery[0].src,material:"CAD-PL-10",category:"Cajas Personalizadas con Logo",moq:"100 piezas (el más bajo)"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -60,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas personalizadas para emprendedores <span>con logo</span>"
    desc="Cajas personalizadas para emprendedores que necesitan presentar sus productos con logo desde 100 piezas. Se adaptan a marcas nuevas, tiendas y envíos en CDMX y Estado de México."
-   desc2="Estas cajas se trabajan en liner kraft o blanco, con impresión de uno o dos colores y pedido desde 100 piezas. Son una alternativa de <strong>empaques para marcas nuevas</strong> que requieren definir medidas y arte sin mantener una cantidad mayor a la necesaria para iniciar.||CADECA coordina el surtido como proveedor para proyectos de emprendimiento. Al cotizar, comparte medidas, cantidad, uso y zona de entrega; el equipo te asesora para seleccionar el cartón, la impresión y la configuración que se ajuste al producto."
+   desc2="Estas cajas se trabajan en liner kraft o blanco, con impresión de uno o dos colores y pedido desde 100 piezas. Son una alternativa de <strong>empaques para marcas nuevas</strong> que requieren definir medidas y arte sin mantener una cantidad mayor a la necesaria para iniciar.||Para una marca nueva, el volumen inicial, el liner kraft o blanco y la impresión a uno o dos colores orientan el pedido. Envía medidas del producto, archivo de logo, tipo de empaque y acabado buscado para cotizar desde 100 piezas."
  />
 
  <main id="contenido-principal" role="main">

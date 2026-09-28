@@ -42,6 +42,9 @@ const faqs = [
  question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?",
  answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino.",
  },
+ { id:"am02-f3", question:"¿Cómo se elige una caja de cartón para exportación?", answer:"La elección parte del peso, dimensiones, medio de transporte, recorrido y apilamiento previsto. El ECT y el tipo de pared ayudan a valorar la resistencia, mientras que el cierre y la protección interior se definen con el producto." },
+ { id:"am02-f4", question:"¿Qué diferencia hay entre pared doble y triple para exportar?", answer:"La pared doble combina dos flautas para aumentar rigidez y amortiguación frente a una pared simple. La triple añade otra capa de corrugado y puede valorarse para cargas mayores o manejo más exigente, según la configuración del empaque." },
+ { id:"am02-f5", question:"¿Qué debo enviar para cotizar cajas de cartón para exportación?", answer:"Comparte medidas, peso, cantidad, destino y si el envío será aéreo, terrestre o marítimo. También indica si habrá tarima, apilamiento o protección interior para valorar una especificación de cartón y cierre adecuada." },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif";
@@ -59,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Exportación IATA"}]}
- faqItems={[{question:"¿Qué normas aplican para exportar productos en caja de cartón?", answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA coordinamos el suministro conforme a estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal."}, {question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?", answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja a la Medida para Exportación IATA ISTA", sku:"CAD-AM-02", description:"Caja a la Medida para Exportación IATA ISTA en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", material:"Cartón doble o triple corrugado certificado ISTA para exportación", category:"Cajas a la Medida", moq:"25"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -79,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para exportación <span>a la medida</span>"
    desc="Cajas para exportación a la medida con ECT-51 para carga aérea y ECT-61 en triple corrugado para carga marítima. Se revisan según el destino y el producto."
-   desc2="La <strong>caja de exportación</strong> puede considerar referencias IATA e ISTA, ECT-51 para carga aérea y ECT-61 en triple pared para transporte marítimo. Las especificaciones se revisan con el producto, el destino, el tipo de transporte y la forma de carga prevista.||CADECA surte como proveedor a partir de medidas, cantidad, uso y zona de entrega. Comparte el país destino y modo de transporte para recibir asesoría al elegir la caja y definir la alternativa que se cotiza para tu embarque."
+   desc2="La <strong>caja de exportación</strong> puede considerar referencias IATA e ISTA, ECT-51 para carga aérea y ECT-61 en triple pared para transporte marítimo. Las especificaciones se revisan con el producto, el destino, el tipo de transporte y la forma de carga prevista.||Para exportación, el medio de transporte, el peso y el apilamiento orientan la pared y el ECT. Comparte dimensiones y peso de la carga, país destino, vía aérea o marítima y uso de tarima; CADECA revisa una configuración para el embarque."
  />
 
  <main id="contenido-principal" role="main">

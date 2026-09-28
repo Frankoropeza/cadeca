@@ -45,6 +45,9 @@ const faqs = [
  question:"¿Qué pasa si envío a Amazon FBA una caja con ECT inferior a 44?",
  answer:"Amazon puede rechazar el inventory shipment en el centro de distribución si las cajas no cumplen con la resistencia estructural mínima. Esto implica que el producto regresa al vendedor con costo de flete a cargo del seller, genera una penalización en la cuenta y retrasa la disponibilidad del producto en el catálogo. Nuestro CAD-EC-02 lleva el ECT-44 especificado de fábrica para atender este requerimiento.",
  },
+ { id:"ec02-f3", question:"¿Cómo elegir la medida de caja para envíos a Amazon FBA?", answer:"Mide el producto ya protegido y revisa los requisitos vigentes del centro de distribución al preparar el envío. La caja debe limitar el movimiento interior y mantener una estructura adecuada para el peso de la carga." },
+ { id:"ec02-f4", question:"¿Qué significa ECT-44 en una caja para Amazon FBA?", answer:"ECT es una medida de resistencia a compresión del cartón corrugado. El valor ECT-44 describe un nivel de resistencia que puede ser pertinente para cargas que requieren mayor rigidez durante manejo y apilado." },
+ { id:"ec02-f5", question:"¿Qué debo enviar para cotizar cajas para Amazon FBA?", answer:"Envía el formulario con medidas, cantidad, peso por caja y requisitos de preparación aplicables a tu operación. Indica si necesitas impresión o separadores para revisar las opciones de formato y corrugado." },
 ];
 
 const mainImg = "/img/catalogo/cajas-amazon-fba-fbm-seller-central-mexico.avif";
@@ -62,7 +65,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce/"}, {name:"Amazon FBA / FBM"}]}
- faqItems={[{question:"¿Por qué Amazon rechaza cajas con grapas o ventanas de acetato?", answer:"Las bandas transportadoras automatizadas de los centros de distribución de Amazon pueden engancharse con grapas expuestas, causando daños en la maquinaria o en el producto. Las ventanas de acetato reducen la resistencia estructural del corrugado y dificultan el escaneo de códigos de barras. Nuestro CAD-EC-02 elimina ambos problemas de fábrica."}, {question:"¿Qué pasa si envío a Amazon FBA una caja con ECT inferior a 44?", answer:"Amazon puede rechazar el inventory shipment en el centro de distribución si las cajas no cumplen con la resistencia estructural mínima. Esto implica que el producto regresa al vendedor con costo de flete a cargo del seller, genera una penalización en la cuenta y retrasa la disponibilidad del producto en el catálogo. Nuestro CAD-EC-02 lleva ECT-44 especificado de fábrica."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Cajas Amazon FBA FBM México", sku:"CAD-EC-02", description:"Cajas Amazon FBA FBM México en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-amazon-fba-fbm-seller-central-mexico.avif", material:"Cartón doble corrugado BC ECT-44 sin grapas Amazon FBA", category:"Cajas para E-commerce", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -82,7 +85,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para Amazon FBA <span>y FBM en México</span>"
    desc="Cajas para Amazon FBA y FBM pensadas para vendedores que preparan inventario y envíos. Se definen con las medidas y características aplicables a la operación del producto."
-   desc2="Se surte en doble corrugado ECT-44, sin grapas expuestas ni ventanas de acetato, y lados dentro del límite señalado de 63.5 cm. Los <strong>requisitos de empaque Amazon México</strong> se revisan frente a la presentación, peso y medidas del producto.||CADECA coordina el suministro con talleres aliados al conocer medidas, cantidad, uso y zona de entrega. Comparte el flujo FBA o FBM, dimensiones y peso para asesorarte sobre resistencia, formato y preparación de la caja."
+   desc2="Se surte en doble corrugado ECT-44, sin grapas expuestas ni ventanas de acetato, y lados dentro del límite señalado de 63.5 cm. Los <strong>requisitos de empaque Amazon México</strong> se revisan frente a la presentación, peso y medidas del producto.||Para <strong>requisitos de empaque Amazon México</strong>, el flujo FBA o FBM, los lados y la ausencia de grapas expuestas son decisivos. Para cotizar, indica modalidad de venta, dimensiones y peso del producto, tipo de preparación y cantidad; CADECA revisa el doble corrugado ECT-44."
  />
 
  <main id="contenido-principal" role="main">

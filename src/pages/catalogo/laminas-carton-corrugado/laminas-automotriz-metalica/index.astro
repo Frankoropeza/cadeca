@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-la-10-f1", question:"¿Qué es el papel VCI y cómo funciona?", answer:"VCI (Volatile Corrosion Inhibitor) es un compuesto que se libera en forma de vapor desde el papel y forma una película molecular invisible sobre las superficies metálicas que bloquea la oxidación. Es invisible, no deja residuo en la pieza y no requiere desengrase posterior antes del ensamble. Se activa con el calor del ambiente y una vez que se abre el empaque, la protección se disipa en horas." },
- { id:"cad-la-10-f2", question:"¿Pueden producir según especificaciones técnicas de una armadora?", answer:"Sí. Varios de nuestros clientes son proveedores Tier 1 con especificaciones técnicas de empaque dictadas por las armadoras (FORD, GM, Stellantis, etc.). Podemos revisar la especificación y confirmar si nuestro corrugado cumple los requerimientos. En caso de necesitar ajustes de gramaje o dimensiones, los producimos según plano." },
- { id:"cad-la-10-f3", question:"¿Las láminas son compatibles con líneas de producción automatizadas?", answer:"Las láminas CAD-LA-10 pueden cortarse a medida exacta para alimentación manual en línea. Para integración en líneas automatizadas con pick-and-place o brazo robot, necesitamos conocer las dimensiones de los recipientes y la tolerancia dimensional requerida por el equipo." },
+ {
+ id: "cad-la-10-f1",
+ question: "¿Cómo elijo la medida adecuada para láminas de cartón para industria automotriz?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-la-10-f2",
+ question: "¿Qué resistencia de cartón conviene para láminas de cartón para industria automotriz?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-la-10-f3",
+ question: "¿Se pueden personalizar láminas de cartón para industria automotriz con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-la-10-f4",
+ question: "¿Cómo debo almacenar láminas de cartón para industria automotriz antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-la-10-f5",
+ question: "¿Qué datos necesito para cotizar láminas de cartón para industria automotriz?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Láminas de Cartón Corrugado",href:"/catalogo/laminas-carton-corrugado/"},{name:"Láminas Corrugado para Industria Automotriz"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Láminas Corrugado para Industria Automotriz",sku:"CAD-LA-10",description:"Láminas triple pared para interleaving entre piezas metálicas de automóviles. Con opción de papel VCI anticorrosión. Para proveedores Tier 1 y Tier 2 de la industria automotriz.",image:gallery[0].src,material:"CAD-LA-10",category:"Láminas de Cartón Corrugado",moq:"100 láminas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -60,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Láminas de cartón para industria automotriz <span>metálica</span>"
    desc="Láminas de cartón para la industria automotriz que separan piezas metálicas durante manejo y traslado. Son una opción para proveedores de autopartes en CDMX y Estado de México."
-   desc2="Estas láminas se especifican en triple pared para intercalar piezas metálicas de automóviles. Pueden incluir papel VCI anticorrosión cuando el proyecto lo requiera, y se emplean para crear una barrera física entre componentes durante empaque, movimiento y almacenamiento.||CADECA coordina el suministro como proveedor de <strong>protección de piezas metálicas</strong>. Comparte medidas, cantidad, tipo de pieza y zona de entrega al cotizar; te asesoramos para definir la pared, el material y la configuración adecuada."
+   desc2="Estas láminas se especifican en triple pared para intercalar piezas metálicas de automóviles. Pueden incluir papel VCI anticorrosión cuando el proyecto lo requiera, y se emplean para crear una barrera física entre componentes durante empaque, movimiento y almacenamiento.||Para piezas metálicas, el peso, la geometría y el riesgo de corrosión determinan la triple pared y el uso de VCI. Envía dimensiones de la pieza, peso, tipo de metal y número de capas requeridas; CADECA revisa la <strong>protección de piezas metálicas</strong>."
  />
 
  <main id="contenido-principal" role="main">

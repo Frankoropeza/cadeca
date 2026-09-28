@@ -43,6 +43,9 @@ const faqs = [
  question:"¿Qué tipo de corrugado es mejor para productos de moda (ropa y accesorios)?",
  answer:"Para ropa y accesorios ligeros (hasta 3-5 kg) recomendamos <strong>corrugado simple ECT-32 flauta C</strong>: suficiente resistencia para proteger en tránsito y más económico. Para artículos de moda de mayor valor (bolsos de piel, calzado de lujo), el corrugado simple en kraft blanco coated + impresión full color da un resultado de presentación premium que justifica el costo adicional.",
  },
+ { id:"ec04-f3", question:"¿Cómo elegir cajas para una tienda propia en línea?", answer:"Mide el producto con su protección interior y considera el tipo de envío que usarás. Una medida proporcionada ayuda a evitar movimiento excesivo y permite revisar el peso volumétrico del paquete." },
+ { id:"ec04-f4", question:"¿Qué corrugado conviene para cajas de tienda propia?", answer:"La elección depende del peso, fragilidad y apilado de los productos. El ECT ayuda a comparar la resistencia a compresión del cartón y orientar si conviene pared simple o doble." },
+ { id:"ec04-f5", question:"¿Qué datos debo enviar para cotizar cajas para tienda propia?", answer:"Envía el formulario con medidas, cantidad, peso, tipo de producto y si requieres impresión. Esos datos permiten revisar el formato, la resistencia y la alternativa de personalización adecuada." },
 ];
 
 const mainImg = "/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif";
@@ -60,7 +63,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce/"}, {name:"Tienda Propia"}]}
- faqItems={[{question:"¿Es mejor caja neutra con cinta con logo o caja impresa con logo?", answer:"Depende del volumen: Cinta con logo tiene inversión inicial menor desde 50 pzas, más flexible para cambiar diseños, ideal para comenzar. Caja impresa con logo es más profesional, mejor unboxing experience, costo por pieza menor en pedidos de 500 o más pzas. Si vendes menos de 200 piezas al mes, empieza con cinta. Si ya vendes más de 200 al mes, la caja impresa da mejor ROI."}, {question:"¿Qué tipo de corrugado es mejor para productos de moda como ropa y accesorios?", answer:"Para ropa y accesorios ligeros hasta 5 kg recomendamos corrugado simple ECT-32 flauta C: suficiente resistencia para proteger en tránsito y más económico. Para artículos de moda de mayor valor como bolsos de piel o calzado de lujo, el corrugado simple en kraft blanco coated con impresión full color da un resultado de presentación premium que justifica el costo adicional."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Cajas Shopify TiendaNube Tienda Propia", sku:"CAD-EC-04", description:"Cajas Shopify TiendaNube Tienda Propia en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-shopify-tiendanube-ecommerce-tienda-propia.avif", material:"Cartón corrugado simple o doble para tienda en línea", category:"Cajas para E-commerce", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -80,7 +83,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para Shopify y Tiendanube <span>propias</span>"
    desc="Cajas para Shopify y Tiendanube dirigidas a negocios que gestionan sus propios envíos. Se cotizan neutras o con logo según producto, peso, canal de venta y cantidad."
-   desc2="Se surte en corrugado simple ECT-32 o doble ECT-44, en kraft marrón o blanco, para distintos pesos y tamaños. Las <strong>cajas para tienda propia</strong> pueden ser neutras desde 50 piezas o incluir logo desde 100 piezas, según el formato.||CADECA coordina el suministro con talleres aliados al conocer medidas, cantidad, uso y zona de entrega. Indica el canal, peso y presentación de tus productos para asesorarte sobre pared, impresión y formato de caja de tu operación."
+   desc2="Se surte en corrugado simple ECT-32 o doble ECT-44, en kraft marrón o blanco, para distintos pesos y tamaños. Las <strong>cajas para tienda propia</strong> pueden ser neutras desde 50 piezas o incluir logo desde 100 piezas, según el formato.||Para una tienda propia, el peso del pedido, la presentación y si llevará logo ayudan a elegir pared e impresión. Envía dimensiones del producto, peso del envío, arte si aplica y cantidad; CADECA revisa kraft o blanco y la opción ECT-32 o ECT-44."
  />
 
  <main id="contenido-principal" role="main">

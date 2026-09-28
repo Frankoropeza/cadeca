@@ -24,12 +24,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Qué significa la certificación FSC?", "acceptedAnswer": { "@type": "Answer", "text": "FSC (Forest Stewardship Council) certifica que el papel proviene de bosques gestionados de forma responsable o de material reciclado." } },
-    { "@type": "Question", "name": "¿El cartón reciclado tiene la misma resistencia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, el cartón reciclado de calidad tiene resistencias ECT comparables al cartón virgen para la mayoría de usos." } },
-    { "@type": "Question", "name": "¿Puedo imprimir con tintas ecológicas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, usamos tintas base agua para todos nuestros pedidos de packaging ecológico. Sin solventes orgánicos." } },
-    { "@type": "Question", "name": "¿Pueden proveer documentación de sustentabilidad?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos emitir carta de proveedor con especificaciones FSC y de material reciclado para tus reportes." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
@@ -47,8 +42,9 @@ const faqsModulo = [
  },
  {
   "question": "¿Pueden proveer documentación de sustentabilidad?",
-  "answer": "Sí, podemos emitir carta de proveedor con especificaciones FSC y de material reciclado para tus reportes."
- }
+  "answer": "Si tu proyecto requiere documentación sobre el material, indícalo en el formulario para revisar qué información puede confirmar el fabricante aliado. La disponibilidad de documentos o certificaciones depende del material y proveedor específicos considerados en la cotización." 
+ },
+ { "question": "¿Cómo elijo un empaque ecológico de cartón para mi producto?", "answer": "Define el nivel de protección, peso, dimensiones, condiciones de transporte y el material que buscas priorizar. El cartón reciclado y las tintas base agua pueden ser opciones, pero la flauta y resistencia ECT deben corresponder al manejo requerido." }
 ];
 ---
 
@@ -70,7 +66,7 @@ const faqsModulo = [
     titleHtml={true}
     title="Empaques ecológicos de <span>cartón reciclado</span>"
     desc="Empaques ecológicos con cartón kraft reciclado, tintas base agua y diseños que ayudan a optimizar material. Son una opción para marcas que requieren alternativas de cartón para sus productos."
-    desc2="Los <strong>empaques ecológicos</strong> pueden considerar cartón kraft natural, cartón reciclado, tintas base agua sin solventes y adhesivos no tóxicos. El diseño se revisa para usar el material necesario sin perder la estructura que requiere el producto y su manejo.||CADECA surte como proveedor mediante talleres aliados. Indica medidas, cantidad, uso y zona de entrega para cotizar <strong>cajas ecológicas</strong>; te asesoramos para elegir materiales y confirmar opciones disponibles."
+    desc2="Los <strong>empaques ecológicos</strong> pueden considerar cartón kraft natural, cartón reciclado, tintas base agua sin solventes y adhesivos no tóxicos. El diseño se revisa para usar el material necesario sin perder la estructura que requiere el producto y su manejo.||Para un empaque ecológico, el nivel de protección, el contenido reciclado y el número de tintas deben corresponder al uso. Comparte dimensiones y peso del producto, tipo de transporte, acabado gráfico y material preferido; CADECA revisa opciones de <strong>cajas ecológicas</strong>."
   />
 
   {/* ════════ BENEFICIOS ════════ */}

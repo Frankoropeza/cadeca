@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-pl-06-f1", question:"¿Qué diferencia hay entre barniz UV total y barniz UV selectivo?", answer:"El barniz UV total cubre toda la superficie exterior con el mismo nivel de brillo intenso. El UV selectivo permite aplicarlo solo en áreas específicas (logo, fotografías) dejando otras zonas en mate para crear contraste. CAD-PL-06 usa UV total, que es más económico y produce un impacto visual uniforme muy limpio." },
- { id:"cad-pl-06-f2", question:"¿El barniz UV protege contra la humedad?", answer:"El barniz UV ofrece resistencia superficial básica a la humedad y los rayones, pero no es una barrera impermeable completa. Para cajas que van a estar en ambientes muy húmedos o en contacto directo con líquidos, recomendamos laminado BOPP como alternativa más robusta." },
- { id:"cad-pl-06-f3", question:"¿Puedo ver cómo quedará antes de producir?", answer:"Sí. Generamos un mock-up digital en 3D sin costo y, si lo requieres, una muestra física unitaria a precio de costo antes de autorizar la producción completa. Así te aseguras de que los colores y el acabado son exactamente lo que esperas." },
+ {
+ id: "cad-pl-06-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas con barniz UV total?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-pl-06-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas con barniz UV total?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-pl-06-f3",
+ question: "¿Se pueden personalizar cajas con barniz UV total con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-pl-06-f4",
+ question: "¿Cómo debo almacenar cajas con barniz UV total antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-pl-06-f5",
+ question: "¿Qué datos necesito para cotizar cajas con barniz UV total?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja Personalizada Barniz UV Total"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Personalizada Barniz UV Total",sku:"CAD-PL-06",description:"Caja personalizada con barniz UV total para acabado de alto brillo y protección del arte impreso. Ideal para cosmética, perfumería y marcas premium. Desde 300 piezas en CDMX.",image:gallery[0].src,material:"CAD-PL-06",category:"Cajas Personalizadas con Logo",moq:"300 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -60,7 +82,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas con barniz UV <span>de alto brillo</span>"
    desc="Cajas con barniz UV para productos de cosmética, perfumería y marcas que requieren proteger el arte impreso con una superficie brillante. Disponibles para pedidos en CDMX."
-   desc2="El barniz UV total se aplica sobre la superficie impresa para conseguir un <strong>acabado brillante</strong> y proteger el arte gráfico. Combina impresión CMYK a cuatro colores y cartón con ECT-32, una combinación apta para empaques de cosmética, perfumería y regalos.||CADECA coordina el suministro de estas cajas como proveedor. Al cotizar, indica medidas, cantidad, uso y zona de entrega para revisar el material y la impresión; el equipo te asesora para elegir el acabado y la configuración adecuados."
+   desc2="El barniz UV total se aplica sobre la superficie impresa para conseguir un <strong>acabado brillante</strong> y proteger el arte gráfico. Combina impresión CMYK a cuatro colores y cartón con ECT-32, una combinación apta para empaques de cosmética, perfumería y regalos.||Para un acabado brillante, el arte CMYK, la cobertura de barniz UV y el tipo de producto orientan la especificación. Envía medidas de la caja, archivo gráfico, número de caras impresas y uso previsto para cotizar el material y acabado."
  />
 
  <main id="contenido-principal" role="main">

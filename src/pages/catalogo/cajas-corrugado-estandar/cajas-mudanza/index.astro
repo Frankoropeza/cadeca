@@ -43,6 +43,9 @@ const faqs = [
  question:"¿Se pueden reutilizar estas cajas varias veces?",
  answer:"Sí. El doble corrugado BC ECT-44 con kraft virgen es significativamente más duradero que el cartón de caja estándar. En condiciones normales (sin exposición a humedad ni cargas excesivas), estas cajas resisten 3 a 5 ciclos de uso completo. Para empresas de mudanzas profesionales, esto reduce significativamente el costo por mudanza comparado con cajas desechables de menor calidad.",
  },
+ { id:"cm-f3", question:"¿Qué tamaño de caja conviene para ropa y objetos voluminosos?", answer:"Para ropa y objetos ligeros convienen cajas medianas o grandes que permitan acomodar el contenido sin exceder un peso manejable. Los artículos pesados deben repartirse en cajas chicas para proteger el fondo y facilitar el traslado." },
+ { id:"cm-f4", question:"¿Cómo se almacenan cajas de mudanza antes de usarlas?", answer:"Guárdalas plegadas en un lugar seco, limpio y alejado de humedad directa. El cartón mantiene mejor su resistencia cuando no se apoya en pisos mojados ni se somete a peso innecesario antes de armar la caja." },
+ { id:"cm-f5", question:"¿Cómo cotizo cajas de cartón para una mudanza?", answer:"Indica cuántas cajas necesitas, los tamaños y el tipo de objetos que trasladarás. Con esa información enviada en el formulario se puede revisar una combinación de medidas y resistencia adecuada para la mudanza." },
 ];
 
 const mainImg = "/img/productos/cajas-carton-mudanza-resistentes-cdmx.avif";
@@ -60,7 +63,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/"}, {name:"Cajas Mudanza"}]}
- faqItems={[{question:"¿Cuántas cajas de mudanza necesito para una mudanza de departamento?", answer:"Como referencia general: Estudio (40-60m²): 15-25 cajas. Departamento 1 recámara: 25-40 cajas. Departamento 2 recámaras: 40-60 cajas. Casa 3 recámaras: 60-100 cajas. La distribución típica es: 30% cajas Chicas (libros, vajilla), 40% Medianas (ropa, cocina general), 20% Grandes (ropa voluminosa, juguetes), 10% Extra Grandes (cobijas, almohadas). Pedido mínimo CAD-CM-01: 10 piezas por talla."}, {question:"¿Cuál es la diferencia entre caja de mudanza y caja corrugado estándar?", answer:"Las cajas de mudanza tienen solapas reforzadas con doble pegado o grapado para soportar el manejo repetido (abrir, cargar, apilar, transportar), fondo doble para mayor resistencia vertical cuando están llenas, medidas estandarizadas que se apilan eficientemente en camión de mudanza, y resisten humedad moderada de un día de trabajo. Las cajas corrugado estándar están diseñadas para un solo ciclo de empaque-transporte-desempaque. Para mudanza, el costo adicional de la caja reforzada se amortiza en la protección del contenido."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Mudanza Doble Corrugado", sku:"CAD-CM-01", description:"Caja Mudanza Doble Corrugado en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-mudanza-resistentes-cdmx.avif", material:"Cartón doble corrugado flauta BC ECT-44 para mudanza", category:"Cajas de Cartón Corrugado Estándar", moq:"10"}}
 >
  <!-- Breadcrumb -->
@@ -81,7 +84,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para mudanza <span>con asas reforzadas</span>"
    desc="Cajas para mudanza en doble corrugado BC con asas troqueladas reforzadas para manejo manual frecuente. Hay formatos chica, mediana, grande, extra grande y wardrobe para distintos contenidos."
-   desc2="Las <strong>cajas de cartón para mudanza</strong> se elaboran en doble corrugado BC con asas troqueladas reforzadas. Se ofrece en tamaños chica, mediana, grande, extra grande y wardrobe, para separar ropa, objetos domésticos y artículos de oficina durante el traslado.||CADECA coordina el suministro como proveedor. Indica medidas, cantidad, uso y zona de entrega para cotizar. El equipo asesora al elegir la caja según el contenido, el tamaño de cada objeto y la forma de organizar y mover la mudanza."
+   desc2="Las <strong>cajas de cartón para mudanza</strong> se elaboran en doble corrugado BC con asas troqueladas reforzadas. Se ofrece en tamaños chica, mediana, grande, extra grande y wardrobe, para separar ropa, objetos domésticos y artículos de oficina durante el traslado.||Para una mudanza, la combinación entre contenido y tamaño define si convienen cajas estándar o wardrobe. Comparte tipos de artículos, cantidad estimada por tamaño, necesidad de asas troqueladas y si incluirás ropa colgada; CADECA revisa la selección para el traslado."
  />
 
  <main id="contenido-principal" role="main">

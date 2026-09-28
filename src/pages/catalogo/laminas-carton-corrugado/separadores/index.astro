@@ -34,14 +34,29 @@ const specs = [
 
 const faqs = [
  {
- id:"lc04-f1",
- question:"¿Cómo diseñan el separador exacto para mi caja?",
- answer:"Compártenos dimensiones interiores de tu caja y número de unidades a separar. Calculamos grosor óptimo de ranura para que entre justo. El CAD y la muestra se coordinan según el pedido. El separador correcto hace que las unidades no se toquen ni roten, eliminando daño por vibración en tránsito.",
+ id: "lc04-f1",
+ question: "¿Cómo elijo la medida adecuada para separadores de cartón corrugado?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
- id:"lc04-f2",
- question:"¿Cuántas divisiones tienen sentido económicamente?",
- answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador.",
+ id: "lc04-f2",
+ question: "¿Qué resistencia de cartón conviene para separadores de cartón corrugado?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "lc04-f3",
+ question: "¿Se pueden personalizar separadores de cartón corrugado con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "lc04-f4",
+ question: "¿Cómo debo almacenar separadores de cartón corrugado antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "lc04-f5",
+ question: "¿Qué datos necesito para cotizar separadores de cartón corrugado?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -60,7 +75,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Láminas Cartón", href:"/catalogo/laminas-carton-corrugado/"}, {name:"Separadores y Divisiones"}]}
- faqItems={[{question:"¿Cómo diseñan el separador exacto para mi caja?", answer:"Compártenos dimensiones interiores de tu caja y número de unidades a separar. Calculamos grosor óptimo de ranura para que entre justo. El CAD y la muestra se coordinan según el pedido. El separador correcto hace que las unidades no se toquen ni roten, eliminando daño por vibración en tránsito."}, {question:"¿Cuántas divisiones tienen sentido económicamente?", answer:"Tiene sentido cuando el producto vale más de 50 pesos. En botellas, frascos y velas, el separador reduce daño en tránsito de 3-8% a menos de 0.2%. Para 1000 piezas de 200 pesos, el costo de daño sin separador puede ser 3-8 veces mayor que el costo total del separador."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Separadores Cartón Corrugado Divisiones a la Medida", sku:"CAD-LC-04", description:"Separadores Cartón Corrugado Divisiones a la Medida en CDMX — proveedor CADECA", image:"/img/catalogo/separadores-carton-corrugado-cdmx.avif", material:"Separadores cartón corrugado flauta B o E ranurados a la medida", category:"Láminas de Cartón Corrugado", moq:"200"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -80,7 +95,7 @@ const gallery = [
    titleHtml={true}
    title="Separadores de cartón <span>para cajas a medida</span>"
    desc="Separadores de cartón para organizar botellas, frascos, velas y electrónica dentro de una caja. Se diseñan según las dimensiones del producto para pedidos en CDMX."
-   desc2="Los separadores son ranurados, sin pegamento, en flauta B de 3 mm o E de 1.5 mm y ECT-26. Las <strong>divisiones de cartón para cajas</strong> se configuran de acuerdo con cada empaque, con opciones de 4, 6, 9, 12 o 16 espacios para separar unidades.||CADECA coordina el suministro como proveedor de separadores de cartón. Indica medidas internas, cantidad, tipo de producto y zona de entrega al cotizar; te asesoramos para definir la flauta y el arreglo de divisiones adecuado."
+   desc2="Los separadores son ranurados, sin pegamento, en flauta B de 3 mm o E de 1.5 mm y ECT-26. Las <strong>divisiones de cartón para cajas</strong> se configuran de acuerdo con cada empaque, con opciones de 4, 6, 9, 12 o 16 espacios para separar unidades.||Para <strong>divisiones de cartón para cajas</strong>, las medidas internas y el número de unidades determinan 4, 6, 9, 12 o 16 espacios. Para cotizar, comparte dimensiones interiores, diámetro o tamaño de cada producto, cantidad de compartimentos y flauta B o E; CADECA revisa el ranurado."
  />
 
  <main id="contenido-principal" role="main">

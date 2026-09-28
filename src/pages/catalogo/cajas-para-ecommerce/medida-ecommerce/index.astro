@@ -35,6 +35,9 @@ const faqs = [
  question:"¿Cuándo tiene sentido hacer una caja a la medida en lugar de usar medidas estándar?",
  answer:"Tiene sentido cuando: 1) Tu producto tiene dimensiones irregulares y las cajas estándar te generan exceso de peso volumétrico. 2) Vendes más de 200 piezas/mes y el diferencial de costo por envío justifica la inversión en producción personalizada. 3) Tu producto requiere un ajuste exacto para que no se mueva dentro de la caja sin usar relleno adicional. 4) Tu empaque forma parte de la experiencia de marca y necesitas dimensiones precisas.",
  },
+ { id:"ec05-f3", question:"¿Cómo calcular la medida de una caja para e-commerce?", answer:"Parte del largo, ancho y alto del producto ya protegido, no solo del artículo suelto. Esas dimensiones permiten comparar cajas que reduzcan espacio vacío y revisar el peso volumétrico con la paquetería." },
+ { id:"ec05-f4", question:"¿Qué resistencia necesito en una caja de envío a la medida?", answer:"La resistencia se define con el peso, fragilidad, tipo de producto y forma de apilado. El ECT permite comparar la capacidad de compresión del cartón corrugado y elegir pared simple o doble según el uso." },
+ { id:"ec05-f5", question:"¿Qué datos debo enviar para cotizar cajas de e-commerce a la medida?", answer:"Envía el formulario con medidas, cantidad, peso, tipo de producto y paquetería. Indica si requieres impresión, divisores o protección interior para revisar la configuración de caja adecuada." },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif";
@@ -52,7 +55,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce/"}, {name:"E-commerce a la Medida"}]}
- faqItems={[{question:"¿Cómo me ayudan a encontrar la medida exacta que minimiza mi costo de envío?", answer:"Compártenos las dimensiones de tu producto empacado y la paquetería que usas. Calculamos el peso volumétrico de varias opciones de caja y te recomendamos la medida que reduce más ese cálculo sin sacrificar protección. Para la mayoría de los productos el ahorro es de 15 a 35 por ciento en el costo de envío por pieza. El servicio de cálculo es completamente gratuito."}, {question:"¿Cuándo tiene sentido hacer una caja a la medida en lugar de usar medidas estándar?", answer:"Tiene sentido cuando: tu producto tiene dimensiones irregulares y las cajas estándar generan exceso de peso volumétrico; vendes más de 200 piezas al mes y el diferencial de costo por envío justifica la inversión; tu producto requiere ajuste exacto para que no se mueva sin relleno adicional; o tu empaque forma parte de la experiencia de marca y necesitas dimensiones precisas."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Cajas E-commerce a la Medida CDMX", sku:"CAD-EC-05", description:"Cajas E-commerce a la Medida CDMX en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif", material:"Cartón corrugado a la medida para e-commerce optimización volumétrica", category:"Cajas para E-commerce", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -72,7 +75,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas de envío a la medida <span>para e-commerce</span>"
    desc="Cajas de envío a la medida para productos que no se adaptan a formatos estándar. Se plantean para reducir espacio vacío y revisar el peso volumétrico de cada paquete."
-   desc2="La propuesta parte de largo, ancho y alto del producto para definir una dimensión específica y revisar el <strong>peso volumétrico</strong> aplicado por la paquetería. Se cotiza a la medida, con pedido desde 50 piezas para operaciones de comercio electrónico.||CADECA coordina el surtido con talleres aliados al conocer medidas, cantidad, uso y zona de entrega. Comparte las dimensiones, peso y paquetería de tus productos para asesorarte sobre la medida, resistencia y formato adecuados."
+   desc2="La propuesta parte de largo, ancho y alto del producto para definir una dimensión específica y revisar el <strong>peso volumétrico</strong> aplicado por la paquetería. Se cotiza a la medida, con pedido desde 50 piezas para operaciones de comercio electrónico.||Para una caja de e-commerce a medida, el volumen vacío y el <strong>peso volumétrico</strong> de la paquetería guían la dimensión. Para cotizar, comparte largo, ancho y alto del producto, peso ya protegido, tipo de relleno y paquetería utilizada; CADECA revisa resistencia y formato."
  />
 
  <main id="contenido-principal" role="main">

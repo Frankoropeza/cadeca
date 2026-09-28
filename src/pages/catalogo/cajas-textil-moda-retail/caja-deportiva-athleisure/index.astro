@@ -23,18 +23,28 @@ const specs = [
 const faqs = [
  {
  id: "tx09-f1",
- question: "¿Qué medidas recomiendan para cajas de ropa deportiva y athleisure?",
- answer: "Para sets de ropa deportiva (playera + pants/shorts) recomendamos 35×25×12 cm en flauta B ECT-32. Para cajas que incluyen calzado deportivo, la medida ideal es 40×30×15 cm en flauta C ECT-32. Para kits completos de athleisure (prenda superior, inferior y calzado) utilizamos 45×35×20 cm. Todas las medidas son compatibles con las dimensiones estándar de paqueterías como Estafeta, DHL y FedEx para envío nacional.",
+ question: "¿Cómo elijo la medida adecuada para cajas para ropa deportiva?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
  id: "tx09-f2",
- question: "¿La caja resiste el envío por paquetería sin dañar la ropa deportiva?",
- answer: "Sí. La flauta B/C ECT-32 ofrece resistencia al apilamiento de hasta 80 kg y protección contra humedad ambiental estándar. Para marcas con venta online, diseñamos la caja con solapa interior que cubre el contenido, evitando el contacto de la prenda con la cinta de sellado. También ofrecemos papel tissue kraft o seda como complemento para una presentación premium al abrir. La caja soporta el manejo estándar de paqueterías nacionales sin deformarse.",
+ question: "¿Qué resistencia de cartón conviene para cajas para ropa deportiva?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
  },
  {
  id: "tx09-f3",
- question: "¿Pueden hacer cajas con ventana para exhibir la prenda deportiva?",
- answer: "Sí. Ofrecemos troquelado con ventana de acetato transparente o PLA biodegradable en la cara frontal o superior de la caja. La ventana permite ver el color y textura de la prenda sin abrir el empaque, ideal para punto de venta en tiendas deportivas. El acetato se adhiere por la cara interior con adhesivo apto para contacto con textiles. Disponible en cualquier forma (rectangular, circular, logo shape) desde 200 pzas en CDMX.",
+ question: "¿Se pueden personalizar cajas para ropa deportiva con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "tx09-f4",
+ question: "¿Cómo debo almacenar cajas para ropa deportiva antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "tx09-f5",
+ question: "¿Qué datos necesito para cotizar cajas para ropa deportiva?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -52,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Deportiva y Athleisure"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja para Ropa Deportiva y Athleisure",sku:"CAD-TX-09",description:"Caja corrugado para ropa deportiva — compatible con paqueterías, ECT-32, entrega CDMX",image:gallery[0].src,material:"Kraft o blanco flauta B/C ECT-32",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
 >
 
@@ -71,7 +81,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas para ropa deportiva <span>y athleisure</span>"
    desc="Cajas para ropa deportiva y athleisure diseñadas para playeras, pants, shorts y calzado. Ayudan a marcas a preparar sus productos para venta y distribución en CDMX."
-   desc2="Las cajas se especifican en cartón corrugado con flauta B o C y ECT-32, para prendas deportivas y calzado. Sus medidas se ajustan al formato de playeras, pants y shorts, con una estructura pensada para proteger el producto durante manejo y transporte.||CADECA coordina el surtido como proveedor de <strong>empaque para athleisure</strong>. Comparte medidas, cantidad, uso y zona de entrega al cotizar; te asesoramos para seleccionar la flauta y configuración de caja que corresponda con tus prendas."
+   desc2="Las cajas se especifican en cartón corrugado con flauta B o C y ECT-32, para prendas deportivas y calzado. Sus medidas se ajustan al formato de playeras, pants y shorts, con una estructura pensada para proteger el producto durante manejo y transporte.||Para athleisure, el volumen de prendas dobladas o el par de calzado define la medida y la flauta. Envía tipo de prenda, dimensiones del paquete, peso y unidades por caja; CADECA orienta la elección de <strong>empaque para athleisure</strong>."
  />
 
  <main id="contenido-principal" role="main">

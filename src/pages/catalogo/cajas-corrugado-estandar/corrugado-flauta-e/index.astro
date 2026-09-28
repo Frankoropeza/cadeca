@@ -46,6 +46,9 @@ const faqs = [
  question:"¿La flauta E tiene menos resistencia que la B o C?",
  answer:"Sí, la flauta E tiene menor resistencia estructural que las flautas más gruesas. Por eso se recomienda solo para productos ligeros (hasta 5 kg) y es ideal para packaging de presentación donde la imagen es prioritaria sobre la resistencia bruta. Para productos que requieren ambos (buena impresión Y alta resistencia), la flauta B es un buen punto medio. Si el producto pesa más de 5 kg, cambia a corrugado simple flauta C o doble corrugado BC.",
  },
+ { id:"ce-f3", question:"¿Qué productos se benefician de una caja de micro flauta E?", answer:"La micro flauta E puede ser útil para productos ligeros que necesitan una superficie más uniforme para impresión o presentación. La selección debe considerar el peso, fragilidad y recorrido, porque el espesor no sustituye una protección adecuada." },
+ { id:"ce-f4", question:"¿Cómo se cotizan cajas de cartón con flauta E?", answer:"Envía medidas internas, peso, cantidad y el tipo de impresión que necesitas mediante el formulario. Con esos datos se puede valorar la flauta, resistencia y formato de caja que se ajuste al producto." },
+ { id:"ce-f5", question:"¿Cómo se almacenan cajas de microcorrugado flauta E?", answer:"Mantén las cajas plegadas en un lugar seco, sin contacto con humedad ni peso encima. El cartón conserva mejor su forma y capacidad de armado cuando se protege de condensación y cambios bruscos de ambiente." },
 ];
 
 const mainImg = "/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif";
@@ -63,7 +66,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/"}, {name:"Corrugado Micro Flauta E"}]}
- faqItems={[{question:"¿Por qué la flauta E tiene mejor calidad de impresión que la B o C?", answer:"La flauta E (1.5mm) produce una superficie más plana y uniforme que las flautas B (3mm) y C (4mm). El corrugado más fino hace que las ondulaciones del médium no se reflejen en la superficie exterior, resultando en una base de impresión casi tan lisa como el cartón sólido. Esto permite impresión offset, digital de alta resolución y detalles finos de logotipo sin el efecto de tablero de ajedrez que aparece en flautas grandes."}, {question:"¿La flauta E tiene menos resistencia que la B o C?", answer:"Sí, la flauta E tiene menor resistencia estructural. Por eso se recomienda solo para productos ligeros (hasta 5 kg) y es ideal para packaging de presentación donde la imagen es prioritaria. Para productos que requieren buena impresión Y alta resistencia, la flauta B es un buen punto medio. Si el producto pesa más de 5 kg, cambia a corrugado simple flauta C o doble corrugado BC."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Corrugado Micro Flauta E Presentación", sku:"CAD-CE-01", description:"Caja Corrugado Micro Flauta E Presentación en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-personalizadas-impresion-logo-1-color-cdmx.avif", material:"Cartón corrugado micro flauta E ECT-23 para cosméticos", category:"Cajas de Cartón Corrugado Estándar", moq:"100"}}
 >
  <!-- Breadcrumb -->
@@ -84,7 +87,7 @@ const gallery = [
    titleHtml={true}
    title="Cajas de micro corrugado <span>flauta E</span>"
    desc="Cajas de micro corrugado flauta E de 1.5 mm para cosméticos, joyería, suplementos y empaques de presentación. Su superficie favorece una impresión definida en formatos de cartón delgado."
-   desc2="Estas <strong>cajas de micro corrugado flauta E</strong> usan una microflauta de 1.5 mm que aporta una superficie uniforme para impresión. Se usan para cosméticos, joyería, suplementos y productos donde el empaque de presentación requiere un cartón de perfil delgado.||CADECA surte como proveedor desde 100 piezas. Comparte medidas, cantidad, uso y zona de entrega para cotizar. El equipo asesora al elegir la caja según el producto, el acabado de impresión y el nivel de protección que requiere el empaque."
+   desc2="Estas <strong>cajas de micro corrugado flauta E</strong> usan una microflauta de 1.5 mm que aporta una superficie uniforme para impresión. Se usan para cosméticos, joyería, suplementos y productos donde el empaque de presentación requiere un cartón de perfil delgado.||Para empaques de presentación, la microflauta E se elige por el perfil delgado y la superficie de impresión. Envía medidas del producto, peso, arte o número de tintas y tipo de cierre; CADECA revisa el formato y la protección necesarios."
  />
 
  <main id="contenido-principal" role="main">
