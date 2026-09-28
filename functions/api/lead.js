@@ -8,9 +8,20 @@
 // Responde 200 si al menos un destino (KV, webhook o correo) lo recibió; 503 si no hay ninguno.
 
 const CAMPOS = ["nombre", "empresa", "contacto", "email", "tipo", "producto", "medida", "cantidad", "detalles", "pagina"];
-const json = (status, body) => new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
+// El formulario se envía desde cajas-de-carton.com (GitHub Pages) → CORS sólo para los orígenes propios.
+const ORIGENES = ["https://cajas-de-carton.com", "https://www.cajas-de-carton.com"];
+const corsPara = (request) => {
+  const o = request.headers.get("Origin") || "";
+  const ok = ORIGENES.includes(o) || /^https:\/\/([a-z0-9-]+\.)?cadeca\.pages\.dev$/.test(o);
+  return ok ? { "Access-Control-Allow-Origin": o, "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Max-Age": "86400", "Vary": "Origin" } : {};
+};
+
+export const onRequestOptions = ({ request }) => new Response(null, { status: 204, headers: corsPara(request) });
 
 export async function onRequestPost({ request, env }) {
+  const cors = corsPara(request);
+  const json = (status, cuerpo) => new Response(JSON.stringify(cuerpo), { status, headers: { "Content-Type": "application/json", ...cors } });
   let entrada;
   try { entrada = await request.json(); } catch { return json(400, { ok: false, error: "formato" }); }
 

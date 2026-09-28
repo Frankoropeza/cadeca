@@ -1,11 +1,36 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
+import { readFileSync } from "node:fs";
+
+// Reglas con comodín de public/_redirects: GitHub Pages no las aplica, se resuelven aquí.
+const dinamicas = readFileSync("public/_redirects", "utf8").split("\n")
+  .map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))
+  .map((l) => l.split(/\s+/)).filter(([o]) => /[*:]/.test(o)).map(([o, d]) => [o, d]);
 
 const title  = "Página no encontrada | CADECA — Cajas de Cartón CDMX";
 const description = "La página que buscas no existe o fue movida. Explora nuestro catálogo de cajas de cartón corrugado en CDMX y Estado de México.";
 ---
 
 <PageLayout title={title} description={description}>
+ <script define:vars={{ dinamicas }}>
+ (function () {
+   var p = location.pathname;
+   for (var i = 0; i < dinamicas.length; i++) {
+     var nombres = [];
+     var re = new RegExp("^" + dinamicas[i][0]
+       .replace(/[.+?^${}()|[\]\\]/g, "\\$&")
+       .replace(/\*/g, "(.*)")
+       .replace(/:([a-z]+)/g, function (_, n) { nombres.push(n); return "([^/]+)"; }) + "$");
+     var m = p.match(re);
+     if (m) {
+       var destino = dinamicas[i][1];
+       nombres.forEach(function (n, k) { destino = destino.replace(":" + n, m[k + 1]); });
+       location.replace(destino);
+       return;
+     }
+   }
+ })();
+ </script>
  <main id="contenido-principal">
  <section class="error-404">
  <div class="container">

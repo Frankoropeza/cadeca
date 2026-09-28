@@ -5,6 +5,9 @@
 
 type Estado = "enviando" | "ok" | "error";
 
+// El sitio se sirve desde GitHub Pages (estático); la función de leads vive en Cloudflare Pages.
+const LEAD_API = location.hostname.endsWith(".pages.dev") ? "/api/lead" : "https://cadeca.pages.dev/api/lead";
+
 function pintar(form: HTMLFormElement, estado: Estado, texto: string) {
   const box = form.querySelector<HTMLElement>("[data-lead-status]");
   const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
@@ -44,7 +47,7 @@ document.querySelectorAll<HTMLFormElement>("form[data-lead-form]").forEach((form
     if (wa) {
       // Se abre en el mismo gesto del usuario para que el navegador no lo bloquee.
       window.open(`https://wa.me/${wa}?text=${encodeURIComponent(mensajeWhatsApp(datos))}`, "_blank", "noopener");
-      fetch("/api/lead", { ...envio, keepalive: true }).catch(() => {});
+      fetch(LEAD_API, { ...envio, keepalive: true }).catch(() => {});
       form.reset();
       pintar(form, "ok", "Abrimos WhatsApp con tu solicitud; sólo presiona «Enviar» en el chat.");
       return;
@@ -52,7 +55,7 @@ document.querySelectorAll<HTMLFormElement>("form[data-lead-form]").forEach((form
 
     pintar(form, "enviando", "Enviando tu solicitud…");
     try {
-      const r = await fetch("/api/lead", envio);
+      const r = await fetch(LEAD_API, envio);
       if (!r.ok) throw new Error(String(r.status));
       form.reset();
       pintar(form, "ok", "Recibimos tu solicitud. Te contactaremos con tu cotización en horario hábil.");
