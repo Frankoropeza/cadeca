@@ -1,49 +1,184 @@
 ---
+// Hub «Cajas de cartón para regalo» — plantilla homologada de categoría.
+// Datos: src/data/catalogo/regalo.ts · Estructura definida con Ahrefs MX (2026-09-28).
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageHero from "@/components/PageHero.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
 import FaqItem from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
+import { categoria, fichas } from "@/data/catalogo/regalo";
 
-const title = "Cajas de Cartón para Regalo | Fichas y Acabados | CADECA";
-const description = "Cajas de cartón para regalo: opciones con impresión, laminado, barniz, joyería, temporada y kraft. Revisa fichas, ECT y cantidades publicadas.";
+const title = "Cajas de Regalo de Cartón por Mayoreo | CADECA";
+const description = "Cajas de regalo de cartón por mayoreo: sorpresa, navideñas, para dulces, vino, grandes, con tapa, magnéticas y corporativas. Cotiza con o sin logo.";
+const url = `https://cajas-de-carton.com${categoria.href}`;
 
 const schema = {
-  "@context": "https://schema.org", "@type": "CollectionPage",
-  "@id": "https://cajas-de-carton.com/catalogo/cajas-de-carton-para-regalo/#webpage",
-  "name": title, "url": "https://cajas-de-carton.com/catalogo/cajas-de-carton-para-regalo/", "description": description,
-  "about": { "@id": "https://cajas-de-carton.com/#org" }, "isPartOf": { "@id": "https://cajas-de-carton.com/#website" }
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${url}#webpage`,
+  name: title,
+  url,
+  description,
+  about: { "@id": "https://cajas-de-carton.com/#org" },
+  isPartOf: { "@id": "https://cajas-de-carton.com/#website" },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: fichas.length,
+    itemListElement: fichas.map((f, i) => ({ "@type": "ListItem", position: i + 1, name: f.nombre, url: `${url}${f.slug}/` })),
+  },
 };
 
-const productos = [
-  { code: "CAD-PL-03", title: "Cajas Personalizadas Full Color", badge: "Full color", badgeColor: "orange", desc: "Ficha con impresión CMYK y opciones de pared simple ECT-32 o doble ECT-44.", imgSrc: "/img/catalogo/cajas-carton-personalizadas-full-color-cmyk-cdmx.avif", imgAlt: "Caja de cartón para regalo con impresión full color", href: "/catalogo/cajas-personalizadas-logo/full-color/", specs: [["Impresión", "Full color CMYK"], ["Pared", "Simple o doble"], ["ECT", "ECT-32 / ECT-44"], ["Pedido", "200 piezas"]] },
-  { code: "CAD-PL-07", title: "Caja Personalizada con Laminado Mate", badge: "Laminado", badgeColor: "blue", desc: "Alternativa con acabado laminado mate y especificación ECT-32 publicada en su ficha.", imgSrc: "/img/catalogo/caja-acabados-softtouch-cdmx.avif", imgAlt: "Caja de regalo con laminado mate", href: "/catalogo/cajas-personalizadas-logo/laminado-mate/", specs: [["Acabado", "Laminado mate"], ["ECT", "ECT-32"], ["Pedido", "300 piezas"], ["Uso", "Marca, cosmética y moda"]] },
-  { code: "CAD-PL-06", title: "Caja Personalizada con Barniz UV Total", badge: "Barniz UV", badgeColor: "green", desc: "Opción con barniz UV total, impresión full color y doble corrugado ECT-32 descrita en la ficha.", imgSrc: "/img/catalogo/caja-acabados-gloss-cdmx.avif", imgAlt: "Caja para regalo con barniz UV", href: "/catalogo/cajas-personalizadas-logo/barniz-uv-total/", specs: [["Acabado", "Barniz UV total"], ["Pared", "Doble corrugado"], ["ECT", "ECT-32"], ["Pedido", "300 piezas"]] },
-  { code: "CAD-PL-04", title: "Cajas con Acabados Especiales", badge: "Acabados", badgeColor: "blue", desc: "Ficha con barniz UV, laminado, troquelado y relieve, en opciones ECT-32 o ECT-44.", imgSrc: "/img/catalogo/cajas-carton-personalizadas-acabados-especiales-barniz-uv.avif", imgAlt: "Caja de regalo con acabados especiales", href: "/catalogo/cajas-personalizadas-logo/acabados-especiales/", specs: [["Acabados", "UV, laminado y troquelado"], ["Pared", "Simple o doble"], ["ECT", "ECT-32 / ECT-44"], ["Pedido", "500 piezas"]] },
-  { code: "CAD-TX-07", title: "Caja para Joyería y Accesorios", badge: "Joyería", badgeColor: "orange", desc: "Caja de doble corrugado BC para presentación de joyería y accesorios, con ECT-32 publicado.", imgSrc: "/img/catalogo/caja-accesorios-bolsas-joyeria-cdmx.avif", imgAlt: "Caja de cartón para regalo de joyería", href: "/catalogo/cajas-textil-moda-retail/caja-joyeria-premium/", specs: [["Pared", "Doble corrugado BC"], ["Flauta", "BC (7 mm)"], ["ECT", "ECT-32"], ["Pedido", "200 piezas"]] },
-  { code: "CAD-TX-08", title: "Cajas para Canastas Navideñas y Temporada", badge: "Temporada", badgeColor: "green", desc: "Opción para canastas y gift sets con pared simple o doble y pedido mínimo publicado de 100 piezas.", imgSrc: "/img/catalogo/caja-retail-pdv-display-cdmx.avif", imgAlt: "Caja de cartón para regalo de temporada", href: "/catalogo/cajas-textil-moda-retail/caja-temporada-navidad/", specs: [["Pared", "Simple / doble"], ["Flauta", "B, C o BC"], ["ECT", "ECT-32 / ECT-44"], ["Pedido", "100 piezas"]] },
-  { code: "CAD-PL-11", title: "Caja Kraft Personalizada con Logo", badge: "Kraft", badgeColor: "blue", desc: "Caja kraft con logo y especificación ECT-32; consulta la ficha para detalles de impresión y pedido.", imgSrc: "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif", imgAlt: "Caja kraft de cartón para regalo con logo", href: "/catalogo/cajas-personalizadas-logo/kraft-ecologico-logo/", specs: [["Material", "Kraft"], ["Impresión", "Logo"], ["ECT", "ECT-32"], ["Pedido", "200 piezas"]] }
+// Guía de elección (se construye desde las fichas para no duplicar datos)
+const guia = fichas.map((f) => ({ codigo: f.codigo, nombre: f.nombre, href: `${categoria.href}${f.slug}/`, ideal: f.tarjeta.desc, material: f.tarjeta.datos[0]?.value ?? "", pedido: f.tarjeta.pedido }));
+
+// Fichas de otras líneas que también se usan para regalo (se conservan del hub anterior)
+const otrasLineas = [
+  { codigo: "CAD-TX-07", nombre: "Caja para joyería y accesorios", href: "/catalogo/cajas-textil-moda-retail/caja-joyeria-premium/" },
+  { codigo: "CAD-TX-08", nombre: "Cajas para canastas y gift sets de temporada", href: "/catalogo/cajas-textil-moda-retail/caja-temporada-navidad/" },
+  { codigo: "CAD-PL-03", nombre: "Cajas personalizadas full color", href: "/catalogo/cajas-personalizadas-logo/full-color/" },
+  { codigo: "CAD-PL-07", nombre: "Caja personalizada con laminado mate", href: "/catalogo/cajas-personalizadas-logo/laminado-mate/" },
+  { codigo: "CAD-PL-06", nombre: "Caja personalizada con barniz UV", href: "/catalogo/cajas-personalizadas-logo/barniz-uv-total/" },
+  { codigo: "CAD-PL-11", nombre: "Caja kraft personalizada con logo", href: "/catalogo/cajas-personalizadas-logo/kraft-ecologico-logo/" },
 ];
 
 const faqs = [
-  { id: "regalo-1", question: "¿Qué tipos de cajas de cartón para regalo hay?", answer: "En las fichas de esta página hay opciones de full color, laminado mate, barniz UV, acabados especiales, joyería, temporada y kraft con logo. Cada alternativa publica una combinación distinta de acabado, ECT y cantidad." },
-  { id: "regalo-2", question: "¿Puedo pedir una caja con impresión?", answer: "Las fichas CAD-PL-03, CAD-PL-06, CAD-PL-04 y CAD-PL-11 incluyen opciones de impresión o personalización. Revisa cada ficha para conocer su tipo de impresión y la cantidad publicada." },
-  { id: "regalo-3", question: "¿Qué cantidad se pide para cajas de regalo?", answer: "Las cantidades publicadas van de 100 piezas en CAD-TX-08 a 500 piezas en CAD-PL-04. El mínimo depende del SKU y de la configuración solicitada." },
-  { id: "regalo-4", question: "¿Hay cajas para joyería?", answer: "Sí. CAD-TX-07 es la ficha para joyería y accesorios; publica doble corrugado BC, flauta BC, ECT-32 y pedido de 200 piezas." },
-  { id: "regalo-5", question: "¿Las cajas de cartón decoradas son lo mismo que las personalizadas?", answer: "Las cajas de cartón decoradas pueden incluir recursos visuales como impresión, laminado o barniz. Para comparar las alternativas disponibles, abre las fichas de personalizadas y revisa el acabado que publica cada una." }
+  { id: "rg-hub-1", question: "¿Qué tipos de cajas de regalo manejan?", answer: `Cotizamos ${fichas.length} tipos de cajas de regalo de cartón: sorpresa, navideñas, para dulces y galletas, para vino y botellas, grandes, con tapa, para regalos corporativos y magnéticas. Todas se surten <strong>vacías</strong>, lisas o con impresión.` },
+  { id: "rg-hub-2", question: "¿Venden cajas de regalo por mayoreo?", answer: "Sí. Las cajas de regalo se cotizan por volumen; como referencia, desde <strong>100 piezas</strong> por modelo (cajas grandes desde 50). El mínimo final depende de la medida, el material y el acabado." },
+  { id: "rg-hub-3", question: "¿Pueden llevar el logo de mi negocio?", answer: "Sí. Se cotizan con impresión a 1 tinta o full color, y con acabados como laminado mate o barniz. Para cajas con impresión el mínimo suele ser mayor que en cajas lisas." },
+  { id: "rg-hub-4", question: "¿Qué diferencia hay entre una caja de cartón corrugado y una caja rígida para regalo?", answer: "El <strong>corrugado</strong> (micro flauta E o flauta B) es ligero y protege en el envío; la <strong>caja rígida</strong> de cartón gris forrado se siente más firme y se usa en regalos de presentación, como las cajas magnéticas o con tapa." },
+  { id: "rg-hub-5", question: "¿Qué datos necesito para cotizar cajas de regalo?", answer: "Medida del producto o de la caja (largo × ancho × alto), cantidad, tipo de caja, color o material y si lleva impresión, ventana o separadores. Con eso te respondemos en horario hábil." },
+  { id: "rg-hub-6", question: "¿Entregan en CDMX y Estado de México?", answer: "Sí. Coordinamos la entrega en CDMX y Estado de México; la fecha se confirma según el volumen, el modelo y la zona." },
 ];
 ---
 
-<PageLayout title={title} description={description} pageType="catalog" schema={schema}
-  breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Catálogo", href: "/catalogo/" }, { name: "Cajas de cartón para regalo" }]}
-  faqItems={faqs.map(({ question, answer }) => ({ question, answer }))}>
-  <div class="breadcrumb-bar" aria-label="Ruta de navegación"><div class="container"><ol><li><a href="/">Inicio</a></li><li><a href="/catalogo/">Catálogo</a></li><li><span class="current">Cajas de cartón para regalo</span></li></ol></div></div>
-  <PageHero eyebrow="Catálogo · Regalo y presentación" title="Cajas de cartón para regalo <span>con presentación</span>" desc="Cajas de cartón para regalo que combinan presentación, cierre y protección. Esta selección reúne fichas para impresión, laminado, barniz, joyería, temporada y kraft con sus especificaciones publicadas." desc2="Las <strong>cajas para regalo</strong> se eligen según el producto, tipo de apertura y nivel de personalización. Las fichas permiten comparar estructura, ECT, impresión, laminado y barniz, para que la presentación acompañe la protección que requiere el contenido.||CADECA surte como proveedor mediante talleres aliados. Comparte medidas, cantidad, uso y zona de entrega para cotizar <strong>cajas con tapa</strong>; te asesoramos para elegir la alternativa disponible." />
+<PageLayout title={title} description={description} pageType="catalog" schema={schema} ogImage={fichas[0].imagenes[0].src}
+  breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Catálogo", href: "/catalogo/" }, { name: categoria.nombre }]}
+  faqItems={faqs.map(({ question, answer }) => ({ question, answer: answer.replace(/<[^>]+>/g, "") }))}>
+
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo/">Catálogo</a></li>
+        <li><span class="current">{categoria.nombre}</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <PageHero
+    id="rg-hub-title"
+    eyebrow="Catálogo · Cajas para regalo"
+    titleHtml={true}
+    title="Cajas de regalo <span>de cartón</span>"
+    desc="Cajas de regalo de cartón por mayoreo para tiendas, florerías, reposterías y empresas: sorpresa, navideñas, para dulces, vino, grandes, con tapa, magnéticas y corporativas."
+    desc2="Las <strong>cajas de cartón para regalo</strong> se eligen por el producto que van a contener y por la presentación que buscas: corrugado ligero para armar y enviar, o cartón rígido forrado para regalos de presentación con tapa o cierre magnético.||CADECA cotiza <strong>cajas para regalo</strong> lisas o con tu logo, en medidas de referencia o a la medida, con entrega coordinada en CDMX y Estado de México. Te ayudamos a definir material, medida y cantidad."
+  />
+
   <main id="contenido-principal" role="main">
-    <section id="fichas" style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="fichas-title"><div class="container"><h2 id="fichas-title" class="section-header__title">Fichas para regalo, kits y temporada</h2><p class="section-header__subtitle">Cada tarjeta enlaza a un SKU existente para consultar estructura, acabado y condiciones de pedido.</p><div class="sku-grid">{productos.map((p) => <article class="sku-card"><div class="sku-card__img-wrap"><img src={p.imgSrc} alt={p.imgAlt} class="sku-card__img" width="640" height="480" loading="lazy" decoding="async" /><span class="sku-card__code">{p.code}</span><span class={`sku-card__badge sku-card__badge--${p.badgeColor}`}>{p.badge}</span></div><div class="sku-card__body"><h3 class="sku-card__name">{p.title}</h3><p class="sku-card__desc">{p.desc}</p><div class="sku-card__specs">{p.specs.map(([label, value]) => <div><span class="sku-card__spec-label">{label}</span><span class="sku-card__spec-value">{value}</span></div>)}</div><div class="sku-card__footer"><a class="btn btn--primary" href={p.href}>Ver ficha técnica</a></div></div></article>)}</div></div></section>
-    <section class="sku-detail" aria-labelledby="tipos-title"><div class="container"><div class="sku-detail__content"><h2 id="tipos-title" class="sku-detail__title">Define el tipo de caja antes del acabado</h2><p>Una caja armable de corrugado puede funcionar para kits, envíos o regalos que necesitan protección estructural. Las opciones con tapa, interior o acabado se eligen a partir de la forma del producto y de cómo se entregará: en punto de venta, como canasta de temporada o mediante paquetería. Las fichas de joyería, moda y temporada permiten comparar los formatos destinados a esos usos.</p><p>La personalización no se limita a un gráfico exterior. En el catálogo hay alternativas con impresión full color, laminado mate, barniz UV, relieve, troquelado y logo sobre kraft. El artículo sobre <a href="/blog/unboxing-experience-cajas-personalizadas-ventas/">experiencia de unboxing</a> ayuda a ordenar la decisión entre exterior, interior, relleno y cierre; el de <a href="/blog/cajas-carton-personalizadas-branding-marca/">cajas personalizadas y branding</a> explica los recursos de impresión que ya se mencionan en las fichas.</p><p>Para un pedido de regalo conviene indicar el SKU de referencia, dimensiones del producto, peso, si requiere divisores o relleno, el arte disponible y el número de piezas. En temporada, planear estos datos con anticipación evita elegir una estructura sólo por su apariencia. CAD-TX-08 se puede consultar como referencia para canastas y gift sets, mientras que CAD-PL-03 y CAD-PL-04 concentran opciones gráficas y de acabado.</p></div></div></section>
-    <section class="sku-sizes" aria-labelledby="cantidades-title"><div class="container"><h2 id="cantidades-title" class="section-header__title">Cantidades publicadas por ficha</h2><div class="catalog-sizes-table-wrap"><table class="catalog-sizes-table"><thead><tr><th>Ficha</th><th>Acabado o uso</th><th>Pared / ECT</th><th>Pedido publicado</th></tr></thead><tbody><tr><td><a href="/catalogo/cajas-personalizadas-logo/full-color/">CAD-PL-03</a></td><td>Full color</td><td>Simple ECT-32 o doble ECT-44</td><td>200 piezas</td></tr><tr><td><a href="/catalogo/cajas-textil-moda-retail/caja-joyeria-premium/">CAD-TX-07</a></td><td>Joyería y accesorios</td><td>Doble BC, ECT-32</td><td>200 piezas</td></tr><tr><td><a href="/catalogo/cajas-textil-moda-retail/caja-temporada-navidad/">CAD-TX-08</a></td><td>Canastas y temporada</td><td>ECT-32 / ECT-44</td><td>100 piezas</td></tr><tr><td><a href="/catalogo/cajas-personalizadas-logo/acabados-especiales/">CAD-PL-04</a></td><td>Acabados especiales</td><td>ECT-32 / ECT-44</td><td>500 piezas</td></tr></tbody></table></div></div></section>
-    <section class="sku-detail" aria-labelledby="temporada-title"><div class="container"><div class="sku-detail__content"><h2 id="temporada-title" class="sku-detail__title">Cantidad, temporada y revisión de arte</h2><p>El pedido mínimo cambia según el SKU y puede influir en la alternativa que conviene revisar primero. CAD-TX-08 publica 100 piezas para canastas y temporada; las fichas CAD-PL-03, CAD-TX-07 y CAD-PL-11 publican 200 piezas; las opciones con laminado o barniz UV total publican 300; CAD-PL-04 publica 500. Tener la cantidad definida desde el inicio permite comparar fichas que sí corresponden al pedido.</p><p>Para campañas de temporada, no basta con decidir un diseño festivo. Define cuándo se entregará el regalo, qué producto llevará dentro, cómo se cerrará la caja y si será necesario acomodar varias unidades en una caja exterior. CAD-TX-08 es una referencia de estructura para canastas y gift sets; las fichas de impresión y acabados ayudan a conversar sobre la presentación, no reemplazan la validación de medidas.</p><p>Antes de solicitar una cotización, prepara el arte disponible y enumera los elementos obligatorios: logotipo, colores, textos, códigos y áreas sin impresión. Si el producto necesita insertos o divisores, indícalo junto con su peso y dimensiones. Esa información permite partir de una ficha existente con expectativas claras sobre el formato y la cantidad.</p></div></div></section>
-    <section class="faq" aria-labelledby="faq-title"><div class="container"><h2 id="faq-title" class="section-header__title">Preguntas frecuentes</h2><div class="faq__list">{faqs.map((f) => <FaqItem {...f} />)}</div></div></section>
+
+    <section style="padding:var(--spacing-3xl) 0;background:var(--color-accent);" aria-labelledby="rg-tipos-title">
+      <div class="container">
+        <SectionHeader
+          id="rg-tipos-title"
+          twoCol
+          title={`${fichas.length} tipos de cajas de regalo`}
+          subtitle="Selecciona un tipo para ver especificaciones, medidas de referencia y opciones de personalización."
+          link={{ text: "Volver al catálogo", href: "/catalogo/" }}
+        >
+          <p>Cada tipo tiene su ficha con material, cierre, opciones de impresión, medidas de referencia, usos y preguntas frecuentes. Las cajas se surten vacías, para que tu negocio arme el regalo.</p>
+          <p>Si no encuentras la medida exacta, cotizamos la caja a la medida del producto con el mismo tipo de cierre y acabado.</p>
+        </SectionHeader>
+
+        <div class="sku-grid">
+          {fichas.map((f) => (
+            <article class="sku-card">
+              <div class="sku-card__img-wrap">
+                <img src={f.imagenes[0].src} alt={f.imagenes[0].alt} class="sku-card__img" width="640" height="480" loading="lazy" decoding="async" />
+                <span class="sku-card__code">{f.codigo}</span>
+                <span class="sku-card__badge sku-card__badge--orange">{f.badge}</span>
+              </div>
+              <div class="sku-card__body">
+                <h2 class="sku-card__name"><a href={`${categoria.href}${f.slug}/`}>{f.nombre}</a></h2>
+                <p class="sku-card__desc">{f.tarjeta.desc}</p>
+                <div class="sku-card__specs">
+                  {f.tarjeta.datos.map((d) => (
+                    <div><span class="sku-card__spec-label">{d.label}</span><span class="sku-card__spec-value">{d.value}</span></div>
+                  ))}
+                </div>
+                <div class="sku-card__footer">
+                  <a href={`${categoria.href}${f.slug}/`} class="btn btn--primary">Ver ficha</a>
+                  <span class="sku-card__moq">{f.tarjeta.pedido}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby="rg-guia-title">
+      <div class="container">
+        <h2 id="rg-guia-title" class="section-header__title" style="margin-bottom:var(--spacing-lg)">Cómo elegir la caja de regalo</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Tipo de caja</th><th>Ideal para</th><th>Material</th><th>Pedido</th></tr></thead>
+            <tbody>
+              {guia.map((g) => (
+                <tr>
+                  <td><a href={g.href}><strong>{g.nombre}</strong></a></td>
+                  <td>{g.ideal}</td>
+                  <td>{g.material}</td>
+                  <td>{g.pedido}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="rg-nota">Referencias generales. El material, la medida y la cantidad mínima se confirman en la cotización.</p>
+      </div>
+    </section>
+
+    <section class="rg-otras" aria-labelledby="rg-otras-title">
+      <div class="container">
+        <h2 id="rg-otras-title" class="section-header__title">También para regalo en otras líneas</h2>
+        <p class="section-header__subtitle">Fichas de cajas personalizadas y de moda que se usan con frecuencia como empaque de regalo.</p>
+        <ul class="rg-otras__list">
+          {otrasLineas.map((o) => (
+            <li><a href={o.href} class="rg-otras__link"><span class="rg-otras__code">{o.codigo}</span><span class="rg-otras__name">{o.nombre}</span></a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="seo-content" aria-labelledby="rg-seo-title">
+      <div class="container">
+        <h2 id="rg-seo-title" class="seo-content__title">Cajas de regalo por mayoreo para negocios</h2>
+        <p class="seo-content__text">Las cajas de regalo de cartón resuelven dos necesidades a la vez: presentar el producto y protegerlo mientras se entrega. Para regalos que viajan por paquetería conviene el corrugado micro flauta E o flauta B; para regalos de presentación, como perfumes, joyería o kits ejecutivos, se usa cartón rígido forrado con tapa o cierre magnético.</p>
+        <p class="seo-content__text">La medida se define a partir del contenido ya acomodado, con relleno o separadores si hace falta. Indica si la medida que compartes es interior o exterior, la cantidad por modelo y si llevará impresión, ventana o listón. Con esos datos preparamos una cotización comparable entre opciones.</p>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="rg-faq-title">
+      <div class="container">
+        <h2 id="rg-faq-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas frecuentes sobre cajas de regalo</h2>
+        <div class="faq__list">{faqs.map((f) => <FaqItem {...f} />)}</div>
+      </div>
+    </section>
   </main>
-  <LeadCapture title="Cotiza cajas de cartón para regalo según tu presentación" producto="Cajas de cartón para regalo" />
+
+  <LeadCapture title="Cotiza cajas de regalo de cartón para tu negocio" producto="Cajas de cartón para regalo" />
 </PageLayout>
+
+<style>
+  .rg-nota { font-size: 0.75rem; color: var(--color-text-light); margin-top: 0.6rem; }
+  .sku-card__name a { color: inherit; text-decoration: none; }
+  .sku-card__name a:hover { color: var(--color-primary); }
+  .rg-otras { padding: var(--spacing-3xl) 0; }
+  .rg-otras__list { list-style: none; margin: var(--spacing-lg) 0 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+  @media (min-width: 640px) { .rg-otras__list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .rg-otras__list { grid-template-columns: repeat(3, 1fr); } }
+  .rg-otras__link { display: flex; flex-direction: column; gap: 0.2rem; height: 100%; padding: 0.9rem 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); background: #fff; text-decoration: none; transition: border-color var(--transition-fast), box-shadow var(--transition-fast); }
+  .rg-otras__link:hover { border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+  .rg-otras__code { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; color: var(--color-primary); }
+  .rg-otras__name { font-size: var(--font-size-sm); font-weight: 700; color: var(--color-secondary); }
+</style>

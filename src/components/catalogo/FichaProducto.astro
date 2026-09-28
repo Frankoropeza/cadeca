@@ -1,0 +1,172 @@
+---
+// FichaProducto.astro — Plantilla homologada de ficha (subsección) del catálogo.
+// Estructura fija: breadcrumb → PageHero → detalle (galería + datos + specs) → medidas de referencia
+// → usos → relacionadas → FAQ → LeadCapture. Todo el contenido llega desde src/data/catalogo/*.ts.
+import PageLayout from "@/layouts/PageLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import ProductGallery from "@/components/ProductGallery.astro";
+import FaqItem from "@/components/FaqItem.astro";
+import LeadCapture from "@/components/LeadCapture.astro";
+import { contactoHref, contactoAttrs } from "@/data/contacto";
+import type { Ficha, Categoria } from "@/data/catalogo/tipos";
+
+export interface Props {
+  ficha: Ficha;
+  categoria: Categoria;
+  relacionadas: Ficha[];
+}
+
+const { ficha: f, categoria: c, relacionadas } = Astro.props;
+const url = `${c.href}${f.slug}/`;
+const idBase = f.codigo.toLowerCase();
+const stripHtml = (s: string) => s.replace(/<[^>]+>/g, "");
+---
+
+<PageLayout
+  title={f.seo.title}
+  description={f.seo.description}
+  pageType="product"
+  ogImage={f.imagenes[0].src}
+  breadcrumbs={[{ name: "Inicio", href: "/" }, { name: "Catálogo", href: "/catalogo/" }, { name: c.nombre, href: c.href }, { name: f.nombre }]}
+  faqItems={f.faqs.map((q) => ({ question: q.question, answer: stripHtml(q.answer) }))}
+  product={{ name: f.nombre, sku: f.codigo, description: f.seo.description, image: f.imagenes[0].src, category: c.nombre, moq: f.tarjeta.pedido }}
+>
+  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo/">Catálogo</a></li>
+        <li><a href={c.href}>{c.nombre}</a></li>
+        <li><span class="current">{f.nombre}</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <PageHero id={`${idBase}-title`} eyebrow={f.hero.eyebrow} titleHtml={true} title={f.hero.titleHtml} desc={f.hero.desc} desc2={f.hero.desc2} />
+
+  <main id="contenido-principal" role="main">
+    <section class="sku-detail" aria-labelledby={`${idBase}-detalle`}>
+      <div class="container">
+        <div class="sku-detail__grid">
+          <div class="sku-detail__img-col">
+            <ProductGallery images={f.imagenes} mainAlt={f.nombre} />
+          </div>
+          <div class="sku-detail__content">
+            <p class="sku-detail__code">{f.codigo} · {c.nombre}</p>
+            <h2 id={`${idBase}-detalle`} class="sku-detail__title">{f.nombre}</h2>
+            <p class="sku-detail__desc">{f.resumen}</p>
+
+            <div class="sku-detail__strip">
+              {f.destacados.map((d) => (
+                <div class="sku-detail__strip-item">
+                  <span class="sku-detail__strip-value">{d.value}</span>
+                  <span class="sku-detail__strip-label">{d.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <p class="sku-detail__specs-title">Especificaciones</p>
+            <table class="sku-detail__specs-table">
+              <tbody>
+                {f.specs.map((s) => <tr><td>{s.label}</td><td>{s.value}</td></tr>)}
+              </tbody>
+            </table>
+
+            <div class="sku-detail__actions">
+              <a href={contactoHref(`Hola, quiero cotizar ${f.codigo} ${f.nombre}`)} class="btn btn--primary" {...contactoAttrs}>Cotizar {f.codigo}</a>
+              <a href={c.href} class="btn btn--outline">Ver categoría</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sku-sizes" aria-labelledby={`${idBase}-medidas`}>
+      <div class="container">
+        <h2 id={`${idBase}-medidas`} class="section-header__title" style="margin-bottom:var(--spacing-lg)">Medidas de referencia — {f.nombre}</h2>
+        <div class="catalog-sizes-table-wrap">
+          <table class="catalog-sizes-table">
+            <thead><tr><th>Formato</th><th>Medida (L × A × H cm)</th><th>Material</th><th>Uso sugerido</th></tr></thead>
+            <tbody>
+              {f.medidas.map((m, i) => (
+                <tr class={i === 0 ? "highlight" : ""}>
+                  <td>{m.nombre}</td><td><strong>{m.medida}</strong></td><td>{m.material}</td><td>{m.uso}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="ficha-nota">Medidas de referencia. La medida final, el material y la cantidad mínima se confirman en la cotización según el proveedor y el acabado elegido.</p>
+      </div>
+    </section>
+
+    <section class="ficha-usos" aria-labelledby={`${idBase}-usos`}>
+      <div class="container">
+        <h2 id={`${idBase}-usos`} class="section-header__title">Usos más comunes</h2>
+        <ul class="ficha-usos__list">
+          {f.usos.map((u) => <li>{u}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    {relacionadas.length > 0 && (
+      <section class="ficha-rel" aria-labelledby={`${idBase}-rel`}>
+        <div class="container">
+          <h2 id={`${idBase}-rel`} class="section-header__title">Otras opciones en {c.nombre.toLowerCase()}</h2>
+          <ul class="ficha-rel__list">
+            {relacionadas.map((r) => (
+              <li>
+                <a href={`${c.href}${r.slug}/`} class="ficha-rel__link">
+                  <span class="ficha-rel__code">{r.codigo}</span>
+                  <span class="ficha-rel__name">{r.nombre}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    <section class="faq" aria-labelledby={`${idBase}-faq`}>
+      <div class="container">
+        <h2 id={`${idBase}-faq`} class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas frecuentes — {f.nombre}</h2>
+        <div class="faq__list">
+          {f.faqs.map((q, i) => <FaqItem id={`${idBase}-f${i + 1}`} question={q.question} answer={q.answer} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <LeadCapture title={`Cotiza ${f.nombre.toLowerCase()} — respuesta en horario hábil`} producto={`${f.codigo} ${f.nombre}`} />
+</PageLayout>
+
+<style>
+  .ficha-nota { font-size: 0.75rem; color: var(--color-text-light); margin-top: 0.6rem; }
+  .ficha-usos { padding: var(--spacing-3xl) 0 var(--spacing-xl); }
+  .ficha-usos__list {
+    list-style: none; margin: var(--spacing-lg) 0 0; padding: 0;
+    display: grid; grid-template-columns: 1fr; gap: 0.75rem;
+  }
+  .ficha-usos__list li {
+    padding: 0.9rem 1.1rem; border: 1px solid var(--color-border); border-left: 3px solid var(--color-primary);
+    border-radius: var(--border-radius); background: #fff; font-size: var(--font-size-sm); font-weight: 500; color: var(--color-text);
+  }
+  @media (min-width: 768px) { .ficha-usos__list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .ficha-usos__list { grid-template-columns: repeat(3, 1fr); } }
+
+  .ficha-rel { padding: var(--spacing-xl) 0 var(--spacing-3xl); }
+  .ficha-rel__list {
+    list-style: none; margin: var(--spacing-lg) 0 0; padding: 0;
+    display: grid; grid-template-columns: 1fr; gap: 0.6rem;
+  }
+  @media (min-width: 640px) { .ficha-rel__list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .ficha-rel__list { grid-template-columns: repeat(4, 1fr); } }
+  .ficha-rel__link {
+    display: flex; flex-direction: column; gap: 0.2rem; height: 100%;
+    padding: 0.9rem 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);
+    background: #fff; text-decoration: none; transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .ficha-rel__link:hover { border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+  .ficha-rel__code { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; color: var(--color-primary); }
+  .ficha-rel__name { font-size: var(--font-size-sm); font-weight: 700; color: var(--color-secondary); }
+</style>

@@ -1,0 +1,13 @@
+---
+// Fichas de «Cajas de cartón para regalo» — generadas desde src/data/catalogo/regalo.ts
+import FichaProducto from "@/components/catalogo/FichaProducto.astro";
+import { categoria, fichas, relacionadasDe } from "@/data/catalogo/regalo";
+
+export function getStaticPaths() {
+  return fichas.map((ficha) => ({ params: { slug: ficha.slug }, props: { ficha } }));
+}
+
+const { ficha } = Astro.props;
+---
+
+<FichaProducto ficha={ficha} categoria={categoria} relacionadas={relacionadasDe(ficha.slug)} />
