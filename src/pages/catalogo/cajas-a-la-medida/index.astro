@@ -4,8 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón a la Medida | CADECA";
@@ -409,19 +408,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
-<section class="faq" aria-labelledby="faq-am-title">
- <div class="container">
- <SectionHeader id="faq-am-title" twoCol
- title="Preguntas Frecuentes: Cajas a la Medida"
- subtitle="Pedido mínimo, tiempos, CAD, corrugado correcto, exportación y tamaños máximos">
- <p>Estas son las preguntas más comunes antes de hacer un pedido de cajas a la medida. Si la tuya no está aquí, nuestro equipo de ingeniería la resuelve por WhatsApp sin costo.</p>
- <p>Respondemos consultas técnicas sobre dimensiones, resistencia ECT, flautas y certificaciones en horario hábil.</p>
- </SectionHeader>
- <div class="faq__list">
- {detFaqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
  </main>
 
 
@@ -445,5 +431,5 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Necesitas una medida especial? Diseño CAD gratis" />
+ <FaqCotizacion faqs={detFaqs} tema="cajas de cartón a la medida" />
 </PageLayout>

@@ -4,8 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón Corrugado Estándar | CADECA";
@@ -450,22 +449,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  FAQ
  ══════════════════════════════════════ -->
 
-<section class="faq" aria-labelledby="faq-title">
- <div class="container">
- <SectionHeader
- id="faq-title"
- twoCol
- title="Preguntas Frecuentes: Cajas de Cartón Corrugado Estándar"
- subtitle="Todo sobre medidas, tipos de pared, resistencia ECT, flautas y pedidos"
- >
- <p>La selección correcta de cartón corrugado evita sobrecostos y daños al producto. Estas son las dudas más frecuentes de nuestros clientes antes de hacer su primer pedido.</p>
- <p>¿Tienes una consulta técnica específica? Nuestro equipo la resuelve por WhatsApp en tiempo real, sin costo y sin compromiso de compra.</p>
- </SectionHeader>
- <div class="faq__list">
- {detFaqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
  </main>
 
 
@@ -489,6 +472,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Tienes dudas técnicas? Recibe asesoría en horario hábil" />
+ <FaqCotizacion faqs={detFaqs} tema="cajas de cartón corrugado" />
 
 </PageLayout>

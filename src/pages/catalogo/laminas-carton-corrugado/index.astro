@@ -4,8 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Láminas de Cartón Corrugado | CADECA";
@@ -398,18 +397,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
-<section class="faq" aria-labelledby="faq-lc-title">
- <div class="container">
- <SectionHeader id="faq-lc-title" twoCol
- title="Preguntas Frecuentes: Láminas y Empaques Ecológicos"
- subtitle="FSC, PCR, diferencias, documentación ESG y opciones de impresión ecológica">
- <p>Las dudas más comunes sobre cartón ecológico, certificación FSC y cartón reciclado PCR. Nuestro equipo resuelve consultas técnicas y de certificación por WhatsApp en menos de 2 horas.</p>
- </SectionHeader>
- <div class="faq__list">
- {detFaqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
  </main>
 
 
@@ -433,5 +420,5 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Qué tipo de lámina necesitas? Te asesoramos gratis en menos de 1 hora" />
+ <FaqCotizacion faqs={detFaqs} tema="láminas de cartón" />
 </PageLayout>

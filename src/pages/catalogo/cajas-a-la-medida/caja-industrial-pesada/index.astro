@@ -1,8 +1,7 @@
 ---
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 import PageHero from "@/components/PageHero.astro";
 
@@ -106,15 +105,7 @@ const gallery = [
  </div>
  </section>
 
- <section class="sku-faq" aria-labelledby="faq-am09-title">
- <div class="container">
- <h2 id="faq-am09-title" class="sku-faq__title">Preguntas Frecuentes — Caja Industrial Carga Pesada</h2>
- <div class="sku-faq__list">
- {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
- </div>
- </div>
- </section>
  </main>
 
- <LeadCapture title="Protege tu maquinaria — Cotiza Caja Industrial Carga Pesada ECT-71" />
+ <FaqCotizacion faqs={faqs} tema="cajas de cartón para carga pesada" />
 </PageLayout>

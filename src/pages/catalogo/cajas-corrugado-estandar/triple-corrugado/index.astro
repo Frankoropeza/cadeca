@@ -1,8 +1,7 @@
 ---
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 import PageHero from "@/components/PageHero.astro";
 
@@ -130,13 +129,7 @@ const gallery = [
  </div>
  </section>
 
- <section class="faq" aria-labelledby="faq-ct-title">
- <div class="container">
- <h2 id="faq-ct-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas Técnicas — CAD-CT-01</h2>
- <div class="faq__list">{faqs.map(f => <FaqItem {...f} />)}</div>
- </div>
- </section>
  </main>
 
- <LeadCapture title="Cotiza CAD-CT-01 — ECT-71, normas ISTA y ASTM disponibles" />
+ <FaqCotizacion faqs={faqs} tema="cajas de triple corrugado" />
 </PageLayout>

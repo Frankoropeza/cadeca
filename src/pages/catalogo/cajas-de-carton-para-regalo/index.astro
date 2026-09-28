@@ -4,8 +4,7 @@
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import FaqItem from "@/components/FaqItem.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import { categoria, fichas } from "@/data/catalogo/regalo";
 
 const title = "Cajas de Regalo de Cartón por Mayoreo | CADECA";
@@ -158,15 +157,9 @@ const faqs = [
       </div>
     </section>
 
-    <section class="faq" aria-labelledby="rg-faq-title">
-      <div class="container">
-        <h2 id="rg-faq-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas frecuentes sobre cajas de regalo</h2>
-        <div class="faq__list">{faqs.map((f) => <FaqItem {...f} />)}</div>
-      </div>
-    </section>
   </main>
 
-  <LeadCapture title="Cotiza cajas de regalo de cartón para tu negocio" producto="Cajas de cartón para regalo" />
+  <FaqCotizacion faqs={faqs} tema="cajas de cartón para regalo" producto="Cajas de cartón para regalo" />
 </PageLayout>
 
 <style>

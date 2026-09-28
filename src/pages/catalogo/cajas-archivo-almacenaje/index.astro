@@ -4,8 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas de Archivo y Almacenaje | CADECA";
@@ -416,24 +415,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <!-- FAQ -->
-
-<section class="faq" aria-labelledby="faq-arch-title">
- <div class="container">
- <SectionHeader
- id="faq-arch-title"
- twoCol
- title="Preguntas Frecuentes: Cajas de Archivo y Almacenaje"
- subtitle="Todo sobre medidas, resistencia, apilamiento, durabilidad y pedidos"
- >
- <p>Las dudas más frecuentes de nuestros clientes antes de hacer su primer pedido de cajas de archivo y almacenaje. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
- <p>Respondemos consultas técnicas sobre medidas, tipo de corrugado, resistencia al apilamiento y durabilidad en horario hábil, sin costo y sin compromiso de compra.</p>
- </SectionHeader>
- <div class="faq__list">
- {detFaqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
  </main>
 
 
@@ -457,6 +438,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Necesitas cajas de archivo o almacenaje? Recibe asesoría en horario hábil" />
+ <FaqCotizacion faqs={detFaqs} tema="cajas para archivo" />
 
 </PageLayout>

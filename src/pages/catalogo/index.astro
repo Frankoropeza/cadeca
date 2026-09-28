@@ -2,7 +2,7 @@
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Catálogo de Cajas de Cartón para Empresas | CADECA";
@@ -197,9 +197,28 @@ const categorias = [
  ],
  },
 ];
+const faqsModulo = [
+ {
+  "question": "¿Cómo elijo la caja correcta en el catálogo?",
+  "answer": "Parte de tu producto: medidas interiores, peso y forma de envío o almacenaje. Con esos datos eliges la línea (estándar, a la medida, e-commerce, alimentos, personalizadas, archivo o láminas) y comparas en cada ficha la flauta, la resistencia ECT y las medidas disponibles."
+ },
+ {
+  "question": "¿Qué significa la resistencia ECT de cada ficha?",
+  "answer": "El ECT (Edge Crush Test) mide la resistencia del cartón al aplastamiento en el canto. A mayor ECT, mayor capacidad de apilado: ECT-32 es común en pared simple para cargas ligeras y ECT-44 o superior en doble pared para productos pesados o almacenaje en estiba."
+ },
+ {
+  "question": "¿Puedo pedir una medida que no aparece en el catálogo?",
+  "answer": "Sí. Las cajas a la medida se cotizan con el largo, ancho y alto que necesites. Revisa la línea de <a href=\"/catalogo/cajas-a-la-medida/\">cajas a la medida</a> y envía tus dimensiones en el formulario."
+ },
+ {
+  "question": "¿Por qué las fichas no muestran precios?",
+  "answer": "El precio depende de la medida, la resistencia, la impresión y la cantidad. Por eso se entrega en cada cotización, junto con la disponibilidad y la fecha de entrega."
+ }
+];
 ---
 
-<PageLayout title={title} description={description} schema={schema}>
+<PageLayout
+ faqItems={faqsModulo} title={title} description={description} schema={schema}>
 
  <!-- BREADCRUMB -->
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -392,6 +411,6 @@ const categorias = [
  </section>
  </main>
 
- <LeadCapture title="¿Necesitas asesoría técnica? Tu consultor responde en menos de 2 horas" />
+ <FaqCotizacion faqs={faqsModulo} tema="el catálogo de cajas de cartón" />
 
 </PageLayout>

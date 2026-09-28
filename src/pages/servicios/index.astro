@@ -3,8 +3,7 @@ import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero from "@/components/PageHero.astro";
 
 // ── SEO ──────────────────────────────────────────────
@@ -504,25 +503,6 @@ const faqs = [
  </div>
  </section>
 
- <!-- FAQ -->
- <section class="faq" id="faq" aria-labelledby="faq-svc-title">
- <div class="container">
- <SectionHeader
- id="faq-svc-title"
- twoCol
- title="Preguntas Frecuentes sobre Nuestros Servicios"
- subtitle="Todo lo que necesitas saber antes de hacer tu primer pedido con CADECA"
- >
- <p>Sabemos que elegir un nuevo proveedor de empaques implica confianza. Aquí respondemos las dudas más frecuentes sobre nuestros procesos, tiempos, costos y compromisos.</p>
- <p>Si tienes una pregunta específica que no aparece aquí, podemos orientarte a través del formulario de cotización en horario hábil.</p>
- </SectionHeader>
-
- <div class="faq__list">
- {faqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
-
  </main>
 
  <!-- ══════════════════════════════════════
@@ -563,6 +543,6 @@ const faqs = [
  </div>
  </section>
 
- <LeadCapture title="Solicita tu Cotización" />
+ <FaqCotizacion faqs={faqs} tema="servicios de empaque de cartón" />
 
 </PageLayout>

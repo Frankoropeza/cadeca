@@ -1,7 +1,7 @@
 ---
 import { CONTACTO, HAS_TEL, HAS_WA, HAS_EMAIL, contactoHref } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Contacto | Cajas de Cartón en CDMX | CADECA";
@@ -47,9 +47,28 @@ const canales = [
  destaca: false,
  }] : []),
 ];
+const faqsModulo = [
+ {
+  "question": "¿Qué datos necesito para pedir una cotización?",
+  "answer": "Tipo de caja, medidas (largo × ancho × alto en cm), cantidad aproximada y zona de entrega. Si la caja lleva impresión, indica el número de tintas o comparte tu archivo de diseño."
+ },
+ {
+  "question": "¿En cuánto tiempo responden?",
+  "answer": "Respondemos las solicitudes en horario hábil. Si tu pedido incluye varias medidas o especificaciones técnicas, puede requerir una revisión adicional antes de enviarte el precio."
+ },
+ {
+  "question": "¿Atienden a pequeños negocios y emprendedores?",
+  "answer": "Sí. Atendemos empresas, negocios y emprendedores; en cajas estándar puedes pedir desde una pieza y te orientamos para definir la cantidad adecuada."
+ },
+ {
+  "question": "¿Entregan fuera de CDMX y Estado de México?",
+  "answer": "Nuestra cobertura principal es la Ciudad de México y el Estado de México. Si necesitas entrega en otra ciudad, indícalo al cotizar y confirmamos si es posible."
+ }
+];
 ---
 
 <PageLayout
+ faqItems={faqsModulo}
  title={title}
  description={description}
  pageType="page"
@@ -124,6 +143,6 @@ const canales = [
 
  </main>
 
- <LeadCapture title="Solicita tu cotización" />
+ <FaqCotizacion faqs={faqsModulo} tema="cotizaciones y contacto" />
 
 </PageLayout>

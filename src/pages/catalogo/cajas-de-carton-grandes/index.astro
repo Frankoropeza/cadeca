@@ -1,8 +1,7 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageHero from "@/components/PageHero.astro";
-import FaqItem from "@/components/FaqItem.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 
 const title = "Cajas de Cartón Grandes | Medidas y Fichas | CADECA";
 const description = "Cajas de cartón grandes para mudanza, almacén y envíos. Consulta medidas publicadas, ECT y cantidades de las fichas del catálogo CADECA.";
@@ -101,7 +100,6 @@ const faqs = [
       <p>Si habrá almacenamiento, confirma cómo se acomodarán las cajas: si irán en columna, en rack, en tarima o separadas. Anota también si el producto tiene esquinas expuestas, si necesita divisores y si el cartón estará en un entorno con humedad. Esta información da contexto a las especificaciones de pared y evita pedir una caja grande que sólo coincida en volumen.</p>
     </div></div></section>
 
-    <section class="faq" aria-labelledby="faq-title"><div class="container"><h2 id="faq-title" class="section-header__title">Preguntas frecuentes</h2><div class="faq__list">{faqs.map((f) => <FaqItem {...f} />)}</div></div></section>
   </main>
-  <LeadCapture title="Cotiza cajas de cartón grandes para tu operación" producto="Cajas de cartón grandes" />
+  <FaqCotizacion faqs={faqs} tema="cajas de cartón grandes" producto="Cajas de cartón grandes" />
 </PageLayout>

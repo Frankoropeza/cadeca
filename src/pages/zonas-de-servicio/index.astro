@@ -1,8 +1,7 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import FaqItem from "@/components/FaqItem.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero from "@/components/PageHero.astro";
 
 const title = "Cajas de cartón en CDMX y Estado de México";
@@ -90,11 +89,7 @@ const schemaServiceArea = {
       </div>
     </div></section>
 
-    <section class="faq" aria-labelledby="faq-zonas-title"><div class="container">
-      <h2 id="faq-zonas-title" class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas frecuentes sobre cobertura</h2>
-      <div class="faq__list">{faqs.map((f, i) => <FaqItem id={`z-faq-${i}`} question={f.question} answer={f.answer} />)}</div>
-    </div></section>
   </main>
 
-  <LeadCapture title="¿En qué alcaldía o municipio necesitas cajas?" />
+  <FaqCotizacion faqs={faqs} tema="cajas de cartón en CDMX y Estado de México" />
 </PageLayout>

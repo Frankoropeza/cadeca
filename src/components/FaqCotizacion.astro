@@ -2,25 +2,25 @@
 // FaqCotizacion.astro — Módulo de dos columnas: preguntas frecuentes (izquierda)
 // y formulario de cotización (derecha). Reutiliza FaqItem (acordeón de BaseLayout)
 // y el envío de src/scripts/lead-form.ts (form[data-lead-form] → /api/lead).
+// Módulo homologado de TODO el sitio: sustituye a la sección FAQ + LeadCapture de cada página.
 import FaqItem from "@/components/FaqItem.astro";
 import { CONTACTO } from "@/data/contacto";
 
-export interface Faq { id: string; question: string; answer: string; }
+export interface Faq { id?: string; question: string; answer: string; }
 export interface Props {
   faqs: Faq[];
+  /** Tema SEO de la página (keyword principal): arma el H2 y la introducción. */
+  tema?: string;
   eyebrow?: string;
   title?: string;
   intro?: string;
   producto?: string;
 }
 
-const {
-  faqs,
-  eyebrow = "Antes de cotizar",
-  title = "Preguntas frecuentes sobre cajas de cartón",
-  intro = "Tipos de caja, pedidos mínimos, entrega y personalización: lo que más nos preguntan las empresas de CDMX y Estado de México.",
-  producto = "",
-} = Astro.props;
+const { faqs, tema = "cajas de cartón", producto = "" } = Astro.props;
+const eyebrow = Astro.props.eyebrow ?? "Antes de cotizar";
+const title = Astro.props.title ?? `Preguntas frecuentes sobre ${tema}`;
+const intro = Astro.props.intro ?? `Especificaciones, pedidos, entrega y personalización: resolvemos las dudas más comunes sobre ${tema}. Atendemos empresas y negocios de CDMX y Estado de México.`;
 
 const tipos = [
   "Cajas de cartón corrugado estándar",
@@ -45,7 +45,7 @@ const cantidades = ["Menos de 50 piezas", "50 – 200 piezas", "200 – 1,000 pi
         <h2 id="faq-title" class="faq-quote__title">{title}</h2>
         <p class="faq-quote__intro">{intro}</p>
         <div class="faq__list faq-quote__list">
-          {faqs.map((f) => <FaqItem {...f} />)}
+          {faqs.map((f, i) => <FaqItem id={f.id ?? `p${i + 1}`} question={f.question} answer={f.answer} />)}
         </div>
         <p class="faq-quote__more">¿No encuentras tu pregunta? Escríbela en el campo de detalles del formulario y te respondemos en horario hábil.</p>
       </div>

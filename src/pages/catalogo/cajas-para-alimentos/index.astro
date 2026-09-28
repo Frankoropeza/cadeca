@@ -4,8 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón para Alimentos | CADECA";
@@ -408,18 +407,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
-<section class="faq" aria-labelledby="faq-ca-title">
- <div class="container">
- <SectionHeader id="faq-ca-title" twoCol
- title="Preguntas Frecuentes: Cajas para Alimentos"
- subtitle="Certificaciones, normas, resistencia a grasa y humedad, personalización y exportación">
- <p>Las preguntas más comunes sobre cajas para alimentos: desde la diferencia entre una caja estándar y una apta para alimentos, hasta los requisitos de exportación. Nuestro equipo resuelve consultas específicas por WhatsApp en horario hábil.</p>
- </SectionHeader>
- <div class="faq__list">
- {detFaqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
  </main>
 
 
@@ -443,5 +430,5 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Qué tipo de caja para alimentos necesitas? Te asesoramos gratis en horario hábil" />
+ <FaqCotizacion faqs={detFaqs} tema="cajas de cartón para comida" />
 </PageLayout>

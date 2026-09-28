@@ -2,7 +2,7 @@
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductCard from "@/components/ProductCard.astro";
 import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
@@ -31,6 +31,24 @@ const schema = [
     { "@type": "Question", "name": "¿Hacen suministro para múltiples puntos de entrega?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos distribuir en múltiples bodegas o plantas dentro de la Zona Metropolitana." } }
     ]
   }
+];
+const faqsModulo = [
+ {
+  "question": "¿Cuál es el volumen mínimo para suministro programado?",
+  "answer": "Trabajamos con empresas que consumen a partir de 500 cajas mensuales. Contáctanos y analizamos tu caso."
+ },
+ {
+  "question": "¿Puedo cambiar las cantidades durante el programa?",
+  "answer": "Sí, tenemos flexibilidad para ajustar volúmenes dentro de rangos razonables según disponibilidad."
+ },
+ {
+  "question": "¿El precio es fijo aunque suban los insumos?",
+  "answer": "Respetamos el precio acordado durante la vigencia del contrato, generalmente 6 o 12 meses."
+ },
+ {
+  "question": "¿Hacen suministro para múltiples puntos de entrega?",
+  "answer": "Sí, podemos distribuir en múltiples bodegas o plantas dentro de la Zona Metropolitana."
+ }
 ];
 ---
 
@@ -117,50 +135,6 @@ const schema = [
     </div>
   </section>
 
-  {/* ════════ FAQ ════════ */}
-  <section class="page-section">
-    <div class="container">
-      <SectionHeader
-        title="Preguntas frecuentes"
-        subtitle={"Todo sobre suministro programado de cajas de cartón"}
-      />
-      <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-0">
-              <span>¿Cuál es el volumen mínimo para suministro programado?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-suministro-programado-0">
-              <p>Trabajamos con empresas que consumen a partir de 500 cajas mensuales. Contáctanos y analizamos tu caso.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-1">
-              <span>¿Puedo cambiar las cantidades durante el programa?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-suministro-programado-1">
-              <p>Sí, tenemos flexibilidad para ajustar volúmenes dentro de rangos razonables según disponibilidad.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-2">
-              <span>¿El precio es fijo aunque suban los insumos?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-suministro-programado-2">
-              <p>Respetamos el precio acordado durante la vigencia del contrato, generalmente 6 o 12 meses.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-suministro-programado-3">
-              <span>¿Hacen suministro para múltiples puntos de entrega?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-suministro-programado-3">
-              <p>Sí, podemos distribuir en múltiples bodegas o plantas dentro de la Zona Metropolitana.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
   {/* ════════ PRODUCTOS RELACIONADOS ════════ */}
   <section class="page-section page-section--alt">
     <div class="container">
@@ -197,9 +171,7 @@ const schema = [
     </div>
   </section>
 
-  <LeadCapture
-    title="Programa tu suministro de cajas"
-  />
+  <FaqCotizacion faqs={faqsModulo} tema="suministro de cajas de cartón por mayoreo" />
 
 </PageLayout>
 

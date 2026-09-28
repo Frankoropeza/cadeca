@@ -2,7 +2,7 @@
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductCard from "@/components/ProductCard.astro";
 import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
@@ -31,6 +31,24 @@ const schema = [
     { "@type": "Question", "name": "¿Hacen el diseño o yo debo enviarlo?", "acceptedAnswer": { "@type": "Answer", "text": "Lo hacemos nosotros. Solo necesitamos las medidas internas del producto, el peso y el uso final. El diseño técnico es sin costo." } }
     ]
   }
+];
+const faqsModulo = [
+ {
+  "question": "¿Cuánto cuesta hacer cajas a la medida?",
+  "answer": "El precio depende de las medidas, tipo de cartón y cantidad. A mayor volumen, menor costo unitario. Te cotizamos sin compromiso y te indicamos el tiempo de entrega según el pedido."
+ },
+ {
+  "question": "¿Cuál es la cantidad mínima?",
+  "answer": "Trabajamos desde 100 piezas. Para pedidos menores podemos cotizar aunque el precio unitario es más alto."
+ },
+ {
+  "question": "¿Pueden hacer cajas para exportación?",
+  "answer": "Sí, coordinamos cajas de doble y triple pared con talleres especializados, considerando las normas ASTM D4169 e ISTA para envíos marítimos y aéreos."
+ },
+ {
+  "question": "¿Hacen el diseño o yo debo enviarlo?",
+  "answer": "Lo hacemos nosotros. Solo necesitamos las medidas internas del producto, el peso y el uso final. El diseño técnico es sin costo."
+ }
 ];
 ---
 
@@ -117,50 +135,6 @@ const schema = [
     </div>
   </section>
 
-  {/* ════════ FAQ ════════ */}
-  <section class="page-section">
-    <div class="container">
-      <SectionHeader
-        title="Preguntas frecuentes"
-        subtitle={"Todo sobre fabricación de cajas a la medida"}
-      />
-      <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-fabricacion-cajas-medida-0">
-              <span>¿Cuánto cuesta hacer cajas a la medida?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-fabricacion-cajas-medida-0">
-              <p>El precio depende de las medidas, tipo de cartón y cantidad. A mayor volumen, menor costo unitario. Te cotizamos sin compromiso y te indicamos el tiempo de entrega según el pedido.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-fabricacion-cajas-medida-1">
-              <span>¿Cuál es la cantidad mínima?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-fabricacion-cajas-medida-1">
-              <p>Trabajamos desde 100 piezas. Para pedidos menores podemos cotizar aunque el precio unitario es más alto.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-fabricacion-cajas-medida-2">
-              <span>¿Pueden hacer cajas para exportación?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-fabricacion-cajas-medida-2">
-              <p>Sí, coordinamos cajas de doble y triple pared con talleres especializados, considerando las normas ASTM D4169 e ISTA para envíos marítimos y aéreos.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-fabricacion-cajas-medida-3">
-              <span>¿Hacen el diseño o yo debo enviarlo?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-fabricacion-cajas-medida-3">
-              <p>Lo hacemos nosotros. Solo necesitamos las medidas internas del producto, el peso y el uso final. El diseño técnico es sin costo.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
   {/* ════════ PRODUCTOS RELACIONADOS ════════ */}
   <section class="page-section page-section--alt">
     <div class="container">
@@ -197,9 +171,7 @@ const schema = [
     </div>
   </section>
 
-  <LeadCapture
-    title="Cotiza tus cajas a la medida"
-  />
+  <FaqCotizacion faqs={faqsModulo} tema="fabricación de cajas de cartón a la medida" />
 
 </PageLayout>
 

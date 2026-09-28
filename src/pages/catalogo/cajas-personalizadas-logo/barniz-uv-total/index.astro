@@ -1,8 +1,7 @@
 ---
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 import PageHero from "@/components/PageHero.astro";
 
@@ -94,15 +93,7 @@ const gallery = [
  </div>
  </section>
 
- <section class="sku-faq" aria-labelledby="faq-cadpl06-title">
- <div class="container">
- <h2 id="faq-cadpl06-title" class="sku-faq__title">Preguntas Frecuentes — Caja Personalizada Barniz UV Total</h2>
- <div class="sku-faq__list">
- {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
- </div>
- </div>
- </section>
  </main>
 
- <LeadCapture title="¿Tu marca merece un empaque brillante? Cotiza tu caja con barniz UV total — diseño incluido" />
+ <FaqCotizacion faqs={faqs} tema="cajas con barniz UV" />
 </PageLayout>

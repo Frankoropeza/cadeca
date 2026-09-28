@@ -1,7 +1,7 @@
 ---
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Nosotros | Proveedor de Cajas de Cartón en CDMX | CADECA";
@@ -32,9 +32,28 @@ const breadcrumbs = [
  { name: "Inicio", href: "/" },
  { name: "Nosotros" },
 ];
+const faqsModulo = [
+ {
+  "question": "¿CADECA fabrica las cajas?",
+  "answer": "CADECA es proveedor y distribuidor de cajas de cartón. Coordinamos la producción y el surtido con talleres y fabricantes aliados, y te acompañamos desde la especificación de la caja hasta la entrega."
+ },
+ {
+  "question": "¿Qué tipo de clientes atienden?",
+  "answer": "Empresas de manufactura, comercio electrónico, alimentos, retail, farmacéutica y logística, además de negocios y emprendedores de la Ciudad de México y el Estado de México."
+ },
+ {
+  "question": "¿Dónde entregan?",
+  "answer": "En las alcaldías de la Ciudad de México y en los principales municipios del Estado de México. La fecha se confirma al cotizar según el volumen y la zona; consulta las <a href=\"/zonas-de-servicio/\">zonas de servicio</a>."
+ },
+ {
+  "question": "¿Cómo empiezo a trabajar con CADECA?",
+  "answer": "Envía el formulario con el tipo de caja, las medidas y la cantidad aproximada. Te respondemos en horario hábil con precio, disponibilidad y fecha de entrega; para pedidos recurrentes podemos programar el suministro."
+ }
+];
 ---
 
 <PageLayout
+ faqItems={faqsModulo}
  title={title}
  description={description}
  pageType="page"
@@ -188,6 +207,6 @@ const breadcrumbs = [
 
  </main>
 
- <LeadCapture title="¿Buscas cajas para tu empresa? Solicita una cotización" />
+ <FaqCotizacion faqs={faqsModulo} tema="CADECA" />
 
 </PageLayout>

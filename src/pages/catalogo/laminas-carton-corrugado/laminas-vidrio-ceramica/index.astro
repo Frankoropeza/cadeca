@@ -1,8 +1,7 @@
 ---
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 import PageHero from "@/components/PageHero.astro";
 
@@ -94,15 +93,7 @@ const gallery = [
  </div>
  </section>
 
- <section class="sku-faq" aria-labelledby="faq-cadla09-title">
- <div class="container">
- <h2 id="faq-cadla09-title" class="sku-faq__title">Preguntas Frecuentes — Láminas Corrugado para Vidrio y Cerámica</h2>
- <div class="sku-faq__list">
- {faqs.map(f => <FaqItem id={f.id} question={f.question} answer={f.answer} />)}
- </div>
- </div>
- </section>
  </main>
 
- <LeadCapture title="¿Distribuyes vidrio o cerámica? Cotiza las láminas con amortiguación adecuada para tu carga frágil" />
+ <FaqCotizacion faqs={faqs} tema="láminas de cartón para vidrio y cerámica" />
 </PageLayout>

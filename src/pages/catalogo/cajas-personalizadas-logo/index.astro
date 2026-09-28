@@ -4,8 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas Personalizadas con Logo | CADECA";
@@ -455,24 +454,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <!-- FAQ -->
-
-<section class="faq" aria-labelledby="faq-cp-title">
- <div class="container">
- <SectionHeader
- id="faq-cp-title"
- twoCol
- title="Preguntas Frecuentes: Cajas Personalizadas con Logo"
- subtitle="Pedido mínimo, tiempos, archivos de diseño, tintas ecológicas y más"
- >
- <p>Estas son las preguntas más frecuentes de nuestros clientes antes de su primer pedido de cajas personalizadas. Si tienes dudas adicionales, resuélvelas por WhatsApp con nuestro equipo de diseño.</p>
- <p>El proceso es sencillo y sin sorpresas: diseño gratuito, prueba digital antes de producir y precio cerrado desde el inicio — sin costos ocultos.</p>
- </SectionHeader>
- <div class="faq__list">
- {detFaqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
  </main>
 
 
@@ -496,5 +477,5 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Qué tipo de impresión necesitas? Te asesoramos gratis en menos de 1 hora" />
+ <FaqCotizacion faqs={detFaqs} tema="cajas personalizadas" />
 </PageLayout>

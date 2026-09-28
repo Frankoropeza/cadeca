@@ -2,7 +2,7 @@
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductCard from "@/components/ProductCard.astro";
 import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
@@ -31,6 +31,24 @@ const schema = [
     { "@type": "Question", "name": "¿Pueden proveer documentación de sustentabilidad?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos emitir carta de proveedor con especificaciones FSC y de material reciclado para tus reportes." } }
     ]
   }
+];
+const faqsModulo = [
+ {
+  "question": "¿Qué significa la certificación FSC?",
+  "answer": "FSC (Forest Stewardship Council) certifica que el papel proviene de bosques gestionados de forma responsable o de material reciclado."
+ },
+ {
+  "question": "¿El cartón reciclado tiene la misma resistencia?",
+  "answer": "Sí, el cartón reciclado de calidad tiene resistencias ECT comparables al cartón virgen para la mayoría de usos."
+ },
+ {
+  "question": "¿Puedo imprimir con tintas ecológicas?",
+  "answer": "Sí, usamos tintas base agua para todos nuestros pedidos de packaging ecológico. Sin solventes orgánicos."
+ },
+ {
+  "question": "¿Pueden proveer documentación de sustentabilidad?",
+  "answer": "Sí, podemos emitir carta de proveedor con especificaciones FSC y de material reciclado para tus reportes."
+ }
 ];
 ---
 
@@ -117,50 +135,6 @@ const schema = [
     </div>
   </section>
 
-  {/* ════════ FAQ ════════ */}
-  <section class="page-section">
-    <div class="container">
-      <SectionHeader
-        title="Preguntas frecuentes"
-        subtitle={"Todo sobre packaging ecológico de cartón reciclado fsc"}
-      />
-      <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-0">
-              <span>¿Qué significa la certificación FSC?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-packaging-ecologico-0">
-              <p>FSC (Forest Stewardship Council) certifica que el papel proviene de bosques gestionados de forma responsable o de material reciclado.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-1">
-              <span>¿El cartón reciclado tiene la misma resistencia?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-packaging-ecologico-1">
-              <p>Sí, el cartón reciclado de calidad tiene resistencias ECT comparables al cartón virgen para la mayoría de usos.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-2">
-              <span>¿Puedo imprimir con tintas ecológicas?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-packaging-ecologico-2">
-              <p>Sí, usamos tintas base agua para todos nuestros pedidos de packaging ecológico. Sin solventes orgánicos.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-packaging-ecologico-3">
-              <span>¿Pueden proveer documentación de sustentabilidad?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-packaging-ecologico-3">
-              <p>Sí, podemos emitir carta de proveedor con especificaciones FSC y de material reciclado para tus reportes.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
   {/* ════════ PRODUCTOS RELACIONADOS ════════ */}
   <section class="page-section page-section--alt">
     <div class="container">
@@ -197,9 +171,7 @@ const schema = [
     </div>
   </section>
 
-  <LeadCapture
-    title="Cotiza tu packaging ecológico"
-  />
+  <FaqCotizacion faqs={faqsModulo} tema="empaques ecológicos" />
 
 </PageLayout>
 

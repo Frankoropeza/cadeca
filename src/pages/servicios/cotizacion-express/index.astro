@@ -2,7 +2,7 @@
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import ProductCard from "@/components/ProductCard.astro";
 import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
@@ -31,6 +31,24 @@ const schema = [
     { "@type": "Question", "name": "¿Puedo cotizar varias referencias a la vez?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, puedes enviarnos una lista con varias medidas y cantidades y cotizamos todo en un solo documento." } }
     ]
   }
+];
+const faqsModulo = [
+ {
+  "question": "¿Qué necesito para pedir una cotización?",
+  "answer": "Solo el tipo de caja que necesitas, las medidas aproximadas (largo, ancho, alto) y la cantidad. Con eso calculamos todo."
+ },
+ {
+  "question": "¿La cotización tiene algún costo?",
+  "answer": "No, la cotización es completamente gratuita y sin compromiso de compra."
+ },
+ {
+  "question": "¿Cuánto tiempo es válida la cotización?",
+  "answer": "Los precios cotizados son válidos por 15 días naturales desde la fecha de emisión."
+ },
+ {
+  "question": "¿Puedo cotizar varias referencias a la vez?",
+  "answer": "Sí, puedes enviarnos una lista con varias medidas y cantidades y cotizamos todo en un solo documento."
+ }
 ];
 ---
 
@@ -117,50 +135,6 @@ const schema = [
     </div>
   </section>
 
-  {/* ════════ FAQ ════════ */}
-  <section class="page-section">
-    <div class="container">
-      <SectionHeader
-        title="Preguntas frecuentes"
-        subtitle={"Todo sobre la cotización de cajas de cartón"}
-      />
-      <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-cotizacion-express-0">
-              <span>¿Qué necesito para pedir una cotización?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-cotizacion-express-0">
-              <p>Solo el tipo de caja que necesitas, las medidas aproximadas (largo, ancho, alto) y la cantidad. Con eso calculamos todo.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-cotizacion-express-1">
-              <span>¿La cotización tiene algún costo?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-cotizacion-express-1">
-              <p>No, la cotización es completamente gratuita y sin compromiso de compra.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-cotizacion-express-2">
-              <span>¿Cuánto tiempo es válida la cotización?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-cotizacion-express-2">
-              <p>Los precios cotizados son válidos por 15 días naturales desde la fecha de emisión.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false" aria-controls="faq-cotizacion-express-3">
-              <span>¿Puedo cotizar varias referencias a la vez?</span>
-            </button>
-            <div class="faq-item__ans" id="faq-cotizacion-express-3">
-              <p>Sí, puedes enviarnos una lista con varias medidas y cantidades y cotizamos todo en un solo documento.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
   {/* ════════ PRODUCTOS RELACIONADOS ════════ */}
   <section class="page-section page-section--alt">
     <div class="container">
@@ -197,9 +171,7 @@ const schema = [
     </div>
   </section>
 
-  <LeadCapture
-    title="Solicita tu cotización"
-  />
+  <FaqCotizacion faqs={faqsModulo} tema="cotización de cajas de cartón" />
 
 </PageLayout>
 

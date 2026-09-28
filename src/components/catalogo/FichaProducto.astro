@@ -1,12 +1,11 @@
 ---
 // FichaProducto.astro — Plantilla homologada de ficha (subsección) del catálogo.
 // Estructura fija: breadcrumb → PageHero → detalle (galería + datos + specs) → medidas de referencia
-// → usos → relacionadas → FAQ → LeadCapture. Todo el contenido llega desde src/data/catalogo/*.ts.
+// → usos → relacionadas → FaqCotizacion (FAQ + cotización). Todo el contenido llega desde src/data/catalogo/*.ts.
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
-import FaqItem from "@/components/FaqItem.astro";
-import LeadCapture from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import { contactoHref, contactoAttrs } from "@/data/contacto";
 import type { Ficha, Categoria } from "@/data/catalogo/tipos";
 
@@ -127,17 +126,9 @@ const stripHtml = (s: string) => s.replace(/<[^>]+>/g, "");
       </section>
     )}
 
-    <section class="faq" aria-labelledby={`${idBase}-faq`}>
-      <div class="container">
-        <h2 id={`${idBase}-faq`} class="section-header__title" style="margin-bottom:var(--spacing-xl)">Preguntas frecuentes — {f.nombre}</h2>
-        <div class="faq__list">
-          {f.faqs.map((q, i) => <FaqItem id={`${idBase}-f${i + 1}`} question={q.question} answer={q.answer} />)}
-        </div>
-      </div>
-    </section>
   </main>
 
-  <LeadCapture title={`Cotiza ${f.nombre.toLowerCase()} — respuesta en horario hábil`} producto={`${f.codigo} ${f.nombre}`} />
+  <FaqCotizacion faqs={f.faqs.map((q, i) => ({ id: `${idBase}-f${i + 1}`, question: q.question, answer: q.answer }))} tema={f.nombre.toLowerCase()} producto={`${f.codigo} ${f.nombre}`} />
 </PageLayout>
 
 <style>

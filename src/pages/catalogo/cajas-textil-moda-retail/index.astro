@@ -4,8 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import FaqItem  from "@/components/FaqItem.astro";
-import LeadCapture  from "@/components/LeadCapture.astro";
+import FaqCotizacion from "@/components/FaqCotizacion.astro";
 import PageHero  from "@/components/PageHero.astro";
 
 const title  = "Cajas para Ropa, Calzado y Retail | CADECA";
@@ -419,24 +418,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <!-- FAQ -->
-
-<section class="faq" aria-labelledby="faq-tmr-title">
- <div class="container">
- <SectionHeader
- id="faq-tmr-title"
- twoCol
- title="Preguntas Frecuentes: Cajas para Moda y Retail"
- subtitle="Todo sobre tipos de caja, acabados, personalización y pedidos para la industria de la moda"
- >
- <p>Las dudas más frecuentes de marcas de moda y retail antes de hacer su primer pedido con CADECA. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
- <p>Respondemos consultas sobre tipos de caja, acabados especiales, personalización y tiempos de entrega en menos de 1 hora, sin costo y sin compromiso de compra.</p>
- </SectionHeader>
- <div class="faq__list">
- {detFaqs.map(f => <FaqItem {...f} />)}
- </div>
- </div>
- </section>
  </main>
 
 
@@ -460,6 +441,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Necesitas cajas para tu marca de moda? Nuestro asesor responde en menos de 2 horas" />
+ <FaqCotizacion faqs={detFaqs} tema="cajas para ropa y calzado" />
 
 </PageLayout>
