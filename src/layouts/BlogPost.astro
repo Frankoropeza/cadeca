@@ -109,11 +109,6 @@ const waMsg = `Hola, leí el artículo "${title}" y me interesa cotizar cajas.`;
  <Header currentPath={Astro.url.pathname} />
  <span id="contenido" tabindex="-1"></span>
 
- <!-- Reading Progress -->
- <div class="reading-progress" aria-hidden="true">
- <div class="reading-progress__bar"></div>
- </div>
-
  <!-- Post Hero -->
  <section class="post-hero">
  <div class="container">
@@ -315,29 +310,9 @@ const waMsg = `Hola, leí el artículo "${title}" y me interesa cotizar cajas.`;
  <WaBubble />
 </BaseLayout>
 
-<!-- Reading progress + TOC Active Heading -->
+<!-- TOC: encabezado activo -->
 <script>
 (function() {
- // Reading progress — usa transform para no causar reflow
- const bar = document.querySelector('.reading-progress__bar') as HTMLElement | null;
- if (bar) {
- let ticking = false;
- const update = () => {
- if (!ticking) {
- requestAnimationFrame(() => {
- const el = document.documentElement;
- const total = el.scrollHeight - el.clientHeight;
- const pct = total > 0 ? Math.min((el.scrollTop / total) * 100, 100) : 0;
- bar.style.transform = `scaleX(${pct / 100})`;
- ticking = false;
- });
- ticking = true;
- }
- };
- window.addEventListener('scroll', update, { passive: true });
- update();
- }
-
  // TOC active — sin scrollIntoView para evitar scroll loop
  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('#toc-list a[data-heading]');
  if (!tocLinks.length) return;

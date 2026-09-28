@@ -75,14 +75,8 @@ const thumbs = images.slice(1);
  const alt = btn.dataset.alt ?? "";
  if (!mainImg || mainImg.src.endsWith(src)) return;
 
- mainImg.classList.add("is-loading");
- const temp = new Image();
- temp.onload = () => {
  mainImg.src = src;
  mainImg.alt = alt;
- mainImg.classList.remove("is-loading");
- };
- temp.src = src;
 
  thumbs.forEach(t => t.classList.remove("pg__thumb--active"));
  btn.classList.add("pg__thumb--active");
