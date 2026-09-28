@@ -24,12 +24,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Cuánto cuesta el flete?", "acceptedAnswer": { "@type": "Answer", "text": "Sin costo en pedidos que cumplan el mínimo de entrega. Contáctanos para conocer el mínimo según tu zona." } },
-    { "@type": "Question", "name": "¿Cubren toda la CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, las 16 alcaldías de CDMX más los principales municipios del Estado de México." } },
-    { "@type": "Question", "name": "¿Puedo programar la entrega para un horario específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos el horario de entrega según disponibilidad de rutas y lo confirmamos al cotizar." } },
-    { "@type": "Question", "name": "¿Entregan en planta con acceso restringido?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos con tu equipo de recepción para cumplir con los requisitos de acceso." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
@@ -47,8 +42,9 @@ const faqsModulo = [
  },
  {
   "question": "¿Entregan en planta con acceso restringido?",
-  "answer": "Sí, coordinamos con tu equipo de recepción para cumplir con los requisitos de acceso."
- }
+  "answer": "Indica en el formulario los requisitos de acceso, horario de recepción y datos de contacto del destino. Esa información permite revisar la coordinación necesaria con la ruta disponible y confirmar las condiciones de entrega antes de programarla."
+ },
+ { "question": "¿Cómo se calculan las condiciones de entrega de cajas en CDMX?", "answer": "Las condiciones se revisan con base en volumen, medidas de los paquetes, zona de destino y ruta disponible. Incluye la dirección completa y la cantidad de cajas en el formulario para confirmar flete, fecha y requisitos de recepción al cotizar." }
 ];
 ---
 

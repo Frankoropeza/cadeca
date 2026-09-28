@@ -24,12 +24,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Cuánto cuesta hacer cajas a la medida?", "acceptedAnswer": { "@type": "Answer", "text": "El precio depende de las medidas, tipo de cartón y cantidad. A mayor volumen, menor costo unitario. Te cotizamos sin compromiso y te indicamos el tiempo de entrega según el pedido." } },
-    { "@type": "Question", "name": "¿Cuál es la cantidad mínima?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos desde 100 piezas. Para pedidos menores podemos cotizar aunque el precio unitario es más alto." } },
-    { "@type": "Question", "name": "¿Pueden hacer cajas para exportación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos cajas de doble y triple pared con talleres especializados, considerando las normas ASTM D4169 e ISTA para envíos marítimos y aéreos." } },
-    { "@type": "Question", "name": "¿Hacen el diseño o yo debo enviarlo?", "acceptedAnswer": { "@type": "Answer", "text": "Lo hacemos nosotros. Solo necesitamos las medidas internas del producto, el peso y el uso final. El diseño técnico es sin costo." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
@@ -47,8 +42,9 @@ const faqsModulo = [
  },
  {
   "question": "¿Hacen el diseño o yo debo enviarlo?",
-  "answer": "Lo hacemos nosotros. Solo necesitamos las medidas internas del producto, el peso y el uso final. El diseño técnico es sin costo."
- }
+  "answer": "Comparte las medidas internas del producto, peso y uso final para revisar la estructura de la caja. Si cuentas con un plano o requerimiento técnico, inclúyelo en el formulario; así se pueden coordinar las especificaciones necesarias con talleres aliados."
+ },
+ { "question": "¿Cómo defino las medidas de una caja de cartón a la medida?", "answer": "Proporciona largo, ancho y alto interiores del producto, considerando la holgura necesaria para protección o acomodo. También indica si llevará separadores, relleno o varios artículos, pues esos elementos influyen en la medida final y el tipo de corrugado." }
 ];
 ---
 

@@ -24,31 +24,27 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Qué necesito para pedir una cotización?", "acceptedAnswer": { "@type": "Answer", "text": "Solo el tipo de caja que necesitas, las medidas aproximadas (largo, ancho, alto) y la cantidad. Con eso calculamos todo." } },
-    { "@type": "Question", "name": "¿La cotización tiene algún costo?", "acceptedAnswer": { "@type": "Answer", "text": "No, la cotización es completamente gratuita y sin compromiso de compra." } },
-    { "@type": "Question", "name": "¿Cuánto tiempo es válida la cotización?", "acceptedAnswer": { "@type": "Answer", "text": "Los precios cotizados son válidos por 15 días naturales desde la fecha de emisión." } },
-    { "@type": "Question", "name": "¿Puedo cotizar varias referencias a la vez?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, puedes enviarnos una lista con varias medidas y cantidades y cotizamos todo en un solo documento." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
  {
   "question": "¿Qué necesito para pedir una cotización?",
-  "answer": "Solo el tipo de caja que necesitas, las medidas aproximadas (largo, ancho, alto) y la cantidad. Con eso calculamos todo."
+  "answer": "Indica tipo de caja, largo, ancho, alto, cantidad y zona de entrega para revisar la solicitud. Si necesita impresión o una resistencia particular, añádelo junto con el uso del empaque; esa información permite comparar alternativas de cartón corrugado."
  },
  {
   "question": "¿La cotización tiene algún costo?",
-  "answer": "No, la cotización es completamente gratuita y sin compromiso de compra."
+  "answer": "Puedes enviar la información del pedido mediante el formulario para recibir una cotización sin compromiso de compra. El resultado depende de las especificaciones solicitadas, por lo que conviene incluir medidas, cantidad, uso, impresión y destino desde el inicio."
  },
  {
   "question": "¿Cuánto tiempo es válida la cotización?",
-  "answer": "Los precios cotizados son válidos por 15 días naturales desde la fecha de emisión."
+  "answer": "La vigencia y las condiciones de precio se indican al emitir la cotización. Como dependen de medida, material, cantidad e impresión, revisa esos datos antes de confirmar el pedido para asegurar que la propuesta corresponda a la especificación requerida."
  },
  {
   "question": "¿Puedo cotizar varias referencias a la vez?",
-  "answer": "Sí, puedes enviarnos una lista con varias medidas y cantidades y cotizamos todo en un solo documento."
- }
+  "answer": "Puedes incluir varias medidas y cantidades en una misma solicitud. Identifica cada referencia con sus dimensiones, cantidad, uso e impresión si aplica, para revisar la estructura de cartón y presentar las alternativas correspondientes."
+ },
+ { "question": "¿Cómo cotizo cajas de cartón con la resistencia adecuada?", "answer": "Indica peso del producto, dimensiones, forma de envío, altura de apilado y cantidad requerida. Con esos datos se puede revisar la flauta y el ECT convenientes, pues ambos influyen en la rigidez y resistencia de la caja durante su manejo." }
 ];
 ---
 

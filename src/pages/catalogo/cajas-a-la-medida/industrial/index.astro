@@ -43,6 +43,9 @@ const faqs = [
  question:"¿Qué son los esquineros de cartón y cuándo se usan con cajas industriales?",
  answer:"Los esquineros son perfiles de cartón corrugado en forma de ángulo recto de 90° que se colocan en las esquinas verticales de la caja o de la tarima. Aumentan la resistencia al aplastamiento vertical en un 40-60% adicional al ECT de la caja base. Se usan cuando: el producto es pesado y se apila en múltiples niveles, la caja viajará en camión por largas distancias con vibración, o el cliente exige protección de esquinas visible. CADECA los fabrica a la medida sin costo extra en pedidos de 50+ piezas que los incluyan.",
  },
+ { id:"am01-f3", question:"¿Qué diferencia hay entre corrugado simple, doble y triple?", answer:"La pared simple tiene una flauta entre dos liners; la doble incorpora dos flautas y la triple tres. La elección responde al peso, tamaño, apilamiento y manejo del producto, además de la protección interna que llevará." },
+ { id:"am01-f4", question:"¿Cómo se toman las medidas de una caja industrial a la medida?", answer:"Mide largo, ancho y alto del producto, incluyendo salientes, y define si llevará protección interna. Añade el peso y la forma de acomodo para valorar el espacio útil, el tipo de cartón y el cierre adecuado." },
+ { id:"am01-f5", question:"¿Qué información requiere una cotización de caja industrial?", answer:"Envía por el formulario dimensiones, peso, cantidad, uso y condiciones de almacenaje o transporte. Si habrá tarima, apilamiento o impresión, inclúyelo para revisar la especificación de corrugado y acabados disponibles." },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif";
@@ -60,7 +63,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Industrial Reforzada"}]}
- faqItems={[{question:"¿Cómo sé qué ECT necesito para mi producto industrial?", answer:"El ECT (Edge Crush Test) define la resistencia del corrugado. Regla práctica: productos hasta 15 kg → ECT-32; 15-30 kg → ECT-44; 30-50 kg → ECT-51; más de 50 kg → ECT-61 (triple corrugado). Sin embargo, también importa el método de apilamiento: cajas apiladas en tarima 4 niveles necesitan mayor ECT que una caja que va sola. Nuestros asesores realizan el cálculo de BCT (Box Compression Test) estimado gratis para confirmar el ECT correcto para tu aplicación específica."}, {question:"¿Qué son los esquineros de cartón y cuándo se usan con cajas industriales?", answer:"Los esquineros son perfiles de cartón corrugado en forma de ángulo recto de 90° que se colocan en las esquinas verticales de la caja o de la tarima. Aumentan la resistencia al aplastamiento vertical en un 40-60% adicional al ECT de la caja base. Se usan cuando: el producto es pesado y se apila en múltiples niveles, la caja viajará en camión por largas distancias con vibración, o el cliente exige protección de esquinas visible. CADECA los fabrica a la medida sin costo extra en pedidos de 50+ piezas que los incluyan."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja a la Medida Industrial Reforzada", sku:"CAD-AM-01", description:"Caja a la Medida Industrial Reforzada en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif", material:"Cartón doble corrugado BC ECT-44/51 a la medida para uso industrial", category:"Cajas a la Medida", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

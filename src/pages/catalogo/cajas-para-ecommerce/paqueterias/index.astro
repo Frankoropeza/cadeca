@@ -43,6 +43,9 @@ const faqs = [
  question:"¿Qué paquetería conviene más para e-commerce en CDMX?",
  answer:"Depende del destino, peso y urgencia: <strong>DHL:</strong> opción para envíos urgentes y zonas remotas. <strong>FedEx:</strong> opción para productos de alto valor. <strong>Estafeta:</strong> puede convenir para paquetes pesados en zonas metropolitanas. <strong>J&T:</strong> puede ser competitiva en precio para e-commerce masivo. <strong>99Minutos:</strong> revisa su disponibilidad de entrega para tu zona. Usa la que te ofrezca el menor costo total considerando tarifas + peso volumétrico + tiempo.",
  },
+ { id:"ec03-f3", question:"¿Cómo elegir una caja para DHL, FedEx y Estafeta?", answer:"Mide el producto ya protegido y revisa el peso real junto con sus dimensiones. Una caja proporcionada ayuda a limitar espacio vacío y permite comparar el peso volumétrico que aplique cada servicio." },
+ { id:"ec03-f4", question:"¿Qué significa ECT en una caja para paquetería?", answer:"ECT es una medida de resistencia a compresión del cartón corrugado. Sirve para comparar la rigidez de distintas opciones, junto con el peso de la carga, la altura de apilado y el manejo previsto." },
+ { id:"ec03-f5", question:"¿Qué debo enviar para cotizar cajas para paqueterías?", answer:"Envía el formulario con medidas, cantidad, peso y paquetería prevista. También indica si necesitas impresión o protección interior para orientar la elección de formato y resistencia." },
 ];
 
 const mainImg = "/img/catalogo/cajas-dhl-fedex-estafeta-paqueterias-cdmx.avif";
@@ -60,7 +63,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce/"}, {name:"DHL · FedEx · Estafeta"}]}
- faqItems={[{question:"¿Cómo se calcula el peso volumétrico y cómo lo reduzco?", answer:"El peso volumétrico = Largo × Ancho × Alto ÷ Factor divisor. DHL y FedEx usan factor 3000 (más estricto); Estafeta y J&T usan 5000. La paquetería cobra por el mayor entre peso real y volumétrico. Para reducirlo, la clave es usar la caja más pequeña que proteja el producto, eliminando espacio vacío. Te asesoramos para comparar qué medida de caja minimiza el vol. weight para tus productos específicos."}, {question:"¿Qué paquetería conviene más para e-commerce en CDMX?", answer:"Depende del destino y urgencia: DHL puede convenir para envíos urgentes y zonas remotas. FedEx para productos de alto valor. Estafeta puede convenir para paquetes pesados en zonas metropolitanas. J&T puede ser competitiva en precio para e-commerce masivo. 99Minutos depende de la disponibilidad para tu zona. Usa la que ofrezca el menor costo total considerando tarifas más peso volumétrico más tiempo."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Cajas DHL FedEx Estafeta Peso Volumétrico", sku:"CAD-EC-03", description:"Cajas DHL FedEx Estafeta Peso Volumétrico en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-dhl-fedex-estafeta-paqueterias-cdmx.avif", material:"Cartón doble corrugado BC ECT-44 optimizado para paqueterías", category:"Cajas para E-commerce", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

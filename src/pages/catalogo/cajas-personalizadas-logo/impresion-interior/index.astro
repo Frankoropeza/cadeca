@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-pl-09-f1", question:"¿Por qué la impresión interior genera más engagement en redes?", answer:"La sorpresa visual al abrir la caja activa una respuesta emocional positiva que los clientes comparten naturalmente en TikTok e Instagram. Un interior bien diseñado puede generar docenas de unboxings orgánicos que equivalen a publicidad gratuita. Marcas como subscription boxes y DTC de cosmética reportan incrementos de 40% a 80% en unboxings compartidos después de implementar impresión interior." },
- { id:"cad-pl-09-f2", question:"¿El interior impreso encarece mucho la caja?", answer:"El sobrecosto de la impresión interior varía según el área cubierta y el número de colores, pero en general es un incremento de 15% a 25% sobre el precio de una caja sin impresión interior. Para pedidos de 500 piezas o más, el costo adicional se vuelve muy pequeño por unidad y el impacto en la percepción de valor es desproporcionadamente mayor." },
- { id:"cad-pl-09-f3", question:"¿Puedo poner mensajes personalizados por cliente en el interior?", answer:"Para mensajes individualizados por cliente (nombre del comprador, código de descuento, etc.) necesitarías impresión digital variable, que manejamos para tirajes menores. Para el unboxing experience estándar con diseño fijo, usamos impresión flexográfica que es más económica para tirajes de 300 piezas o más." },
+ {
+ id: "cad-pl-09-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas con impresión interior?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-pl-09-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas con impresión interior?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-pl-09-f3",
+ question: "¿Se pueden personalizar cajas con impresión interior con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-pl-09-f4",
+ question: "¿Cómo debo almacenar cajas con impresión interior antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-pl-09-f5",
+ question: "¿Qué datos necesito para cotizar cajas con impresión interior?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja con Impresión Interior Sorpresa"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja con Impresión Interior Sorpresa",sku:"CAD-PL-09",description:"Caja con impresión interior para crear sorpresa al abrir: exterior neutro o con logo y el interior totalmente personalizado con tu marca. Ideal para unboxing en redes sociales.",image:gallery[0].src,material:"CAD-PL-09",category:"Cajas Personalizadas con Logo",moq:"300 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

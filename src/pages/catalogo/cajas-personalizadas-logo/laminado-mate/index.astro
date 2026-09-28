@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-pl-07-f1", question:"¿El laminado mate es más resistente que el barniz UV?", answer:"Sí. El laminado BOPP mate es una película plástica adherida a la superficie que ofrece mayor resistencia a los rayones, la humedad y el desgaste por fricción comparado con el barniz UV. Para productos que se exhiben en punto de venta y se manipulan frecuentemente, el laminado mate es la opción más duradera." },
- { id:"cad-pl-07-f2", question:"¿Puedo combinar laminado mate con hot stamping dorado?", answer:"Sí. El laminado mate + hot stamping dorado o plateado es una de las combinaciones más elegantes y usadas en cosmética y joyería de lujo. El contraste entre la textura mate aterciopelada y el brillo metálico del hot stamping crea un efecto visual muy sofisticado. Pregunta por el costo adicional del hot stamping en tu cotización." },
- { id:"cad-pl-07-f3", question:"¿En cuánto tiempo tengo la muestra física?", answer:"Producimos una muestra física en 3 a 4 días hábiles después de que apruebas el arte digital. La muestra tiene el mismo acabado que el pedido de producción. La enviamos a CDMX sin costo o puedes recogerla en nuestras instalaciones." },
+ {
+ id: "cad-pl-07-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas con laminado mate?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-pl-07-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas con laminado mate?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-pl-07-f3",
+ question: "¿Se pueden personalizar cajas con laminado mate con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-pl-07-f4",
+ question: "¿Cómo debo almacenar cajas con laminado mate antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-pl-07-f5",
+ question: "¿Qué datos necesito para cotizar cajas con laminado mate?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja Personalizada Laminado Mate Soft Touch"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Personalizada Laminado Mate Soft Touch",sku:"CAD-PL-07",description:"Caja con laminado mate soft touch: acabado aterciopelado que comunica lujo y cuidado. Ideal para marcas DTC, cosmética premium y canastas navideñas. Desde 300 piezas.",image:gallery[0].src,material:"CAD-PL-07",category:"Cajas Personalizadas con Logo",moq:"300 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

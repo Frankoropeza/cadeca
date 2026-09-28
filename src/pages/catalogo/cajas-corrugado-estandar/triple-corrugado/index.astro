@@ -45,6 +45,9 @@ const faqs = [
  question:"¿Puedo imprimir mi logo en cajas de triple corrugado?",
  answer:"Sí, con limitaciones. La superficie del triple corrugado (BCB o BCF) es más rugosa que el simple o doble, lo que limita la calidad de impresión a flexografía de 1 o 2 colores. Para una impresión de mayor calidad en cajas industriales, recomendamos usar una etiqueta o sticker impreso y pegarlo sobre la caja en lugar de impresión directa sobre el cartón.",
  },
+ { id:"ct-f3", question:"¿Cuándo conviene una caja de cartón triple corrugado?", answer:"La triple pared puede valorarse para productos pesados, con aristas exigentes o que tendrán apilamiento relevante. La configuración se define con peso, medidas, tipo de traslado, humedad y la protección interior necesaria." },
+ { id:"ct-f4", question:"¿Cómo se elige el ECT de una caja de triple corrugado?", answer:"El ECT mide la resistencia al aplastamiento del borde y se revisa con el diseño de la caja completa. Peso, dimensiones, cierre, tarima y tiempo de almacenaje influyen en la especificación que conviene solicitar." },
+ { id:"ct-f5", question:"¿Cómo cotizo cajas de cartón triple corrugado?", answer:"Envía dimensiones internas, peso, cantidad y condiciones de manejo en el formulario. Si habrá tarima, esquineros, impresión o protección interna, descríbelo para revisar el cartón y formato adecuados." },
 ];
 
 const mainImg = "/img/productos/cajas-carton-triple-corrugado-industrial-cdmx.avif";
@@ -62,7 +65,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/"}, {name:"Triple Corrugado"}]}
- faqItems={[{question:"¿Cuándo es necesario usar triple corrugado en lugar de doble corrugado?", answer:"Triple corrugado (BCB, ECT-61+) es necesario cuando: el producto pesa más de 30 kg, el producto es maquinaria o equipo con bordes metálicos que podrían perforar doble corrugado, la caja será exportada por vía marítima (mínimo 30 días en contenedor con humedad), el producto requiere certificación ISTA 2A o 3A para transporte aéreo de carga, o el producto es electrodoméstico de línea blanca grande. Para productos menores a 20-25 kg y envíos nacionales, el doble corrugado ECT-44 es suficiente."}, {question:"¿El triple corrugado puede sustituir la madera como material de embalaje industrial?", answer:"En muchos casos sí. El triple corrugado BCB ECT-61+ ofrece una relación resistencia/peso superior a la madera contrachapada de 12mm, es 100% reciclable (la madera a veces requiere tratamiento NIMF 15 para exportación), se puede imprimir y marcar con mayor facilidad, y cumple regulaciones de embalaje internacional sin restricciones fitosanitarias. Sus limitaciones frente a madera son: menor resistencia a humedad extrema en exposición prolongada y menor rigidez lateral en estructuras muy altas. Para pallets y contenedores, la combinación cartón BCB + esquineros de cartón reemplaza madera en muchas aplicaciones industriales."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Triple Corrugado BCB Industrial", sku:"CAD-CT-01", description:"Caja Triple Corrugado BCB Industrial en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-triple-corrugado-industrial-cdmx.avif", material:"Cartón triple corrugado flauta BCB ECT-61", category:"Cajas de Cartón Corrugado Estándar", moq:"25"}}
 >
  <!-- Breadcrumb -->

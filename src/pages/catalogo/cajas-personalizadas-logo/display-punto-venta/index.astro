@@ -21,9 +21,31 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-pl-08-f1", question:"¿Qué es exactamente una caja PDQ?", answer:"PDQ significa Pre-Designed Quantity o también se usa como Acrónimo de Pretty Darn Quick. Es una caja de envío diseñada para que en el punto de venta solo se retire la tapa superior y quede como exhibidor. Ahorra tiempo al personal de tienda, reduce el riesgo de daño al producto durante el acomodo y ayuda a mantener una presentación de marca consistente en todas las tiendas." },
- { id:"cad-pl-08-f2", question:"¿Para qué categorías de productos funciona mejor el PDQ?", answer:"El PDQ es ideal para productos de consumo masivo: cosméticos, suplementos, dulces y botanas, artículos de temporada, productos de higiene personal y electrónicos de accesorios. En general, cualquier producto de entre 50 g y 2 kg que se venda en unidades individuales en tienda de autoservicio o farmacia." },
- { id:"cad-pl-08-f3", question:"¿Puedo diseñar el PDQ con mi identidad de marca completa?", answer:"Sí. El PDQ tiene 5 caras imprimibles: frente, lados, fondo y tapa. El área de impresión es amplia y permite desplegar toda tu identidad de marca: logo, colores corporativos, slogan, información del producto y código de barras. El diseño es gratuito con tu logo en vectores." },
+ {
+ id: "cad-pl-08-f1",
+ question: "¿Cómo elijo la medida adecuada para cajas display para punto de venta?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
+ },
+ {
+ id: "cad-pl-08-f2",
+ question: "¿Qué resistencia de cartón conviene para cajas display para punto de venta?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
+ },
+ {
+ id: "cad-pl-08-f3",
+ question: "¿Se pueden personalizar cajas display para punto de venta con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "cad-pl-08-f4",
+ question: "¿Cómo debo almacenar cajas display para punto de venta antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "cad-pl-08-f5",
+ question: "¿Qué datos necesito para cotizar cajas display para punto de venta?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
+ },
 ];
 
 const gallery = [
@@ -40,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja Display para Punto de Venta PDQ"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Display para Punto de Venta PDQ",sku:"CAD-PL-08",description:"Caja tipo display PDQ para punto de venta: exhibe y vende al mismo tiempo. Impresión full color, estructura autoportante, compatible con mostradores y góndolas. Desde 200 piezas.",image:gallery[0].src,material:"CAD-PL-08",category:"Cajas Personalizadas con Logo",moq:"200 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

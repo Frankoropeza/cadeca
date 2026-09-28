@@ -24,12 +24,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Cuál es el volumen mínimo para suministro programado?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos con empresas que consumen a partir de 500 cajas mensuales. Contáctanos y analizamos tu caso." } },
-    { "@type": "Question", "name": "¿Puedo cambiar las cantidades durante el programa?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, tenemos flexibilidad para ajustar volúmenes dentro de rangos razonables según disponibilidad." } },
-    { "@type": "Question", "name": "¿El precio es fijo aunque suban los insumos?", "acceptedAnswer": { "@type": "Answer", "text": "Respetamos el precio acordado durante la vigencia del contrato, generalmente 6 o 12 meses." } },
-    { "@type": "Question", "name": "¿Hacen suministro para múltiples puntos de entrega?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, podemos distribuir en múltiples bodegas o plantas dentro de la Zona Metropolitana." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
@@ -47,8 +42,9 @@ const faqsModulo = [
  },
  {
   "question": "¿Hacen suministro para múltiples puntos de entrega?",
-  "answer": "Sí, podemos distribuir en múltiples bodegas o plantas dentro de la Zona Metropolitana."
- }
+  "answer": "Incluye los distintos destinos, cantidades y frecuencia requerida en el formulario. Con esa información se revisan las alternativas de ruta y suministro para cada punto, así como las condiciones que deberán confirmarse en la cotización." 
+ },
+ { "question": "¿Cómo se define la frecuencia de suministro de cajas de cartón?", "answer": "La frecuencia se plantea según consumo estimado, espacio de almacenamiento, tipo de caja y destinos de entrega. Puedes solicitar opciones semanales, quincenales o mensuales; el calendario y las cantidades se revisan y confirman al cotizar." }
 ];
 ---
 

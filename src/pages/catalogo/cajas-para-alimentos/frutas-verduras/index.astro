@@ -41,6 +41,9 @@ const faqs = [
  question:"¿Diferencia entre cámara fría y temperatura ambiente para el cartón?",
  answer:"A temperatura ambiente el ECT-44 retiene 100% de resistencia. En cámara fría (85-95% HR) baja hasta 40-50% sin WR. Con WR básico incluido en CAD-AL-04 se retiene 70-75% del ECT. Para más de 7 días en cámara o congelación se recomienda CAD-AL-05.",
  },
+ { id:"al04-f3", question:"¿Cómo elegir cajas para frutas y verduras frescas?", answer:"La medida se define con el tipo de producto, peso y forma de acomodo. Las ventilaciones ayudan al intercambio de aire, pero deben diseñarse sin debilitar zonas que soportan carga durante el apilado." },
+ { id:"al04-f4", question:"¿Qué resistencia necesita una caja para frutas y verduras?", answer:"La resistencia depende del peso por caja, el apilado y la humedad prevista. El ECT permite comparar la capacidad de compresión del corrugado y orientar la selección de pared y liner." },
+ { id:"al04-f5", question:"¿Qué datos debo enviar para cotizar cajas para frutas y verduras?", answer:"Envía el formulario con medidas, cantidad, peso por caja, tipo de producto y condiciones de almacenamiento. Indica si requieres ventilación o manejo en frío para revisar la configuración adecuada." },
 ];
 
 const mainImg = "/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif";
@@ -58,7 +61,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Alimentos", href:"/catalogo/cajas-para-alimentos/"}, {name:"Frutas y Verduras"}]}
- faqItems={[{question:"¿Por qué necesitan ventilaciones laterales?", answer:"Las frutas y verduras siguen respirando, liberando calor, CO2 y humedad. Sin ventilación, la humedad acumulada acelera la descomposición. Las ventilaciones permiten flujo de aire frío de la cámara. Las cajas sin ventilaciones duran 30-40% menos en cámara."}, {question:"¿Diferencia entre cámara fría y temperatura ambiente para el cartón?", answer:"A temperatura ambiente el ECT-44 retiene 100% de resistencia. En cámara fría (85-95% HR) baja hasta 40-50% sin WR. Con WR básico incluido en CAD-AL-04 se retiene 70-75% del ECT. Para más de 7 días en cámara o congelación se recomienda CAD-AL-05."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Frutas Verduras Ventiladas Cámara Fría", sku:"CAD-AL-04", description:"Caja Frutas Verduras Ventiladas Cámara Fría en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-frutas-verduras-corrugado-cdmx.avif", material:"Cartón doble corrugado ECT-44 ventilaciones frutas verduras cámara fría", category:"Cajas para Alimentos", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

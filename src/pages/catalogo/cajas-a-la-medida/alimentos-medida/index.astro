@@ -35,13 +35,16 @@ const faqs = [
  {
  id:"am03-f1",
  question:"¿Qué certifica COFEPRIS en el empaque de alimentos?",
- answer:"COFEPRIS (Comisión Federal para la Protección contra Riesgos Sanitarios) certifica que los materiales en contacto con alimentos (incluyendo empaques) no transfieren sustancias peligrosas al alimento. Para cajas de cartón corrugado, los puntos críticos son: el liner interior debe ser fibra virgen o reciclada certificada sin contaminantes; las tintas de impresión deben ser base agua sin metales pesados ni solventes tóxicos; los adhesivos deben ser food-safe. CADECA emite carta técnica con todas las especificaciones del material para tu proceso de registro de producto ante COFEPRIS.",
+ answer:"COFEPRIS regula aspectos sanitarios aplicables a alimentos y sus procesos; la caja de cartón suele funcionar como empaque secundario o terciario. Para contacto indirecto, conviene definir el envase primario, las tintas y las condiciones de uso con las áreas responsables de tu producto.",
  },
  {
  id:"am03-f2",
  question:"¿Qué diferencia hay entre contacto directo e indirecto con alimentos?",
  answer:"Contacto directo significa que el alimento toca directamente el material del empaque, como una bolsa de plástico que contiene arroz a granel. Contacto indirecto significa que el alimento tiene un envase primario y la caja de cartón es el empaque secundario o terciario. La caja de cartón en 99% de las aplicaciones es contacto indirecto — el alimento ya viene en bolsa, envase plástico, lata o vidrio. Las exigencias para contacto indirecto son menos estrictas y más económicas que para contacto directo. Si tu producto necesita contacto directo con cartón (algunas pastas, granos), consúltanos para el liner correcto.",
  },
+ { id:"am03-f3", question:"¿Qué medida conviene para una caja de alimentos con envase primario?", answer:"La medida interior debe dejar el espacio necesario para el envase primario y un acomodo estable durante el traslado. Comparte largo, ancho, alto y peso del producto en el formulario para valorar una pared simple o doble y el espacio de protección requerido." },
+ { id:"am03-f4", question:"¿Qué tratamiento requiere una caja para alimentos refrigerados?", answer:"Para productos refrigerados se puede valorar un tratamiento resistente a humedad y tintas base agua, de acuerdo con el uso indicado. El cartón no debe permanecer en contacto con agua o condensación continua; el envase primario sigue siendo la barrera del alimento." },
+ { id:"am03-f5", question:"¿Cómo solicito una cotización de cajas para alimentos a la medida?", answer:"Envía el formulario con las dimensiones, peso, tipo de envase primario, cantidad y condiciones de transporte. Con esos datos se puede coordinar una opción de cartón, impresión y tratamiento acorde con el uso de empaque indirecto." },
 ];
 
 const mainImg = "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif";
@@ -59,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Alimentos FDA/COFEPRIS"}]}
- faqItems={[{question:"¿Qué certifica COFEPRIS en el empaque de alimentos?", answer:"COFEPRIS (Comisión Federal para la Protección contra Riesgos Sanitarios) certifica que los materiales en contacto con alimentos (incluyendo empaques) no transfieren sustancias peligrosas al alimento. Para cajas de cartón corrugado, los puntos críticos son: el liner interior debe ser fibra virgen o reciclada certificada sin contaminantes; las tintas de impresión deben ser base agua sin metales pesados ni solventes tóxicos; los adhesivos deben ser food-safe. CADECA emite carta técnica con todas las especificaciones del material para tu proceso de registro de producto ante COFEPRIS."}, {question:"¿Qué diferencia hay entre contacto directo e indirecto con alimentos?", answer:"Contacto directo significa que el alimento toca directamente el material del empaque, como una bolsa de plástico que contiene arroz a granel. Contacto indirecto significa que el alimento tiene un envase primario y la caja de cartón es el empaque secundario o terciario. La caja de cartón en 99% de las aplicaciones es contacto indirecto — el alimento ya viene en bolsa, envase plástico, lata o vidrio. Las exigencias para contacto indirecto son menos estrictas y más económicas que para contacto directo. Si tu producto necesita contacto directo con cartón (algunas pastas, granos), consúltanos para el liner correcto."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja a la Medida Alimentos Food Grade COFEPRIS", sku:"CAD-AM-03", description:"Caja a la Medida Alimentos Food Grade COFEPRIS en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif", material:"Cartón corrugado liner food-grade apto para contacto indirecto con alimentos", category:"Cajas a la Medida", moq:"100"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

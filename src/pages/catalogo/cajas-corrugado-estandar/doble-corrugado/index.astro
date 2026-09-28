@@ -38,13 +38,16 @@ const faqs = [
  {
  id:"cd-f1",
  question:"¿Por qué Amazon FBA exige doble corrugado como mínimo?",
- answer:"Los centros de distribución de Amazon manejan miles de paquetes diariamente con maquinaria automatizada. El corrugado simple no resiste las fuerzas de compresión y aplastamiento a las que se someten las cajas en las bandas transportadoras y el almacenaje en altura. Amazon especifica ECT-44 como mínimo para garantizar que el empaque llegue íntegro al cliente final. Nuestro CAD-CD-01 cumple este requerimiento de fábrica.",
+ answer:"Los centros de distribución pueden someter las cajas a bandas, compresión y apilamiento. La resistencia requerida depende de las reglas vigentes del canal y del producto; confirma con tu plataforma o transportista qué especificación de empaque solicita.",
  },
  {
  id:"cd-f2",
  question:"¿Cuánto más cuesta el doble corrugado vs el simple?",
  answer:"El doble corrugado tiene un costo superior al simple, generalmente entre un 30% y un 50% más por pieza dependiendo de la medida y el volumen. Sin embargo, este costo extra se justifica cuando el producto cuesta más que la caja (electrónica, maquinaria, artículos de lujo) o cuando los rechazos por daños en tránsito generan más pérdidas que el diferencial de precio del empaque.",
  },
+ { id:"cd-f3", question:"¿Qué diferencia hay entre doble corrugado BC y EB?", answer:"Ambas combinaciones usan dos flautas, pero cambian espesor, rigidez y superficie de impresión. La alternativa adecuada depende del peso, fragilidad, apilamiento y presentación requerida para el producto y su recorrido." },
+ { id:"cd-f4", question:"¿Cómo se elige una caja de doble corrugado para envío?", answer:"Considera medidas, peso, tipo de producto, protección interna y condiciones de transporte. La pared doble puede aportar más estructura que la simple, pero el ECT y cierre deben definirse con las necesidades reales." },
+ { id:"cd-f5", question:"¿Cómo cotizo cajas de cartón doble corrugado?", answer:"Envía dimensiones internas, peso, cantidad y uso de la caja en el formulario. Indica si habrá apilamiento, impresión o requerimientos de cierre para revisar la combinación de flautas adecuada." },
 ];
 
 const mainImg = "/img/productos/cajas-carton-doble-corrugado-resistente-cdmx.avif";
@@ -62,7 +65,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/"}, {name:"Doble Corrugado"}]}
- faqItems={[{question:"¿Por qué el doble corrugado ECT-44 es el estándar de la industria para e-commerce?", answer:"El ECT-44 doble corrugado BC se convirtió en el estándar porque equilibra tres factores clave: resistencia suficiente para soportar el manejo en centros de distribución automatizados (caídas, apilamiento, vibración), peso controlado que no genera costo excesivo de flete, y costo por pieza competitivo. Mercado Libre, Amazon y las principales paqueterías exigen ECT-44 mínimo porque reduce dramáticamente la tasa de daño en tránsito, que es el costo oculto más alto del e-commerce."}, {question:"¿En qué casos debo subir de ECT-44 a ECT-51 o ECT-61?", answer:"Debes considerar ECT-51 cuando: el producto pesa más de 20 kg, la caja será almacenada en condiciones de alta humedad (>65% HR), el producto es frágil y necesita protección extra, o será exportado por vía marítima. ECT-61 se reserva para triple corrugado, maquinaria industrial, equipo electrónico de alto valor o envíos aéreos con certificación ISTA. Para la mayoría de e-commerce y retail, ECT-44 es suficiente y más económico."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Doble Corrugado BC", sku:"CAD-CD-01", description:"Caja Doble Corrugado BC en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif", material:"Cartón doble corrugado flauta BC ECT-44", category:"Cajas de Cartón Corrugado Estándar", moq:"50"}}
 >
 

@@ -24,31 +24,27 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-    { "@type": "Question", "name": "¿Cuántos colores puedo imprimir?", "acceptedAnswer": { "@type": "Answer", "text": "Hasta 4 colores en impresión flexográfica. Para diseños más complejos podemos cotizar combinaciones especiales." } },
-    { "@type": "Question", "name": "¿Hacen el diseño o necesito enviar el archivo?", "acceptedAnswer": { "@type": "Answer", "text": "Podemos adaptar tu logo al formato de impresión sin costo. Si tienes el arte listo en vectores, mejor." } },
-    { "@type": "Question", "name": "¿Las tintas son seguras para alimentos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, usamos tintas base agua certificadas para contacto indirecto con alimentos." } },
-    { "@type": "Question", "name": "¿Cuánto tiempo tarda?", "acceptedAnswer": { "@type": "Answer", "text": "Entre 5-7 días hábiles desde la aprobación del diseño. Para reórdenes del mismo diseño, 3-5 días." } }
-    ]
+    get mainEntity() { return faqsModulo.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })); },
   }
 ];
 const faqsModulo = [
  {
   "question": "¿Cuántos colores puedo imprimir?",
-  "answer": "Hasta 4 colores en impresión flexográfica. Para diseños más complejos podemos cotizar combinaciones especiales."
+  "answer": "La impresión flexográfica puede considerar de 1 a 4 colores, según el diseño y la superficie de la caja. Comparte el arte disponible, medidas y cantidad para revisar cómo adaptar el gráfico a la estructura de cartón y al proceso de impresión." 
  },
  {
   "question": "¿Hacen el diseño o necesito enviar el archivo?",
-  "answer": "Podemos adaptar tu logo al formato de impresión sin costo. Si tienes el arte listo en vectores, mejor."
+  "answer": "Puedes enviar el archivo disponible de tu logo o diseño para revisar su aplicación en la caja. Los archivos vectoriales ayudan a conservar definición; además, indica colores, ubicación y caras a imprimir para evaluar la composición del empaque." 
  },
  {
   "question": "¿Las tintas son seguras para alimentos?",
-  "answer": "Sí, usamos tintas base agua certificadas para contacto indirecto con alimentos."
+  "answer": "Las tintas base agua son una opción habitual para impresión sobre cartón corrugado. Si el empaque estará relacionado con alimentos, describe el uso previsto y si existe contacto directo o indirecto, para revisar qué especificaciones deben confirmarse al cotizar." 
  },
  {
-  "question": "¿Cuánto tiempo tarda?",
-  "answer": "Entre 5-7 días hábiles desde la aprobación del diseño. Para reórdenes del mismo diseño, 3-5 días."
- }
+  "question": "¿Cómo solicito cajas personalizadas con logo?",
+  "answer": "Envía el formulario con medidas, cantidad, uso, número de tintas y archivo de diseño si lo tienes. Con esos datos se revisan las opciones de impresión flexográfica, la estructura de la caja y las condiciones de suministro antes de confirmar el pedido." 
+ },
+ { "question": "¿Qué tipo de cartón conviene para cajas personalizadas?", "answer": "La elección depende del peso del producto, el apilado, el traslado y la presentación buscada. Una flauta adecuada aporta rigidez o amortiguación, y el ECT permite comparar resistencia al aplastamiento; ambos se revisan junto con las medidas." }
 ];
 ---
 

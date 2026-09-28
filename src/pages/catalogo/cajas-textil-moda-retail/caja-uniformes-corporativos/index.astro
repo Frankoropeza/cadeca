@@ -23,18 +23,28 @@ const specs = [
 const faqs = [
  {
  id: "tx06-f1",
- question: "¿Qué medidas recomiendan para cajas de uniformes corporativos?",
- answer: "Para uniformes doblados (camisas, playeras polo, pantalones) recomendamos 40×30×15 cm en flauta C ECT-32, que permite apilar 5–8 prendas por caja. Para uniformes colgados en percha, ofrecemos cajas alargadas de 60×50×25 cm con barra interna de cartón. Ambas medidas se cotizan según disponibilidad en CDMX. También surtimos medidas especiales desde 100 pzas para empresas con tallas o kits de uniforme específicos.",
+ question: "¿Cómo elijo la medida adecuada para cajas para uniformes corporativos?",
+ answer: "Mide el producto ya protegido y deja espacio para el cierre sin que el contenido se mueva. Comparte largo, ancho, alto, cantidad y uso en el formulario para revisar si conviene una medida estándar o un corte a la medida.",
  },
  {
  id: "tx06-f2",
- question: "¿Pueden imprimir el logo corporativo de mi empresa en las cajas de uniformes?",
- answer: "Sí. Ofrecemos impresión flexográfica en 1–4 colores sobre kraft natural o corrugado blanco. Para empresas con imagen corporativa estricta, también disponemos de impresión full color CMYK con barniz mate. El logo, nombre de empresa y datos de contacto pueden ir en todas las caras de la caja. Desde 200 piezas con entrega en 5 días hábiles para cajas impresas en CDMX y zona metropolitana.",
+ question: "¿Qué resistencia de cartón conviene para cajas para uniformes corporativos?",
+ answer: "La resistencia se elige por el peso, la forma del producto y el manejo previsto. El ECT indica la resistencia al aplastamiento del canto; una flauta simple sirve para protección general y una pared doble o triple aporta mayor rigidez.",
  },
  {
  id: "tx06-f3",
- question: "¿Ofrecen precios especiales para pedidos recurrentes de uniformes corporativos?",
- answer: "Sí, manejamos programa de suministro recurrente para empresas con pedidos mensuales o trimestrales de cajas de uniformes. Esto incluye precio preferencial por volumen anual, almacenamiento de planchas en nuestro almacén CDMX sin costo hasta por 30 días, y entrega programada según tu calendario de distribución de uniformes. Contacta a nuestro equipo comercial para una cotización personalizada.",
+ question: "¿Se pueden personalizar cajas para uniformes corporativos con impresión o acabado?",
+ answer: "La personalización depende del material, el diseño y el proceso de impresión disponible para el pedido. Envía el arte, los colores requeridos y la cantidad en el formulario para confirmar la alternativa compatible con el empaque.",
+ },
+ {
+ id: "tx06-f4",
+ question: "¿Cómo debo almacenar cajas para uniformes corporativos antes de utilizarlas?",
+ answer: "Guarda el cartón en un lugar limpio, seco y sin contacto directo con el piso o muros húmedos. Mantén las piezas planas o apiladas de forma uniforme para evitar deformaciones antes de empacar.",
+ },
+ {
+ id: "tx06-f5",
+ question: "¿Qué datos necesito para cotizar cajas para uniformes corporativos?",
+ answer: "Indica medida, cantidad, tipo de producto, peso aproximado, uso y zona de entrega. Si hay impresión, agrega el archivo o una referencia visual; con esos datos se puede revisar material, flauta y formato adecuados.",
  },
 ];
 
@@ -52,7 +62,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Uniformes Corporativos"}]}
- faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja para Uniformes y Ropa Corporativa",sku:"CAD-TX-06",description:"Caja kraft o blanco para uniformes corporativos — pedidos masivos con entrega CDMX",image:gallery[0].src,material:"Kraft virgen o blanco flauta B/C ECT-32",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
 >
 

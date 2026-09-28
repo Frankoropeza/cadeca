@@ -34,13 +34,16 @@ const faqs = [
  {
  id:"al05-f1",
  question:"¿Qué es el liner WR y cómo funciona?",
- answer:"Papel exterior tratado con agentes hidrofóbicos que forman barrera contra agua y vapor. A diferencia del cartón estándar que absorbe humedad y pierde resistencia, el WR mantiene 70-80% del ECT original a 90% HR por 24-48 horas. Esencial en cámaras donde los ciclos de apertura generan condensación constante.",
+ answer:"El liner WR es un papel exterior con tratamiento resistente a humedad que ayuda a disminuir la absorción de agua y vapor. Puede ser útil en entornos con condensación, aunque la resistencia final depende de la carga, manejo y condiciones de almacenamiento.",
  },
  {
  id:"al05-f2",
  question:"¿Por qué el ECT baja con la humedad?",
  answer:"El cartón es higroscópico: absorbe humedad reduciendo la rigidez del médium y liner. Un ECT-44 puede bajar a ECT-20 efectivo a 90% HR sin WR. El liner WR ralentiza este proceso manteniendo ECT efectivo en 35-38 (80%) incluso en congelación.",
  },
+ { id:"al05-f3", question:"¿Cómo elegir cajas para alimentos congelados?", answer:"Considera el peso, las dimensiones y la humedad esperada durante el traslado o almacenamiento. El liner resistente a humedad ayuda a conservar la rigidez del corrugado, pero no sustituye el control de temperatura." },
+ { id:"al05-f4", question:"¿Qué significa ECT en una caja para productos congelados?", answer:"ECT es una medida de resistencia a compresión del cartón corrugado. Un valor mayor puede ser útil cuando se requiere apilado o cuando la carga y la humedad exigen una estructura con mayor rigidez." },
+ { id:"al05-f5", question:"¿Qué información debo enviar para cotizar cajas para congelados?", answer:"Envía el formulario con medidas, cantidad, peso por caja y condiciones de uso. Indica si habrá cámara fría, condensación o apilado para revisar la resistencia y el tipo de liner más convenientes." },
 ];
 
 const mainImg = "/img/catalogo/cajas-congelados-humedad-cdmx.avif";
@@ -58,7 +61,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Alimentos", href:"/catalogo/cajas-para-alimentos/"}, {name:"Congelados"}]}
- faqItems={[{question:"¿Qué es el liner WR y cómo funciona?", answer:"Papel exterior tratado con agentes hidrofóbicos que forman barrera contra agua y vapor. A diferencia del cartón estándar que absorbe humedad y pierde resistencia, el WR mantiene 70-80% del ECT original a 90% HR por 24-48 horas. Esencial en cámaras donde los ciclos de apertura generan condensación constante."}, {question:"¿Por qué el ECT baja con la humedad?", answer:"El cartón es higroscópico: absorbe humedad reduciendo la rigidez del médium y liner. Un ECT-44 puede bajar a ECT-20 efectivo a 90% HR sin WR. El liner WR ralentiza este proceso manteniendo ECT efectivo en 35-38 (80%) incluso en congelación."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Congelados Resistente Humedad WR Liner", sku:"CAD-AL-05", description:"Caja Congelados Resistente Humedad WR Liner en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-congelados-humedad-cdmx.avif", material:"Cartón corrugado ECT-44 WR liner water resistant congelados -18°C", category:"Cajas para Alimentos", moq:"100"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">

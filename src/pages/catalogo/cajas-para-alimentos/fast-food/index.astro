@@ -43,6 +43,9 @@ const faqs = [
  question:"¿Las tintas son seguras para el cliente?",
  answer:"Solo tintas base agua sin metales pesados, aprobadas FDA/COFEPRIS. Interior sin impresión. Si el producto tiene contacto directo con cartón sin envase primario, consúltanos.",
  },
+ { id:"al02-f3", question:"¿Cómo elegir la medida de caja para comida rápida?", answer:"Mide la porción o recipiente ya cerrado y deja espacio para que no se comprima durante el traslado. La altura debe considerar toppings, salsas o separadores sin permitir un movimiento excesivo." },
+ { id:"al02-f4", question:"¿Qué tratamiento conviene para cajas de hamburguesas y frituras?", answer:"El tratamiento antigrasa se selecciona según el nivel de aceite y humedad del alimento. Para definirlo conviene indicar el menú, el tipo de envoltura y el tiempo estimado entre empaque y consumo." },
+ { id:"al02-f5", question:"¿Qué debo enviar para cotizar cajas para fast food?", answer:"Envía el formulario con medidas, cantidad, tipo de alimento y si necesitas impresión. Con esa información se puede revisar el formato, la altura y el tratamiento superficial que requiera la presentación." },
 ];
 
 const mainImg = "/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif";
@@ -60,7 +63,7 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Alimentos", href:"/catalogo/cajas-para-alimentos/"}, {name:"Fast Food Antigrasa"}]}
- faqItems={[{question:"¿Qué es el tratamiento antigrasa?", answer:"Aplicación de agentes repelentes de aceite. Tipo 3 para nuggets y aros; tipo 5-6 para hamburguesas con salsas. Sin tratamiento el aceite degrada el corrugado rápidamente."}, {question:"¿Las tintas son seguras para el cliente?", answer:"Solo tintas base agua sin metales pesados, aprobadas FDA/COFEPRIS. Interior sin impresión. Si el producto tiene contacto directo con cartón sin envase primario, consúltanos."}]}
+ faqItems={faqs.map((f) => ({ question: f.question, answer: f.answer }))}
  product={{name:"Caja Fast Food Antigrasa", sku:"CAD-AL-02", description:"Caja Fast Food Antigrasa en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-fast-food-antigrasa-cdmx.avif", material:"Cartón corrugado antigrasa FDA compliant fast food", category:"Cajas para Alimentos", moq:"100"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
