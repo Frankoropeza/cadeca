@@ -1,7 +1,7 @@
 // lead-form.ts — Envío de formularios de cotización (form[data-lead-form]).
-// 1) POST JSON a /api/lead (Cloudflare Pages Function).
-// 2) Si el envío falla y el sitio tiene WhatsApp configurado, abre WhatsApp con el mensaje armado.
-// 3) Si no hay WhatsApp, muestra un error claro para reintentar.
+// Con WhatsApp configurado (data-wa): abre WhatsApp con la solicitud armada y, en paralelo,
+// registra el lead en /api/lead como respaldo.
+// Sin WhatsApp: POST JSON a /api/lead (Cloudflare Pages Function) y confirma o pide reintentar.
 
 type Estado = "enviando" | "ok" | "error";
 
@@ -38,24 +38,26 @@ document.querySelectorAll<HTMLFormElement>("form[data-lead-form]").forEach((form
     const datos: Record<string, string> = {};
     new FormData(form).forEach((v, k) => { datos[k] = String(v).trim(); });
     datos.pagina = location.pathname;
+    const envio = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(datos) };
+
+    const wa = form.dataset.wa;
+    if (wa) {
+      // Se abre en el mismo gesto del usuario para que el navegador no lo bloquee.
+      window.open(`https://wa.me/${wa}?text=${encodeURIComponent(mensajeWhatsApp(datos))}`, "_blank", "noopener");
+      fetch("/api/lead", { ...envio, keepalive: true }).catch(() => {});
+      form.reset();
+      pintar(form, "ok", "Abrimos WhatsApp con tu solicitud; sólo presiona «Enviar» en el chat.");
+      return;
+    }
+
     pintar(form, "enviando", "Enviando tu solicitud…");
     try {
-      const r = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(datos),
-      });
+      const r = await fetch("/api/lead", envio);
       if (!r.ok) throw new Error(String(r.status));
       form.reset();
       pintar(form, "ok", "Recibimos tu solicitud. Te contactaremos con tu cotización en horario hábil.");
     } catch {
-      const wa = form.dataset.wa;
-      if (wa) {
-        window.open(`https://wa.me/${wa}?text=${encodeURIComponent(mensajeWhatsApp(datos))}`, "_blank", "noopener");
-        pintar(form, "ok", "Abrimos WhatsApp con tu solicitud para que la envíes.");
-      } else {
-        pintar(form, "error", "No pudimos enviar tu solicitud en este momento. Inténtalo de nuevo en unos minutos.");
-      }
+      pintar(form, "error", "No pudimos enviar tu solicitud en este momento. Inténtalo de nuevo en unos minutos.");
     }
   });
 });

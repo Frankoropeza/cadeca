@@ -1,0 +1,10 @@
+# Cloudflare Pages — cajas-de-carton.com (deploy: wrangler pages deploy / GitHub Actions)
+name = "cadeca"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"
+
+# Respaldo de solicitudes de cotización (functions/api/lead.js). Ningún lead se pierde
+# aunque no haya webhook/correo configurado. Consulta: Cloudflare → Storage → KV → cadeca-leads.
+[[kv_namespaces]]
+binding = "LEADS"
+id = "e12ae944929d460ebb9ae1969f94410b"

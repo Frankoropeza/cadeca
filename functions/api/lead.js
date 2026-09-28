@@ -4,7 +4,8 @@
 //   BREVO_API_KEY     (opcional) clave de Brevo para enviar el lead por correo.
 //   LEAD_TO_EMAIL     (requerida si hay Brevo) correo que recibe los leads.
 //   LEAD_FROM_EMAIL   (requerida si hay Brevo) remitente verificado en Brevo.
-// Sin ningún destino configurado responde 503 y el formulario muestra el aviso de reintento.
+// Binding KV `LEADS` (wrangler.toml): guarda cada lead (clave lead:<fecha>:<id>) como respaldo.
+// Responde 200 si al menos un destino (KV, webhook o correo) lo recibió; 503 si no hay ninguno.
 
 const CAMPOS = ["nombre", "empresa", "contacto", "email", "tipo", "producto", "medida", "cantidad", "detalles", "pagina"];
 const json = (status, body) => new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
@@ -23,6 +24,10 @@ export async function onRequestPost({ request, env }) {
   lead.origen = "cajas-de-carton.com";
 
   const envios = [];
+  if (env.LEADS) {
+    const clave = `lead:${lead.fecha}:${crypto.randomUUID().slice(0, 8)}`;
+    envios.push(env.LEADS.put(clave, JSON.stringify(lead)).then(() => new Response(null, { status: 204 })));
+  }
   if (env.LEAD_WEBHOOK_URL) {
     envios.push(fetch(env.LEAD_WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lead) }));
   }
