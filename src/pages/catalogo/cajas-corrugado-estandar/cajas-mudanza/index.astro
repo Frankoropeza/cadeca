@@ -28,7 +28,7 @@ const specs = [
  ["Carga de apilado",  "Hasta 150 kg (condiciones ideales)"],
  ["Impresión",  "Instrucciones uso impresas · Logo opcional"],
  ["Reutilización",  "Alta durabilidad, múltiples usos"],
- ["Pedido mínimo",  "Sin mínimo (inventario permanente)"],
+ ["Pedido mínimo",  "Sin mínimo (disponibilidad según pedido)"],
  ["Tiempo de entrega",  "24 hrs CDMX · 48 hrs Estado de México"],
 ];
 
@@ -79,7 +79,7 @@ const gallery = [
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-CM-01 · Corrugado Estándar</span>
  <h1 id="sku-cm-title" class="cat-page-hero__title">Cajas para Mudanza<br><span>Asas Reforzadas — CDMX</span></h1>
- <p class="cat-page-hero__desc">Doble corrugado BC con asas troqueladas reforzadas para manejo manual frecuente. Sin pedido mínimo, en inventario permanente. Chica, mediana, grande, extra grande y wardrobe.</p>
+ <p class="cat-page-hero__desc">Doble corrugado BC con asas troqueladas reforzadas para manejo manual frecuente. Sin pedido mínimo, con disponibilidad según pedido. Chica, mediana, grande, extra grande y wardrobe.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CM-01</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
@@ -99,7 +99,7 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-CM-01 · Familia: Corrugado Estándar</p>
  <h2 id="detalle-cm-title" class="sku-detail__title">Cajas para Mudanza — Con Asas Reforzadas</h2>
- <p class="sku-detail__desc">Diseñadas específicamente para el manejo manual frecuente. Asas troqueladas reforzadas, doble corrugado BC y cierre seguro de cuatro solapas. En inventario permanente en CDMX para entrega inmediata sin pedido mínimo. Disponibles en 5 tallas incluyendo modelo wardrobe para ropa colgada.</p>
+ <p class="sku-detail__desc">Diseñadas específicamente para el manejo manual frecuente. Asas troqueladas reforzadas, doble corrugado BC y cierre seguro de cuatro solapas. Disponibilidad según pedido en CDMX, sin pedido mínimo. Disponibles en 5 tallas incluyendo modelo wardrobe para ropa colgada.</p>
  <div class="sku-detail__strip">
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">20 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
@@ -128,7 +128,7 @@ const gallery = [
  <tbody>{medidas.map(m => <tr class={m.hl?"highlight":""}><td>{m.nombre}</td><td><strong>{m.lah}</strong></td><td>{m.flauta}</td><td>{m.ect}</td><td>{m.vacío}</td><td><strong>{m.máx}</strong></td><td><span class={`stock-chip stock-chip--${m.disp}`}>{m.disp==="green"?"":""} {m.label}</span></td></tr>)}</tbody>
  </table>
  </div>
- <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Stock permanente en CDMX ·  Producción 48 hrs</p>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem"> Disponibilidad según pedido ·  Producción 48 hrs</p>
  </div>
  </section>
 
@@ -139,5 +139,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture title="Cotiza CAD-CM-01 — Sin mínimo, stock permanente, entrega programada en CDMX" />
+ <LeadCapture title="Cotiza CAD-CM-01 — Sin mínimo, disponibilidad según pedido, entrega programada en CDMX" />
 </PageLayout>

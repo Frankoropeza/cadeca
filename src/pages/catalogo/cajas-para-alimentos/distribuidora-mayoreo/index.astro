@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para Distribuidora de Alimentos | CADECA";
-const description = "Caja para distribuidora de alimentos al mayoreo en CDMX. Alta resistencia al apilado ECT-44, entrega en ruta por zonas. Stock permanente. MOQ 500 pzas.";
+const description = "Caja para distribuidora de alimentos al mayoreo en CDMX. Alta resistencia al apilado ECT-44, entrega en ruta por zonas. Disponibilidad según pedido. MOQ 500 pzas.";
 
 const specs = [
  ["Código SKU", "CAD-AL-08"],
@@ -41,7 +41,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas para Alimentos",href:"/catalogo/cajas-para-alimentos/"},{name:"Caja para Distribuidora de Alimentos Mayoreo"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
- product={{name:"Caja para Distribuidora de Alimentos Mayoreo",sku:"CAD-AL-08",description:"Caja para distribución mayorista de alimentos en CDMX. Doble corrugado ECT-44, alta resistencia al apilado en ruta, stock permanente para entrega programada semanal.",image:gallery[0].src,material:"CAD-AL-08",category:"Cajas para Alimentos",moq:"500 piezas"}}
+ product={{name:"Caja para Distribuidora de Alimentos Mayoreo",sku:"CAD-AL-08",description:"Caja para distribución mayorista de alimentos en CDMX. Doble corrugado ECT-44, alta resistencia al apilado en ruta, disponibilidad según pedido para entrega programada semanal.",image:gallery[0].src,material:"CAD-AL-08",category:"Cajas para Alimentos",moq:"500 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -58,7 +58,7 @@ const gallery = [
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-AL-08 · Cajas para Alimentos</span>
  <h1 id="sku-cadal08-title" class="cat-page-hero__title">Caja para <span>Distribuidora</span> de Alimentos Mayoreo CDMX</h1>
- <p class="cat-page-hero__desc">Caja para distribución mayorista de alimentos en CDMX. Doble corrugado ECT-44, alta resistencia al apilado en ruta, stock permanente para entrega programada semanal.</p>
+ <p class="cat-page-hero__desc">Caja para distribución mayorista de alimentos en CDMX. Doble corrugado ECT-44, alta resistencia al apilado en ruta, disponibilidad según pedido para entrega programada semanal.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-08</strong></div>
  <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
@@ -78,7 +78,7 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-AL-08 · Familia: Cajas para Alimentos</p>
  <h2 id="detalle-cadal08-title" class="sku-detail__title">Caja para Distribuidora de Alimentos Mayoreo</h2>
- <p class="sku-detail__desc">Las distribuidoras de alimentos manejan volúmenes altos con ciclos de pedido predecibles y exigencias de resistencia al apilado en rutas largas. CAD-AL-08 está en stock permanente para pedidos semanales o quincenales sin esperar producción. Doble corrugado ECT-44, diseñada para soportar el apilado en camiones de reparto durante 8-12 horas de ruta. Disponible en 6 medidas que cubren abarrotes, bebidas, lácteos y snacks.</p>
+ <p class="sku-detail__desc">Las distribuidoras de alimentos manejan volúmenes altos con ciclos de pedido predecibles y exigencias de resistencia al apilado en rutas largas. CAD-AL-08 se solicita según pedido para programar entregas semanales o quincenales. Doble corrugado ECT-44, diseñada para soportar el apilado en camiones de reparto durante 8-12 horas de ruta. Disponible en 6 medidas que cubren abarrotes, bebidas, lácteos y snacks.</p>
  <div class="sku-detail__strip">
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">6 medidas</span><span class="sku-detail__strip-label">En stock</span></div>
@@ -108,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture title="¿Eres distribuidora de alimentos? Cotiza tu blanket order y asegura stock permanente en CDMX" />
+ <LeadCapture title="¿Eres distribuidora de alimentos? Cotiza tu blanket order y programa tus pedidos en CDMX" />
 </PageLayout>
