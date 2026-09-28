@@ -2,7 +2,7 @@
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader  from "@/components/SectionHeader.astro";
-import ProductCard  from "@/components/ProductCard.astro";
+import CategoryCard from "@/components/CategoryCard.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
 import FaqItem  from "@/components/FaqItem.astro";
@@ -23,7 +23,7 @@ const faqSchema = {
  { "@type": "Question", "name": "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
  "acceptedAnswer": { "@type": "Answer", "text": "En CADECA puedes cotizar cajas de cartón al mayoreo para la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo." }},
  { "@type": "Question", "name": "¿Qué tipos de cajas de cartón venden?",
- "acceptedAnswer": { "@type": "Answer", "text": "Corrugado estándar (simple, doble y triple pared), cajas a la medida, personalizadas con logo, para e-commerce, para alimentos y láminas de cartón corrugado." }},
+ "acceptedAnswer": { "@type": "Answer", "text": "Cajas de cartón corrugado (simple, doble y triple pared), personalizadas con logo, para regalo, para envíos y e-commerce, para comida y alimentos, para archivo, láminas de cartón corrugado y cajas a la medida." }},
  { "@type": "Question", "name": "¿Cuál es el pedido mínimo de cajas de cartón?",
  "acceptedAnswer": { "@type": "Answer", "text": "Para cajas estándar no hay mínimo. Para cajas a la medida desde 50 piezas. Para personalizadas con logo desde 100 piezas." }},
  { "@type": "Question", "name": "¿Hacen entregas a domicilio en CDMX y Estado de México?",
@@ -38,78 +38,122 @@ const faqSchema = {
 };
 
 // ── Datos de contenido ────────────────────────────────
-const productos = [
+// Categorías principales — orden por demanda de búsqueda en México (Ahrefs, sep-2026):
+// cartón corrugado 3,600 · cajas personalizadas 2,400 · cajas para regalo 1,800 / de cartón para regalo 1,700 ·
+// mudanza 800+700 · cajas para pastel 900 · pizza 600 · láminas de cartón 600 · cajas para envíos 450 / de cartón para envíos 400 ·
+// cajas de archivo 450 · cajas de cartón grandes 450 · pequeñas 250 · a la medida 60 (línea estratégica B2B).
+const categorias = [
  {
- title:  "Cajas Corrugado Estándar",
- desc:  "La solución de empaque más versátil y económica. Simple, doble y triple pared disponibles. Medidas estándar para todos los sectores.",
+ eyebrow: "Línea estándar",
+ title:  "Cajas de cartón corrugado",
+ desc:  "Cajas regulares de simple, doble y triple pared para envío, almacén y mudanza, en medidas estándar.",
  imgSrc:  "/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif",
- imgAlt:  "Cajas de cartón corrugado estándar en CDMX y Estado de México — CADECA",
+ imgAlt:  "Cajas de cartón corrugado estándar apiladas en bodega",
  href:  "/catalogo/cajas-corrugado-estandar/",
- tags: [
- { label: "Caja corrugado simple",  href: "/catalogo/cajas-corrugado-estandar/" },
- { label: "Caja doble corrugado",  href: "/catalogo/cajas-corrugado-estandar/doble-corrugado/" },
- { label: "Caja triple corrugado",  href: "/catalogo/cajas-corrugado-estandar/triple-corrugado/" },
- { label: "Cajas para mudanza",  href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza/" },
+ specs: [ { label: "Pared", value: "Simple, doble y triple" }, { label: "Pedido", value: "Sin mínimo en medidas estándar" } ],
+ links: [
+ { label: "Para mudanza", href: "/catalogo/cajas-corrugado-estandar/cajas-mudanza/" },
+ { label: "Grandes",  href: "/catalogo/cajas-de-carton-grandes/" },
+ { label: "Pequeñas",  href: "/catalogo/cajas-de-carton-pequenas/" },
+ { label: "Doble corrugado", href: "/catalogo/cajas-corrugado-estandar/doble-corrugado/" },
  ],
  },
  {
- title:  "Cajas a la Medida",
- desc:  "Coordinamos cualquier dimensión exacta con talleres especializados. Diseño CAD incluido según pedido.",
- imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
- imgAlt:  "Cajas de cartón a la medida en CDMX y Estado de México — CADECA",
- href:  "/catalogo/cajas-a-la-medida/",
- tags: [
- { label: "Dimensión exacta",  href: "/catalogo/cajas-a-la-medida/" },
- { label: "Alta resistencia ECT", href: "/catalogo/cajas-a-la-medida/" },
- { label: "Flauta B, C, E y BC",  href: "/catalogo/cajas-a-la-medida/" },
- ],
- },
- {
- title:  "Cajas Personalizadas con Logo",
- desc:  "Eleva la imagen de tu marca con impresión full color. Tintas base agua, acabados mate y brillante. Desde 100 piezas.",
+ eyebrow: "Marca e imagen",
+ title:  "Cajas personalizadas con logo",
+ desc:  "Cajas de cartón impresas con tu marca, en tintas planas o full color, con acabados para presentación y envío.",
  imgSrc:  "/img/productos/cajas-de-carton-personalizadas-con-logo-impresion-mexico.avif",
- imgAlt:  "Cajas de cartón personalizadas con logo impresión full color México — CADECA",
+ imgAlt:  "Cajas de cartón personalizadas con logo impreso",
  href:  "/catalogo/cajas-personalizadas-logo/",
- tags: [
- { label: "Impresión 1 a 4 colores", href: "/catalogo/cajas-personalizadas-logo/" },
- { label: "Full color digital",  href: "/catalogo/cajas-personalizadas-logo/full-color/" },
- { label: "Tintas base agua",  href: "/catalogo/cajas-personalizadas-logo/" },
+ specs: [ { label: "Impresión", value: "1 a 4 tintas o full color" }, { label: "Pedido", value: "Desde 100 piezas" } ],
+ links: [
+ { label: "Full color",  href: "/catalogo/cajas-personalizadas-logo/full-color/" },
+ { label: "Logo a 1 tinta", href: "/catalogo/cajas-personalizadas-logo/1-color/" },
+ { label: "Kraft con logo", href: "/catalogo/cajas-personalizadas-logo/kraft-ecologico-logo/" },
  ],
  },
  {
- title:  "Cajas para E-commerce",
- desc:  "Medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Entrega programada según pedido.",
+ eyebrow: "Presentación",
+ title:  "Cajas de cartón para regalo",
+ desc:  "Cajas para regalo, kits y temporada con laminado mate, barniz UV o kraft, pensadas para presentar el producto.",
+ imgSrc:  "/img/catalogo/caja-accesorios-bolsas-joyeria-cdmx.avif",
+ imgAlt:  "Cajas de cartón para regalo con joyería y relojes",
+ href:  "/catalogo/cajas-de-carton-para-regalo/",
+ specs: [ { label: "Acabados", value: "Laminado, barniz UV y kraft" }, { label: "Pedido", value: "Desde 100 piezas" } ],
+ links: [
+ { label: "Navideñas y temporada", href: "/catalogo/cajas-textil-moda-retail/caja-temporada-navidad/" },
+ { label: "Joyería",  href: "/catalogo/cajas-textil-moda-retail/caja-joyeria-premium/" },
+ { label: "Laminado mate",  href: "/catalogo/cajas-personalizadas-logo/laminado-mate/" },
+ ],
+ },
+ {
+ eyebrow: "E-commerce y paquetería",
+ title:  "Cajas para envíos",
+ desc:  "Medidas compatibles con Mercado Envíos, Amazon y paqueterías para despachar con menos peso volumétrico.",
  imgSrc:  "/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
- imgAlt:  "Cajas de cartón para e-commerce Mercado Libre y Amazon MX en CDMX — CADECA",
+ imgAlt:  "Cajas de cartón para envíos de e-commerce en centro de distribución",
  href:  "/catalogo/cajas-para-ecommerce/",
- tags: [
- { label: "Cajas Mercado Libre", href: "/catalogo/cajas-para-ecommerce/" },
- { label: "Cajas Amazon MX",  href: "/catalogo/cajas-para-ecommerce/" },
- { label: "TikTok Shop / Shopify", href: "/catalogo/cajas-para-ecommerce/" },
+ specs: [ { label: "Canales", value: "Mercado Libre, Amazon y paqueterías" }, { label: "Pedido", value: "Desde 50 piezas" } ],
+ links: [
+ { label: "Mercado Envíos", href: "/catalogo/cajas-para-ecommerce/mercado-envios/" },
+ { label: "Amazon FBA",  href: "/catalogo/cajas-para-ecommerce/amazon-fba/" },
+ { label: "Paqueterías",  href: "/catalogo/cajas-para-ecommerce/paqueterias/" },
  ],
  },
  {
- title:  "Cajas para Alimentos",
- desc:  "Materiales aptos para contacto alimentario. Resistencia a humedad y grasas. Para pizza, dark kitchens, frutas y congelados.",
+ eyebrow: "Alimentos",
+ title:  "Cajas para comida y alimentos",
+ desc:  "Cajas para pizza, repostería y comida para llevar, con especificación de material según el producto.",
  imgSrc:  "/img/productos/cajas-de-carton-para-alimentos-pizza-restaurantes-cdmx.avif",
- imgAlt:  "Cajas de cartón para alimentos pizza y restaurantes en CDMX — CADECA",
+ imgAlt:  "Cajas de cartón para pizza apiladas en cocina",
  href:  "/catalogo/cajas-para-alimentos/",
- tags: [
- { label: "Cajas para pizza",  href: "/catalogo/cajas-para-alimentos/" },
- { label: "Dark kitchens",  href: "/catalogo/cajas-para-alimentos/" },
- { label: "Frutas, flores, exportación", href: "/catalogo/cajas-para-alimentos/" },
+ specs: [ { label: "Usos", value: "Pizza, pastelería y fast food" }, { label: "Material", value: "Se confirma según el alimento" } ],
+ links: [
+ { label: "Para pizza",  href: "/catalogo/cajas-para-alimentos/pizza/" },
+ { label: "Para pastel",  href: "/catalogo/cajas-para-alimentos/pasteleria/" },
+ { label: "Comida rápida", href: "/catalogo/cajas-para-alimentos/fast-food/" },
  ],
  },
  {
- title:  "Láminas y Empaques Ecológicos",
- desc:  "Láminas de cartón corrugado por metro para empaque y protección. Opciones con material reciclado.",
+ eyebrow: "Oficina y bodega",
+ title:  "Cajas para archivo",
+ desc:  "Cajas para archivo muerto, documentos carta y oficio y almacenaje apilable en oficina o bodega.",
+ imgSrc:  "/img/categorias/cajas-archivo-almacenaje-hero-cdmx.avif",
+ imgAlt:  "Cajas de cartón para archivo en estantería de almacén",
+ href:  "/catalogo/cajas-archivo-almacenaje/",
+ specs: [ { label: "Formatos", value: "Carta y oficio" }, { label: "Uso", value: "Archivo muerto y almacenaje" } ],
+ links: [
+ { label: "Archivo muerto", href: "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio/" },
+ { label: "Tamaño carta",  href: "/catalogo/cajas-archivo-almacenaje/documentos-carta/" },
+ { label: "Almacén",  href: "/catalogo/cajas-archivo-almacenaje/almacen-industrial/" },
+ ],
+ },
+ {
+ eyebrow: "Protección",
+ title:  "Láminas de cartón corrugado",
+ desc:  "Láminas y separadores para proteger, dividir y embalar muebles, vidrio y carga en tarima.",
  imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
- imgAlt:  "Láminas de cartón corrugado reciclado en CDMX — CADECA",
+ imgAlt:  "Láminas de cartón corrugado apiladas en tarimas",
  href:  "/catalogo/laminas-carton-corrugado/",
- tags: [
- { label: "Láminas corrugado por m²", href: "/catalogo/laminas-carton-corrugado/" },
- { label: "Cartón reciclado",  href: "/catalogo/laminas-carton-corrugado/laminas-ecologicas/" },
- { label: "Packaging ecológico",  href: "/servicios/packaging-ecologico/" },
+ specs: [ { label: "Pared", value: "Simple, doble y triple" }, { label: "Corte", value: "Estándar o a medida" } ],
+ links: [
+ { label: "Láminas simples", href: "/catalogo/laminas-carton-corrugado/laminas-simples/" },
+ { label: "Separadores",  href: "/catalogo/laminas-carton-corrugado/separadores/" },
+ { label: "Corte a medida", href: "/catalogo/laminas-carton-corrugado/laminas-medida-corte/" },
+ ],
+ },
+ {
+ eyebrow: "Proyecto especial",
+ title:  "Cajas a la medida",
+ desc:  "Cajas en la dimensión exacta de tu producto, con flauta y resistencia definidas según peso y transporte.",
+ imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
+ imgAlt:  "Cajas de cartón a la medida de distintos tamaños",
+ href:  "/catalogo/cajas-a-la-medida/",
+ specs: [ { label: "Diseño", value: "Plano CAD según pedido" }, { label: "Pedido", value: "Desde 50 piezas" } ],
+ links: [
+ { label: "Industrial", href: "/catalogo/cajas-a-la-medida/industrial/" },
+ { label: "Exportación", href: "/catalogo/cajas-a-la-medida/exportacion/" },
+ { label: "Para e-commerce", href: "/catalogo/cajas-a-la-medida/caja-medida-ecommerce/" },
  ],
  },
 ];
@@ -169,7 +213,7 @@ const faqs = [
  {
  id:  "2",
  question: "¿Qué tipos de cajas de cartón venden?",
- answer:  "Manejamos 6 categorías: (1) Corrugado estándar en simple, doble y triple pared; (2) Cajas a la medida en cualquier dimensión; (3) Personalizadas con logo e impresión full color; (4) Para e-commerce compatibles con Mercado Envíos, Amazon y paqueterías; (5) Para alimentos resistentes a humedad y grasas; y (6) Láminas de cartón corrugado y cajas ecológicas FSC.",
+ answer:  "Manejamos 8 categorías principales: (1) cajas de cartón corrugado de simple, doble y triple pared; (2) cajas personalizadas con logo; (3) cajas de cartón para regalo; (4) cajas para envíos y e-commerce; (5) cajas para comida y alimentos; (6) cajas para archivo; (7) láminas de cartón corrugado; y (8) cajas a la medida.",
  },
  {
  id:  "3",
@@ -220,11 +264,11 @@ const accesos = [
  HERO
  ══════════════════════════════════════ -->
  <PageHero
-   eyebrow="Proveedor de cajas de cartón para empresas"
+   eyebrow="Inicio · Cajas de cartón"
    titleHtml={true}
-   title="Cajas de Cartón en <span>CDMX y Estado de México</span>"
-   desc="Corrugado estándar, a la medida y personalizadas con logo. Venta al mayoreo y menudeo con entrega programada en CDMX y Estado de México. Asesoría para elegir tu caja y cotización sin compromiso."
-   desc2="<strong>CADECA</strong> es proveedor y distribuidor de <strong>cajas de cartón corrugado</strong> para empresas en la Ciudad de México y Estado de México. Surtimos cajas de simple, doble y triple pared, cajas <strong>a la medida con diseño CAD incluido</strong>, packaging personalizado con impresión full color y líneas especializadas para e-commerce en Mercado Libre, Amazon MX y Shopify.||Trabajamos con talleres y fabricantes aliados para coordinar inventario, producción y entrega según el pedido. Atendemos manufactura, alimentos, retail, farmacéutica y proyectos de nearshoring con especificaciones técnicas claras y cotización sin compromiso."
+   title="Cajas de cartón <span>para empresas</span>"
+   desc="Cajas de cartón para empresas que requieren empaque corrugado estándar, a la medida o personalizado. CADECA surte pedidos en CDMX y Estado de México para operaciones comerciales e industriales."
+   desc2="Las <strong>cajas de cartón corrugado</strong> se ofrecen en simple, doble y triple pared, con opciones a la medida, diseño CAD e impresión. Son útiles para e-commerce, manufactura, alimentos, retail y distribución, donde la flauta, el ECT y la medida deben responder al producto y su manejo.||CADECA coordina el suministro como proveedor con talleres y fabricantes aliados. Comparte medidas, cantidad, uso y zona de entrega para cotizar; te orientamos para elegir la caja y las especificaciones disponibles para tu pedido."
  />
 
  <!-- Accesos principales (franja bajo el hero) -->
@@ -263,7 +307,7 @@ const accesos = [
  </SectionHeader>
 
  <div class="products__grid">
- {productos.map(p => <ProductCard {...p} />)}
+ {categorias.map((c, i) => <CategoryCard index={i + 1} {...c} />)}
  </div>
  </div>
  </section>

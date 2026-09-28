@@ -1,0 +1,253 @@
+---
+// CategoryCard.astro — Tarjeta de categoría principal (home).
+// Sin iconos: jerarquía por tipografía, datos y enlaces de texto.
+export interface Spec { label: string; value: string }
+export interface Link { label: string; href: string }
+
+export interface Props {
+  index:   number;
+  eyebrow: string;
+  title:   string;
+  desc:    string;
+  imgSrc:  string;
+  imgAlt:  string;
+  href:    string;
+  specs?:  Spec[];
+  links?:  Link[];
+}
+
+const { index, eyebrow, title, desc, imgSrc, imgAlt, href, specs = [], links = [] } = Astro.props;
+const num = String(index).padStart(2, "0");
+const titleId = `cat-card-${num}`;
+---
+
+<article class="cat-card" aria-labelledby={titleId}>
+  <a href={href} class="cat-card__media" tabindex="-1" aria-hidden="true">
+    <img src={imgSrc} alt={imgAlt} class="cat-card__img" width="880" height="550" loading="lazy" decoding="async" />
+    <span class="cat-card__num">{num}</span>
+  </a>
+
+  <div class="cat-card__body">
+    <p class="cat-card__eyebrow">{eyebrow}</p>
+    <h3 class="cat-card__title" id={titleId}><a href={href}>{title}</a></h3>
+    <p class="cat-card__desc">{desc}</p>
+
+    {specs.length > 0 && (
+      <dl class="cat-card__specs">
+        {specs.map(s => (
+          <div class="cat-card__spec">
+            <dt>{s.label}</dt>
+            <dd>{s.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+
+    {links.length > 0 && (
+      <div class="cat-card__links">
+        <p class="cat-card__links-title">Más buscadas</p>
+        <ul>
+          {links.map(l => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    )}
+
+    <div class="cat-card__actions">
+      <a href={href} class="cat-card__cta">Ver categoría</a>
+      <a href="/cotizar/" class="cat-card__quote">Cotizar</a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .cat-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  }
+  .cat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+    z-index: 2;
+  }
+  .cat-card:hover {
+    border-color: transparent;
+    box-shadow: 0 18px 40px -18px rgba(28, 43, 74, 0.35);
+    transform: translateY(-3px);
+  }
+  .cat-card:hover::before { transform: scaleX(1); }
+
+  /* Imagen */
+  .cat-card__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--color-accent);
+  }
+  .cat-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .cat-card:hover .cat-card__img { transform: scale(1.04); }
+  .cat-card__num {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0.4rem 0.75rem;
+    background: var(--color-secondary);
+    color: #fff;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Cuerpo */
+  .cat-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.25rem 1.25rem 1.1rem;
+  }
+  .cat-card__eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.45rem;
+  }
+  .cat-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--color-secondary);
+    margin-bottom: 0.55rem;
+  }
+  .cat-card__title a { color: inherit; text-decoration: none; }
+  .cat-card__title a:hover { color: var(--color-primary); }
+  .cat-card__desc {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+  }
+
+  /* Especificaciones */
+  .cat-card__specs {
+    margin: 0 0 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .cat-card__spec {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+  .cat-card__spec dt {
+    color: var(--color-text-light);
+    font-weight: 500;
+  }
+  .cat-card__spec dd {
+    margin: 0;
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+
+  /* Subcategorías */
+  .cat-card__links { margin-bottom: 1.1rem; }
+  .cat-card__links-title {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+  }
+  .cat-card__links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .cat-card__links a {
+    display: inline-block;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+    background: #fff;
+    transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+  }
+  .cat-card__links a:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-accent);
+  }
+
+  /* Acciones */
+  .cat-card__actions {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+  }
+  .cat-card__cta,
+  .cat-card__quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 1rem;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .cat-card__cta {
+    background: var(--color-secondary);
+    color: #fff;
+  }
+  .cat-card__cta:hover { background: var(--color-primary); color: #fff; }
+  .cat-card__quote {
+    border: 1.5px solid var(--color-border);
+    color: var(--color-secondary);
+  }
+  .cat-card__quote:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+  .cat-card a:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cat-card, .cat-card::before, .cat-card__img { transition: none; }
+    .cat-card:hover { transform: none; }
+    .cat-card:hover .cat-card__img { transform: none; }
+  }
+</style>
