@@ -4,7 +4,7 @@
    ======================================== */
 
 /* ── Tipografía ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* Inter se sirve localmente con @fontsource-variable/inter (importado en BaseLayout). */
 
 /* ── Variables ── */
 :root {
@@ -22,7 +22,7 @@
   --color-success:       #38A169;
 
   /* Tipografía */
-  --font-family:         'Inter', system-ui, -apple-system, sans-serif;
+  --font-family:         'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
   --font-size-xs:        0.75rem;
   --font-size-sm:        0.875rem;
   --font-size-base:      1rem;
