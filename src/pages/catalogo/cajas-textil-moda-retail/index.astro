@@ -156,28 +156,28 @@ const productos = [
 ];
 const detIndustrias = [
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "Marcas de Calzado",
  desc:  "Fabricantes y distribuidores de calzado que necesitan cajas con medidas exactas por modelo, impresión de marca y estructura que proteja el producto en anaquel y durante el transporte.",
  href:  "/catalogo/cajas-textil-moda-retail/",
  linkText: "Ver solución calzado",
  },
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "Boutiques y Tiendas de Ropa",
  desc:  "Boutiques independientes, cadenas de ropa y tiendas departamentales que requieren empaque elegante para regalo, temporadas especiales y experiencia de marca en punto de venta.",
  href:  "/catalogo/cajas-textil-moda-retail/",
  linkText: "Ver solución ropa",
  },
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "Accesorios y Joyería",
  desc:  "Marcas de joyería, relojería, ópticas y accesorios de moda que necesitan cajas compactas con acabados de lujo: barniz UV, hot stamping, interiores aterciopelados y cierre magnético.",
  href:  "/catalogo/cajas-textil-moda-retail/",
  linkText: "Ver solución accesorios",
  },
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "E-commerce de Moda",
  desc:  "Tiendas online de ropa, calzado y accesorios que envían por paquetería y necesitan cajas que protejan la prenda, reduzcan el peso volumétrico y generen una experiencia de unboxing premium.",
  href:  "/catalogo/cajas-textil-moda-retail/",
@@ -267,7 +267,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  <SectionHeader
  id="prods-tx-title"
  twoCol
- title="5 Productos — Textil, Moda y Retail"
+ title={`${productos.length} productos — Textil, Moda y Retail`}
  subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones ECT y condiciones de pedido."
  link={{ text: "← Volver al catálogo", href: "/catalogo/" }}
  >

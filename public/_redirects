@@ -4,6 +4,17 @@
 # Generador del legado: OBSIDIAN/AHREFS/CADECA/scripts/gen-redirects-legado.py
 
 # ── Estáticas (1247) ──
+# Fusión de artículos duplicados 2026-09-27
+/blog/como-elegir-proveedor-cajas-carton-cdmx-guia/ /blog/como-elegir-proveedor-cajas-carton-cdmx/ 301
+/blog/mudanza-cdmx-guia-cajas-embalaje-proteccion/ /blog/guia-embalaje-mudanza-cdmx-que-caja-usar/ 301
+/blog/empaques-hot-sale-buen-fin-temporada-alta/ /blog/cajas-carton-temporada-alta-buen-fin-navidad/ 301
+/blog/roi-cajas-personalizadas-logo-cuando-conviene/ /blog/cajas-personalizadas-pymes-cuando-conviene/ 301
+/blog/cajas-carton-sector-farmaceutico-cofepris/ /blog/corrugado-farmaceutico-gmp-cofepris-mexico/ 301
+/blog/nearshoring-mexico-empaque-manufactura-2025/ /blog/cajas-carton-nearshoring-manufactura-mexico/ 301
+/blog/packaging-tienda-en-linea-shopify-woocommerce/ /blog/empaques-shopify-woocommerce-tiendanube-2025/ 301
+/blog/resistencia-ect-bct-que-significan-como-elegir/ /blog/cajas-corrugado-industrial-especificaciones-ect-bct-mexico/ 301
+/blog/cajas-carton-reciclado-ecologico-fsc-mexico/ /blog/packaging-sustentable-mexico-carton-reciclado-huella-carbono/ 301
+/blog/normas-embalaje-exportacion-cajas-carton-mexico/ /blog/exportacion-eeuu-canada-requisitos-corrugado-usmca/ 301
 # Consolidación 2026-09-27: /productos/ → /catalogo/
 /productos/ /catalogo/ 301
 /productos/cajas-a-la-medida/ /catalogo/cajas-a-la-medida/ 301

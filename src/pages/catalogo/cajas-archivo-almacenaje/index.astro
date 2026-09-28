@@ -156,28 +156,28 @@ const productos = [
 ];
 const detIndustrias = [
  {
- img:  "/img/detIndustrias/industrial-placeholder.svg",
+ img:  "/img/industrias/industrial-placeholder.svg",
  title:  "Despachos Contables y Legales",
  desc:  "El SAT exige conservar documentación fiscal hasta por 5 años. Nuestras cajas de archivo muerto protegen expedientes, facturas y contratos con resistencia a la humedad y apilamiento seguro en bodega.",
  href:  "/catalogo/cajas-archivo-almacenaje/archivo-muerto-oficio/",
  linkText: "Ver solución contable",
  },
  {
- img:  "/img/detIndustrias/industrial-placeholder.svg",
+ img:  "/img/industrias/industrial-placeholder.svg",
  title:  "Almacenes e Inventarios",
  desc:  "Centros de distribución y bodegas industriales necesitan cajas que soporten apilamiento de 5+ niveles sin colapsarse. Nuestras cajas de almacenaje industrial están diseñadas para almacenamiento prolongado.",
  href:  "/catalogo/cajas-archivo-almacenaje/",
  linkText: "Ver solución almacén",
  },
  {
- img:  "/img/detIndustrias/industrial-placeholder.svg",
+ img:  "/img/industrias/industrial-placeholder.svg",
  title:  "Oficinas Corporativas",
  desc:  "Organiza expedientes de recursos humanos, nóminas, contratos y papelería general. Cajas tamaño carta y oficio con identificación frontal para acceso rápido sin desarmar el apilamiento.",
  href:  "/catalogo/cajas-archivo-almacenaje/documentos-carta/",
  linkText: "Ver solución oficinas",
  },
  {
- img:  "/img/detIndustrias/industrial-placeholder.svg",
+ img:  "/img/industrias/industrial-placeholder.svg",
  title:  "Mudanzas Residenciales",
  desc:  "Cajas con asas reforzadas para transportar libros, documentos y objetos del hogar. Triple pared para lo más pesado, doble pared para lo ligero. Fáciles de cargar, apilar y almacenar después de la mudanza.",
  href:  "/catalogo/cajas-corrugado-estandar/cajas-mudanza/",
@@ -266,7 +266,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  <SectionHeader
  id="prods-ah-title"
  twoCol
- title="5 Productos — Archivo y Almacenaje"
+ title={`${productos.length} productos — Archivo y Almacenaje`}
  subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones ECT y condiciones de pedido."
  link={{ text: "← Volver al catálogo", href: "/catalogo/" }}
  >

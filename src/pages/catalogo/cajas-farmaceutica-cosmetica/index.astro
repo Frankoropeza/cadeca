@@ -156,28 +156,28 @@ const productos = [
 ];
 const detIndustrias = [
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "Laboratorios Farmacéuticos",
  desc:  "Cajas para medicamentos de patente y genéricos con cumplimiento NOM-072. Blíster, ampolletas, frascos y dispositivos médicos con trazabilidad de lote y caducidad.",
  href:  "/catalogo/cajas-farmaceutica-cosmetica/",
  linkText: "Ver solución pharma",
  },
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "Marcas de Cosmética",
  desc:  "Empaque premium para skincare, maquillaje y perfumería. Acabados especiales que comunican calidad: hot stamping, barniz UV selectivo, soft touch y ventanas de acetato.",
  href:  "/catalogo/cajas-farmaceutica-cosmetica/cosmetica-premium/",
  linkText: "Ver solución cosmética",
  },
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "Distribuidoras Farmacéuticas",
  desc:  "Cajas de corrugado doble pared para distribución mayorista. Resistencia al apilamiento, protección contra humedad y compatibilidad con cadena de frío para medicamentos sensibles.",
  href:  "/catalogo/cajas-farmaceutica-cosmetica/distribuidora-farmacia/",
  linkText: "Ver solución distribuidora",
  },
  {
- img:  "/img/detIndustrias/retail-placeholder.svg",
+ img:  "/img/industrias/retail-placeholder.svg",
  title:  "Suplementos y Nutrición",
  desc:  "Cajas con cumplimiento NOM-051 para suplementos alimenticios, vitaminas, proteínas y productos naturistas. Etiquetado frontal, tabla nutricional y sellos de advertencia integrados.",
  href:  "/catalogo/cajas-farmaceutica-cosmetica/suplementos-nutricion/",
@@ -266,7 +266,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  <SectionHeader
  id="prods-fc-title"
  twoCol
- title="5 Productos — Farmacéutica y Cosmética"
+ title={`${productos.length} productos — Farmacéutica y Cosmética`}
  subtitle="Selecciona el producto para ver ficha técnica completa con medidas, especificaciones y condiciones de pedido."
  link={{ text: "← Volver al catálogo", href: "/catalogo/" }}
  >
