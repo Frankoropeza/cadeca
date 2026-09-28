@@ -8,8 +8,8 @@ import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const title  = "Catálogo Cajas para E-commerce CDMX | 11 Productos | Mercado Libre, Amazon, Shopify | CADECA";
-const description = "Catálogo cajas de cartón para e-commerce en CDMX. Mercado Envíos, Amazon FBA, DHL, FedEx, Estafeta, Shopify y medidas personalizadas. Fichas técnicas con specs y medidas. CADECA.";
+const title  = "Cajas de Cartón para Envíos y E-commerce | CADECA";
+const description = "Catálogo cajas de cartón para e-commerce en CDMX. Mercado Envíos, Amazon FBA, DHL, FedEx, Estafeta, Shopify y medidas personalizadas.";
 
 const productos = [
  {
@@ -90,14 +90,14 @@ const productos = [
  badgeColor: "blue",
  featured:  false,
  title:  "Cajas E-commerce a la Medida",
- desc:  "Cuando ninguna medida estándar se ajusta exactamente a tu producto. Fabricamos la medida exacta que minimiza el peso volumétrico y reduce el costo de envío por pieza.",
+ desc:  "Cuando ninguna medida estándar se ajusta exactamente a tu producto. Coordinamos la producción de la medida que minimiza el peso volumétrico y reduce el costo de envío por pieza.",
  imgSrc:  "/img/catalogo/cajas-medida-ecommerce-peso-volumetrico-cdmx.avif",
  imgAlt:  "Cajas e-commerce a la medida peso volumétrico en CDMX — CADECA CAD-EC-05",
  href:  "/catalogo/cajas-para-ecommerce/medida-ecommerce/",
  specs: [
  { label: "Dimensiones",  value: "Cualquier L × A × H" },
  { label: "Objetivo",  value: "Minimizar vol. weight" },
- { label: "CAD",  value: "Gratis en 24 hrs" },
+ { label: "CAD",  value: "Según pedido" },
  { label: "MOQ",  value: "50 piezas" },
  ],
  moq: "50 pzas",
@@ -121,7 +121,7 @@ const productos = [
  {
  code: "CAD-EC-07", badge: "PyME", badgeColor: "orange", featured: false,
  title: "Caja para PyME con Tienda Online",
- desc: "Sin mínimo alto — MOQ 50 pzas. Entrega 24 hrs CDMX. Compatible con Shopify, TiendaNube y ventas en local. Para negocios que empiezan o tienen volumen moderado.",
+ desc: "Sin mínimo alto — MOQ 50 pzas. Entrega programada según pedido. Compatible con Shopify, TiendaNube y ventas en local. Para negocios que empiezan o tienen volumen moderado.",
  imgSrc: "/img/catalogo/caja-pyme-hero-cdmx.avif",
  imgAlt: "Caja para PyME con tienda online CDMX — CADECA CAD-EC-07",
  href: "/catalogo/cajas-para-ecommerce/caja-pyme-ecommerce/",
@@ -129,7 +129,7 @@ const productos = [
  { label: "MOQ",  value: "50 piezas" },
  { label: "ECT",  value: "ECT-32" },
  { label: "Medidas",  value: "4 estándar PyME" },
- { label: "Entrega",  value: "24 hrs CDMX" },
+ { label: "Entrega",  value: "Según pedido" },
  ],
  moq: "50 pzas",
  },
@@ -189,7 +189,7 @@ const productos = [
  { label: "Interior",  value: "Liso para tissue/divisores" },
  { label: "Branding",  value: "1–4 colores desde 100 pzas" },
  { label: "Diseño CAD",  value: "Gratuito" },
- { label: "Entrega",  value: "24 hrs neutra / 5–7 c/logo" },
+ { label: "Entrega",  value: "Según pedido" },
  ],
  moq: "100 pzas",
  },
@@ -229,14 +229,14 @@ const detPasos = [
  { num: 1, title: "Dinos en qué vendes",  desc: "Mercado Libre, Amazon, tienda propia o paquetería de tu elección. Con eso seleccionamos las medidas y el tipo de corrugado correcto." },
  { num: 2, title: "Cotiza en 2 horas",  desc: "Enviamos precio, disponibilidad y medidas recomendadas por WhatsApp. Para pedidos urgentes respondemos antes de 1 hora." },
  { num: 3, title: "Pedido desde 50 pzas",  desc: "Sin mínimos exagerados. Para vendedores que están comenzando o escalando. Precios de mayoreo desde 200 piezas." },
- { num: 4, title: "Entrega en tu almacén", desc: "24 horas en CDMX y área metropolitana. Coordinamos la entrega en el horario que más te convenga, directo a tu bodega o domicilio." },
+ { num: 4, title: "Entrega en tu almacén", desc: "Entrega programada según volumen y zona. Coordinamos el envío al horario disponible para tu bodega o domicilio." },
 ];
 
 const detFaqs = [
  {
  id: "ec1",
  question: "¿Cuáles son las medidas de cajas para Mercado Envíos?",
- answer: "Las medidas oficiales de Mercado Envíos (largo × ancho × alto en cm) son: <strong>Chica:</strong> 21×29×9 · <strong>Mediana:</strong> 27×32×18 · <strong>Grande:</strong> 32×42×30 · <strong>Extra grande:</strong> 40×50×40. Manejamos stock permanente de todas estas medidas en corrugado doble pared, listas para entrega en 24 hrs en CDMX.",
+ answer: "Las medidas oficiales de Mercado Envíos (largo × ancho × alto en cm) son: <strong>Chica:</strong> 21×29×9 · <strong>Mediana:</strong> 27×32×18 · <strong>Grande:</strong> 32×42×30 · <strong>Extra grande:</strong> 40×50×40. Surtimos estas medidas en corrugado doble pared, con disponibilidad y entrega por confirmar según pedido y zona.",
  },
  {
  id: "ec2",
@@ -261,7 +261,7 @@ const detFaqs = [
  {
  id: "ec6",
  question: "¿Tienen cajas para e-commerce en stock para entrega inmediata?",
- answer: "Sí. Las medidas más populares (Chica, Mediana y Grande) están en inventario permanente para entrega en 24 hrs en CDMX y municipios del Estado de México. Para medidas Extra Grande o pedidos superiores a 1,000 piezas se requieren 48-72 hrs adicionales. Verifica disponibilidad por WhatsApp antes de confirmar tu pedido.",
+ answer: "Sí. Las medidas más populares (Chica, Mediana y Grande) se pueden cotizar para entrega en CDMX y municipios del Estado de México. Para medidas Extra Grande o pedidos superiores a 1,000 piezas, confirmamos el tiempo según disponibilidad y volumen. Verifica disponibilidad por WhatsApp antes de confirmar tu pedido.",
  },
 ];
 
@@ -287,11 +287,11 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  titleHtml={true}
  title="Cajas para <span>E-commerce</span> CDMX"
  desc="Medidas oficiales Mercado Envíos, Amazon FBA/FBM, DHL, FedEx y Estafeta. Corrugado doble ECT-44 con stock permanente. Desde 50 piezas sin pedido mínimo en medidas estándar."
- desc2="El socio de empaque preferido de los sellers de Mercado Libre y Amazon en CDMX. Entrega en 24 horas, factura electrónica y asesoría técnica para optimizar tu costo por envío.||Trabajamos con más de 500 sellers activos en CDMX y EDOMEX. Nuestro equipo técnico analiza tu catálogo de productos y recomienda la medida exacta que reduce el peso volumétrico, evita cobros extra y protege tu mercancía en tránsito."
+ desc2="Proveedor de empaque para sellers de Mercado Libre y Amazon en CDMX. Entrega programada, factura electrónica y asesoría para optimizar tu costo por envío.||Analizamos tu catálogo de productos y recomendamos la medida que reduce el peso volumétrico, evita cobros extra y protege tu mercancía en tránsito."
  chips={[
  { label: "5 Productos" },
  { label: "Desde 50 pzas" },
- { label: "Entrega 24 hrs" },
+ { label: "Entrega programada" },
  { label: "Mercado Envíos · Amazon · DHL" },
  ]}
  ctas={[
@@ -364,7 +364,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  Cajas para E-commerce: Compatibles con Todas las Plataformas y Paqueterías
  </h2>
  <p class="prod-detail__intro">
- Las cajas de cartón para e-commerce en CDMX deben cumplir dos condiciones críticas: medidas exactas según la plataforma de venta y resistencia suficiente para proteger el producto durante todo el trayecto. En CADECA tenemos ambas: stock permanente de medidas oficiales y corrugado doble pared que cumple los estándares de Mercado Libre, Amazon y todas las paqueterías líderes.
+ Las cajas de cartón para e-commerce en CDMX deben cumplir dos condiciones críticas: medidas exactas según la plataforma de venta y resistencia suficiente para proteger el producto durante todo el trayecto. En CADECA surtimos medidas oficiales y corrugado doble pared compatible con los estándares de Mercado Libre, Amazon y las paqueterías principales.
  </p>
  <div>
  <p class="prod-detail__specs-title">Especificaciones técnicas</p>
@@ -387,7 +387,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  <div class="prod-detail__spec">
  <span class="prod-detail__spec-label">Material</span>
- <span class="prod-detail__spec-value">Kraft / Test · FSC disponible</span>
+ <span class="prod-detail__spec-value">Kraft / Test · FSC por confirmar al cotizar</span>
  </div>
  <div class="prod-detail__spec">
  <span class="prod-detail__spec-label">Personalización</span>
@@ -448,21 +448,19 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <!-- TESTIMONIOS -->
-
 <section class="seo-content" aria-labelledby="seo-eco-title">
  <div class="container">
  <h2 id="seo-eco-title" class="seo-content__title">
  Cajas de Cartón para E-commerce en CDMX: La Guía Definitiva para Vendedores Online
  </h2>
  <p class="seo-content__text">
- En el e-commerce mexicano, el empaque no es un detalle — es parte del producto. Una caja que no cumple las medidas de <strong>Mercado Envíos</strong> genera cobros adicionales que erosionan el margen. Una caja con resistencia insuficiente para <strong>Amazon FBA</strong> resulta en rechazo del inventario en el centro de distribución. En CADECA hemos eliminado estos problemas: todas nuestras cajas para e-commerce están dimensionadas y probadas para las plataformas y paqueterías líderes en México, con stock permanente en CDMX.
+ En el e-commerce mexicano, el empaque no es un detalle — es parte del producto. Una caja que no cumple las medidas de <strong>Mercado Envíos</strong> genera cobros adicionales que erosionan el margen. Una caja con resistencia insuficiente para <strong>Amazon FBA</strong> resulta en rechazo del inventario en el centro de distribución. En CADECA te ayudamos a cotizar cajas dimensionadas para las plataformas y paqueterías principales en México, según disponibilidad.
  </p>
  <p class="seo-content__text">
- Para los <strong>vendedores de Mercado Libre en CDMX</strong>, nuestras cajas cubren todas las categorías de Mercado Envíos (Chica, Mediana, Grande y Extra Grande) en corrugado doble pared para máxima protección durante el manejo de las paqueterías. Para los <strong>sellers de Amazon México</strong> (FBA y FBM), cumplimos el estándar ECT-44 mínimo requerido por Amazon Seller Central y las medidas aceptadas por los centros de distribución en Cuautitlán y Tepotzotlán. Entrega garantizada en <strong>24 horas en toda la CDMX y municipios conurbados del Estado de México</strong>.
+ Para los <strong>vendedores de Mercado Libre en CDMX</strong>, cotizamos cajas para las categorías de Mercado Envíos (Chica, Mediana, Grande y Extra Grande) en corrugado doble pared para protección durante el manejo de las paqueterías. Para los <strong>sellers de Amazon México</strong> (FBA y FBM), revisamos el estándar ECT-44 mínimo requerido por Amazon Seller Central y las medidas aceptadas por sus centros de distribución. Entrega programada según volumen y zona en CDMX y municipios conurbados del Estado de México.
  </p>
  <p class="seo-content__text">
- Si tienes tu propia tienda en Shopify, TiendaNube o vendes por Instagram y TikTok, nuestras cajas neutras para e-commerce son el punto de partida perfecto. Cuando tu volumen justifique la inversión, puedes agregar tu logo con nuestra <a href="/catalogo/cajas-personalizadas-logo/">línea de cajas personalizadas</a> desde 100 piezas. El proceso de <strong>cotización es gratuito y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con tus medidas de producto y te decimos exactamente qué caja necesitas y a qué precio.
+ Si tienes tu propia tienda en Shopify, TiendaNube o vendes por Instagram y TikTok, nuestras cajas neutras para e-commerce son un punto de partida práctico. Cuando tu volumen justifique la inversión, puedes agregar tu logo con nuestra <a href="/catalogo/cajas-personalizadas-logo/">línea de cajas personalizadas</a> desde 100 piezas. El proceso de <strong>cotización es gratuito</strong> — escríbenos por WhatsApp con tus medidas de producto y te orientamos sobre la caja adecuada y su precio.
  </p>
  </div>
  </section>
@@ -478,7 +476,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  subtitle="Todo sobre medidas, paqueterías, Amazon FBA, Mercado Envíos y pedidos mínimos"
  >
  <p>Las dudas más frecuentes de los vendedores online antes de hacer su primer pedido con CADECA. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
- <p>Respondemos consultas técnicas sobre medidas, peso volumétrico, resistencia ECT y compatibilidad con paqueterías en menos de 1 hora, sin costo y sin compromiso de compra.</p>
+ <p>Respondemos consultas técnicas sobre medidas, peso volumétrico, resistencia ECT y compatibilidad con paqueterías en horario hábil, sin costo y sin compromiso de compra.</p>
  </SectionHeader>
  <div class="faq__list">
  {detFaqs.map(f => <FaqItem {...f} />)}

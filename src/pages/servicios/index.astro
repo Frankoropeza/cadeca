@@ -3,13 +3,12 @@ import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import Testimonial  from "@/components/Testimonial.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 
 // ── SEO ──────────────────────────────────────────────
 const title  = "Servicios de Empaque en Cartón Corrugado CDMX | CADECA";
-const description = "Fabricación a la medida, impresión personalizada, suministro programado y asesoría técnica en cajas de cartón corrugado para CDMX y Estado de México. Entrega en 24-48 hrs.";
+const description = "Suministro de cajas de cartón corrugado estándar, a la medida y personalizadas para CDMX y Estado de México. Entrega programada según pedido.";
 
 // ── Negocio ───────────────────────────────────────────
 
@@ -47,8 +46,8 @@ const servicios = [
  {
  icon: "",
  title: "Fabricación a la Medida",
- short: "Cualquier dimensión exacta en 24–72 hrs",
- desc: "Producimos en cualquier medida (largo × ancho × alto en cm) sin cargo extra por especiales. Flautas B, C, E y BC. Resistencia ECT seleccionada por producto. Diseño CAD incluido sin costo.",
+ short: "Cualquier dimensión exacta según pedido",
+ desc: "Coordinamos cualquier medida (largo × ancho × alto en cm) con talleres especializados. Flautas B, C, E y BC. Resistencia ECT seleccionada por producto. Diseño CAD incluido según pedido.",
  href: "/servicios/fabricacion-cajas-medida/",
  tags: ["Simple · Doble · Triple pared", "Diseño CAD incluido", "Desde 50 piezas"],
  badge: "Especialidad",
@@ -77,23 +76,23 @@ const servicios = [
  short: "El empaque correcto para cada producto",
  desc: "Te ayudamos a elegir flauta, número de paredes, resistencia ECT, gramaje y tipo de cierre. Analizamos peso del producto, condiciones de almacenamiento, transporte y normativas aplicables.",
  href: "/servicios/asesoria-tecnica/",
- tags: ["Sin costo", "Por WhatsApp o visita", "Ingenieros de empaques"],
+ tags: ["Sin costo", "Por WhatsApp o visita", "Asesoría para elegir"],
  badge: "Gratis",
  },
  {
  icon: "",
  title: "Entrega a Domicilio",
- short: "CDMX y Estado de México en 24–48 hrs",
- desc: "Logística propia con rutas establecidas en toda la zona metropolitana. Entrega en bodega, planta o domicilio. Seguimiento de pedido y factura electrónica incluidos.",
+ short: "CDMX y Estado de México con entrega programada",
+ desc: "Coordinamos la entrega en bodega, planta o domicilio según zona y volumen. Seguimiento de pedido y factura electrónica incluidos.",
  href: "/servicios/entrega-domicilio-cdmx/",
  tags: ["CDMX completa", "14 zonas Estado de México", "Seguimiento en tiempo real"],
- badge: "24 hrs",
+ badge: "Programado",
  },
  {
  icon: "",
  title: "Cotización Exprés",
- short: "Respuesta garantizada en menos de 2 horas",
- desc: "Envíanos medidas, cantidad y tipo de caja. En menos de 2 horas recibes propuesta con precio, tiempo de entrega y opciones técnicas. Sin formularios complicados, por WhatsApp o email.",
+ short: "Respuesta en horario hábil",
+ desc: "Envíanos medidas, cantidad y tipo de caja. Te respondemos en horario hábil con precio, tiempo de entrega y opciones técnicas.",
  href: "/servicios/cotizacion-express/",
  tags: ["WhatsApp · Email", "Propuesta detallada", "Sin compromiso"],
  badge: "Rápido",
@@ -102,7 +101,7 @@ const servicios = [
  icon: "",
  title: "Muestras y Prototipos",
  short: "Toca y aprueba antes de producir",
- desc: "Fabricamos prototipos físicos de tu caja a la medida o personalizada antes del pedido definitivo. Verificación de resistencia, impresión y ensamble. Envío de muestra a tu oficina.",
+ desc: "Coordinamos prototipos físicos de tu caja a la medida o personalizada antes del pedido definitivo. Verificación de resistencia, impresión y ensamble. Envío de muestra a tu oficina.",
  href: "/servicios/muestras-prototipos/",
  tags: ["Prototipo físico", "Prueba de resistencia", "Envío incluido"],
  badge: "Nuevo",
@@ -110,10 +109,10 @@ const servicios = [
  {
  icon: "️",
  title: "Packaging Ecológico",
- short: "Material reciclado y certificación FSC",
- desc: "Cajas fabricadas con cartón reciclado posconsumo y tintas base agua. Certificación FSC de cadena de custodia disponible. Informes de huella de carbono para reportes ESG.",
+ short: "Material reciclado y FSC según pedido",
+ desc: "Cajas con cartón reciclado posconsumo y tintas base agua. Si necesitas certificación FSC, confirmamos disponibilidad y documentación con el fabricante.",
  href: "/servicios/packaging-ecologico/",
- tags: ["FSC certificado", "Reciclado posconsumo", "Reporte ESG disponible"],
+ tags: ["FSC según pedido", "Reciclado posconsumo", "Documentación disponible"],
  badge: "Sostenible",
  },
 ];
@@ -121,41 +120,19 @@ const servicios = [
 // ── Capacidades ───────────────────────────────────────
 const capacidades = [
  { valor: "50+", label: "Medidas estándar en stock", icon: "" },
- { valor: "24 h", label: "Entrega exprés en CDMX", icon: "" },
- { valor: "< 2 h", label: "Tiempo de respuesta cotización", icon: "" },
- { valor: "100+", label: "Clientes activos en la ZMVM", icon: "" },
- { valor: "FSC", label: "Cartón certificado disponible", icon: "" },
+ { valor: "Programada", label: "Entrega en CDMX", icon: "" },
+ { valor: "Horario hábil", label: "Respuesta a cotización", icon: "" },
+ { valor: "Según pedido", label: "Volumen y entrega", icon: "" },
+ { valor: "FSC", label: "Disponible según pedido", icon: "" },
  { valor: "1 pza", label: "Pedido mínimo en estándar", icon: "" },
 ];
 
 // ── Proceso ───────────────────────────────────────────
 const pasos = [
  { num: 1, title: "Nos cuentas tu necesidad",  desc: "Escríbenos por WhatsApp o llena el formulario. Nos dices el tipo de caja, medidas, cantidad y si necesitas personalización." },
- { num: 2, title: "Recibimos propuesta técnica", desc: "En menos de 2 horas te enviamos cotización con precio, tiempo de entrega, especificaciones técnicas y opciones de material." },
+ { num: 2, title: "Recibimos propuesta técnica", desc: "Te respondemos en horario hábil con cotización, precio, tiempo de entrega, especificaciones técnicas y opciones de material." },
  { num: 3, title: "Apruebas diseño o muestra",  desc: "Para personalizadas: prueba de diseño digital gratis. Para cajas a la medida: prototipo físico si lo requieres." },
- { num: 4, title: "Producción y entrega",  desc: "Estándar en 24–48 hrs. Personalizadas en 3–5 días hábiles. Entrega en tu bodega, planta o domicilio. Factura incluida." },
-];
-
-// ── Testimonios ───────────────────────────────────────
-const testimonios = [
- {
- initials: "JH",
- name: "Jorge H.",
- role: "Director de Operaciones — Empresa de Muebles, Ecatepec",
- text: "Necesitábamos cajas a la medida para piezas irregulares de muebles. CADECA no solo nos dio el precio más competitivo, nos asesoraron en el ECT correcto y el prototipo llegó en 48 hrs. Producción a tiempo, cero rechazos.",
- },
- {
- initials: "SR",
- name: "Sofía R.",
- role: "Fundadora — Marca de Cosméticos DTC, Polanco, CDMX",
- text: "El servicio de impresión full color es impresionante. Mandé mi diseño, en 2 horas tuve la prueba digital y en 4 días hábiles mis cajas personalizadas en mano. El acabado brillante quedó exactamente como lo quería. 100% recomendados.",
- },
- {
- initials: "RM",
- name: "Roberto M.",
- role: "Gerente de Compras — Planta Automotriz, Tlalnepantla",
- text: "Tenemos contrato de suministro programado desde hace 8 meses. El inventario reservado nos evita quiebres de stock y el precio fijo nos permite planear presupuestos sin sorpresas. CADECA entiende las necesidades industriales.",
- },
+ { num: 4, title: "Coordinación y entrega",  desc: "Confirmamos materiales, especificaciones y fecha de entrega según el pedido. Entrega en tu bodega, planta o domicilio." },
 ];
 
 // ── FAQs ──────────────────────────────────────────────
@@ -163,7 +140,7 @@ const faqs = [
  {
  id: "s1",
  question: "¿Qué información necesitan para cotizar cajas a la medida?",
- answer: "Solo necesitamos: medidas interiores (largo × ancho × alto en cm), número de paredes deseado (simple, doble o triple), cantidad aproximada y tipo de producto que vas a empacar. Con eso preparamos la propuesta técnica en menos de 2 horas.",
+ answer: "Solo necesitamos: medidas interiores (largo × ancho × alto en cm), número de paredes deseado (simple, doble o triple), cantidad aproximada y tipo de producto que vas a empacar. Con eso preparamos la propuesta técnica en horario hábil.",
  },
  {
  id: "s2",
@@ -173,7 +150,7 @@ const faqs = [
  {
  id: "s3",
  question: "¿Hacen muestras o prototipos antes del pedido en firme?",
- answer: "Sí. Para pedidos a la medida o personalizados fabricamos prototipos físicos antes de la producción total. Puedes revisar resistencia, ensamble e impresión. El costo del prototipo se abona al pedido definitivo.",
+ answer: "Sí. Para pedidos a la medida o personalizados coordinamos prototipos físicos antes de la producción total. Puedes revisar resistencia, ensamble e impresión. El costo del prototipo se puede abonar al pedido definitivo según cotización.",
  },
  {
  id: "s4",
@@ -215,12 +192,12 @@ const faqs = [
  <div class="hero__inner">
 
  <div class="hero__left">
- <p class="hero__badge">Fabricante de Empaques en CDMX y Estado de México</p>
+ <p class="hero__badge">Proveedor de Empaques en CDMX y Estado de México</p>
  <h1 id="hero-title" class="hero__title">
- Servicios de Empaque<br><span>Profesional en Cartón Corrugado</span>
+ Servicios de Empaque<br /><span>Profesional en Cartón Corrugado</span>
  </h1>
  <p class="hero__intro">
- Fabricación a la medida, impresión personalizada, suministro programado y asesoría técnica. Todo el respaldo de un fabricante local con más de 15 años atendiendo la zona metropolitana.
+ Cajas estándar, a la medida y personalizadas, con suministro coordinado, asesoría para elegir el empaque y entrega programada.
  </p>
  <div class="hero__ctas">
  <a href="/cotizar/" class="btn btn--primary">Solicitar Cotización Gratis</a>
@@ -230,11 +207,10 @@ const faqs = [
  </a>
 )}
  </div></div>
- </div>
 
  <div class="hero__right">
  <p>En CADECA somos mucho más que un proveedor de cajas: somos el aliado estratégico de empaque para pymes, plantas industriales, marcas DTC y operaciones de e-commerce en la Ciudad de México y Estado de México.</p>
- <p>Ofrecemos desde la venta de cajas corrugadas estándar sin pedido mínimo, hasta contratos de suministro programado con inventario reservado para operaciones industriales. Producción propia, sin intermediarios, con tiempos de respuesta que ningún distribuidor puede igualar.</p>
+ <p>Ofrecemos desde la venta de cajas corrugadas estándar hasta contratos de suministro programado con inventario reservado para operaciones industriales. Trabajamos con talleres y fabricantes aliados, coordinando producción y entrega según el pedido.</p>
  <p>Cada servicio incluye <strong>asesoría técnica gratuita</strong>, factura electrónica y respaldo de un equipo que conoce el mercado metropolitano desde adentro.</p>
  </div>
 
@@ -289,7 +265,7 @@ const faqs = [
  link={{ text: "Solicitar cotización", href: "/cotizar/" }}
  >
  <p>Construimos relaciones a largo plazo con nuestros clientes porque entendemos que el empaque no es un gasto: es una herramienta estratégica que impacta en la protección del producto, la experiencia del cliente y la imagen de tu marca.</p>
- <p>Desde el emprendedor con 50 cajas mensuales hasta la planta con 50,000 cajas al mes, cada cliente recibe el mismo nivel de atención técnica y servicio personalizado.</p>
+ <p>Desde pedidos pequeños hasta operaciones industriales, cada cliente recibe atención técnica y servicio personalizado según sus necesidades.</p>
  </SectionHeader>
 
  <div class="svc-list__grid">
@@ -327,7 +303,7 @@ const faqs = [
  Fabricación a la Medida: Cada Milímetro Importa
  </h2>
  <p class="svc-feature__text">
- No todos los productos caben en una caja estándar. Fabricamos cajas en exactamente las dimensiones que tu producto necesita: sin espacio muerto, sin material de relleno innecesario y con el calibre de corrugado exacto para soportar el peso y el transporte.
+ No todos los productos caben en una caja estándar. Coordinamos cajas en exactamente las dimensiones que tu producto necesita: sin espacio muerto, sin material de relleno innecesario y con el calibre de corrugado exacto para soportar el peso y el transporte.
  </p>
  <p class="svc-feature__text">
  Nuestro proceso CAD garantiza precisión a ±2 mm. Seleccionamos la flauta correcta —B para resistencia, C para equilibrio, E para productos ligeros, BC para triple pared industrial— y calculamos el ECT mínimo requerido según el peso del producto y el apilamiento en bodega.
@@ -351,7 +327,7 @@ const faqs = [
  </div>
  <div class="svc-feature__bullet">
  <svg class="svc-feature__bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
- Entrega en 24–72 hrs según volumen
+ Entrega según volumen y zona
  </div>
  </div>
  <a href="/catalogo/cajas-a-la-medida/" class="btn btn--primary">Ver cajas a la medida</a>
@@ -489,7 +465,7 @@ const faqs = [
 
  <div class="svc-sectores__grid">
  {[
- { icon: "", titulo: "E-commerce & Marketplaces", desc: "Mercado Libre, Amazon MX, TikTok Shop, Shopify, WooCommerce. Medidas compatibles con todas las paqueterías. Entrega en 24 hrs.", href: "/catalogo/cajas-para-ecommerce/" },
+ { icon: "", titulo: "E-commerce & Marketplaces", desc: "Mercado Libre, Amazon MX, TikTok Shop, Shopify, WooCommerce. Medidas compatibles con todas las paqueterías. Entrega programada.", href: "/catalogo/cajas-para-ecommerce/" },
  { icon: "", titulo: "Manufactura & Nearshoring", desc: "Parques industriales de Naucalpan, Tlalnepantla, Lerma, Cuautitlán. Alta resistencia ECT, documentación de proveedor, grandes volúmenes.", href: "/catalogo/cajas-a-la-medida/" },
  { icon: "", titulo: "Alimentos & Restaurantes", desc: "Dark kitchens, pastelerías, productores orgánicos, exportación. Materiales aptos COFEPRIS, resistentes a humedad y grasa.", href: "/catalogo/cajas-para-alimentos/" },
  { icon: "", titulo: "Farmacéutica & Cosmética", desc: "Cajas para laboratorios, distribuidoras y marcas de cosméticos. Precisión en medidas, acabados premium y trazabilidad de lote.", href: "/catalogo/cajas-farmaceutica-cosmetica/" },
@@ -513,33 +489,33 @@ const faqs = [
  <SectionHeader
  id="trust-svc-title"
  twoCol
- title="Por Qué CADECA es el Mejor Proveedor de Empaques en CDMX"
- subtitle="Fabricante local, no distribuidor. La diferencia que se nota en precio, tiempo y servicio"
+ title="Por Qué CADECA es un Proveedor de Empaques para CDMX"
+ subtitle="Suministro coordinado, asesoría y cobertura metropolitana"
  >
  <p>Elegir un fabricante local sobre un distribuidor nacional tiene ventajas reales y medibles: precios sin margen de intermediario, plazos de producción más cortos, capacidad de atender urgencias y un interlocutor técnico que conoce tu operación.</p>
- <p>CADECA opera desde la Ciudad de México con producción propia, almacén de inventario permanente y logística dedicada para la zona metropolitana.</p>
+ <p>CADECA atiende desde la Ciudad de México con suministro coordinado, revisión de disponibilidad y entregas programadas para la zona metropolitana.</p>
  </SectionHeader>
 
  <div class="trust__grid">
  <div class="trust__item">
- <h3 class="trust__item-title">Fabricante, No Distribuidor</h3>
- <p class="trust__item-desc">Producción propia, sin intermediarios. Mejor precio, control de calidad directo y capacidad de atender cambios de último minuto que un distribuidor no puede.</p>
+ <h3 class="trust__item-title">Suministro coordinado</h3>
+ <p class="trust__item-desc">Trabajamos con talleres y fabricantes aliados para coordinar materiales, producción y entrega según tu pedido.</p>
  </div>
  <div class="trust__item">
- <h3 class="trust__item-title">Respuesta en Menos de 2 Horas</h3>
- <p class="trust__item-desc">Cotización técnica detallada en menos de 2 horas hábiles. Incluye precio unitario, opciones de material, tiempo de producción y condiciones de entrega.</p>
+ <h3 class="trust__item-title">Respuesta en horario hábil</h3>
+ <p class="trust__item-desc">Recibimos tus medidas y cantidad, y te respondemos con precio, opciones de material, tiempo de entrega y condiciones.</p>
  </div>
  <div class="trust__item">
  <h3 class="trust__item-title">Inventario Permanente</h3>
- <p class="trust__item-desc">Stock de cajas estándar en todo momento. Para urgencias entregamos el mismo día en zonas clave de CDMX. Sin demoras por "pedido a proveedor".</p>
+ <p class="trust__item-desc">Revisamos la disponibilidad de cajas estándar y coordinamos la entrega según el pedido y la zona.</p>
  </div>
  <div class="trust__item">
  <h3 class="trust__item-title">Asesoría Técnica Real</h3>
- <p class="trust__item-desc">Ingenieros de empaques disponibles para analizar tu caso. No vendemos "la caja más cara"; recomendamos la solución técnicamente correcta para tu producto.</p>
+ <p class="trust__item-desc">Te ayudamos a elegir la solución técnicamente correcta para tu producto, considerando peso, almacenamiento y transporte.</p>
  </div>
  <div class="trust__item">
- <h3 class="trust__item-title">Cartón FSC Certificado</h3>
- <p class="trust__item-desc">Materiales con certificación de cadena de custodia FSC y opciones en cartón reciclado posconsumo. Documentación disponible para reportes ESG y auditorías.</p>
+ <h3 class="trust__item-title">Cartón FSC según pedido</h3>
+ <p class="trust__item-desc">Surtimos cartón reciclado; si necesitas certificación FSC, confirmamos disponibilidad y documentación con el fabricante.</p>
  </div>
  <div class="trust__item">
  <h3 class="trust__item-title">Cobertura Metropolitana Total</h3>
@@ -547,13 +523,6 @@ const faqs = [
  </div>
  </div>
 
- <div class="trust__testimonials-header">
- <h3 class="trust__testimonials-title">Lo que dicen quienes ya trabajan con nosotros</h3>
- <p class="trust__testimonials-subtitle">Clientes activos en manufactura, e-commerce y marcas DTC</p>
- </div>
- <div class="trust__testimonials">
- {testimonios.map(t => <Testimonial {...t} />)}
- </div>
  </div>
  </section>
 
@@ -564,13 +533,13 @@ const faqs = [
  Servicios Especializados de Empaque en Cartón Corrugado para Empresas en CDMX
  </h2>
  <p class="seo-content__text">
- La demanda de <strong>servicios profesionales de empaque en cartón corrugado</strong> en la Ciudad de México y Estado de México crece a ritmo acelerado, impulsada por el auge del e-commerce, la expansión del nearshoring y la sofisticación de los consumidores finales que valoran la experiencia de unboxing. CADECA ofrece el portafolio de servicios más completo del área metropolitana: desde la <a href="/catalogo/cajas-a-la-medida/">fabricación de cajas a la medida</a> con diseño CAD incluido, hasta <a href="/catalogo/cajas-personalizadas-logo/">impresión personalizada full color</a> con prueba de diseño sin costo.
+ La demanda de <strong>servicios profesionales de empaque en cartón corrugado</strong> en la Ciudad de México y Estado de México incluye e-commerce, manufactura, alimentos y retail. CADECA ofrece suministro de <a href="/catalogo/cajas-a-la-medida/">cajas a la medida</a> con diseño CAD incluido, además de <a href="/catalogo/cajas-personalizadas-logo/">impresión personalizada full color</a> con prueba de diseño cuando aplica.
  </p>
  <p class="seo-content__text">
- Como <strong>fabricante de cajas de cartón en CDMX</strong> con producción propia, eliminamos los costos de intermediación y ofrecemos tiempos de entrega que un distribuidor no puede igualar. Nuestro servicio de <strong>suministro programado</strong> garantiza disponibilidad constante con precio fijo mensual para empresas de manufactura, distribuidoras y operaciones de e-commerce de alto volumen. La <strong>asesoría técnica gratuita</strong> incluye selección de ECT, tipo de flauta y diseño del sistema de cierre, con base en el peso, las condiciones de transporte y las normativas aplicables a tu producto.
+ Como <strong>proveedor de cajas de cartón en CDMX</strong>, coordinamos con talleres y fabricantes aliados el suministro programado para empresas de manufactura, distribuidoras y operaciones de e-commerce de alto volumen. La <strong>asesoría técnica gratuita</strong> incluye selección de ECT, tipo de flauta y diseño del sistema de cierre, con base en el peso, las condiciones de transporte y las normativas aplicables a tu producto.
  </p>
  <p class="seo-content__text">
- Atendemos todos los sectores con necesidades de empaque en la zona metropolitana: e-commerce y marketplaces, manufactura e industria automotriz, alimentos y restaurantes, farmacéutica, retail y moda. Entregamos en toda la CDMX y Estado de México —Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán, Lerma y Toluca— con factura electrónica y seguimiento de pedido. <a href="/cotizar/">Solicita tu cotización sin compromiso</a> y recibe respuesta técnica en menos de 2 horas.
+ Atendemos todos los sectores con necesidades de empaque en la zona metropolitana: e-commerce y marketplaces, manufactura e industria automotriz, alimentos y restaurantes, farmacéutica, retail y moda. Entregamos en toda la CDMX y Estado de México —Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán, Lerma y Toluca— con factura electrónica y seguimiento de pedido. <a href="/cotizar/">Solicita tu cotización sin compromiso</a> y te respondemos en horario hábil.
  </p>
  </div>
  </section>
@@ -605,7 +574,7 @@ const faqs = [
  <div>
  <span style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);display:block;margin-bottom:0.75rem;">Próximos Pasos</span>
  <h2 id="cta-final-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:white;margin-bottom:1rem;line-height:1.2;">¿Listo para Optimizar tu Empaque?</h2>
- <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Habla con nuestro equipo hoy mismo. Sin formularios largos, sin esperas. Cotización técnica en menos de 2 horas y asesoría gratuita para elegir la mejor solución.</p>
+ <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Habla con nuestro equipo. Sin formularios largos. Te respondemos en horario hábil y te ayudamos a elegir la solución adecuada.</p>
  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
  <a href="/cotizar/" class="btn btn--primary btn--lg">Cotizar ahora</a>
  {HAS_WA && (
@@ -618,9 +587,9 @@ const faqs = [
  { icon: "", label: "A la Medida", href: "/catalogo/cajas-a-la-medida/", tag: "Diseño CAD" },
  { icon: "", label: "Personalizadas", href: "/catalogo/cajas-personalizadas-logo/", tag: "Full color" },
  { icon: "", label: "Corrugado Estándar", href: "/catalogo/cajas-corrugado-estandar/", tag: "Stock permanente" },
- { icon: "", label: "E-commerce", href: "/catalogo/cajas-para-ecommerce/", tag: "24 hrs" },
+ { icon: "", label: "E-commerce", href: "/catalogo/cajas-para-ecommerce/", tag: "Entrega programada" },
  { icon: "", label: "Alimentos", href: "/catalogo/cajas-para-alimentos/", tag: "COFEPRIS" },
- { icon: "", label: "Ecológicas FSC", href: "/catalogo/laminas-carton-corrugado/", tag: "Sostenible" },
+ { icon: "", label: "Ecológicas", href: "/catalogo/laminas-carton-corrugado/", tag: "FSC según pedido" },
  ].map(item => (
  <a href={item.href} style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.75rem;padding:1rem;text-decoration:none;transition:background 0.2s;display:flex;align-items:center;gap:0.75rem;">
  <span style="font-size:1.5rem;">{item.icon}</span>
@@ -635,6 +604,6 @@ const faqs = [
  </div>
  </section>
 
- <LeadCapture title="Solicita tu Cotización — Respuesta en Menos de 2 Horas" />
+ <LeadCapture title="Solicita tu Cotización" />
 
 </PageLayout>

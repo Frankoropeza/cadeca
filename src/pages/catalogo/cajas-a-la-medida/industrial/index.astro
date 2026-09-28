@@ -6,7 +6,7 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas Industriales a la Medida ECT-44/51 | CADECA";
-const description = "Ficha técnica cajas a la medida industrial en CDMX. ECT-44 o ECT-51 según carga, hasta 50 kg, CAD gratis 24 hrs, entrega 3-5 días. Para manufactura y distribución. CADECA.";
+const description = "Ficha técnica cajas a la medida industrial en CDMX. ECT-44 o ECT-51 según carga, hasta 50 kg, CAD gratis, entrega según pedido.";
 
 const medidas = [
  { talla:"S hasta 10kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-44",vacío:"varía",máx:"10 kg",  disp:"yellow", label:"3-5 días",  hl:false },
@@ -23,7 +23,7 @@ const specs = [
  ["Tipo de pared",  "Doble corrugado BC"],
  ["ECT disponible",  "ECT-44 / ECT-51 a elegir"],
  ["Peso máx. producto",  "Hasta 50 kg con ECT-51"],
- ["Diseño CAD",  "Gratis en 24 horas"],
+ ["Diseño CAD",  "Gratis"],
  ["Gramaje liner",  "150-175 g/m² · 175-200 g/m²"],
  ["Aplicaciones",  "Manufactura · Distribución · Automotive · Electrónica"],
  ["Esquineros",  "Opcionales — sin costo extra"],
@@ -61,7 +61,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Industrial Reforzada"}]}
  faqItems={[{question:"¿Cómo sé qué ECT necesito para mi producto industrial?", answer:"El ECT (Edge Crush Test) define la resistencia del corrugado. Regla práctica: productos hasta 15 kg → ECT-32; 15-30 kg → ECT-44; 30-50 kg → ECT-51; más de 50 kg → ECT-61 (triple corrugado). Sin embargo, también importa el método de apilamiento: cajas apiladas en tarima 4 niveles necesitan mayor ECT que una caja que va sola. Nuestros asesores realizan el cálculo de BCT (Box Compression Test) estimado gratis para confirmar el ECT correcto para tu aplicación específica."}, {question:"¿Qué son los esquineros de cartón y cuándo se usan con cajas industriales?", answer:"Los esquineros son perfiles de cartón corrugado en forma de ángulo recto de 90° que se colocan en las esquinas verticales de la caja o de la tarima. Aumentan la resistencia al aplastamiento vertical en un 40-60% adicional al ECT de la caja base. Se usan cuando: el producto es pesado y se apila en múltiples niveles, la caja viajará en camión por largas distancias con vibración, o el cliente exige protección de esquinas visible. CADECA los fabrica a la medida sin costo extra en pedidos de 50+ piezas que los incluyan."}]}
- product={{name:"Caja a la Medida Industrial Reforzada", sku:"CAD-AM-01", description:"Caja a la Medida Industrial Reforzada en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif", material:"Cartón doble corrugado BC ECT-44/51 a la medida para uso industrial", category:"Cajas a la Medida", moq:"50"}}
+ product={{name:"Caja a la Medida Industrial Reforzada", sku:"CAD-AM-01", description:"Caja a la Medida Industrial Reforzada en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-medida-industrial-reforzada-cdmx.avif", material:"Cartón doble corrugado BC ECT-44/51 a la medida para uso industrial", category:"Cajas a la Medida", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -78,7 +78,7 @@ const gallery = [
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-AM-01 · Cajas a la Medida</span>
  <h1 id="sku-am01-title" class="cat-page-hero__title">Caja a la Medida <span>Industrial Reforzada</span><br>— ECT-44/51 CDMX</h1>
- <p class="cat-page-hero__desc">Cajas a la medida para uso industrial. Doble corrugado BC, ECT-44 o ECT-51 según carga. Diseño CAD gratuito en 24 horas. Para manufactura, distribución, automotive y electrónica.</p>
+ <p class="cat-page-hero__desc">Cajas a la medida para uso industrial. Doble corrugado BC, ECT-44 o ECT-51 según carga. Diseño CAD gratuito. Para manufactura, distribución, automotive y electrónica.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-01</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44/51</strong></div>
@@ -98,7 +98,7 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-AM-01 · Familia: Cajas a la Medida</p>
  <h2 id="detalle-am01-title" class="sku-detail__title">Caja a la Medida — Industrial Reforzada</h2>
- <p class="sku-detail__desc">Cajas de doble corrugado BC fabricadas en cualquier dimensión exacta para uso industrial. ECT-44 estándar para cargas hasta 30 kg; ECT-51 para cargas hasta 50 kg. Diseño CAD gratuito en 24 horas con asesoría técnica de ingeniería de empaque. Esquineros opcionales sin costo extra.</p>
+ <p class="sku-detail__desc">Cajas de doble corrugado BC coordinadas en cualquier dimensión exacta para uso industrial. ECT-44 estándar para cargas hasta 30 kg; ECT-51 para cargas hasta 50 kg. Diseño CAD gratuito con asesoría para elegir la caja correcta. Esquineros opcionales sin costo extra.</p>
  <div class="sku-detail__strip">
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44/51</span><span class="sku-detail__strip-label">Resistencia</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Hasta 50 kg</span><span class="sku-detail__strip-label">Carga máx.</span></div>
@@ -135,7 +135,7 @@ const gallery = [
  </tbody>
  </table>
  </div>
- <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs.  Producción bajo pedido.</p>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito.  Producción bajo pedido.</p>
  </div>
  </section>
 
@@ -146,5 +146,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture title="Cotiza CAD-AM-01 — Diseño CAD gratis en 24 hrs, entrega 3-5 días" />
+ <LeadCapture title="Cotiza CAD-AM-01 — Diseño CAD gratis, entrega según pedido" />
 </PageLayout>

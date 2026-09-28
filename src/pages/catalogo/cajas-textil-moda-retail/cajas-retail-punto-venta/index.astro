@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Exhibidora para Punto de Venta | CADECA";
-const description = "Ficha técnica caja display y exhibidor punto de venta en CDMX. Flauta B/C, ECT-32, mostrador, floor stand y pallet display. Impresión full color, MOQ 100 pzas. CADECA fabricante directo.";
+const description = "Ficha técnica caja display y exhibidor punto de venta en CDMX. Flauta B/C, ECT-32, mostrador, floor stand y pallet display.";
 
 const medidas = [
  { nombre:"Mostrador Chico",  lah:"25×20×30",  flauta:"B",  ect:"ECT-32",vacío:"0.18 kg",máx:"3 kg",  disp:"green",  label:"Stock" },
@@ -34,7 +34,7 @@ const specs = [
  ["Montaje",  "Sin herramientas — armado en menos de 60 segundos"],
  ["Certificación",  "FSC disponible · Tintas base agua · 100 % reciclable"],
  ["Pedido mínimo",  "100 pzas"],
- ["Tiempo de entrega",  "48-72 hrs stock · 5-7 días personalizado"],
+ ["Tiempo de entrega",  "Según pedido"],
 ];
 
 const faqs = [
@@ -86,7 +86,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Retail Punto de Venta"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
- product={{name:"Caja Retail Punto de Venta Display",sku:"CAD-TX-04",description:"Cajas display y exhibidores punto de venta en cartón corrugado CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-retail-punto-venta-pdv-cdmx.avif",material:"Cartón corrugado flauta B/C/BC con impresión full color CMYK",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
+ product={{name:"Caja Retail Punto de Venta Display",sku:"CAD-TX-04",description:"Cajas display y exhibidores punto de venta en cartón corrugado CDMX — proveedor CADECA",image:"/img/catalogo/caja-retail-punto-venta-pdv-cdmx.avif",material:"Cartón corrugado flauta B/C/BC con impresión full color CMYK",category:"Cajas para Textil, Moda y Retail",moq:"100"}}
 >
 
  <!-- Breadcrumb -->
@@ -112,7 +112,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-04</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32 / ECT-44</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -229,6 +229,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture title="Cotiza CAD-TX-04 — Displays y exhibidores punto de venta, entrega 48-72 hrs CDMX" />
+ <LeadCapture title="Cotiza CAD-TX-04 — Displays y exhibidores punto de venta, entrega programada según pedido" />
 
 </PageLayout>

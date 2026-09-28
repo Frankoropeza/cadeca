@@ -6,7 +6,7 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas para Mercado Envíos y Mercado Libre | CADECA";
-const description = "Ficha técnica cajas para Mercado Envíos en CDMX. Tallas Chica, Mediana, Grande y Extra Grande. Doble corrugado ECT-44. Stock permanente, entrega 24 hrs. CADECA fabricante.";
+const description = "Ficha técnica cajas para Mercado Envíos en CDMX. Tallas Chica, Mediana, Grande y Extra Grande. Doble corrugado ECT-44.";
 
 const medidas = [
  { talla:"Chica",  ml:"21×29×9 cm",  real:"21×29×9",  flauta:"BC",ect:"ECT-44",vacío:"0.35 kg",máx:"5 kg",  disp:"green",  label:"Stock", hl:false },
@@ -30,7 +30,7 @@ const specs = [
  ["Paqueterías compat.", "Estafeta · J&T · DHL · Sendex"],
  ["Personalización",  "Logo desde 100 pzas adicionales"],
  ["Pedido mínimo",  "50 piezas por talla"],
- ["Entrega CDMX",  "24 hrs stock · 48 hrs pedido especial"],
+ ["Entrega CDMX",  "Según pedido"],
 ];
 
 const faqs = [
@@ -62,7 +62,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"E-commerce", href:"/catalogo/cajas-para-ecommerce/"}, {name:"Mercado Envíos"}]}
  faqItems={[{question:"¿Las medidas de Mercado Envíos cambian con frecuencia?", answer:"Mercado Libre actualiza ocasionalmente las especificaciones de Mercado Envíos. En CADECA monitoreamos estos cambios y actualizamos nuestro stock conforme las nuevas medidas oficiales. Si tienes dudas sobre si las medidas que compraste siguen siendo válidas, escríbenos por WhatsApp con la talla y verificamos la especificación vigente sin costo."}, {question:"¿Puedo usar estas cajas con otras paqueterías además de Mercado Envíos?", answer:"Sí. Las medidas de Mercado Envíos también son compatibles con Estafeta, J&T, DHL y Sendex. El doble corrugado ECT-44 cumple los requerimientos de resistencia de todas estas paqueterías. La única restricción es Amazon FBA, que tiene medidas específicas — para Amazon recomendamos el producto CAD-EC-02."}]}
- product={{name:"Cajas Mercado Envíos Todas las Tallas", sku:"CAD-EC-01", description:"Cajas Mercado Envíos Todas las Tallas en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif", material:"Cartón doble corrugado BC ECT-44 Mercado Envíos", category:"Cajas para E-commerce", moq:"50"}}
+ product={{name:"Cajas Mercado Envíos Todas las Tallas", sku:"CAD-EC-01", description:"Cajas Mercado Envíos Todas las Tallas en CDMX — surtido coordinado por CADECA", image:"/img/catalogo/cajas-mercado-envios-chica-mediana-grande-cdmx.avif", material:"Cartón doble corrugado BC ECT-44 Mercado Envíos", category:"Cajas para E-commerce", moq:"50"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -84,7 +84,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-01</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas/talla</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -104,7 +104,7 @@ const gallery = [
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia ML</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 tallas</span><span class="sku-detail__strip-label">En stock CDMX</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ/talla</span></div>
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Según pedido</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
  </div>
  <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
  <table class="sku-detail__specs-table"><tbody>
@@ -147,5 +147,5 @@ const gallery = [
  </div>
  </section>
  </main>
- <LeadCapture title="Cotiza CAD-EC-01 — Stock permanente, entrega 24 hrs en CDMX" />
+ <LeadCapture title="Cotiza CAD-EC-01 — Disponibilidad y entrega según pedido" />
 </PageLayout>

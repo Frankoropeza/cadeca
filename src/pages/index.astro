@@ -5,13 +5,12 @@ import SectionHeader  from "@/components/SectionHeader.astro";
 import ProductCard  from "@/components/ProductCard.astro";
 import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
-import Testimonial  from "@/components/Testimonial.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 
 // ── SEO ──────────────────────────────────────────────
 const title  = "Cajas de Cartón CDMX y Estado de México | CADECA";
-const description = "La mejor empresa de cajas de cartón en CDMX y Estado de México. Corrugado estándar, a medida y personalizadas al mayoreo. Entrega en 24-48 hrs. Cotiza gratis.";
+const description = "Proveedor y distribuidor de cajas de cartón en CDMX y Estado de México. Corrugado estándar, a la medida y personalizadas al mayoreo.";
 
 // ── Datos del negocio ─────────────────────────────────
 
@@ -21,19 +20,19 @@ const faqSchema = {
  "@type": "FAQPage",
  "mainEntity": [
  { "@type": "Question", "name": "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
- "acceptedAnswer": { "@type": "Answer", "text": "En CADECA somos tu mejor opción para comprar cajas de cartón al mayoreo en la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Cotización en menos de 2 horas." }},
+ "acceptedAnswer": { "@type": "Answer", "text": "En CADECA puedes cotizar cajas de cartón al mayoreo para la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo." }},
  { "@type": "Question", "name": "¿Qué tipos de cajas de cartón venden?",
  "acceptedAnswer": { "@type": "Answer", "text": "Corrugado estándar (simple, doble y triple pared), cajas a la medida, personalizadas con logo, para e-commerce, para alimentos y láminas de cartón corrugado." }},
  { "@type": "Question", "name": "¿Cuál es el pedido mínimo de cajas de cartón?",
  "acceptedAnswer": { "@type": "Answer", "text": "Para cajas estándar no hay mínimo. Para cajas a la medida desde 50 piezas. Para personalizadas con logo desde 100 piezas." }},
  { "@type": "Question", "name": "¿Hacen entregas a domicilio en CDMX y Estado de México?",
- "acceptedAnswer": { "@type": "Answer", "text": "Sí, entregamos en toda la CDMX y Estado de México. Cajas estándar en 24-48 hrs, personalizadas en 3-5 días hábiles." }},
+ "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos entregas en CDMX y Estado de México. La fecha depende del volumen, la zona y el tipo de caja." }},
  { "@type": "Question", "name": "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
- "acceptedAnswer": { "@type": "Answer", "text": "Sí, medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Desde 50 piezas, entrega en 24 hrs en CDMX." }},
+ "acceptedAnswer": { "@type": "Answer", "text": "Sí, manejamos medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. La fecha de entrega se confirma según el pedido y la zona." }},
  { "@type": "Question", "name": "¿Ofrecen cajas de cartón ecológicas o recicladas?",
- "acceptedAnswer": { "@type": "Answer", "text": "Sí. Contamos con cajas de material reciclado posconsumo, tintas base agua y cartón certificado FSC." }},
+ "acceptedAnswer": { "@type": "Answer", "text": "Sí. Contamos con cajas de material reciclado posconsumo y tintas base agua. Si necesitas cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante." }},
  { "@type": "Question", "name": "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
- "acceptedAnswer": { "@type": "Answer", "text": "Llena el formulario o escríbenos por WhatsApp con las medidas (largo × ancho × alto), cantidad y archivo de diseño. Respondemos en menos de 2 horas con precio y prueba de diseño sin costo." }},
+ "acceptedAnswer": { "@type": "Answer", "text": "Llena el formulario o escríbenos por WhatsApp con las medidas (largo × ancho × alto), cantidad y archivo de diseño. Te respondemos en horario hábil con precio y prueba de diseño sin costo cuando aplique." }},
  ],
 };
 
@@ -54,7 +53,7 @@ const productos = [
  },
  {
  title:  "Cajas a la Medida",
- desc:  "Fabricamos en cualquier dimensión exacta. Sin costo extra por medidas especiales. Diseño CAD incluido.",
+ desc:  "Coordinamos cualquier dimensión exacta con talleres especializados. Diseño CAD incluido según pedido.",
  imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
  imgAlt:  "Cajas de cartón a la medida en CDMX y Estado de México — CADECA",
  href:  "/catalogo/cajas-a-la-medida/",
@@ -78,7 +77,7 @@ const productos = [
  },
  {
  title:  "Cajas para E-commerce",
- desc:  "Medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Desde 50 piezas, entrega en 24 hrs.",
+ desc:  "Medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Entrega programada según pedido.",
  imgSrc:  "/img/productos/cajas-de-carton-para-ecommerce-mercado-libre-amazon-cdmx.avif",
  imgAlt:  "Cajas de cartón para e-commerce Mercado Libre y Amazon MX en CDMX — CADECA",
  href:  "/catalogo/cajas-para-ecommerce/",
@@ -120,7 +119,7 @@ const industrias = [
  imgAlt:  "Cajas de cartón para e-commerce Mercado Libre Amazon CDMX",
  tag:  "E-Commerce",
  title:  "E-commerce y Vendedores Online",
- desc:  "Mercado Libre, Amazon MX, TikTok Shop, Shopify. Cajas estándar desde 50 piezas. Entrega 24 hrs en CDMX.",
+ desc:  "Mercado Libre, Amazon MX, TikTok Shop, Shopify. Cajas estándar desde 50 piezas. Entrega programada en CDMX.",
  href:  "/catalogo/cajas-para-ecommerce/",
  linkText: "Ver cajas para e-commerce",
  },
@@ -154,38 +153,17 @@ const industrias = [
 ];
 
 const pasos = [
- { num: 1, title: "Cotiza en Minutos",  desc: "Usa el formulario o escríbenos por WhatsApp. Respondemos en menos de 2 horas con precio y tiempo de entrega." },
+ { num: 1, title: "Solicita tu cotización",  desc: "Usa el formulario o escríbenos por WhatsApp. Te respondemos en horario hábil con precio y tiempo de entrega." },
  { num: 2, title: "Aprueba tu Diseño", desc: "Para personalizadas te enviamos prueba de diseño digital sin costo. Para estándar confirmamos medidas y cantidad." },
- { num: 3, title: "Producción Rápida", desc: "Estándar: 24-48 hrs. Personalizadas: 3-5 días hábiles. Producción propia sin intermediarios." },
+ { num: 3, title: "Coordinamos el suministro", desc: "Confirmamos materiales, especificaciones y fecha de entrega según el pedido con talleres aliados." },
  { num: 4, title: "Entrega a tu Puerta", desc: "Llevamos tu pedido directo a tu negocio, bodega o domicilio en CDMX y Estado de México. Factura incluida." },
-];
-
-const testimonios = [
- {
- initials: "MR",
- name:  "Miguel R.",
- role:  "Vendedor en Mercado Libre — Iztapalapa, CDMX",
- text:  "Necesitaba cajas para mis envíos de Mercado Libre en medidas específicas y con entrega rápida. CADECA me respondió en 1 hora, tuve mis cajas al día siguiente a las 10 am. Ya no busco otro proveedor.",
- },
- {
- initials: "LG",
- name:  "Ing. Laura G.",
- role:  "Gerente de Compras — Planta Manufacturera, Tlalnepantla",
- text:  "Somos una planta manufacturera en Tlalnepantla. Buscábamos un proveedor local con cajas de triple corrugado de alta resistencia. CADECA cumplió con especificaciones técnicas, tiempos y precios de mayoreo. Excelente aliado.",
- },
- {
- initials: "AC",
- name:  "Andrea C.",
- role:  "Fundadora — Startup DTC, Coyoacán, CDMX",
- text:  "Lanzamos nuestra marca de skincare y queríamos cajas personalizadas con nuestro logo. El proceso con CADECA fue sencillo, rápido y el resultado superó nuestras expectativas. Llegaron en 4 días con la prueba aprobada.",
- },
 ];
 
 const faqs = [
  {
  id:  "1",
  question: "¿Dónde comprar cajas de cartón al mayoreo en CDMX?",
- answer:  "En CADECA somos tu mejor opción para comprar cajas de cartón al mayoreo en la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Contáctanos por WhatsApp para una cotización en menos de 2 horas con precio, tiempo de entrega y opciones de pago.",
+ answer:  "En CADECA puedes comprar o cotizar cajas de cartón al mayoreo para la Ciudad de México y Estado de México. Manejamos cajas corrugadas estándar, a la medida y personalizadas con logo. Contáctanos por WhatsApp para conocer precio, tiempo de entrega y opciones de pago.",
  },
  {
  id:  "2",
@@ -205,17 +183,17 @@ const faqs = [
  {
  id:  "5",
  question: "¿Venden cajas de cartón para e-commerce y Mercado Libre?",
- answer:  "Sí. Tenemos cajas estándar en todas las medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Pedidos desde 50 piezas, entrega en 24 hrs en CDMX. Somos el partner preferido de los vendedores online del área metropolitana.",
+ answer:  "Sí. Tenemos cajas estándar en medidas compatibles con Mercado Envíos, Amazon MX, DHL, FedEx y Estafeta. Pedidos desde 50 piezas; la entrega se coordina según el pedido y la zona.",
  },
  {
  id:  "6",
  question: "¿Ofrecen cajas de cartón ecológicas o recicladas?",
- answer:  "Sí. Contamos con cajas fabricadas con material reciclado posconsumo, impresión con tintas base agua y cartón certificado FSC que garantiza procedencia sostenible. Ideales para marcas con compromiso ambiental.",
+ answer:  "Sí. Contamos con cajas de material reciclado posconsumo e impresión con tintas base agua. Si necesitas cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante.",
  },
  {
  id:  "7",
  question: "¿Cómo cotizo cajas de cartón personalizadas con mi logo?",
- answer:  "Es muy sencillo: llena el formulario de cotización o escríbenos por WhatsApp indicando las medidas (largo × ancho × alto en cm), la cantidad aproximada y si tienes archivo de diseño (PDF, AI o PNG). Te enviamos propuesta en menos de 2 horas con precio y prueba de diseño digital sin costo.",
+ answer:  "Es muy sencillo: llena el formulario de cotización o escríbenos por WhatsApp indicando las medidas (largo × ancho × alto en cm), la cantidad aproximada y si tienes archivo de diseño (PDF, AI o PNG). Te respondemos en horario hábil con precio y prueba de diseño digital sin costo cuando aplique.",
  },
 ];
 ---
@@ -248,8 +226,8 @@ const faqs = [
  </div></div>
 
  <div class="hero__right">
- <p><strong>CADECA</strong> es la empresa de <strong>cajas de cartón corrugado</strong> con mayor presencia en la Ciudad de México y Estado de México. Fabricamos cajas corrugadas de simple, doble y triple pared, cajas <strong>a la medida con diseño CAD incluido</strong>, packaging personalizado con impresión full color y líneas especializadas para e-commerce en Mercado Libre, Amazon MX y Shopify. Atendemos manufactura, alimentos, retail, farmacéutica y proyectos de nearshoring en CDMX y Zona Metropolitana.</p>
- <p>Somos <strong>fabricante directo sin intermediarios</strong>: inventario permanente, entrega en 24-48 horas en toda la CDMX y Estado de México, pedidos desde 50 piezas y cotización exprés en <strong>menos de 2 horas</strong>. Certificados FSC, ISO y NOM para industria alimentaria. Más de 15 años siendo el proveedor de empaques de confianza de miles de empresas en la Zona Metropolitana.</p>
+ <p><strong>CADECA</strong> es proveedor y distribuidor de <strong>cajas de cartón corrugado</strong> para empresas en la Ciudad de México y Estado de México. Surtimos cajas de simple, doble y triple pared, cajas <strong>a la medida con diseño CAD incluido</strong>, packaging personalizado con impresión full color y líneas especializadas para e-commerce en Mercado Libre, Amazon MX y Shopify.</p>
+ <p>Trabajamos con talleres y fabricantes aliados para coordinar inventario, producción y entrega según el pedido. Atendemos manufactura, alimentos, retail, farmacéutica y proyectos de nearshoring con especificaciones técnicas claras y cotización sin compromiso.</p>
  </div>
 
  </div>
@@ -282,7 +260,7 @@ const faqs = [
  id="productos-title"
  twoCol
  title="Catálogo de Cajas de Cartón: Corrugado, A Medida, Personalizadas y Más"
- subtitle="Empaques certificados FSC y con cartón reciclado posconsumo. Selecciona una categoría para conocer especificaciones y cotizar."
+ subtitle="Empaques con cartón reciclado posconsumo y opciones FSC según disponibilidad del fabricante. Selecciona una categoría para conocer especificaciones y cotizar."
  link={{ text: "Ver catálogo completo", href: "/catalogo/" }}
  >
  <p>Nuestro catálogo integra las soluciones de empaque más completas del mercado metropolitano: cajas corrugadas de alta resistencia para industria y nearshoring, packaging ligero para e-commerce, cajas personalizadas con logo y líneas especiales para alimentos y refrigerados.</p>
@@ -338,25 +316,17 @@ const faqs = [
  title="Por Qué Elegir CADECA como tu Proveedor de Cajas de Cartón"
  subtitle="Fabricante local con cobertura metropolitana, asesoría técnica y disponibilidad inmediata"
  >
- <p>Elegir un proveedor de cajas de cartón impacta directamente en tus costos operativos, la imagen de tu marca y la seguridad de tus productos en tránsito. En CADECA combinamos producción propia —sin intermediarios— con conocimiento profundo del mercado metropolitano.</p>
+ <p>Elegir un proveedor de cajas de cartón impacta directamente en tus costos operativos, la imagen de tu marca y la seguridad de tus productos en tránsito. En CADECA coordinamos opciones de suministro con talleres y fabricantes aliados para empresas del mercado metropolitano.</p>
  <p>Nuestro inventario permanente garantiza abastecimiento sin demoras, mientras que el equipo técnico asesora en la selección del tipo de corrugado, resistencia y acabado óptimo para cada producto.</p>
  </SectionHeader>
 
  <div class="trust__grid">
- <div class="trust__item"><h3 class="trust__item-title">Producción Propia</h3><p class="trust__item-desc">Sin intermediarios. Directo de fábrica. Mejor precio, mayor control de calidad y tiempos de producción más rápidos.</p></div>
- <div class="trust__item"><h3 class="trust__item-title">Entrega en 24 hrs CDMX</h3><p class="trust__item-desc">Inventario permanente de cajas estándar. Para pedidos urgentes tenemos respuesta inmediata y entrega el mismo día en zonas clave.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Suministro coordinado</h3><p class="trust__item-desc">Trabajamos con talleres y fabricantes aliados para coordinar materiales, producción y entrega según tu pedido.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Entrega programada</h3><p class="trust__item-desc">La fecha de entrega se confirma según el volumen, la zona y la disponibilidad de rutas.</p></div>
  <div class="trust__item"><h3 class="trust__item-title">Sin Mínimo en Estándar</h3><p class="trust__item-desc">Atendemos desde 1 pieza en cajas estándar. Para personalizadas desde 100 piezas. Ajustamos la cantidad a tu ritmo de venta.</p></div>
- <div class="trust__item"><h3 class="trust__item-title">Cartón Certificado FSC</h3><p class="trust__item-desc">Materiales con trazabilidad y certificación de cadena de custodia. Cartón reciclado posconsumo disponible para marcas sostenibles.</p></div>
+ <div class="trust__item"><h3 class="trust__item-title">Opciones de cartón</h3><p class="trust__item-desc">Surtimos cartón reciclado; si necesitas certificación FSC, la confirmamos con el fabricante al cotizar.</p></div>
  <div class="trust__item"><h3 class="trust__item-title">Asesoría Técnica Real</h3><p class="trust__item-desc">Te ayudamos a elegir el tipo de corrugado, flauta y resistencia correcta según el peso, condiciones de almacén y destino de envío.</p></div>
  <div class="trust__item"><h3 class="trust__item-title">Cobertura Metropolitana</h3><p class="trust__item-desc">CDMX completa y Estado de México: Naucalpan, Tlalnepantla, Ecatepec, Toluca, Lerma, Cuautitlán y más.</p></div>
- </div>
-
- <div class="trust__testimonials-header">
- <h3 class="trust__testimonials-title">Lo que dicen nuestros clientes</h3>
- <p class="trust__testimonials-subtitle">Empresas de toda el área metropolitana confían en CADECA</p>
- </div>
- <div class="trust__testimonials">
- {testimonios.map(t => <Testimonial {...t} />)}
  </div>
 
  </div>
@@ -372,7 +342,7 @@ const faqs = [
  La correcta selección de <strong>cajas de cartón corrugado</strong> es una decisión crítica que impacta en costos de empaque, la protección del producto en tránsito y la percepción de tu marca. En CDMX y Estado de México, la demanda crece impulsada por el boom del e-commerce —Mercado Libre, Amazon MX y TikTok Shop—, la expansión industrial del nearshoring y la exigencia de empaques sostenibles. CADECA atiende todos estos frentes con un catálogo integral de <a href="/catalogo/cajas-corrugado-estandar/">cajas corrugadas estándar</a>, <a href="/catalogo/cajas-a-la-medida/">cajas a la medida</a> y <a href="/catalogo/cajas-personalizadas-logo/">cajas personalizadas con logo</a>.
  </p>
  <p class="seo-content__text">
- Como <strong>fabricante de cajas de cartón en CDMX</strong>, ofrecemos ventajas que los distribuidores no pueden igualar: producción directa sin intermediarios, control total de calidad, tiempos de entrega garantizados y precios de mayoreo accesibles desde pedidos pequeños. Nuestras <strong>cajas corrugadas</strong> están fabricadas con cartón certificado FSC en simple, doble y triple pared —flautas B, C, E y BC—, con resistencia ECT adaptada al peso de cada producto. Para vendedores de Mercado Libre y Amazon MX, mantenemos stock permanente con <strong>entrega en 24 horas en CDMX</strong>.
+ Como <strong>proveedor de cajas de cartón en CDMX</strong>, coordinamos opciones de suministro con talleres y fabricantes aliados. Nuestras <strong>cajas corrugadas</strong> están disponibles en simple, doble y triple pared —flautas B, C, E y BC—, con resistencia ECT adaptada al peso de cada producto. Para vendedores de Mercado Libre y Amazon MX, cotizamos medidas estándar o a la medida y confirmamos la entrega según el pedido.
  </p>
  <p class="seo-content__text">
  Cubrimos toda la zona metropolitana: CDMX en todas sus alcaldías, y Estado de México en los municipios clave: Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli, Toluca y Lerma. Atendemos desde el emprendedor que vende desde casa hasta plantas manufactureras con nearshoring. Cada pedido incluye asesoría técnica, factura electrónica y respaldo de un proveedor local que conoce el mercado metropolitano. <a href="/cotizar/">Solicita tu cotización sin compromiso</a>{HAS_WA && (<> o escríbenos por <a href={contactoHref()} {...contactoAttrs}>WhatsApp</a></>)}.
@@ -480,4 +450,3 @@ const faqs = [
  <LeadCapture />
 
 </PageLayout>
-

@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para Productos Naturales y Bienestar | CADECA";
-const description = "Caja kraft FSC reciclado para bienestar, wellness y productos naturales en CDMX. Sin blanqueantes, imagen orgánica, food-grade. MOQ 100 pzas. Fabricante directo CADECA.";
+const description = "Caja kraft reciclado para bienestar, wellness y productos naturales en CDMX. Sin blanqueantes, imagen orgánica, food-grade. MOQ 100 pzas.";
 
 const specs = [
  ["Código SKU",  "CAD-FC-10"],
@@ -14,10 +14,10 @@ const specs = [
  ["Flauta",  "B (3mm)"],
  ["Resistencia",  "ECT-32"],
  ["Gramaje liner", "127–150 g/m²"],
- ["Material",  "Kraft FSC reciclado / sin blanqueantes"],
+ ["Material",  "Kraft reciclado / sin blanqueantes; FSC por confirmar al cotizar"],
  ["Cierre",  "4 solapas autoblocante o tuck-end"],
  ["Pedido mínimo", "100 piezas"],
- ["Entrega CDMX",  "24–48 hrs"],
+ ["Entrega CDMX",  "Según pedido"],
 ];
 
 const faqs = [
@@ -53,7 +53,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Wellness y Naturales"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
- product={{name:"Caja para Bienestar, Wellness y Productos Naturales",sku:"CAD-FC-10",description:"Caja kraft FSC reciclado sin blanqueantes — food-grade, imagen orgánica, MOQ 100 pzas",image:gallery[0].src,material:"Kraft FSC reciclado flauta B ECT-32",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"100"}}
+ product={{name:"Caja para Bienestar, Wellness y Productos Naturales",sku:"CAD-FC-10",description:"Caja kraft reciclado sin blanqueantes — food-grade, imagen orgánica; FSC por confirmar al cotizar. MOQ 100 pzas",image:gallery[0].src,material:"Kraft reciclado flauta B ECT-32",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"100"}}
 >
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -72,13 +72,13 @@ const gallery = [
  Caja para <span>Bienestar y Productos Naturales</span> — Kraft FSC
  </h1>
  <p class="cat-page-hero__desc">
- Empaque sustentable de kraft FSC reciclado sin blanqueantes para marcas de bienestar, wellness y productos naturales. Imagen orgánica auténtica, food-grade, con tintas base agua. Pedido mínimo 100 piezas con entrega en CDMX en 24–48 horas.
+ Empaque sustentable de kraft reciclado sin blanqueantes para marcas de bienestar, wellness y productos naturales. Imagen orgánica auténtica, food-grade, con tintas base agua. Pedido mínimo 100 piezas con entrega programada según volumen y zona; FSC por confirmar al cotizar.
  </p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-10</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -94,13 +94,13 @@ const gallery = [
  <p class="sku-detail__code">CAD-FC-10 · Familia: Farmacéutica y Cosmética</p>
  <h2 id="detalle-fc10-title" class="sku-detail__title">Caja Wellness — Kraft FSC Reciclado</h2>
  <p class="sku-detail__desc">
- La caja CAD-FC-10 está fabricada con cartón kraft FSC 100% reciclado, sin blanqueantes químicos y con tintas base agua certificadas. Diseñada para marcas de bienestar, suplementos naturales, cosmética orgánica y productos de wellness que requieren un empaque coherente con su filosofía sustentable. Certificación food-grade para contacto indirecto con alimentos y suplementos. Personalización gráfica disponible desde 100 piezas en CDMX y zona metropolitana.
+ La caja CAD-FC-10 se surte en cartón kraft reciclado, sin blanqueantes químicos y con tintas base agua certificadas. Diseñada para marcas de bienestar, suplementos naturales, cosmética orgánica y productos de wellness que requieren un empaque coherente con su filosofía sustentable. Si tu proyecto requiere certificación FSC, la indicamos al cotizar y confirmamos disponibilidad con el fabricante. Certificación food-grade para contacto indirecto con alimentos y suplementos. Personalización gráfica disponible desde 100 piezas en CDMX y zona metropolitana.
  </p>
  <div class="sku-detail__strip">
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Certificación</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Por confirmar</span><span class="sku-detail__strip-label">FSC al cotizar</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Food-grade</span><span class="sku-detail__strip-label">Contacto indirecto</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">Pedido mín.</span></div>
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Según pedido</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
  </div>
  <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
  <table class="sku-detail__specs-table"><tbody>

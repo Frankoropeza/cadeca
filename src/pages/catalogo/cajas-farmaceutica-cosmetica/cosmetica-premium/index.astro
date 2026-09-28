@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Cosmética Premium con Barniz UV | CADECA";
-const description = "Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium. Impresión CMYK + Pantone, certificación FSC. Fabricante directo CDMX — CADECA.";
+const description = "Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium. Impresión CMYK + Pantone; FSC por confirmar al cotizar.";
 
 const medidas = [
  { nombre:"Labial / Rímel",  lah:"4×4×12",  flauta:"E",ect:"ECT-23",vacío:"0.02 kg",máx:"0.3 kg", disp:"green",  label:"Stock" },
@@ -32,9 +32,9 @@ const specs = [
  ["Impresión",  "Offset CMYK + hasta 2 Pantone · Resolución 175 lpi"],
  ["Acabados especiales",  "Hot stamping oro/plata · Relieve seco (emboss) · Ventana PET"],
  ["Peso máx. producto",  "Hasta 4 kg (Gift Box, ECT-26)"],
- ["Certificación",  "FSC Mix Credit disponible · Tintas base soya"],
+ ["Certificación",  "FSC por confirmar al cotizar · Tintas base soya"],
  ["Pedido mínimo",  "300 pzas (producción con acabados)"],
- ["Tiempo de entrega",  "48-72 hrs stock · 7-10 días especial con acabados"],
+ ["Tiempo de entrega",  "Según pedido"],
  ["Tolerancia dimensional","± 1.5 mm en corte · ± 0.3 mm en registro de impresión"],
  ["Resistencia al frote",  "Barniz UV: 50+ ciclos Sutherland (ASTM D5264)"],
 ];
@@ -63,7 +63,7 @@ const faqs = [
  {
  id:"fc02-f5",
  question:"¿Las cajas CAD-FC-02 tienen certificación sustentable?",
- answer:"Sí, ofrecemos certificación <strong>FSC Mix Credit</strong> (Forest Stewardship Council) que garantiza que la fibra proviene de bosques manejados responsablemente. Usamos tintas base soya y barnices libres de solventes tóxicos. Ideal para marcas de cosmética que buscan comunicar compromiso ambiental a su consumidor.",
+ answer:"Si tu proyecto requiere cartón con certificación <strong>FSC Mix Credit</strong> (Forest Stewardship Council), lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. Usamos tintas base soya y barnices libres de solventes tóxicos. Ideal para marcas de cosmética que buscan comunicar compromiso ambiental a su consumidor.",
  },
  {
  id:"fc02-f6",
@@ -88,7 +88,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Cosmética Premium"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
- product={{name:"Caja Cosmética Premium Barniz UV Soft Touch",sku:"CAD-FC-02",description:"Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif",material:"SBS C1S blanqueado micro flauta E ECT-23 barniz UV soft touch",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"300"}}
+ product={{name:"Caja Cosmética Premium Barniz UV Soft Touch",sku:"CAD-FC-02",description:"Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium en CDMX — surtido coordinado por CADECA",image:"/img/catalogo/caja-cosmetica-premium-barniz-uv-cdmx.avif",material:"SBS C1S blanqueado micro flauta E ECT-23 barniz UV soft touch",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"300"}}
 >
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -113,7 +113,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-02</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-26</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>300 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -149,7 +149,7 @@ const gallery = [
  <span class="sku-detail__strip-label">Pedido mín.</span>
  </div>
  <div class="sku-detail__strip-item">
- <span class="sku-detail__strip-value">48 hrs</span>
+ <span class="sku-detail__strip-value">Según pedido</span>
  <span class="sku-detail__strip-label">Entrega CDMX</span>
  </div>
  </div>

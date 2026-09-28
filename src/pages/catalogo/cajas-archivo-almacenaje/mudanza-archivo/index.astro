@@ -6,13 +6,13 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja de Mudanza y Archivo con Asas | CADECA";
-const description = "Ficha técnica caja mudanza y archivo con asas troqueladas en CDMX. Doble pared BC, ECT-44, dual-purpose. 6 medidas disponibles. Sin mínimo, entrega 24-48 hrs. CADECA fabricante.";
+const description = "Ficha técnica caja mudanza y archivo con asas troqueladas en CDMX. Doble pared BC, ECT-44, dual-purpose. 6 medidas disponibles.";
 
 const medidas = [
  { nombre:"Chica",  lah:"35×25×30",  flauta:"BC", ect:"ECT-44",vacío:"0.65 kg",máx:"20 kg", disp:"green",  label:"Stock" },
  { nombre:"Mediana",  lah:"45×35×35",  flauta:"BC", ect:"ECT-44",vacío:"0.95 kg",máx:"25 kg", disp:"green",  label:"Stock", hl:true },
  { nombre:"Grande",  lah:"55×40×40",  flauta:"BC", ect:"ECT-44",vacío:"1.30 kg",máx:"25 kg", disp:"green",  label:"Stock" },
- { nombre:"Extra Grande",  lah:"65×50×45",  flauta:"BC", ect:"ECT-44",vacío:"1.75 kg",máx:"25 kg", disp:"yellow", label:"48 hrs" },
+ { nombre:"Extra Grande",  lah:"65×50×45",  flauta:"BC", ect:"ECT-44",vacío:"1.75 kg",máx:"25 kg", disp:"yellow", label:"Según pedido" },
  { nombre:"Libros/Documentos",  lah:"45×35×25",  flauta:"BC", ect:"ECT-44",vacío:"0.82 kg",máx:"25 kg", disp:"green",  label:"Stock" },
  { nombre:"A la Medida",  lah:"Cualquier", flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",  disp:"gray",  label:"3-5 días" },
 ];
@@ -38,7 +38,7 @@ const specs = [
  ["Área de etiquetado",  "Zona impresa para identificación por área"],
  ["Reutilización estimada", "3 – 5 usos con manejo adecuado"],
  ["Pedido mínimo",  "Sin mínimo (stock)"],
- ["Tiempo de entrega",  "24-48 hrs stock · 3-5 días especial"],
+ ["Tiempo de entrega",  "Según pedido"],
 ];
 
 const faqs = [
@@ -70,7 +70,7 @@ const faqs = [
  {
  id:"ah05-f6",
  question:"¿Cuál es el tiempo de entrega para mudanza corporativa urgente?",
- answer:"Para presentaciones en stock <strong>(Chica, Mediana, Grande y Libros/Documentos)</strong>, la entrega es de <strong>24 a 48 horas hábiles</strong> en toda la zona metropolitana de la CDMX. Para pedidos urgentes el mismo día, <strong>consulte disponibilidad por WhatsApp</strong>. La medida <strong>Extra Grande</strong> requiere <strong>48 horas de producción</strong>. Las medidas a la medida se fabrican en <strong>3 a 5 días hábiles</strong>.",
+ answer:"Para presentaciones en stock <strong>(Chica, Mediana, Grande y Libros/Documentos)</strong>, coordinamos la entrega según disponibilidad, volumen y zona en la CDMX. Para pedidos urgentes, <strong>consulta disponibilidad por WhatsApp</strong>. La medida <strong>Extra Grande</strong> y las medidas a la medida se coordinan según pedido.",
  },
 ];
 
@@ -117,7 +117,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-05</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -153,7 +153,7 @@ const gallery = [
  <span class="sku-detail__strip-label">Pedido</span>
  </div>
  <div class="sku-detail__strip-item">
- <span class="sku-detail__strip-value">24 hrs</span>
+ <span class="sku-detail__strip-value">Según pedido</span>
  <span class="sku-detail__strip-label">Entrega CDMX</span>
  </div>
  </div>
@@ -233,6 +233,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture title="Cotiza CAD-AH-05 — Sin mínimo, entrega 24-48 hrs en CDMX" />
+ <LeadCapture title="Cotiza CAD-AH-05 — Sin mínimo, entrega programada en CDMX" />
 
 </PageLayout>

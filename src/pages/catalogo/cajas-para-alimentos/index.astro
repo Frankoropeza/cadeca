@@ -8,8 +8,8 @@ import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const title  = "Catálogo Cajas para Alimentos CDMX | Pizza, Fast Food, Pastelería, Frutas | CADECA";
-const description = "Catálogo cajas cartón para alimentos CDMX. Pizza, fast food, pastelería, frutas y congelados. Food-grade, COFEPRIS. Desde 50 pzas. CADECA fabricante.";
+const title  = "Cajas de Cartón para Alimentos | CADECA";
+const description = "Catálogo cajas cartón para alimentos CDMX. Pizza, fast food, pastelería, frutas y congelados. Food-grade, COFEPRIS. Desde 50 pzas. CADECA proveedor.";
 
 const productos = [
  {
@@ -110,7 +110,7 @@ const productos = [
  imgSrc: "/img/catalogo/cajas-pasteleria-tartas-cdmx.avif",
  imgAlt: "Caja panadería repostería artesanal CDMX — CADECA CAD-AL-06",
  href: "/catalogo/cajas-para-alimentos/panaderia-artesanal/",
- specs: [{ label:"Food-grade",value:"NOM-051"},{label:"Ventilación",value:"Natural"},{label:"Tintas",value:"Water-based"},{label:"Stock",value:"24 hrs CDMX"}],
+ specs: [{ label:"Food-grade",value:"NOM-051"},{label:"Ventilación",value:"Natural"},{label:"Tintas",value:"Water-based"},{label:"Stock",value:"Por confirmar"}],
  moq: "100 pzas",
  },
  {
@@ -154,13 +154,13 @@ const productos = [
  moq: "100 pzas",
  },
  {
- code: "CAD-AL-11", badge: "Eco FSC", badgeColor: "green", featured: false,
- title: "Caja para Orgánicos y Productos Naturales FSC",
- desc: "Kraft reciclado postconsumer FSC food-grade. Sin blanqueantes de cloro, tintas water-based. Para marcas orgánicas y naturales. Compatible certificaciones. Desde 100 pzas.",
+ code: "CAD-AL-11", badge: "Eco", badgeColor: "green", featured: false,
+ title: "Caja para Orgánicos y Productos Naturales",
+ desc: "Kraft reciclado postconsumer food-grade. Si requieres FSC, lo confirmamos al cotizar. Sin blanqueantes de cloro, tintas water-based. Para marcas orgánicas y naturales. Desde 100 pzas.",
  imgSrc: "/img/catalogo/cajas-medida-alimentos-fda-cdmx.avif",
- imgAlt: "Caja orgánicos naturales FSC reciclado CDMX — CADECA CAD-AL-11",
+ imgAlt: "Caja orgánicos naturales de cartón reciclado CDMX — CADECA CAD-AL-11",
  href: "/catalogo/cajas-para-alimentos/organicos-naturales/",
- specs: [{ label:"FSC",value:"Reciclado"},{label:"Food-grade",value:"NOM-051"},{label:"Sin cloro",value:"ECF free"},{label:"MOQ",value:"100 pzas"}],
+ specs: [{ label:"FSC",value:"Por confirmar"},{label:"Food-grade",value:"NOM-051"},{label:"Sin cloro",value:"ECF free"},{label:"MOQ",value:"100 pzas"}],
  moq: "100 pzas",
  },
 ];
@@ -182,14 +182,14 @@ const detIndustrias = [
  {
  icon:"",
  title:"Distribuidores de Frutas y Verduras",
- desc:"La Central de Abasto de CDMX y distribuidores regionales del Estado de México confían en nuestras cajas para transporte de productos frescos. Resistencia a humedad y carga de apilado garantizada.",
+ desc:"Para la Central de Abasto de CDMX y distribuidores regionales del Estado de México, surtimos cajas para transporte de productos frescos. Resistencia a humedad y carga de apilado según especificación del pedido.",
  href:"/catalogo/cajas-para-alimentos/",
  linkText:"Ver cajas para distribución",
  },
  {
  icon:"",
  title:"Exportadores y Marcas Orgánicas",
- desc:"Para empresas que exportan alimentos a EUA, Canadá y Europa. Certificación FSC, cumplimiento FDA y NOM-051. Documentación técnica completa para aduanas y clientes internacionales.",
+ desc:"Para empresas que exportan alimentos a EUA, Canadá y Europa. Si requieres FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante; también revisamos FDA y NOM-051 y la documentación técnica necesaria para tu destino.",
  href:"/catalogo/cajas-para-alimentos/",
  linkText:"Ver cajas para exportación",
  },
@@ -199,7 +199,7 @@ const detPasos = [
  { num:1, title:"Indícanos el alimento",  desc:"Cuéntanos qué producto vas a empacar: tipo de alimento, peso, temperatura de almacenamiento y si requiere contacto directo. Con eso seleccionamos el material correcto." },
  { num:2, title:"Certificación correcta",  desc:"Verificamos qué norma aplica (NOM, FDA, FSC u otras) para tu producto y mercado de destino. Sin sorpresas en aduanas ni rechazos por incumplimiento." },
  { num:3, title:"Cotización y muestras",  desc:"Enviamos cotización con precio por volumen y, si lo necesitas, muestra física del modelo antes del pedido final. Sin costo y sin compromiso." },
- { num:4, title:"Entrega en 24-48 hrs",  desc:"Stock permanente de los modelos más solicitados (pizza, dark kitchen, frutas estándar). Entrega en 24-48 hrs en CDMX y Estado de México." },
+ { num:4, title:"Entrega programada",  desc:"Disponibilidad y entrega según modelo, volumen y zona para CDMX y Estado de México." },
 ];
 
 const detFaqs = [
@@ -226,12 +226,12 @@ const detFaqs = [
  {
  id:"ca5",
  question:"¿Tienen cajas para alimentos en stock para entrega inmediata?",
- answer:"Sí. Las medidas más solicitadas de cajas para pizza (26, 30, 33 y 40 cm) y los formatos estándar de dark kitchen están en inventario permanente. Entrega en 24-48 hrs en CDMX y Estado de México sin necesidad de producción adicional. Para modelos menos comunes o medidas especiales, el tiempo es de 3-5 días hábiles.",
+ answer:"Sí. Las medidas más solicitadas de cajas para pizza (26, 30, 33 y 40 cm) y los formatos estándar de dark kitchen se pueden cotizar según disponibilidad. Para modelos menos comunes o medidas especiales, confirmamos el tiempo de entrega según pedido, volumen y zona.",
  },
  {
  id:"ca6",
  question:"¿Pueden fabricar cajas para exportación de alimentos frescos?",
- answer:"Sí. Para exportación fabricamos cajas con <strong>cartón certificado FSC</strong>, resistente a humedad, con documentación técnica de materiales para cumplir los requerimientos de los compradores de EUA, Canadá y Europa. También generamos las hojas de especificación técnica necesarias para aduanas y auditorías de calidad. Consulta con tu asesor CADECA los requisitos específicos de tu destino.",
+ answer:"Sí. Para exportación surtimos cajas con cartón resistente a humedad y, si tu proyecto requiere <strong>certificación FSC</strong>, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. También revisamos las hojas de especificación técnica necesarias para aduanas y auditorías de calidad. Consulta con CADECA los requisitos específicos de tu destino.",
  },
 ];
 
@@ -263,7 +263,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  chips={[
  { label: "5 Productos" },
  { label: "Certificado COFEPRIS" },
- { label: "Entrega 24–48 hrs" },
+ { label: "Entrega programada" },
  { label: "Food grade" },
  ]}
  ctas={[
@@ -331,7 +331,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  Cajas para Alimentos: Certificadas, Resistentes y Disponibles en CDMX
  </h2>
  <p class="prod-detail__intro">
- No todo el cartón es apto para estar en contacto con alimentos. Nuestras cajas para alimentos están fabricadas con materiales certificados según COFEPRIS y normas internacionales. Resistentes a la humedad, grasa y temperatura según el tipo de producto. Stock permanente de los formatos más solicitados con entrega en 24-48 hrs en CDMX.
+ No todo el cartón es apto para estar en contacto con alimentos. Nuestras cajas para alimentos se surten con materiales certificados según COFEPRIS y normas internacionales. Resistentes a la humedad, grasa y temperatura según el tipo de producto. Disponibilidad y entrega programada de los formatos más solicitados en CDMX.
  </p>
  <div>
  <p class="prod-detail__specs-title">Especificaciones técnicas</p>
@@ -354,7 +354,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  <div class="prod-detail__spec">
  <span class="prod-detail__spec-label">Certificación</span>
- <span class="prod-detail__spec-value">FSC bajo pedido</span>
+ <span class="prod-detail__spec-value">FSC por confirmar al cotizar</span>
  </div>
  <div class="prod-detail__spec">
  <span class="prod-detail__spec-label">Aplicaciones</span>
@@ -384,7 +384,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
 <section class="industries" aria-labelledby="detIndustrias-ca-title">
  <div class="container">
  <SectionHeader id="detIndustrias-ca-title" twoCol
- title="Sectores que Confían en Nuestras Cajas para Alimentos"
+ title="Sectores que Buscan Cajas para Alimentos"
  subtitle="Pizzerías, dark kitchens, exportadores y distribuidores de la zona metropolitana">
  <p>El sector de alimentos en CDMX es uno de los más dinámicos del país. Dark kitchens, deliveries, exportadores de aguacate y distribuidores de Central de Abasto tienen requerimientos muy específicos que no se pueden resolver con cartón estándar.</p>
  </SectionHeader>
@@ -411,10 +411,10 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  Cajas de Cartón para Alimentos en CDMX: Certificadas, Resistentes y con Entrega Inmediata
  </h2>
  <p class="seo-content__text">
- Las <strong>cajas de cartón para alimentos en la Ciudad de México</strong> deben cumplir requisitos que el cartón corrugado estándar no cubre: materiales aptos para contacto con alimentos según COFEPRIS, resistencia a la grasa y la humedad sin deformarse, y en algunos casos certificaciones de exportación. En CADECA fabricamos y distribuimos cajas para alimentos con stock permanente de los modelos más solicitados — pizzas, dark kitchen y frutas estándar — con <strong>entrega en 24-48 horas en toda la zona metropolitana</strong>.
+ Las <strong>cajas de cartón para alimentos en la Ciudad de México</strong> deben cumplir requisitos que el cartón corrugado estándar no cubre: materiales aptos para contacto con alimentos según COFEPRIS, resistencia a la grasa y la humedad sin deformarse, y en algunos casos certificaciones de exportación. En CADECA surtimos y distribuimos cajas para alimentos según disponibilidad de los modelos más solicitados — pizzas, dark kitchen y frutas estándar — con <strong>entrega programada según volumen y zona</strong>.
  </p>
  <p class="seo-content__text">
- Para el sector de <strong>pizzerías y dark kitchens en CDMX</strong>, manejamos todas las medidas estándar (26, 30, 33 y 40 cm para pizza; formatos variados para platillos de dark kitchen) con la resistencia a grasa y temperatura necesaria para que el producto llegue en perfectas condiciones. Para los <strong>exportadores de aguacate, frutas y productos orgánicos del Estado de México</strong>, fabricamos con cartón certificado FSC, resistente a humedad para cadena de frío, con la documentación técnica necesaria para cumplir los requerimientos de importadores en EUA, Canadá y Europa.
+ Para el sector de <strong>pizzerías y dark kitchens en CDMX</strong>, manejamos todas las medidas estándar (26, 30, 33 y 40 cm para pizza; formatos variados para platillos de dark kitchen) con la resistencia a grasa y temperatura necesaria para que el producto llegue en perfectas condiciones. Para los <strong>exportadores de aguacate, frutas y productos orgánicos del Estado de México</strong>, surtimos cartón resistente a humedad para cadena de frío; si requieren certificación FSC, la confirmamos al cotizar con el fabricante junto con la documentación técnica necesaria para sus importadores.
  </p>
  <p class="seo-content__text">
  Todas las tintas que usamos en cajas para alimentos son de <strong>base agua, no migran y no contaminan el producto</strong> — a diferencia de las tintas de solvente que algunos proveedores usan y que no son aptas para estar cerca de alimentos. <a href="/cotizar/">Cotiza sin compromiso</a> y recibe asesoría gratuita sobre qué certificación necesitas para tu tipo de alimento y mercado de destino.
@@ -427,7 +427,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  <SectionHeader id="faq-ca-title" twoCol
  title="Preguntas Frecuentes: Cajas para Alimentos"
  subtitle="Certificaciones, normas, resistencia a grasa y humedad, personalización y exportación">
- <p>Las preguntas más comunes sobre cajas para alimentos: desde la diferencia entre una caja estándar y una apta para alimentos, hasta los requisitos de exportación. Nuestro equipo resuelve consultas específicas por WhatsApp en menos de 2 horas.</p>
+ <p>Las preguntas más comunes sobre cajas para alimentos: desde la diferencia entre una caja estándar y una apta para alimentos, hasta los requisitos de exportación. Nuestro equipo resuelve consultas específicas por WhatsApp en horario hábil.</p>
  </SectionHeader>
  <div class="faq__list">
  {detFaqs.map(f => <FaqItem {...f} />)}
@@ -460,5 +460,5 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Qué tipo de caja para alimentos necesitas? Te asesoramos gratis en menos de 1 hora" />
+ <LeadCapture title="¿Qué tipo de caja para alimentos necesitas? Te asesoramos gratis en horario hábil" />
 </PageLayout>

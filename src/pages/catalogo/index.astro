@@ -5,8 +5,8 @@ import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const title  = "Catálogo Completo de Cajas de Cartón B2B CDMX | 9 Categorías | CADECA";
-const description = "Catálogo B2B de cajas de cartón corrugado CADECA. 9 categorías, 45 productos. Corrugado, e-commerce, farmacéutica, textil, archivo, alimentos y personalizadas. CDMX.";
+const title  = "Catálogo de Cajas de Cartón para Empresas | CADECA";
+const description = "Catálogo de cajas de cartón para empresas en CDMX: corrugado estándar, a la medida, personalizadas con logo, e-commerce, alimentos y láminas.";
 
 const schema = {
  "@context": "https://schema.org",
@@ -25,7 +25,7 @@ const categorias = [
  href:  "/catalogo/cajas-corrugado-estandar/",
  productos: 5,
  moq:  "Sin mínimo",
- entrega:  "24-48 hrs",
+ entrega:  "Según pedido",
  productos_preview: [
  "Corrugado Simple — Pared Simple",
  "Doble Corrugado — Pared Doble (BC)",
@@ -43,7 +43,7 @@ const categorias = [
  href:  "/catalogo/cajas-para-ecommerce/",
  productos: 5,
  moq:  "50 pzas",
- entrega:  "24 hrs",
+ entrega:  "Según pedido",
  productos_preview: [
  "Cajas Mercado Envíos — Todas las tallas",
  "Cajas Amazon FBA / FBM",
@@ -73,7 +73,7 @@ const categorias = [
  {
  num:  "04",
  title:  "Cajas a la Medida",
- desc:  "Cualquier dimensión exacta sin cargo adicional. Diseño CAD en 24 hrs sin costo. Asesoría técnica de ingeniería de empaque incluida.",
+ desc:  "Cualquier dimensión exacta sin cargo adicional. Diseño CAD según pedido. Asesoría para elegir la caja correcta.",
  imgSrc:  "/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif",
  imgAlt:  "Categoría cajas de cartón a la medida CADECA",
  href:  "/catalogo/cajas-a-la-medida/",
@@ -97,7 +97,7 @@ const categorias = [
  href:  "/catalogo/cajas-para-alimentos/",
  productos: 5,
  moq:  "Sin mínimo",
- entrega:  "24-48 hrs",
+ entrega:  "Según pedido",
  productos_preview: [
  "Cajas para Pizza — Todas las tallas",
  "Dark Kitchen y Delivery",
@@ -109,17 +109,17 @@ const categorias = [
  {
  num:  "06",
  title:  "Láminas y Empaques Ecológicos",
- desc:  "Cartón reciclado posconsumo (PCR) y certificación FSC. Para fabricantes, marcas con metas ESG y exportadores con requerimientos de trazabilidad ambiental.",
+ desc:  "Cartón reciclado posconsumo (PCR). Si requieres FSC, confirmamos disponibilidad con el fabricante. Para fabricantes, marcas con metas ESG y exportadores con requerimientos de trazabilidad ambiental.",
  imgSrc:  "/img/productos/laminas-carton-corrugado-ecologico-reciclado-fsc-cdmx.avif",
- imgAlt:  "Categoría láminas cartón corrugado ecológico FSC CADECA",
+ imgAlt:  "Categoría láminas cartón corrugado ecológico reciclado CADECA",
  href:  "/catalogo/laminas-carton-corrugado/",
  productos: 5,
  moq:  "Por m²",
- entrega:  "48-72 hrs",
+ entrega:  "Según pedido",
  productos_preview: [
  "Láminas Corrugado — Por m²",
  "Cartón Reciclado PCR Posconsumo",
- "Certificación FSC Cadena de Custodia",
+ "FSC por confirmar al cotizar",
  "Cajas Eco con Impresión Vegetal",
  "Empaques Biodegradables",
  ],
@@ -151,7 +151,7 @@ const categorias = [
  href:  "/catalogo/cajas-textil-moda-retail/",
  productos: 5,
  moq:  "50 pzas",
- entrega:  "24-48 hrs",
+ entrega:  "Según pedido",
  productos_preview: [
  "Calzado y Zapatos — Corrugado Simple",
  "Ropa y Prendas — Corrugado Kraft",
@@ -169,7 +169,7 @@ const categorias = [
  href:  "/catalogo/cajas-archivo-almacenaje/",
  productos: 5,
  moq:  "Sin mínimo",
- entrega:  "24-48 hrs",
+ entrega:  "Según pedido",
  productos_preview: [
  "Archivo Muerto — Tamaño Oficio",
  "Almacén Industrial — Doble Pared",
@@ -195,7 +195,7 @@ const categorias = [
 
  <!-- HERO -->
  <PageHero
- eyebrow="Catálogo 2025–2026 · Fabricante Directo"
+ eyebrow="Catálogo 2025–2026 · Proveedor de empaques"
  titleHtml={true}
  title="Catálogo de <span>Cajas de Cartón</span> CADECA"
  desc="9 categorías, 45 productos con ficha técnica completa. Corrugado estándar, e-commerce, alimentos, personalizado, farmacéutico, textil, archivo y láminas. Stock inmediato en CDMX."
@@ -204,7 +204,7 @@ const categorias = [
  { label: "9 Categorías" },
  { label: "45 SKUs" },
  { label: "+30 en stock inmediato" },
- { label: "Entrega 24–48 hrs CDMX" },
+ { label: "Entrega programada según pedido" },
  ]}
  ctas={[
  { href: "/cotizar/", label: "Solicitar cotización", variant: "primary" },
@@ -235,7 +235,7 @@ const categorias = [
  subtitle="Selecciona la categoría que necesitas para ver los 5 productos disponibles con ficha técnica completa, medidas y especificaciones."
  >
  <p>Cada categoría contiene 5 productos específicos con su propio código SKU, tabla de especificaciones técnicas, medidas disponibles y condiciones de pedido. Haz clic en cualquier categoría para ver sus productos.</p>
- <p>¿No encuentras lo que necesitas? Fabricamos a la medida en cualquier dimensión. <a href="/catalogo/cajas-a-la-medida/" style="color:var(--color-primary);font-weight:700;">Ver categoría medidas especiales →</a></p>
+ <p>¿No encuentras lo que necesitas? Surtimos soluciones a la medida en cualquier dimensión. <a href="/catalogo/cajas-a-la-medida/" style="color:var(--color-primary);font-weight:700;">Ver categoría medidas especiales →</a></p>
  </SectionHeader>
 
  <div class="catalog-index__grid">

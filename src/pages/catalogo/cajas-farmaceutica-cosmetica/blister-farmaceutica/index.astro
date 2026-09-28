@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Farmacéutica para Blíster Flauta E | CADECA";
-const description = "Caja corrugado flauta E para blíster farmacéutico en CDMX. ECT-23, impresión regulatoria NOM-072, medidas estándar y a la medida. Fabricante directo CADECA.";
+const description = "Caja corrugado flauta E para blíster farmacéutico en CDMX. ECT-23, impresión regulatoria NOM-072, medidas estándar y a la medida.";
 
 const medidas = [
  { nombre:"Unitario Chico",  lah:"12×8×4",  flauta:"E",ect:"ECT-23",vacío:"0.04 kg",máx:"0.5 kg", disp:"green",  label:"Stock" },
@@ -30,9 +30,9 @@ const specs = [
  ["Peso máx. producto",  "Hasta 3 kg (ECT-32, flauta B)"],
  ["Carga de apilado",  "Hasta 50 kg (condiciones ideales)"],
  ["Impresión",  "Flexo 1-4 colores · Offset · Datos regulatorios NOM-072"],
- ["Certificación",  "NOM-072-SSA1 compatible · FSC disponible"],
+ ["Certificación",  "NOM-072-SSA1 compatible · FSC por confirmar al cotizar"],
  ["Pedido mínimo",  "200 pzas (producción)"],
- ["Tiempo de entrega",  "48-72 hrs stock · 5-7 días especial"],
+ ["Tiempo de entrega",  "Según pedido"],
 ];
 
 const faqs = [
@@ -59,7 +59,7 @@ const faqs = [
  {
  id:"fc01-f5",
  question:"¿Cuál es la diferencia entre caja unitaria y caja display?",
- answer:"La <strong>caja unitaria</strong> contiene un solo producto (blíster o frasco) y va al anaquel de farmacia. La <strong>caja display</strong> contiene 6 o 12 unidades y se coloca completa en mostrador o exhibidor. Fabricamos ambas con el mismo diseño gráfico para coherencia de marca.",
+ answer:"La <strong>caja unitaria</strong> contiene un solo producto (blíster o frasco) y va al anaquel de farmacia. La <strong>caja display</strong> contiene 6 o 12 unidades y se coloca completa en mostrador o exhibidor. Surtimos ambas con el mismo diseño gráfico para coherencia de marca.",
  },
  {
  id:"fc01-f6",
@@ -84,7 +84,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Blíster Farmacéutica"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
- product={{name:"Caja Blíster Farmacéutica Flauta E",sku:"CAD-FC-01",description:"Caja corrugado flauta E para blíster farmacéutico en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-blister-farmaceutica-corrugado-cdmx.avif",material:"Cartón SBS blanqueado flauta E ECT-23",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"200"}}
+ product={{name:"Caja Blíster Farmacéutica Flauta E",sku:"CAD-FC-01",description:"Caja corrugado flauta E para blíster farmacéutico en CDMX — surtido coordinado por CADECA",image:"/img/catalogo/caja-blister-farmaceutica-corrugado-cdmx.avif",material:"Cartón SBS blanqueado flauta E ECT-23",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"200"}}
 >
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -109,7 +109,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-01</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -145,7 +145,7 @@ const gallery = [
  <span class="sku-detail__strip-label">Pedido mín.</span>
  </div>
  <div class="sku-detail__strip-item">
- <span class="sku-detail__strip-value">48 hrs</span>
+ <span class="sku-detail__strip-value">Según pedido</span>
  <span class="sku-detail__strip-label">Entrega CDMX</span>
  </div>
  </div>

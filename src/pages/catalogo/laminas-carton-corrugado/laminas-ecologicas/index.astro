@@ -6,7 +6,7 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Láminas de Cartón Reciclado | CADECA";
-const description = "Láminas cartón corrugado reciclado certificado FSC en CDMX. Mismas specs técnicas que virgen. ECT-32/44, desde 50 piezas, entrega 3-5 días. Para marcas sustentables. CADECA.";
+const description = "Láminas cartón corrugado reciclado en CDMX. Mismas specs técnicas que virgen. ECT-32/44, desde 50 piezas, tiempo de entrega según pedido.";
 
 const medidas = [
  { talla:"60×40 cm",  flauta:"Simple C",ect:"ECT-32",peso:"0.09 kg/ud",disp:"green",  label:"Stock",  hl:false },
@@ -19,18 +19,18 @@ const medidas = [
 
 const specs = [
  ["Código SKU",  "CAD-LC-05"],
- ["Certificación",  "FSC — Forest Stewardship Council"],
+ ["Certificación",  "FSC: confirmar disponibilidad al cotizar"],
  ["Material",  "Fibra reciclada 100% post-consumo certificada"],
  ["ECT disponible",  "ECT-32 (simple) o ECT-44 (doble)"],
  ["Diferencia vs virgen","Mismas especificaciones técnicas"],
  ["Color liner",  "Kraft gris-marrón — diferente a kraft virgen marrón oscuro"],
- ["Certificado",  "FSC Chain of Custody disponible para tu marca"],
+ ["Certificado",  "Se confirma disponibilidad de FSC con el fabricante"],
  ["Flauta",  "C simple (4mm) o BC doble (7mm)"],
  ["Medida máxima",  "120 × 240 cm (simple) · 120 × 200 cm (doble)"],
  ["Corte a medida",  "Sí — tolerancia ±2mm"],
  ["Costo",  "Similar o menor al virgen en el mismo ECT"],
  ["Pedido mínimo",  "50 piezas"],
- ["Tiempo de entrega",  "3-5 días hábiles"],
+ ["Tiempo de entrega",  "Según pedido"],
 ];
 
 const faqs = [
@@ -68,11 +68,11 @@ const gallery = [
  ]}
  faqItems={faqs}
  product={{
- name:"Láminas Cartón Corrugado Reciclado Certificado FSC",
+ name:"Láminas Cartón Corrugado Reciclado",
  sku:"CAD-LC-05",
- description:"Láminas cartón corrugado reciclado certificado FSC CDMX — mismas specs técnicas que virgen",
+ description:"Láminas cartón corrugado reciclado CDMX — mismas specs técnicas que virgen; FSC por confirmar",
  image:"/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif",
- material:"Láminas cartón corrugado fibra reciclada certificada FSC ECT-32/44",
+ material:"Láminas cartón corrugado fibra reciclada ECT-32/44; FSC por confirmar",
  category:"Láminas de Cartón Corrugado",
  moq:"50"
  }}
@@ -92,8 +92,8 @@ const gallery = [
  <section class="cat-page-hero" aria-labelledby="sku-lc05-title">
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-LC-05 · Láminas Cartón Corrugado</span>
- <h1 id="sku-lc05-title" class="cat-page-hero__title">Láminas Cartón <span>Reciclado FSC</span><br>— Sustentable CDMX</h1>
- <p class="cat-page-hero__desc">Fibra reciclada certificada FSC. Mismas especificaciones técnicas que el kraft virgen. ECT-32 y ECT-44. Desde 50 piezas, entrega 3-5 días.</p>
+ <h1 id="sku-lc05-title" class="cat-page-hero__title">Láminas Cartón <span>Reciclado</span><br>— Sustentable CDMX</h1>
+ <p class="cat-page-hero__desc">Fibra reciclada. Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. Mismas especificaciones técnicas que el kraft virgen. ECT-32 y ECT-44. Desde 50 piezas, tiempo de entrega según pedido.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-05</strong></div>
  <div class="cat-page-hero__strip-item">Cert.: <strong>FSC Recycled</strong></div>
@@ -113,9 +113,9 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-LC-05 · Familia: Láminas de Cartón Corrugado</p>
  <h2 id="detalle-lc05-title" class="sku-detail__title">Láminas Cartón Corrugado Reciclado FSC</h2>
- <p class="sku-detail__desc">Láminas fabricadas con fibra reciclada 100% post-consumo certificada por FSC (Forest Stewardship Council). Ofrecen las mismas especificaciones técnicas que el kraft virgen en ECT-32 y ECT-44, con la diferencia de que permiten a tu marca usar el logo FSC certificado en tu packaging — fundamental para políticas de sustentabilidad ESG y clientes internacionales con exigencias ambientales.</p>
+ <p class="sku-detail__desc">Láminas de fibra reciclada 100% post-consumo. Ofrecen las mismas especificaciones técnicas que el kraft virgen en ECT-32 y ECT-44. Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante.</p>
  <div class="sku-detail__strip">
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Certificado</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Por confirmar</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100%</span><span class="sku-detail__strip-label">Fibra reciclada</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">3-5 días</span><span class="sku-detail__strip-label">Producción</span></div>

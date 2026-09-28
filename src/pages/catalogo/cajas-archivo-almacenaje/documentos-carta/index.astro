@@ -6,14 +6,14 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para Documentos Tamaño Carta | CADECA";
-const description = "Ficha técnica caja documentos tamaño carta en CDMX. Flauta B/C, ECT-32, tapa integrada y asas troqueladas. 6 medidas disponibles. Sin mínimo, entrega 24-48 hrs. CADECA fabricante.";
+const description = "Ficha técnica caja documentos tamaño carta en CDMX. Flauta B/C, ECT-32, tapa integrada y asas troqueladas. 6 medidas disponibles.";
 
 const medidas = [
  { nombre:"Carta Estándar",  lah:"40×30×25",  flauta:"C",  ect:"ECT-32",vacío:"0.42 kg",máx:"12 kg", disp:"green",  label:"Stock", hl:true },
  { nombre:"Carta Compacta",  lah:"40×30×15",  flauta:"B",  ect:"ECT-23",vacío:"0.30 kg",máx:"10 kg", disp:"green",  label:"Stock" },
  { nombre:"Carta con Tapa",  lah:"40×30×25+tapa",flauta:"C", ect:"ECT-32",vacío:"0.55 kg",máx:"12 kg", disp:"green",  label:"Stock" },
  { nombre:"Media Carta",  lah:"40×30×12",  flauta:"B",  ect:"ECT-23",vacío:"0.25 kg",máx:"8 kg",  disp:"green",  label:"Stock" },
- { nombre:"Master 6 Cajas",  lah:"45×35×160",  flauta:"BC", ect:"ECT-44",vacío:"3.20 kg",máx:"72 kg", disp:"yellow", label:"48 hrs" },
+ { nombre:"Master 6 Cajas",  lah:"45×35×160",  flauta:"BC", ect:"ECT-44",vacío:"3.20 kg",máx:"72 kg", disp:"yellow", label:"Según pedido" },
  { nombre:"A la Medida",  lah:"Cualquier",  flauta:"A elegir",ect:"A elegir",vacío:"—",máx:"—",  disp:"gray",  label:"3-5 días" },
 ];
 
@@ -36,7 +36,7 @@ const specs = [
  ["Resistencia a compresión (BCT)", "≥ 130 kgf (ECT-23) · ≥ 180 kgf (ECT-32)"],
  ["Área para etiqueta",  "12 × 6 cm frontal"],
  ["Pedido mínimo",  "Sin mínimo (stock) · 50 pzas (medida especial)"],
- ["Tiempo de entrega",  "24-48 hrs stock · 3-5 días especial"],
+ ["Tiempo de entrega",  "Según pedido"],
  ["Certificación",  "Cumple NOM-EE-148 (embalaje)"],
 ];
 
@@ -116,7 +116,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-03</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -152,7 +152,7 @@ const gallery = [
  <span class="sku-detail__strip-label">Pedido</span>
  </div>
  <div class="sku-detail__strip-item">
- <span class="sku-detail__strip-value">24 hrs</span>
+ <span class="sku-detail__strip-value">Según pedido</span>
  <span class="sku-detail__strip-label">Entrega CDMX</span>
  </div>
  </div>
@@ -232,6 +232,6 @@ const gallery = [
 
  </main>
 
- <LeadCapture title="Cotiza CAD-AH-03 — Sin mínimo, entrega 24-48 hrs en CDMX" />
+ <LeadCapture title="Cotiza CAD-AH-03 — Sin mínimo, entrega programada en CDMX" />
 
 </PageLayout>

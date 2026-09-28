@@ -15,27 +15,6 @@ const { grupo: grupoId, categoria: catId } = Astro.params;
 const grupoData = getGrupo(grupoId);
 const catData   = getCategoria(grupoId, catId);
 
-// Mapa categoría → imagen genérica
-const catImageMap: Record<string, string> = {
-  'fabricantes-papel':           '/img/directorio/fabricantes-papel-carton.avif',
-  'fabricantes-cajas':           '/img/directorio/fabricantes-cajas-corrugadas.avif',
-  'distribuidores':              '/img/directorio/distribuidores-empaques.avif',
-  'impresion-troquelado':        '/img/directorio/impresion-troquelado.avif',
-  'diseno-packaging':            '/img/directorio/diseno-packaging.avif',
-  'maquinaria':                  '/img/directorio/maquinaria-empaque.avif',
-  'tintas-barnices':             '/img/directorio/tintas-barnices.avif',
-  'paqueterias':                 '/img/directorio/paqueterias-mensajeria.avif',
-  'almacenes-fulfillment':       '/img/directorio/almacenes-fulfillment.avif',
-  'materiales-complementarios':  '/img/directorio/materiales-complementarios.avif',
-  'ecommerce':                   '/img/directorio/ecommerce-marketplaces.avif',
-  'alimentos':                   '/img/directorio/industria-alimentaria.avif',
-  'farmaceutica':                '/img/directorio/farmaceutica-cosmetica.avif',
-  'textil-retail':               '/img/directorio/textil-retail.avif',
-  'industrial':                  '/img/directorio/industrial-manufactura.avif',
-  'asociaciones':                '/img/directorio/certificadoras-organismos.avif',
-  'certificadoras':              '/img/directorio/certificadoras-organismos.avif',
-};
-const catImage = catImageMap[catId];
 const otrasCAts = getCategoriasByGrupo(grupoId).filter(c => c.id !== catId);
 
 if (!grupoData || !catData) return Astro.redirect("/directorio/");
@@ -45,15 +24,15 @@ const SITE     = "https://cajas-de-carton.com";
 const seoParagrafos: Record<string, [string, string]> = {
   'fabricantes-papel': [
     'El directorio de <strong>fabricantes de papel y cartón en México</strong> de CADECA reúne a los principales productores de papel kraft, liner, médium y cartón corrugado de la CDMX y Zona Metropolitana. Encontrarás empresas con capacidad para abastecer proyectos industriales de gran escala, con certificaciones de calidad y materias primas responsables.',
-    'Como <strong>fabricante directo de cajas de cartón corrugado en CDMX</strong>, CADECA trabaja de la mano con los mejores fabricantes de papel del mercado para garantizarte la mejor calidad en cada caja. Si buscas un proveedor confiable de empaques a la medida, contáctanos y te enviamos cotización en menos de 2 horas.',
+    'Como <strong>proveedor de cajas de cartón corrugado en CDMX</strong>, CADECA trabaja de la mano con talleres y fabricantes de papel del mercado para coordinar cada pedido. Si buscas empaques a la medida, contáctanos para revisar opciones y tiempo de entrega.',
   ],
   'fabricantes-cajas': [
     'El directorio de <strong>fabricantes de cajas de cartón corrugado en CDMX y Estado de México</strong> de CADECA incluye a las empresas más reconocidas del sector empaque. Desde pequeños talleres hasta grandes plantas industriales con capacidad para millones de piezas mensuales, aquí encuentras el proveedor ideal según tu volumen y especificaciones.',
-    'CADECA es <strong>fabricante directo de cajas de cartón corrugado</strong> en la Ciudad de México con más de 15 años de experiencia. Producimos cajas estándar, a la medida y personalizadas con impresión de hasta 4 colores. Entrega en 24-48 horas en CDMX y Zona Metropolitana. <strong>Cotización sin compromiso en menos de 2 horas.</strong>',
+    'CADECA es <strong>proveedor de cajas de cartón corrugado</strong> en la Ciudad de México. Surtimos cajas estándar, a la medida y personalizadas con impresión de hasta 4 colores. Coordinamos la entrega en CDMX y Zona Metropolitana según el pedido. <strong>Cotización sin compromiso.</strong>',
   ],
   'distribuidores': [
     'Los <strong>distribuidores de empaques y materiales de empaque en CDMX</strong> listados en este directorio ofrecen soluciones inmediatas para empresas que requieren inventario disponible sin tiempos de producción. Cartón corrugado, papel kraft, cinta adhesiva, rellenos y materiales complementarios en un solo proveedor.',
-    'CADECA opera como <strong>proveedor directo de empaques de cartón</strong> con entregas programadas y suministro continuo para empresas en CDMX y Estado de México. Elimina intermediarios y obtén mejor precio con entregas directas desde nuestra planta. <strong>Solicita tu cotización ahora y recibe propuesta en 2 horas.</strong>',
+    'CADECA opera como <strong>proveedor de empaques de cartón</strong> con entregas programadas y suministro continuo para empresas en CDMX y Estado de México. Coordinamos las opciones disponibles con talleres y fabricantes aliados. <strong>Solicita tu cotización.</strong>',
   ],
   'impresion-troquelado': [
     'Las empresas de <strong>impresión y troquelado de cajas en México</strong> listadas en este directorio son especialistas en packaging personalizado: impresión flexográfica y digital, troquelado de alta precisión, barnices y acabados especiales. Soluciones para marcas que buscan diferenciarse con su empaque.',
@@ -65,7 +44,7 @@ const seoParagrafos: Record<string, [string, string]> = {
   ],
   'maquinaria': [
     'Las empresas de <strong>maquinaria para empaque y procesamiento de cartón en México</strong> listadas aquí ofrecen equipos para corrugado, troquelado, impresión, doblado y sellado. Desde equipos nuevos hasta maquinaria reconstruida, encuentra el equipo adecuado para tu planta o taller.',
-    'Si produces empaques y buscas optimizar tu proceso, CADECA puede ser tu aliado como <strong>proveedor de cajas de cartón corrugado terminadas</strong>, eliminando la necesidad de invertir en maquinaria. Suministro programado, entregas a tiempo y precios competitivos de fabricante directo en CDMX.',
+    'Si produces empaques y buscas optimizar tu proceso, CADECA puede ser tu aliado como <strong>proveedor de cajas de cartón corrugado terminadas</strong>, eliminando la necesidad de invertir en maquinaria. Suministro programado y entregas coordinadas según pedido en CDMX.',
   ],
   'tintas-barnices': [
     'Los <strong>proveedores de tintas y barnices para impresión de cartón</strong> en este directorio suministran insumos para la industria gráfica del empaque: tintas flexográficas base agua, barnices UV, barnices de retardo, adhesivos y recubrimientos especiales para cartón corrugado y cartón sólido.',
@@ -85,11 +64,11 @@ const seoParagrafos: Record<string, [string, string]> = {
   ],
   'alimentos': [
     'Las empresas de la <strong>industria alimentaria en México</strong> tienen requerimientos específicos de empaque: materiales food-grade, barreras de humedad y grasa, certificaciones sanitarias y normas NOM aplicables. Este directorio reúne a los proveedores especializados en empaques para alimentos en CDMX.',
-    'CADECA produce <strong>cajas de cartón para alimentos</strong> con materiales 100% food-grade, aptos para contacto indirecto con alimentos. Especiales para pizzerías, restaurantes, panaderías y procesadoras de alimentos en CDMX y Estado de México. Entrega en 24 horas. <strong>Solicita muestras gratuitas.</strong>',
+    'CADECA surte <strong>cajas de cartón para alimentos</strong> con materiales food-grade, aptos para contacto indirecto con alimentos. Especiales para pizzerías, restaurantes, panaderías y procesadoras de alimentos en CDMX y Estado de México. La entrega se coordina según el pedido. <strong>Solicita muestras.</strong>',
   ],
   'farmaceutica': [
     'La <strong>industria farmacéutica y cosmética</strong> requiere empaques con estándares muy específicos: materiales certificados, impresión de alta calidad, trazabilidad y cumplimiento con normas COFEPRIS. Este directorio reúne a los proveedores especializados en packaging para el sector salud y belleza.',
-    'CADECA ofrece <strong>cajas de cartón para industria farmacéutica y cosmética</strong> con los estándares de calidad que el sector requiere. Impresión de alta definición para etiquetado, materiales certificados y entregas programadas para tu línea de producción en CDMX. <strong>Consulta con nuestro asesor técnico.</strong>',
+    'CADECA ofrece <strong>cajas de cartón para industria farmacéutica y cosmética</strong> con los estándares de calidad que el sector requiere. Impresión de alta definición para etiquetado, materiales y entregas programadas para tu línea de producción en CDMX. <strong>Consulta para elegir la caja correcta.</strong>',
   ],
   'textil-retail': [
     'El <strong>sector textil, moda y retail en México</strong> demanda empaques que combinen funcionalidad con estética de marca. Este directorio incluye a los proveedores de cajas para zapatos, ropa, accesorios y productos de retail, con opciones de impresión full color y acabados premium.',
@@ -97,21 +76,21 @@ const seoParagrafos: Record<string, [string, string]> = {
   ],
   'industrial': [
     'La <strong>industria manufacturera en CDMX y Estado de México</strong> es uno de los principales consumidores de cajas de cartón corrugado industrial: doble y triple pared, alta resistencia ECT, para piezas metálicas, plásticas, electrónicas y maquinaria. Este directorio reúne a los proveedores del sector.',
-    'CADECA es fabricante directo de <strong>cajas de cartón corrugado industrial</strong> para la industria manufacturera de CDMX y Edomex. Flautas BC y triple pared, resistencia ECT hasta 44, piezas desde 50 unidades. Asesoría técnica gratuita para seleccionar el calibre correcto según el peso de tu producto. <strong>Cotiza ahora.</strong>',
+    'CADECA surte <strong>cajas de cartón corrugado industrial</strong> para la industria manufacturera de CDMX y Edomex. Flautas BC y triple pared, resistencia ECT hasta 44, piezas desde 50 unidades. Asesoría gratuita para seleccionar el calibre correcto según el peso de tu producto. <strong>Cotiza ahora.</strong>',
   ],
   'asociaciones': [
     'Las <strong>asociaciones, cámaras y organismos del sector empaque en México</strong> juegan un papel clave en la normatividad, la representación empresarial y el desarrollo del sector. Este directorio incluye a los organismos más relevantes para fabricantes, distribuidores y usuarios de empaques de cartón corrugado.',
-    'CADECA participa activamente en el ecosistema del <strong>sector empaque y cartón corrugado en México</strong>. Conoce nuestros productos, obtén asesoría técnica gratuita sobre materiales, calibres y resistencias, y recibe cotización personalizada en menos de 2 horas. <strong>Contáctanos hoy.</strong>',
+    'CADECA participa activamente en el ecosistema del <strong>sector empaque y cartón corrugado en México</strong>. Conoce nuestros productos, obtén asesoría gratuita sobre materiales, calibres y resistencias, y recibe cotización personalizada. <strong>Contáctanos hoy.</strong>',
   ],
   'certificadoras': [
     'Los <strong>organismos certificadores y entidades de normalización del sector empaque</strong> en México garantizan que los materiales y procesos cumplan con las normas aplicables: NOM, ISO, FSC, ISTA, entre otras. Este directorio incluye a las principales entidades para el sector cartón corrugado.',
-    'CADECA trabaja con materiales que cumplen los estándares de las principales <strong>certificadoras y normas del sector empaque</strong>. Cartón reciclado con certificación FSC, tintas base agua aprobadas para alimentos y procesos con normas ISO. Conoce nuestra línea de <strong>empaques ecológicos certificados.</strong>',
+    'CADECA puede coordinar materiales y documentación según los estándares de las principales <strong>certificadoras y normas del sector empaque</strong>. Si necesitas cartón reciclado con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. Conoce nuestras opciones de <strong>empaques ecológicos.</strong>',
   ],
 };
 
 const [seoP1, seoP2] = seoParagrafos[catId] ?? [
   `El directorio de <strong>${catData.titulo}</strong> de CADECA reúne a los principales proveedores y empresas especializadas en CDMX y Zona Metropolitana. Encuentra proveedores verificados, contacta directamente y optimiza tu cadena de suministro de empaques de cartón corrugado.`,
-  `CADECA es <strong>fabricante directo de cajas de cartón corrugado</strong> en la Ciudad de México. Producimos cajas estándar, a la medida y personalizadas con entrega en 24-48 horas. Cotización sin compromiso en menos de 2 horas. Contáctanos para asesoría técnica gratuita.`,
+  `CADECA es <strong>proveedor de cajas de cartón corrugado</strong> en la Ciudad de México. Surtimos cajas estándar, a la medida y personalizadas, con entrega coordinada según el pedido. Cotización sin compromiso. Contáctanos para asesoría técnica gratuita.`,
 ];
 
 const title       = `${catData.titulo} — Directorio ${grupoData.nombre} CDMX | CADECA`;
@@ -219,7 +198,6 @@ const schema = {
                 web={emp.web}
                 verificado={emp.verificado}
                 accentColor={grupoData.color}
-                imagen={catImage}
               />
             ))}
           </div>
@@ -230,9 +208,9 @@ const schema = {
 
           <!-- CTA CADECA -->
           <div class="dir-sidebar-cta" style={`--accent:${grupoData.color}`}>
-            <p class="dir-sidebar-cta__label">Fabricante directo CDMX</p>
+            <p class="dir-sidebar-cta__label">Proveedor de cajas CDMX</p>
             <h3 class="dir-sidebar-cta__title">¿Necesitas cajas de cartón?</h3>
-            <p class="dir-sidebar-cta__desc">Cotización sin compromiso. Entrega en 24 hrs en CDMX y Edomex.</p>
+            <p class="dir-sidebar-cta__desc">Cotización sin compromiso. Entrega programada según pedido y zona.</p>
             <a href="/cotizar/" class="btn btn--primary" style="width:100%;text-align:center;display:flex;justify-content:center">Solicitar cotización</a>
             {HAS_WA && (
 <a href={contactoHref()} class="dir-sidebar-cta__wa" {...contactoAttrs}>

@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja de Envío para Tienda en Línea | CADECA";
-const description = "Caja de envío online compatible con DHL, FedEx, Estafeta, J&T y 99Minutos. Doble corrugado ECT-32. 5 medidas estándar, stock CDMX. MOQ 50 piezas. CADECA fabricante.";
+const description = "Caja de envío online compatible con DHL, FedEx, Estafeta, J&T y 99Minutos. Doble corrugado ECT-32. 5 medidas estándar, stock CDMX. MOQ 50 piezas.";
 
 const specs = [
  ["Código SKU", "CAD-EC-06"],
@@ -17,12 +17,12 @@ const specs = [
  ["Material", "Kraft virgen marrón"],
  ["Cierre", "4 solapas autoblocante"],
  ["Pedido mínimo", "50 piezas/medida"],
- ["Entrega CDMX", "24 hrs en stock"],
+ ["Entrega CDMX", "Según pedido"],
 ];
 
 const faqs = [
  { id:"cad-ec-06-f1", question:"¿Es compatible con todas las paqueterías?", answer:"Sí. La Caja CAD-EC-06 está diseñada con medidas que cumplen los requerimientos de DHL, FedEx, Estafeta, J&T, 99Minutos y Sendex sin necesidad de ajustes. Las 5 medidas disponibles cubren el 90% de los productos que se venden por e-commerce en México, desde artículos pequeños hasta cajas medianas para electrodomésticos compactos." },
- { id:"cad-ec-06-f2", question:"¿Cuál es el tiempo de entrega si necesito urgente?", answer:"Para pedidos urgentes en CDMX y área metropolitana, entregamos en 24 horas hábiles para pedidos de medidas en stock. Para pedidos especiales fuera de las 5 medidas estándar, el tiempo es de 3 a 5 días hábiles. Escríbenos por WhatsApp antes de las 12 pm para entrega al día siguiente." },
+ { id:"cad-ec-06-f2", question:"¿Cuál es el tiempo de entrega si necesito urgente?", answer:"El tiempo depende de la disponibilidad, el volumen y la zona. Para pedidos especiales fuera de las 5 medidas estándar, coordinamos la producción con el fabricante. Escríbenos por WhatsApp para revisar opciones de entrega programada." },
  { id:"cad-ec-06-f3", question:"¿Puedo mezclar medidas en un mismo pedido?", answer:"Sí, puedes hacer un pedido mixto con distintas medidas siempre que cada medida cumpla el MOQ de 50 piezas. Así puedes pedir 50 chicas, 50 medianas y 50 grandes en una sola orden y recibir todo en la misma entrega." },
 ];
 
@@ -41,7 +41,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas para E-commerce",href:"/catalogo/cajas-para-ecommerce/"},{name:"Caja de Envío Online Universal"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
- product={{name:"Caja de Envío Online Universal",sku:"CAD-EC-06",description:"Caja universal para envíos online compatible con cualquier paquetería nacional. Doble corrugado ECT-32, 5 medidas en stock permanente CDMX, entrega en 24 horas desde 50 piezas.",image:gallery[0].src,material:"CAD-EC-06",category:"Cajas para E-commerce",moq:"50 piezas/medida"}}
+ product={{name:"Caja de Envío Online Universal",sku:"CAD-EC-06",description:"Caja universal para envíos online compatible con cualquier paquetería nacional. Doble corrugado ECT-32, 5 medidas estándar con disponibilidad por confirmar, entrega programada según pedido.",image:gallery[0].src,material:"CAD-EC-06",category:"Cajas para E-commerce",moq:"50 piezas/medida"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -58,12 +58,12 @@ const gallery = [
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-EC-06 · Cajas para E-commerce</span>
  <h1 id="sku-cadec06-title" class="cat-page-hero__title">Caja de <span>Envío Online</span> Universal — Multi-paquetería</h1>
- <p class="cat-page-hero__desc">Caja universal para envíos online compatible con cualquier paquetería nacional. Doble corrugado ECT-32, 5 medidas en stock permanente CDMX, entrega en 24 horas desde 50 piezas.</p>
+ <p class="cat-page-hero__desc">Caja universal para envíos online compatible con cualquier paquetería nacional. Doble corrugado ECT-32, 5 medidas estándar con disponibilidad por confirmar, entrega programada según pedido.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-06</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas/medida</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
  </div>
  </div>
  </section>
@@ -78,12 +78,12 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-EC-06 · Familia: Cajas para E-commerce</p>
  <h2 id="detalle-cadec06-title" class="sku-detail__title">Caja de Envío Online Universal</h2>
- <p class="sku-detail__desc">La caja de envío más versátil del mercado: compatible con DHL, FedEx, Estafeta, J&T, 99Minutos y Sendex sin modificaciones. Fabricada en doble corrugado ECT-32 con 5 medidas estándar cubren el 90% de los productos que se venden por internet. Stock permanente en CDMX con entrega en 24 horas y pedido mínimo de 50 piezas por medida. Ideal para comercios con múltiples paqueterías o que cambian de carrier según precio y zona.</p>
+ <p class="sku-detail__desc">La caja de envío es compatible con DHL, FedEx, Estafeta, J&T, 99Minutos y Sendex sin modificaciones. Coordinada en doble corrugado ECT-32 con 5 medidas estándar que cubren muchos productos que se venden por internet. Disponibilidad y entrega se confirman según pedido, con mínimo de 50 piezas por medida. Ideal para comercios con múltiples paqueterías o que cambian de carrier según precio y zona.</p>
  <div class="sku-detail__strip">
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">5 medidas</span><span class="sku-detail__strip-label">En stock CDMX</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ/medida</span></div>
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Según pedido</span><span class="sku-detail__strip-label">Entrega</span></div>
  </div>
  <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
  <table class="sku-detail__specs-table"><tbody>
@@ -108,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture title="¿Cuántas paqueterías usas? Te recomendamos la medida exacta para cada una en menos de 2 horas" />
+ <LeadCapture title="¿Cuántas paqueterías usas? Te recomendamos la medida adecuada para cada una" />
 </PageLayout>

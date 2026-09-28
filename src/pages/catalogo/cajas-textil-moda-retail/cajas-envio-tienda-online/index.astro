@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja de Envío para Tienda de Ropa en Línea | CADECA";
-const description = "Ficha técnica caja envío para tienda online de moda e-commerce en CDMX. Flauta B/C, ECT-32/44, medidas accesorio a abrigo voluminoso. Compatible Shopify y TiendaNube, MOQ 50 pzas. CADECA fabricante.";
+const description = "Ficha técnica caja envío para tienda online de moda e-commerce en CDMX. Flauta B/C, ECT-32/44, medidas accesorio a abrigo voluminoso.";
 
 const medidas = [
  { nombre:"Accesorio Chico",  lah:"25×20×10",  flauta:"B",  ect:"ECT-32",vacío:"0.10 kg",máx:"3 kg",  disp:"green",  label:"Stock" },
@@ -35,7 +35,7 @@ const specs = [
  ["Compatible plataformas",  "Shopify · TiendaNube · WooCommerce · Mercado Shops · VTEX"],
  ["Certificación",  "FSC disponible · Tintas base agua · 100 % reciclable"],
  ["Pedido mínimo",  "50 pzas"],
- ["Tiempo de entrega",  "24-48 hrs stock · 3-5 días personalizada"],
+ ["Tiempo de entrega",  "Según pedido"],
 ];
 
 const faqs = [
@@ -87,7 +87,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Textil, Moda y Retail",href:"/catalogo/cajas-textil-moda-retail/"},{name:"Envío Tienda Online"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
- product={{name:"Caja Envío Tienda Online Moda E-commerce",sku:"CAD-TX-05",description:"Caja de envío e-commerce para tiendas online de moda en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-envio-tienda-online-shopify-cdmx.avif",material:"Cartón kraft corrugado flauta B/C ECT-32/44",category:"Cajas para Textil, Moda y Retail",moq:"50"}}
+ product={{name:"Caja Envío Tienda Online Moda E-commerce",sku:"CAD-TX-05",description:"Caja de envío e-commerce para tiendas online de moda en CDMX — proveedor CADECA",image:"/img/catalogo/caja-envio-tienda-online-shopify-cdmx.avif",material:"Cartón kraft corrugado flauta B/C ECT-32/44",category:"Cajas para Textil, Moda y Retail",moq:"50"}}
 >
 
  <!-- Breadcrumb -->
@@ -113,7 +113,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-05</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32 / ECT-44</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>

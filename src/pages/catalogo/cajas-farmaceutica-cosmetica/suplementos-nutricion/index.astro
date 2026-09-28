@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para Suplementos y Nutrición | CADECA";
-const description = "Caja corrugado para suplementos alimenticios y nutrición en CDMX. Flauta B ECT-32, impresión datos nutricionales NOM-051. Vitaminas, proteínas, colágeno. CADECA.";
+const description = "Caja corrugado para suplementos alimenticios y nutrición en CDMX. Flauta B ECT-32, impresión datos nutricionales NOM-051. Vitaminas, proteínas, colágeno.";
 
 const medidas = [
  { nombre:"Frasco Individual",lah:"10×10×15",flauta:"B",ect:"ECT-32",vacío:"0.06 kg",máx:"1 kg",  disp:"green",  label:"Stock" },
@@ -30,9 +30,9 @@ const specs = [
  ["Peso máx. producto",  "Hasta 10 kg (flauta C)"],
  ["Carga de apilado",  "Hasta 100 kg (condiciones ideales)"],
  ["Impresión",  "Flexo 1-4 colores · Tabla nutricional · Código de barras"],
- ["Certificación",  "NOM-051-SCFI compatible · FSC disponible"],
+ ["Certificación",  "NOM-051-SCFI compatible · FSC por confirmar al cotizar"],
  ["Pedido mínimo",  "200 pzas (producción)"],
- ["Tiempo de entrega",  "48-72 hrs stock · 5-7 días especial"],
+ ["Tiempo de entrega",  "Según pedido"],
 ];
 
 const faqs = [
@@ -64,7 +64,7 @@ const faqs = [
  {
  id:"fc04-f6",
  question:"¿Ofrecen empaques para kits de suplementos o suscripciones mensuales?",
- answer:"Sí, fabricamos <strong>cajas para kits y suscripciones</strong> con divisiones internas para 2-6 productos. Incluyen diseño personalizado exterior e interior para experiencia de unboxing. Son ideales para marcas de suplementos con modelo de suscripción mensual. Pedido mínimo de 200 pzas por diseño.",
+ answer:"Sí, surtimos <strong>cajas para kits y suscripciones</strong> con divisiones internas para 2-6 productos. Incluyen diseño personalizado exterior e interior para experiencia de unboxing. Son ideales para marcas de suplementos con modelo de suscripción mensual. Pedido mínimo de 200 pzas por diseño.",
  },
 ];
 
@@ -84,7 +84,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Farmacéutica y Cosmética",href:"/catalogo/cajas-farmaceutica-cosmetica/"},{name:"Suplementos y Nutrición"}]}
  faqItems={faqs.map(f=>({question:f.question,answer:f.answer.replace(/<[^>]+>/g,'')}))}
- product={{name:"Caja Suplementos y Nutrición Corrugado",sku:"CAD-FC-04",description:"Caja corrugado para suplementos alimenticios y nutrición en CDMX — fabricante directo CADECA",image:"/img/catalogo/caja-suplementos-nutricion-deportiva-cdmx.avif",material:"Cartón corrugado simple flauta B ECT-32",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"200"}}
+ product={{name:"Caja Suplementos y Nutrición Corrugado",sku:"CAD-FC-04",description:"Caja corrugado para suplementos alimenticios y nutrición en CDMX — surtido coordinado por CADECA",image:"/img/catalogo/caja-suplementos-nutricion-deportiva-cdmx.avif",material:"Cartón corrugado simple flauta B ECT-32",category:"Cajas para Industria Farmacéutica y Cosmética",moq:"200"}}
 >
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -109,7 +109,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-04</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>

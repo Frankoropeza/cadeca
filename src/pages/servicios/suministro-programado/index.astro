@@ -6,8 +6,8 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Suministro Programado de Cajas de Cartón CDMX — CADECA Fabricante Directo";
-const description = "Programa tu suministro continuo de cajas de cartón corrugado en CDMX. Entregas periódicas con precio fijo, sin riesgo de desabasto. Fabricante directo.";
+const title       = "Suministro Programado de Cajas de Cartón CDMX | CADECA";
+const description = "Programa el suministro continuo de cajas de cartón corrugado en CDMX y Estado de México. Coordinamos entregas periódicas según volumen, zona y pedido.";
 const canonical   = SITE + "/servicios/suministro-programado/";
 
 const schema = [
@@ -255,8 +255,7 @@ const schema = [
   </section>
 
   <LeadCapture
-    titulo="Programa tu suministro de cajas"
-    subtitulo="Precio fijo · Sin desabasto · Fabricante directo en CDMX"
+    title="Programa tu suministro de cajas"
   />
 
 </PageLayout>
@@ -368,6 +367,7 @@ const schema = [
 document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var item = btn.closest('.faq-item');
+    if (!item) return;
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });

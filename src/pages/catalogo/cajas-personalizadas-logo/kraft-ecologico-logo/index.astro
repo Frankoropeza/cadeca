@@ -6,12 +6,12 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja Kraft Personalizada con Logo | CADECA";
-const description = "Caja personalizada kraft ecológico con logo en CDMX. Papel reciclado FSC, 1–2 colores, imagen sustentable. MOQ 200 pzas. Sin recargo por ecológico. CADECA fabricante.";
+const description = "Caja personalizada kraft ecológico con logo en CDMX. Papel reciclado, 1–2 colores, imagen sustentable. MOQ 200 pzas.";
 
 const specs = [
  ["Código SKU", "CAD-PL-11"],
- ["Material", "Kraft reciclado postconsumer FSC"],
- ["Certificación", "FSC Chain of Custody"],
+ ["Material", "Kraft reciclado postconsumer; FSC por confirmar"],
+ ["Certificación", "FSC por confirmar al cotizar"],
  ["Impresión", "1–2 colores tintas water-based"],
  ["Blanqueante", "Sin cloro elemental"],
  ["Resistencia", "ECT-32"],
@@ -21,16 +21,16 @@ const specs = [
 ];
 
 const faqs = [
- { id:"cad-pl-11-f1", question:"¿La certificación FSC tiene un costo adicional?", answer:"Para el CAD-PL-11, el precio por pieza es prácticamente idéntico al kraft convencional porque usamos papel reciclado que en volumen tiene un costo similar al kraft virgen. El certificado FSC del papel lo cubrimos nosotros — no hay recargo para el cliente. Solo cobros si necesitas documentación específica de FSC en tu producto final para auditorías de clientes corporativos." },
+ { id:"cad-pl-11-f1", question:"¿La certificación FSC tiene un costo adicional?", answer:"Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. Cualquier costo o documentación específica se confirma en la cotización." },
  { id:"cad-pl-11-f2", question:"¿El kraft reciclado es igual de resistente que el kraft virgen?", answer:"La resistencia ECT-32 es la misma que en kraft virgen estándar. Donde puede diferir es en el aspecto: el kraft reciclado tiene más variaciones en el tono y puede mostrar pequeñas inclusiones de fibra, lo que en realidad muchas marcas usan como parte de su estética sustentable. Si necesitas homogeneidad perfecta de color, el kraft virgen es mejor opción." },
- { id:"cad-pl-11-f3", question:"¿Puedo presumir la certificación FSC en mi packaging?", answer:"Sí, con condiciones. Si necesitas imprimir el logo FSC en la caja (no solo usarlo como argumento de marketing), necesitas tu propia licencia FSC como empresa o usarlo bajo licencia de CADECA. Esto tiene un proceso de certificación independiente. Para comunicación general en redes y sitio web, puedes mencionar que usas materiales FSC certificados sin el logo oficial." },
+ { id:"cad-pl-11-f3", question:"¿Puedo presumir la certificación FSC en mi packaging?", answer:"Si el material disponible cuenta con certificación FSC, confirmamos contigo la documentación y las condiciones de uso del logo antes de imprimirlo en la caja." },
 ];
 
 const gallery = [
- { src: "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif", alt: "Caja kraft ecológico personalizada FSC" },
+ { src: "/img/catalogo/cajas-carton-personalizadas-1-color-logo-cdmx.avif", alt: "Caja kraft ecológico personalizada" },
  { src: "/img/catalogo/caja-1color-detalle-cdmx.avif", alt: "Detalle caja kraft ecológico" },
  { src: "/img/catalogo/caja-1color-stack-cdmx.avif", alt: "Cajas kraft reciclado apiladas" },
- { src: "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif", alt: "Material reciclado FSC" },
+ { src: "/img/catalogo/laminas-carton-reciclado-ecologico-cdmx.avif", alt: "Material reciclado" },
  { src: "/img/catalogo/caja-1color-uso-cdmx.avif", alt: "Uso caja ecológica kraft" },
 ];
 ---
@@ -41,7 +41,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas Personalizadas con Logo",href:"/catalogo/cajas-personalizadas-logo/"},{name:"Caja Personalizada Kraft Ecológico con Logo"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
- product={{name:"Caja Personalizada Kraft Ecológico con Logo",sku:"CAD-PL-11",description:"Caja personalizada en kraft reciclado FSC para marcas con imagen sustentable. Sin recargo por ecológico vs kraft convencional. Logo 1–2 colores, desde 200 piezas en CDMX.",image:gallery[0].src,material:"CAD-PL-11",category:"Cajas Personalizadas con Logo",moq:"200 piezas"}}
+ product={{name:"Caja Personalizada Kraft Ecológico con Logo",sku:"CAD-PL-11",description:"Caja personalizada en kraft reciclado para marcas con imagen sustentable. La disponibilidad de FSC se confirma al cotizar. Logo 1–2 colores, desde 200 piezas en CDMX.",image:gallery[0].src,material:"CAD-PL-11",category:"Cajas Personalizadas con Logo",moq:"200 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -57,11 +57,11 @@ const gallery = [
  <section class="cat-page-hero" aria-labelledby="sku-cadpl11-title">
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-PL-11 · Cajas Personalizadas con Logo</span>
- <h1 id="sku-cadpl11-title" class="cat-page-hero__title">Caja <span>Kraft Ecológico</span> Personalizada — FSC Reciclado CDMX</h1>
- <p class="cat-page-hero__desc">Caja personalizada en kraft reciclado FSC para marcas con imagen sustentable. Sin recargo por ecológico vs kraft convencional. Logo 1–2 colores, desde 200 piezas en CDMX.</p>
+ <h1 id="sku-cadpl11-title" class="cat-page-hero__title">Caja <span>Kraft Ecológico</span> Personalizada — Reciclado CDMX</h1>
+ <p class="cat-page-hero__desc">Caja personalizada en kraft reciclado para marcas con imagen sustentable. Si requieres FSC, confirmamos disponibilidad con el fabricante. Logo 1–2 colores, desde 200 piezas en CDMX.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-11</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>200 piezas</strong></div>
  <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
  </div>
@@ -78,9 +78,9 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-PL-11 · Familia: Cajas Personalizadas con Logo</p>
  <h2 id="detalle-cadpl11-title" class="sku-detail__title">Caja Personalizada Kraft Ecológico con Logo</h2>
- <p class="sku-detail__desc">Cada vez más consumidores eligen marcas con conciencia ambiental. La caja kraft ecológico de CAD-PL-11 usa papel reciclado postconsumer con certificación FSC que garantiza cadena de custodia forestal responsable. La apariencia natural del kraft transmite autenticidad y compromiso medioambiental sin necesidad de decirlo explícitamente. Impresión de 1 a 2 colores con tintas a base de agua. Precio casi idéntico al kraft convencional — la sustentabilidad no debería costar más.</p>
+ <p class="sku-detail__desc">Cada vez más consumidores eligen marcas con conciencia ambiental. La caja kraft ecológico de CAD-PL-11 usa papel reciclado postconsumer. Si tu proyecto requiere certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. La apariencia natural del kraft transmite autenticidad y compromiso medioambiental sin necesidad de decirlo explícitamente. Impresión de 1 a 2 colores con tintas a base de agua.</p>
  <div class="sku-detail__strip">
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Certificación</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Por confirmar</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Reciclado</span><span class="sku-detail__strip-label">Material</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">200 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Eco</span><span class="sku-detail__strip-label">Sin recargo</span></div>
@@ -108,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture title="¿Tu marca tiene valores sustentables? La caja kraft FSC de CADECA comunica tu compromiso ambiental" />
+ <LeadCapture title="¿Tu marca tiene valores sustentables? Cotiza una caja kraft reciclada" />
 </PageLayout>

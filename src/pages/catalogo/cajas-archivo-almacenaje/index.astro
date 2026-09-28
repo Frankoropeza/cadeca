@@ -8,8 +8,8 @@ import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const title  = "Cajas de Archivo y Almacenaje CDMX | 5 Productos | CADECA";
-const description = "Cajas de cartón para archivo muerto, almacén industrial y almacenaje en CDMX. Tamaño oficio, carta, apilables y mudanza. Fichas técnicas, medidas y precios mayoreo.";
+const title  = "Cajas de Archivo y Almacenaje | CADECA";
+const description = "Cajas de cartón para archivo muerto, almacén industrial y almacenaje en CDMX. Tamaño oficio, carta, apilables y mudanza.";
 
 const productos = [
  {
@@ -126,7 +126,7 @@ const productos = [
  {
  code: "CAD-AH-08", badge: "Mudanza", badgeColor: "green", featured: false,
  title: "Caja de Mudanza Residencial Reforzada",
- desc: "4 tamaños: chica, mediana, grande y extra. Doble corrugado ECT-44 con manijas reforzadas. MOQ mínimo de solo 20 piezas. Entrega 24 hrs en CDMX.",
+ desc: "4 tamaños: chica, mediana, grande y extra. Doble corrugado ECT-44 con manijas reforzadas. MOQ mínimo de solo 20 piezas. Entrega programada según pedido en CDMX.",
  imgSrc: "/img/catalogo/caja-mudanza-corporativa-hero-cdmx.avif",
  imgAlt: "Caja mudanza residencial reforzada CDMX — CADECA CAD-AH-08",
  href: "/catalogo/cajas-archivo-almacenaje/mudanza-residencial-reforzada/",
@@ -187,9 +187,9 @@ const detIndustrias = [
 
 const detPasos = [
  { num: 1, title: "Cuéntanos qué necesitas guardar", desc: "Documentos, expedientes, inventario, mercancía o artículos de mudanza. Con esa información seleccionamos la medida, tipo de corrugado y resistencia adecuada." },
- { num: 2, title: "Cotiza en menos de 2 horas",  desc: "Enviamos precio, disponibilidad y especificaciones por WhatsApp. Para pedidos urgentes respondemos en menos de 1 hora." },
+ { num: 2, title: "Cotiza en horario hábil",  desc: "Enviamos precio, disponibilidad y especificaciones por WhatsApp. Te respondemos en horario hábil." },
  { num: 3, title: "Pide sin mínimo exagerado",  desc: "Pedidos desde cantidades accesibles. Precios de mayoreo por volumen. Ideal tanto para oficinas pequeñas como para bodegas industriales." },
- { num: 4, title: "Recibe en tu ubicación",  desc: "Entrega en 24-48 horas en CDMX y área metropolitana. Coordinamos horario directo a tu oficina, bodega o domicilio." },
+ { num: 4, title: "Recibe en tu ubicación",  desc: "Entrega programada según volumen y zona en CDMX y área metropolitana. Coordinamos horario directo a tu oficina, bodega o domicilio." },
 ];
 
 const detFaqs = [
@@ -216,12 +216,12 @@ const detFaqs = [
  {
  id: "ar5",
  question: "¿Tienen cajas de mudanza con asas reforzadas?",
- answer: "Sí. Nuestra línea de <strong>mudanza y archivo con asas</strong> incluye cajas con agarraderas troqueladas en los costados para carga y descarga segura. Disponibles en doble pared (para ropa, documentos y objetos ligeros) y triple pared (para libros, herramientas y objetos pesados). Todas las medidas están disponibles con entrega en 24-48 hrs en CDMX.",
+ answer: "Sí. Nuestra línea de <strong>mudanza y archivo con asas</strong> incluye cajas con agarraderas troqueladas en los costados para carga y descarga segura. Disponibles en doble pared (para ropa, documentos y objetos ligeros) y triple pared (para libros, herramientas y objetos pesados). Todas las medidas están disponibles con entrega programada según volumen y zona en CDMX.",
  },
  {
  id: "ar6",
  question: "¿Cuál es el pedido mínimo y el tiempo de entrega?",
- answer: "No tenemos pedido mínimo exagerado — puedes ordenar desde cantidades accesibles para oficinas pequeñas. Para pedidos de mayoreo ofrecemos precios escalonados por volumen. La entrega estándar es de <strong>24 a 48 horas</strong> en CDMX y municipios del Estado de México. Medidas especiales o pedidos de gran volumen pueden requerir 3-5 días hábiles adicionales.",
+ answer: "No tenemos pedido mínimo exagerado — puedes ordenar desde cantidades accesibles para oficinas pequeñas. Para pedidos de mayoreo ofrecemos precios escalonados por volumen. La entrega se programa según volumen y zona en CDMX y municipios del Estado de México. Medidas especiales o pedidos de gran volumen pueden requerir coordinación adicional.",
  },
 ];
 
@@ -247,7 +247,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  titleHtml={true}
  title="Cajas de <span>Archivo y Almacenaje</span>"
  desc="Archivo muerto oficio y carta, almacén industrial, cajas apilables triple pared y mudanza con asas. Soluciones de almacenamiento a largo plazo con máxima resistencia."
- desc2="Cajas de archivo y almacenaje para despachos, corporativos, notarías y hospitales. Diseño apilable hasta 1.5 metros, tapa separada, área de etiquetado frontal y lateral para gestión documental conforme a la NOM-004.||Suministramos a más de 200 corporativos en CDMX con entregas recurrentes mensuales. Ofrecemos kit completo de mudanza corporativa: caja de archivo, caja estándar, divisores y materiales de relleno con entrega en piso en 24–48 horas."
+ desc2="Cajas de archivo y almacenaje para despachos, corporativos, notarías y hospitales. Diseño apilable hasta 1.5 metros, tapa separada, área de etiquetado frontal y lateral para gestión documental conforme a la NOM-004.||Surtimos a despachos, corporativos, notarías y hospitales en CDMX. Ofrecemos kit completo de mudanza corporativa: caja de archivo, caja estándar, divisores y materiales de relleno con entrega programada según volumen y zona."
  chips={[
  { label: "5 Productos" },
  { label: "Triple pared disponible" },
@@ -360,7 +360,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  <div class="prod-detail__spec">
  <span class="prod-detail__spec-label">Entrega CDMX</span>
- <span class="prod-detail__spec-value">24-48 horas (stock)</span>
+ <span class="prod-detail__spec-value">Según pedido (stock)</span>
  </div>
  </div>
  </div>
@@ -401,7 +401,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  <SectionHeader
  id="proceso-arch-title"
  title="Cómo Pedir tus Cajas de Archivo y Almacenaje"
- subtitle="Simple, rápido y sin complicaciones — tu archivo organizado en menos de 48 horas"
+ subtitle="Simple, práctico y sin complicaciones — tu archivo organizado según tu pedido"
  />
  <div class="process__grid">
  {detPasos.map(p => <ProcessStep {...p} />)}
@@ -409,21 +409,19 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <!-- TESTIMONIOS -->
-
 <section class="seo-content" aria-labelledby="seo-arch-title">
  <div class="container">
  <h2 id="seo-arch-title" class="seo-content__title">
  Cajas de Archivo y Almacenaje en CDMX: Guía Completa para Organizar tu Bodega, Oficina o Mudanza
  </h2>
  <p class="seo-content__text">
- El almacenamiento organizado de documentos y mercancía no es opcional en México: el SAT obliga a conservar documentación fiscal por al menos 5 años, y un almacén desordenado genera pérdidas de inventario y tiempo. En CADECA fabricamos <strong>cajas de archivo y almacenaje en CDMX</strong> diseñadas específicamente para cada necesidad: desde el despacho contable que guarda expedientes de auditoría hasta la bodega industrial que necesita cajas apilables de triple pared que soporten años de almacenamiento.
+ El almacenamiento organizado de documentos y mercancía no es opcional en México: el SAT obliga a conservar documentación fiscal por al menos 5 años, y un almacén desordenado genera pérdidas de inventario y tiempo. En CADECA surtimos <strong>cajas de archivo y almacenaje en CDMX</strong> para cada necesidad: desde el despacho contable que guarda expedientes de auditoría hasta la bodega industrial que necesita cajas apilables de triple pared para almacenamiento prolongado.
  </p>
  <p class="seo-content__text">
- Nuestras <strong>cajas de archivo muerto tamaño oficio</strong> son las más solicitadas por despachos contables y legales de la CDMX. Incluyen tapa y agarraderas laterales para fácil manejo y apilamiento en bodega. Para <strong>oficinas corporativas</strong>, las cajas tamaño carta con identificación frontal permiten organizar nóminas, contratos y correspondencia sin desarmar pilas de archivo. Y para <strong>bodegas e inventarios industriales</strong>, nuestras cajas de triple pared soportan hasta 5 niveles de apilamiento sin deformarse, con entrega en 24-48 horas en toda la zona metropolitana.
+ Nuestras <strong>cajas de archivo muerto tamaño oficio</strong> son una opción práctica para despachos contables y legales de la CDMX. Incluyen tapa y agarraderas laterales para fácil manejo y apilamiento en bodega. Para <strong>oficinas corporativas</strong>, las cajas tamaño carta con identificación frontal permiten organizar nóminas, contratos y correspondencia sin desarmar pilas de archivo. Y para <strong>bodegas e inventarios industriales</strong>, nuestras cajas de triple pared soportan hasta 5 niveles de apilamiento sin deformarse, con entrega programada según volumen y zona.
  </p>
  <p class="seo-content__text">
- Si estás planeando una mudanza o necesitas reorganizar tu archivo, nuestras <a href="/catalogo/cajas-archivo-almacenaje/mudanza-archivo/">cajas de mudanza con asas reforzadas</a> facilitan la carga y descarga de objetos pesados como libros y expedientes. Para necesidades de almacenaje industrial de largo plazo, consulta nuestra <a href="/catalogo/cajas-archivo-almacenaje/apilable-resistente/">línea de cajas apilables triple pared</a>. La <strong>cotización es gratuita y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con lo que necesitas guardar y te recomendamos la caja ideal.
+ Si estás planeando una mudanza o necesitas reorganizar tu archivo, nuestras <a href="/catalogo/cajas-archivo-almacenaje/mudanza-archivo/">cajas de mudanza con asas reforzadas</a> facilitan la carga y descarga de objetos pesados como libros y expedientes. Para necesidades de almacenaje industrial de largo plazo, consulta nuestra <a href="/catalogo/cajas-archivo-almacenaje/apilable-resistente/">línea de cajas apilables triple pared</a>. La <strong>cotización es gratuita y se atiende en horario hábil</strong> — escríbenos por WhatsApp con lo que necesitas guardar y te recomendamos la caja ideal.
  </p>
  </div>
  </section>
@@ -439,7 +437,7 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  subtitle="Todo sobre medidas, resistencia, apilamiento, durabilidad y pedidos"
  >
  <p>Las dudas más frecuentes de nuestros clientes antes de hacer su primer pedido de cajas de archivo y almacenaje. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
- <p>Respondemos consultas técnicas sobre medidas, tipo de corrugado, resistencia al apilamiento y durabilidad en menos de 1 hora, sin costo y sin compromiso de compra.</p>
+ <p>Respondemos consultas técnicas sobre medidas, tipo de corrugado, resistencia al apilamiento y durabilidad en horario hábil, sin costo y sin compromiso de compra.</p>
  </SectionHeader>
  <div class="faq__list">
  {detFaqs.map(f => <FaqItem {...f} />)}
@@ -472,6 +470,6 @@ const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }
  </div>
  </section>
 
- <LeadCapture title="¿Necesitas cajas de archivo o almacenaje? Nuestro asesor responde en menos de 2 horas" />
+ <LeadCapture title="¿Necesitas cajas de archivo o almacenaje? Recibe asesoría en horario hábil" />
 
 </PageLayout>

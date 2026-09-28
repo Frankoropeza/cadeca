@@ -4,30 +4,28 @@ import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
-const title  = "Nosotros | Fabricante de Cajas de Cartón en CDMX | CADECA";
-const description = "Conoce CADECA, fabricante directo de cajas de cartón corrugado en CDMX. Más de 20 años en la industria del empaque, tecnología de punta y compromiso con la sustentabilidad.";
+const title  = "Nosotros | Proveedor de Cajas de Cartón en CDMX | CADECA";
+const description = "Conoce CADECA, proveedor y distribuidor de cajas de cartón corrugado para empresas en CDMX y Estado de México.";
 
 const valores = [
- { icono: "", titulo: "Fabricante Directo", desc: "Sin intermediarios. Producimos cada caja en nuestra planta en CDMX — eso se traduce en precio justo, calidad controlada y entrega rápida." },
+ { icono: "", titulo: "Proveedor y distribuidor", desc: "Surtimos cajas producidas por talleres y fabricantes aliados, coordinando opciones de material, volumen y entrega." },
  { icono: "", titulo: "Precisión Técnica", desc: "Cada caja cumple con ECT verificado en laboratorio. No vendemos especificaciones de papel — vendemos resistencia real y demostrable." },
- { icono: "", titulo: "Entrega Express", desc: "Stock permanente de medidas estándar con entrega en 24 hrs en CDMX. Producción bajo pedido en 3-5 días hábiles." },
- { icono: "", titulo: "Asesoría Sin Costo", desc: "Nuestros asesores técnicos calculan gratis el corrugado correcto para tu producto, el peso volumétrico óptimo y el diseño de separadores." },
- { icono: "", titulo: "Sustentabilidad", desc: "Trabajamos con fibra certificada FSC y papel reciclado. Nuestro proceso productivo reduce el desperdicio de material al mínimo." },
- { icono: "", titulo: "A la Medida Real", desc: "Fabricamos cualquier L×A×H con tolerancia ±0.5mm. Si lo puedes medir, lo podemos fabricar." },
+ { icono: "", titulo: "Entrega programada", desc: "Coordinamos entregas en CDMX y Estado de México según el volumen, la zona y la disponibilidad de rutas." },
+ { icono: "", titulo: "Asesoría Sin Costo", desc: "Te ayudamos a elegir el corrugado correcto para tu producto, el peso volumétrico y el diseño de separadores." },
+ { icono: "", titulo: "Opciones sustentables", desc: "Surtimos papel reciclado y, si tu proyecto requiere certificación FSC, la confirmamos con el fabricante al cotizar." },
+ { icono: "", titulo: "A la Medida Real", desc: "Coordinamos cajas en las medidas que necesitas con talleres especializados y confirmamos las especificaciones al cotizar." },
 ];
 
 const cifras = [
- { numero: "20+",  etiqueta: "Años en la industria" },
- { numero: "500+",  etiqueta: "Clientes activos" },
  { numero: "50+",  etiqueta: "SKUs en catálogo" },
- { numero: "24 hrs",etiqueta: "Entrega express CDMX" },
+ { numero: "CDMX + Edomex",etiqueta: "Zona de entrega" },
 ];
 
 const equipo = [
- { nombre: "Dirección General",  desc: "Liderazgo con más de 20 años en la industria del corrugado en México." },
- { nombre: "Ingeniería de Producto", desc: "Diseño CAD, cálculo de ECT y desarrollo de nuevas soluciones de empaque." },
- { nombre: "Producción",  desc: "Planta en CDMX con equipos de corte, troquelado e impresión flexo de última generación." },
- { nombre: "Ventas y Asesoría",  desc: "Asesores técnicos que hablan el idioma del corrugado, no solo del precio." },
+ { nombre: "Cotización",  desc: "Revisamos medidas, cantidad, material y destino para preparar opciones de suministro." },
+ { nombre: "Cajas a la medida", desc: "Coordinamos diseño CAD y especificaciones con talleres especializados." },
+ { nombre: "Suministro",  desc: "Organizamos pedidos y entregas programadas según las necesidades de tu empresa." },
+ { nombre: "Ventas y Asesoría",  desc: "Te ayudamos a elegir la caja adecuada para tu producto y operación." },
 ];
 
 const breadcrumbs = [
@@ -53,15 +51,15 @@ const breadcrumbs = [
  </div>
 
  <PageHero
- eyebrow="Fabricante directo · CDMX desde 2008"
+ eyebrow="Proveedor y distribuidor · CDMX y Estado de México"
  titleHtml={true}
- title="El Fabricante de Cajas de Cartón <span>Más Confiable</span> de CDMX"
- desc="Producción propia sin intermediarios. Más de 15 años fabricando cajas de cartón corrugado para las empresas más exigentes de la Zona Metropolitana del Valle de México."
- desc2="De PyMEs en Mercado Libre a plantas de nearshoring con auditorías internacionales: CADECA suministra empaques a más de 800 empresas activas en CDMX y Estado de México.||Sin intermediarios, sin mínimos irracionales. Nuestro equipo técnico en planta atiende cada pedido con la misma seriedad, desde 50 cajas hasta 500,000 piezas mensuales."
+ title="Proveedor de Cajas de Cartón <span>para Empresas</span> en CDMX"
+ desc="CADECA surte cajas de cartón corrugado estándar, a la medida y personalizadas para empresas en CDMX y Estado de México. Trabajamos con talleres y fabricantes aliados para coordinar la solución que requiere cada pedido."
+ desc2="Atendemos e-commerce, manufactura, alimentos, retail y otras operaciones que necesitan cajas con especificaciones claras y entrega programada.||Revisamos tu producto, medidas, cantidad y destino; después te cotizamos las opciones disponibles y coordinamos el suministro."
  stats={[
- { value: "15+", label: "años de experiencia" },
- { value: "500+", label: "clientes activos" },
- { value: "24 hrs", label: "entrega CDMX" },
+ { value: "Proveedor", label: "de cajas y empaques" },
+ { value: "CDMX", label: "y Estado de México" },
+ { value: "Según pedido", label: "tiempo de entrega" },
  { value: "45", label: "SKUs en catálogo" },
  ]}
  ctas={[
@@ -93,16 +91,16 @@ const breadcrumbs = [
  <div class="about-historia__img-wrap">
  <img
  src="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
- alt="Planta de fabricación de cajas de cartón corrugado CADECA en CDMX"
+ alt="Cajas de cartón corrugado para empresas en CDMX y Estado de México"
  width="640" height="480" loading="lazy" decoding="async"
  />
  </div>
  <div class="about-historia__content">
  <span class="about-historia__eyebrow">Nuestra historia</span>
- <h2 id="historia-title" class="about-historia__title">Más de 20 Años Fabricando la Caja Correcta</h2>
+ <h2 id="historia-title" class="about-historia__title">Un proveedor para elegir la caja correcta</h2>
  <p>Empezamos con una pregunta simple: ¿por qué tantas empresas reciben cajas que no se ajustan a su producto, cobran por resistencia que no necesitan o, peor, les fallan en tránsito?</p>
- <p>CADECA nació para cambiar eso. Fabricamos directamente en CDMX, con materia prima verificada y procesos controlados. Cada caja que sale de nuestra planta tiene la especificación técnica exacta que la situación requiere — ni más, ni menos.</p>
- <p>Hoy atendemos a más de 500 clientes activos: desde el vendedor de Mercado Libre con 100 cajas al mes hasta la empresa industrial que necesita triple corrugado para exportar maquinaria.</p>
+ <p>CADECA trabaja como proveedor y distribuidor de cajas de cartón para empresas en CDMX y Estado de México. Coordinamos la producción con talleres y fabricantes aliados, de acuerdo con las medidas, el material, la resistencia y el volumen que necesitas.</p>
+ <p>Atendemos desde vendedores de e-commerce hasta operaciones industriales, alimentos, retail y otras empresas que requieren suministro de cajas estándar, a la medida o personalizadas. Te ayudamos a revisar la opción adecuada y programamos la entrega según el pedido.</p>
  </div>
  </div>
  </div>
@@ -113,7 +111,6 @@ const breadcrumbs = [
  <div class="container">
  <SectionHeader
  id="valores-title"
- centered
  title="Por Qué CADECA"
  subtitle="Lo que nos diferencia no es el slogan — son las decisiones de diseño y producción que tomamos cada día."
  />
@@ -134,7 +131,6 @@ const breadcrumbs = [
  <div class="container">
  <SectionHeader
  id="equipo-title"
- centered
  title="El Equipo Detrás de Cada Caja"
  subtitle="Personas con experiencia real en la industria del corrugado en México."
  />
@@ -154,11 +150,11 @@ const breadcrumbs = [
  <div class="container">
  <div class="about-zona__inner">
  <div>
- <h2 id="zona-title" class="about-zona__title">Fabricamos en CDMX,<br>Entregamos en Toda la ZMVM</h2>
- <p class="about-zona__desc">Nuestra planta está ubicada en la Ciudad de México con cobertura de entrega express en toda la Zona Metropolitana del Valle de México — CDMX y Estado de México — en 24 a 48 hrs.</p>
+ <h2 id="zona-title" class="about-zona__title">Surtimos en CDMX,<br>Entregamos en Toda la ZMVM</h2>
+ <p class="about-zona__desc">Coordinamos entregas en la Zona Metropolitana del Valle de México — CDMX y Estado de México — según el volumen, la zona y la disponibilidad de rutas.</p>
  <ul class="about-zona__list">
- <li> Planta en Ciudad de México</li>
- <li> Entrega express CDMX: 24 hrs</li>
+ <li> Entrega programada en Ciudad de México</li>
+ <li> Fecha según pedido y zona</li>
  <li>️ Cobertura: ZMVM — CDMX + Edomex</li>
  <li> Interior de la República: 2-5 días (paquetería)</li>
  </ul>
@@ -173,9 +169,8 @@ const breadcrumbs = [
  <div class="container">
  <SectionHeader
  id="certs-title"
- centered
  title="Compromisos de Calidad"
- subtitle="No son sellos decorativos — son los estándares que definen cómo fabricamos."
+ subtitle="Revisamos las especificaciones y documentación disponibles para cada pedido."
  />
  <div class="about-certs__grid">
  <div class="about-certs__item">
@@ -186,7 +181,7 @@ const breadcrumbs = [
  <div class="about-certs__item">
  <span class="about-certs__badge">FSC</span>
  <h3>Opción FSC</h3>
- <p>Fibra certificada FSC disponible para marcas con política ambiental y reportes ESG.</p>
+ <p>Si necesitas fibra con certificación FSC, la indicamos al cotizar y confirmamos disponibilidad con el fabricante.</p>
  </div>
  <div class="about-certs__item">
  <span class="about-certs__badge">COFEPRIS</span>
@@ -204,7 +199,6 @@ const breadcrumbs = [
 
  </main>
 
- <LeadCapture title="¿Listo para trabajar con el fabricante directo? Cotiza en menos de 1 hora" />
+ <LeadCapture title="¿Buscas cajas para tu empresa? Solicita una cotización" />
 
 </PageLayout>
-

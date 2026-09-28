@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para PyME con Tienda en Línea | CADECA";
-const description = "Caja para PyME con tienda online en CDMX. Sin mínimo alto — MOQ 50 pzas. Entrega 24 hrs. Compatible con Shopify, TiendaNube y ventas en local. CADECA fabricante directo.";
+const description = "Caja para PyME con tienda online en CDMX. Sin mínimo alto — MOQ 50 pzas. Entrega programada según pedido.";
 
 const specs = [
  ["Código SKU", "CAD-EC-07"],
@@ -17,7 +17,7 @@ const specs = [
  ["Medidas", "4 estándar PyME"],
  ["Cierre", "4 solapas autoblocante"],
  ["Pedido mínimo", "50 piezas"],
- ["Entrega CDMX", "24 hrs en stock"],
+ ["Entrega CDMX", "Según pedido"],
 ];
 
 const faqs = [
@@ -41,7 +41,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas para E-commerce",href:"/catalogo/cajas-para-ecommerce/"},{name:"Caja para PyME con Tienda Online"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
- product={{name:"Caja para PyME con Tienda Online",sku:"CAD-EC-07",description:"Solución de empaque diseñada para PyMEs que venden online y en local. MOQ desde 50 piezas, sin contratos ni compromisos, entrega en 24 horas en CDMX.",image:gallery[0].src,material:"CAD-EC-07",category:"Cajas para E-commerce",moq:"50 piezas"}}
+ product={{name:"Caja para PyME con Tienda Online",sku:"CAD-EC-07",description:"Solución de empaque diseñada para PyMEs que venden online y en local. MOQ desde 50 piezas, sin contratos ni compromisos, entrega programada según pedido.",image:gallery[0].src,material:"CAD-EC-07",category:"Cajas para E-commerce",moq:"50 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -58,12 +58,12 @@ const gallery = [
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-EC-07 · Cajas para E-commerce</span>
  <h1 id="sku-cadec07-title" class="cat-page-hero__title">Caja para <span>PyME</span> con Tienda Online — Sin Mínimos Altos</h1>
- <p class="cat-page-hero__desc">Solución de empaque diseñada para PyMEs que venden online y en local. MOQ desde 50 piezas, sin contratos ni compromisos, entrega en 24 horas en CDMX.</p>
+ <p class="cat-page-hero__desc">Solución de empaque diseñada para PyMEs que venden online y en local. MOQ desde 50 piezas, sin contratos ni compromisos, entrega programada según pedido.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-07</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
  </div>
  </div>
  </section>
@@ -78,12 +78,12 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-EC-07 · Familia: Cajas para E-commerce</p>
  <h2 id="detalle-cadec07-title" class="sku-detail__title">Caja para PyME con Tienda Online</h2>
- <p class="sku-detail__desc">La caja perfecta para el negocio que vende por WhatsApp, Instagram, Shopify o en mostrador físico. Sin contratos, sin mínimos irracionales: empieza desde 50 piezas y escala cuando tu demanda lo requiera. Doble corrugado ECT-32 con 4 medidas que cubren la mayoría de productos de consumo. Precio de mayoreo desde pedido 1 y factura electrónica en todas las compras. Entrega en 24 horas en CDMX y área metropolitana.</p>
+ <p class="sku-detail__desc">La caja adecuada para el negocio que vende por WhatsApp, Instagram, Shopify o en mostrador físico. Sin contratos, sin mínimos irracionales: empieza desde 50 piezas y escala cuando tu demanda lo requiera. Doble corrugado ECT-32 con 4 medidas que cubren la mayoría de productos de consumo. Precio de mayoreo desde pedido 1 y factura electrónica en todas las compras. Entrega programada según volumen y zona.</p>
  <div class="sku-detail__strip">
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-32</span><span class="sku-detail__strip-label">Resistencia</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">50 pzas</span><span class="sku-detail__strip-label">MOQ mínimo</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">4 medidas</span><span class="sku-detail__strip-label">En stock</span></div>
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Según pedido</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
  </div>
  <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
  <table class="sku-detail__specs-table"><tbody>

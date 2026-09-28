@@ -6,7 +6,7 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Cajas de Cartón para Exportación ECT-51/61 | CADECA";
-const description = "Cajas a la medida para exportación en CDMX. Certificación ISTA 2A/3A, normas IATA para aéreo, ECT-51 mínimo. Desde 25 piezas, entrega 5-7 días. CADECA fabricante.";
+const description = "Cajas a la medida para exportación en CDMX. Certificación ISTA 2A/3A, normas IATA para aéreo, ECT-51 mínimo.";
 
 const medidas = [
  { talla:"S 5-15kg",  ml:"A definir", real:"A definir", flauta:"BC",ect:"ECT-51",vacío:"varía",máx:"15 kg",  disp:"yellow", label:"5-7 días",  hl:false },
@@ -35,7 +35,7 @@ const faqs = [
  {
  id:"am02-f1",
  question:"¿Qué normas aplican para exportar productos en caja de cartón?",
- answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA fabricamos cumpliendo estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal.",
+ answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA coordinamos el suministro conforme a estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal.",
  },
  {
  id:"am02-f2",
@@ -59,8 +59,8 @@ const gallery = [
  description={description}
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Cajas a la Medida", href:"/catalogo/cajas-a-la-medida/"}, {name:"Exportación IATA"}]}
- faqItems={[{question:"¿Qué normas aplican para exportar productos en caja de cartón?", answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA fabricamos cumpliendo estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal."}, {question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?", answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino."}]}
- product={{name:"Caja a la Medida para Exportación IATA ISTA", sku:"CAD-AM-02", description:"Caja a la Medida para Exportación IATA ISTA en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", material:"Cartón doble o triple corrugado certificado ISTA para exportación", category:"Cajas a la Medida", moq:"25"}}
+ faqItems={[{question:"¿Qué normas aplican para exportar productos en caja de cartón?", answer:"Las principales normas internacionales son: ISTA 2A (International Safe Transit Association) para transporte doméstico e internacional terrestre y aéreo, la más exigida por compradores internacionales como Amazon Global; ISTA 3A para simulación de cadena de distribución completa; ASTM D4169 para testing completo de paquete de distribución (más usado en EE.UU.); e IATA (International Air Transport Association) para carga aérea, que especifica resistencia mínima ECT-51 y límites de peso por pieza. En CADECA coordinamos el suministro conforme a estas normas y emitimos carta de especificaciones técnicas para tu proceso aduanal."}, {question:"¿Necesito certificado NIMF 15 para exportar en cajas de cartón?", answer:"No. La NIMF 15 (Norma Internacional para Medidas Fitosanitarias 15) aplica únicamente a material de empaque de madera: pallets, tarimas, cajas de madera y embalaje de madera. Las cajas de cartón corrugado están exentas de NIMF 15 en todos los países. Esta es una de las ventajas del cartón vs. madera para exportación: sin fumigación, sin inspección fitosanitaria adicional, y sin el costo de marcado HT (heat treated). Solo necesitas el certificado de proveedor con las especificaciones técnicas ECT para cumplir las normas del país destino."}]}
+ product={{name:"Caja a la Medida para Exportación IATA ISTA", sku:"CAD-AM-02", description:"Caja a la Medida para Exportación IATA ISTA en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-medida-exportacion-normas-iata-cdmx.avif", material:"Cartón doble o triple corrugado certificado ISTA para exportación", category:"Cajas a la Medida", moq:"25"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -134,7 +134,7 @@ const gallery = [
  </tbody>
  </table>
  </div>
- <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito en 24 hrs.  Producción bajo pedido.</p>
+ <p style="font-size:0.72rem;color:var(--color-text-light);margin-top:0.6rem">Todas las medidas son a definir según su producto. Diseño CAD gratuito.  Producción bajo pedido.</p>
  </div>
  </section>
 

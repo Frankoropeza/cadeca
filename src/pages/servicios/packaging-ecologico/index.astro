@@ -6,8 +6,8 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Packaging Ecológico Cartón Reciclado FSC CDMX — CADECA Fabricante Directo";
-const description = "Packaging ecológico de cartón corrugado reciclado con certificación FSC en CDMX. Tintas base agua, diseño sustentable. Para marcas con compromiso ambiental.";
+const title       = "Packaging Ecológico de Cartón Reciclado CDMX | CADECA";
+const description = "Packaging ecológico con cartón corrugado reciclado y reciclable para empresas en CDMX y Edomex: opciones kraft, tintas base agua y menos plástico.";
 const canonical   = SITE + "/servicios/packaging-ecologico/";
 
 const schema = [
@@ -51,9 +51,9 @@ const schema = [
       <div class="hero__inner">
 
         <div class="hero__left">
-          <p class="hero__badge">Servicio · Certificación FSC · Sustentable</p>
-          <h1 class="hero__title"><span>Packaging Ecológico de Cartón Reciclado FSC</span></h1>
-          <p class="hero__intro">Cartón kraft reciclado certificado FSC, tintas base agua sin solventes y diseños que minimizan el material. Para marcas que comunican responsabilidad ambiental.</p>
+          <p class="hero__badge">Servicio · Cartón reciclado · Sustentable</p>
+          <h1 class="hero__title"><span>Packaging Ecológico de Cartón Reciclado</span></h1>
+          <p class="hero__intro">Cartón kraft reciclado, tintas base agua sin solventes y diseños que minimizan el material. Si tu proyecto requiere certificación FSC, la confirmamos con el fabricante al cotizar.</p>
           <div class="hero__ctas">
             <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
             {HAS_WA && (
@@ -64,7 +64,7 @@ const schema = [
           <div class="hero__metrics">
           <div class="hero__metric">
             <span class="hero__metric-value">FSC</span>
-            <span class="hero__metric-label">Certificado</span>
+            <span class="hero__metric-label">Disponible según pedido</span>
           </div>
           <div class="hero__metric">
             <span class="hero__metric-value">100%</span>
@@ -82,8 +82,8 @@ const schema = [
         </div>
 
         <div class="hero__right">
-          <p>CADECA produce <strong>packaging ecológico de cartón corrugado reciclado y reciclable</strong> certificado FSC para empresas comprometidas con la sostenibilidad. Cartón kraft natural, tintas base agua sin solventes, adhesivos no tóxicos y diseños optimizados para minimizar el material.</p>
-          <p>Nuestros <strong>empaques ecológicos</strong> cumplen con las normas ambientales mexicanas y los requisitos de grandes cadenas de retail que exigen materiales sustentables. Ideal para marcas que comunican responsabilidad ambiental a sus clientes. Cotización en menos de 2 horas.</p>
+          <p>CADECA surte <strong>packaging ecológico de cartón corrugado reciclado y reciclable</strong> para empresas comprometidas con la sostenibilidad. Cartón kraft natural, tintas base agua sin solventes, adhesivos no tóxicos y diseños optimizados para minimizar el material. Si tu proyecto requiere certificación FSC, la indicamos al cotizar y confirmamos disponibilidad con el fabricante.</p>
+          <p>Nuestros <strong>empaques ecológicos</strong> consideran materiales reciclados y tintas base agua para marcas que comunican responsabilidad ambiental a sus clientes. Las opciones de documentación y certificación se confirman al cotizar.</p>
         </div>
 
       </div>
@@ -102,7 +102,7 @@ const schema = [
             <span class="feature-item__icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            <span>Cartón kraft reciclado con certificación FSC</span>
+            <span>Cartón kraft reciclado; FSC disponible según pedido</span>
           </li>
           <li class="feature-item">
             <span class="feature-item__icon" aria-hidden="true">
@@ -159,12 +159,12 @@ const schema = [
           <div class="process-step">
             <div class="process-step__num">3</div>
             <p class="process-step__title">Producción certificada</p>
-            <p class="process-step__desc">Fabricamos con materiales FSC y tintas base agua. Proveemos documentación si la necesitas.</p>
+            <p class="process-step__desc">Coordinamos materiales reciclados y tintas base agua. Si necesitas certificación FSC, confirmamos disponibilidad y documentación con el fabricante.</p>
           </div>
           <div class="process-step">
             <div class="process-step__num">4</div>
             <p class="process-step__title">Entrega y documentación</p>
-            <p class="process-step__desc">Entrega en CDMX con carta de material FSC si la necesitas para tus reportes de sustentabilidad.</p>
+            <p class="process-step__desc">Entrega programada en CDMX; la documentación FSC se confirma con el fabricante si la necesitas para tus reportes.</p>
           </div>
       </div>
     </div>
@@ -255,8 +255,7 @@ const schema = [
   </section>
 
   <LeadCapture
-    titulo="Cotiza tu packaging ecológico FSC"
-    subtitulo="Certificado FSC · Tintas base agua · Fabricante directo en CDMX"
+    title="Cotiza tu packaging ecológico"
   />
 
 </PageLayout>
@@ -368,6 +367,7 @@ const schema = [
 document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var item = btn.closest('.faq-item');
+    if (!item) return;
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });

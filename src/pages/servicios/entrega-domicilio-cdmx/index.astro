@@ -6,8 +6,8 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Entrega de Cajas de Cartón a Domicilio CDMX — 24 hrs · CADECA Fabricante Directo";
-const description = "Entregamos cajas de cartón corrugado a domicilio en CDMX y Estado de México en 24-48 hrs. Flota propia, rutas diarias, sin costo de flete en pedidos mínimos.";
+const title       = "Entrega de Cajas de Cartón a Domicilio CDMX — CADECA";
+const description = "Entrega programada de cajas de cartón corrugado a domicilio en CDMX y Estado de México, según volumen, zona y disponibilidad de rutas.";
 const canonical   = SITE + "/servicios/entrega-domicilio-cdmx/";
 
 const schema = [
@@ -26,7 +26,7 @@ const schema = [
     "mainEntity": [
     { "@type": "Question", "name": "¿Cuánto cuesta el flete?", "acceptedAnswer": { "@type": "Answer", "text": "Sin costo en pedidos que cumplan el mínimo de entrega. Contáctanos para conocer el mínimo según tu zona." } },
     { "@type": "Question", "name": "¿Cubren toda la CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, las 16 alcaldías de CDMX más los principales municipios del Estado de México." } },
-    { "@type": "Question", "name": "¿Puedo programar la entrega para un horario específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos el horario con 24 hrs de anticipación según disponibilidad de rutas." } },
+    { "@type": "Question", "name": "¿Puedo programar la entrega para un horario específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos el horario de entrega según disponibilidad de rutas y lo confirmamos al cotizar." } },
     { "@type": "Question", "name": "¿Entregan en planta con acceso restringido?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos con tu equipo de recepción para cumplir con los requisitos de acceso." } }
     ]
   }
@@ -51,9 +51,9 @@ const schema = [
       <div class="hero__inner">
 
         <div class="hero__left">
-          <p class="hero__badge">Servicio · Entrega 24-48 hrs · Flota Propia</p>
+          <p class="hero__badge">Servicio · Entrega programada · CDMX y Estado de México</p>
           <h1 class="hero__title"><span>Entrega de Cajas de Cartón a Domicilio en CDMX</span></h1>
-          <p class="hero__intro">Flota propia con rutas diarias en toda la CDMX y Zona Metropolitana. Entregamos en tu planta, bodega o domicilio en 24-48 horas sin costo de flete en pedidos calificados.</p>
+          <p class="hero__intro">Coordinamos la entrega en tu planta, bodega o domicilio en CDMX y Estado de México. La fecha, ruta y costo se confirman según el pedido y la zona.</p>
           <div class="hero__ctas">
             <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
             {HAS_WA && (
@@ -63,8 +63,8 @@ const schema = [
           </div>
           <div class="hero__metrics">
           <div class="hero__metric">
-            <span class="hero__metric-value">24 hrs</span>
-            <span class="hero__metric-label">Entrega exprés</span>
+            <span class="hero__metric-value">Programada</span>
+            <span class="hero__metric-label">Entrega</span>
           </div>
           <div class="hero__metric">
             <span class="hero__metric-value">Sin costo</span>
@@ -82,8 +82,8 @@ const schema = [
         </div>
 
         <div class="hero__right">
-          <p>CADECA ofrece <strong>entrega de cajas de cartón a domicilio en CDMX y Estado de México</strong> con flota propia y rutas cubiertas diariamente. Entregamos en 24-48 horas en toda la Zona Metropolitana: Naucalpan, Tlalnepantla, Ecatepec, Toluca, Iztapalapa, Coyoacán y las 16 alcaldías.</p>
-          <p>Sin costo de flete en pedidos superiores al mínimo establecido. Seguimiento de tu pedido en tiempo real, confirmación de entrega y horarios flexibles para bodegas y plantas industriales. <strong>Fabricante directo con entrega directa</strong> — sin intermediarios.</p>
+          <p>CADECA coordina la <strong>entrega de cajas de cartón a domicilio en CDMX y Estado de México</strong> según el volumen, la zona y la disponibilidad de rutas. Cubrimos la Zona Metropolitana, incluyendo Naucalpan, Tlalnepantla, Ecatepec, Toluca, Iztapalapa, Coyoacán y las 16 alcaldías.</p>
+          <p>El costo de flete y la fecha se confirman al cotizar. Damos seguimiento a tu pedido y coordinamos la entrega con bodegas, plantas industriales y domicilios.</p>
         </div>
 
       </div>
@@ -108,7 +108,7 @@ const schema = [
             <span class="feature-item__icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            <span>24-48 horas en CDMX y Estado de México</span>
+            <span>Fecha de entrega según pedido y zona</span>
           </li>
           <li class="feature-item">
             <span class="feature-item__icon" aria-hidden="true">
@@ -202,7 +202,7 @@ const schema = [
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-item__ans" id="faq-entrega-domicilio-cdmx-2">
-              <p>Sí, coordinamos el horario con 24 hrs de anticipación según disponibilidad de rutas.</p>
+              <p>Sí, coordinamos el horario de entrega según disponibilidad de rutas y lo confirmamos al cotizar.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -228,7 +228,7 @@ const schema = [
       <div class="products__grid svc-products-grid">
           <ProductCard
             title="Corrugado Estándar"
-            desc="Entrega 24 hrs en CDMX"
+            desc="Entrega programada en CDMX"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar — CADECA"
             href="/catalogo/cajas-corrugado-estandar/"
@@ -255,8 +255,7 @@ const schema = [
   </section>
 
   <LeadCapture
-    titulo="Programa tu entrega de cajas a domicilio"
-    subtitulo="24-48 hrs en CDMX · Flota propia · Sin costo de flete en pedidos calificados"
+    title="Programa tu entrega de cajas a domicilio"
   />
 
 </PageLayout>
@@ -368,6 +367,7 @@ const schema = [
 document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var item = btn.closest('.faq-item');
+    if (!item) return;
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });

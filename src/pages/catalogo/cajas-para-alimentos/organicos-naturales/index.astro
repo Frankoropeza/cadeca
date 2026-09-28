@@ -6,24 +6,24 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para Orgánicos y Productos Naturales | CADECA";
-const description = "Caja para productos orgánicos y naturales en CDMX. Kraft reciclado FSC, food-grade, imagen sustentable. Compatible con certificaciones orgánicas. MOQ 100 pzas. CADECA.";
+const description = "Caja de cartón reciclado para productos orgánicos y naturales: kraft food-grade, sin blanqueadores de cloro. Cotiza en CDMX y Estado de México.";
 
 const specs = [
  ["Código SKU", "CAD-AL-11"],
- ["Certificación", "FSC + Food-grade NOM-051"],
+ ["Certificación", "FSC por confirmar al cotizar · Food-grade NOM-051"],
  ["Material", "Kraft reciclado postconsumer"],
  ["Blanqueante", "Sin ECF/TCF"],
  ["Tintas", "Water-based sin metales"],
  ["Compatibilidad", "Certificaciones orgánicas"],
  ["Pedido mínimo", "100 piezas"],
  ["Impresión", "1 color opcional"],
- ["Entrega CDMX", "24–48 hrs"],
+ ["Entrega CDMX", "Según pedido"],
 ];
 
 const faqs = [
- { id:"cad-al-11-f1", question:"¿La caja es compatible con certificaciones orgánicas como NMX-FF-068?", answer:"El material de CAD-AL-11 (kraft reciclado FSC, sin blanqueantes de cloro, tintas water-based) es compatible con los requerimientos de materiales de contacto de la certificación NMX-FF-068 de productos orgánicos. Sin embargo, la certificación del producto orgánico en sí es responsabilidad del fabricante del producto, no del proveedor de empaque." },
+ { id:"cad-al-11-f1", question:"¿La caja es compatible con certificaciones orgánicas como NMX-FF-068?", answer:"El material de CAD-AL-11 (kraft reciclado, sin blanqueantes de cloro, tintas water-based) puede revisarse contra los requerimientos de materiales de contacto de la certificación NMX-FF-068 de productos orgánicos. Si requieres FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. La certificación del producto orgánico en sí es responsabilidad del fabricante del producto, no del proveedor de empaque." },
  { id:"cad-al-11-f2", question:"¿Tiene el mismo aspecto que el kraft virgen?", answer:"El kraft reciclado tiene un tono ligeramente más oscuro y puede mostrar pequeñas variaciones en la textura que son características de fibra reciclada. Para muchas marcas orgánicas, esta apariencia más rústica y natural es precisamente el efecto deseado. Si necesitas homogeneidad perfecta de color, podemos ofrecer kraft virgen no blanqueado como alternativa." },
- { id:"cad-al-11-f3", question:"¿Puedo mencionar en mi etiqueta que el empaque es reciclado FSC?", answer:"Sí, puedes comunicar que usas materiales reciclados y/o FSC certificados en tu comunicación de marketing y etiquetado. Para usar el logo FSC oficial en tu producto, necesitas tramitar tu propia licencia FSC o hacerlo bajo licencia de CADECA (consulta condiciones). En cualquier caso, podemos proporcionarte la documentación de cadena de custodia del material." },
+ { id:"cad-al-11-f3", question:"¿Puedo mencionar en mi etiqueta que el empaque es reciclado FSC?", answer:"Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante antes de definir la comunicación de marketing o el etiquetado. Para usar el logo FSC oficial en tu producto, necesitas tramitar tu propia licencia FSC o confirmar las condiciones aplicables con el fabricante." },
 ];
 
 const gallery = [
@@ -41,7 +41,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas para Alimentos",href:"/catalogo/cajas-para-alimentos/"},{name:"Caja para Productos Orgánicos y Naturales"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
- product={{name:"Caja para Productos Orgánicos y Naturales",sku:"CAD-AL-11",description:"Caja kraft FSC reciclado para marcas de productos orgánicos y naturales. Food-grade, imagen sustentable, compatible con certificaciones orgánicas. Desde 100 piezas en CDMX.",image:gallery[0].src,material:"CAD-AL-11",category:"Cajas para Alimentos",moq:"100 piezas"}}
+ product={{name:"Caja para Productos Orgánicos y Naturales",sku:"CAD-AL-11",description:"Caja kraft reciclado para marcas de productos orgánicos y naturales. Food-grade, imagen sustentable; FSC por confirmar al cotizar. Desde 100 piezas en CDMX.",image:gallery[0].src,material:"CAD-AL-11",category:"Cajas para Alimentos",moq:"100 piezas"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -57,13 +57,13 @@ const gallery = [
  <section class="cat-page-hero" aria-labelledby="sku-cadal11-title">
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-AL-11 · Cajas para Alimentos</span>
- <h1 id="sku-cadal11-title" class="cat-page-hero__title">Caja para <span>Orgánicos</span> y Productos Naturales FSC CDMX</h1>
- <p class="cat-page-hero__desc">Caja kraft FSC reciclado para marcas de productos orgánicos y naturales. Food-grade, imagen sustentable, compatible con certificaciones orgánicas. Desde 100 piezas en CDMX.</p>
+ <h1 id="sku-cadal11-title" class="cat-page-hero__title">Caja para <span>Orgánicos</span> y Productos Naturales CDMX</h1>
+ <p class="cat-page-hero__desc">Caja kraft reciclado para marcas de productos orgánicos y naturales. Food-grade, imagen sustentable, compatible con certificaciones orgánicas; FSC por confirmar al cotizar. Desde 100 piezas en CDMX.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-11</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
  </div>
  </div>
  </section>
@@ -78,9 +78,9 @@ const gallery = [
  <div class="sku-detail__content">
  <p class="sku-detail__code">CAD-AL-11 · Familia: Cajas para Alimentos</p>
  <h2 id="detalle-cadal11-title" class="sku-detail__title">Caja para Productos Orgánicos y Naturales</h2>
- <p class="sku-detail__desc">Las marcas de productos orgánicos, naturales y saludables necesitan un empaque coherente con sus valores: material reciclado o de fuente responsable, sin químicos tóxicos y con imagen que refuerce el mensaje sustentable. CAD-AL-11 usa kraft reciclado postconsumer con certificación FSC, food-grade sin blanqueantes a base de cloro, y tintas water-based si se requiere impresión. Desde 100 piezas para marcas pequeñas de mercados orgánicos y tiendas naturistas.</p>
+ <p class="sku-detail__desc">Las marcas de productos orgánicos, naturales y saludables necesitan un empaque coherente con sus valores: material reciclado o de fuente responsable, sin químicos tóxicos y con imagen que refuerce el mensaje sustentable. CAD-AL-11 usa kraft reciclado postconsumer, food-grade sin blanqueantes a base de cloro y tintas water-based si se requiere impresión. Si tu proyecto requiere FSC, lo confirmamos al cotizar con el fabricante. Desde 100 piezas para marcas pequeñas de mercados orgánicos y tiendas naturistas.</p>
  <div class="sku-detail__strip">
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">FSC</span><span class="sku-detail__strip-label">Certificado</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Por confirmar</span><span class="sku-detail__strip-label">FSC al cotizar</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Food-grade</span><span class="sku-detail__strip-label">NOM-051</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">100 pzas</span><span class="sku-detail__strip-label">MOQ</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Eco</span><span class="sku-detail__strip-label">Sin recargo</span></div>
@@ -108,5 +108,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture title="¿Tu marca es orgánica o natural? La caja kraft FSC de CADECA es el empaque coherente con tus valores" />
+ <LeadCapture title="¿Tu marca es orgánica o natural? Cotiza una caja kraft reciclada coherente con tus valores" />
 </PageLayout>

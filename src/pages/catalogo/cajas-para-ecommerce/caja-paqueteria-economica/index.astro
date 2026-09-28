@@ -6,7 +6,7 @@ import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja para Paquetería Económica | CADECA";
-const description = "Caja optimizada para paqueterías económicas en CDMX: J&T, 99Minutos, Sendex y Estafeta económica. ECT-32, medidas que minimizan el peso volumétrico. MOQ 50. CADECA.";
+const description = "Caja optimizada para paqueterías económicas en CDMX: J&T, 99Minutos, Sendex y Estafeta económica. ECT-32, medidas que minimizan el peso volumétrico.";
 
 const specs = [
  ["Código SKU", "CAD-EC-10"],
@@ -17,7 +17,7 @@ const specs = [
  ["Optimización", "Peso volumétrico mínimo"],
  ["Medidas", "3 estándar económicas"],
  ["Pedido mínimo", "50 piezas/medida"],
- ["Entrega CDMX", "24 hrs en stock"],
+ ["Entrega CDMX", "Según pedido"],
 ];
 
 const faqs = [
@@ -41,7 +41,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas para E-commerce",href:"/catalogo/cajas-para-ecommerce/"},{name:"Caja para Paquetería Económica"}]}
  faqItems={faqs.map(f => ({question:f.question, answer:f.answer}))}
- product={{name:"Caja para Paquetería Económica",sku:"CAD-EC-10",description:"Caja específicamente dimensionada para minimizar el costo en paqueterías económicas como J&T, 99Minutos y Sendex. ECT-32 doble pared, MOQ 50 piezas, entrega 24 hrs CDMX.",image:gallery[0].src,material:"CAD-EC-10",category:"Cajas para E-commerce",moq:"50 piezas/medida"}}
+ product={{name:"Caja para Paquetería Económica",sku:"CAD-EC-10",description:"Caja específicamente dimensionada para minimizar el costo en paqueterías económicas como J&T, 99Minutos y Sendex. ECT-32 doble pared, MOQ 50 piezas, entrega programada según pedido.",image:gallery[0].src,material:"CAD-EC-10",category:"Cajas para E-commerce",moq:"50 piezas/medida"}}
 >
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -58,12 +58,12 @@ const gallery = [
  <div class="container">
  <span class="cat-page-hero__eyebrow">SKU CAD-EC-10 · Cajas para E-commerce</span>
  <h1 id="sku-cadec10-title" class="cat-page-hero__title">Caja para <span>Paquetería Económica</span> — J&T, 99Min, Sendex</h1>
- <p class="cat-page-hero__desc">Caja específicamente dimensionada para minimizar el costo en paqueterías económicas como J&T, 99Minutos y Sendex. ECT-32 doble pared, MOQ 50 piezas, entrega 24 hrs CDMX.</p>
+ <p class="cat-page-hero__desc">Caja específicamente dimensionada para minimizar el costo en paqueterías económicas como J&T, 99Minutos y Sendex. ECT-32 doble pared, MOQ 50 piezas, entrega programada según pedido.</p>
  <div class="cat-page-hero__strip">
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-10</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas/medida</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
+ <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
  </div>
  </div>
  </section>

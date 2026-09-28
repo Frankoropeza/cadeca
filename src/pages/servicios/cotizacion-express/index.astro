@@ -6,15 +6,15 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
 const SITE     = "https://cajas-de-carton.com";
 
-const title       = "Cotización Exprés de Cajas de Cartón en 2 Horas CDMX — CADECA";
-const description = "Cotización de cajas de cartón corrugado en menos de 2 horas en CDMX. Fabricante directo, precios de fábrica, respuesta inmediata por WhatsApp. Sin compromiso.";
+const title       = "Cotización de Cajas de Cartón en CDMX — CADECA";
+const description = "Cotiza cajas de cartón corrugado en CDMX y Estado de México: indica tipo, medidas y cantidad y recibe precio por pieza y tiempo de entrega.";
 const canonical   = SITE + "/servicios/cotizacion-express/";
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Cotización Exprés de Cajas de Cartón en 2 Horas",
+    "name": "Cotización de Cajas de Cartón",
     "description": description,
     "provider": { "@type": "Organization", "name": "CADECA", "url": SITE },
     "areaServed": "Ciudad de México y Zona Metropolitana",
@@ -41,7 +41,7 @@ const schema = [
   breadcrumbs={[
     { name: "Inicio",    href: "/" },
     { name: "Servicios", href: "/servicios/" },
-    { name: "Cotización Exprés de Cajas de Cartón en 2 Horas" },
+    { name: "Cotización de Cajas de Cartón" },
   ]}
 >
 
@@ -51,9 +51,9 @@ const schema = [
       <div class="hero__inner">
 
         <div class="hero__left">
-          <p class="hero__badge">Servicio · Respuesta en menos de 2 hrs</p>
-          <h1 class="hero__title"><span>Cotización Exprés de Cajas de Cartón en 2 Horas</span></h1>
-          <p class="hero__intro">Garantizamos cotización con precio, especificaciones técnicas y tiempo de entrega en menos de 2 horas. Lunes a sábado de 8:00 a 20:00. Para urgentes, 30 min por WhatsApp.</p>
+          <p class="hero__badge">Servicio · Respuesta en horario hábil</p>
+          <h1 class="hero__title"><span>Cotización de Cajas de Cartón</span></h1>
+          <p class="hero__intro">Recibe una propuesta con precio, especificaciones técnicas y tiempo de entrega según tu pedido. Atendemos solicitudes de lunes a sábado de 8:00 a 20:00.</p>
           <div class="hero__ctas">
             <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
             {HAS_WA && (
@@ -82,8 +82,8 @@ const schema = [
         </div>
 
         <div class="hero__right">
-          <p>CADECA garantiza <strong>cotización exprés en menos de 2 horas</strong> para cualquier tipo de caja de cartón corrugado. Recibimos tu solicitud por WhatsApp, formulario o teléfono y te enviamos propuesta con precio, tiempo de entrega y especificaciones técnicas.</p>
-          <p>Somos <strong>fabricante directo</strong>, sin intermediarios que alarguen los tiempos de respuesta. Para cotizaciones urgentes, respuesta garantizada en 30 minutos por WhatsApp. Precios competitivos de fábrica, sin sorpresas en la factura.</p>
+          <p>CADECA recibe solicitudes de cotización para cualquier tipo de caja de cartón corrugado. Envíanos tu información por WhatsApp, formulario o teléfono y te respondemos en horario hábil con precio, tiempo de entrega y especificaciones técnicas.</p>
+          <p>Trabajamos con talleres especializados y coordinamos la producción según el pedido. Te indicamos las opciones disponibles, el tiempo de entrega y las condiciones de entrega antes de confirmar.</p>
         </div>
 
       </div>
@@ -95,14 +95,14 @@ const schema = [
     <div class="container">
       <SectionHeader
         title="Beneficios del servicio"
-        subtitle={"Por qué elegir CADECA para cotización exprés de cajas de cartón en 2 horas"}
+        subtitle={"Cómo solicitar una cotización de cajas de cartón"}
       />
       <ul class="feature-grid">
           <li class="feature-item">
             <span class="feature-item__icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            <span>Respuesta en menos de 2 horas en horario de atención</span>
+            <span>Respuesta en horario hábil de atención</span>
           </li>
           <li class="feature-item">
             <span class="feature-item__icon" aria-hidden="true">
@@ -126,7 +126,7 @@ const schema = [
             <span class="feature-item__icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            <span>Urgentes: respuesta en 30 minutos por WhatsApp</span>
+            <span>Seguimiento por WhatsApp y correo</span>
           </li>
           <li class="feature-item">
             <span class="feature-item__icon" aria-hidden="true">
@@ -175,7 +175,7 @@ const schema = [
     <div class="container">
       <SectionHeader
         title="Preguntas frecuentes"
-        subtitle={"Todo sobre cotización exprés de cajas de cartón en 2 horas"}
+        subtitle={"Todo sobre la cotización de cajas de cartón"}
       />
       <div class="faq-list">
           <div class="faq-item">
@@ -228,7 +228,7 @@ const schema = [
       <div class="products__grid svc-products-grid">
           <ProductCard
             title="Corrugado Estándar"
-            desc="Cotización en 2 horas"
+            desc="Cotización en horario hábil"
             imgSrc="/img/productos/cajas-de-carton-corrugado-estandar-cdmx.avif"
             imgAlt="Corrugado Estándar — CADECA"
             href="/catalogo/cajas-corrugado-estandar/"
@@ -255,8 +255,7 @@ const schema = [
   </section>
 
   <LeadCapture
-    titulo="Solicita tu cotización exprés ahora"
-    subtitulo="Respuesta en menos de 2 horas · Fabricante directo · Sin compromiso"
+    title="Solicita tu cotización"
   />
 
 </PageLayout>
@@ -368,6 +367,7 @@ const schema = [
 document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var item = btn.closest('.faq-item');
+    if (!item) return;
     item.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
   });

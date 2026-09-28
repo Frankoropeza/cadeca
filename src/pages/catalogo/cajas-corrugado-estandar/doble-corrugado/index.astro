@@ -6,14 +6,14 @@ import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
 
 const title  = "Caja de Cartón Doble Corrugado (BC) | CADECA";
-const description = "Ficha técnica caja doble corrugado pared doble BC en CDMX. ECT-44 y ECT-51. Para electrónica, Amazon FBA, industria media. Sin mínimo, entrega 24-48 hrs. CADECA.";
+const description = "Ficha técnica caja doble corrugado pared doble BC en CDMX. ECT-44 y ECT-51. Para electrónica, Amazon FBA, industria media.";
 
 const medidas = [
  { nombre:"Chica",  lah:"30×20×20",flauta:"BC",ect:"ECT-44",vacío:"0.52 kg",máx:"15 kg", disp:"green",  label:"Stock" },
  { nombre:"Mediana",  lah:"40×30×25",flauta:"BC",ect:"ECT-44",vacío:"0.78 kg",máx:"20 kg", disp:"green",  label:"Stock",  hl:true },
  { nombre:"Grande",  lah:"50×40×30",flauta:"BC",ect:"ECT-44",vacío:"1.10 kg",máx:"25 kg", disp:"green",  label:"Stock",  hl:true },
- { nombre:"Extra Grande", lah:"60×50×40",flauta:"BC",ect:"ECT-44",vacío:"1.60 kg",máx:"25 kg", disp:"yellow", label:"48 hrs" },
- { nombre:"Industrial 1", lah:"70×50×50",flauta:"BC",ect:"ECT-51",vacío:"2.10 kg",máx:"25 kg", disp:"yellow", label:"48 hrs" },
+ { nombre:"Extra Grande", lah:"60×50×40",flauta:"BC",ect:"ECT-44",vacío:"1.60 kg",máx:"25 kg", disp:"yellow", label:"Según pedido" },
+ { nombre:"Industrial 1", lah:"70×50×50",flauta:"BC",ect:"ECT-51",vacío:"2.10 kg",máx:"25 kg", disp:"yellow", label:"Según pedido" },
  { nombre:"A la Medida",  lah:"Cualquier",flauta:"BC/BB",ect:"A elegir",vacío:"—",máx:"—",disp:"gray",label:"3-5 días" },
 ];
 
@@ -31,7 +31,7 @@ const specs = [
  ["Impresión",  "Flexografía 1-4 colores (opcional)"],
  ["Certificación",  "FSC disponible · Cumple Amazon FBA"],
  ["Pedido mínimo",  "Sin mínimo (stock) · 50 pzas (producción)"],
- ["Tiempo de entrega",  "24-48 hrs stock · 48-72 hrs especial"],
+ ["Tiempo de entrega",  "Según pedido"],
 ];
 
 const faqs = [
@@ -63,7 +63,7 @@ const gallery = [
  pageType="product"
  breadcrumbs={[{name:"Inicio", href:"/"}, {name:"Catálogo", href:"/catalogo/"}, {name:"Corrugado Estándar", href:"/catalogo/cajas-corrugado-estandar/"}, {name:"Doble Corrugado"}]}
  faqItems={[{question:"¿Por qué el doble corrugado ECT-44 es el estándar de la industria para e-commerce?", answer:"El ECT-44 doble corrugado BC se convirtió en el estándar porque equilibra tres factores clave: resistencia suficiente para soportar el manejo en centros de distribución automatizados (caídas, apilamiento, vibración), peso controlado que no genera costo excesivo de flete, y costo por pieza competitivo. Mercado Libre, Amazon y las principales paqueterías exigen ECT-44 mínimo porque reduce dramáticamente la tasa de daño en tránsito, que es el costo oculto más alto del e-commerce."}, {question:"¿En qué casos debo subir de ECT-44 a ECT-51 o ECT-61?", answer:"Debes considerar ECT-51 cuando: el producto pesa más de 20 kg, la caja será almacenada en condiciones de alta humedad (>65% HR), el producto es frágil y necesita protección extra, o será exportado por vía marítima. ECT-61 se reserva para triple corrugado, maquinaria industrial, equipo electrónico de alto valor o envíos aéreos con certificación ISTA. Para la mayoría de e-commerce y retail, ECT-44 es suficiente y más económico."}]}
- product={{name:"Caja Doble Corrugado BC", sku:"CAD-CD-01", description:"Caja Doble Corrugado BC en CDMX — fabricante directo CADECA", image:"/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif", material:"Cartón doble corrugado flauta BC ECT-44", category:"Cajas de Cartón Corrugado Estándar", moq:"50"}}
+ product={{name:"Caja Doble Corrugado BC", sku:"CAD-CD-01", description:"Caja Doble Corrugado BC en CDMX — proveedor CADECA", image:"/img/catalogo/cajas-carton-doble-corrugado-resistente-cdmx.avif", material:"Cartón doble corrugado flauta BC ECT-44", category:"Cajas de Cartón Corrugado Estándar", moq:"50"}}
 >
 
  <!-- Breadcrumb -->
@@ -91,7 +91,7 @@ const gallery = [
  <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CD-01</strong></div>
  <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-51</strong></div>
  <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
+ <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
  </div>
  </div>
  </section>
@@ -113,7 +113,7 @@ const gallery = [
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">ECT-44</span><span class="sku-detail__strip-label">Resistencia estándar</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">25 kg</span><span class="sku-detail__strip-label">Peso máx.</span></div>
  <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Sin mín.</span><span class="sku-detail__strip-label">Pedido</span></div>
- <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">24 hrs</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
+ <div class="sku-detail__strip-item"><span class="sku-detail__strip-value">Según pedido</span><span class="sku-detail__strip-label">Entrega CDMX</span></div>
  </div>
  <p class="sku-detail__specs-title">Especificaciones Técnicas</p>
  <table class="sku-detail__specs-table"><tbody>
@@ -156,5 +156,5 @@ const gallery = [
  </section>
  </main>
 
- <LeadCapture title="Cotiza CAD-CD-01 — ECT-44 certificado, entrega 24-48 hrs en CDMX" />
+ <LeadCapture title="Cotiza CAD-CD-01 — ECT-44 certificado, entrega programada en CDMX" />
 </PageLayout>
