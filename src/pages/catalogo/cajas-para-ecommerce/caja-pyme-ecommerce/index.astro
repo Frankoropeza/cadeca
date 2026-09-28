@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para PyME con Tienda en Línea | CADECA";
 const description = "Caja para PyME con tienda online en CDMX. Sin mínimo alto — MOQ 50 pzas. Entrega programada según pedido.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadec07-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-EC-07 · Cajas para E-commerce</span>
- <h1 id="sku-cadec07-title" class="cat-page-hero__title">Caja para <span>PyME</span> con Tienda Online — Sin Mínimos Altos</h1>
- <p class="cat-page-hero__desc">Solución de empaque diseñada para PyMEs que venden online y en local. MOQ desde 50 piezas, sin contratos ni compromisos, entrega programada según pedido.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-07</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadec07-title"
+   eyebrow="SKU CAD-EC-07 · Cajas para E-commerce"
+   titleHtml={true}
+   title="Caja para <span>PyME</span> con Tienda Online — Sin Mínimos Altos"
+   desc="Solución de empaque diseñada para PyMEs que venden online y en local. MOQ desde 50 piezas, sin contratos ni compromisos, entrega programada según pedido."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadec07-title">

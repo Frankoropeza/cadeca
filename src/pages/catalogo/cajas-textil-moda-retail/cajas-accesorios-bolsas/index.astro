@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Accesorios y Bolsas | CADECA";
 const description = "Ficha técnica caja corrugado para accesorios y bolsas de moda en CDMX. Flauta E, ECT-23, medidas joyería a bolsa grande.";
@@ -99,23 +100,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-tx03-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-TX-03 · Cajas para Textil, Moda y Retail</span>
- <h1 id="sku-tx03-title" class="cat-page-hero__title">
- Caja para Accesorios y Bolsas<br><span>Pared Simple Premium — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Cajas premium de cartón micro-flauta E para accesorios de moda: joyería, gafas, cinturones, carteras y bolsas de diseñador. Impresión full color CMYK con acabados de lujo — barniz UV selectivo, hot stamping y laminado soft touch. Insertos personalizados para cada pieza.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-03</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>300 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-tx03-title"
+   eyebrow="SKU CAD-TX-03 · Cajas para Textil, Moda y Retail"
+   titleHtml={true}
+   title="Caja para Accesorios y Bolsas <span>Pared Simple Premium — CDMX</span>"
+   desc="Cajas premium de cartón micro-flauta E para accesorios de moda: joyería, gafas, cinturones, carteras y bolsas de diseñador. Impresión full color CMYK con acabados de lujo — barniz UV selectivo, hot stamping y laminado soft touch. Insertos personalizados para cada pieza."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

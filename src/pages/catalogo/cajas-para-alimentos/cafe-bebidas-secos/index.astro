@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Café, Bebidas y Productos Secos | CADECA";
 const description = "Caja para café, bebidas, snacks y productos secos en CDMX. Corrugado simple/doble food-grade, compatible para distribución directa a cafeterías y tiendas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadal09-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AL-09 · Cajas para Alimentos</span>
- <h1 id="sku-cadal09-title" class="cat-page-hero__title">Caja para <span>Café</span>, Bebidas y Productos Secos CDMX</h1>
- <p class="cat-page-hero__desc">Caja food-grade para café, bebidas envasadas, snacks y productos secos. Compatible con distribución directa a cafeterías, tiendas de conveniencia y e-commerce.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-09</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadal09-title"
+   eyebrow="SKU CAD-AL-09 · Cajas para Alimentos"
+   titleHtml={true}
+   title="Caja para <span>Café</span>, Bebidas y Productos Secos CDMX"
+   desc="Caja food-grade para café, bebidas envasadas, snacks y productos secos. Compatible con distribución directa a cafeterías, tiendas de conveniencia y e-commerce."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadal09-title">

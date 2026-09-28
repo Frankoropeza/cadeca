@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Separadores de Cartón a la Medida | CADECA";
 const description = "Separadores cartón corrugado CDMX. Flauta B o E, diseño por caja, precio mínimo. Desde 200 pzas, tiempo de entrega según pedido. CADECA proveedor.";
@@ -74,19 +75,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-lc04-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-LC-04 · Láminas de Cartón Corrugado</span>
- <h1 id="sku-lc04-title" class="cat-page-hero__title">Separadores Cartón <span>Divisiones a la Medida</span><br>— Precio Mínimo CDMX</h1>
- <p class="cat-page-hero__desc">Separadores ranurados sin pegamento en flauta B (3 mm) o E (1.5 mm). Diseño CAD según pedido. Precio competitivo por unidad. Para botellas, frascos, velas y electrónica.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-04</strong></div>
- <div class="cat-page-hero__strip-item">Diseño: <strong>CAD según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-lc04-title"
+   eyebrow="SKU CAD-LC-04 · Láminas de Cartón Corrugado"
+   titleHtml={true}
+   title="Separadores Cartón <span>Divisiones a la Medida</span> — Precio Mínimo CDMX"
+   desc="Separadores ranurados sin pegamento en flauta B (3 mm) o E (1.5 mm). Diseño CAD según pedido. Precio competitivo por unidad. Para botellas, frascos, velas y electrónica."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-lc04-title">

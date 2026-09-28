@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Packaging Ecológico de Cartón Reciclado CDMX | CADECA";
@@ -46,49 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio · Cartón reciclado · Sustentable</p>
-          <h1 class="hero__title"><span>Packaging Ecológico de Cartón Reciclado</span></h1>
-          <p class="hero__intro">Cartón kraft reciclado, tintas base agua sin solventes y diseños que minimizan el material. Si tu proyecto requiere certificación FSC, la confirmamos con el fabricante al cotizar.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, quiero información sobre Packaging Ecológico de CADECA")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">FSC</span>
-            <span class="hero__metric-label">Disponible según pedido</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">100%</span>
-            <span class="hero__metric-label">Reciclable</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">Agua</span>
-            <span class="hero__metric-label">Tintas sin solventes</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">2 hrs</span>
-            <span class="hero__metric-label">Cotización</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>CADECA surte <strong>packaging ecológico de cartón corrugado reciclado y reciclable</strong> para empresas comprometidas con la sostenibilidad. Cartón kraft natural, tintas base agua sin solventes, adhesivos no tóxicos y diseños optimizados para minimizar el material. Si tu proyecto requiere certificación FSC, la indicamos al cotizar y confirmamos disponibilidad con el fabricante.</p>
-          <p>Nuestros <strong>empaques ecológicos</strong> consideran materiales reciclados y tintas base agua para marcas que comunican responsabilidad ambiental a sus clientes. Las opciones de documentación y certificación se confirman al cotizar.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio · Cartón reciclado · Sustentable"
+    titleHtml={true}
+    title="<span>Packaging Ecológico de Cartón Reciclado</span>"
+    desc="Cartón kraft reciclado, tintas base agua sin solventes y diseños que minimizan el material. Si tu proyecto requiere certificación FSC, la confirmamos con el fabricante al cotizar."
+    desc2="CADECA surte <strong>packaging ecológico de cartón corrugado reciclado y reciclable</strong> para empresas comprometidas con la sostenibilidad. Cartón kraft natural, tintas base agua sin solventes, adhesivos no tóxicos y diseños optimizados para minimizar el material. Si tu proyecto requiere certificación FSC, la indicamos al cotizar y confirmamos disponibilidad con el fabricante.||Nuestros <strong>empaques ecológicos</strong> consideran materiales reciclados y tintas base agua para marcas que comunican responsabilidad ambiental a sus clientes. Las opciones de documentación y certificación se confirman al cotizar."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

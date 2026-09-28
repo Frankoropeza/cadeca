@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas Automáticas a la Medida para Línea de Empaque | CADECA";
 const description = "Cajas para líneas de empaque automáticas en CDMX. Tolerancias ±0.5mm, RSC y auto-erect, compatibles con Bosch, IWK, Marchesini. Desde 500 pzas.";
@@ -73,19 +74,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am05-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-05 · Cajas a la Medida</span>
- <h1 id="sku-am05-title" class="cat-page-hero__title">Caja <span>Automática Alta Velocidad</span><br>— ±0.5mm Tolerancia CDMX</h1>
- <p class="cat-page-hero__desc">Cajas para líneas de empaque automáticas con tolerancias ±0.5mm en todos los ejes. RSC y auto-erect crash-lock. Compatibles con Bosch, IWK, Marchesini y Romaco. Muestra de preproducción gratis.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-05</strong></div>
- <div class="cat-page-hero__strip-item">Tolerancia: <strong>±0.5mm</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>7-10 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am05-title"
+   eyebrow="SKU CAD-AM-05 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja <span>Automática Alta Velocidad</span> — ±0.5mm Tolerancia CDMX"
+   desc="Cajas para líneas de empaque automáticas con tolerancias ±0.5mm en todos los ejes. RSC y auto-erect crash-lock. Compatibles con Bosch, IWK, Marchesini y Romaco. Muestra de preproducción gratis."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am05-title">

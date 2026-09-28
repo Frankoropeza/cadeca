@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón para Almacén Industrial | CADECA";
 const description = "Caja corrugado para almacén industrial en CDMX. Alta resistencia al apilado, compatible con racks selectivos. ECT-44 doble pared. Desde 50 pzas.";
@@ -68,21 +69,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cs12-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CS-12 · Corrugado Estándar</span>
- <h1 id="sku-cs12-title" class="cat-page-hero__title">Caja Corrugado para <span>Almacén Industrial</span></h1>
- <p class="cat-page-hero__desc">
- Alta resistencia al apilado ECT-44 compatible con racks selectivos y pasillos de almacén. Liner kraft virgen 175 g/m², doble corrugado BC, hasta 450 kg de carga apilada. Entrega programada según volumen y zona desde 50 pzas.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-12</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cs12-title"
+   eyebrow="SKU CAD-CS-12 · Corrugado Estándar"
+   titleHtml={true}
+   title="Caja Corrugado para <span>Almacén Industrial</span>"
+   desc="Alta resistencia al apilado ECT-44 compatible con racks selectivos y pasillos de almacén. Liner kraft virgen 175 g/m², doble corrugado BC, hasta 450 kg de carga apilada. Entrega programada según volumen y zona desde 50 pzas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cs12-title">

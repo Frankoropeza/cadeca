@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Muestras y Prototipos de Cajas de Cartón CDMX | CADECA";
@@ -46,49 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio · Validación antes de producción</p>
-          <h1 class="hero__title"><span>Muestras y Prototipos de Cajas de Cartón</span></h1>
-          <p class="hero__intro">Solicita de 1 a 5 piezas de muestra antes de confirmar tu presupuesto. Incluye diseño CAD, coordinación del prototipo y prueba de carga opcional. El costo se puede descontar del pedido final según cotización.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, quiero una muestra o prototipo de caja de cartón")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">Según pedido</span>
-            <span class="hero__metric-label">Tiempo de muestra</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">1-5</span>
-            <span class="hero__metric-label">Piezas de prototipo</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">Descontado</span>
-            <span class="hero__metric-label">Del pedido final</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">2 hrs</span>
-            <span class="hero__metric-label">Cotización</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>Antes de producir tu corrida completa, CADECA coordina <strong>muestras y prototipos de cajas de cartón</strong> con talleres especializados para que valides dimensiones, resistencia, impresión y acabado. El proceso incluye diseño CAD, coordinación de 1 a 5 piezas y prueba de carga si se requiere.</p>
-          <p>El costo y el tiempo de entrega de la muestra se confirman al cotizar. Es una opción útil para cajas nuevas, cambios de diseño y productos con empaques críticos para la experiencia del cliente.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio · Validación antes de producción"
+    titleHtml={true}
+    title="<span>Muestras y Prototipos de Cajas de Cartón</span>"
+    desc="Solicita de 1 a 5 piezas de muestra antes de confirmar tu presupuesto. Incluye diseño CAD, coordinación del prototipo y prueba de carga opcional. El costo se puede descontar del pedido final según cotización."
+    desc2="Antes de producir tu corrida completa, CADECA coordina <strong>muestras y prototipos de cajas de cartón</strong> con talleres especializados para que valides dimensiones, resistencia, impresión y acabado. El proceso incluye diseño CAD, coordinación de 1 a 5 piezas y prueba de carga si se requiere.||El costo y el tiempo de entrega de la muestra se confirman al cotizar. Es una opción útil para cajas nuevas, cambios de diseño y productos con empaques críticos para la experiencia del cliente."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

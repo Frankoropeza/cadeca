@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas Personalizadas para Pequeña Empresa | CADECA";
 const description = "Cajas de cartón personalizadas para pequeñas empresas en CDMX. Desde 100 piezas, diseño incluido sin costo, 1-2 colores, tiempo de entrega según pedido.";
@@ -73,19 +74,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-pl05-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-05 · Personalizadas con Logo</span>
- <h1 id="sku-pl05-title" class="cat-page-hero__title">Cajas Personalizadas <span>Pequeña Empresa</span><br>— Desde 100 Piezas CDMX</h1>
- <p class="cat-page-hero__desc">Cajas personalizadas para PyMEs y emprendedores desde 100 piezas. Diseño incluido sin costo, asesoría de selección gratis, 1-2 colores flexo. La entrada más accesible a la personalización profesional.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-05</strong></div>
- <div class="cat-page-hero__strip-item">Diseño: <strong>Incluido gratis</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-pl05-title"
+   eyebrow="SKU CAD-PL-05 · Personalizadas con Logo"
+   titleHtml={true}
+   title="Cajas Personalizadas <span>Pequeña Empresa</span> — Desde 100 Piezas CDMX"
+   desc="Cajas personalizadas para PyMEs y emprendedores desde 100 piezas. Diseño incluido sin costo, asesoría de selección gratis, 1-2 colores flexo. La entrada más accesible a la personalización profesional."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-pl05-title">

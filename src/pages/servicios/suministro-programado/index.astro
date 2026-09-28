@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Suministro Programado de Cajas de Cartón CDMX | CADECA";
@@ -46,49 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio · Entregas Periódicas CDMX</p>
-          <h1 class="hero__title"><span>Suministro Programado de Cajas de Cartón</span></h1>
-          <p class="hero__intro">Te ayudamos a planear la continuidad de tu operación. Definimos un calendario de entregas semanal, quincenal o mensual con precio acordado y prioridad de producción para tu empresa.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, quiero información sobre Suministro Programado de Cajas")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">Semanal</span>
-            <span class="hero__metric-label">Entrega más frecuente</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">Fijo</span>
-            <span class="hero__metric-label">Precio acordado por contrato</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">0</span>
-            <span class="hero__metric-label">Riesgo desabasto</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">2 hrs</span>
-            <span class="hero__metric-label">Cotización</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>El <strong>suministro programado de cajas de cartón</strong> de CADECA te ayuda a planear tus entregas para reducir el riesgo de faltantes. Definimos contigo un calendario de entregas periódicas — semanal, quincenal o mensual — con precio acordado y prioridad de producción.</p>
-          <p>Ideal para empresas con consumo regular: manufactura, e-commerce, distribución y logística en CDMX y Estado de México. <strong>Sin riesgo de desabasto, sin inventario excesivo.</strong> Reducimos tu costo total de empaque hasta un 20% vs. compras puntuales.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio · Entregas Periódicas CDMX"
+    titleHtml={true}
+    title="<span>Suministro Programado de Cajas de Cartón</span>"
+    desc="Te ayudamos a planear la continuidad de tu operación. Definimos un calendario de entregas semanal, quincenal o mensual con precio acordado y prioridad de producción para tu empresa."
+    desc2="El <strong>suministro programado de cajas de cartón</strong> de CADECA te ayuda a planear tus entregas para reducir el riesgo de faltantes. Definimos contigo un calendario de entregas periódicas — semanal, quincenal o mensual — con precio acordado y prioridad de producción.||Ideal para empresas con consumo regular: manufactura, e-commerce, distribución y logística en CDMX y Estado de México. <strong>Sin riesgo de desabasto, sin inventario excesivo.</strong> Reducimos tu costo total de empaque hasta un 20% vs. compras puntuales."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

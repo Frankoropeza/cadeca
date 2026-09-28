@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Cotización de Cajas de Cartón en CDMX — CADECA";
@@ -46,49 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio · Respuesta en horario hábil</p>
-          <h1 class="hero__title"><span>Cotización de Cajas de Cartón</span></h1>
-          <p class="hero__intro">Recibe una propuesta con precio, especificaciones técnicas y tiempo de entrega según tu pedido. Atendemos solicitudes de lunes a sábado de 8:00 a 20:00.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, necesito una cotización express de cajas de cartón")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">2 hrs</span>
-            <span class="hero__metric-label">Respuesta en horario hábil</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">30 min</span>
-            <span class="hero__metric-label">Por WhatsApp urgente</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">Lun-Sáb</span>
-            <span class="hero__metric-label">8am-8pm</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">0</span>
-            <span class="hero__metric-label">Compromiso</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>CADECA recibe solicitudes de cotización para cualquier tipo de caja de cartón corrugado. Envíanos tu información por WhatsApp, formulario o teléfono y te respondemos en horario hábil con precio, tiempo de entrega y especificaciones técnicas.</p>
-          <p>Trabajamos con talleres especializados y coordinamos la producción según el pedido. Te indicamos las opciones disponibles, el tiempo de entrega y las condiciones de entrega antes de confirmar.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio · Respuesta en horario hábil"
+    titleHtml={true}
+    title="<span>Cotización de Cajas de Cartón</span>"
+    desc="Recibe una propuesta con precio, especificaciones técnicas y tiempo de entrega según tu pedido. Atendemos solicitudes de lunes a sábado de 8:00 a 20:00."
+    desc2="CADECA recibe solicitudes de cotización para cualquier tipo de caja de cartón corrugado. Envíanos tu información por WhatsApp, formulario o teléfono y te respondemos en horario hábil con precio, tiempo de entrega y especificaciones técnicas.||Trabajamos con talleres especializados y coordinamos la producción según el pedido. Te indicamos las opciones disponibles, el tiempo de entrega y las condiciones de entrega antes de confirmar."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

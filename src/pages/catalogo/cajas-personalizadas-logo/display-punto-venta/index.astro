@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Display para Punto de Venta | CADECA";
 const description = "Caja display PDQ personalizada para punto de venta en CDMX. Impresión 4 colores, estructura autoportante, resistente al manejo en tienda. MOQ 200 pzas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadpl08-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-08 · Cajas Personalizadas con Logo</span>
- <h1 id="sku-cadpl08-title" class="cat-page-hero__title">Caja <span>Display PDQ</span> para Punto de Venta CDMX</h1>
- <p class="cat-page-hero__desc">Caja tipo display PDQ para punto de venta: exhibe y vende al mismo tiempo. Impresión full color, estructura autoportante, compatible con mostradores y góndolas. Desde 200 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-08</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>200 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadpl08-title"
+   eyebrow="SKU CAD-PL-08 · Cajas Personalizadas con Logo"
+   titleHtml={true}
+   title="Caja <span>Display PDQ</span> para Punto de Venta CDMX"
+   desc="Caja tipo display PDQ para punto de venta: exhibe y vende al mismo tiempo. Impresión full color, estructura autoportante, compatible con mostradores y góndolas. Desde 200 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadpl08-title">

@@ -7,6 +7,7 @@ import IndustryCard  from "@/components/IndustryCard.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero from "@/components/PageHero.astro";
 
 // ── SEO ──────────────────────────────────────────────
 const title  = "Cajas de Cartón CDMX y Estado de México | CADECA";
@@ -218,31 +219,13 @@ const accesos = [
  <!-- ══════════════════════════════════════
  HERO
  ══════════════════════════════════════ -->
- <section class="hero" aria-labelledby="hero-title">
- <div class="container">
- <div class="hero__inner">
-
- <div class="hero__left">
- <p class="hero__badge">Proveedor de cajas de cartón para empresas</p>
- <h1 id="hero-title" class="hero__title">
- Cajas de Cartón en<br><span>CDMX y Estado de México</span>
- </h1>
- <p class="hero__intro">
- Corrugado estándar, a la medida y personalizadas con logo. Venta al mayoreo y menudeo con entrega programada en CDMX y Estado de México. Asesoría para elegir tu caja y cotización sin compromiso.
- </p>
- <div class="hero__ctas">
- <a href="/cotizar/" class="btn btn--primary">Solicitar Cotización</a>
- <a href="/catalogo/" class="btn btn--outline">Ver Catálogo</a>
- </div></div>
-
- <div class="hero__right">
- <p><strong>CADECA</strong> es proveedor y distribuidor de <strong>cajas de cartón corrugado</strong> para empresas en la Ciudad de México y Estado de México. Surtimos cajas de simple, doble y triple pared, cajas <strong>a la medida con diseño CAD incluido</strong>, packaging personalizado con impresión full color y líneas especializadas para e-commerce en Mercado Libre, Amazon MX y Shopify.</p>
- <p>Trabajamos con talleres y fabricantes aliados para coordinar inventario, producción y entrega según el pedido. Atendemos manufactura, alimentos, retail, farmacéutica y proyectos de nearshoring con especificaciones técnicas claras y cotización sin compromiso.</p>
- </div>
-
- </div>
- </div>
- </section>
+ <PageHero
+   eyebrow="Proveedor de cajas de cartón para empresas"
+   titleHtml={true}
+   title="Cajas de Cartón en <span>CDMX y Estado de México</span>"
+   desc="Corrugado estándar, a la medida y personalizadas con logo. Venta al mayoreo y menudeo con entrega programada en CDMX y Estado de México. Asesoría para elegir tu caja y cotización sin compromiso."
+   desc2="<strong>CADECA</strong> es proveedor y distribuidor de <strong>cajas de cartón corrugado</strong> para empresas en la Ciudad de México y Estado de México. Surtimos cajas de simple, doble y triple pared, cajas <strong>a la medida con diseño CAD incluido</strong>, packaging personalizado con impresión full color y líneas especializadas para e-commerce en Mercado Libre, Amazon MX y Shopify.||Trabajamos con talleres y fabricantes aliados para coordinar inventario, producción y entrega según el pedido. Atendemos manufactura, alimentos, retail, farmacéutica y proyectos de nearshoring con especificaciones técnicas claras y cotización sin compromiso."
+ />
 
  <!-- Accesos principales (franja bajo el hero) -->
  <nav class="quick-nav" aria-label="Secciones principales">

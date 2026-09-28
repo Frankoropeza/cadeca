@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas de Mudanza Reforzadas en 4 Tamaños | CADECA";
 const description = "Caja de mudanza residencial reforzada en CDMX. 4 tamaños: chica, mediana, grande y extra. Doble corrugado ECT-44, manijas reforzadas. MOQ 20 pzas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadah08-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-08 · Cajas de Archivo y Almacenaje</span>
- <h1 id="sku-cadah08-title" class="cat-page-hero__title">Caja de <span>Mudanza Residencial</span> Reforzada — 4 Tamaños CDMX</h1>
- <p class="cat-page-hero__desc">Caja de mudanza residencial en doble corrugado ECT-44 con manijas reforzadas. 4 tamaños en stock (chica, mediana, grande, extra grande). Desde 20 piezas en CDMX.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-08</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>20 piezas (mixto)</strong></div>
- <div class="cat-page-hero__strip-item">Suministro: <strong>Coordinado</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadah08-title"
+   eyebrow="SKU CAD-AH-08 · Cajas de Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja de <span>Mudanza Residencial</span> Reforzada — 4 Tamaños CDMX"
+   desc="Caja de mudanza residencial en doble corrugado ECT-44 con manijas reforzadas. 4 tamaños en stock (chica, mediana, grande, extra grande). Desde 20 piezas en CDMX."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadah08-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas para Canastas Navideñas y Temporada | CADECA";
 const description = "Caja para temporada navideña y canastas regalo en CDMX. Diseño festivo o neutro, kraft o blanco, resistente al apilado, ideal para gift sets.";
@@ -65,23 +66,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-tx08-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-TX-08 · Textil, Moda y Retail</span>
- <h1 id="sku-tx08-title" class="cat-page-hero__title">
- Caja para <span>Temporada y Canastas Navideñas</span>
- </h1>
- <p class="cat-page-hero__desc">
- Cajas para canastas navideñas corporativas y gift sets de temporada. Diseño festivo o neutro en kraft natural o corrugado blanco. Resistente al apilado y transporte. Entrega programada según volumen y zona, con precios especiales por volumen.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-08</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-tx08-title"
+   eyebrow="SKU CAD-TX-08 · Textil, Moda y Retail"
+   titleHtml={true}
+   title="Caja para <span>Temporada y Canastas Navideñas</span>"
+   desc="Cajas para canastas navideñas corporativas y gift sets de temporada. Diseño festivo o neutro en kraft natural o corrugado blanco. Resistente al apilado y transporte. Entrega programada según volumen y zona, con precios especiales por volumen."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-tx08-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón Corrugado Simple Pared | CADECA";
 const description = "Ficha técnica caja corrugado simple pared simple en CDMX. ECT-23 y ECT-32, flauta B, C y E. Medidas chica a extra grande.";
@@ -78,23 +79,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cs-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CS-01 · Corrugado Estándar</span>
- <h1 id="sku-cs-title" class="cat-page-hero__title">
- Caja Corrugado Simple<br><span>Pared Simple — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Una sola capa de flauta entre dos liners. Solución más económica del catálogo. Disponibilidad según pedido en CDMX, sin pedido mínimo y entrega programada según volumen y zona.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-01</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cs-title"
+   eyebrow="SKU CAD-CS-01 · Corrugado Estándar"
+   titleHtml={true}
+   title="Caja Corrugado Simple <span>Pared Simple — CDMX</span>"
+   desc="Una sola capa de flauta entre dos liners. Solución más económica del catálogo. Disponibilidad según pedido en CDMX, sin pedido mínimo y entrega programada según volumen y zona."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

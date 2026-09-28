@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Impresión de Cajas Personalizadas con Logo CDMX | CADECA";
@@ -46,49 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio · Impresión Flexográfica CDMX</p>
-          <h1 class="hero__title"><span>Impresión de Cajas Personalizadas con Logo</span></h1>
-          <p class="hero__intro">Tu logo en cajas corrugadas desde 100 piezas. Impresión flexográfica 1-4 colores, tintas base agua certificadas, acabados mate y brillante. Diseño digital de prueba incluido.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, quiero información sobre Impresión de Cajas Personalizadas")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">100+</span>
-            <span class="hero__metric-label">Piezas mínimo</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">4</span>
-            <span class="hero__metric-label">Colores máx.</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">Agua</span>
-            <span class="hero__metric-label">Tintas certif.</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">2 hrs</span>
-            <span class="hero__metric-label">Cotización</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>Imprimimos <strong>cajas de cartón corrugado personalizadas con tu logo</strong> en CDMX usando impresión flexográfica de alta resolución en 1 hasta 4 colores. Tintas base agua certificadas, compatibles con alimentos y materiales reciclables. Diseño digital de prueba sin costo antes de producción.</p>
-          <p>Desde <strong>100 piezas</strong> puedes solicitar cajas con tu marca, colores corporativos y mensaje promocional. Acabados mate, brillante y barniz UV disponibles. Surtimos packaging personalizado para empresas de CDMX, e-commerce y retail.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio · Impresión Flexográfica CDMX"
+    titleHtml={true}
+    title="<span>Impresión de Cajas Personalizadas con Logo</span>"
+    desc="Tu logo en cajas corrugadas desde 100 piezas. Impresión flexográfica 1-4 colores, tintas base agua certificadas, acabados mate y brillante. Diseño digital de prueba incluido."
+    desc2="Imprimimos <strong>cajas de cartón corrugado personalizadas con tu logo</strong> en CDMX usando impresión flexográfica de alta resolución en 1 hasta 4 colores. Tintas base agua certificadas, compatibles con alimentos y materiales reciclables. Diseño digital de prueba sin costo antes de producción.||Desde <strong>100 piezas</strong> puedes solicitar cajas con tu marca, colores corporativos y mensaje promocional. Acabados mate, brillante y barniz UV disponibles. Surtimos packaging personalizado para empresas de CDMX, e-commerce y retail."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

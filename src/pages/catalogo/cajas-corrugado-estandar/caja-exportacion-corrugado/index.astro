@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón Corrugado para Exportación | CADECA";
 const description = "Caja corrugado para exportación IATA/ISTA en CDMX. Doble y triple pared, normas internacionales, apta para contenedor y carga aérea. Desde 50 pzas. CADECA.";
@@ -68,21 +69,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cs10-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CS-10 · Corrugado Estándar</span>
- <h1 id="sku-cs10-title" class="cat-page-hero__title">Caja Corrugado para <span>Exportación IATA/ISTA</span></h1>
- <p class="cat-page-hero__desc">
- Doble y triple pared con cumplimiento de normas internacionales IATA, ISTA y ASTM D4169. Aptas para contenedor marítimo y carga aérea. Liner kraft virgen 175-200 g/m². Desde 50 piezas con entrega programada según volumen y zona.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-10</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-71</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cs10-title"
+   eyebrow="SKU CAD-CS-10 · Corrugado Estándar"
+   titleHtml={true}
+   title="Caja Corrugado para <span>Exportación IATA/ISTA</span>"
+   desc="Doble y triple pared con cumplimiento de normas internacionales IATA, ISTA y ASTM D4169. Aptas para contenedor marítimo y carga aérea. Liner kraft virgen 175-200 g/m². Desde 50 piezas con entrega programada según volumen y zona."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cs10-title">

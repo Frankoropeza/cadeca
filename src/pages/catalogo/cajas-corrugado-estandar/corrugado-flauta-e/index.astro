@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón Micro Flauta E | CADECA";
 const description = "Ficha técnica caja corrugado micro flauta E en CDMX. 1.5mm, ECT-23. Para cosméticos, joyería, suplementos y productos de presentación premium.";
@@ -78,19 +79,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ce-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CE-01 · Corrugado Estándar</span>
- <h1 id="sku-ce-title" class="cat-page-hero__title">Corrugado Micro<br><span>Flauta E — Presentación Premium</span></h1>
- <p class="cat-page-hero__desc">Microflauta E de 1.5mm. La mejor superficie de impresión en cartón corrugado. Para cosméticos, joyería, suplementos y packaging de presentación premium. Desde 100 piezas, entrega 3-5 días.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CE-01</strong></div>
- <div class="cat-page-hero__strip-item">Flauta: <strong>E (1.5mm)</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ce-title"
+   eyebrow="SKU CAD-CE-01 · Corrugado Estándar"
+   titleHtml={true}
+   title="Corrugado Micro <span>Flauta E — Presentación Premium</span>"
+   desc="Microflauta E de 1.5mm. La mejor superficie de impresión en cartón corrugado. Para cosméticos, joyería, suplementos y packaging de presentación premium. Desde 100 piezas, entrega 3-5 días."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-ce-title">

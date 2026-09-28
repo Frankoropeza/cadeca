@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón para Exportación ECT-51/61 | CADECA";
 const description = "Cajas a la medida para exportación en CDMX. Certificación ISTA 2A/3A, normas IATA para aéreo, ECT-51 mínimo.";
@@ -73,19 +74,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am02-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-02 · Cajas a la Medida</span>
- <h1 id="sku-am02-title" class="cat-page-hero__title">Caja para <span>Exportación IATA / ISTA</span><br>— ECT-51/61 CDMX</h1>
- <p class="cat-page-hero__desc">Cajas a la medida para exportación con certificación ISTA 2A/3A y normas IATA. ECT-51 mínimo para aéreo, ECT-61 triple para marítimo. Asesoría gratis de normas por país destino.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-02</strong></div>
- <div class="cat-page-hero__strip-item">Certificación: <strong>ISTA 2A/3A</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am02-title"
+   eyebrow="SKU CAD-AM-02 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja para <span>Exportación IATA / ISTA</span> — ECT-51/61 CDMX"
+   desc="Cajas a la medida para exportación con certificación ISTA 2A/3A y normas IATA. ECT-51 mínimo para aéreo, ECT-61 triple para marítimo. Asesoría gratis de normas por país destino."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am02-title">

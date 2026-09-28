@@ -2,6 +2,7 @@
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
+import PageHero from "@/components/PageHero.astro";
 import EmpresaCard   from "@/components/EmpresaCard.astro";
 import { categorias, getGrupo, getCategoriasByGrupo, getCategoria } from "@/data/directorio";
 
@@ -131,38 +132,7 @@ const schema = {
     </div>
   </div>
 
-  <!-- Hero de categoría — 2 columnas -->
-  <div class="dir-cat-hero" style={`--accent:${grupoData.color}`}>
-    <div class="container">
-      <a href={`/directorio/${grupoId}/`} class="dir-cat-hero__back">
-        {grupoData.nombre}
-      </a>
-      <div class="dir-cat-hero__grid">
-        <!-- Columna 1: título + badge + CTA -->
-        <div class="dir-cat-hero__col1">
-          <p class="dir-cat-hero__grupo">{grupoData.nombre}</p>
-          <h1 class="dir-cat-hero__title">{catData.titulo}</h1>
-          <p class="dir-cat-hero__desc">{catData.desc}</p>
-          <div class="dir-cat-hero__actions">
-            <div class="dir-cat-hero__badge">
-              <span class="dir-cat-hero__badge-num">{catData.empresas.length}</span>
-              <span class="dir-cat-hero__badge-label">empresas</span>
-            </div>
-            <a href="/cotizar/" class="btn btn--primary dir-cat-hero__cta">Cotizar cajas</a>
-          </div>
-        </div>
-        <!-- Columna 2: párrafos marketing SEO -->
-        <div class="dir-cat-hero__col2">
-          <div class="dir-cat-hero__seo-card">
-            <p set:html={seoP1} />
-          </div>
-          <div class="dir-cat-hero__seo-card">
-            <p set:html={seoP2} />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero eyebrow={`Directorio · ${grupoData.nombre}`} title={catData.titulo} desc={catData.desc} desc2={`${seoP1}||${seoP2}`} />
 
   <!-- Separador -->
   <div class="dir-sep" aria-hidden="true" style={`background: linear-gradient(90deg, ${grupoData.color} 0%, ${grupoData.color}99 100%)`}></div>
@@ -246,115 +216,12 @@ const schema = {
 
 <style>
 /* Hero */
-.dir-cat-hero {
-  background: var(--color-secondary);
-  padding: var(--spacing-2xl) 0 var(--spacing-3xl);
-}
-.dir-cat-hero__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: rgba(255,255,255,0.55);
-  text-decoration: none;
-  margin-bottom: var(--spacing-lg);
-  transition: color var(--transition-fast);
-}
-.dir-cat-hero__back:hover { color: #fff; }
 
 /* Grid 2 columnas */
-.dir-cat-hero__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-2xl);
-}
-@media (min-width: 1024px) {
-  .dir-cat-hero__grid {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
-}
 
 /* Col 1 */
-.dir-cat-hero__col1 {}
-.dir-cat-hero__grupo {
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent, var(--color-primary));
-  margin-bottom: 0.4rem;
-}
-.dir-cat-hero__title {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.2;
-}
-.dir-cat-hero__desc {
-  font-size: var(--font-size-base);
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
-}
-.dir-cat-hero__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
-}
-.dir-cat-hero__badge {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 3px solid var(--accent, var(--color-primary));
-}
-.dir-cat-hero__badge-num {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #fff;
-  line-height: 1;
-}
-.dir-cat-hero__badge-label {
-  font-size: var(--font-size-xs);
-  color: rgba(255,255,255,0.6);
-}
-.dir-cat-hero__cta {
-  font-size: var(--font-size-sm) !important;
-  padding: 0.65rem 1.4rem !important;
-}
 
 /* Col 2: párrafos SEO */
-.dir-cat-hero__col2 {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-.dir-cat-hero__seo-card {
-  padding: 0;
-}
-.dir-cat-hero__seo-card p {
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,0.75);
-  line-height: 1.75;
-  margin: 0;
-}
-.dir-cat-hero__seo-card + .dir-cat-hero__seo-card {
-  padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin-top: var(--spacing-md);
-}
-.dir-cat-hero__seo-card p strong {
-  color: #fff;
-  font-weight: 700;
-}
 
 /* Separador */
 .dir-sep { height: 4px; }

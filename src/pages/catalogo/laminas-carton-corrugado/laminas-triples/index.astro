@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Láminas de Cartón Triple Corrugado | CADECA";
 const description = "Láminas triple corrugado BCB CDMX. ECT-61+, 120×200cm, sustituto madera, sin NIMF 15. Desde 25 pzas, tiempo de entrega según pedido. CADECA proveedor.";
@@ -74,19 +75,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-lc03-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-LC-03 · Láminas de Cartón Corrugado</span>
- <h1 id="sku-lc03-title" class="cat-page-hero__title">Láminas Triple Corrugado <span>BCB ECT-61+</span><br>— Sustituto Madera CDMX</h1>
- <p class="cat-page-hero__desc">Triple corrugado BCB (12 mm) con ECT-61+ y BCT >500 kg/m². Sin NIMF 15 para exportación. 60-70% más ligero que madera equivalente. 100% reciclable. Desde 25 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-03</strong></div>
- <div class="cat-page-hero__strip-item">Flauta: <strong>BCB — 12 mm</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-lc03-title"
+   eyebrow="SKU CAD-LC-03 · Láminas de Cartón Corrugado"
+   titleHtml={true}
+   title="Láminas Triple Corrugado <span>BCB ECT-61+</span> — Sustituto Madera CDMX"
+   desc="Triple corrugado BCB (12 mm) con ECT-61+ y BCT >500 kg/m². Sin NIMF 15 para exportación. 60-70% más ligero que madera equivalente. 100% reciclable. Desde 25 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-lc03-title">

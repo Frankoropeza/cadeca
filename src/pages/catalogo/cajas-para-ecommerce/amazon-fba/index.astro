@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas para Amazon FBA y FBM en México | CADECA";
 const description = "Ficha técnica cajas para Amazon FBA y FBM en México. ECT-44 certificado, sin grapas expuestas, medidas aprobadas Amazon Seller Central MX. Desde 50 pzas.";
@@ -76,19 +77,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ec02-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-EC-02 · E-commerce</span>
- <h1 id="sku-ec02-title" class="cat-page-hero__title">Cajas <span>Amazon FBA / FBM</span><br>— México CDMX</h1>
- <p class="cat-page-hero__desc">ECT-44 certificado, sin grapas expuestas, sin ventanas de acetato. Medidas dentro del límite de 63.5 cm por lado. Cumple todas las políticas de empaque de Amazon Seller Central México.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-02</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 certificado</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas/talla</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ec02-title"
+   eyebrow="SKU CAD-EC-02 · E-commerce"
+   titleHtml={true}
+   title="Cajas <span>Amazon FBA / FBM</span> — México CDMX"
+   desc="ECT-44 certificado, sin grapas expuestas, sin ventanas de acetato. Medidas dentro del límite de 63.5 cm por lado. Cumple todas las políticas de empaque de Amazon Seller Central México."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-ec02-title">

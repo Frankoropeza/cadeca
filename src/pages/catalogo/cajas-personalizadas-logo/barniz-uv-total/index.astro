@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Personalizada con Barniz UV Total | CADECA";
 const description = "Caja personalizada con barniz UV total en CDMX. Acabado gloss de alto brillo, impresión full color. Ideal para cosmética y premium. Desde 300 pzas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadpl06-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-06 · Cajas Personalizadas con Logo</span>
- <h1 id="sku-cadpl06-title" class="cat-page-hero__title">Caja Personalizada <span>Barniz UV</span> Total — Acabado Gloss Premium</h1>
- <p class="cat-page-hero__desc">Caja personalizada con barniz UV total para acabado de alto brillo y protección del arte impreso. Ideal para cosmética, perfumería y marcas premium. Desde 300 piezas en CDMX.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-06</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>300 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadpl06-title"
+   eyebrow="SKU CAD-PL-06 · Cajas Personalizadas con Logo"
+   titleHtml={true}
+   title="Caja Personalizada <span>Barniz UV</span> Total — Acabado Gloss Premium"
+   desc="Caja personalizada con barniz UV total para acabado de alto brillo y protección del arte impreso. Ideal para cosmética, perfumería y marcas premium. Desde 300 piezas en CDMX."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadpl06-title">

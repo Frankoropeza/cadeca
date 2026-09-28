@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Láminas de Cartón Reciclado | CADECA";
 const description = "Láminas cartón corrugado reciclado en CDMX. Mismas specs técnicas que virgen. ECT-32/44, desde 50 piezas, tiempo de entrega según pedido.";
@@ -89,19 +90,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-lc05-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-LC-05 · Láminas Cartón Corrugado</span>
- <h1 id="sku-lc05-title" class="cat-page-hero__title">Láminas Cartón <span>Reciclado</span><br>— Sustentable CDMX</h1>
- <p class="cat-page-hero__desc">Fibra reciclada. Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. Mismas especificaciones técnicas que el kraft virgen. ECT-32 y ECT-44. Desde 50 piezas, tiempo de entrega según pedido.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-05</strong></div>
- <div class="cat-page-hero__strip-item">Cert.: <strong>FSC Recycled</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-lc05-title"
+   eyebrow="SKU CAD-LC-05 · Láminas Cartón Corrugado"
+   titleHtml={true}
+   title="Láminas Cartón <span>Reciclado</span> — Sustentable CDMX"
+   desc="Fibra reciclada. Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. Mismas especificaciones técnicas que el kraft virgen. ECT-32 y ECT-44. Desde 50 piezas, tiempo de entrega según pedido."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-lc05-title">

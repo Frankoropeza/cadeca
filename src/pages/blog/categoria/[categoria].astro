@@ -1,6 +1,7 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import BlogCard  from "@/components/BlogCard.astro";
+import PageHero from "@/components/PageHero.astro";
 import "@/styles/blog.css";
 import { getCollection } from "astro:content";
 
@@ -26,6 +27,36 @@ const allPosts = (await getCollection("blog"))
 
 const categories = ["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos"] as const;
 
+
+const heroCategoria: Record<string, { title: string; desc: string; desc2: string }> = {
+ "Guías": {
+  title: "Guías de <span>cajas de cartón</span> y empaque",
+  desc: "Guías prácticas para elegir, medir y comprar cajas de cartón corrugado: tipos de flauta, resistencia ECT, medidas y embalaje para tu negocio.",
+  desc2: "Cada guía explica un tema de empaque paso a paso: cómo <strong>calcular las medidas de una caja</strong>, qué diferencia hay entre pared simple, doble y triple, y cómo leer una especificación técnica antes de cotizar.||Están pensadas para compras, logística y emprendedores de CDMX y Estado de México que necesitan decidir con datos y evitar cajas sobredimensionadas o poco resistentes.",
+ },
+ "E-commerce": {
+  title: "Empaque para <span>e-commerce</span> y envíos",
+  desc: "Artículos sobre cajas de cartón para envíos: peso volumétrico, requisitos de Amazon y Mercado Libre, protección del producto y experiencia de unboxing.",
+  desc2: "Aquí reunimos lo que una tienda en línea necesita saber para elegir <strong>cajas para envíos</strong>: medidas que reducen el costo de paquetería, resistencia adecuada y reglas de los marketplaces.||También abordamos devoluciones, empaque de temporada alta y cómo escalar la operación de empaque cuando crecen los pedidos.",
+ },
+ "Industria": {
+  title: "Cajas de cartón para la <span>industria</span>",
+  desc: "Artículos técnicos sobre cartón corrugado para manufactura, alimentos, farmacéutica, automotriz y exportación: normas, especificaciones y buenas prácticas.",
+  desc2: "Explicamos cómo se especifica el <strong>cartón corrugado industrial</strong>: resistencia ECT y BCT, tipos de flauta, embalaje para exportación y requisitos por sector.||El objetivo es que el área de compras y la de calidad hablen el mismo idioma con su proveedor y documenten el empaque correcto para cada producto.",
+ },
+ "Sostenibilidad": {
+  title: "Empaque de cartón <span>sustentable</span>",
+  desc: "Artículos sobre cartón reciclado, economía circular, alternativas al plástico y huella de carbono del empaque para empresas en México.",
+  desc2: "Revisamos con datos cuándo conviene el <strong>cartón reciclado</strong> frente al virgen, qué alternativas existen al plástico de burbuja y cómo reportar el impacto del empaque.||Son lecturas útiles para marcas que quieren reducir material sin sacrificar la protección del producto durante el transporte.",
+ },
+ "Consejos": {
+  title: "Consejos para comprar <span>cajas de cartón</span>",
+  desc: "Consejos para comprar, almacenar y negociar cajas de cartón: control de calidad, inventario de empaques y errores comunes al elegir proveedor.",
+  desc2: "Reunimos recomendaciones prácticas para <strong>comprar cajas de cartón</strong> con menos riesgo: qué revisar al recibir un pedido, cómo almacenar el cartón y cómo planear el reabasto.||Cada consejo parte de situaciones reales de compra y logística en CDMX y Estado de México, sin tecnicismos innecesarios.",
+ },
+};
+const hero = heroCategoria[categoryName!] ?? { title: `<span>${categoryName}</span>`, desc: `Artículos sobre ${categoryName?.toLowerCase()} en el blog de CADECA.`, desc2: "" };
+
 const SITE = "https://cajas-de-carton.com";
 
 const schemaCollection = {
@@ -46,13 +77,7 @@ const schemaCollection = {
 >
  <main id="contenido-principal">
 
- <!-- Hero -->
- <section class="category-hero">
- <div class="container">
- <p class="category-hero__label">Categoría</p>
- <h1 class="category-hero__title">{categoryName}</h1>
- </div>
- </section>
+ <PageHero eyebrow={`Blog · ${categoryName}`} titleHtml={true} title={hero.title} desc={hero.desc} desc2={hero.desc2} />
 
  <!-- Category Filter -->
  <div class="container" style="padding-top: var(--spacing-xl);">

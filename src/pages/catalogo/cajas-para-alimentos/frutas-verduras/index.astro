@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón para Frutas y Verduras | CADECA";
 const description = "Cajas cartón frutas y verduras CDMX. Ventilaciones laterales, ECT-44 cámara fría, cartón FSC por confirmar al cotizar. Desde 50 pzas, entrega programada.";
@@ -72,19 +73,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-al04-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AL-04 · Cajas para Alimentos</span>
- <h1 id="sku-al04-title" class="cat-page-hero__title">Cajas Frutas y Verduras <span>Ventiladas</span><br>— ECT-44 Cámara Fría CDMX</h1>
- <p class="cat-page-hero__desc">Ventilaciones laterales 15-20% para flujo de aire en cámara fría. Doble corrugado BC ECT-44 con WR básico incluido. Apta hasta -4 °C. Desde 50 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-04</strong></div>
- <div class="cat-page-hero__strip-item">Pared: <strong>Doble BC ECT-44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-al04-title"
+   eyebrow="SKU CAD-AL-04 · Cajas para Alimentos"
+   titleHtml={true}
+   title="Cajas Frutas y Verduras <span>Ventiladas</span> — ECT-44 Cámara Fría CDMX"
+   desc="Ventilaciones laterales 15-20% para flujo de aire en cámara fría. Doble corrugado BC ECT-44 con WR básico incluido. Apta hasta -4 °C. Desde 50 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-al04-title">

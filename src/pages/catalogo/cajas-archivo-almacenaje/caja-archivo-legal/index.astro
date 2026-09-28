@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Archivo Legal y para Notaría | CADECA";
 const description = "Caja de archivo legal para notarías y despachos jurídicos en CDMX. Tamaño oficio + extra, tapa y base independientes, área de etiquetado. Proveedor CADECA.";
@@ -65,23 +66,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ah06-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-06 · Archivo y Almacenaje</span>
- <h1 id="sku-ah06-title" class="cat-page-hero__title">
- Caja de <span>Archivo Legal</span> y Notaría
- </h1>
- <p class="cat-page-hero__desc">
- Caja de archivo tamaño oficio + extra para notarías, juzgados y despachos jurídicos. Doble pared ECT-44 resistente al peso de expedientes. Tapa y base independientes con área de etiquetado para clasificación. Entrega en CDMX en 24–48 horas.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-06</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ah06-title"
+   eyebrow="SKU CAD-AH-06 · Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja de <span>Archivo Legal</span> y Notaría"
+   desc="Caja de archivo tamaño oficio + extra para notarías, juzgados y despachos jurídicos. Doble pared ECT-44 resistente al peso de expedientes. Tapa y base independientes con área de etiquetado para clasificación. Entrega en CDMX en 24–48 horas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-ah06-title">

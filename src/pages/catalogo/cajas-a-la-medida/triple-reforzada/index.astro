@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas Triple Corrugado BCB Industrial ECT-61 | CADECA";
 const description = "Cajas triple corrugado BCB a la medida en CDMX. ECT-61+, hasta 100+ kg, para maquinaria industrial y equipos pesados.";
@@ -73,19 +74,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am04-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-04 · Cajas a la Medida</span>
- <h1 id="sku-am04-title" class="cat-page-hero__title">Caja <span>Triple Corrugado BCB</span><br>— ECT-61 Industrial CDMX</h1>
- <p class="cat-page-hero__desc">Cajas triple corrugado BCB con ECT-61 para maquinaria y equipos pesados. Grosor 12mm, hasta 100+ kg, esquineros incluidos. Para maquinaria, electrodomésticos, motores y equipo médico.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-04</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-61</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am04-title"
+   eyebrow="SKU CAD-AM-04 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja <span>Triple Corrugado BCB</span> — ECT-61 Industrial CDMX"
+   desc="Cajas triple corrugado BCB con ECT-61 para maquinaria y equipos pesados. Grosor 12mm, hasta 100+ kg, esquineros incluidos. Para maquinaria, electrodomésticos, motores y equipo médico."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am04-title">

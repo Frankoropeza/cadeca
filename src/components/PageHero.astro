@@ -1,78 +1,40 @@
 ---
-// PageHero.astro — Hero homologado, misma estructura que hero del index
-// Izquierda: eyebrow → H1 → desc → CTAs → chips/stats (métricas horizontales)
-// Derecha: desc2 en caja estilizada (igual que hero__right del index)
-
-export interface Chip  { label: string; }
-export interface Cta  { href: string; label: string; variant: "primary" | "outline" | "white"; }
-export interface StatItem { value: string; label: string; }
+// PageHero.astro — Hero único y homologado de todo el sitio (2026-09-28).
+// Estructura fija: eyebrow → H1 → descripción (columna izquierda) + dos párrafos
+// SEO en texto plano (columna derecha). Fondo de color sólido, sin botones,
+// sin métricas y sin caja/marco en la columna derecha.
+//
+//   title   admite HTML si titleHtml = true (usar <span> para el acento de color).
+//   desc2   párrafos de la columna derecha separados por "||" (admite <strong>).
 
 export interface Props {
- eyebrow?:  string;
- title:  string;
- titleHtml?: boolean;
- desc:  string;
- desc2?:  string;
- chips?:  Chip[];
- stats?:  StatItem[];
- ctas?:  Cta[];
- size?:  "normal" | "lg";
+  eyebrow?: string;
+  title: string;
+  titleHtml?: boolean;
+  desc: string;
+  desc2?: string;
+  id?: string;
 }
 
-const {
- eyebrow,
- title,
- titleHtml = false,
- desc,
- desc2,
- chips,
- stats,
- ctas,
- size = "normal",
-} = Astro.props;
-
-// Métricas: primero stats, si no hay stats usa chips
-const metrics = (stats && stats.length > 0)
- ? stats.map(s => ({ value: s.value, label: s.label }))
- : (chips && chips.length > 0)
- ? chips.map(c => ({ value: c.label, label: "" }))
- : [];
+const { eyebrow, title, titleHtml = false, desc, desc2, id = "hero-title" } = Astro.props;
+const paras = (desc2 ?? "").split("||").map((p) => p.trim()).filter(Boolean);
 ---
 
-<section class={`page-hero-std${size === "lg" ? " page-hero-std--lg" : ""}`}>
- <div class="container">
- <div class={`page-hero-std__inner${desc2 ? "" : " page-hero-std__inner--solo"}`}>
-
- <!-- COLUMNA IZQUIERDA -->
- <div class="page-hero-std__left">
- {eyebrow && <span class="page-hero-std__eyebrow">{eyebrow}</span>}
-
- {titleHtml
- ? <h1 class="page-hero-std__title" set:html={title} />
- : <h1 class="page-hero-std__title">{title}</h1>
- }
-
- <p class="page-hero-std__desc">{desc}</p>
-
- {ctas && ctas.length > 0 && (
- <div class="page-hero-std__ctas">
- {ctas.map(c => (
- <a href={c.href} class={`btn btn--${c.variant}`}>{c.label}</a>
- ))}
- </div>
- )}
-
- </div>
-
- <!-- COLUMNA DERECHA — solo si hay desc2 -->
- {desc2 && (
- <div class="page-hero-std__right">
- {desc2.split("||").map(para => (
- <p set:html={para.trim()} />
- ))}
- </div>
- )}
-
- </div>
- </div>
+<section class="page-hero-std" aria-labelledby={id}>
+  <div class="container">
+    <div class={`page-hero-std__inner${paras.length ? "" : " page-hero-std__inner--solo"}`}>
+      <div class="page-hero-std__left">
+        {eyebrow && <p class="page-hero-std__eyebrow">{eyebrow}</p>}
+        {titleHtml
+          ? <h1 id={id} class="page-hero-std__title" set:html={title} />
+          : <h1 id={id} class="page-hero-std__title">{title}</h1>}
+        <p class="page-hero-std__desc">{desc}</p>
+      </div>
+      {paras.length > 0 && (
+        <div class="page-hero-std__right">
+          {paras.map((p) => <p set:html={p} />)}
+        </div>
+      )}
+    </div>
+  </div>
 </section>

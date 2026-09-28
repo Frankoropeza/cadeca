@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón Industrial Carga Pesada ECT-71 | CADECA";
 const description = "Caja corrugado industrial carga pesada en CDMX. Triple pared ECT-71, para maquinaria, autopartes y electrónicos pesados.";
@@ -68,21 +69,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cs09-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CS-09 · Corrugado Estándar</span>
- <h1 id="sku-cs09-title" class="cat-page-hero__title">Caja Corrugado <span>Industrial Carga Pesada</span></h1>
- <p class="cat-page-hero__desc">
- Triple pared BCB con resistencia ECT-71. Una opción de alta resistencia del catálogo CADECA para maquinaria, autopartes y electrónicos de alto valor. Hasta 800 kg de carga apilada. Entrega programada según volumen y zona desde 50 pzas.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-09</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-71</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cs09-title"
+   eyebrow="SKU CAD-CS-09 · Corrugado Estándar"
+   titleHtml={true}
+   title="Caja Corrugado <span>Industrial Carga Pesada</span>"
+   desc="Triple pared BCB con resistencia ECT-71. Una opción de alta resistencia del catálogo CADECA para maquinaria, autopartes y electrónicos de alto valor. Hasta 800 kg de carga apilada. Entrega programada según volumen y zona desde 50 pzas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cs09-title">

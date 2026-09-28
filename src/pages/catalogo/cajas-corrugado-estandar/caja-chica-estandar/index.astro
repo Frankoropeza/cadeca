@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón Chica Estándar | CADECA";
 const description = "Caja de cartón chica estándar para e-commerce, farmacia y accesorios. Medidas desde 10×10×10 cm, corrugado simple. Cotiza en CDMX y Edomex.";
@@ -68,21 +69,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cs11-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CS-11 · Corrugado Estándar</span>
- <h1 id="sku-cs11-title" class="cat-page-hero__title">Caja Corrugado <span>Chica Estándar</span></h1>
- <p class="cat-page-hero__desc">
- Medidas pequeñas de alta rotación para e-commerce, farmacia, cosmética y accesorios. ECT-32 en flautas B y E. 4 medidas con disponibilidad según pedido en CDMX. MOQ 50 pzas con entrega programada según volumen y zona.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-11</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cs11-title"
+   eyebrow="SKU CAD-CS-11 · Corrugado Estándar"
+   titleHtml={true}
+   title="Caja Corrugado <span>Chica Estándar</span>"
+   desc="Medidas pequeñas de alta rotación para e-commerce, farmacia, cosmética y accesorios. ECT-32 en flautas B y E. 4 medidas con disponibilidad según pedido en CDMX. MOQ 50 pzas con entrega programada según volumen y zona."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cs11-title">

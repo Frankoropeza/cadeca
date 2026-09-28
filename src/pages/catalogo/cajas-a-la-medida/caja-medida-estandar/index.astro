@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón a la Medida Estándar | CADECA";
 const description = "Cajas a la medida estándar personalizadas en CDMX. Medidas exactas desde diseño CAD, ECT-32/44, MOQ 50 pzas.";
@@ -66,19 +67,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am06-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-06 · Cajas a la Medida</span>
- <h1 id="sku-am06-title" class="cat-page-hero__title">Caja a la Medida <span>Estándar Personalizada</span><br>— CDMX</h1>
- <p class="cat-page-hero__desc">Cajas de cartón corrugado coordinadas con las medidas exactas de tu producto desde diseño CAD. ECT-32 o ECT-44 según carga. Sin espacio muerto, sin relleno innecesario. Diseño CAD gratuito con MOQ desde 50 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-06</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32/44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am06-title"
+   eyebrow="SKU CAD-AM-06 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja a la Medida <span>Estándar Personalizada</span> — CDMX"
+   desc="Cajas de cartón corrugado coordinadas con las medidas exactas de tu producto desde diseño CAD. ECT-32 o ECT-44 según carga. Sin espacio muerto, sin relleno innecesario. Diseño CAD gratuito con MOQ desde 50 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am06-title">

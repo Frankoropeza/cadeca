@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas a la Medida para Alimentos Food Grade | CADECA";
 const description = "Cajas a la medida para alimentos en CDMX. Liner food-grade, apto contacto indirecto, certificación COFEPRIS disponible, ECT-32/44. Desde 100 pzas.";
@@ -73,19 +74,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am03-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-03 · Cajas a la Medida</span>
- <h1 id="sku-am03-title" class="cat-page-hero__title">Caja para <span>Alimentos FDA / COFEPRIS</span><br>— Food Grade CDMX</h1>
- <p class="cat-page-hero__desc">Cajas a la medida con liner food-grade para alimentos. Apto contacto indirecto con envase primario. Certificación COFEPRIS y FDA disponible. Tintas base agua food-safe.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-03</strong></div>
- <div class="cat-page-hero__strip-item">Liner: <strong>Food-grade</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am03-title"
+   eyebrow="SKU CAD-AM-03 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja para <span>Alimentos FDA / COFEPRIS</span> — Food Grade CDMX"
+   desc="Cajas a la medida con liner food-grade para alimentos. Apto contacto indirecto con envase primario. Certificación COFEPRIS y FDA disponible. Tintas base agua food-safe."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am03-title">

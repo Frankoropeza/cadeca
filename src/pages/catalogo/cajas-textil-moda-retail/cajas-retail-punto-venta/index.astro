@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Exhibidora para Punto de Venta | CADECA";
 const description = "Ficha técnica caja display y exhibidor punto de venta en CDMX. Flauta B/C, ECT-32, mostrador, floor stand y pallet display.";
@@ -99,23 +100,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-tx04-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-TX-04 · Cajas para Textil, Moda y Retail</span>
- <h1 id="sku-tx04-title" class="cat-page-hero__title">
- Caja Retail Punto de Venta<br><span>Display y Exhibidores — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Exhibidores y displays de cartón corrugado para punto de venta: mostrador, floor stand, exhibidor lateral y pallet display. Armado sin herramientas en menos de 60 segundos, impresión full color CMYK y acabados premium. Entrega en CDMX.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-04</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32 / ECT-44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-tx04-title"
+   eyebrow="SKU CAD-TX-04 · Cajas para Textil, Moda y Retail"
+   titleHtml={true}
+   title="Caja Retail Punto de Venta <span>Display y Exhibidores — CDMX</span>"
+   desc="Exhibidores y displays de cartón corrugado para punto de venta: mostrador, floor stand, exhibidor lateral y pallet display. Armado sin herramientas en menos de 60 segundos, impresión full color CMYK y acabados premium. Entrega en CDMX."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

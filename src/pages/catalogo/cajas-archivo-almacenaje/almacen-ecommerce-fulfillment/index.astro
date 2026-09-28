@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Almacenaje para E-commerce y Fulfillment | CADECA";
 const description = "Caja de almacenaje para e-commerce y fulfillment en CDMX. Apilable 1.5 m, etiquetado lateral y frontal, compatible con shelving. MOQ 100 pzas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadah09-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-09 · Cajas de Archivo y Almacenaje</span>
- <h1 id="sku-cadah09-title" class="cat-page-hero__title">Caja de Almacenaje para <span>E-commerce</span> y Fulfillment CDMX</h1>
- <p class="cat-page-hero__desc">Caja de almacenaje para bodegas de e-commerce y centros de fulfillment. Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible con racks de shelving estándar.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-09</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Suministro: <strong>Coordinado</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadah09-title"
+   eyebrow="SKU CAD-AH-09 · Cajas de Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja de Almacenaje para <span>E-commerce</span> y Fulfillment CDMX"
+   desc="Caja de almacenaje para bodegas de e-commerce y centros de fulfillment. Apilable hasta 1.5 m, etiquetado frontal y lateral, compatible con racks de shelving estándar."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadah09-title">

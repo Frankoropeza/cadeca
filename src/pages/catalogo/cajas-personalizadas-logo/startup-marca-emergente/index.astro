@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas Personalizadas para Startups | CADECA";
 const description = "Caja personalizada para startups y marcas emergentes en CDMX. MOQ bajo 100 pzas, diseño gratis, entrega programada según pedido.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadpl10-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-10 · Cajas Personalizadas con Logo</span>
- <h1 id="sku-cadpl10-title" class="cat-page-hero__title">Caja Personalizada para <span>Startups</span> y Marcas Emergentes CDMX</h1>
- <p class="cat-page-hero__desc">La caja personalizada con logo de menor MOQ del mercado: desde 100 piezas para startups y marcas emergentes en CDMX. Diseño gratuito y entrega en 5–7 días.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-10</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas (el más bajo)</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadpl10-title"
+   eyebrow="SKU CAD-PL-10 · Cajas Personalizadas con Logo"
+   titleHtml={true}
+   title="Caja Personalizada para <span>Startups</span> y Marcas Emergentes CDMX"
+   desc="La caja personalizada con logo de menor MOQ del mercado: desde 100 piezas para startups y marcas emergentes en CDMX. Diseño gratuito y entrega en 5–7 días."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadpl10-title">

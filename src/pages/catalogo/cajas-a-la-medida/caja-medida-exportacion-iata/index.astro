@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja a la Medida para Exportación IATA/ISTA | CADECA";
 const description = "Cajas a la medida para exportación IATA/ISTA en CDMX. Certificación ISTA-1A, apta carga aérea y marítima, ECT-51/61. MOQ 25 pzas. CADECA proveedor.";
@@ -66,19 +67,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am08-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-08 · Cajas a la Medida</span>
- <h1 id="sku-am08-title" class="cat-page-hero__title">Caja a la Medida para <span>Exportación IATA/ISTA</span><br>— CDMX</h1>
- <p class="cat-page-hero__desc">Cajas de cartón corrugado que cumplen normas internacionales IATA y certificación ISTA-1A. Aptas para carga aérea y marítima. ECT-51 para aéreo, ECT-61 triple corrugado para contenedor. MOQ desde 25 piezas con documentación técnica incluida.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-08</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-51/61</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>25 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am08-title"
+   eyebrow="SKU CAD-AM-08 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja a la Medida para <span>Exportación IATA/ISTA</span> — CDMX"
+   desc="Cajas de cartón corrugado que cumplen normas internacionales IATA y certificación ISTA-1A. Aptas para carga aérea y marítima. ECT-51 para aéreo, ECT-61 triple corrugado para contenedor. MOQ desde 25 piezas con documentación técnica incluida."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am08-title">

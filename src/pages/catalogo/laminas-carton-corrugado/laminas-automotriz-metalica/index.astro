@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Láminas de Cartón para Industria Automotriz | CADECA";
 const description = "Láminas corrugado para industria automotriz en CDMX. Triple pared interleaving entre piezas metálicas, protección anticorrosión con papel VCI.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadla10-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-LA-10 · Láminas de Cartón Corrugado</span>
- <h1 id="sku-cadla10-title" class="cat-page-hero__title">Láminas Corrugado para <span>Industria Automotriz</span> CDMX</h1>
- <p class="cat-page-hero__desc">Láminas triple pared para interleaving entre piezas metálicas de automóviles. Con opción de papel VCI anticorrosión. Para proveedores Tier 1 y Tier 2 de la industria automotriz.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-10</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 láminas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadla10-title"
+   eyebrow="SKU CAD-LA-10 · Láminas de Cartón Corrugado"
+   titleHtml={true}
+   title="Láminas Corrugado para <span>Industria Automotriz</span> CDMX"
+   desc="Láminas triple pared para interleaving entre piezas metálicas de automóviles. Con opción de papel VCI anticorrosión. Para proveedores Tier 1 y Tier 2 de la industria automotriz."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadla10-title">

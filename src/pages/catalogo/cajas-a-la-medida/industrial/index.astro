@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas Industriales a la Medida ECT-44/51 | CADECA";
 const description = "Ficha técnica cajas a la medida industrial en CDMX. ECT-44 o ECT-51 según carga, hasta 50 kg, CAD gratis, entrega según pedido.";
@@ -74,19 +75,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am01-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-01 · Cajas a la Medida</span>
- <h1 id="sku-am01-title" class="cat-page-hero__title">Caja a la Medida <span>Industrial Reforzada</span><br>— ECT-44/51 CDMX</h1>
- <p class="cat-page-hero__desc">Cajas a la medida para uso industrial. Doble corrugado BC, ECT-44 o ECT-51 según carga. Diseño CAD gratuito. Para manufactura, distribución, automotive y electrónica.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-01</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44/51</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am01-title"
+   eyebrow="SKU CAD-AM-01 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja a la Medida <span>Industrial Reforzada</span> — ECT-44/51 CDMX"
+   desc="Cajas a la medida para uso industrial. Doble corrugado BC, ECT-44 o ECT-51 según carga. Diseño CAD gratuito. Para manufactura, distribución, automotive y electrónica."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am01-title">

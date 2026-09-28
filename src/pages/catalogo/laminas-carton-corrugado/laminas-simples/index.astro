@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Láminas de Cartón Corrugado Simple | CADECA";
 const description = "Láminas cartón corrugado simple flauta C CDMX. ECT-26/32, hasta 120×240cm, corte a medida. Para protección y embalaje. Desde 100 pzas. CADECA.";
@@ -74,19 +75,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-lc01-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-LC-01 · Láminas de Cartón Corrugado</span>
- <h1 id="sku-lc01-title" class="cat-page-hero__title">Láminas Corrugado Simple <span>Flauta C</span><br>— ECT-26/32 CDMX</h1>
- <p class="cat-page-hero__desc">La opción más económica del catálogo. Flauta C de 4 mm para protección, relleno y layer pads. Corte a medida desde 50 piezas. Kraft marrón o blanco hasta 120×240 cm.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LC-01</strong></div>
- <div class="cat-page-hero__strip-item">Flauta: <strong>C — 4 mm</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-lc01-title"
+   eyebrow="SKU CAD-LC-01 · Láminas de Cartón Corrugado"
+   titleHtml={true}
+   title="Láminas Corrugado Simple <span>Flauta C</span> — ECT-26/32 CDMX"
+   desc="La opción más económica del catálogo. Flauta C de 4 mm para protección, relleno y layer pads. Corte a medida desde 50 piezas. Kraft marrón o blanco hasta 120×240 cm."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-lc01-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Suscripción y Kits de Regalo | CADECA";
 const description = "Caja para suscripción box y kits de regalo en CDMX. Personalizable con logo, interior liso o impreso. Resistente y presentable. MOQ 100 pzas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadec11-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-EC-11 · Cajas para E-commerce</span>
- <h1 id="sku-cadec11-title" class="cat-page-hero__title">Caja para <span>Suscripción Box</span> y Kits de Regalo CDMX</h1>
- <p class="cat-page-hero__desc">Caja específica para modelos de suscripción mensual y gift boxes. Estructura robusta, interior liso para tissue o divisores, personalizable con logo desde 100 piezas en CDMX.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-11</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadec11-title"
+   eyebrow="SKU CAD-EC-11 · Cajas para E-commerce"
+   titleHtml={true}
+   title="Caja para <span>Suscripción Box</span> y Kits de Regalo CDMX"
+   desc="Caja específica para modelos de suscripción mensual y gift boxes. Estructura robusta, interior liso para tissue o divisores, personalizable con logo desde 100 piezas en CDMX."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadec11-title">

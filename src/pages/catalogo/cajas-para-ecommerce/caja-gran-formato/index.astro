@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Gran Formato para Electrodomésticos | CADECA";
 const description = "Caja gran formato para electrodomésticos, línea blanca y muebles en CDMX. Doble corrugado ECT-44, medidas XL y XXL.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadec09-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-EC-09 · Cajas para E-commerce</span>
- <h1 id="sku-cadec09-title" class="cat-page-hero__title">Caja Gran Formato <span>Electrodomésticos</span> y Blancos CDMX</h1>
- <p class="cat-page-hero__desc">Caja de gran formato en doble corrugado ECT-44 para electrodomésticos, línea blanca y muebles. Medidas XL/XXL compatibles con Amazon grande, Walmart y PIMSA en CDMX.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-09</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadec09-title"
+   eyebrow="SKU CAD-EC-09 · Cajas para E-commerce"
+   titleHtml={true}
+   title="Caja Gran Formato <span>Electrodomésticos</span> y Blancos CDMX"
+   desc="Caja de gran formato en doble corrugado ECT-44 para electrodomésticos, línea blanca y muebles. Medidas XL/XXL compatibles con Amazon grande, Walmart y PIMSA en CDMX."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadec09-title">

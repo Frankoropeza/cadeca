@@ -5,6 +5,7 @@ import SectionHeader from "@/components/SectionHeader.astro";
 import ProcessStep  from "@/components/ProcessStep.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
+import PageHero from "@/components/PageHero.astro";
 
 // ── SEO ──────────────────────────────────────────────
 const title  = "Servicios de Empaque en Cartón Corrugado CDMX | CADECA";
@@ -179,36 +180,13 @@ const faqs = [
  <!-- ══════════════════════════════════════
  HERO
  ══════════════════════════════════════ -->
- <section class="hero hero--servicios" aria-labelledby="hero-title">
- <div class="container">
- <div class="hero__inner">
-
- <div class="hero__left">
- <p class="hero__badge">Proveedor de Empaques en CDMX y Estado de México</p>
- <h1 id="hero-title" class="hero__title">
- Servicios de Empaque<br /><span>Profesional en Cartón Corrugado</span>
- </h1>
- <p class="hero__intro">
- Cajas estándar, a la medida y personalizadas, con suministro coordinado, asesoría para elegir el empaque y entrega programada.
- </p>
- <div class="hero__ctas">
- <a href="/cotizar/" class="btn btn--primary">Solicitar Cotización Gratis</a>
- {HAS_WA && (
-<a href={contactoHref()} class="btn btn--outline" {...contactoAttrs}>
- WhatsApp Directo
- </a>
-)}
- </div></div>
-
- <div class="hero__right">
- <p>En CADECA somos mucho más que un proveedor de cajas: somos el aliado estratégico de empaque para pymes, plantas industriales, marcas DTC y operaciones de e-commerce en la Ciudad de México y Estado de México.</p>
- <p>Ofrecemos desde la venta de cajas corrugadas estándar hasta contratos de suministro programado con inventario reservado para operaciones industriales. Trabajamos con talleres y fabricantes aliados, coordinando producción y entrega según el pedido.</p>
- <p>Cada servicio incluye <strong>asesoría técnica gratuita</strong>, factura electrónica y respaldo de un equipo que conoce el mercado metropolitano desde adentro.</p>
- </div>
-
- </div>
- </div>
- </section>
+ <PageHero
+   eyebrow="Proveedor de Empaques en CDMX y Estado de México"
+   titleHtml={true}
+   title="Servicios de Empaque <span>Profesional en Cartón Corrugado</span>"
+   desc="Cajas estándar, a la medida y personalizadas, con suministro coordinado, asesoría para elegir el empaque y entrega programada."
+   desc2="En CADECA somos mucho más que un proveedor de cajas: somos el aliado estratégico de empaque para pymes, plantas industriales, marcas DTC y operaciones de e-commerce en la Ciudad de México y Estado de México.||Ofrecemos desde la venta de cajas corrugadas estándar hasta contratos de suministro programado con inventario reservado para operaciones industriales. Trabajamos con talleres y fabricantes aliados, coordinando producción y entrega según el pedido.||Cada servicio incluye <strong>asesoría técnica gratuita</strong>, factura electrónica y respaldo de un equipo que conoce el mercado metropolitano desde adentro."
+ />
 
  <!-- CTA Band -->
  <div class="cta-band">

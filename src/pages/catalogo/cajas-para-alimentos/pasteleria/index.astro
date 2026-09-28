@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas para Pasteles y Tartas con Ventana | CADECA";
 const description = "Cajas pastelería CDMX. Pay, tarta, cupcakes, gelatinas. Interior blanco, base reforzada, acetato opcional. Desde 100 pzas, 3-5 días. CADECA.";
@@ -74,19 +75,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-al03-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AL-03 · Cajas para Alimentos</span>
- <h1 id="sku-al03-title" class="cat-page-hero__title">Cajas Pastelería <span>Tartas Base Reforzada</span><br>— Ventana Acetato CDMX</h1>
- <p class="cat-page-hero__desc">Interior blanco coated con base reforzada 2 capas. Ventana acetato opcional (MOQ 200). Para pay, tarta, cupcakes y gelatinas hasta 4 kg. Desde 100 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-03</strong></div>
- <div class="cat-page-hero__strip-item">Interior: <strong>Blanco coated</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-al03-title"
+   eyebrow="SKU CAD-AL-03 · Cajas para Alimentos"
+   titleHtml={true}
+   title="Cajas Pastelería <span>Tartas Base Reforzada</span> — Ventana Acetato CDMX"
+   desc="Interior blanco coated con base reforzada 2 capas. Ventana acetato opcional (MOQ 200). Para pay, tarta, cupcakes y gelatinas hasta 4 kg. Desde 100 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-al03-title">

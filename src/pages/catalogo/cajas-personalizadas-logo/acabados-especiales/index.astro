@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas con Acabados Especiales y Barniz UV | CADECA";
 const description = "Cajas de cartón con acabados especiales en CDMX. Barniz UV spot y total, laminado mate y brillante, troquelado y relieve seco. Desde 500 piezas.";
@@ -72,19 +73,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-pl04-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-04 · Personalizadas con Logo</span>
- <h1 id="sku-pl04-title" class="cat-page-hero__title">Cajas <span>Acabados Especiales</span><br>— Barniz UV · Laminado · Relieve</h1>
- <p class="cat-page-hero__desc">Barniz UV spot y total, laminado mate y brillante, troquelado y relieve seco. Para cosméticos, lujo, unboxing premium y productos con alto valor percibido. Desde 500 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-04</strong></div>
- <div class="cat-page-hero__strip-item">Acabados: <strong>UV · Laminado · Relieve</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>10-15 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-pl04-title"
+   eyebrow="SKU CAD-PL-04 · Personalizadas con Logo"
+   titleHtml={true}
+   title="Cajas <span>Acabados Especiales</span> — Barniz UV · Laminado · Relieve"
+   desc="Barniz UV spot y total, laminado mate y brillante, troquelado y relieve seco. Para cosméticos, lujo, unboxing premium y productos con alto valor percibido. Desde 500 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-pl04-title">

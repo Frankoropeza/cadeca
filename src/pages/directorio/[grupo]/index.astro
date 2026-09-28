@@ -64,14 +64,6 @@ const catsConData = cats.map((cat, i) => {
     title={`<span>${grupoData.nombre}</span> — Empresas del Sector`}
     desc={grupoData.desc}
     desc2={`El grupo <strong>${grupoData.nombre}</strong> concentra ${cats.length} categorías especializadas con ${totalEmpresas} empresas verificadas activas en CDMX y Zona Metropolitana. Abarca desde grandes corporativos hasta talleres especializados con décadas de experiencia en el sector del empaque y el cartón corrugado.||Selecciona la categoría que mejor se ajusta a tu búsqueda para acceder al listado completo con datos de contacto, giro específico y zona de operación de cada empresa. ¿Tu empresa pertenece a este grupo y no aparece en el directorio? <a href="/contacto/" style="color:var(--color-primary);font-weight:700;">Solicita tu registro gratuito</a>`}
-    stats={[
-      { value: String(cats.length),    label: "Categorías" },
-      { value: String(totalEmpresas),  label: "Empresas" },
-    ]}
-    ctas={[
-      { href: "/cotizar/",    label: "Solicitar cotización", variant: "primary" },
-      { href: "/directorio/", label: "Ver todos los grupos", variant: "outline" },
-    ]}
   />
 
   <!-- Separador visual -->

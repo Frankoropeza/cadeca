@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Marca de Cosmética Emergente | CADECA";
 const description = "Caja para startup y marca cosmética emergente en CDMX. MOQ desde 100 pzas, kraft o blanco, personalización gráfica opcional, unboxing premium.";
@@ -65,23 +66,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-fc07-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-FC-07 · Farmacéutica y Cosmética</span>
- <h1 id="sku-fc07-title" class="cat-page-hero__title">
- Caja para <span>Marca Cosmética Emergente</span> — MOQ 100 pzas
- </h1>
- <p class="cat-page-hero__desc">
- La solución ideal para startups y marcas cosméticas en crecimiento. Pedido mínimo desde 100 piezas en kraft natural o corrugado blanco, con personalización gráfica opcional y experiencia de unboxing premium. Entrega programada según volumen y zona.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-07</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-fc07-title"
+   eyebrow="SKU CAD-FC-07 · Farmacéutica y Cosmética"
+   titleHtml={true}
+   title="Caja para <span>Marca Cosmética Emergente</span> — MOQ 100 pzas"
+   desc="La solución ideal para startups y marcas cosméticas en crecimiento. Pedido mínimo desde 100 piezas en kraft natural o corrugado blanco, con personalización gráfica opcional y experiencia de unboxing premium. Entrega programada según volumen y zona."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-fc07-title">

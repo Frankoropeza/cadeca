@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Joyería y Accesorios | CADECA";
 const description = "Caja corrugado blanco interior suave para joyería y accesorios premium en CDMX. Presentación de lujo, unboxing premium, doble pared ECT-32.";
@@ -65,23 +66,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-tx07-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-TX-07 · Textil, Moda y Retail</span>
- <h1 id="sku-tx07-title" class="cat-page-hero__title">
- Caja para <span>Joyería y Accesorios Premium</span>
- </h1>
- <p class="cat-page-hero__desc">
- Corrugado blanco doble pared ECT-32 con interior suave al tacto para joyería, relojes y accesorios de lujo. Acabados de hot stamping, barniz UV selectivo y cierre magnético opcional. Presentación premium para tu marca.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-07</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-tx07-title"
+   eyebrow="SKU CAD-TX-07 · Textil, Moda y Retail"
+   titleHtml={true}
+   title="Caja para <span>Joyería y Accesorios Premium</span>"
+   desc="Corrugado blanco doble pared ECT-32 con interior suave al tacto para joyería, relojes y accesorios de lujo. Acabados de hot stamping, barniz UV selectivo y cierre magnético opcional. Presentación premium para tu marca."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-tx07-title">

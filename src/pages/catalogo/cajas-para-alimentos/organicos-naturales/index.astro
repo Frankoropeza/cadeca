@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Orgánicos y Productos Naturales | CADECA";
 const description = "Caja de cartón reciclado para productos orgánicos y naturales: kraft food-grade, sin blanqueadores de cloro. Cotiza en CDMX y Estado de México.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadal11-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AL-11 · Cajas para Alimentos</span>
- <h1 id="sku-cadal11-title" class="cat-page-hero__title">Caja para <span>Orgánicos</span> y Productos Naturales CDMX</h1>
- <p class="cat-page-hero__desc">Caja kraft reciclado para marcas de productos orgánicos y naturales. Food-grade, imagen sustentable, compatible con certificaciones orgánicas; FSC por confirmar al cotizar. Desde 100 piezas en CDMX.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-11</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Proveedor: <strong>CADECA</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadal11-title"
+   eyebrow="SKU CAD-AL-11 · Cajas para Alimentos"
+   titleHtml={true}
+   title="Caja para <span>Orgánicos</span> y Productos Naturales CDMX"
+   desc="Caja kraft reciclado para marcas de productos orgánicos y naturales. Food-grade, imagen sustentable, compatible con certificaciones orgánicas; FSC por confirmar al cotizar. Desde 100 piezas en CDMX."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadal11-title">

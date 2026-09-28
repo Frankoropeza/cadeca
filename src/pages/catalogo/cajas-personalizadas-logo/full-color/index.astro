@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas Personalizadas Full Color | CADECA";
 const description = "Cajas de cartón full color CMYK en CDMX. Impresión offset o digital de alta resolución, papel coated blanco, desde 200 piezas, entrega 7-10 días.";
@@ -72,19 +73,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-pl03-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-03 · Personalizadas con Logo</span>
- <h1 id="sku-pl03-title" class="cat-page-hero__title">Cajas <span>Full Color CMYK</span><br>— Offset / Digital CDMX</h1>
- <p class="cat-page-hero__desc">Impresión offset o digital CMYK de alta resolución sobre papel coated blanco. Reproduce fotografías, degradados e ilustraciones sin límite de colores. Para marcas que necesitan impacto visual máximo.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-03</strong></div>
- <div class="cat-page-hero__strip-item">Impresión: <strong>Offset CMYK</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>7-10 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-pl03-title"
+   eyebrow="SKU CAD-PL-03 · Personalizadas con Logo"
+   titleHtml={true}
+   title="Cajas <span>Full Color CMYK</span> — Offset / Digital CDMX"
+   desc="Impresión offset o digital CMYK de alta resolución sobre papel coated blanco. Reproduce fotografías, degradados e ilustraciones sin límite de colores. Para marcas que necesitan impacto visual máximo."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-pl03-title">

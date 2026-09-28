@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Láminas de Cartón a la Medida | CADECA";
 const description = "Láminas de cartón corrugado a la medida con corte exacto en CDMX. Simple, doble o triple pared. Para fabricantes y talleres. MOQ 50 piezas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadla06-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-LA-06 · Láminas de Cartón Corrugado</span>
- <h1 id="sku-cadla06-title" class="cat-page-hero__title">Láminas Corrugado <span>a la Medida</span> — Corte Exacto CDMX</h1>
- <p class="cat-page-hero__desc">Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-06</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 láminas/medida</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadla06-title"
+   eyebrow="SKU CAD-LA-06 · Láminas de Cartón Corrugado"
+   titleHtml={true}
+   title="Láminas Corrugado <span>a la Medida</span> — Corte Exacto CDMX"
+   desc="Láminas corrugado cortadas a la dimensión exacta que necesitas: cualquier largo×ancho, simple/doble/triple pared. Para fabricantes de cajas, talleres y proyectos especiales."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadla06-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Mudanza y Archivo con Asas | CADECA";
 const description = "Ficha técnica caja mudanza y archivo con asas troqueladas en CDMX. Doble pared BC, ECT-44, dual-purpose. 6 medidas disponibles.";
@@ -104,23 +105,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ah05-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-05 · Archivo y Almacenaje</span>
- <h1 id="sku-ah05-title" class="cat-page-hero__title">
- Caja Mudanza y Archivo con Asas<br><span>Doble Pared BC — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja doble uso para mudanza y archivo con asas troqueladas reforzadas de doble pestaña. Cartón corrugado doble pared BC con ECT-44. Diseño ergonómico para manejo manual frecuente, sistema auto-lock sin pegamento. Sin mínimo, disponibilidad según pedido.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-05</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ah05-title"
+   eyebrow="SKU CAD-AH-05 · Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja Mudanza y Archivo con Asas <span>Doble Pared BC — CDMX</span>"
+   desc="Caja doble uso para mudanza y archivo con asas troqueladas reforzadas de doble pestaña. Cartón corrugado doble pared BC con ECT-44. Diseño ergonómico para manejo manual frecuente, sistema auto-lock sin pegamento. Sin mínimo, disponibilidad según pedido."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

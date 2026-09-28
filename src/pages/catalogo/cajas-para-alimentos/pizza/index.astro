@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas para Pizza de Cartón Corrugado | CADECA";
 const description = "Cajas pizza en CDMX. 20-45 cm. Liner food-grade, ECT-32, desde 100 pzas, entrega programada según pedido. CADECA proveedor.";
@@ -75,19 +76,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-al01-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AL-01 · Cajas para Alimentos</span>
- <h1 id="sku-al01-title" class="cat-page-hero__title">Cajas para Pizza <span>Food Grade</span><br>— ECT-32 CDMX</h1>
- <p class="cat-page-hero__desc">Cajas pizza corrugado food-grade de 20 a 45 cm. Liner kraft marrón o blanco, sin tintas tóxicas. Ventilación anti-vapor opcional. Desde 100 piezas con entrega en 3-5 días.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-01</strong></div>
- <div class="cat-page-hero__strip-item">Material: <strong>Food-grade ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-al01-title"
+   eyebrow="SKU CAD-AL-01 · Cajas para Alimentos"
+   titleHtml={true}
+   title="Cajas para Pizza <span>Food Grade</span> — ECT-32 CDMX"
+   desc="Cajas pizza corrugado food-grade de 20 a 45 cm. Liner kraft marrón o blanco, sin tintas tóxicas. Ventilación anti-vapor opcional. Desde 100 piezas con entrega en 3-5 días."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-al01-title">

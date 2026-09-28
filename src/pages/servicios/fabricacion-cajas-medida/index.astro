@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Cajas de Cartón a la Medida CDMX | CADECA";
@@ -46,49 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio · CDMX y Estado de México</p>
-          <h1 class="hero__title"><span>Fabricación de Cajas a la Medida</span></h1>
-          <p class="hero__intro">Cualquier dimensión exacta, con diseño CAD técnico y coordinación de producción con talleres especializados. El tiempo de entrega se confirma según el pedido.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, quiero información sobre Fabricación de Cajas a la Medida")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">Según pedido</span>
-            <span class="hero__metric-label">Producción</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">A cotizar</span>
-            <span class="hero__metric-label">Volumen mínimo</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">CAD</span>
-            <span class="hero__metric-label">Diseño incluido</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">2 hrs</span>
-            <span class="hero__metric-label">Cotización</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>CADECA coordina <strong>cajas de cartón corrugado a la medida en CDMX y Estado de México</strong> con talleres especializados. Trabajamos cualquier dimensión exacta —largo, ancho y alto— y te proponemos el diseño CAD técnico según el pedido.</p>
-          <p>Coordinamos la producción con talleres aliados y confirmamos el tiempo de entrega al cotizar. Flautas B, C, E y BC; resistencia ECT seleccionada según el peso del producto. El volumen mínimo se define según la solución requerida.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio · CDMX y Estado de México"
+    titleHtml={true}
+    title="<span>Fabricación de Cajas a la Medida</span>"
+    desc="Cualquier dimensión exacta, con diseño CAD técnico y coordinación de producción con talleres especializados. El tiempo de entrega se confirma según el pedido."
+    desc2="CADECA coordina <strong>cajas de cartón corrugado a la medida en CDMX y Estado de México</strong> con talleres especializados. Trabajamos cualquier dimensión exacta —largo, ancho y alto— y te proponemos el diseño CAD técnico según el pedido.||Coordinamos la producción con talleres aliados y confirmamos el tiempo de entrega al cotizar. Flautas B, C, E y BC; resistencia ECT seleccionada según el peso del producto. El volumen mínimo se define según la solución requerida."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

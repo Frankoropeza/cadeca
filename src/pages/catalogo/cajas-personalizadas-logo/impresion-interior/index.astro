@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja con Impresión Interior para Unboxing | CADECA";
 const description = "Caja con impresión interior personalizada en CDMX. Sorpresa al abrir, unboxing premium. Exterior kraft + interior full color. MOQ 300 pzas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadpl09-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-09 · Cajas Personalizadas con Logo</span>
- <h1 id="sku-cadpl09-title" class="cat-page-hero__title">Caja con <span>Impresión Interior</span> — Sorpresa al Abrir CDMX</h1>
- <p class="cat-page-hero__desc">Caja con impresión interior para crear sorpresa al abrir: exterior neutro o con logo y el interior totalmente personalizado con tu marca. Ideal para unboxing en redes sociales.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-09</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>300 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadpl09-title"
+   eyebrow="SKU CAD-PL-09 · Cajas Personalizadas con Logo"
+   titleHtml={true}
+   title="Caja con <span>Impresión Interior</span> — Sorpresa al Abrir CDMX"
+   desc="Caja con impresión interior para crear sorpresa al abrir: exterior neutro o con logo y el interior totalmente personalizado con tu marca. Ideal para unboxing en redes sociales."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadpl09-title">

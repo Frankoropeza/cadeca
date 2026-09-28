@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón para Zapatos y Calzado | CADECA";
 const description = "Ficha técnica caja corrugado para calzado y zapatos en CDMX. Flauta B/C, ECT-32, medidas zapatilla a master 12 pares.";
@@ -99,23 +100,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-tx01-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-TX-01 · Cajas para Textil, Moda y Retail</span>
- <h1 id="sku-tx01-title" class="cat-page-hero__title">
- Caja para Calzado y Zapatos<br><span>Corrugado Simple — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja de cartón corrugado simple diseñada para la industria del calzado. Flauta B/C con ECT-32 para protección óptima de zapatillas, tenis, botas y zapato de vestir. Medidas individuales y master disponibles con impresión personalizada.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-01</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-tx01-title"
+   eyebrow="SKU CAD-TX-01 · Cajas para Textil, Moda y Retail"
+   titleHtml={true}
+   title="Caja para Calzado y Zapatos <span>Corrugado Simple — CDMX</span>"
+   desc="Caja de cartón corrugado simple diseñada para la industria del calzado. Flauta B/C con ECT-32 para protección óptima de zapatillas, tenis, botas y zapato de vestir. Medidas individuales y master disponibles con impresión personalizada."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

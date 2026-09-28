@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas a la Medida para E-commerce | CADECA";
 const description = "Ficha técnica cajas e-commerce a la medida en CDMX. Cualquier dimensión exacta que minimice peso volumétrico.";
@@ -66,19 +67,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ec05-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-EC-05 · E-commerce</span>
- <h1 id="sku-ec05-title" class="cat-page-hero__title">Cajas E-commerce<br><span>a la Medida — Peso Volumétrico</span></h1>
- <p class="cat-page-hero__desc">Cuando ninguna medida estándar se ajusta a tu producto. Calculamos la dimensión exacta que minimiza el peso volumétrico en tu paquetería. CAD según pedido, desde 50 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-05</strong></div>
- <div class="cat-page-hero__strip-item">CAD: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ec05-title"
+   eyebrow="SKU CAD-EC-05 · E-commerce"
+   titleHtml={true}
+   title="Cajas E-commerce <span>a la Medida — Peso Volumétrico</span>"
+   desc="Cuando ninguna medida estándar se ajusta a tu producto. Calculamos la dimensión exacta que minimiza el peso volumétrico en tu paquetería. CAD según pedido, desde 50 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-ec05-title">

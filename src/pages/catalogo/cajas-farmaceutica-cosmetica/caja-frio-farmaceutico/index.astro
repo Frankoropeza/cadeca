@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Cadena de Frío Farmacéutica | CADECA";
 const description = "Caja para cadena de frío farmacéutico en CDMX. Barrera EPS + corrugado, mantiene temperatura 2–8°C hasta 24 hrs para insulina, vacunas y biológicos.";
@@ -65,23 +66,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-fc08-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-FC-08 · Farmacéutica y Cosmética</span>
- <h1 id="sku-fc08-title" class="cat-page-hero__title">
- Caja <span>Cadena de Frío Farmacéutico</span> — 2–8°C hasta 24 hrs
- </h1>
- <p class="cat-page-hero__desc">
- Sistema de empaque térmico para insulina, vacunas y biológicos. Barrera EPS interior + corrugado blanco doble pared ECT-44. Mantiene temperatura 2–8°C hasta 24 horas en distribución urbana. Compatible con NOM-059 y lineamientos COFEPRIS.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-08</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-fc08-title"
+   eyebrow="SKU CAD-FC-08 · Farmacéutica y Cosmética"
+   titleHtml={true}
+   title="Caja <span>Cadena de Frío Farmacéutico</span> — 2–8°C hasta 24 hrs"
+   desc="Sistema de empaque térmico para insulina, vacunas y biológicos. Barrera EPS interior + corrugado blanco doble pared ECT-44. Mantiene temperatura 2–8°C hasta 24 horas en distribución urbana. Compatible con NOM-059 y lineamientos COFEPRIS."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-fc08-title">

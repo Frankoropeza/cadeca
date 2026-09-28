@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón Blancas Corrugado | CADECA";
 const description = "Caja corrugado blanco liner interior y exterior en CDMX. ECT-32 doble pared, ideal para retail y unboxing premium. Impresión nítida 4 colores.";
@@ -68,21 +69,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cs07-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CS-07 · Corrugado Estándar</span>
- <h1 id="sku-cs07-title" class="cat-page-hero__title">Caja Corrugado <span>Blanco Liner Premium</span></h1>
- <p class="cat-page-hero__desc">
- Liner blanco coated interior y exterior. La opción ideal para retail, unboxing premium y marcas que necesitan impresión de alta fidelidad de color. ECT-32 doble pared BC, entrega programada según volumen y zona desde 100 piezas.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-07</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cs07-title"
+   eyebrow="SKU CAD-CS-07 · Corrugado Estándar"
+   titleHtml={true}
+   title="Caja Corrugado <span>Blanco Liner Premium</span>"
+   desc="Liner blanco coated interior y exterior. La opción ideal para retail, unboxing premium y marcas que necesitan impresión de alta fidelidad de color. ECT-32 doble pared BC, entrega programada según volumen y zona desde 100 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cs07-title">

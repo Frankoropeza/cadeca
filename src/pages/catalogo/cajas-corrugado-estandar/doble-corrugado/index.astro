@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón Doble Corrugado (BC) | CADECA";
 const description = "Ficha técnica caja doble corrugado pared doble BC en CDMX. ECT-44 y ECT-51. Para electrónica, Amazon FBA, industria media.";
@@ -78,23 +79,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cd-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CD-01 · Corrugado Estándar</span>
- <h1 id="sku-cd-title" class="cat-page-hero__title">
- Doble Corrugado<br><span>Pared Doble (BC) — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Dos capas de flauta BC. Mayor resistencia al impacto y aplastamiento. Para electrónica, menaje, Amazon FBA y distribución industrial. ECT-44 certificado, hasta 25 kg.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CD-01</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-51</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cd-title"
+   eyebrow="SKU CAD-CD-01 · Corrugado Estándar"
+   titleHtml={true}
+   title="Doble Corrugado <span>Pared Doble (BC) — CDMX</span>"
+   desc="Dos capas de flauta BC. Mayor resistencia al impacto y aplastamiento. Para electrónica, menaje, Amazon FBA y distribución industrial. ECT-44 certificado, hasta 25 kg."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cd-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Almacén Industrial Doble Pared | CADECA";
 const description = "Ficha técnica caja almacén industrial doble pared BC en CDMX. ECT-44 y ECT-51, de 40×30×30 hasta formato pallet. 6 medidas disponibles.";
@@ -103,23 +104,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ah02-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-02 · Archivo y Almacenaje</span>
- <h1 id="sku-ah02-title" class="cat-page-hero__title">
- Caja Almacén Industrial<br><span>Doble Pared BC — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja de cartón corrugado doble pared BC para almacenamiento industrial. ECT-44 y ECT-51 para bodegas, racks selectivos y centros de distribución. Resistencia superior al apilamiento prolongado con entrega programada según volumen y zona.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-02</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-44 / ECT-51</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>48-72 hrs</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ah02-title"
+   eyebrow="SKU CAD-AH-02 · Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja Almacén Industrial <span>Doble Pared BC — CDMX</span>"
+   desc="Caja de cartón corrugado doble pared BC para almacenamiento industrial. ECT-44 y ECT-51 para bodegas, racks selectivos y centros de distribución. Resistencia superior al apilamiento prolongado con entrega programada según volumen y zona."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

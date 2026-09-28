@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Láminas de Cartón para Muebles y Tapicería | CADECA";
 const description = "Láminas de cartón corrugado para mueblería y tapizado en CDMX. Simple pared flexible, corte limpio, para carpinterías y tapicerías. MOQ 50 pzas.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadla08-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-LA-08 · Láminas de Cartón Corrugado</span>
- <h1 id="sku-cadla08-title" class="cat-page-hero__title">Láminas Corrugado para <span>Muebles</span> y Tapizado CDMX</h1>
- <p class="cat-page-hero__desc">Láminas corrugado simple pared para mueblería, tapicería y carpintería en CDMX. Flexible, de corte limpio, protege acabados durante transporte y almacenaje.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-LA-08</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 láminas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadla08-title"
+   eyebrow="SKU CAD-LA-08 · Láminas de Cartón Corrugado"
+   titleHtml={true}
+   title="Láminas Corrugado para <span>Muebles</span> y Tapizado CDMX"
+   desc="Láminas corrugado simple pared para mueblería, tapicería y carpintería en CDMX. Flexible, de corte limpio, protege acabados durante transporte y almacenaje."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadla08-title">

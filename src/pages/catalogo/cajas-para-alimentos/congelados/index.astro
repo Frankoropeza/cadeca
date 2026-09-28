@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas para Congelados Resistentes a Humedad | CADECA";
 const description = "Cajas congelados CDMX. WR liner, ECT-44 retiene 80% con humedad, -18°C. Desde 100 pzas, entrega programada según pedido. CADECA proveedor.";
@@ -72,19 +73,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-al05-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AL-05 · Cajas para Alimentos</span>
- <h1 id="sku-al05-title" class="cat-page-hero__title">Cajas Congelados <span>WR Liner</span><br>— Resistente Humedad -18 °C CDMX</h1>
- <p class="cat-page-hero__desc">Liner WR water resistant que retiene 80% del ECT a 90% HR. Doble corrugado BC ECT-44 para helados, mariscos, carnes y congelados hasta -18 °C. Desde 100 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-05</strong></div>
- <div class="cat-page-hero__strip-item">Liner: <strong>WR Water Resistant</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-al05-title"
+   eyebrow="SKU CAD-AL-05 · Cajas para Alimentos"
+   titleHtml={true}
+   title="Cajas Congelados <span>WR Liner</span> — Resistente Humedad -18 °C CDMX"
+   desc="Liner WR water resistant que retiene 80% del ECT a 90% HR. Doble corrugado BC ECT-44 para helados, mariscos, carnes y congelados hasta -18 °C. Desde 100 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-al05-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas Personalizadas con Logo a 1 Color | CADECA";
 const description = "Cajas de cartón personalizadas con logo 1 color en CDMX. Impresión flexo 1 tinta, ECT-32, desde 100 piezas, tiempo de entrega según pedido.";
@@ -75,19 +76,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-pl01-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-01 · Personalizadas con Logo</span>
- <h1 id="sku-pl01-title" class="cat-page-hero__title">Cajas Personalizadas <span>Logo 1 Color Flexo</span><br>— ECT-32 CDMX</h1>
- <p class="cat-page-hero__desc">Impresión flexo 1 tinta pantone sobre kraft marrón o blanco. La personalización más económica: ideal para logos corporativos con colores planos. Desde 100 piezas con diseño incluido.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-01</strong></div>
- <div class="cat-page-hero__strip-item">Impresión: <strong>Flexo 1 tinta</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>5-7 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-pl01-title"
+   eyebrow="SKU CAD-PL-01 · Personalizadas con Logo"
+   titleHtml={true}
+   title="Cajas Personalizadas <span>Logo 1 Color Flexo</span> — ECT-32 CDMX"
+   desc="Impresión flexo 1 tinta pantone sobre kraft marrón o blanco. La personalización más económica: ideal para logos corporativos con colores planos. Desde 100 piezas con diseño incluido."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-pl01-title">

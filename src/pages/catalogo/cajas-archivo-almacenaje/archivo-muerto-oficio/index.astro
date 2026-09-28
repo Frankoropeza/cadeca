@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Archivo Muerto Tamaño Oficio | CADECA";
 const description = "Ficha técnica caja archivo muerto tamaño oficio en CDMX. Flauta C, ECT-32, tapa integrada y asas troqueladas. 6 medidas disponibles.";
@@ -103,23 +104,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ah01-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-01 · Archivo y Almacenaje</span>
- <h1 id="sku-ah01-title" class="cat-page-hero__title">
- Caja Archivo Muerto Tamaño Oficio<br><span>Kraft Flauta C — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja de archivo muerto diseñada para documentos tamaño oficio. Cartón kraft corrugado con tapa integrada y asas troqueladas. Ideal para resguardo fiscal, legal y administrativo con apilamiento seguro hasta 5 niveles. Disponibilidad según pedido.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-01</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24-48 hrs</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ah01-title"
+   eyebrow="SKU CAD-AH-01 · Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja Archivo Muerto Tamaño Oficio <span>Kraft Flauta C — CDMX</span>"
+   desc="Caja de archivo muerto diseñada para documentos tamaño oficio. Cartón kraft corrugado con tapa integrada y asas troqueladas. Ideal para resguardo fiscal, legal y administrativo con apilamiento seguro hasta 5 niveles. Disponibilidad según pedido."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Cartón Kraft Natural Reciclado | CADECA";
 const description = "Caja corrugado kraft natural ecológico en CDMX. Papel reciclado postconsumer 150g/m², ECT-32, pared simple.";
@@ -68,21 +69,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cs06-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-CS-06 · Corrugado Estándar</span>
- <h1 id="sku-cs06-title" class="cat-page-hero__title">Caja Corrugado <span>Kraft Natural Ecológico</span></h1>
- <p class="cat-page-hero__desc">
- Papel reciclado postconsumer (PCR) al 70%. Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. ECT-32. Ideal para marcas eco-friendly con envíos en CDMX. Desde 50 piezas con entrega programada según volumen y zona.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-CS-06</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cs06-title"
+   eyebrow="SKU CAD-CS-06 · Corrugado Estándar"
+   titleHtml={true}
+   title="Caja Corrugado <span>Kraft Natural Ecológico</span>"
+   desc="Papel reciclado postconsumer (PCR) al 70%. Si tu proyecto requiere cartón con certificación FSC, lo indicamos al cotizar y confirmamos disponibilidad con el fabricante. ECT-32. Ideal para marcas eco-friendly con envíos en CDMX. Desde 50 piezas con entrega programada según volumen y zona."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cs06-title">

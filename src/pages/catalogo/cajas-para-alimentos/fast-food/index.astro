@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón para Fast Food Antigrasa | CADECA";
 const description = "Cajas fast food antigrasa CDMX. Hamburguesas, wraps, nuggets. FDA compliant, desde 100 pzas, 3-5 días. CADECA.";
@@ -74,19 +75,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-al02-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AL-02 · Cajas para Alimentos</span>
- <h1 id="sku-al02-title" class="cat-page-hero__title">Cajas Fast Food <span>Antigrasa</span><br>— FDA Compliant CDMX</h1>
- <p class="cat-page-hero__desc">Cajas con tratamiento antigrasa tipo 3 o 5 para hamburguesas, wraps y nuggets. Formato almeja o tapa. Tintas base agua FDA compliant. Desde 100 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AL-02</strong></div>
- <div class="cat-page-hero__strip-item">Tratamiento: <strong>Antigrasa FDA</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>100 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-al02-title"
+   eyebrow="SKU CAD-AL-02 · Cajas para Alimentos"
+   titleHtml={true}
+   title="Cajas Fast Food <span>Antigrasa</span> — FDA Compliant CDMX"
+   desc="Cajas con tratamiento antigrasa tipo 3 o 5 para hamburguesas, wraps y nuggets. Formato almeja o tapa. Tintas base agua FDA compliant. Desde 100 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-al02-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja para Documentos Tamaño Carta | CADECA";
 const description = "Ficha técnica caja documentos tamaño carta en CDMX. Flauta B/C, ECT-32, tapa integrada y asas troqueladas. 6 medidas disponibles.";
@@ -103,23 +104,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ah03-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-03 · Archivo y Almacenaje</span>
- <h1 id="sku-ah03-title" class="cat-page-hero__title">
- Caja Documentos Tamaño Carta<br><span>Kraft Flauta B/C — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja compacta para documentos tamaño carta en cartón kraft corrugado. Tapa integrada con solapa de cierre y asas troqueladas. Ideal para organización de archivos en oficinas, despachos contables y áreas administrativas. Sin mínimo, disponibilidad según pedido.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-03</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>Sin mínimo</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ah03-title"
+   eyebrow="SKU CAD-AH-03 · Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja Documentos Tamaño Carta <span>Kraft Flauta B/C — CDMX</span>"
+   desc="Caja compacta para documentos tamaño carta en cartón kraft corrugado. Tapa integrada con solapa de cierre y asas troqueladas. Ideal para organización de archivos en oficinas, despachos contables y áreas administrativas. Sin mínimo, disponibilidad según pedido."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

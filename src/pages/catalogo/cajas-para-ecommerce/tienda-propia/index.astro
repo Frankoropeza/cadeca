@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas para Tienda Propia: Shopify y TiendaNube | CADECA";
 const description = "Ficha técnica cajas para Shopify, TiendaNube e Instagram en CDMX. Neutras o personalizadas con logo. Corrugado simple y doble. Desde 50 pzas.";
@@ -74,19 +75,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-ec04-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-EC-04 · E-commerce</span>
- <h1 id="sku-ec04-title" class="cat-page-hero__title">Cajas <span>Shopify · TiendaNube</span><br>— Tienda Propia CDMX</h1>
- <p class="cat-page-hero__desc">Para vendedores que gestionan sus propios envíos. Cajas neutras o personalizadas con logo. Corrugado simple o doble según el producto. Desde 50 piezas, entrega 3-5 días.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-EC-04</strong></div>
- <div class="cat-page-hero__strip-item">Tipo: <strong>Neutra o con logo</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas (neutra)</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>3-5 días</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-ec04-title"
+   eyebrow="SKU CAD-EC-04 · E-commerce"
+   titleHtml={true}
+   title="Cajas <span>Shopify · TiendaNube</span> — Tienda Propia CDMX"
+   desc="Para vendedores que gestionan sus propios envíos. Cajas neutras o personalizadas con logo. Corrugado simple o doble según el producto. Desde 50 piezas, entrega 3-5 días."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-ec04-title">

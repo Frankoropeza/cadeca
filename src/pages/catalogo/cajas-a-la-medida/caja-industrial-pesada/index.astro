@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Industrial a la Medida para Carga Pesada | CADECA";
 const description = "Cajas industriales para carga pesada hasta 150 kg en CDMX. Triple pared ECT-71, para maquinaria, motores y autopartes. MOQ 10 pzas. CADECA proveedor.";
@@ -66,19 +67,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am09-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-09 · Cajas a la Medida</span>
- <h1 id="sku-am09-title" class="cat-page-hero__title">Caja Industrial <span>Carga Pesada</span> a la Medida<br>— ECT-71 CDMX</h1>
- <p class="cat-page-hero__desc">Triple corrugado BCB ECT-71 para maquinaria, motores, autopartes y equipo pesado hasta 150 kg. Juntas grapadas, refuerzo de ángulos y diseño CAD gratuito. La caja industrial más resistente del mercado, fabricada a tu medida exacta.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-09</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-71</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>10 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am09-title"
+   eyebrow="SKU CAD-AM-09 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja Industrial <span>Carga Pesada</span> a la Medida — ECT-71 CDMX"
+   desc="Triple corrugado BCB ECT-71 para maquinaria, motores, autopartes y equipo pesado hasta 150 kg. Juntas grapadas, refuerzo de ángulos y diseño CAD gratuito. La caja industrial más resistente del mercado, fabricada a tu medida exacta."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am09-title">

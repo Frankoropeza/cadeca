@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja a la Medida para E-commerce | CADECA";
 const description = "Cajas a la medida para ecommerce en CDMX. Optimizadas para peso volumétrico, reducen costo de envío. ECT-32/44, MOQ 50 pzas.";
@@ -66,19 +67,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am07-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-07 · Cajas a la Medida</span>
- <h1 id="sku-am07-title" class="cat-page-hero__title">Caja a la Medida para <span>E-commerce</span><br>— CDMX</h1>
- <p class="cat-page-hero__desc">Cajas optimizadas para peso volumétrico que reducen hasta 40% el costo de tus envíos. Medidas exactas al producto, compatibles con DHL, FedEx, Estafeta y Mercado Envíos. Diseño CAD gratuito y MOQ desde 50 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-07</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32/44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>24 hrs CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am07-title"
+   eyebrow="SKU CAD-AM-07 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja a la Medida para <span>E-commerce</span> — CDMX"
+   desc="Cajas optimizadas para peso volumétrico que reducen hasta 40% el costo de tus envíos. Medidas exactas al producto, compatibles con DHL, FedEx, Estafeta y Mercado Envíos. Diseño CAD gratuito y MOQ desde 50 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am07-title">

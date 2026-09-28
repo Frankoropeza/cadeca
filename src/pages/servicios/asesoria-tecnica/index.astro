@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Asesoría Técnica Gratuita de Empaque CDMX — CADECA";
@@ -46,45 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio Gratuito · Sin Compromiso de Compra</p>
-          <h1 class="hero__title"><span>Asesoría Técnica Gratuita de Empaque</span></h1>
-          <p class="hero__intro">Te ayudamos a seleccionar la caja correcta: flauta, calibre, resistencia ECT, dimensiones óptimas y tipo de sellado. Análisis de tu producto y proceso incluido sin costo.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, quiero la asesoría técnica gratuita de CADECA")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">Gratis</span>
-            <span class="hero__metric-label">Sin costo</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">Horario hábil</span>
-            <span class="hero__metric-label">Respuesta</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">0</span>
-            <span class="hero__metric-label">Compromiso</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>La <strong>asesoría técnica gratuita de empaque</strong> de CADECA te ayuda a seleccionar la caja correcta para tu producto: flauta, calibre, resistencia ECT, dimensiones óptimas y tipo de sellado. Nuestro equipo de ingeniería analiza tu producto, proceso de almacenaje y destino final.</p>
-          <p>Te ayudamos a revisar el costo de empaque y a elegir una solución adecuada para tu producto. <strong>La asesoría puede ayudar a reducir mermas, daños en tránsito y sobreempaque</strong> sin incrementar el presupuesto. El servicio es completamente gratuito y sin compromiso de compra.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio Gratuito · Sin Compromiso de Compra"
+    titleHtml={true}
+    title="<span>Asesoría Técnica Gratuita de Empaque</span>"
+    desc="Te ayudamos a seleccionar la caja correcta: flauta, calibre, resistencia ECT, dimensiones óptimas y tipo de sellado. Análisis de tu producto y proceso incluido sin costo."
+    desc2="La <strong>asesoría técnica gratuita de empaque</strong> de CADECA te ayuda a seleccionar la caja correcta para tu producto: flauta, calibre, resistencia ECT, dimensiones óptimas y tipo de sellado. Nuestro equipo de ingeniería analiza tu producto, proceso de almacenaje y destino final.||Te ayudamos a revisar el costo de empaque y a elegir una solución adecuada para tu producto. <strong>La asesoría puede ayudar a reducir mermas, daños en tránsito y sobreempaque</strong> sin incrementar el presupuesto. El servicio es completamente gratuito y sin compromiso de compra."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

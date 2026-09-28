@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja de Archivo para Digitalización | CADECA";
 const description = "Caja de archivo para transición digital y digitalización de documentos en CDMX. Resistente, etiquetado completo, compatible con carros de archivo.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadah10-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AH-10 · Cajas de Archivo y Almacenaje</span>
- <h1 id="sku-cadah10-title" class="cat-page-hero__title">Caja de Archivo para <span>Transición Digital</span> — Digitalización CDMX</h1>
- <p class="cat-page-hero__desc">Caja diseñada para el proceso de transición digital: resguarda documentos físicos durante la digitalización con etiquetado completo y compatible con carros de traslado.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AH-10</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>50 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Suministro: <strong>Coordinado</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadah10-title"
+   eyebrow="SKU CAD-AH-10 · Cajas de Archivo y Almacenaje"
+   titleHtml={true}
+   title="Caja de Archivo para <span>Transición Digital</span> — Digitalización CDMX"
+   desc="Caja diseñada para el proceso de transición digital: resguarda documentos físicos durante la digitalización con etiquetado completo y compatible con carros de traslado."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadah10-title">

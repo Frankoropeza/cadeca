@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja a la Medida para Línea Automatizada | CADECA";
 const description = "Cajas a la medida para líneas de producción automatizadas en CDMX. Tolerancias ±0.5mm, compatibles con brazo robot y empacadoras. ECT-32/44.";
@@ -66,19 +67,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am10-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-10 · Cajas a la Medida</span>
- <h1 id="sku-am10-title" class="cat-page-hero__title">Caja a la Medida para <span>Línea Automatizada</span><br>— ±0.5mm CDMX</h1>
- <p class="cat-page-hero__desc">Tolerancias de precisión ±0.5mm para compatibilidad total con brazo robot, empacadora automática y conveyor. Estilos RSC y auto-erect crash-lock. Muestras de validación previas a producción. La solución para líneas de alto volumen en CDMX.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-10</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-32/44</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>500 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am10-title"
+   eyebrow="SKU CAD-AM-10 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja a la Medida para <span>Línea Automatizada</span> — ±0.5mm CDMX"
+   desc="Tolerancias de precisión ±0.5mm para compatibilidad total con brazo robot, empacadora automática y conveyor. Estilos RSC y auto-erect crash-lock. Muestras de validación previas a producción. La solución para líneas de alto volumen en CDMX."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am10-title">

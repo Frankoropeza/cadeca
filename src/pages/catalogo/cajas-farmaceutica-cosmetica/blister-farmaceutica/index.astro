@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Farmacéutica para Blíster Flauta E | CADECA";
 const description = "Caja corrugado flauta E para blíster farmacéutico en CDMX. ECT-23, impresión regulatoria NOM-072, medidas estándar y a la medida.";
@@ -96,23 +97,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-fc01-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-FC-01 · Farmacéutica y Cosmética</span>
- <h1 id="sku-fc01-title" class="cat-page-hero__title">
- Caja Blíster Farmacéutica<br><span>Flauta E — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja corrugado micro flauta E diseñada para blísteres de medicamentos. Superficie de impresión de alta calidad para cumplir con requisitos regulatorios NOM-072. Troquelado de precisión con sello de seguridad opcional.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-01</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-fc01-title"
+   eyebrow="SKU CAD-FC-01 · Farmacéutica y Cosmética"
+   titleHtml={true}
+   title="Caja Blíster Farmacéutica <span>Flauta E — CDMX</span>"
+   desc="Caja corrugado micro flauta E diseñada para blísteres de medicamentos. Superficie de impresión de alta calidad para cumplir con requisitos regulatorios NOM-072. Troquelado de precisión con sello de seguridad opcional."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

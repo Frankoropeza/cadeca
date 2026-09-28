@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Cosmética Premium con Barniz UV | CADECA";
 const description = "Caja corrugado micro flauta E con barniz UV y acabado soft touch para cosmética premium. Impresión CMYK + Pantone; FSC por confirmar al cotizar.";
@@ -100,23 +101,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-fc02-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-FC-02 · Farmacéutica y Cosmética</span>
- <h1 id="sku-fc02-title" class="cat-page-hero__title">
- Caja Cosmética Premium<br><span>Barniz UV + Soft Touch — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja corrugado micro flauta E con acabado soft touch mate y barniz UV brillante selectivo. Impresión offset de alta resolución CMYK + Pantone. Ideal para marcas de cosmética, skincare, fragancias y sets de regalo que buscan una experiencia de unboxing premium.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-FC-02</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-26</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>300 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-fc02-title"
+   eyebrow="SKU CAD-FC-02 · Farmacéutica y Cosmética"
+   titleHtml={true}
+   title="Caja Cosmética Premium <span>Barniz UV + Soft Touch — CDMX</span>"
+   desc="Caja corrugado micro flauta E con acabado soft touch mate y barniz UV brillante selectivo. Impresión offset de alta resolución CMYK + Pantone. Ideal para marcas de cosmética, skincare, fragancias y sets de regalo que buscan una experiencia de unboxing premium."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

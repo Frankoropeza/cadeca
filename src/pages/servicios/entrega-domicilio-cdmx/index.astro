@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import LeadCapture from "@/components/LeadCapture.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import PageHero from "@/components/PageHero.astro";
 const SITE     = "https://cajas-de-carton.com";
 
 const title       = "Entrega de Cajas de Cartón a Domicilio CDMX — CADECA";
@@ -46,49 +47,13 @@ const schema = [
 >
 
   {/* ════════ HERO ════════ */}
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-
-        <div class="hero__left">
-          <p class="hero__badge">Servicio · Entrega programada · CDMX y Estado de México</p>
-          <h1 class="hero__title"><span>Entrega de Cajas de Cartón a Domicilio en CDMX</span></h1>
-          <p class="hero__intro">Coordinamos la entrega en tu planta, bodega o domicilio en CDMX y Estado de México. La fecha, ruta y costo se confirman según el pedido y la zona.</p>
-          <div class="hero__ctas">
-            <a href="/cotizar/" class="btn btn--primary btn--lg">Solicitar cotización</a>
-            {HAS_WA && (
-<a href={contactoHref("Hola, quiero información sobre Entrega a Domicilio en CDMX")}
-               class="btn btn--outline btn--lg" {...contactoAttrs}>&#x1F4AC; WhatsApp</a>
-)}
-          </div>
-          <div class="hero__metrics">
-          <div class="hero__metric">
-            <span class="hero__metric-value">Programada</span>
-            <span class="hero__metric-label">Entrega</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">Sin costo</span>
-            <span class="hero__metric-label">Flete pedidos calif.</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">16</span>
-            <span class="hero__metric-label">Alcaldías cubiertas</span>
-          </div>
-          <div class="hero__metric">
-            <span class="hero__metric-value">2 hrs</span>
-            <span class="hero__metric-label">Cotización</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <p>CADECA coordina la <strong>entrega de cajas de cartón a domicilio en CDMX y Estado de México</strong> según el volumen, la zona y la disponibilidad de rutas. Cubrimos la Zona Metropolitana, incluyendo Naucalpan, Tlalnepantla, Ecatepec, Toluca, Iztapalapa, Coyoacán y las 16 alcaldías.</p>
-          <p>El costo de flete y la fecha se confirman al cotizar. Damos seguimiento a tu pedido y coordinamos la entrega con bodegas, plantas industriales y domicilios.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Servicio · Entrega programada · CDMX y Estado de México"
+    titleHtml={true}
+    title="<span>Entrega de Cajas de Cartón a Domicilio en CDMX</span>"
+    desc="Coordinamos la entrega en tu planta, bodega o domicilio en CDMX y Estado de México. La fecha, ruta y costo se confirman según el pedido y la zona."
+    desc2="CADECA coordina la <strong>entrega de cajas de cartón a domicilio en CDMX y Estado de México</strong> según el volumen, la zona y la disponibilidad de rutas. Cubrimos la Zona Metropolitana, incluyendo Naucalpan, Tlalnepantla, Ecatepec, Toluca, Iztapalapa, Coyoacán y las 16 alcaldías.||El costo de flete y la fecha se confirman al cotizar. Damos seguimiento a tu pedido y coordinamos la entrega con bodegas, plantas industriales y domicilios."
+  />
 
   {/* ════════ BENEFICIOS ════════ */}
   <section class="page-section">

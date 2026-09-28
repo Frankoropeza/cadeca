@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Triple Pared Extra Reforzada ECT-71 | CADECA";
 const description = "Caja triple pared extra reforzada ECT-71 en CDMX. Juntas grapadas, refuerzo de esquinas, para cargas mayores a 80 kg. MOQ 10 pzas. CADECA proveedor.";
@@ -66,19 +67,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-am11-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-AM-11 · Cajas a la Medida</span>
- <h1 id="sku-am11-title" class="cat-page-hero__title">Caja <span>Triple Pared Extra Reforzada</span><br>— ECT-71 CDMX</h1>
- <p class="cat-page-hero__desc">La caja más resistente de nuestro catálogo. ECT-71 máximo con juntas grapadas, esquineros integrados y liner kraft virgen de 200-250 g/m². Para cargas superiores a 80 kg con apilamiento en múltiples niveles. MOQ desde 10 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-AM-11</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-71</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>10 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido en CDMX</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-am11-title"
+   eyebrow="SKU CAD-AM-11 · Cajas a la Medida"
+   titleHtml={true}
+   title="Caja <span>Triple Pared Extra Reforzada</span> — ECT-71 CDMX"
+   desc="La caja más resistente de nuestro catálogo. ECT-71 máximo con juntas grapadas, esquineros integrados y liner kraft virgen de 200-250 g/m². Para cargas superiores a 80 kg con apilamiento en múltiples niveles. MOQ desde 10 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-am11-title">

@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Cajas de Cartón para Ropa y Prendas | CADECA";
 const description = "Ficha técnica caja corrugado kraft para ropa y prendas de vestir en CDMX. Flauta E/B, ECT-23/32, medidas camiseta a set regalo.";
@@ -99,23 +100,14 @@ const gallery = [
  </ol></div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-tx02-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-TX-02 · Cajas para Textil, Moda y Retail</span>
- <h1 id="sku-tx02-title" class="cat-page-hero__title">
- Caja para Ropa y Prendas<br><span>Corrugado Kraft — CDMX</span>
- </h1>
- <p class="cat-page-hero__desc">
- Caja de cartón corrugado kraft natural para prendas de vestir. Flauta E para prendas ligeras y flauta B para voluminosas. Acabado eco-friendly ideal para marcas de moda, boutiques y e-commerce de ropa. Papel tissue y cierre magnético opcionales.
- </p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-TX-02</strong></div>
- <div class="cat-page-hero__strip-item">ECT: <strong>ECT-23 / ECT-32</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>200 pzas</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-tx02-title"
+   eyebrow="SKU CAD-TX-02 · Cajas para Textil, Moda y Retail"
+   titleHtml={true}
+   title="Caja para Ropa y Prendas <span>Corrugado Kraft — CDMX</span>"
+   desc="Caja de cartón corrugado kraft natural para prendas de vestir. Flauta E para prendas ligeras y flauta B para voluminosas. Acabado eco-friendly ideal para marcas de moda, boutiques y e-commerce de ropa. Papel tissue y cierre magnético opcionales."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
 

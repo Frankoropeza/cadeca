@@ -4,6 +4,7 @@ import PageLayout  from "@/layouts/PageLayout.astro";
 import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import ProductGallery from "@/components/ProductGallery.astro";
+import PageHero from "@/components/PageHero.astro";
 
 const title  = "Caja Personalizada con Laminado Mate | CADECA";
 const description = "Caja con laminado mate soft touch en CDMX. Textura suave al tacto, imagen premium. Ideal para marcas DTC, cosmética y moda. MOQ 300 pzas. Diseño incluido.";
@@ -54,19 +55,14 @@ const gallery = [
  </div>
  </div>
 
- <section class="cat-page-hero" aria-labelledby="sku-cadpl07-title">
- <div class="container">
- <span class="cat-page-hero__eyebrow">SKU CAD-PL-07 · Cajas Personalizadas con Logo</span>
- <h1 id="sku-cadpl07-title" class="cat-page-hero__title">Caja Personalizada <span>Laminado Mate</span> Soft Touch — Toque Premium</h1>
- <p class="cat-page-hero__desc">Caja con laminado mate soft touch: acabado aterciopelado que comunica lujo y cuidado. Ideal para marcas DTC, cosmética premium y canastas navideñas. Desde 300 piezas.</p>
- <div class="cat-page-hero__strip">
- <div class="cat-page-hero__strip-item">SKU: <strong>CAD-PL-07</strong></div>
- <div class="cat-page-hero__strip-item">Entrega: <strong>Según pedido</strong></div>
- <div class="cat-page-hero__strip-item">MOQ: <strong>300 piezas</strong></div>
- <div class="cat-page-hero__strip-item">Fabricante: <strong>Directo</strong></div>
- </div>
- </div>
- </section>
+ <PageHero
+   id="sku-cadpl07-title"
+   eyebrow="SKU CAD-PL-07 · Cajas Personalizadas con Logo"
+   titleHtml={true}
+   title="Caja Personalizada <span>Laminado Mate</span> Soft Touch — Toque Premium"
+   desc="Caja con laminado mate soft touch: acabado aterciopelado que comunica lujo y cuidado. Ideal para marcas DTC, cosmética premium y canastas navideñas. Desde 300 piezas."
+   desc2=""
+ />
 
  <main id="contenido-principal" role="main">
  <section class="sku-detail" aria-labelledby="detalle-cadpl07-title">
