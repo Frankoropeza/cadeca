@@ -16,6 +16,7 @@ export interface Props {
  pageType?:  "home" | "product" | "category" | "catalog" | "page";
  breadcrumbs?: Array<{ name: string; href?: string }>;
  faqItems?:  Array<{ question: string; answer: string }>;
+ noindex?: boolean;
  product?:  { name: string; sku: string; description: string; image: string; brand?: string; material?: string; category?: string; moq?: string; };
 }
 
@@ -29,6 +30,7 @@ const {
  breadcrumbs,
  faqItems,
  product,
+ noindex,
 } = Astro.props;
 ---
 
@@ -42,6 +44,7 @@ const {
  breadcrumbs={breadcrumbs}
  faqItems={faqItems}
  product={product}
+ noindex={noindex}
 >
  <Topbar />
  <Header currentPath={Astro.url.pathname} />

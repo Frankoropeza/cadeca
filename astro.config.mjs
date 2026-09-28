@@ -8,7 +8,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => page !== undefined,
+      // El directorio está en noindex hasta tener datos verificados: fuera del sitemap.
+      filter: (page) => !page.includes("/directorio/"),
     }),
   ],
 });

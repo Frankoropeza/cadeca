@@ -4,6 +4,17 @@
 # Generador del legado: OBSIDIAN/AHREFS/CADECA/scripts/gen-redirects-legado.py
 
 # ── Estáticas (1247) ──
+# Directorio: categorías retiradas (fichas marcador) 2026-09-27
+/directorio/proveedores-locales/ /directorio/ 301
+/directorio/servicios-empaque/ /directorio/ 301
+/directorio/logistica-local/mensajeria-local/ /directorio/logistica-local/ 301
+/directorio/logistica-local/almacenes-locales/ /directorio/logistica-local/ 301
+/directorio/proveedores-locales/pallets-tarimas/ /directorio/ 301
+/directorio/proveedores-locales/cintas-y-flejes/ /directorio/ 301
+/directorio/proveedores-locales/materiales-relleno/ /directorio/ 301
+/directorio/servicios-empaque/maquiladoras-empaque/ /directorio/ 301
+/directorio/servicios-empaque/centros-acopio/ /directorio/ 301
+/directorio/servicios-empaque/renta-equipo-embalaje/ /directorio/ 301
 /blog/gramaje-papel-liner-medium-cart%C3%B3n-corrugado/ /blog/gramaje-papel-liner-medium-carton-corrugado/ 301
 /blog/gramaje-papel-liner-medium-cartón-corrugado/ /blog/gramaje-papel-liner-medium-carton-corrugado/ 301
 /productos/cajas-a-la-medidaflautas /productos/cajas-a-la-medida/ 301

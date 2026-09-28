@@ -26,6 +26,7 @@ export interface Props {
  faqItems?:  FaqSeoItem[];
  product?:  ProductSeo;
  schema?:  object | object[];  // inyección manual si se necesita
+ noindex?:  boolean;
 }
 
 const {
@@ -38,6 +39,7 @@ const {
  faqItems,
  product,
  schema,
+ noindex = false,
 } = Astro.props;
 
 const SITE  = "https://cajas-de-carton.com";
@@ -127,7 +129,7 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  <title>{title}</title>
  <meta name="description" content={description} />
  <link rel="canonical" href={canonical} />
- <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+ <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
 
  <!-- Open Graph -->
  <meta property="og:type"  content={ogType} />
