@@ -1,6 +1,10 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
+import IndustryCard  from "@/components/IndustryCard.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
@@ -150,10 +154,83 @@ const productos = [
  moq: "200 pzas",
  },
 ];
+const detIndustrias = [
+ {
+ img:  "/img/detIndustrias/retail-placeholder.svg",
+ title:  "Marcas de Calzado",
+ desc:  "Fabricantes y distribuidores de calzado que necesitan cajas con medidas exactas por modelo, impresión de marca y estructura que proteja el producto en anaquel y durante el transporte.",
+ href:  "/catalogo/cajas-textil-moda-retail/",
+ linkText: "Ver solución calzado",
+ },
+ {
+ img:  "/img/detIndustrias/retail-placeholder.svg",
+ title:  "Boutiques y Tiendas de Ropa",
+ desc:  "Boutiques independientes, cadenas de ropa y tiendas departamentales que requieren empaque elegante para regalo, temporadas especiales y experiencia de marca en punto de venta.",
+ href:  "/catalogo/cajas-textil-moda-retail/",
+ linkText: "Ver solución ropa",
+ },
+ {
+ img:  "/img/detIndustrias/retail-placeholder.svg",
+ title:  "Accesorios y Joyería",
+ desc:  "Marcas de joyería, relojería, ópticas y accesorios de moda que necesitan cajas compactas con acabados de lujo: barniz UV, hot stamping, interiores aterciopelados y cierre magnético.",
+ href:  "/catalogo/cajas-textil-moda-retail/",
+ linkText: "Ver solución accesorios",
+ },
+ {
+ img:  "/img/detIndustrias/retail-placeholder.svg",
+ title:  "E-commerce de Moda",
+ desc:  "Tiendas online de ropa, calzado y accesorios que envían por paquetería y necesitan cajas que protejan la prenda, reduzcan el peso volumétrico y generen una experiencia de unboxing premium.",
+ href:  "/catalogo/cajas-textil-moda-retail/",
+ linkText: "Ver solución e-commerce moda",
+ },
+];
+
+const detPasos = [
+ { num: 1, title: "Cuéntanos tu producto",  desc: "Calzado, ropa, accesorios o retail. Con eso definimos el tipo de caja, material y acabado ideal para tu marca y tu canal de venta." },
+ { num: 2, title: "Cotiza en 2 horas",  desc: "Te enviamos precio, opciones de acabado y tiempos de entrega por WhatsApp. Para pedidos urgentes respondemos antes de 1 hora." },
+ { num: 3, title: "Diseño y aprobación",  desc: "Nuestro equipo de diseño prepara la propuesta visual sin costo. Tú apruebas el arte final antes de entrar a producción." },
+ { num: 4, title: "Entrega en tu negocio",  desc: "24-48 horas en CDMX y área metropolitana para pedidos en stock. Producción personalizada en 5-7 días hábiles directo a tu tienda o bodega." },
+];
+
+const detFaqs = [
+ {
+ id: "tm1",
+ question: "¿Qué tipo de caja necesito para empacar calzado?",
+ answer: "Para calzado recomendamos cajas rígidas con tapa (tipo clamshell) o cajas corrugadas reforzadas según el canal de venta. Para <strong>punto de venta</strong> y anaquel, la caja rígida con impresión a color ofrece la mejor presentación. Para <strong>envío por paquetería</strong>, la caja corrugada doble pared protege mejor el producto. Manejamos medidas estándar para zapato dama, caballero, infantil, tenis y botas.",
+ },
+ {
+ id: "tm2",
+ question: "¿Puedo personalizar las cajas con el logo de mi marca de ropa?",
+ answer: "Sí. Ofrecemos personalización desde <strong>100 piezas</strong> con impresión de 1 a 4 colores o full color digital. Incluye diseño gráfico sin costo. También disponemos de acabados especiales: barniz UV selectivo, laminado mate o brillante, hot stamping en oro o plata, y estampado en relieve (emboss/deboss). El diseño se aprueba antes de entrar a producción.",
+ },
+ {
+ id: "tm3",
+ question: "¿Cuál es el pedido mínimo para cajas de moda y retail?",
+ answer: "El pedido mínimo es de <strong>50 piezas</strong> para cajas estándar sin personalización. Para cajas con impresión de logo, el mínimo es de <strong>100 piezas</strong>. A partir de 300 piezas aplican precios de mayoreo y desde 500 piezas tenemos precios especiales por volumen. Consulta nuestra tabla de precios escalonados por WhatsApp.",
+ },
+ {
+ id: "tm4",
+ question: "¿Qué acabados premium ofrecen para cajas de joyería y accesorios?",
+ answer: "Para joyería y accesorios premium ofrecemos: <strong>hot stamping</strong> en oro, plata o colores metálicos, <strong>barniz UV selectivo</strong> para resaltar el logo, <strong>laminado soft touch</strong> (efecto aterciopelado), <strong>interiores</strong> con espuma, satín o divisiones a medida, y <strong>cierre magnético</strong> oculto. Todos estos acabados están disponibles desde 100 piezas.",
+ },
+ {
+ id: "tm5",
+ question: "¿Cuánto tardan en entregar cajas para mi tienda de moda?",
+ answer: "Para cajas estándar en stock, la entrega es en <strong>24-48 horas</strong> en CDMX y municipios del Estado de México. Para cajas personalizadas con logo, el tiempo de producción es de <strong>5-7 días hábiles</strong> después de aprobar el arte final. En temporada alta (Buen Fin, Navidad, Hot Sale) recomendamos anticipar pedidos con 2 semanas de anticipación.",
+ },
+ {
+ id: "tm6",
+ question: "¿Las cajas de moda sirven para envío por paquetería?",
+ answer: "Sí. Nuestra línea de <strong>Cajas Envío Tienda Online</strong> está diseñada específicamente para envío de moda por paquetería (DHL, FedEx, Estafeta, J&T). Están optimizadas en peso volumétrico para reducir costos de flete y tienen corrugado reforzado para que la prenda llegue impecable. Para productos frágiles como joyería, agregamos interiores con protección adicional.",
+ },
+];
+
+const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }));
 ---
 
 <PageLayout
- ogImage="/img/categorias/cajas-textil-moda-retail-hero-cdmx.avif" title={title} description={description}>
+ ogImage="/img/categorias/cajas-textil-moda-retail-hero-cdmx.avif" title={title} description={description}
+ faqItems={detFaqItems}>
 
  <!-- Breadcrumb -->
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
@@ -225,6 +302,148 @@ const productos = [
  </div>
  </article>
  ))}
+ </div>
+ </div>
+ </section>
+
+<section class="prod-detail" aria-labelledby="detalle-tmr-title">
+ <div class="container">
+ <div class="prod-detail__inner">
+ <div class="prod-detail__img-wrap">
+ <img
+ src="/img/catalogo/cajas-carton-personalizadas-2-colores-cdmx.avif"
+ alt="Cajas de cartón para textil, moda y retail en CDMX — CADECA"
+ class="prod-detail__img"
+ width="900" height="560"
+ loading="eager"
+ decoding="async"
+ fetchpriority="high"
+ />
+ </div>
+ <div class="prod-detail__content">
+ <span class="prod-detail__label">El empaque que define tu marca de moda</span>
+ <h2 id="detalle-tmr-title" class="section-header__title" style="margin:0">
+ Cajas para Textil, Moda y Retail: Empaque que Eleva tu Marca
+ </h2>
+ <p class="prod-detail__intro">
+ En la industria de la moda, el empaque es la primera impresión de tu marca. Una caja bien diseñada comunica calidad, atención al detalle y exclusividad. En CADECA fabricamos cajas especializadas para calzado, ropa, accesorios, punto de venta y envío de tiendas online de moda, con acabados premium y personalización completa para que tu empaque sea tan memorable como tu producto.
+ </p>
+ <div>
+ <p class="prod-detail__specs-title">Especificaciones técnicas</p>
+ <div class="prod-detail__specs-grid">
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Tipos de caja</span>
+ <span class="prod-detail__spec-value">Rígida · Corrugada · Plegadiza</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Acabados</span>
+ <span class="prod-detail__spec-value">UV · Hot stamping · Soft touch</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Medidas</span>
+ <span class="prod-detail__spec-value">Estándar y a medida</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Segmentos</span>
+ <span class="prod-detail__spec-value">Calzado · Ropa · Accesorios</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Material</span>
+ <span class="prod-detail__spec-value">Kraft / Blanco · FSC disponible</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Personalización</span>
+ <span class="prod-detail__spec-value">Logo desde 100 pzas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Pedido mínimo</span>
+ <span class="prod-detail__spec-value">50 piezas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Entrega CDMX</span>
+ <span class="prod-detail__spec-value">24-48 horas (stock)</span>
+ </div>
+ </div>
+ </div>
+ <div class="prod-detail__actions">
+ <a href="/cotizar/"  class="btn btn--primary">Solicitar Cotización</a>
+ {HAS_WA && (
+<a href={contactoHref()}  class="btn btn--outline" {...contactoAttrs}>WhatsApp Directo</a>
+)}
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- SUBCATEGORÍAS -->
+
+<section class="industries" aria-labelledby="detIndustrias-tmr-title">
+ <div class="container">
+ <SectionHeader
+ id="detIndustrias-tmr-title"
+ twoCol
+ title="¿Quién Compra Cajas de Moda y Retail en CADECA?"
+ subtitle="Desde diseñadores independientes hasta cadenas de retail en la zona metropolitana"
+ >
+ <p>La industria de la moda en México genera más de 200 mil millones de pesos anuales, y la CDMX es su epicentro. Nuestras cajas para textil, moda y retail están diseñadas para los flujos operativos de marcas en todos los niveles: desde el diseñador emergente que vende en bazares hasta la cadena de retail con 50 sucursales.</p>
+ <p>Todos tienen acceso al mismo catálogo de acabados premium, asesoría de diseño gratuita y precios escalonados por volumen.</p>
+ </SectionHeader>
+ <div class="industries__grid">
+ {detIndustrias.map(i => <IndustryCard img={String("img" in i ? i.img : "")} imgAlt={i.title} tag="" title={i.title} desc={i.desc} href={i.href} linkText={i.linkText} />)}
+ </div>
+ </div>
+ </section>
+
+ <!-- PROCESO -->
+
+<section class="process" aria-labelledby="proceso-tmr-title">
+ <div class="container">
+ <SectionHeader
+ id="proceso-tmr-title"
+ title="Cómo Pedir tus Cajas para Moda y Retail"
+ subtitle="Del concepto a la entrega — empaque que refleja la identidad de tu marca"
+ />
+ <div class="process__grid">
+ {detPasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
+
+ <!-- TESTIMONIOS -->
+
+<section class="seo-content" aria-labelledby="seo-tmr-title">
+ <div class="container">
+ <h2 id="seo-tmr-title" class="seo-content__title">
+ Cajas de Cartón para Textil, Moda y Retail en CDMX: Empaque que Construye Marca
+ </h2>
+ <p class="seo-content__text">
+ En la industria de la moda, el empaque no es un contenedor — es una extensión de la marca. Una caja de <strong>calzado con impresión a color y acabado mate</strong> comunica profesionalismo y exclusividad. Una caja de <strong>ropa con papel de china y lazo</strong> transforma una compra en una experiencia de regalo. En CADECA entendemos que cada detalle del empaque impacta la percepción de tu marca, y fabricamos cajas que elevan esa percepción desde el primer contacto visual.
+ </p>
+ <p class="seo-content__text">
+ Para las <strong>marcas de calzado en CDMX</strong>, nuestras cajas rígidas con tapa cubren todos los segmentos: zapato de vestir, tenis deportivo, bota, sandalia e infantil, con medidas estándar y personalización completa. Para las <strong>boutiques y tiendas de ropa</strong>, ofrecemos cajas plegadizas elegantes con acabados premium — barniz UV selectivo, hot stamping, laminado soft touch — que convierten cada venta en un momento memorable para el cliente. Entrega en <strong>24-48 horas en toda la CDMX y municipios conurbados del Estado de México</strong>.
+ </p>
+ <p class="seo-content__text">
+ Si vendes moda online por Shopify, TiendaNube, Instagram o Mercado Libre, nuestras <a href="/catalogo/cajas-textil-moda-retail/cajas-envio-tienda-online/">cajas de envío para tienda online</a> combinan protección reforzada con una experiencia de unboxing premium. Y para los <strong>puntos de venta físicos</strong>, nuestras <a href="/catalogo/cajas-textil-moda-retail/cajas-retail-punto-venta/">cajas retail</a> funcionan como exhibidores que atraen la atención del cliente en tienda. El proceso de <strong>cotización es gratuito y tarda menos de 2 horas</strong> — escríbenos por WhatsApp con tu producto y te proponemos la solución de empaque ideal para tu marca.
+ </p>
+ </div>
+ </section>
+
+ <!-- FAQ -->
+
+<section class="faq" aria-labelledby="faq-tmr-title">
+ <div class="container">
+ <SectionHeader
+ id="faq-tmr-title"
+ twoCol
+ title="Preguntas Frecuentes: Cajas para Moda y Retail"
+ subtitle="Todo sobre tipos de caja, acabados, personalización y pedidos para la industria de la moda"
+ >
+ <p>Las dudas más frecuentes de marcas de moda y retail antes de hacer su primer pedido con CADECA. Si la tuya no está aquí, resuélvela directamente con nuestro equipo por WhatsApp.</p>
+ <p>Respondemos consultas sobre tipos de caja, acabados especiales, personalización y tiempos de entrega en menos de 1 hora, sin costo y sin compromiso de compra.</p>
+ </SectionHeader>
+ <div class="faq__list">
+ {detFaqs.map(f => <FaqItem {...f} />)}
  </div>
  </div>
  </section>

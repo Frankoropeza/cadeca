@@ -1,6 +1,10 @@
 ---
+import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
+import IndustryCard  from "@/components/IndustryCard.astro";
+import ProcessStep  from "@/components/ProcessStep.astro";
+import FaqItem  from "@/components/FaqItem.astro";
 import LeadCapture  from "@/components/LeadCapture.astro";
 import PageHero  from "@/components/PageHero.astro";
 
@@ -160,12 +164,85 @@ const productos = [
  moq: "50 pzas",
  },
 ];
+const detIndustrias = [
+ {
+ icon: "",
+ title: "Manufactura e Industria",
+ desc: "Cajas a la medida para líneas de producción. El empaque exacto elimina desperdicios de material, reduce el tiempo de empacado y protege el producto en el tránsito hasta el cliente final.",
+ href: "/catalogo/cajas-a-la-medida/industrial/",
+ linkText: "Ver solución industrial",
+ },
+ {
+ icon: "",
+ title: "Electrónica y Tecnología",
+ desc: "Dimensiones exactas para dispositivos, accesorios y componentes electrónicos. Corrugado con recubrimiento antiestático disponible. Protección máxima en cada envío.",
+ href: "/catalogo/cajas-a-la-medida/",
+ linkText: "Ver cajas para electrónica",
+ },
+ {
+ icon: "",
+ title: "Artesanías y Artículos Frágiles",
+ desc: "Cajas que se adaptan al producto, no al revés. Elimina el uso excesivo de relleno y reduce el riesgo de daño. Ideal para piezas únicas, cerámica y objetos de colección.",
+ href: "/catalogo/cajas-a-la-medida/",
+ linkText: "Ver cajas para frágiles",
+ },
+ {
+ icon: "",
+ title: "Exportación y Nearshoring",
+ desc: "Cajas que cumplen los estándares ISPM-15, ISTA y ASTM para exportación. Certificación FSC disponible. Documentación técnica completa para auditorías de clientes internacionales.",
+ href: "/catalogo/cajas-a-la-medida/exportacion/",
+ linkText: "Ver solución exportación",
+ },
+];
+
+const detPasos = [
+ { num:1, title:"Dinos las dimensiones",  desc:"Compártenos el largo, ancho y alto de tu producto (o el espacio que necesita). Si tienes varias versiones, cotizamos todas en un mismo presupuesto." },
+ { num:2, title:"Diseño CAD gratuito",  desc:"Nuestros ingenieros generan el plano CAD de tu caja sin costo. En 24 horas tienes el dibujo técnico para revisión y aprobación." },
+ { num:3, title:"Cotización cerrada",  desc:"Precio por pieza según volumen, tipo de corrugado y complejidad. Sin costos ocultos ni cargos por medidas especiales." },
+ { num:4, title:"Producción y entrega",  desc:"3 a 5 días hábiles desde la aprobación. Entrega a tu planta, almacén o dirección en toda CDMX y Estado de México." },
+];
+
+const detFaqs = [
+ {
+ id:"am1",
+ question:"¿Cuál es el pedido mínimo para cajas a la medida?",
+ answer:"El pedido mínimo es <strong>50 piezas</strong> para cajas a la medida en corrugado estándar. Para medidas muy grandes (más de 80 cm en cualquier lado) o corrugados especiales, el mínimo puede variar. Consulta disponibilidad por WhatsApp con tus dimensiones exactas.",
+ },
+ {
+ id:"am2",
+ question:"¿Cuánto tiempo tarda fabricar cajas a la medida?",
+ answer:"El proceso completo toma <strong>3 a 5 días hábiles</strong> desde la aprobación del diseño: Día 1 — diseño CAD gratuito enviado para revisión. Día 2 — aprobación del cliente. Días 3-5 — producción, troquelado y control de calidad. Para volúmenes mayores a 5,000 piezas consultar tiempos específicos.",
+ },
+ {
+ id:"am3",
+ question:"¿Cómo sé qué tipo de corrugado necesito para mi producto?",
+ answer:"Nuestro equipo técnico hace el cálculo de resistencia necesaria considerando: peso del producto, altura de apilado en almacén, condiciones de temperatura y humedad, y método de transporte. En base a eso recomendamos el ECT, flauta y tipo de pared correcto para que la caja no quede ni sobredimensionada (costosa) ni subdimensionada (insuficiente).",
+ },
+ {
+ id:"am4",
+ question:"¿Pueden hacer cajas a la medida para exportación?",
+ answer:"Sí. Para exportación fabricamos con cartón certificado FSC y podemos cumplir los estándares ISTA (International Safe Transit Association) y ASTM para diferentes categorías de producto. También generamos la documentación técnica necesaria para auditorías de clientes corporativos internacionales. Para nearshoring con empresas en parques industriales del Estado de México tenemos experiencia específica.",
+ },
+ {
+ id:"am5",
+ question:"¿El diseño CAD tiene costo?",
+ answer:"No. El diseño CAD es completamente <strong>gratuito</strong> para todos los pedidos de cajas a la medida, sin importar el volumen. Incluye: dimensionamiento técnico, especificación de corrugado y flauta, cálculo de resistencia ECT recomendado y plano de troquelado. No se cobra nada hasta que apruebas el diseño y confirmas el pedido.",
+ },
+ {
+ id:"am6",
+ question:"¿Cuál es el tamaño máximo de caja que pueden fabricar?",
+ answer:"Fabricamos cajas de hasta <strong>200 × 120 × 100 cm</strong> en triple corrugado para transporte de maquinaria y equipo industrial. Para medidas superiores o configuraciones especiales (cajas con separadores internos, doble tapa, etc.) consulta con nuestro equipo de ingeniería. No hay restricción estándar de dimensiones.",
+ },
+];
+
+const detFaqItems = detFaqs.map(f => ({ question: f.question, answer: f.answer }));
 ---
 
 <PageLayout
  ogImage="/img/categorias/cajas-a-la-medida-hero-cdmx.avif" title={title} description={description}
  pageType="category"
- breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas a la Medida"}]}>
+ breadcrumbs={[{name:"Inicio",href:"/"},{name:"Catálogo",href:"/catalogo/"},{name:"Cajas a la Medida"}]}
+ faqItems={detFaqItems}>
 
  <div class="breadcrumb-bar" aria-label="Ruta de navegación">
  <div class="container">
@@ -235,6 +312,127 @@ const productos = [
  </div>
  </article>
  ))}
+ </div>
+ </div>
+ </section>
+
+<section class="prod-detail" aria-labelledby="detalle-am-title">
+ <div class="container">
+ <div class="prod-detail__inner">
+ <div class="prod-detail__img-wrap">
+ <img src="/img/productos/cajas-de-carton-a-la-medida-cdmx-estado-de-mexico.avif"
+ alt="Cajas de cartón a la medida en CDMX y Estado de México — CADECA"
+ class="prod-detail__img" width="900" height="560"
+ loading="eager" decoding="async" fetchpriority="high" />
+ </div>
+ <div class="prod-detail__content">
+ <span class="prod-detail__label">La caja que se adapta a tu producto, no al revés</span>
+ <h2 id="detalle-am-title" class="section-header__title" style="margin:0">
+ Cajas Corrugado a la Medida: Ingeniería de Empaque a tu Servicio
+ </h2>
+ <p class="prod-detail__intro">
+ Fabricamos cajas de cartón corrugado en cualquier combinación de largo, ancho y alto, sin restricciones de medida y sin costos adicionales por dimensiones especiales. Incluye diseño CAD gratuito con plano técnico, asesoría de ingeniería para seleccionar el corrugado óptimo y control de calidad en cada lote.
+ </p>
+ <div>
+ <p class="prod-detail__specs-title">Capacidades de fabricación</p>
+ <div class="prod-detail__specs-grid">
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Dimensiones</span>
+ <span class="prod-detail__spec-value">Cualquier L × A × H exacto</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Tamaño máximo</span>
+ <span class="prod-detail__spec-value">200 × 120 × 100 cm</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Pared</span>
+ <span class="prod-detail__spec-value">Simple · Doble · Triple</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Flautas</span>
+ <span class="prod-detail__spec-value">B · C · E · BC</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Diseño CAD</span>
+ <span class="prod-detail__spec-value">Gratuito en 24 hrs</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Certificación</span>
+ <span class="prod-detail__spec-value">FSC · ISTA · ASTM</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Pedido mínimo</span>
+ <span class="prod-detail__spec-value">50 piezas</span>
+ </div>
+ <div class="prod-detail__spec">
+ <span class="prod-detail__spec-label">Producción</span>
+ <span class="prod-detail__spec-value">3 – 5 días hábiles</span>
+ </div>
+ </div>
+ </div>
+ <div class="prod-detail__actions">
+ <a href="/cotizar/" class="btn btn--primary">Solicitar CAD Gratis</a>
+ {HAS_WA && (
+<a href={contactoHref()} class="btn btn--outline" {...contactoAttrs}>WhatsApp Directo</a>
+)}
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+<section class="industries" aria-labelledby="detIndustrias-am-title">
+ <div class="container">
+ <SectionHeader id="detIndustrias-am-title" twoCol
+ title="¿Quién Necesita Cajas a la Medida?"
+ subtitle="Industria, exportación, artesanías, electrónica y cualquier producto con dimensiones no estándar">
+ <p>Las cajas a la medida son la solución cuando el producto no cabe en las dimensiones estándar, cuando el exceso de espacio genera daños en tránsito, o cuando el cliente exige un empaque específico para recibir su mercancía.</p>
+ <p>Fabricamos para cualquier sector: desde artesanos individuales hasta plantas de manufactura con nearshoring en Naucalpan, Tlalnepantla y Cuautitlán.</p>
+ </SectionHeader>
+ <div class="industries__grid">
+ {detIndustrias.map(i => <IndustryCard img={String("img" in i ? i.img : "")} imgAlt={i.title} tag="" title={i.title} desc={i.desc} href={i.href} linkText={i.linkText} />)}
+ </div>
+ </div>
+ </section>
+
+<section class="process" aria-labelledby="proceso-am-title">
+ <div class="container">
+ <SectionHeader id="proceso-am-title"
+ title="Proceso: De tus Dimensiones a tu Caja en 3-5 Días"
+ subtitle="CAD gratuito, cotización sin compromiso, producción puntual" />
+ <div class="process__grid">
+ {detPasos.map(p => <ProcessStep {...p} />)}
+ </div>
+ </div>
+ </section>
+
+<section class="seo-content" aria-labelledby="seo-am-title">
+ <div class="container">
+ <h2 id="seo-am-title" class="seo-content__title">
+ Cajas de Cartón a la Medida en CDMX: Ingeniería de Empaque sin Restricciones
+ </h2>
+ <p class="seo-content__text">
+ Las <strong>cajas de cartón a la medida en la Ciudad de México</strong> son la solución definitiva cuando el producto no encaja en las dimensiones estándar del mercado. En CADECA fabricamos en cualquier combinación de largo, ancho y alto — sin restricciones de medida, sin costos adicionales por dimensiones especiales y con <strong>diseño CAD gratuito</strong> entregado en menos de 24 horas. Nuestro equipo de ingeniería de empaque calcula el tipo de corrugado, flauta y ECT correcto para cada aplicación, garantizando que la caja proteja el producto sin ser costosa por estar sobredimensionada.
+ </p>
+ <p class="seo-content__text">
+ Para la <strong>industria manufacturera en el Estado de México</strong> — parques industriales de Naucalpan, Tlalnepantla, Cuautitlán Izcalli y Tepotzotlán — ofrecemos cajas a la medida con contratos de suministro mensual, crédito empresarial y documentación técnica completa para auditorías de clientes internacionales. Para proyectos de <strong>nearshoring</strong>, cumplimos con los estándares ISTA y ASTM requeridos por corporativos de EUA, Japón y Europa, con opción de <strong>certificación FSC</strong> para cadena de custodia de materiales.
+ </p>
+ <p class="seo-content__text">
+ El proceso es simple: compartes las dimensiones de tu producto, generamos el CAD sin costo, recibes la cotización en el día y en 3-5 días hábiles tienes tus cajas entregadas. <a href="/cotizar/">Solicita tu diseño CAD gratis ahora</a> — sin mínimo de cotización y sin compromiso de compra.
+ </p>
+ </div>
+ </section>
+
+<section class="faq" aria-labelledby="faq-am-title">
+ <div class="container">
+ <SectionHeader id="faq-am-title" twoCol
+ title="Preguntas Frecuentes: Cajas a la Medida"
+ subtitle="Pedido mínimo, tiempos, CAD, corrugado correcto, exportación y tamaños máximos">
+ <p>Estas son las preguntas más comunes antes de hacer un pedido de cajas a la medida. Si la tuya no está aquí, nuestro equipo de ingeniería la resuelve por WhatsApp sin costo.</p>
+ <p>Respondemos consultas técnicas sobre dimensiones, resistencia ECT, flautas y certificaciones en menos de 2 horas en días hábiles.</p>
+ </SectionHeader>
+ <div class="faq__list">
+ {detFaqs.map(f => <FaqItem {...f} />)}
  </div>
  </div>
  </section>

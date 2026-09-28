@@ -10,11 +10,10 @@ const categoryMap: Record<string, string> = {
  "industria": "Industria",
  "sostenibilidad": "Sostenibilidad",
  "consejos": "Consejos",
- "zonas": "Zonas",
 };
 
 export async function getStaticPaths() {
- const slugs = ["guias", "e-commerce", "industria", "sostenibilidad", "consejos", "zonas"];
+ const slugs = ["guias", "e-commerce", "industria", "sostenibilidad", "consejos"];
  return slugs.map(slug => ({ params: { categoria: slug } }));
 }
 
@@ -25,7 +24,7 @@ const allPosts = (await getCollection("blog"))
  .filter(p => p.data.category === categoryName)
  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const categories = ["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos", "Zonas"] as const;
+const categories = ["Guías", "E-commerce", "Industria", "Sostenibilidad", "Consejos"] as const;
 
 const SITE = "https://cajas-de-carton.com";
 
@@ -35,7 +34,7 @@ const schemaCollection = {
  "name": `${categoryName} — Blog CADECA`,
  "description": `Artículos sobre ${categoryName?.toLowerCase()} en el blog de CADECA.`,
  "url": `${SITE}/blog/categoria/${categoria}/`,
- "publisher": { "@type": "Organization", "name": "#CADECA" },
+ "publisher": { "@type": "Organization", "name": "CADECA" },
 };
 ---
 

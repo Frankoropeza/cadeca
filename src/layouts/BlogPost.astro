@@ -9,6 +9,7 @@ import { HAS_WA, contactoHref } from "@/data/contacto";
 
 export interface Props {
  title:  string;
+ seoTitle?:  string;
  description:  string;
  pubDate:  Date;
  updatedDate?: Date;
@@ -24,7 +25,7 @@ export interface Props {
 }
 
 const {
- title, description, pubDate, updatedDate,
+ title, seoTitle, description, pubDate, updatedDate,
  author, category, tags, image, imageAlt,
  readingTime, headings, slug, relatedPosts = [],
 } = Astro.props;
@@ -73,7 +74,7 @@ const schemaArticle = {
  "author": { "@type": "Organization", "name": author },
  "publisher": {
  "@type": "Organization",
- "name": "#CADECA",
+ "name": "CADECA",
  "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
  },
  "datePublished": pubDate.toISOString(),
@@ -93,11 +94,12 @@ const schemaBreadcrumb = {
  })),
 };
 
+const docTitle = seoTitle ?? (title.length + 9 <= 60 ? `${title} | CADECA` : title);
 const waMsg = `Hola, leí el artículo "${title}" y me interesa cotizar cajas.`;
 ---
 
 <BaseLayout
- title={`${title} | Blog CADECA`}
+ title={docTitle}
  description={description}
  ogImage={image || "/img/og-cadeca.jpg"}
  schema={[schemaArticle, schemaBreadcrumb]}

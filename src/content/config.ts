@@ -4,6 +4,8 @@ const blog = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    /** Título SEO (≤ 60 caracteres). Si falta, se usa title (+ " | CADECA" si cabe). */
+    seoTitle: z.string().max(60).optional(),
     description: z.string(),
     pubDate: z.date(),
     updatedDate: z.date().optional(),
