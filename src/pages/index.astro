@@ -196,6 +196,25 @@ const faqs = [
  answer:  "Es muy sencillo: llena el formulario de cotización o escríbenos por WhatsApp indicando las medidas (largo × ancho × alto en cm), la cantidad aproximada y si tienes archivo de diseño (PDF, AI o PNG). Te respondemos en horario hábil con precio y prueba de diseño digital sin costo cuando aplique.",
  },
 ];
+
+// ── Accesos principales (franja bajo el hero) ─────────
+const iconos: Record<string, string> = {
+ catalogo:  '<path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/>',
+ medida:  '<path d="M3 17 17 3l4 4L7 21l-4-4Z"/><path d="m7 13 2 2M10 10l2 2M13 7l2 2"/>',
+ logo:  '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
+ ecommerce: '<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/>',
+ medidas:  '<path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/><rect x="7.5" y="7.5" width="9" height="9" rx="1"/>',
+ cotizar:  '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
+};
+
+const accesos = [
+ { href: "/catalogo/",  icono: "catalogo",  label: "Catálogo completo",  sub: "Todos los tipos de caja" },
+ { href: "/catalogo/cajas-a-la-medida/",  icono: "medida",  label: "Cajas a la medida",  sub: "Cualquier dimensión" },
+ { href: "/catalogo/cajas-personalizadas-logo/", icono: "logo",  label: "Personalizadas con logo", sub: "Impresión desde 100 pzas" },
+ { href: "/catalogo/cajas-para-ecommerce/",  icono: "ecommerce", label: "Cajas para e‑commerce",  sub: "Mercado Libre y Amazon" },
+ { href: "/medidas-de-cajas-de-carton/",  icono: "medidas",  label: "Guía de medidas",  sub: "Elige el tamaño correcto" },
+ { href: "/cotizar/",  icono: "cotizar",  label: "Solicitar cotización",  sub: "Sin compromiso", destacado: true },
+];
 ---
 
 <PageLayout
@@ -234,19 +253,22 @@ const faqs = [
  </div>
  </section>
 
- <!-- CTA Band -->
- <div class="cta-band">
- <div class="container">
- <div>
- <p class="cta-band__text">Explora nuestro catálogo completo de cajas de cartón</p>
- <p class="cta-band__sub">Corrugado estándar, a medida, personalizadas y ecológicas con soporte técnico.</p>
- </div>
- <a href="/catalogo/" class="btn btn--white">
- Ver Catálogo
- <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+ <!-- Accesos principales (franja bajo el hero) -->
+ <nav class="quick-nav" aria-label="Secciones principales">
+ <ul class="quick-nav__list">
+ {accesos.map(a => (
+ <li class="quick-nav__item">
+ <a href={a.href} class={`quick-nav__link${a.destacado ? " quick-nav__link--featured" : ""}`}>
+ <svg class="quick-nav__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={iconos[a.icono]} />
+ <span class="quick-nav__text">
+ <span class="quick-nav__label">{a.label}</span>
+ <span class="quick-nav__sub">{a.sub}</span>
+ </span>
  </a>
- </div>
- </div>
+ </li>
+ ))}
+ </ul>
+ </nav>
 
  <!-- ══════════════════════════════════════
  MAIN
