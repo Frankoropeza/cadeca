@@ -164,7 +164,6 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  {allSchemas.map(s => (
  <script type="application/ld+json" set:html={JSON.stringify(s, null, 0)} />
  ))}
- <!-- Ahrefs Web Analytics -->
  </head>
  <body>
  <slot />
