@@ -1,7 +1,8 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const blog = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
     /** Título SEO (≤ 60 caracteres). Si falta, se usa title (+ " | CADECA" si cabe). */
@@ -16,7 +17,7 @@ const blog = defineCollection({
     imageAlt: z.string().optional(),
     featured: z.boolean().default(false),
     readingTime: z.number().optional(),
-  }),
+  }).strict(),
 });
 
 export const collections = { blog };

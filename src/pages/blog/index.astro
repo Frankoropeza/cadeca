@@ -10,7 +10,7 @@ const allPosts = (await getCollection("blog")).sort(
 );
 
 const featuredPost = allPosts.find(p => p.data.featured) || allPosts[0];
-const gridPosts  = allPosts.filter(p => p.slug !== featuredPost.slug);
+const gridPosts  = allPosts.filter(p => p.id !== featuredPost.id);
 
 const CATEGORIES = [
  { name: "Guías",  slug: "guias",  color: "#1C2B4A" },
@@ -39,7 +39,7 @@ const schemaBlog = {
  "headline": post.data.title,
  "description": post.data.description,
  "datePublished": post.data.pubDate.toISOString(),
- "url": `${SITE}/blog/${post.slug}/`,
+ "url": `${SITE}/blog/${post.id}/`,
  })),
 };
 
@@ -95,7 +95,7 @@ function formatDate(d: Date) {
  <div>
 
  <!-- Featured Post -->
- <a href={`/blog/${featuredPost.slug}/`} class="blog-featured-hero">
+ <a href={`/blog/${featuredPost.id}/`} class="blog-featured-hero">
  <div class="blog-featured-hero__img-wrap">
  {featuredPost.data.image ? (
  <img
@@ -135,7 +135,7 @@ function formatDate(d: Date) {
  {gridPosts.map(post => {
  const cs = catSlug(post.data.category);
  return (
- <a href={`/blog/${post.slug}/`} class="blog-card">
+ <a href={`/blog/${post.id}/`} class="blog-card">
  <div class="blog-card__img-wrap">
  {post.data.image ? (
  <img
@@ -210,7 +210,7 @@ function formatDate(d: Date) {
  </div>
  <nav class="sidebar-recent">
  {allPosts.slice(0, 5).map(post => (
- <a href={`/blog/${post.slug}/`} class="sidebar-recent__item">
+ <a href={`/blog/${post.id}/`} class="sidebar-recent__item">
  <div class="sidebar-recent__thumb">
  {post.data.image ? (
  <img src={post.data.image} alt={post.data.title} width="56" height="42" loading="lazy" />

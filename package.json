@@ -8,16 +8,21 @@
     "postbuild": "node scripts/build-id.mjs && node scripts/redirect-pages.mjs",
     "preview": "astro preview",
     "validate:mdx": "node scripts/validate-mdx.mjs",
-    "install:hooks": "bash scripts/install-hooks.sh"
+    "install:hooks": "bash scripts/install-hooks.sh",
+    "check": "astro check",
+    "qa": "npm run check && npm run build"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.0",
-    "@astrojs/sitemap": "3.2.1",
+    "@astrojs/mdx": "6.0.3",
+    "@astrojs/sitemap": "3.7.6",
     "@fontsource-variable/inter": "^5.3.0",
-    "astro": "^4.16.0"
+    "astro": "6.4.8"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
