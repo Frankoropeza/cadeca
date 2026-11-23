@@ -1,9 +1,10 @@
+import { SITE } from "./src/config/site.ts";
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://cajas-de-carton.com",
+  site: SITE,
   trailingSlash: "always",
   integrations: [
     mdx(),

@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@/config/site";
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import FaqCotizacion from "@/components/FaqCotizacion.astro";
@@ -9,12 +10,12 @@ const description = "Cajas de cartón grandes para mudanza, almacén y envíos. 
 const schema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": "https://cajas-de-carton.com/catalogo/cajas-de-carton-grandes/#webpage",
+  "@id": `${SITE}/catalogo/cajas-de-carton-grandes/#webpage`,
   "name": title,
-  "url": "https://cajas-de-carton.com/catalogo/cajas-de-carton-grandes/",
+  "url": `${SITE}/catalogo/cajas-de-carton-grandes/`,
   "description": description,
-  "about": { "@id": "https://cajas-de-carton.com/#org" },
-  "isPartOf": { "@id": "https://cajas-de-carton.com/#website" }
+  "about": { "@id": `${SITE}/#org` },
+  "isPartOf": { "@id": `${SITE}/#website` }
 };
 
 const productos = [

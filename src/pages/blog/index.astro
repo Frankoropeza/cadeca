@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@/config/site";
 import { HAS_WA, contactoHref } from "@/data/contacto";
 import PageLayout  from "@/layouts/PageLayout.astro";
 import PageHero  from "@/components/PageHero.astro";
@@ -22,7 +23,6 @@ const CATEGORIES = [
 
 const allTags = [...new Set(allPosts.flatMap(p => p.data.tags || []))].slice(0, 20);
 
-const SITE = "https://cajas-de-carton.com";
 const schemaBlog = {
  "@context": "https://schema.org",
  "@type": "Blog",

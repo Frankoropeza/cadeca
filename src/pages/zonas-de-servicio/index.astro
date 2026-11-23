@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@/config/site";
 import PageLayout from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import FaqCotizacion from "@/components/FaqCotizacion.astro";
@@ -24,7 +25,7 @@ const schemaServiceArea = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Cajas de cartón en CDMX y Estado de México",
-  provider: { "@id": "https://cajas-de-carton.com/#org" },
+  provider: { "@id": `${SITE}/#org` },
   areaServed: [
     { "@type": "AdministrativeArea", name: "Álvaro Obregón, Ciudad de México" }, { "@type": "AdministrativeArea", name: "Azcapotzalco, Ciudad de México" }, { "@type": "AdministrativeArea", name: "Benito Juárez, Ciudad de México" }, { "@type": "AdministrativeArea", name: "Coyoacán, Ciudad de México" },
     { "@type": "AdministrativeArea", name: "Cuajimalpa de Morelos, Ciudad de México" }, { "@type": "AdministrativeArea", name: "Cuauhtémoc, Ciudad de México" }, { "@type": "AdministrativeArea", name: "Gustavo A. Madero, Ciudad de México" }, { "@type": "AdministrativeArea", name: "Iztacalco, Ciudad de México" },

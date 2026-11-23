@@ -1,4 +1,6 @@
 ---
+import { SITE, siteConfig } from "@/config/site";
+import { buildArticleSchema, buildBreadcrumbSchema } from "@/lib/seo";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Topbar  from "@/components/Topbar.astro";
 import Header  from "@/components/Header.astro";
@@ -30,7 +32,6 @@ const {
  readingTime, headings, slug, relatedPosts = [],
 } = Astro.props;
 
-const SITE = "https://cajas-de-carton.com";
 const pageUrl = `${SITE}/blog/${slug}/`;
 
 function catSlug(name: string) {
@@ -66,33 +67,8 @@ const breadcrumbs = [
 
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
-const schemaArticle = {
- "@context": "https://schema.org",
- "@type": "Article",
- "headline": title,
- "description": description,
- "author": { "@type": "Organization", "name": author },
- "publisher": {
- "@type": "Organization",
- "name": "CADECA",
- "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
- },
- "datePublished": pubDate.toISOString(),
- ...(updatedDate ? { "dateModified": updatedDate.toISOString() } : {}),
- "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
- ...(image ? { "image": `${SITE}${image}` } : {}),
-};
-
-const schemaBreadcrumb = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": breadcrumbs.map((b, i) => ({
- "@type": "ListItem",
- "position": i + 1,
- "name": b.name,
- ...(b.href ? { "item": `${SITE}${b.href}` } : {}),
- })),
-};
+const schemaArticle = buildArticleSchema({ title, description, author, pubDate, updatedDate, pageUrl, image });
+const schemaBreadcrumb = buildBreadcrumbSchema(breadcrumbs);
 
 const docTitle = seoTitle ?? (title.length + 9 <= 60 ? `${title} | CADECA` : title);
 const waMsg = `Hola, leí el artículo "${title}" y me interesa cotizar cajas.`;
@@ -101,7 +77,7 @@ const waMsg = `Hola, leí el artículo "${title}" y me interesa cotizar cajas.`;
 <BaseLayout
  title={docTitle}
  description={description}
- ogImage={image || "/img/og-cadeca.jpg"}
+ ogImage={image || siteConfig.ogImage}
  schema={[schemaArticle, schemaBreadcrumb]}
  breadcrumbs={breadcrumbs}
 >

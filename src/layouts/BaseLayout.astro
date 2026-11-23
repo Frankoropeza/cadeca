@@ -1,22 +1,10 @@
 ---
+import { SITE, SITE_NAME, siteConfig } from "@/config/site";
 import "@fontsource-variable/inter/wght.css";
 import "@/styles/global.css";
-import { CONTACTO, HAS_TEL, HAS_EMAIL } from "@/data/contacto";
+import { buildPageSchemas, type BreadcrumbItem, type FaqSeoItem, type ProductSeo } from "@/lib/seo";
 
 // ─── Tipos ────────────────────────────────────────────────────────────────────
-export interface BreadcrumbItem { name: string; href?: string; }
-export interface FaqSeoItem  { question: string; answer: string; }
-export interface ProductSeo {
- name:  string;
- sku:  string;
- description: string;
- image:  string;
- brand?:  string;
- material?:  string;
- category?:  string;
- moq?:  string;
-}
-
 export interface Props {
  title:  string;
  description:  string;
@@ -34,93 +22,22 @@ const {
  title,
  description,
  canonical  = Astro.url.href,
- ogImage  = "/img/og-cadeca.jpg",
+ ogImage  = siteConfig.ogImage,
  pageType  = "page",
  breadcrumbs,
  faqItems,
- product,
  schema,
  noindex = false,
 } = Astro.props;
 
-const SITE  = "https://cajas-de-carton.com";
-const SITE_NAME = "CADECA";
-
-// ─── Schemas base (siempre presentes) ─────────────────────────────────────────
-const schemaOrg = {
- "@context": "https://schema.org",
- "@type": "Organization",
- "@id": `${SITE}/#org`,
- "name": SITE_NAME,
- "alternateName": "CADECA Cajas de Cartón",
- "url": SITE,
- "logo": { "@type": "ImageObject", "url": `${SITE}/img/cadeca-logo.png` },
- "description": "Proveedor de cajas de cartón corrugado para empresas y negocios en la Ciudad de México y el Estado de México: cajas estándar, a la medida, personalizadas con logo y láminas de cartón.",
- "areaServed": [
- { "@type": "State", "name": "Ciudad de México" },
- { "@type": "State", "name": "Estado de México" }
- ],
- ...(HAS_TEL ? { "telephone": `+${CONTACTO.telefono}` } : {}),
- ...(HAS_EMAIL ? { "email": CONTACTO.email } : {}),
- ...((HAS_TEL || HAS_EMAIL) ? { "contactPoint": {
- "@type": "ContactPoint",
- "contactType": "sales",
- "areaServed": "MX",
- "availableLanguage": "Spanish",
- ...(HAS_TEL ? { "telephone": `+${CONTACTO.telefono}` } : {}),
- ...(HAS_EMAIL ? { "email": CONTACTO.email } : {})
- } } : {})
-};
-
-const schemaWebSite = {
- "@context": "https://schema.org",
- "@type": "WebSite",
- "@id": `${SITE}/#website`,
- "name": SITE_NAME,
- "url": SITE,
- "publisher": { "@id": `${SITE}/#org` }
-};
-
-// ─── BreadcrumbList JSON-LD (si se pasan breadcrumbs) ─────────────────────────
-const schemaBreadcrumb = breadcrumbs ? {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": breadcrumbs.map((b, i) => ({
- "@type": "ListItem",
- "position": i + 1,
- "name": b.name,
- ...(b.href ? { "item": `${SITE}${b.href}` } : {})
- }))
-} : null;
-
-// ─── FAQPage JSON-LD (si se pasan faqItems) ───────────────────────────────────
-const schemaFaq = faqItems?.length ? {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": faqItems.map(f => ({
- "@type": "Question",
- "name": f.question,
- "acceptedAnswer": { "@type": "Answer", "text": f.answer }
- }))
-} : null;
-
-// Product JSON-LD: se omite mientras no haya precios publicados (Offer sin price es inválido).
-
-// ─── Ensamblar todos los schemas ──────────────────────────────────────────────
-const allSchemas: object[] = [schemaOrg, schemaWebSite];
-if (schemaBreadcrumb) allSchemas.push(schemaBreadcrumb);
-if (schemaFaq)  allSchemas.push(schemaFaq);
-if (schema) {
- const extra = Array.isArray(schema) ? schema : [schema];
- allSchemas.push(...extra);
-}
+const allSchemas = buildPageSchemas({ breadcrumbs, faqItems, schema });
 
 // ─── og:type dinámico ─────────────────────────────────────────────────────────
 const ogType = (pageType === "product") ? "og:product" : "website";
 ---
 
 <!doctype html>
-<html lang="es-MX">
+<html lang={siteConfig.language}>
  <head>
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -143,7 +60,7 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  <meta property="og:image:height" content="630" />
  <meta property="og:image:type"  content="image/jpeg" />
  <meta property="og:image:alt"  content="CADECA — Cajas de Cartón en CDMX y Estado de México" />
- <meta property="og:locale"  content="es_MX" />
+ <meta property="og:locale"  content={siteConfig.locale} />
 
  <!-- Twitter Card -->
  <meta name="twitter:card"  content="summary_large_image" />
@@ -156,7 +73,7 @@ const ogType = (pageType === "product") ? "og:product" : "website";
  <link rel="icon"  href="/favicon.svg" type="image/svg+xml" />
  <link rel="icon"  href="/favicon.svg" sizes="any" />
  <link rel="apple-touch-icon" href="/favicon.svg" />
- <meta name="theme-color"  content="#E05800" />
+ <meta name="theme-color"  content={siteConfig.themeColor} />
  <link rel="manifest"  href="/site.webmanifest" />
 
 

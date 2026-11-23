@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@/config/site";
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import FaqCotizacion from "@/components/FaqCotizacion.astro";
@@ -8,9 +9,9 @@ const description = "Dónde comprar cajas de cartón: compara proveedor, papeler
 
 const schema = {
   "@context": "https://schema.org", "@type": "WebPage",
-  "@id": "https://cajas-de-carton.com/donde-comprar-cajas-de-carton/#webpage",
-  "name": title, "url": "https://cajas-de-carton.com/donde-comprar-cajas-de-carton/", "description": description,
-  "about": { "@id": "https://cajas-de-carton.com/#org" }, "isPartOf": { "@id": "https://cajas-de-carton.com/#website" }
+  "@id": `${SITE}/donde-comprar-cajas-de-carton/#webpage`,
+  "name": title, "url": `${SITE}/donde-comprar-cajas-de-carton/`, "description": description,
+  "about": { "@id": `${SITE}/#org` }, "isPartOf": { "@id": `${SITE}/#website` }
 };
 
 const productos = [

@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@/config/site";
 // Hub «Cajas de cartón para regalo» — plantilla homologada de categoría.
 // Datos: src/data/catalogo/regalo.ts · Estructura definida con Ahrefs MX (2026-09-28).
 import PageLayout from "@/layouts/PageLayout.astro";
@@ -9,7 +10,7 @@ import { categoria, fichas } from "@/data/catalogo/regalo";
 
 const title = "Cajas de Regalo de Cartón por Mayoreo | CADECA";
 const description = "Cajas de regalo de cartón por mayoreo: sorpresa, navideñas, para dulces, vino, grandes, con tapa, magnéticas y corporativas. Cotiza con o sin logo.";
-const url = `https://cajas-de-carton.com${categoria.href}`;
+const url = `${SITE}${categoria.href}`;
 
 const schema = {
   "@context": "https://schema.org",
@@ -18,8 +19,8 @@ const schema = {
   name: title,
   url,
   description,
-  about: { "@id": "https://cajas-de-carton.com/#org" },
-  isPartOf: { "@id": "https://cajas-de-carton.com/#website" },
+  about: { "@id": `${SITE}/#org` },
+  isPartOf: { "@id": `${SITE}/#website` },
   mainEntity: {
     "@type": "ItemList",
     numberOfItems: fichas.length,

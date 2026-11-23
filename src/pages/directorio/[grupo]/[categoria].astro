@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@/config/site";
 import { contactoHref, contactoAttrs, HAS_WA } from "@/data/contacto";
 import PageLayout    from "@/layouts/PageLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
@@ -19,7 +20,6 @@ const catData   = getCategoria(grupoId, catId);
 const otrasCAts = getCategoriasByGrupo(grupoId).filter(c => c.id !== catId);
 
 if (!grupoData || !catData) return Astro.redirect("/directorio/");
-const SITE     = "https://cajas-de-carton.com";
 
 // Párrafos SEO por categoría (2 por categoría)
 const seoParagrafos: Record<string, [string, string]> = {
